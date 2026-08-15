@@ -1,0 +1,10 @@
+{
+  "name": "phase1-ledger-fixture",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Small settlement reconciliation fixture for phase-1 model screening.",
+  "scripts": {
+    "test": "node --test test/*.test.mjs"
+  }
+}

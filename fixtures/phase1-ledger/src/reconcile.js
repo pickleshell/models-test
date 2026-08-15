@@ -1,0 +1,89 @@
+export function parseAmountToCents(amount) {
+  if (typeof amount !== 'string' && typeof amount !== 'number') {
+    throw new Error('amount must be a decimal string or number');
+  }
+
+  const normalized = String(amount).trim().replace(/[$,]/g, '');
+  const value = Number(normalized);
+  if (!Number.isFinite(value)) {
+    throw new Error(`invalid amount: ${amount}`);
+  }
+
+  return Math.round(value * 100);
+}
+
+function dayKey(createdAt) {
+  const date = new Date(createdAt);
+  if (Number.isNaN(date.getTime())) {
+    throw new Error(`invalid createdAt: ${createdAt}`);
+  }
+  return date.toLocaleDateString('en-CA');
+}
+
+function addTotal(totals, accountId, currency, day, cents) {
+  const key = `${accountId}|${currency}|${day}`;
+  const current = totals.get(key) || { accountId, currency, day, netCents: 0, count: 0 };
+  current.netCents += cents;
+  current.count += 1;
+  totals.set(key, current);
+}
+
+export function reconcileLedger(entries) {
+  if (!Array.isArray(entries)) {
+    throw new Error('entries must be an array');
+  }
+
+  const totals = new Map();
+  const seenIds = new Set();
+  const originals = new Map();
+  const metrics = {
+    processed: 0,
+    duplicateCount: 0,
+    invalidCount: 0,
+    orphanRefundCount: 0
+  };
+
+  for (const entry of entries) {
+    try {
+      if (!entry || typeof entry !== 'object') throw new Error('entry must be an object');
+      if (!entry.id) throw new Error('missing id');
+      if (!entry.accountId) throw new Error('missing accountId');
+      if (!entry.currency) throw new Error('missing currency');
+
+      if (seenIds.has(entry.id)) {
+        metrics.duplicateCount += 1;
+      }
+      seenIds.add(entry.id);
+
+      const cents = parseAmountToCents(entry.amount);
+      const day = dayKey(entry.createdAt);
+
+      if (entry.type === 'sale') {
+        originals.set(entry.id, entry);
+        addTotal(totals, entry.accountId, entry.currency, day, cents);
+        metrics.processed += 1;
+      } else if (entry.type === 'refund') {
+        const original = originals.get(entry.originalId);
+        if (!original) {
+          metrics.orphanRefundCount += 1;
+          continue;
+        }
+        addTotal(totals, entry.accountId, entry.currency, day, -cents);
+        metrics.processed += 1;
+      } else {
+        throw new Error(`unsupported type: ${entry.type}`);
+      }
+    } catch (_) {
+      metrics.invalidCount += 1;
+    }
+  }
+
+  return {
+    totals: [...totals.values()].sort((a, b) =>
+      a.accountId.localeCompare(b.accountId) ||
+      a.currency.localeCompare(b.currency) ||
+      a.day.localeCompare(b.day)
+    ),
+    metrics
+  };
+}
