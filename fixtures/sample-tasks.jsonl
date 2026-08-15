@@ -1,0 +1,2 @@
+{"id":"readme-edit-small","category":"coding","prompt":"Given a small README, improve clarity without changing meaning.","expected_artifact":"patch"}
+{"id":"bugfix-unit-small","category":"coding","prompt":"Given a failing unit test and a compact function, identify and fix the defect.","expected_artifact":"patch"}
