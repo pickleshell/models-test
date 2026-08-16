@@ -4,7 +4,7 @@ import { mkdtemp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import test from 'node:test';
-import { deriveCandidates, executePlan } from './phase2-runner.mjs';
+import { agentCommand, deriveCandidates, executePlan } from './phase2-runner.mjs';
 
 const root = process.cwd();
 
@@ -16,6 +16,15 @@ test('derives only non-empty patch candidates with exact runtime and model', asy
     runtime: 'codex', model: 'gpt-5.3-codex-spark', slug: '18-gpt-5-3-codex-spark'
   });
   assert.equal(candidates.some((item) => item.id === '08-qwen3-7-max'), false);
+});
+
+test('builds the OpenCode invocation with the prompt positional and workspace cwd', () => {
+  const workspace = path.join(root, '.worktrees/phase2/01-test-model/task');
+  assert.deepEqual(agentCommand(candidate(), 'Do the task.\n', workspace), {
+    command: 'opencode',
+    args: ['run', '--model', 'opencode/test-model', '--auto', 'Do the task.\n'],
+    cwd: workspace
+  });
 });
 
 async function fakeRepo() {
