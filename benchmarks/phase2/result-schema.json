@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "record": {
+    "benchmark": "phase2",
+    "task": "string",
+    "category": "string",
+    "model": "string",
+    "pass": "boolean",
+    "metrics": {
+      "public_status": "integer",
+      "hidden_passed": "integer",
+      "hidden_failed": "integer",
+      "forbidden_change_count": "integer",
+      "changed_files": "string[]",
+      "duration_ms": "integer"
+    },
+    "public_test": "command/stdout/stderr",
+    "hidden": "stdout/stderr",
+    "forbidden_changes": "string[]"
+  },
+  "aggregation": "group records by task for one table per harness, then join task/category/model keys for an aggregate matrix"
+}

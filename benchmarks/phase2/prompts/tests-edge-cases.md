@@ -1,0 +1,1 @@
+Complete `parseRange` in `fixtures/phase2/tests-edge-cases/src/range.js` and add focused tests for important edge cases in its test file. Follow the README contract, preserve exports, and modify only the source and test file listed by the harness. Run the full public suite before finishing.

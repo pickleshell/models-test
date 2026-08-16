@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "stage": "prepared",
+  "executed": false,
+  "runtime": "node",
+  "tasks": [
+    {
+      "id": "bug-fix-ledger",
+      "category": "bug-fix",
+      "fixture": "fixtures/phase1-ledger",
+      "prompt": "benchmarks/phase2/prompts/bug-fix-ledger.md",
+      "public_test": "npm test --prefix fixtures/phase1-ledger",
+      "hidden_evaluator": "fixtures/phase2/hidden/bug-fix-ledger.mjs",
+      "reference_source": "fixtures/phase2/references/bug-fix-ledger/reconcile.js",
+      "allowed_changes": ["fixtures/phase1-ledger/src/reconcile.js"]
+    },
+    {
+      "id": "feature-implementation",
+      "category": "feature-implementation",
+      "fixture": "fixtures/phase2/feature-implementation",
+      "prompt": "benchmarks/phase2/prompts/feature-implementation.md",
+      "public_test": "npm test --prefix fixtures/phase2/feature-implementation",
+      "hidden_evaluator": "fixtures/phase2/hidden/feature-implementation.mjs",
+      "reference_source": "fixtures/phase2/references/feature-implementation/featureFlags.js",
+      "allowed_changes": ["fixtures/phase2/feature-implementation/src/featureFlags.js"]
+    },
+    {
+      "id": "refactoring",
+      "category": "refactoring",
+      "fixture": "fixtures/phase2/refactoring",
+      "prompt": "benchmarks/phase2/prompts/refactoring.md",
+      "public_test": "npm test --prefix fixtures/phase2/refactoring",
+      "hidden_evaluator": "fixtures/phase2/hidden/refactoring.mjs",
+      "reference_source": "fixtures/phase2/references/refactoring/events.js",
+      "allowed_changes": ["fixtures/phase2/refactoring/src/events.js"]
+    },
+    {
+      "id": "repository-navigation",
+      "category": "repository-navigation-change",
+      "fixture": "fixtures/phase2/repository-navigation",
+      "prompt": "benchmarks/phase2/prompts/repository-navigation.md",
+      "public_test": "npm test --prefix fixtures/phase2/repository-navigation",
+      "hidden_evaluator": "fixtures/phase2/hidden/repository-navigation.mjs",
+      "reference_source": "fixtures/phase2/references/repository-navigation/labels.js",
+      "allowed_changes": ["fixtures/phase2/repository-navigation/src/labels.js"]
+    },
+    {
+      "id": "tests-edge-cases",
+      "category": "tests-and-edge-cases",
+      "fixture": "fixtures/phase2/tests-edge-cases",
+      "prompt": "benchmarks/phase2/prompts/tests-edge-cases.md",
+      "public_test": "npm test --prefix fixtures/phase2/tests-edge-cases",
+      "hidden_evaluator": "fixtures/phase2/hidden/tests-edge-cases.mjs",
+      "reference_source": "fixtures/phase2/references/tests-edge-cases/range.js",
+      "allowed_changes": ["fixtures/phase2/tests-edge-cases/src/range.js", "fixtures/phase2/tests-edge-cases/test/range.test.mjs"]
+    }
+  ]
+}

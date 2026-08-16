@@ -1,0 +1,1 @@
+After exploring this small repository, implement the missing `formatLabel` behavior in `fixtures/phase2/repository-navigation/src/labels.js`. Follow the contract in the README, preserve exports, and modify only that source file. Run the public tests before finishing.

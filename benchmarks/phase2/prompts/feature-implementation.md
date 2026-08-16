@@ -1,0 +1,1 @@
+Implement `resolveFeature` in `fixtures/phase2/feature-implementation/src/featureFlags.js`. Follow the README contract and preserve the existing exports. Do not modify tests, package metadata, or files outside that source file. Run the public tests before finishing.

@@ -1,0 +1,1 @@
+Refactor `fixtures/phase2/refactoring/src/events.js` to remove the repeated event-filtering logic while preserving the documented public behavior and API. Do not modify tests or files outside that source file. Run the public tests before finishing.

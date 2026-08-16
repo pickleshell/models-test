@@ -1,0 +1,1 @@
+Fix the documented defect in `fixtures/phase1-ledger/src/reconcile.js`. Do not modify tests, benchmark scripts, package metadata, or files outside that source file. Preserve both exported APIs and make the smallest correct change. Run the fixture's public tests before finishing.

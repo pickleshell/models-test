@@ -4,6 +4,12 @@ A reproducible benchmark for empirical model selection in coding-agent workflows
 
 Authors: Me, ChatGPT, PickleShell, and 53 other models.
 
+## Phase 2: prepared multi-harness suite
+
+Phase 2 is **prepared and not yet executed**. It defines five independent coding-task harnesses in [`benchmarks/phase2/manifest.json`](benchmarks/phase2/manifest.json): bug fix (reusing the phase-1 ledger), feature implementation, refactoring, unfamiliar repository navigation/change, and tests plus edge cases. No models have been run and no phase-2 results have been published.
+
+The suite uses a shared prompt, detached-worktree preparation, evaluator, and result schema for every task. Each fixture has a deterministic local hidden evaluator, a reference solution, a deliberately failing baseline, and an allowed-change list. See [`benchmarks/phase2/README.md`](benchmarks/phase2/README.md) for the prepared-stage protocol.
+
 ## Phase 1: ledger reconciliation
 
 Every model received the same baseline and prompt to repair the JavaScript settlement reconciler in [`fixtures/phase1-ledger`](fixtures/phase1-ledger/). The task tests:
