@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "request_id": "req_mswewp8d-a7fe1b62",
+  "session_id": "ses_ff32e26cbffe0ksZ7gUtP18gT2",
+  "started_at": "2026-08-16T23:04:33.470Z",
+  "completed_at": "2026-08-16T23:07:22.441Z",
+  "duration_ms": 168971,
+  "model": "opencode/claude-opus-5",
+  "runtime": "opencode",
+  "provider": "OpenCode Zen",
+  "workspace": "/home/pickleshell/workspace/models-test/.worktrees/phase1/53-claude-opus-5",
+  "baseline": "d704fd1bd5743cda2e744042db55c04aa14b4f24",
+  "evaluator_exit_status": 0,
+  "public_reported": {
+    "passed": 4,
+    "total": 4
+  },
+  "public_test": {
+    "status": 0,
+    "passed": true,
+    "duration_ms": 156
+  },
+  "evaluator": {
+    "pass": true,
+    "hidden_passed": 4,
+    "hidden_failed": 0,
+    "forbidden_change_count": 0
+  },
+  "diff": {
+    "line_count": 61,
+    "changed_files": [
+      "fixtures/phase1-ledger/src/reconcile.js"
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+diff --git a/fixtures/phase1-ledger/src/reconcile.js b/fixtures/phase1-ledger/src/reconcile.js
+index 496d11c..191eadc 100644
+--- a/fixtures/phase1-ledger/src/reconcile.js
++++ b/fixtures/phase1-ledger/src/reconcile.js
+@@ -8,6 +8,15 @@ export function parseAmountToCents(amount) {
+   if (!Number.isFinite(value)) {
+     throw new Error(`invalid amount: ${amount}`);
+   }
++  
++  if (value < 0) {
++    throw new Error(`amount must be non-negative: ${amount}`);
++  }
++  
++  // Check for more than two decimal places
++  if (!/^(\d+(\.\d{0,2})?|\.?\d{1,2})$/.test(normalized)) {
++    throw new Error(`amount has more than two decimal places: ${amount}`);
++  }
+ 
+   return Math.round(value * 100);
+ }
+@@ -52,6 +61,7 @@ export function reconcileLedger(entries) {
+ 
+       if (seenIds.has(entry.id)) {
+         metrics.duplicateCount += 1;
++        continue;
+       }
+       seenIds.add(entry.id);
+ 
+@@ -68,7 +78,7 @@ export function reconcileLedger(entries) {
+           metrics.orphanRefundCount += 1;
+           continue;
+         }
+-        addTotal(totals, entry.accountId, entry.currency, day, -cents);
++        addTotal(totals, original.accountId, original.currency, day, -cents);
+         metrics.processed += 1;
+       } else {
+         throw new Error(`unsupported type: ${entry.type}`);
