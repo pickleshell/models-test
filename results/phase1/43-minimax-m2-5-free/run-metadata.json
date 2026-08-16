@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "model": "opencode/minimax-m2.5-free",
+  "workspace": "/home/pickleshell/workspace/models-test/.worktrees/phase1/43-minimax-m2-5-free",
+  "execution_state": "provider_error",
+  "evaluation": {
+    "run": false,
+    "reason": "Candidate failed before model/tool execution; no files modified and no tools used."
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "request_id": "req_msw70kwj-3d3e414d",
+      "duration_ms": 1276,
+      "execution_state": "error",
+      "agent_error": "Unexpected server error. Check server logs for details.",
+      "exit_code": 1,
+      "tools_used": false,
+      "files_modified": false
+    },
+    {
+      "attempt": 2,
+      "request_id": "req_msw7102b-3b50dfdd",
+      "duration_ms": 1279,
+      "execution_state": "error",
+      "agent_error": "Unexpected server error. Check server logs for details.",
+      "exit_code": 1,
+      "tools_used": false,
+      "files_modified": false
+    }
+  ],
+  "public_test": null,
+  "evaluator": {
+    "pass": false,
+    "skipped": true,
+    "hidden_passed": 0,
+    "hidden_failed": 0,
+    "forbidden_change_count": 0
+  }
+}

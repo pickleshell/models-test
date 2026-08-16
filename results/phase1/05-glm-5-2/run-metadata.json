@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "request_id": "req_msvtt3ki-08447b5d",
+  "duration_ms": 91990,
+  "model": "opencode-go/glm-5.2",
+  "workspace": "/home/pickleshell/workspace/models-test/.worktrees/phase1/05-glm-5-2",
+  "evaluator_exit_status": 0,
+  "public_test": {
+    "status": 0,
+    "passed": true,
+    "duration_ms": 507
+  },
+  "evaluator": {
+    "pass": true,
+    "hidden_passed": 4,
+    "hidden_failed": 0,
+    "forbidden_change_count": 0
+  }
+}

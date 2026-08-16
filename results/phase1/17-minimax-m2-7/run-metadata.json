@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "request_id": "req_msvyafex-351fe937",
+  "duration_ms": 36705,
+  "model": "opencode-go/minimax-m2.7",
+  "workspace": "/home/pickleshell/workspace/models-test/.worktrees/phase1/17-minimax-m2-7",
+  "evaluator_exit_status": 1,
+  "public_test": {
+    "status": 0,
+    "passed": true,
+    "duration_ms": 512
+  },
+  "evaluator": {
+    "pass": false,
+    "hidden_passed": 2,
+    "hidden_failed": 2,
+    "forbidden_change_count": 0
+  }
+}

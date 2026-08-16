@@ -1,0 +1,125 @@
+diff --git a/fixtures/phase1-ledger/src/reconcile.js b/fixtures/phase1-ledger/src/reconcile.js
+index 496d11c..8222fa8 100644
+--- a/fixtures/phase1-ledger/src/reconcile.js
++++ b/fixtures/phase1-ledger/src/reconcile.js
+@@ -3,13 +3,37 @@ export function parseAmountToCents(amount) {
+     throw new Error('amount must be a decimal string or number');
+   }
+ 
+-  const normalized = String(amount).trim().replace(/[$,]/g, '');
+-  const value = Number(normalized);
+-  if (!Number.isFinite(value)) {
++  if (typeof amount === 'number' && !Number.isFinite(amount)) {
+     throw new Error(`invalid amount: ${amount}`);
+   }
+ 
+-  return Math.round(value * 100);
++  let normalized = String(amount).trim();
++  if (normalized.startsWith('$')) normalized = normalized.slice(1);
++  normalized = normalized.replace(/,/g, '');
++
++  // Expand number notation so both string and number inputs are checked by
++  // the same decimal grammar (and are never rounded into a different value).
++  const exponent = normalized.match(/^([0-9]+(?:\.[0-9]*)?)[eE]([+-]?\d+)$/);
++  if (exponent) {
++    const [, coefficient, exponentText] = exponent;
++    const [whole, fraction = ''] = coefficient.split('.');
++    const digits = whole + fraction;
++    const decimalIndex = whole.length + Number(exponentText);
++    if (decimalIndex <= 0) {
++      normalized = `0.${'0'.repeat(-decimalIndex)}${digits}`;
++    } else if (decimalIndex >= digits.length) {
++      normalized = digits + '0'.repeat(decimalIndex - digits.length);
++    } else {
++      normalized = `${digits.slice(0, decimalIndex)}.${digits.slice(decimalIndex)}`;
++    }
++  }
++
++  const match = normalized.match(/^(\d+)(?:\.(\d{1,2}))?$/);
++  if (!match) throw new Error(`invalid amount: ${amount}`);
++
++  const cents = Number(match[1]) * 100 + Number((match[2] || '').padEnd(2, '0'));
++  if (!Number.isSafeInteger(cents)) throw new Error(`invalid amount: ${amount}`);
++  return cents;
+ }
+ 
+ function dayKey(createdAt) {
+@@ -17,7 +41,9 @@ function dayKey(createdAt) {
+   if (Number.isNaN(date.getTime())) {
+     throw new Error(`invalid createdAt: ${createdAt}`);
+   }
+-  return date.toLocaleDateString('en-CA');
++  return [date.getUTCFullYear(), date.getUTCMonth() + 1, date.getUTCDate()]
++    .map((part, index) => index === 0 ? String(part) : String(part).padStart(2, '0'))
++    .join('-');
+ }
+ 
+ function addTotal(totals, accountId, currency, day, cents) {
+@@ -43,15 +69,16 @@ export function reconcileLedger(entries) {
+     orphanRefundCount: 0
+   };
+ 
++  const validEntries = [];
++
+   for (const entry of entries) {
+     try {
+       if (!entry || typeof entry !== 'object') throw new Error('entry must be an object');
+       if (!entry.id) throw new Error('missing id');
+-      if (!entry.accountId) throw new Error('missing accountId');
+-      if (!entry.currency) throw new Error('missing currency');
+ 
+       if (seenIds.has(entry.id)) {
+         metrics.duplicateCount += 1;
++        continue;
+       }
+       seenIds.add(entry.id);
+ 
+@@ -59,17 +86,12 @@ export function reconcileLedger(entries) {
+       const day = dayKey(entry.createdAt);
+ 
+       if (entry.type === 'sale') {
+-        originals.set(entry.id, entry);
+-        addTotal(totals, entry.accountId, entry.currency, day, cents);
+-        metrics.processed += 1;
++        if (!entry.accountId) throw new Error('missing accountId');
++        if (!entry.currency) throw new Error('missing currency');
++        validEntries.push({ entry, cents, day });
+       } else if (entry.type === 'refund') {
+-        const original = originals.get(entry.originalId);
+-        if (!original) {
+-          metrics.orphanRefundCount += 1;
+-          continue;
+-        }
+-        addTotal(totals, entry.accountId, entry.currency, day, -cents);
+-        metrics.processed += 1;
++        if (!entry.originalId) throw new Error('missing originalId');
++        validEntries.push({ entry, cents, day });
+       } else {
+         throw new Error(`unsupported type: ${entry.type}`);
+       }
+@@ -78,6 +100,25 @@ export function reconcileLedger(entries) {
+     }
+   }
+ 
++  for (const { entry, cents, day } of validEntries) {
++    if (entry.type !== 'sale') continue;
++    originals.set(entry.id, entry);
++    addTotal(totals, entry.accountId, entry.currency, day, cents);
++    metrics.processed += 1;
++  }
++
++  for (const { entry, cents, day } of validEntries) {
++    if (entry.type !== 'refund') continue;
++
++    const original = originals.get(entry.originalId);
++    if (!original) {
++      metrics.orphanRefundCount += 1;
++      continue;
++    }
++    addTotal(totals, original.accountId, original.currency, day, -cents);
++    metrics.processed += 1;
++  }
++
+   return {
+     totals: [...totals.values()].sort((a, b) =>
+       a.accountId.localeCompare(b.accountId) ||

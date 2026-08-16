@@ -1,0 +1,54 @@
+diff --git a/fixtures/phase1-ledger/src/reconcile.js b/fixtures/phase1-ledger/src/reconcile.js
+index 496d11c..d878d0a 100644
+--- a/fixtures/phase1-ledger/src/reconcile.js
++++ b/fixtures/phase1-ledger/src/reconcile.js
+@@ -8,6 +8,12 @@ export function parseAmountToCents(amount) {
+   if (!Number.isFinite(value)) {
+     throw new Error(`invalid amount: ${amount}`);
+   }
++  if (value < 0) {
++    throw new Error(`negative amount: ${amount}`);
++  }
++  if (!/^\d+(\.\d{1,2})?$/.test(normalized)) {
++    throw new Error(`invalid amount: ${amount}`);
++  }
+ 
+   return Math.round(value * 100);
+ }
+@@ -17,7 +23,7 @@ function dayKey(createdAt) {
+   if (Number.isNaN(date.getTime())) {
+     throw new Error(`invalid createdAt: ${createdAt}`);
+   }
+-  return date.toLocaleDateString('en-CA');
++  return date.toISOString().slice(0, 10);
+ }
+ 
+ function addTotal(totals, accountId, currency, day, cents) {
+@@ -47,14 +53,16 @@ export function reconcileLedger(entries) {
+     try {
+       if (!entry || typeof entry !== 'object') throw new Error('entry must be an object');
+       if (!entry.id) throw new Error('missing id');
+-      if (!entry.accountId) throw new Error('missing accountId');
+-      if (!entry.currency) throw new Error('missing currency');
+ 
+       if (seenIds.has(entry.id)) {
+         metrics.duplicateCount += 1;
++        continue;
+       }
+       seenIds.add(entry.id);
+ 
++      if (!entry.accountId) throw new Error('missing accountId');
++      if (!entry.currency) throw new Error('missing currency');
++
+       const cents = parseAmountToCents(entry.amount);
+       const day = dayKey(entry.createdAt);
+ 
+@@ -68,7 +76,7 @@ export function reconcileLedger(entries) {
+           metrics.orphanRefundCount += 1;
+           continue;
+         }
+-        addTotal(totals, entry.accountId, entry.currency, day, -cents);
++        addTotal(totals, original.accountId, original.currency, day, -cents);
+         metrics.processed += 1;
+       } else {
+         throw new Error(`unsupported type: ${entry.type}`);

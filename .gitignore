@@ -1,7 +1,3 @@
-# Generated benchmark outputs
-results/*
-!results/.gitkeep
-
 # Local run state
 *.log
 *.tmp

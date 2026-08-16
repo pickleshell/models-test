@@ -1,0 +1,58 @@
+diff --git a/fixtures/phase1-ledger/src/reconcile.js b/fixtures/phase1-ledger/src/reconcile.js
+index 496d11c..a59b11f 100644
+--- a/fixtures/phase1-ledger/src/reconcile.js
++++ b/fixtures/phase1-ledger/src/reconcile.js
+@@ -4,12 +4,24 @@ export function parseAmountToCents(amount) {
+   }
+ 
+   const normalized = String(amount).trim().replace(/[$,]/g, '');
+-  const value = Number(normalized);
+-  if (!Number.isFinite(value)) {
++  if (normalized === '' || normalized === '.' || normalized.startsWith('-')) {
+     throw new Error(`invalid amount: ${amount}`);
+   }
+ 
+-  return Math.round(value * 100);
++  const parts = normalized.split('.');
++  if (parts.length > 2) {
++    throw new Error(`invalid amount: ${amount}`);
++  }
++  if (parts.length === 2 && parts[1].length > 2) {
++    throw new Error(`invalid amount: ${amount}`);
++  }
++  if (parts.some(p => p !== '' && !/^\d+$/.test(p))) {
++    throw new Error(`invalid amount: ${amount}`);
++  }
++
++  const whole = parts[0] ? parseInt(parts[0], 10) * 100 : 0;
++  const frac = parts[1] ? parseInt(parts[1].padEnd(2, '0').slice(0, 2), 10) : 0;
++  return whole + frac;
+ }
+ 
+ function dayKey(createdAt) {
+@@ -17,7 +29,7 @@ function dayKey(createdAt) {
+   if (Number.isNaN(date.getTime())) {
+     throw new Error(`invalid createdAt: ${createdAt}`);
+   }
+-  return date.toLocaleDateString('en-CA');
++  return date.toISOString().slice(0, 10);
+ }
+ 
+ function addTotal(totals, accountId, currency, day, cents) {
+@@ -52,6 +64,7 @@ export function reconcileLedger(entries) {
+ 
+       if (seenIds.has(entry.id)) {
+         metrics.duplicateCount += 1;
++        continue;
+       }
+       seenIds.add(entry.id);
+ 
+@@ -68,7 +81,7 @@ export function reconcileLedger(entries) {
+           metrics.orphanRefundCount += 1;
+           continue;
+         }
+-        addTotal(totals, entry.accountId, entry.currency, day, -cents);
++        addTotal(totals, original.accountId, original.currency, day, -cents);
+         metrics.processed += 1;
+       } else {
+         throw new Error(`unsupported type: ${entry.type}`);

@@ -1,0 +1,12 @@
+diff --git a/fixtures/phase1-ledger/src/reconcile.js b/fixtures/phase1-ledger/src/reconcile.js
+index 496d11c..4ca1499 100644
+--- a/fixtures/phase1-ledger/src/reconcile.js
++++ b/fixtures/phase1-ledger/src/reconcile.js
+@@ -52,6 +52,7 @@ export function reconcileLedger(entries) {
+ 
+       if (seenIds.has(entry.id)) {
+         metrics.duplicateCount += 1;
++        continue;
+       }
+       seenIds.add(entry.id);
+ 

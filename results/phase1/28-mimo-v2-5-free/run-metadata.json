@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "request_id": "req_msw0g37i-c8665e90",
+  "duration_ms": 79247,
+  "model": "opencode/mimo-v2.5-free",
+  "workspace": "/home/pickleshell/workspace/models-test/.worktrees/phase1/28-mimo-v2-5-free",
+  "evaluator_exit_status": 1,
+  "public_test": {
+    "status": 0,
+    "passed": true,
+    "duration_ms": 512
+  },
+  "evaluator": {
+    "pass": false,
+    "hidden_passed": 3,
+    "hidden_failed": 1,
+    "forbidden_change_count": 0
+  }
+}

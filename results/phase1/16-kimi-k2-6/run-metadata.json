@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "request_id": "req_msvy6huq-4deabdf2",
+  "duration_ms": 159868,
+  "model": "opencode-go/kimi-k2.6",
+  "workspace": "/home/pickleshell/workspace/models-test/.worktrees/phase1/16-kimi-k2-6",
+  "evaluator_exit_status": 0,
+  "public_test": {
+    "status": 0,
+    "passed": true,
+    "duration_ms": 525
+  },
+  "evaluator": {
+    "pass": true,
+    "hidden_passed": 4,
+    "hidden_failed": 0,
+    "forbidden_change_count": 0
+  }
+}

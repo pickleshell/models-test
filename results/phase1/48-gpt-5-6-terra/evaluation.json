@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "benchmark": "phase1-ledger",
+  "model": "gpt-5.6-terra",
+  "workspace": "/home/pickleshell/workspace/models-test/.worktrees/phase1/48-gpt-5-6-terra",
+  "pass": true,
+  "metrics": {
+    "public_status": 0,
+    "public_duration_ms": 503,
+    "hidden_passed": 4,
+    "hidden_failed": 0,
+    "forbidden_change_count": 0,
+    "changed_files": [
+      "fixtures/phase1-ledger/src/reconcile.js"
+    ]
+  },
+  "public_test": {
+    "command": "npm test --prefix /home/pickleshell/workspace/models-test/.worktrees/phase1/48-gpt-5-6-terra/fixtures/phase1-ledger",
+    "stdout": "\n> phase1-ledger-fixture@0.1.0 test\n> node --test test/*.test.mjs\n\nTAP version 13\n# Subtest: parses ordinary decimal money into cents\nok 1 - parses ordinary decimal money into cents\n  ---\n  duration_ms: 1.279653\n  ...\n# Subtest: summarizes sales by account, currency, and UTC day\nok 2 - summarizes sales by account, currency, and UTC day\n  ---\n  duration_ms: 5.955201\n  ...\n# Subtest: does not double count duplicate transaction ids\nok 3 - does not double count duplicate transaction ids\n  ---\n  duration_ms: 0.150643\n  ...\n# Subtest: counts invalid rows and orphan refunds without adding them to totals\nok 4 - counts invalid rows and orphan refunds without adding them to totals\n  ---\n  duration_ms: 0.242154\n  ...\n1..4\n# tests 4\n# suites 0\n# pass 4\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 117.628897\n",
+    "stderr": ""
+  },
+  "hidden": {
+    "passed": 4,
+    "failed": 0,
+    "failures": []
+  },
+  "forbidden_changes": []
+}

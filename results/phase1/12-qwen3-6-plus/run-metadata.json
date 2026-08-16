@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "request_id": "req_msvv2xvy-2010d75e",
+  "duration_ms": 600008,
+  "model": "opencode-go/qwen3.6-plus",
+  "workspace": "/home/pickleshell/workspace/models-test/.worktrees/phase1/12-qwen3-6-plus",
+  "execution_state": "timeout",
+  "error": {
+    "class": "timeout",
+    "message": "Agent response timeout",
+    "signal": "SIGKILL"
+  },
+  "evaluation": {
+    "run": false,
+    "reason": "candidate timed out with no tools used and no files modified",
+    "pass": false
+  },
+  "metadata": {
+    "files_modified": [],
+    "tools_used": []
+  },
+  "candidate_diff_lines": 0
+}

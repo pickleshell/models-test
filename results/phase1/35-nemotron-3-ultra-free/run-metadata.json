@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "request_id": "req_msw62o2g-3ccf0348",
+  "duration_ms": 99421,
+  "model": "opencode/nemotron-3-ultra-free",
+  "workspace": "/home/pickleshell/workspace/models-test/.worktrees/phase1/35-nemotron-3-ultra-free",
+  "execution_state": "agent_error_with_partial_patch",
+  "agent_error": "Streaming response failed: [502] Upstream error from Nvidia: Internal server error",
+  "exit_code": 1,
+  "tools": [
+    "bash",
+    "read",
+    "write"
+  ],
+  "files_modified": [
+    "fixtures/phase1-ledger/src/reconcile.js"
+  ],
+  "candidate_finished_tests": false,
+  "evaluator_exit_status": 0,
+  "evaluation": {
+    "run": true,
+    "note": "Evaluator measured the partial worktree only; execution outcome remains error, not pass."
+  },
+  "public_test": {
+    "status": 0,
+    "passed": true,
+    "duration_ms": 511
+  },
+  "evaluator": {
+    "pass": true,
+    "hidden_passed": 4,
+    "hidden_failed": 0,
+    "forbidden_change_count": 0
+  }
+}

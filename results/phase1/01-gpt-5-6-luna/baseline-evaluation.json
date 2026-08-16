@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "benchmark": "phase1-ledger",
+  "model": "opencode-go/gpt-5.6-luna",
+  "workspace": "/home/pickleshell/workspace/models-test/.worktrees/phase1/01-gpt-5-6-luna",
+  "pass": false,
+  "metrics": {
+    "public_status": 1,
+    "public_duration_ms": 514,
+    "hidden_passed": 1,
+    "hidden_failed": 3,
+    "forbidden_change_count": 0,
+    "changed_files": []
+  },
+  "public_test": {
+    "command": "npm test --prefix /home/pickleshell/workspace/models-test/.worktrees/phase1/01-gpt-5-6-luna/fixtures/phase1-ledger",
+    "stdout": "\n> phase1-ledger-fixture@0.1.0 test\n> node --test test/*.test.mjs\n\nTAP version 13\n# Subtest: parses ordinary decimal money into cents\nok 1 - parses ordinary decimal money into cents\n  ---\n  duration_ms: 1.239428\n  ...\n# Subtest: summarizes sales by account, currency, and UTC day\nok 2 - summarizes sales by account, currency, and UTC day\n  ---\n  duration_ms: 11.40718\n  ...\n# Subtest: does not double count duplicate transaction ids\nnot ok 3 - does not double count duplicate transaction ids\n  ---\n  duration_ms: 1.323255\n  location: 'file:///home/pickleshell/workspace/models-test/.worktrees/phase1/01-gpt-5-6-luna/fixtures/phase1-ledger/test/reconcile.test.mjs:24:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly equal:\n    \n    2 !== 1\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: 1\n  actual: 2\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///home/pickleshell/workspace/models-test/.worktrees/phase1/01-gpt-5-6-luna/fixtures/phase1-ledger/test/reconcile.test.mjs:31:10)\n    Test.runInAsyncScope (node:async_hooks:203:9)\n    Test.run (node:internal/test_runner/test:631:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:374:18)\n    Test.postRun (node:internal/test_runner/test:715:19)\n    Test.run (node:internal/test_runner/test:673:12)\n    async Test.processPendingSubtests (node:internal/test_runner/test:374:7)\n  ...\n# Subtest: counts invalid rows and orphan refunds without adding them to totals\nok 4 - counts invalid rows and orphan refunds without adding them to totals\n  ---\n  duration_ms: 0.174097\n  ...\n1..4\n# tests 4\n# suites 0\n# pass 3\n# fail 1\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 124.373636\n",
+    "stderr": ""
+  },
+  "hidden": {
+    "passed": 1,
+    "failed": 3,
+    "failures": [
+      {
+        "name": "rejects over-precise and negative money",
+        "message": "Missing expected exception."
+      },
+      {
+        "name": "refunds apply to original account and currency",
+        "message": "Expected values to be strictly deep-equal:\n+ actual - expected ... Lines skipped\n\n  [\n    {\n...\n    },\n    {\n+     accountId: 'processor-hold',\n-     accountId: 'merchant-a',\n      count: 1,\n+     currency: 'EUR',\n-     currency: 'USD',\n      day: '2026-03-02',\n      netCents: -999\n    }\n  ]"
+      },
+      {
+        "name": "duplicate ids are first-write-wins before validation",
+        "message": "metric invalidCount"
+      }
+    ]
+  },
+  "forbidden_changes": []
+}

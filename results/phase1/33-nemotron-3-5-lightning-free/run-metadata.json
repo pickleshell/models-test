@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "request_id": "req_msw1my0g-b3fd0f7d",
+  "duration_ms": 202094,
+  "model": "opencode/nemotron-3.5-lightning-free",
+  "workspace": "/home/pickleshell/workspace/models-test/.worktrees/phase1/33-nemotron-3-5-lightning-free",
+  "evaluator_exit_status": 0,
+  "public_test": {
+    "status": 0,
+    "passed": true,
+    "duration_ms": 504
+  },
+  "evaluator": {
+    "pass": true,
+    "hidden_passed": 4,
+    "hidden_failed": 0,
+    "forbidden_change_count": 0
+  }
+}

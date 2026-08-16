@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "request_id": "req_msw7do37-d2b7826f",
+  "duration_ms": 83836,
+  "model": "gpt-5.6-sol",
+  "runtime": "codex",
+  "codex_transport": "mcp",
+  "workspace": "/home/pickleshell/workspace/models-test/.worktrees/phase1/47-gpt-5-6-sol",
+  "baseline": "d704fd1bd5743cda2e744042db55c04aa14b4f24",
+  "evaluator_exit_status": 0,
+  "public_reported": {
+    "passed": 4,
+    "total": 4
+  },
+  "public_test": {
+    "status": 0,
+    "passed": true,
+    "duration_ms": 508
+  },
+  "evaluator": {
+    "pass": true,
+    "hidden_passed": 4,
+    "hidden_failed": 0,
+    "forbidden_change_count": 0
+  },
+  "diff": {
+    "line_count": 69,
+    "changed_files": [
+      "fixtures/phase1-ledger/src/reconcile.js"
+    ]
+  }
+}
