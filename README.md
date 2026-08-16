@@ -40,6 +40,8 @@ Twenty-eight candidates produced patches and received quality scores. Twenty-two
 
 Visible patches are scored from 1–10 on simplicity, readability, absence of extra code, reliability, and edge-case handling. Overall is the arithmetic mean of those five integer scores. Anchors are 10 exceptional, 8 strong, 6 adequate, 4 fragile or needlessly complex, and 2 seriously flawed. The review is necessarily comparative and subjective, but correctness evidence constrains reliability and edge-case scores. Price is reserved as TBD.
 
+**[Open the interactive model comparison](https://pickleshell.github.io/model-comparison.html) for sortable columns and pricing dated on the page.**
+
 | Rank | Model | Simplicity | Readability | No extra code | Reliability | Edge cases | Overall | Seconds | Price |
 |---:|---|---:|---:|---:|---:|---:|---:|---:|---|
 | 1 | gpt-5.6-terra | 9 | 9 | 9 | 10 | 10 | 9.4 | 52.637 | TBD |
