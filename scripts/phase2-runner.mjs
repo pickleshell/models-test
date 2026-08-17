@@ -54,7 +54,7 @@ export function agentCommand(candidate, prompt, workspace) {
   }
   return {
     command: 'opencode',
-    args: ['run', '--model', candidate.model, '--auto', prompt],
+    args: ['run', '--model', candidate.model, '--dir', workspace, prompt],
     cwd: workspace
   };
 }

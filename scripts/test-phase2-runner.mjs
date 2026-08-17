@@ -18,11 +18,11 @@ test('derives only non-empty patch candidates with exact runtime and model', asy
   assert.equal(candidates.some((item) => item.id === '08-qwen3-7-max'), false);
 });
 
-test('builds the OpenCode invocation with the prompt positional and workspace cwd', () => {
+test('builds the isolated OpenCode invocation with exact args and workspace cwd', () => {
   const workspace = path.join(root, '.worktrees/phase2/01-test-model/task');
   assert.deepEqual(agentCommand(candidate(), 'Do the task.\n', workspace), {
     command: 'opencode',
-    args: ['run', '--model', 'opencode/test-model', '--auto', 'Do the task.\n'],
+    args: ['run', '--model', 'opencode/test-model', '--dir', workspace, 'Do the task.\n'],
     cwd: workspace
   });
 });
