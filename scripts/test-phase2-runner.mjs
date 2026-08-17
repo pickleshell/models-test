@@ -4,7 +4,7 @@ import { mkdtemp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import test from 'node:test';
-import { agentCommand, deriveCandidates, executePlan, runProcess } from './phase2-runner.mjs';
+import { agentCommand, deriveCandidates, executePlan, ptyCommand, runProcess } from './phase2-runner.mjs';
 
 const root = process.cwd();
 
@@ -23,8 +23,29 @@ test('builds the isolated OpenCode invocation with exact args and workspace cwd'
   assert.deepEqual(agentCommand(candidate(), 'Do the task.\n', workspace), {
     command: 'opencode',
     args: ['run', '--model', 'opencode/test-model', '--dir', workspace, '--auto', 'Do the task.\n'],
-    cwd: workspace
+    cwd: workspace,
+    pty: true
   });
+});
+
+test('wraps the exact command in a PTY without interpreting special arguments', async () => {
+  const workspace = "/tmp/work space/'quoted'";
+  const prompt = "spaces 'quotes' `backticks` $dollars\nsecond line";
+  const [command, args] = ptyCommand('opencode', ['run', '--model', 'model/$x', '--dir', workspace, '--auto', prompt]);
+  assert.equal(command, 'script');
+  assert.deepEqual(args.slice(0, 1), ['-qefc']);
+  assert.match(args[1], /'opencode' 'run' '--model' 'model\/\$x'/);
+  assert.ok(args[1].includes("'/tmp/work space/'\\''quoted'\\'''"));
+  assert.ok(args[1].includes("'spaces '\\''quotes'\\'' `backticks` $dollars\nsecond line'"));
+  assert.deepEqual(args.slice(-1), ['/dev/null']);
+});
+
+test('PTY child reports a TTY and preserves special-character arguments', async () => {
+  const values = ['space value', "quote'value", '`ticks`', '$dollars', 'line\none'];
+  const script = "process.stdout.write(JSON.stringify({tty: process.stdin.isTTY, args: process.argv.slice(1)}))";
+  const result = await runProcess(process.execPath, ['-e', script, ...values], { pty: true, timeoutMs: 1000 });
+  assert.equal(result.status, 0);
+  assert.deepEqual(JSON.parse(result.stdout.trim()), { tty: true, args: values });
 });
 
 test('runs a command to completion with captured output', async () => {

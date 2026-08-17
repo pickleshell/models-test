@@ -49,13 +49,15 @@ export function agentCommand(candidate, prompt, workspace) {
   if (candidate.runtime === 'codex') {
     return {
       command: 'codex',
-      args: ['exec', '--model', candidate.model, '--cd', workspace, '--sandbox', 'workspace-write', '--ask-for-approval', 'never', prompt]
+      args: ['exec', '--model', candidate.model, '--cd', workspace, '--sandbox', 'workspace-write', '--ask-for-approval', 'never', prompt],
+      pty: true
     };
   }
   return {
     command: 'opencode',
     args: ['run', '--model', candidate.model, '--dir', workspace, '--auto', prompt],
-    cwd: workspace
+    cwd: workspace,
+    pty: true
   };
 }
 
@@ -66,16 +68,31 @@ async function writeJson(file, value) {
   await rename(temporary, file);
 }
 
+function shellQuote(value) {
+  return `'${String(value).replaceAll("'", "'\\''")}'`;
+}
+
+export function ptyCommand(command, args) {
+  return ['script', ['-qefc', [command, ...args].map(shellQuote).join(' '), '/dev/null']];
+}
+
 export async function runProcess(command, args, options = {}) {
   const timeoutMs = options.timeoutMs ?? DEFAULT_TIMEOUT_SECONDS * 1000;
   const started = Date.now();
+  if (options.pty) {
+    try {
+      await execFileAsync('script', ['--version']);
+    } catch (error) {
+      const message = `PTY allocation unavailable: util-linux script could not be executed (${error.message})`;
+      return { status: null, signal: null, stdout: '', stderr: message, duration_ms: Date.now() - started, timed_out: false, cancelled: false, spawn_error: message };
+    }
+  }
   return new Promise((resolve) => {
     let timedOut = false;
     let cancelled = false;
-    // setsid makes the spawned command the leader of a separate process group
-    // without detaching its stdio, so normal OpenCode runs remain interactive
-    // through pipes while cleanup can signal the entire descendant tree.
-    const child = spawn('setsid', ['--', command, ...args], { cwd: options.cwd, env: options.env });
+    // script gives agent CLIs a PTY; setsid keeps the whole tree in one group.
+    const [executable, executableArgs] = options.pty ? ptyCommand(command, args) : [command, args];
+    const child = spawn('setsid', ['--', executable, ...executableArgs], { cwd: options.cwd, env: options.env });
     const stdout = [], stderr = [];
     child.stdout.on('data', (chunk) => stdout.push(chunk));
     child.stderr.on('data', (chunk) => stderr.push(chunk));
@@ -90,7 +107,10 @@ export async function runProcess(command, args, options = {}) {
     child.on('error', (error) => {
       clearTimeout(timer);
       options.signal?.removeEventListener('abort', onAbort);
-      resolve({ status: null, signal: null, stdout: Buffer.concat(stdout).toString(), stderr: `${Buffer.concat(stderr)}${error.message}`, duration_ms: Date.now() - started, timed_out: timedOut, spawn_error: error.message });
+      const message = options.pty && error.code === 'ENOENT'
+        ? 'PTY allocation unavailable: util-linux script was not found'
+        : error.message;
+      resolve({ status: null, signal: null, stdout: Buffer.concat(stdout).toString(), stderr: `${Buffer.concat(stderr)}${message}`, duration_ms: Date.now() - started, timed_out: timedOut, spawn_error: message });
     });
     child.on('close', (status, signal) => {
       clearTimeout(timer);
@@ -167,7 +187,7 @@ export async function executePlan({ repo, candidates, manifest, baseline = 'HEAD
     const prompt = await readFile(path.join(repo, item.task.prompt), 'utf8');
     const command = agentCommand(item.candidate, prompt, item.workspace);
     const restoreEvaluator = await hideEvaluator(repo, item.workspace, item.task);
-    const agent = await run(command.command, command.args, { cwd: item.workspace, timeoutMs: timeoutSeconds * 1000 });
+    const agent = await run(command.command, command.args, { cwd: item.workspace, pty: command.pty, timeoutMs: timeoutSeconds * 1000 });
     await writeFile(path.join(item.resultDir, 'agent.stdout.txt'), agent.stdout);
     await writeFile(path.join(item.resultDir, 'agent.stderr.txt'), agent.stderr);
     await restoreEvaluator();
