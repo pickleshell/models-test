@@ -28,6 +28,20 @@ test('builds the isolated OpenCode invocation with exact args and workspace cwd'
   });
 });
 
+test('builds the current noninteractive Codex invocation with exact safe args', () => {
+  const workspace = path.join(root, '.worktrees/phase2/18-codex/task');
+  const command = agentCommand({
+    id: '18-codex', slug: '18-codex', runtime: 'codex', model: 'gpt-5.3-codex-spark'
+  }, 'Do the task.\n', workspace);
+  assert.deepEqual(command, {
+    command: 'codex',
+    args: ['exec', '--model', 'gpt-5.3-codex-spark', '--cd', workspace, '--sandbox', 'workspace-write', '--approve-for-me', 'Do the task.\n'],
+    pty: true
+  });
+  assert.equal(command.args.includes('--ask-for-approval'), false);
+  assert.equal(command.args.includes('never'), false);
+});
+
 test('wraps the exact command in a PTY without interpreting special arguments', async () => {
   const workspace = "/tmp/work space/'quoted'";
   const prompt = "spaces 'quotes' `backticks` $dollars\nsecond line";
