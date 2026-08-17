@@ -1,0 +1,116 @@
+[0m
+> build · minimax-m2.7
+[0m
+[0m→ [0mRead fixtures/phase1-ledger/src/reconcile.js
+[0m✱ [0mGlob "fixtures/phase1-ledger/**/*.test.*"[90m 1 match[0m
+[0m→ [0mRead fixtures/phase1-ledger/test/reconcile.test.mjs
+[0m
+Let me run the tests to see what's failing:
+[0m
+[0m$ [0mcd /home/pickleshell/workspace/models-test/.worktrees/phase2/17-minimax-m2-7/bug-fix-ledger/fixtures/phase1-ledger && node --test test/reconcile.test.mjs 2>&1
+TAP version 13
+# Subtest: parses ordinary decimal money into cents
+ok 1 - parses ordinary decimal money into cents
+  ---
+  duration_ms: 0.954913
+  ...
+# Subtest: summarizes sales by account, currency, and UTC day
+ok 2 - summarizes sales by account, currency, and UTC day
+  ---
+  duration_ms: 12.500411
+  ...
+# Subtest: does not double count duplicate transaction ids
+not ok 3 - does not double count duplicate transaction ids
+  ---
+  duration_ms: 1.018823
+  location: '/home/pickleshell/workspace/models-test/.worktrees/phase2/17-minimax-m2-7/bug-fix-ledger/fixtures/phase1-ledger/test/reconcile.test.mjs:24:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    2 !== 1
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 1
+  actual: 2
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///home/pickleshell/workspace/models-test/.worktrees/phase2/17-minimax-m2-7/bug-fix-ledger/fixtures/phase1-ledger/test/reconcile.test.mjs:31:10)
+    Test.runInAsyncScope (node:async_hooks:206:9)
+    Test.run (node:internal/test_runner/test:796:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:526:18)
+    Test.postRun (node:internal/test_runner/test:889:19)
+    Test.run (node:internal/test_runner/test:835:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:526:7)
+  ...
+# Subtest: counts invalid rows and orphan refunds without adding them to totals
+ok 4 - counts invalid rows and orphan refunds without adding them to totals
+  ---
+  duration_ms: 0.170059
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 3
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 62.560639
+[0m
+The test "does not double count duplicate transaction ids" is failing because when a duplicate is detected, the code increments `duplicateCount` but continues processing the entry anyway. The duplicate gets added to totals.
+
+The fix is to add `continue` after detecting a duplicate:
+[0m
+[0m← [0mEdit fixtures/phase1-ledger/src/reconcile.js
+Index: /home/pickleshell/workspace/models-test/.worktrees/phase2/17-minimax-m2-7/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+===================================================================
+--- /home/pickleshell/workspace/models-test/.worktrees/phase2/17-minimax-m2-7/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
++++ /home/pickleshell/workspace/models-test/.worktrees/phase2/17-minimax-m2-7/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+@@ -51,8 +51,9 @@
+ if (!entry.currency) throw new Error('missing currency');
+ 
+ if (seenIds.has(entry.id)) {
+   metrics.duplicateCount += 1;
++  continue;
+ }
+ seenIds.add(entry.id);
+ 
+ const cents = parseAmountToCents(entry.amount);
+
+[0m
+[0m$ [0mcd /home/pickleshell/workspace/models-test/.worktrees/phase2/17-minimax-m2-7/bug-fix-ledger/fixtures/phase1-ledger && node --test test/reconcile.test.mjs 2>&1
+TAP version 13
+# Subtest: parses ordinary decimal money into cents
+ok 1 - parses ordinary decimal money into cents
+  ---
+  duration_ms: 0.960995
+  ...
+# Subtest: summarizes sales by account, currency, and UTC day
+ok 2 - summarizes sales by account, currency, and UTC day
+  ---
+  duration_ms: 11.76951
+  ...
+# Subtest: does not double count duplicate transaction ids
+ok 3 - does not double count duplicate transaction ids
+  ---
+  duration_ms: 0.174277
+  ...
+# Subtest: counts invalid rows and orphan refunds without adding them to totals
+ok 4 - counts invalid rows and orphan refunds without adding them to totals
+  ---
+  duration_ms: 0.168827
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 4
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 59.376791
+[0m
+All 4 tests pass. The fix was adding `continue` after detecting a duplicate entry ID—previously the code counted duplicates but still processed them, causing double-counting in totals.
+[0m

@@ -1,0 +1,89 @@
+[0m
+> build · mimo-v2.5-pro
+[0m
+[0m→ [0mRead .
+[0m→ [0mRead fixtures/phase2/feature-implementation
+[0m→ [0mRead README.md
+[0m→ [0mRead fixtures/phase2/feature-implementation/README.md
+[0m→ [0mRead fixtures/phase2/feature-implementation/src/featureFlags.js
+[0m→ [0mRead fixtures/phase2/feature-implementation/package.json
+[0m✱ [0mGlob "test/*.test.mjs"[90m in fixtures/phase2/feature-implementation · 1 match[0m
+[0m→ [0mRead fixtures/phase2/feature-implementation/test/featureFlags.test.mjs
+[0m
+[0m← [0mEdit fixtures/phase2/feature-implementation/src/featureFlags.js
+Index: /home/pickleshell/workspace/models-test/.worktrees/phase2/07-mimo-v2-5-pro/feature-implementation/fixtures/phase2/feature-implementation/src/featureFlags.js
+===================================================================
+--- /home/pickleshell/workspace/models-test/.worktrees/phase2/07-mimo-v2-5-pro/feature-implementation/fixtures/phase2/feature-implementation/src/featureFlags.js
++++ /home/pickleshell/workspace/models-test/.worktrees/phase2/07-mimo-v2-5-pro/feature-implementation/fixtures/phase2/feature-implementation/src/featureFlags.js
+@@ -1,5 +1,29 @@
++function stableHash(str) {
++  let hash = 0;
++  for (let i = 0; i < str.length; i++) {
++    hash = ((hash << 5) - hash + str.charCodeAt(i)) | 0;
++  }
++  return Math.abs(hash) % 100;
++}
++
+ export function resolveFeature(config, context) {
+   if (!config || !context || typeof context !== 'object') return false;
++  
++  if (context.overrides && typeof context.overrides === 'object') {
++    const override = context.overrides[context.feature];
++    if (typeof override === 'boolean') return override;
++  }
++  
+   const flag = config[context.feature];
+-  return typeof flag === 'boolean' ? flag : Boolean(flag && flag.enabled);
++  if (typeof flag === 'boolean') return flag;
++  if (!flag || typeof flag !== 'object') return false;
++  
++  if (typeof flag.enabled === 'boolean' && !flag.enabled) return false;
++  
++  if (typeof flag.rollout === 'number' && flag.rollout >= 0 && flag.rollout <= 100) {
++    if (!context.userId || typeof context.userId !== 'string') return false;
++    return stableHash(context.userId) < flag.rollout;
++  }
++  
++  return Boolean(flag.enabled);
+ }
+
+[0m
+Now I understand the contract. Let me implement the solution:
+[0m
+[0m$ [0mnpm test
+> test
+> node --test test/*.test.mjs
+
+TAP version 13
+# Subtest: supports boolean flags and explicit overrides
+ok 1 - supports boolean flags and explicit overrides
+  ---
+  duration_ms: 0.936929
+  ...
+# Subtest: enables a 100 percent rollout for a user
+ok 2 - enables a 100 percent rollout for a user
+  ---
+  duration_ms: 0.136155
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 42.684874
+[0m
+[0m→ [0mRead fixtures/phase2/feature-implementation/src/featureFlags.js
+[0m
+All tests pass. The implementation:
+
+1. **`context.overrides`** - Boolean overrides take highest priority
+2. **Boolean flags** - Direct boolean flag values are returned as-is  
+3. **Object flags with `enabled`** - Explicitly `false` returns false
+4. **Object flags with `rollout`** - Uses stable hash of `userId` to determine eligibility (0-100%)
+5. **Missing/invalid** - Returns `false` for any invalid input
+
+The function preserves the existing export and doesn't mutate either argument.
+[0m

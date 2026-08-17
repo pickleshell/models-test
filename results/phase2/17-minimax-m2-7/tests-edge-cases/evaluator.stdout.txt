@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "benchmark": "phase2",
+  "task": "tests-edge-cases",
+  "category": "tests-and-edge-cases",
+  "model": "opencode-go/minimax-m2.7",
+  "pass": false,
+  "metrics": {
+    "public_status": 0,
+    "hidden_passed": 0,
+    "hidden_failed": 1,
+    "forbidden_change_count": 0,
+    "changed_files": [
+      "fixtures/phase2/tests-edge-cases/src/range.js",
+      "fixtures/phase2/tests-edge-cases/test/range.test.mjs"
+    ],
+    "duration_ms": 188
+  },
+  "public_test": {
+    "command": "npm test --prefix fixtures/phase2/tests-edge-cases",
+    "stdout": "\n> test\n> node --test test/*.test.mjs\n\nTAP version 13\n# Subtest: parses an inclusive range\nok 1 - parses an inclusive range\n  ---\n  duration_ms: 1.173514\n  ...\n# Subtest: accepts surrounding whitespace\nok 2 - accepts surrounding whitespace\n  ---\n  duration_ms: 0.655361\n  ...\n# Subtest: rejects malformed ranges\nok 3 - rejects malformed ranges\n  ---\n  duration_ms: 0.153308\n  ...\n# Subtest: rejects a reversed range\nok 4 - rejects a reversed range\n  ---\n  duration_ms: 0.104416\n  ...\n# Subtest: rejects out-of-bounds start\nok 5 - rejects out-of-bounds start\n  ---\n  duration_ms: 0.103515\n  ...\n# Subtest: rejects out-of-bounds end\nok 6 - rejects out-of-bounds end\n  ---\n  duration_ms: 0.09599\n  ...\n# Subtest: rejects lower bound violation\nok 7 - rejects lower bound violation\n  ---\n  duration_ms: 0.093606\n  ...\n# Subtest: accepts boundary values\nok 8 - accepts boundary values\n  ---\n  duration_ms: 0.122069\n  ...\n# Subtest: rejects missing right operand\nok 9 - rejects missing right operand\n  ---\n  duration_ms: 0.1704\n  ...\n# Subtest: rejects missing left operand\nok 10 - rejects missing left operand\n  ---\n  duration_ms: 0.167425\n  ...\n# Subtest: rejects empty string\nok 11 - rejects empty string\n  ---\n  duration_ms: 0.109806\n  ...\n# Subtest: rejects non-string input\nok 12 - rejects non-string input\n  ---\n  duration_ms: 0.120466\n  ...\n# Subtest: rejects object input\nok 13 - rejects object input\n  ---\n  duration_ms: 0.100438\n  ...\n# Subtest: rejects decimal values\nok 14 - rejects decimal values\n  ---\n  duration_ms: 0.153328\n  ...\n# Subtest: rejects extra parts\nok 15 - rejects extra parts\n  ---\n  duration_ms: 0.100178\n  ...\n# Subtest: rejects start greater than end\nok 16 - rejects start greater than end\n  ---\n  duration_ms: 0.160361\n  ...\n1..16\n# tests 16\n# suites 0\n# pass 16\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 51.054002\n",
+    "stderr": ""
+  },
+  "hidden": {
+    "stdout": "",
+    "stderr": "node:internal/modules/run_main:123\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: 1.0..2\n+ actual - expected\n\n+ {\n+   end: 2,\n+   start: 1\n+ }\n- null\n    at file:///home/pickleshell/workspace/models-test/.worktrees/phase2/17-minimax-m2-7/tests-edge-cases/fixtures/phase2/hidden/tests-edge-cases.mjs:6:79 {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: { start: 1, end: 2 },\n  expected: null,\n  operator: 'strictEqual'\n}\n\nNode.js v20.20.2\n"
+  },
+  "forbidden_changes": []
+}

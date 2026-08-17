@@ -1,0 +1,56 @@
+[0m
+> build · mimo-v2.5-free
+[0m
+[0m• [0mExplore repository structure[90m Explore Agent[0m
+[0m✓ [0mExplore repository structure[90m Explore Agent[0m
+[0m→ [0mRead fixtures/phase2/repository-navigation/src/labels.js
+[0m
+Now I'll implement the `formatLabel` function and run the tests.
+[0m
+[0m← [0mEdit fixtures/phase2/repository-navigation/src/labels.js
+Index: /home/pickleshell/workspace/models-test/.worktrees/phase2/28-mimo-v2-5-free/repository-navigation/fixtures/phase2/repository-navigation/src/labels.js
+===================================================================
+--- /home/pickleshell/workspace/models-test/.worktrees/phase2/28-mimo-v2-5-free/repository-navigation/fixtures/phase2/repository-navigation/src/labels.js
++++ /home/pickleshell/workspace/models-test/.worktrees/phase2/28-mimo-v2-5-free/repository-navigation/fixtures/phase2/repository-navigation/src/labels.js
+@@ -1,4 +1,4 @@
+ export function formatLabel(value) {
+   if (typeof value !== 'string') return '';
+-  return typeof value === 'string' ? value.trim() : '';
++  return value.trim().replace(/\s+/g, ' ').split(' ').filter(Boolean).map((word) => word[0].toUpperCase() + word.slice(1).toLowerCase()).join(' ');
+ }
+
+[0m
+[0m$ [0mnpm test
+> test
+> node --test test/*.test.mjs
+
+TAP version 13
+# Subtest: formats a simple label
+ok 1 - formats a simple label
+  ---
+  duration_ms: 0.991341
+  ...
+# Subtest: returns empty for empty input
+ok 2 - returns empty for empty input
+  ---
+  duration_ms: 0.109206
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 44.49343
+[0m
+Both public tests pass (2/2).
+
+The implementation in `fixtures/phase2/repository-navigation/src/labels.js` now:
+1. Returns `''` for non-string input
+2. Trims leading/trailing whitespace
+3. Collapses internal whitespace to single spaces
+4. Title-cases each word (first char uppercase, rest lowercase)
+5. Preserves punctuation and never throws for arbitrary input
+[0m

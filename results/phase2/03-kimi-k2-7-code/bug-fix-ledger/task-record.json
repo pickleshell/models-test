@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "state": "completed",
+  "benchmark": "phase2",
+  "task": "bug-fix-ledger",
+  "category": "bug-fix",
+  "candidate": "03-kimi-k2-7-code",
+  "runtime": "opencode-go",
+  "model": "opencode-go/kimi-k2.7-code",
+  "baseline": "880f20fa2924cc10a55ba6e423b9c4a22261e740",
+  "workspace": "/home/pickleshell/workspace/models-test/.worktrees/phase2/03-kimi-k2-7-code/bug-fix-ledger",
+  "prompt": "benchmarks/phase2/prompts/bug-fix-ledger.md",
+  "command": {
+    "command": "opencode",
+    "args": [
+      "run",
+      "--model",
+      "opencode-go/kimi-k2.7-code",
+      "--dir",
+      "/home/pickleshell/workspace/models-test/.worktrees/phase2/03-kimi-k2-7-code/bug-fix-ledger",
+      "--auto"
+    ],
+    "working_directory": "/home/pickleshell/workspace/models-test/.worktrees/phase2/03-kimi-k2-7-code/bug-fix-ledger"
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "wall_time_ms": 155422,
+    "timed_out": false,
+    "failure_class": null
+  },
+  "evaluator": {
+    "status": 0,
+    "signal": null,
+    "wall_time_ms": 214,
+    "failure_class": null
+  },
+  "patch": {
+    "file": "/home/pickleshell/workspace/models-test/results/phase2/03-kimi-k2-7-code/bug-fix-ledger/candidate.diff",
+    "changed_files": [
+      "fixtures/phase1-ledger/src/reconcile.js",
+      "results/phase1/manual/"
+    ]
+  },
+  "evaluation_json": "/home/pickleshell/workspace/models-test/results/phase2/03-kimi-k2-7-code/bug-fix-ledger/evaluation.json",
+  "raw_output": {
+    "agent_stdout": "/home/pickleshell/workspace/models-test/results/phase2/03-kimi-k2-7-code/bug-fix-ledger/agent.stdout.txt",
+    "agent_stderr": "/home/pickleshell/workspace/models-test/results/phase2/03-kimi-k2-7-code/bug-fix-ledger/agent.stderr.txt",
+    "evaluator_stdout": "/home/pickleshell/workspace/models-test/results/phase2/03-kimi-k2-7-code/bug-fix-ledger/evaluator.stdout.txt",
+    "evaluator_stderr": "/home/pickleshell/workspace/models-test/results/phase2/03-kimi-k2-7-code/bug-fix-ledger/evaluator.stderr.txt"
+  },
+  "completed_at": "2026-08-17T03:59:46.851Z"
+}

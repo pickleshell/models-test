@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "benchmark": "phase2",
+  "task": "tests-edge-cases",
+  "category": "tests-and-edge-cases",
+  "model": "gpt-5.6-luna",
+  "pass": true,
+  "metrics": {
+    "public_status": 0,
+    "hidden_passed": 1,
+    "hidden_failed": 0,
+    "forbidden_change_count": 0,
+    "changed_files": [
+      "fixtures/phase2/tests-edge-cases/src/range.js",
+      "fixtures/phase2/tests-edge-cases/test/range.test.mjs"
+    ],
+    "duration_ms": 181
+  },
+  "public_test": {
+    "command": "npm test --prefix fixtures/phase2/tests-edge-cases",
+    "stdout": "\n> test\n> node --test test/*.test.mjs\n\nTAP version 13\n# Subtest: parses an inclusive range\nok 1 - parses an inclusive range\n  ---\n  duration_ms: 1.194523\n  ...\n# Subtest: accepts surrounding whitespace\nok 2 - accepts surrounding whitespace\n  ---\n  duration_ms: 0.13858\n  ...\n# Subtest: rejects malformed ranges\nok 3 - rejects malformed ranges\n  ---\n  duration_ms: 0.118612\n  ...\n# Subtest: rejects a reversed range\nok 4 - rejects a reversed range\n  ---\n  duration_ms: 0.093586\n  ...\n# Subtest: accepts the inclusive numeric boundaries\nok 5 - accepts the inclusive numeric boundaries\n  ---\n  duration_ms: 0.635353\n  ...\n# Subtest: rejects values outside the supported bounds\nok 6 - rejects values outside the supported bounds\n  ---\n  duration_ms: 0.105278\n  ...\n# Subtest: rejects decimals, signs, and extra separators\nok 7 - rejects decimals, signs, and extra separators\n  ---\n  duration_ms: 0.13858\n  ...\n# Subtest: rejects non-string values\nok 8 - rejects non-string values\n  ---\n  duration_ms: 0.095789\n  ...\n1..8\n# tests 8\n# suites 0\n# pass 8\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 44.834641\n",
+    "stderr": ""
+  },
+  "hidden": {
+    "stdout": "",
+    "stderr": ""
+  },
+  "forbidden_changes": []
+}

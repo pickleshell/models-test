@@ -1,0 +1,35 @@
+diff --git a/fixtures/phase2/tests-edge-cases/src/range.js b/fixtures/phase2/tests-edge-cases/src/range.js
+index caf34d8..72d23a4 100644
+--- a/fixtures/phase2/tests-edge-cases/src/range.js
++++ b/fixtures/phase2/tests-edge-cases/src/range.js
+@@ -1,8 +1,9 @@
+ export function parseRange(value) {
+   if (typeof value !== 'string') return null;
+-  const [left, right] = value.split('..');
+-  const start = Number(left);
+-  const end = Number(right);
+-  if (!Number.isInteger(start) || !Number.isInteger(end)) return null;
++  const match = /^\s*(-?\d+)\.\.(-?\d+)\s*$/.exec(value);
++  if (!match) return null;
++  const start = Number(match[1]);
++  const end = Number(match[2]);
++  if (!Number.isSafeInteger(start) || !Number.isSafeInteger(end) || start < -100000 || end > 100000 || start > end) return null;
+   return { start, end };
+ }
+diff --git a/fixtures/phase2/tests-edge-cases/test/range.test.mjs b/fixtures/phase2/tests-edge-cases/test/range.test.mjs
+index f2758d0..fe8319a 100644
+--- a/fixtures/phase2/tests-edge-cases/test/range.test.mjs
++++ b/fixtures/phase2/tests-edge-cases/test/range.test.mjs
+@@ -6,3 +6,12 @@ test('parses an inclusive range', () => assert.deepEqual(parseRange('2..7'), { s
+ test('accepts surrounding whitespace', () => assert.deepEqual(parseRange(' -2..0 '), { start: -2, end: 0 }));
+ test('rejects malformed ranges', () => assert.equal(parseRange('2-7'), null));
+ test('rejects a reversed range', () => assert.equal(parseRange('7..2'), null));
++test('rejects non-string input', () => assert.equal(parseRange(42), null));
++test('rejects empty string', () => assert.equal(parseRange(''), null));
++test('rejects missing delimiter', () => assert.equal(parseRange('27'), null));
++test('rejects floating point', () => assert.equal(parseRange('2.5..7'), null));
++test('rejects out-of-bounds start', () => assert.equal(parseRange('-100001..0'), null));
++test('rejects out-of-bounds end', () => assert.equal(parseRange('0..100001'), null));
++test('accepts negative start', () => assert.deepEqual(parseRange('-5..5'), { start: -5, end: 5 }));
++test('accepts negative end', () => assert.deepEqual(parseRange('-7..-2'), { start: -7, end: -2 }));
++test('rejects multiple delimiters', () => assert.equal(parseRange('1..2..3'), null));

@@ -1,0 +1,90 @@
+[0m
+> build · gpt-5.6-luna
+[0m
+I’ll inspect the repository contract and existing tests, then implement only `src/labels.js` and run the public test command.
+[0m
+[0m# [0mTodos
+[•] Inspect README, labels source, and public tests
+[ ] Implement formatLabel in labels.js only
+[ ] Run public tests and verify diff
+[0m
+[0m✱ [0mGlob "fixtures/phase2/repository-navigation/**"[90m 4 matches[0m
+[0m→ [0mRead fixtures/phase2/repository-navigation/README.md
+[0m✱ [0mGrep "formatLabel|labels"[90m in fixtures/phase2/repository-navigation · 5 matches[0m
+[0m→ [0mRead fixtures/phase2/repository-navigation/src/labels.js
+[0m→ [0mRead fixtures/phase2/repository-navigation/package.json
+[0m→ [0mRead fixtures/phase2/repository-navigation/test/labels.test.mjs
+[0m
+[0m$ [0mgit status --short && git diff -- "fixtures/phase2/repository-navigation/src/labels.js"
+D fixtures/phase2/hidden/repository-navigation.mjs
+[0m
+The contract is limited to one exported function, and the public tests cover only the basic path. I’ll normalize all whitespace, title-case each whitespace-delimited token while retaining punctuation, and keep non-string handling unchanged.
+[0m
+[0m# [0mTodos
+[✓] Inspect README, labels source, and public tests
+[•] Implement formatLabel in labels.js only
+[ ] Run public tests and verify diff
+[0m
+[0m% [0mPatch 1 file
+[0m
+[0m# [0mTodos
+[✓] Inspect README, labels source, and public tests
+[✓] Implement formatLabel in labels.js only
+[•] Run public tests and verify diff
+[0m
+[0m$ [0mgit diff --check && git diff -- "fixtures/phase2/repository-navigation/src/labels.js" && git status --short
+diff --git a/fixtures/phase2/repository-navigation/src/labels.js b/fixtures/phase2/repository-navigation/src/labels.js
+index b4b08eb..abe54d2 100644
+--- a/fixtures/phase2/repository-navigation/src/labels.js
++++ b/fixtures/phase2/repository-navigation/src/labels.js
+@@ -1,4 +1,8 @@
+ export function formatLabel(value) {
+   if (typeof value !== 'string') return '';
+-  return typeof value === 'string' ? value.trim() : '';
++
++  const words = value.trim().split(/\s+/).filter(Boolean);
++  return words
++    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
++    .join(' ');
+ }
+ D fixtures/phase2/hidden/repository-navigation.mjs
+ M fixtures/phase2/repository-navigation/src/labels.js
+[0m
+[0m$ [0mnpm test
+> test
+> node --test test/*.test.mjs
+
+TAP version 13
+# Subtest: formats a simple label
+ok 1 - formats a simple label
+  ---
+  duration_ms: 0.982354
+  ...
+# Subtest: returns empty for empty input
+ok 2 - returns empty for empty input
+  ---
+  duration_ms: 0.107391
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 42.717436
+[0m
+[0m# [0mTodos
+[✓] Inspect README, labels source, and public tests
+[✓] Implement formatLabel in labels.js only
+[✓] Run public tests and verify diff
+[0m
+Implemented `formatLabel` in `fixtures/phase2/repository-navigation/src/labels.js`.
+
+- Handles non-string and empty input
+- Trims and collapses whitespace
+- Title-cases words
+- Preserves punctuation
+- Public tests pass: 2/2
+[0m

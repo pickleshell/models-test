@@ -1,0 +1,125 @@
+[0m
+> build · big-pickle
+[0m
+[0m→ [0mRead .
+[0m→ [0mRead fixtures/phase2/refactoring/src/events.js
+[0m✱ [0mGlob "fixtures/phase2/refactoring/**/*.test.*"[90m 1 match[0m
+[0m✱ [0mGlob "fixtures/phase2/refactoring/**/*.spec.*"[90m 0 matches[0m
+[0m✱ [0mGlob "fixtures/phase2/refactoring/**/package.json"[90m 1 match[0m
+[0m→ [0mRead fixtures/phase2/refactoring/test/events.test.mjs
+[0m→ [0mRead fixtures/phase2/refactoring/package.json
+[0m
+[0m$ [0mnode --test test/*.test.mjs
+TAP version 13
+# Subtest: counts matching events
+ok 1 - counts matching events
+  ---
+  duration_ms: 0.936939
+  ...
+# Subtest: returns the latest matching event
+ok 2 - returns the latest matching event
+  ---
+  duration_ms: 0.33005
+  ...
+# Subtest: ignores malformed timestamps
+not ok 3 - ignores malformed timestamps
+  ---
+  duration_ms: 0.91039
+  location: '/home/pickleshell/workspace/models-test/.worktrees/phase2/19-big-pickle/refactoring/fixtures/phase2/refactoring/test/events.test.mjs:8:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    1 !== 0
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 0
+  actual: 1
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///home/pickleshell/workspace/models-test/.worktrees/phase2/19-big-pickle/refactoring/fixtures/phase2/refactoring/test/events.test.mjs:8:51)
+    Test.runInAsyncScope (node:async_hooks:206:9)
+    Test.run (node:internal/test_runner/test:796:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:526:18)
+    Test.postRun (node:internal/test_runner/test:889:19)
+    Test.run (node:internal/test_runner/test:835:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:526:7)
+  ...
+1..3
+# tests 3
+# suites 0
+# pass 2
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 48.702676
+[0m
+[0m→ [0mRead fixtures/phase2/refactoring
+[0m
+Let me run the tests to understand the current state, and also look for any documentation.
+[0m
+[0m→ [0mRead fixtures/phase2/refactoring/README.md
+[0m
+[0m← [0mEdit fixtures/phase2/refactoring/src/events.js
+Index: /home/pickleshell/workspace/models-test/.worktrees/phase2/19-big-pickle/refactoring/fixtures/phase2/refactoring/src/events.js
+===================================================================
+--- /home/pickleshell/workspace/models-test/.worktrees/phase2/19-big-pickle/refactoring/fixtures/phase2/refactoring/src/events.js
++++ /home/pickleshell/workspace/models-test/.worktrees/phase2/19-big-pickle/refactoring/fixtures/phase2/refactoring/src/events.js
+@@ -1,11 +1,14 @@
+ function matching(events, type) {
+-  return events.filter((event) => event && event.type === type);
++  return events.filter((event) => event && event.type === type && Number.isFinite(event.timestamp));
+ }
+ 
+ export function countByType(events, type) {
+   return matching(events, type).length;
+ }
+ 
+ export function latestByType(events, type) {
+-  return matching(events, type).reduce((latest, event) => !latest || event.timestamp > latest.timestamp ? event : latest, null);
++  return matching(events, type).reduce(
++    (latest, event) => (!latest || event.timestamp > latest.timestamp ? event : latest),
++    null,
++  );
+ }
+
+[0m
+I now understand the issue. The `matching` helper doesn't validate that `timestamp` is a finite number, so events with `NaN` timestamps pass through. The documented contract (README) requires a finite numeric `timestamp` for validity. I also need to reduce the repeated filtering pattern.
+
+Let me refactor:
+[0m
+[0m$ [0mnode --test test/*.test.mjs
+TAP version 13
+# Subtest: counts matching events
+ok 1 - counts matching events
+  ---
+  duration_ms: 0.944032
+  ...
+# Subtest: returns the latest matching event
+ok 2 - returns the latest matching event
+  ---
+  duration_ms: 0.322766
+  ...
+# Subtest: ignores malformed timestamps
+ok 3 - ignores malformed timestamps
+  ---
+  duration_ms: 0.118683
+  ...
+1..3
+# tests 3
+# suites 0
+# pass 3
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 46.717188
+[0m
+All 3 tests pass. The refactoring:
+
+1. **Added `Number.isFinite(event.timestamp)`** to the shared `matching` predicate so events with `NaN`/`Infinity`/non-numeric timestamps are rejected — matching the documented contract ("finite numeric timestamp").
+2. **Kept `matching` as the single source of filtering logic** — both `countByType` and `latestByType` delegate to it, eliminating duplicated filter predicates.
+3. **Reformatted the `reduce` call** for readability.
+[0m

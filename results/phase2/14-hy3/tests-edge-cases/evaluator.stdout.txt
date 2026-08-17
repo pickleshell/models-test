@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "benchmark": "phase2",
+  "task": "tests-edge-cases",
+  "category": "tests-and-edge-cases",
+  "model": "opencode-go/hy3",
+  "pass": true,
+  "metrics": {
+    "public_status": 0,
+    "hidden_passed": 1,
+    "hidden_failed": 0,
+    "forbidden_change_count": 0,
+    "changed_files": [
+      "fixtures/phase2/tests-edge-cases/src/range.js",
+      "fixtures/phase2/tests-edge-cases/test/range.test.mjs"
+    ],
+    "duration_ms": 186
+  },
+  "public_test": {
+    "command": "npm test --prefix fixtures/phase2/tests-edge-cases",
+    "stdout": "\n> test\n> node --test test/*.test.mjs\n\nTAP version 13\n# Subtest: parses an inclusive range\nok 1 - parses an inclusive range\n  ---\n  duration_ms: 1.218318\n  ...\n# Subtest: accepts surrounding whitespace\nok 2 - accepts surrounding whitespace\n  ---\n  duration_ms: 0.112912\n  ...\n# Subtest: rejects malformed ranges\nok 3 - rejects malformed ranges\n  ---\n  duration_ms: 0.62832\n  ...\n# Subtest: rejects a reversed range\nok 4 - rejects a reversed range\n  ---\n  duration_ms: 0.106159\n  ...\n# Subtest: accepts equal start and end\nok 5 - accepts equal start and end\n  ---\n  duration_ms: 0.124293\n  ...\n# Subtest: rejects non-string input\nok 6 - rejects non-string input\n  ---\n  duration_ms: 0.099798\n  ...\n# Subtest: rejects decimal values\nok 7 - rejects decimal values\n  ---\n  duration_ms: 0.100028\n  ...\n# Subtest: rejects out-of-bound values\nok 8 - rejects out-of-bound values\n  ---\n  duration_ms: 0.108765\n  ...\n# Subtest: accepts boundary values\nok 9 - accepts boundary values\n  ---\n  duration_ms: 0.201388\n  ...\n# Subtest: rejects missing separator\nok 10 - rejects missing separator\n  ---\n  duration_ms: 0.174267\n  ...\n# Subtest: rejects extra separators\nok 11 - rejects extra separators\n  ---\n  duration_ms: 0.111019\n  ...\n# Subtest: rejects empty sides\nok 12 - rejects empty sides\n  ---\n  duration_ms: 0.13809\n  ...\n# Subtest: rejects empty or whitespace-only input\nok 13 - rejects empty or whitespace-only input\n  ---\n  duration_ms: 0.105608\n  ...\n# Subtest: rejects internal whitespace\nok 14 - rejects internal whitespace\n  ---\n  duration_ms: 0.137167\n  ...\n1..14\n# tests 14\n# suites 0\n# pass 14\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 50.77598\n",
+    "stderr": ""
+  },
+  "hidden": {
+    "stdout": "",
+    "stderr": ""
+  },
+  "forbidden_changes": []
+}

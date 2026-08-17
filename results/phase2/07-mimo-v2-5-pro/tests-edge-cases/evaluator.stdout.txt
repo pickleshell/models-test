@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "benchmark": "phase2",
+  "task": "tests-edge-cases",
+  "category": "tests-and-edge-cases",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "pass": true,
+  "metrics": {
+    "public_status": 0,
+    "hidden_passed": 1,
+    "hidden_failed": 0,
+    "forbidden_change_count": 0,
+    "changed_files": [
+      "fixtures/phase2/tests-edge-cases/src/range.js",
+      "fixtures/phase2/tests-edge-cases/test/range.test.mjs"
+    ],
+    "duration_ms": 183
+  },
+  "public_test": {
+    "command": "npm test --prefix fixtures/phase2/tests-edge-cases",
+    "stdout": "\n> test\n> node --test test/*.test.mjs\n\nTAP version 13\n# Subtest: parses an inclusive range\nok 1 - parses an inclusive range\n  ---\n  duration_ms: 1.225824\n  ...\n# Subtest: accepts surrounding whitespace\nok 2 - accepts surrounding whitespace\n  ---\n  duration_ms: 0.139883\n  ...\n# Subtest: rejects malformed ranges\nok 3 - rejects malformed ranges\n  ---\n  duration_ms: 0.693033\n  ...\n# Subtest: rejects a reversed range\nok 4 - rejects a reversed range\n  ---\n  duration_ms: 0.11173\n  ...\n# Subtest: rejects non-string inputs\nok 5 - rejects non-string inputs\n  ---\n  duration_ms: 0.144181\n  ...\n# Subtest: rejects empty and whitespace-only strings\nok 6 - rejects empty and whitespace-only strings\n  ---\n  duration_ms: 0.097193\n  ...\n# Subtest: rejects decimals\nok 7 - rejects decimals\n  ---\n  duration_ms: 0.095329\n  ...\n# Subtest: rejects out-of-bounds values\nok 8 - rejects out-of-bounds values\n  ---\n  duration_ms: 0.104397\n  ...\n# Subtest: accepts boundary values\nok 9 - accepts boundary values\n  ---\n  duration_ms: 0.187363\n  ...\n# Subtest: rejects non-numeric values\nok 10 - rejects non-numeric values\n  ---\n  duration_ms: 0.15935\n  ...\n# Subtest: rejects malformed separators\nok 11 - rejects malformed separators\n  ---\n  duration_ms: 0.113834\n  ...\n# Subtest: accepts equal start and end\nok 12 - accepts equal start and end\n  ---\n  duration_ms: 0.112591\n  ...\n# Subtest: accepts negative ranges\nok 13 - accepts negative ranges\n  ---\n  duration_ms: 0.109726\n  ...\n1..13\n# tests 13\n# suites 0\n# pass 13\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 49.863001\n",
+    "stderr": ""
+  },
+  "hidden": {
+    "stdout": "",
+    "stderr": ""
+  },
+  "forbidden_changes": []
+}

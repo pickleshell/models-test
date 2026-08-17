@@ -1,0 +1,147 @@
+[0m
+> build · nemotron-3.5-lightning-free
+[0m
+[0m→ [0mRead .
+[0m→ [0mRead fixtures
+[0m→ [0mRead README.md
+[0m→ [0mRead fixtures/phase2
+[0m→ [0mRead fixtures/phase2/repository-navigation
+[0m→ [0mRead fixtures/phase2/repository-navigation/src
+[0m→ [0mRead fixtures/phase2/repository-navigation/test
+[0m→ [0mRead fixtures/phase2/repository-navigation/package.json
+[0m→ [0mRead fixtures/phase2/repository-navigation/src/labels.js
+[0m→ [0mRead fixtures/phase2/repository-navigation/test/labels.test.mjs
+[0m→ [0mRead fixtures/phase2/repository-navigation/README.md
+[0m
+[0m$ [0mnpm test --prefix /home/pickleshell/workspace/models-test/.worktrees/phase2/33-nemotron-3-5-lightning-free/repository-navigation/fixtures/phase2/repository-navigation 2>&1
+> test
+> node --test test/*.test.mjs
+
+TAP version 13
+# Subtest: formats a simple label
+not ok 1 - formats a simple label
+  ---
+  duration_ms: 1.721983
+  location: '/home/pickleshell/workspace/models-test/.worktrees/phase2/33-nemotron-3-5-lightning-free/repository-navigation/fixtures/phase2/repository-navigation/test/labels.test.mjs:5:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 'account status'
+    - 'Account Status'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'Account Status'
+  actual: 'account status'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///home/pickleshell/workspace/models-test/.worktrees/phase2/33-nemotron-3-5-lightning-free/repository-navigation/fixtures/phase2/repository-navigation/test/labels.test.mjs:5:45)
+    Test.runInAsyncScope (node:async_hooks:206:9)
+    Test.run (node:internal/test_runner/test:796:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:526:18)
+    node:internal/test_runner/harness:255:12
+    node:internal/process/task_queues:140:7
+    AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+    AsyncResource.runMicrotask (node:internal/process/task_queues:137:8)
+  ...
+# Subtest: returns empty for empty input
+ok 2 - returns empty for empty input
+  ---
+  duration_ms: 0.137047
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 1
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 46.780996
+[0m
+[0m← [0mEdit fixtures/phase2/repository-navigation/src/labels.js
+Index: /home/pickleshell/workspace/models-test/.worktrees/phase2/33-nemotron-3-5-lightning-free/repository-navigation/fixtures/phase2/repository-navigation/src/labels.js
+===================================================================
+--- /home/pickleshell/workspace/models-test/.worktrees/phase2/33-nemotron-3-5-lightning-free/repository-navigation/fixtures/phase2/repository-navigation/src/labels.js
++++ /home/pickleshell/workspace/models-test/.worktrees/phase2/33-nemotron-3-5-lightning-free/repository-navigation/fixtures/phase2/repository-navigation/src/labels.js
+@@ -1,4 +1,9 @@
+ export function formatLabel(value) {
+   if (typeof value !== 'string') return '';
+-  return typeof value === 'string' ? value.trim() : '';
++  const trimmed = value.trim();
++  if (trimmed === '') return '';
++  return trimmed
++    .split(/\s+/)
++    .map((word) => word.replace(/^./, (c) => c.toUpperCase()).replace(/.$/, (c) => c.toLowerCase()))
++    .join(' ');
+ }
+
+[0m
+The test expects `formatLabel('  account status ')` → `'Account Status'`. The current implementation only trims. I need to add: collapse internal whitespace, title-case each word, and join with single space.
+[0m
+[0m$ [0mnpm test --prefix /home/pickleshell/workspace/models-test/.worktrees/phase2/33-nemotron-3-5-lightning-free/repository-navigation/fixtures/phase2/repository-navigation 2>&1
+> test
+> node --test test/*.test.mjs
+
+TAP version 13
+# Subtest: formats a simple label
+ok 1 - formats a simple label
+  ---
+  duration_ms: 1.019784
+  ...
+# Subtest: returns empty for empty input
+ok 2 - returns empty for empty input
+  ---
+  duration_ms: 0.109095
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 43.620273
+[0m
+[0m→ [0mRead fixtures/phase2/repository-navigation/src/labels.js
+[0m
+Both tests pass. Let me verify the final state of the source file:
+[0m
+[0m$ [0mnpm test --prefix /home/pickleshell/workspace/models-test/.worktrees/phase2/33-nemotron-3-5-lightning-free/repository-navigation/fixtures/phase2/repository-navigation 2>&1
+> test
+> node --test test/*.test.mjs
+
+TAP version 13
+# Subtest: formats a simple label
+ok 1 - formats a simple label
+  ---
+  duration_ms: 1.100255
+  ...
+# Subtest: returns empty for empty input
+ok 2 - returns empty for empty input
+  ---
+  duration_ms: 0.15984
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 44.868988
+[0m
+All tests pass. The `formatLabel` function at `src/labels.js:1` was updated to:
+
+1. Return `''` for non-string input
+2. Trim the input value
+3. Return `''` if trimmed result is empty
+4. Split by whitespace (collapsing internal whitespace)
+5. Title-case each word (first char uppercased, last char lowercased)
+6. Join words with a single space
+
+The two public tests both pass: `'  account status '` → `'Account Status'` and `''` → `''`.
+[0m

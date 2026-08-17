@@ -1,0 +1,38 @@
+diff --git a/fixtures/phase2/tests-edge-cases/src/range.js b/fixtures/phase2/tests-edge-cases/src/range.js
+index caf34d8..37ad792 100644
+--- a/fixtures/phase2/tests-edge-cases/src/range.js
++++ b/fixtures/phase2/tests-edge-cases/src/range.js
+@@ -1,8 +1,13 @@
+ export function parseRange(value) {
+   if (typeof value !== 'string') return null;
+-  const [left, right] = value.split('..');
+-  const start = Number(left);
+-  const end = Number(right);
+-  if (!Number.isInteger(start) || !Number.isInteger(end)) return null;
++
++  const match = /^\s*(-?\d+)\.\.(-?\d+)\s*$/.exec(value);
++  if (!match) return null;
++
++  const start = Number(match[1]);
++  const end = Number(match[2]);
++  if (!Number.isSafeInteger(start) || !Number.isSafeInteger(end)) return null;
++  if (start < -100000 || end > 100000 || start > end) return null;
++
+   return { start, end };
+ }
+diff --git a/fixtures/phase2/tests-edge-cases/test/range.test.mjs b/fixtures/phase2/tests-edge-cases/test/range.test.mjs
+index f2758d0..125c6e5 100644
+--- a/fixtures/phase2/tests-edge-cases/test/range.test.mjs
++++ b/fixtures/phase2/tests-edge-cases/test/range.test.mjs
+@@ -4,5 +4,11 @@ const { parseRange } = await import(process.env.BENCHMARK_SOURCE ? `${process.en
+ 
+ test('parses an inclusive range', () => assert.deepEqual(parseRange('2..7'), { start: 2, end: 7 }));
+ test('accepts surrounding whitespace', () => assert.deepEqual(parseRange(' -2..0 '), { start: -2, end: 0 }));
++test('accepts inclusive numeric bounds', () => assert.deepEqual(parseRange('-100000..100000'), { start: -100000, end: 100000 }));
+ test('rejects malformed ranges', () => assert.equal(parseRange('2-7'), null));
++test('rejects internal whitespace around the separator', () => assert.equal(parseRange('1 ..2'), null));
++test('rejects multiple separators', () => assert.equal(parseRange('1..2..3'), null));
+ test('rejects a reversed range', () => assert.equal(parseRange('7..2'), null));
++test('rejects decimal values', () => assert.equal(parseRange('1.5..2'), null));
++test('rejects out-of-bounds values', () => assert.equal(parseRange('-100001..0'), null));
++test('rejects non-string input', () => assert.equal(parseRange(12), null));

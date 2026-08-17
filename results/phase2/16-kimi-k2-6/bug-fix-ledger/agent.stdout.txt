@@ -1,0 +1,216 @@
+[0m
+> build · kimi-k2.6
+[0m
+[0m→ [0mRead fixtures/phase1-ledger/src/reconcile.js
+[0m→ [0mRead .
+[0m✱ [0mGlob "fixtures/phase1-ledger/**/*"[90m 5 matches[0m
+[0m✱ [0mGrep "defect|bug|issue|TODO|FIXME"[90m in . · 0 matches[0m
+[0m→ [0mRead fixtures/phase1-ledger/README.md
+[0m→ [0mRead fixtures/phase1-ledger/PROMPT.md
+[0m→ [0mRead fixtures/phase1-ledger/test/reconcile.test.mjs
+[0m
+[0m$ [0mnpm test --prefix fixtures/phase1-ledger
+> phase1-ledger-fixture@0.1.0 test
+> node --test test/*.test.mjs
+
+TAP version 13
+# Subtest: parses ordinary decimal money into cents
+ok 1 - parses ordinary decimal money into cents
+  ---
+  duration_ms: 0.970713
+  ...
+# Subtest: summarizes sales by account, currency, and UTC day
+ok 2 - summarizes sales by account, currency, and UTC day
+  ---
+  duration_ms: 11.533077
+  ...
+# Subtest: does not double count duplicate transaction ids
+not ok 3 - does not double count duplicate transaction ids
+  ---
+  duration_ms: 1.032488
+  location: '/home/pickleshell/workspace/models-test/.worktrees/phase2/16-kimi-k2-6/bug-fix-ledger/fixtures/phase1-ledger/test/reconcile.test.mjs:24:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    2 !== 1
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 1
+  actual: 2
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///home/pickleshell/workspace/models-test/.worktrees/phase2/16-kimi-k2-6/bug-fix-ledger/fixtures/phase1-ledger/test/reconcile.test.mjs:31:10)
+    Test.runInAsyncScope (node:async_hooks:206:9)
+    Test.run (node:internal/test_runner/test:796:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:526:18)
+    Test.postRun (node:internal/test_runner/test:889:19)
+    Test.run (node:internal/test_runner/test:835:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:526:7)
+  ...
+# Subtest: counts invalid rows and orphan refunds without adding them to totals
+ok 4 - counts invalid rows and orphan refunds without adding them to totals
+  ---
+  duration_ms: 0.178726
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 3
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 60.761407
+[0m
+[0m# [0mTodos
+[•] Fix duplicate id handling (continue after counting duplicate)
+[ ] Fix parseAmountToCents to reject negatives and >2 decimal places
+[ ] Fix dayKey to use UTC calendar day
+[ ] Fix refund to use original sale's accountId and currency
+[ ] Run public tests to verify all fixes
+[0m
+[0m← [0mEdit fixtures/phase1-ledger/src/reconcile.js
+Index: /home/pickleshell/workspace/models-test/.worktrees/phase2/16-kimi-k2-6/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+===================================================================
+--- /home/pickleshell/workspace/models-test/.worktrees/phase2/16-kimi-k2-6/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
++++ /home/pickleshell/workspace/models-test/.worktrees/phase2/16-kimi-k2-6/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+@@ -49,10 +49,11 @@
+ if (!entry.id) throw new Error('missing id');
+ if (!entry.accountId) throw new Error('missing accountId');
+ if (!entry.currency) throw new Error('missing currency');
+ 
+-if (seenIds.has(entry.id)) {
++    if (seenIds.has(entry.id)) {
+   metrics.duplicateCount += 1;
++  continue;
+ }
+ seenIds.add(entry.id);
+ 
+ const cents = parseAmountToCents(entry.amount);
+
+[0m
+[0m← [0mEdit fixtures/phase1-ledger/src/reconcile.js
+Index: /home/pickleshell/workspace/models-test/.worktrees/phase2/16-kimi-k2-6/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+===================================================================
+--- /home/pickleshell/workspace/models-test/.worktrees/phase2/16-kimi-k2-6/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
++++ /home/pickleshell/workspace/models-test/.worktrees/phase2/16-kimi-k2-6/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+@@ -3,14 +3,15 @@
+     throw new Error('amount must be a decimal string or number');
+   }
+ 
+   const normalized = String(amount).trim().replace(/[$,]/g, '');
+-  const value = Number(normalized);
+-  if (!Number.isFinite(value)) {
++  if (!/^\d+(\.\d{1,2})?$/.test(normalized)) {
+     throw new Error(`invalid amount: ${amount}`);
+   }
+ 
+-  return Math.round(value * 100);
++  const [dollars, cents = '0'] = normalized.split('.');
++  const paddedCents = (cents + '00').slice(0, 2);
++  return Number(dollars) * 100 + Number(paddedCents);
+ }
+ 
+ function dayKey(createdAt) {
+   const date = new Date(createdAt);
+
+[0m
+[0m← [0mEdit fixtures/phase1-ledger/src/reconcile.js
+Index: /home/pickleshell/workspace/models-test/.worktrees/phase2/16-kimi-k2-6/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+===================================================================
+--- /home/pickleshell/workspace/models-test/.worktrees/phase2/16-kimi-k2-6/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
++++ /home/pickleshell/workspace/models-test/.worktrees/phase2/16-kimi-k2-6/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+@@ -17,9 +17,9 @@
+   const date = new Date(createdAt);
+   if (Number.isNaN(date.getTime())) {
+     throw new Error(`invalid createdAt: ${createdAt}`);
+   }
+-  return date.toLocaleDateString('en-CA');
++  return date.toISOString().slice(0, 10);
+ }
+ 
+ function addTotal(totals, accountId, currency, day, cents) {
+   const key = `${accountId}|${currency}|${day}`;
+
+[0m
+[0m← [0mEdit fixtures/phase1-ledger/src/reconcile.js
+Index: /home/pickleshell/workspace/models-test/.worktrees/phase2/16-kimi-k2-6/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+===================================================================
+--- /home/pickleshell/workspace/models-test/.worktrees/phase2/16-kimi-k2-6/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
++++ /home/pickleshell/workspace/models-test/.worktrees/phase2/16-kimi-k2-6/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+@@ -69,9 +69,9 @@
+   if (!original) {
+     metrics.orphanRefundCount += 1;
+     continue;
+   }
+-  addTotal(totals, entry.accountId, entry.currency, day, -cents);
++  addTotal(totals, original.accountId, original.currency, day, -cents);
+   metrics.processed += 1;
+ } else {
+   throw new Error(`unsupported type: ${entry.type}`);
+ }
+
+[0m
+[0m$ [0mnpm test --prefix fixtures/phase1-ledger
+> phase1-ledger-fixture@0.1.0 test
+> node --test test/*.test.mjs
+
+TAP version 13
+# Subtest: parses ordinary decimal money into cents
+ok 1 - parses ordinary decimal money into cents
+  ---
+  duration_ms: 1.006329
+  ...
+# Subtest: summarizes sales by account, currency, and UTC day
+ok 2 - summarizes sales by account, currency, and UTC day
+  ---
+  duration_ms: 5.930366
+  ...
+# Subtest: does not double count duplicate transaction ids
+ok 3 - does not double count duplicate transaction ids
+  ---
+  duration_ms: 0.158026
+  ...
+# Subtest: counts invalid rows and orphan refunds without adding them to totals
+ok 4 - counts invalid rows and orphan refunds without adding them to totals
+  ---
+  duration_ms: 0.155502
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 4
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 51.03411
+[0m
+[0m# [0mTodos
+[✓] Fix duplicate id handling (continue after counting duplicate)
+[✓] Fix parseAmountToCents to reject negatives and >2 decimal places
+[✓] Fix dayKey to use UTC calendar day
+[✓] Fix refund to use original sale's accountId and currency
+[✓] Run public tests to verify all fixes
+[0m
+[0m→ [0mRead fixtures/phase1-ledger/src/reconcile.js
+[0m
+Done. All 4 public tests pass.
+
+**Changes made in `fixtures/phase1-ledger/src/reconcile.js`:**
+
+1. **Duplicate idempotency** — Added `continue` so duplicate transaction IDs are counted in `duplicateCount` but ignored after the first occurrence.
+2. **Exact money parsing** — `parseAmountToCents` now rejects negative values and values with more than two decimal places, and uses exact integer arithmetic instead of floating-point rounding.
+3. **UTC calendar day** — `dayKey` now returns the UTC date (`YYYY-MM-DD` via `toISOString().slice(0, 10)`) instead of a locale-dependent string.
+4. **Refund attribution** — Refunds now subtract from the **original sale's** `accountId` and `currency` rather than the refund entry's own values.
+
+**Test result:**
+```
+# tests 4
+# suites 0
+# pass 4
+# fail 0
+```
+[0m

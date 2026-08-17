@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "benchmark": "phase2",
+  "task": "tests-edge-cases",
+  "category": "tests-and-edge-cases",
+  "model": "opencode/laguna-s-2.1-free",
+  "pass": true,
+  "metrics": {
+    "public_status": 0,
+    "hidden_passed": 1,
+    "hidden_failed": 0,
+    "forbidden_change_count": 0,
+    "changed_files": [
+      "fixtures/phase2/tests-edge-cases/src/range.js",
+      "fixtures/phase2/tests-edge-cases/test/range.test.mjs"
+    ],
+    "duration_ms": 187
+  },
+  "public_test": {
+    "command": "npm test --prefix fixtures/phase2/tests-edge-cases",
+    "stdout": "\n> test\n> node --test test/*.test.mjs\n\nTAP version 13\n# Subtest: parses an inclusive range\nok 1 - parses an inclusive range\n  ---\n  duration_ms: 1.242433\n  ...\n# Subtest: accepts surrounding whitespace\nok 2 - accepts surrounding whitespace\n  ---\n  duration_ms: 0.137097\n  ...\n# Subtest: rejects malformed ranges\nok 3 - rejects malformed ranges\n  ---\n  duration_ms: 0.16501\n  ...\n# Subtest: rejects a reversed range\nok 4 - rejects a reversed range\n  ---\n  duration_ms: 0.103043\n  ...\n# Subtest: accepts the exact inclusive bounds\nok 5 - accepts the exact inclusive bounds\n  ---\n  duration_ms: 0.113433\n  ...\n# Subtest: accepts a single-point range at the boundary\nok 6 - accepts a single-point range at the boundary\n  ---\n  duration_ms: 0.102672\n  ...\n# Subtest: accepts a single-point range in the middle\nok 7 - accepts a single-point range in the middle\n  ---\n  duration_ms: 0.099427\n  ...\n# Subtest: accepts zero as a valid integer\nok 8 - accepts zero as a valid integer\n  ---\n  duration_ms: 0.108324\n  ...\n# Subtest: rejects start below the lower bound\nok 9 - rejects start below the lower bound\n  ---\n  duration_ms: 0.13846\n  ...\n# Subtest: rejects end above the upper bound\nok 10 - rejects end above the upper bound\n  ---\n  duration_ms: 0.169559\n  ...\n# Subtest: rejects decimals in either operand\nok 11 - rejects decimals in either operand\n  ---\n  duration_ms: 0.115387\n  ...\n# Subtest: rejects non-string input\nok 12 - rejects non-string input\n  ---\n  duration_ms: 0.106319\n  ...\n# Subtest: rejects malformed ranges\nok 13 - rejects malformed ranges\n  ---\n  duration_ms: 0.137348\n  ...\n# Subtest: rejects hex and exponent notation\nok 14 - rejects hex and exponent notation\n  ---\n  duration_ms: 0.136196\n  ...\n1..14\n# tests 14\n# suites 0\n# pass 14\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 48.713674\n",
+    "stderr": ""
+  },
+  "hidden": {
+    "stdout": "",
+    "stderr": ""
+  },
+  "forbidden_changes": []
+}

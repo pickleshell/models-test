@@ -1,0 +1,96 @@
+[0m
+> build · gpt-5.6-luna
+[0m
+I’ll inspect the event module and its public tests, identify the duplicated filtering paths, then make the smallest source-only refactor and run the required tests.
+[0m
+[0m# [0mTodos
+[•] Inspect events.js and related public tests
+[ ] Refactor repeated event-filtering logic in events.js
+[ ] Run public tests and verify only events.js changed
+[0m
+[0m✱ [0mGlob "fixtures/phase2/refactoring/**/*"[90m in . · 4 matches[0m
+[0m✱ [0mGrep "events|filter|subscribe|emit"[90m in fixtures/phase2/refactoring · 7 matches[0m
+[0m→ [0mRead fixtures/phase2/refactoring/src/events.js
+[0m→ [0mRead fixtures/phase2/refactoring/README.md
+[0m→ [0mRead fixtures/phase2/refactoring/test/events.test.mjs
+[0m→ [0mRead fixtures/phase2/refactoring/package.json
+[0m
+[0m$ [0mgit status --short
+D fixtures/phase2/hidden/refactoring.mjs
+[0m
+The public documentation is stricter than the current implementation: malformed event objects, empty/non-string types, and non-finite timestamps must be excluded. I’ll centralize that validity and requested-type check in the existing matching helper, preserving exports and non-mutating behavior.
+[0m
+[0m# [0mTodos
+[✓] Inspect events.js and related public tests
+[•] Refactor repeated event-filtering logic in events.js
+[ ] Run public tests and verify only events.js changed
+[0m
+[0m% [0mPatch 1 file
+[0m% [0mPatch 1 file
+[0m
+[0m# [0mTodos
+[✓] Inspect events.js and related public tests
+[✓] Refactor repeated event-filtering logic in events.js
+[•] Run public tests and verify only events.js changed
+[0m
+[0m$ [0mgit diff -- fixtures/phase2/refactoring/src/events.js && git status --short
+diff --git a/fixtures/phase2/refactoring/src/events.js b/fixtures/phase2/refactoring/src/events.js
+index 3804f8e..bb0f217 100644
+--- a/fixtures/phase2/refactoring/src/events.js
++++ b/fixtures/phase2/refactoring/src/events.js
+@@ -1,5 +1,12 @@
+ function matching(events, type) {
+-  return events.filter((event) => event && event.type === type);
++  return events.filter((event) => (
++    event &&
++    typeof event === 'object' &&
++    typeof event.type === 'string' &&
++    event.type.length > 0 &&
++    Number.isFinite(event.timestamp) &&
++    event.type === type
++  ));
+ }
+ 
+ export function countByType(events, type) {
+ D fixtures/phase2/hidden/refactoring.mjs
+ M fixtures/phase2/refactoring/src/events.js
+[0m
+[0m$ [0mnpm test
+> test
+> node --test test/*.test.mjs
+
+TAP version 13
+# Subtest: counts matching events
+ok 1 - counts matching events
+  ---
+  duration_ms: 0.920558
+  ...
+# Subtest: returns the latest matching event
+ok 2 - returns the latest matching event
+  ---
+  duration_ms: 0.318428
+  ...
+# Subtest: ignores malformed timestamps
+ok 3 - ignores malformed timestamps
+  ---
+  duration_ms: 0.118122
+  ...
+1..3
+# tests 3
+# suites 0
+# pass 3
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 44.49814
+[0m
+[0m# [0mTodos
+[✓] Inspect events.js and related public tests
+[✓] Refactor repeated event-filtering logic in events.js
+[✓] Run public tests and verify only events.js changed
+[0m
+Updated `fixtures/phase2/refactoring/src/events.js` to centralize filtering of valid events while preserving the public API.
+
+Public tests pass: 3/3. No tests or unrelated files were modified.
+[0m

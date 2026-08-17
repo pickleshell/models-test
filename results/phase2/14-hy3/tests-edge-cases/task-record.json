@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "state": "completed",
+  "benchmark": "phase2",
+  "task": "tests-edge-cases",
+  "category": "tests-and-edge-cases",
+  "candidate": "14-hy3",
+  "runtime": "opencode-go",
+  "model": "opencode-go/hy3",
+  "baseline": "880f20fa2924cc10a55ba6e423b9c4a22261e740",
+  "workspace": "/home/pickleshell/workspace/models-test/.worktrees/phase2/14-hy3/tests-edge-cases",
+  "prompt": "benchmarks/phase2/prompts/tests-edge-cases.md",
+  "command": {
+    "command": "opencode",
+    "args": [
+      "run",
+      "--model",
+      "opencode-go/hy3",
+      "--dir",
+      "/home/pickleshell/workspace/models-test/.worktrees/phase2/14-hy3/tests-edge-cases",
+      "--auto"
+    ],
+    "working_directory": "/home/pickleshell/workspace/models-test/.worktrees/phase2/14-hy3/tests-edge-cases"
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "wall_time_ms": 53038,
+    "timed_out": false,
+    "failure_class": null
+  },
+  "evaluator": {
+    "status": 0,
+    "signal": null,
+    "wall_time_ms": 214,
+    "failure_class": null
+  },
+  "patch": {
+    "file": "/home/pickleshell/workspace/models-test/results/phase2/14-hy3/tests-edge-cases/candidate.diff",
+    "changed_files": [
+      "fixtures/phase2/tests-edge-cases/src/range.js",
+      "fixtures/phase2/tests-edge-cases/test/range.test.mjs"
+    ]
+  },
+  "evaluation_json": "/home/pickleshell/workspace/models-test/results/phase2/14-hy3/tests-edge-cases/evaluation.json",
+  "raw_output": {
+    "agent_stdout": "/home/pickleshell/workspace/models-test/results/phase2/14-hy3/tests-edge-cases/agent.stdout.txt",
+    "agent_stderr": "/home/pickleshell/workspace/models-test/results/phase2/14-hy3/tests-edge-cases/agent.stderr.txt",
+    "evaluator_stdout": "/home/pickleshell/workspace/models-test/results/phase2/14-hy3/tests-edge-cases/evaluator.stdout.txt",
+    "evaluator_stderr": "/home/pickleshell/workspace/models-test/results/phase2/14-hy3/tests-edge-cases/evaluator.stderr.txt"
+  },
+  "completed_at": "2026-08-17T05:12:23.165Z"
+}

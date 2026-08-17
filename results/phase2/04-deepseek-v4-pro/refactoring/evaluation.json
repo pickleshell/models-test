@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "benchmark": "phase2",
+  "task": "refactoring",
+  "category": "refactoring",
+  "model": "opencode-go/deepseek-v4-pro",
+  "pass": true,
+  "metrics": {
+    "public_status": 0,
+    "hidden_passed": 1,
+    "hidden_failed": 0,
+    "forbidden_change_count": 0,
+    "changed_files": [
+      "fixtures/phase2/refactoring/src/events.js"
+    ],
+    "duration_ms": 175
+  },
+  "public_test": {
+    "command": "npm test --prefix fixtures/phase2/refactoring",
+    "stdout": "\n> test\n> node --test test/*.test.mjs\n\nTAP version 13\n# Subtest: counts matching events\nok 1 - counts matching events\n  ---\n  duration_ms: 0.87944\n  ...\n# Subtest: returns the latest matching event\nok 2 - returns the latest matching event\n  ---\n  duration_ms: 0.307627\n  ...\n# Subtest: ignores malformed timestamps\nok 3 - ignores malformed timestamps\n  ---\n  duration_ms: 0.115447\n  ...\n1..3\n# tests 3\n# suites 0\n# pass 3\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 43.815372\n",
+    "stderr": ""
+  },
+  "hidden": {
+    "stdout": "",
+    "stderr": ""
+  },
+  "forbidden_changes": []
+}

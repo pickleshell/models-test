@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "benchmark": "phase2",
+  "task": "tests-edge-cases",
+  "category": "tests-and-edge-cases",
+  "model": "opencode/big-pickle",
+  "pass": true,
+  "metrics": {
+    "public_status": 0,
+    "hidden_passed": 1,
+    "hidden_failed": 0,
+    "forbidden_change_count": 0,
+    "changed_files": [
+      "fixtures/phase2/tests-edge-cases/src/range.js",
+      "fixtures/phase2/tests-edge-cases/test/range.test.mjs"
+    ],
+    "duration_ms": 198
+  },
+  "public_test": {
+    "command": "npm test --prefix fixtures/phase2/tests-edge-cases",
+    "stdout": "\n> test\n> node --test test/*.test.mjs\n\nTAP version 13\n# Subtest: parses an inclusive range\nok 1 - parses an inclusive range\n  ---\n  duration_ms: 1.256288\n  ...\n# Subtest: accepts surrounding whitespace\nok 2 - accepts surrounding whitespace\n  ---\n  duration_ms: 0.16005\n  ...\n# Subtest: rejects malformed ranges\nok 3 - rejects malformed ranges\n  ---\n  duration_ms: 0.128371\n  ...\n# Subtest: rejects a reversed range\nok 4 - rejects a reversed range\n  ---\n  duration_ms: 0.100609\n  ...\n# Subtest: zero-width range is valid\nok 5 - zero-width range is valid\n  ---\n  duration_ms: 0.151395\n  ...\n# Subtest: boundary -100000..100000 is valid\nok 6 - boundary -100000..100000 is valid\n  ---\n  duration_ms: 0.108524\n  ...\n# Subtest: below lower bound is rejected\nok 7 - below lower bound is rejected\n  ---\n  duration_ms: 0.135835\n  ...\n# Subtest: above upper bound is rejected\nok 8 - above upper bound is rejected\n  ---\n  duration_ms: 0.10124\n  ...\n# Subtest: decimal left is rejected\nok 9 - decimal left is rejected\n  ---\n  duration_ms: 0.204844\n  ...\n# Subtest: decimal right is rejected\nok 10 - decimal right is rejected\n  ---\n  duration_ms: 0.18666\n  ...\n# Subtest: missing left part is rejected\nok 11 - missing left part is rejected\n  ---\n  duration_ms: 0.114435\n  ...\n# Subtest: missing right part is rejected\nok 12 - missing right part is rejected\n  ---\n  duration_ms: 0.104186\n  ...\n# Subtest: bare dots rejected\nok 13 - bare dots rejected\n  ---\n  duration_ms: 0.0959\n  ...\n# Subtest: multiple separators rejected\nok 14 - multiple separators rejected\n  ---\n  duration_ms: 0.136065\n  ...\n# Subtest: non-string number rejected\nok 15 - non-string number rejected\n  ---\n  duration_ms: 0.097342\n  ...\n# Subtest: null rejected\nok 16 - null rejected\n  ---\n  duration_ms: 0.130475\n  ...\n# Subtest: undefined rejected\nok 17 - undefined rejected\n  ---\n  duration_ms: 0.105037\n  ...\n# Subtest: empty string rejected\nok 18 - empty string rejected\n  ---\n  duration_ms: 0.162595\n  ...\n# Subtest: array rejected\nok 19 - array rejected\n  ---\n  duration_ms: 0.689795\n  ...\n# Subtest: object rejected\nok 20 - object rejected\n  ---\n  duration_ms: 0.140874\n  ...\n# Subtest: leading zeros accepted\nok 21 - leading zeros accepted\n  ---\n  duration_ms: 0.098876\n  ...\n# Subtest: negative start to positive end\nok 22 - negative start to positive end\n  ---\n  duration_ms: 0.100969\n  ...\n1..22\n# tests 22\n# suites 0\n# pass 22\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 56.484497\n",
+    "stderr": ""
+  },
+  "hidden": {
+    "stdout": "",
+    "stderr": ""
+  },
+  "forbidden_changes": []
+}

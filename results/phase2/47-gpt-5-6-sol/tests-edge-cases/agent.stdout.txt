@@ -1,0 +1,451 @@
+OpenAI Codex v0.147.0
+--------
+workdir: /home/pickleshell/workspace/models-test/.worktrees/phase2/47-gpt-5-6-sol/tests-edge-cases
+model: gpt-5.6-sol
+provider: openai
+approval: on-request
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: none
+reasoning summaries: none
+session id: 01a00ff0-6b2f-7c90-8b66-3e87277fffc4
+--------
+user
+Complete `parseRange` in `fixtures/phase2/tests-edge-cases/src/range.js` and add focused tests for important edge cases in its test file. Follow the README contract, preserve exports, and modify only the source and test file listed by the harness. Run the full public suite before finishing.
+
+codex
+I’ll inspect the README contract and the harness-designated source/test files, then implement and run the full public suite.
+exec
+/bin/bash -lc "pwd && rg -n \"parseRange|range\" README* fixtures/phase2/tests-edge-cases -g 'README*' -g 'range.js' -g '*range*test*' -g 'package.json' && rg --files fixtures/phase2/tests-edge-cases | sort" in /home/pickleshell/workspace/models-test/.worktrees/phase2/47-gpt-5-6-sol/tests-edge-cases
+ exited 1 in 0ms:
+bwrap: Can't read /proc/sys/kernel/overflowuid: No such file or directory
+
+exec
+/bin/bash -lc "pwd && rg -n \"parseRange|range\" README* fixtures/phase2/tests-edge-cases -g 'README*' -g 'range.js' -g '*range*test*' -g 'package.json' && rg --files fixtures/phase2/tests-edge-cases | sort" in /home/pickleshell/workspace/models-test/.worktrees/phase2/47-gpt-5-6-sol/tests-edge-cases
+ succeeded in 0ms:
+/home/pickleshell/workspace/models-test/.worktrees/phase2/47-gpt-5-6-sol/tests-edge-cases
+fixtures/phase2/tests-edge-cases/README.md:1:# Integer ranges
+fixtures/phase2/tests-edge-cases/README.md:3:`parseRange(value)` parses exactly `start..end`, allowing surrounding whitespace. Both values are base-10 integers between -100000 and 100000 inclusive, and start must not exceed end. It returns `{ start, end }`; malformed, non-string, reversed, decimal, or out-of-bound input returns `null`.
+fixtures/phase2/tests-edge-cases/src/range.js:1:export function parseRange(value) {
+fixtures/phase2/tests-edge-cases/test/range.test.mjs:3:const { parseRange } = await import(process.env.BENCHMARK_SOURCE ? `${process.env.BENCHMARK_SOURCE}/range.js` : '../src/range.js');
+fixtures/phase2/tests-edge-cases/test/range.test.mjs:5:test('parses an inclusive range', () => assert.deepEqual(parseRange('2..7'), { start: 2, end: 7 }));
+fixtures/phase2/tests-edge-cases/test/range.test.mjs:6:test('accepts surrounding whitespace', () => assert.deepEqual(parseRange(' -2..0 '), { start: -2, end: 0 }));
+fixtures/phase2/tests-edge-cases/test/range.test.mjs:7:test('rejects malformed ranges', () => assert.equal(parseRange('2-7'), null));
+fixtures/phase2/tests-edge-cases/test/range.test.mjs:8:test('rejects a reversed range', () => assert.equal(parseRange('7..2'), null));
+fixtures/phase2/tests-edge-cases/README.md
+fixtures/phase2/tests-edge-cases/package.json
+fixtures/phase2/tests-edge-cases/src/range.js
+fixtures/phase2/tests-edge-cases/test/range.test.mjs
+
+exec
+/bin/bash -lc "sed -n '1,200p' fixtures/phase2/tests-edge-cases/README.md && sed -n '1,200p' fixtures/phase2/tests-edge-cases/src/range.js && sed -n '1,240p' fixtures/phase2/tests-edge-cases/test/range.test.mjs && sed -n '1,160p' fixtures/phase2/tests-edge-cases/package.json && git status --short" in /home/pickleshell/workspace/models-test/.worktrees/phase2/47-gpt-5-6-sol/tests-edge-cases
+ succeeded in 0ms:
+# Integer ranges
+
+`parseRange(value)` parses exactly `start..end`, allowing surrounding whitespace. Both values are base-10 integers between -100000 and 100000 inclusive, and start must not exceed end. It returns `{ start, end }`; malformed, non-string, reversed, decimal, or out-of-bound input returns `null`.
+export function parseRange(value) {
+  if (typeof value !== 'string') return null;
+  const [left, right] = value.split('..');
+  const start = Number(left);
+  const end = Number(right);
+  if (!Number.isInteger(start) || !Number.isInteger(end)) return null;
+  return { start, end };
+}
+import test from 'node:test';
+import assert from 'node:assert/strict';
+const { parseRange } = await import(process.env.BENCHMARK_SOURCE ? `${process.env.BENCHMARK_SOURCE}/range.js` : '../src/range.js');
+
+test('parses an inclusive range', () => assert.deepEqual(parseRange('2..7'), { start: 2, end: 7 }));
+test('accepts surrounding whitespace', () => assert.deepEqual(parseRange(' -2..0 '), { start: -2, end: 0 }));
+test('rejects malformed ranges', () => assert.equal(parseRange('2-7'), null));
+test('rejects a reversed range', () => assert.equal(parseRange('7..2'), null));
+{"name":"tests-edge-cases-fixture","private":true,"type":"module","scripts":{"test":"node --test test/*.test.mjs"}}
+ D fixtures/phase2/hidden/tests-edge-cases.mjs
+
+codex
+The current split/`Number` approach accidentally accepts empty endpoints, extra separators, and whitespace inside endpoints, and it omits bounds/order checks. I’m tightening the grammar to one exact ASCII integer pair with only surrounding whitespace.
+2026-08-17T13:37:34.219503Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to read file to update /home/pickleshell/workspace/models-test/.worktrees/phase2/47-gpt-5-6-sol/tests-edge-cases/fixtures/phase2/tests-edge-cases/src/range.js: fs sandbox helper failed with status exit status: 1: bwrap: Can't read /proc/sys/kernel/overflowuid: No such file or directory
+2026-08-17T13:37:49.502940Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to read file to update /home/pickleshell/workspace/models-test/.worktrees/phase2/47-gpt-5-6-sol/tests-edge-cases/fixtures/phase2/tests-edge-cases/src/range.js: fs sandbox helper failed with status exit status: 1: bwrap: Can't read /proc/sys/kernel/overflowuid: No such file or directory
+exec
+/bin/bash -lc 'type apply_patch' in /home/pickleshell/workspace/models-test/.worktrees/phase2/47-gpt-5-6-sol/tests-edge-cases
+ succeeded in 0ms:
+apply_patch is /var/lib/pickleshell/agent-home/.codex/tmp/arg0/codex-arg0qwNxLi/apply_patch
+
+exec
+/bin/bash -lc "patch -p0 <<'PATCH'
+*** Begin Patch
+*** Update File: fixtures/phase2/tests-edge-cases/src/range.js
+@@
+ export function parseRange(value) {
+   if (typeof value "'!== '"'string') return null;
+-  const [left, right] = value.split('..');
+-  const start = Number(left);
+-  const end = Number(right);
+-  if ("'!Number.isInteger(start) || !Number.isInteger(end)) return null;
++
++  const match = /''^'"\\s*([+-]?\\d+)\\.\\.([+-]?\\d+)\\s*"'$/.exec(value);
++  if (!match) return null;
++
++  const start = Number(match[1]);
++  const end = Number(match[2]);
++  if (start < -100000 || start > 100000 || end < -100000 || end > 100000 || start > end) {
++    return null;
++  }
++
+   return { start, end };
+ }
+*** Update File: fixtures/phase2/tests-edge-cases/test/range.test.mjs
+@@
+ test('"'parses an inclusive range', () => assert.deepEqual(parseRange('2..7'), { start: 2, end: 7 }));
+ test('accepts surrounding whitespace', () => assert.deepEqual(parseRange(' -2..0 '), { start: -2, end: 0 }));
+-test('rejects malformed ranges', () => assert.equal(parseRange('2-7'), null));
++test('accepts the inclusive bounds', () => assert.deepEqual(parseRange('-100000..100000'), { start: -100000, end: 100000 }));
+ test('rejects a reversed range', () => assert.equal(parseRange('7..2'), null));
++
++test('rejects non-string input', () => {
++  for (const value of [null, undefined, 27, {}, []]) assert.equal(parseRange(value), null);
++});
++
++test('rejects malformed ranges', () => {
++  for (const value of ['2-7', '..7', '2..', '1..2..3', '1 ..2', '1.. 2', '1.5..2', '1..2.5']) {
++    assert.equal(parseRange(value), null);
++  }
++});
++
++test('rejects values outside the inclusive bounds', () => {
++  assert.equal(parseRange('-100001..0'), null);
++  assert.equal(parseRange('0..100001'), null);
++});
+*** End Patch
+PATCH" in /home/pickleshell/workspace/models-test/.worktrees/phase2/47-gpt-5-6-sol/tests-edge-cases
+ exited 2 in 0ms:
+patch: **** Only garbage was found in the patch input.
+
+exec
+/bin/bash -lc "patch -p1 <<'PATCH'
+--- a/fixtures/phase2/tests-edge-cases/src/range.js
++++ b/fixtures/phase2/tests-edge-cases/src/range.js
+@@ -1,9 +1,15 @@
+ export function parseRange(value) {
+   if (typeof value "'!== '"'string') return null;
+-  const [left, right] = value.split('..');
+-  const start = Number(left);
+-  const end = Number(right);
+-  if ("'!Number.isInteger(start) || !Number.isInteger(end)) return null;
++
++  const match = /''^'"\\s*([+-]?\\d+)\\.\\.([+-]?\\d+)\\s*"'$/.exec(value);
++  if (!match) return null;
++
++  const start = Number(match[1]);
++  const end = Number(match[2]);
++  if (start < -100000 || start > 100000 || end < -100000 || end > 100000 || start > end) {
++    return null;
++  }
++
+   return { start, end };
+ }
+--- a/fixtures/phase2/tests-edge-cases/test/range.test.mjs
++++ b/fixtures/phase2/tests-edge-cases/test/range.test.mjs
+@@ -4,5 +4,23 @@
+ 
+ test('"'parses an inclusive range', () => assert.deepEqual(parseRange('2..7'), { start: 2, end: 7 }));
+ test('accepts surrounding whitespace', () => assert.deepEqual(parseRange(' -2..0 '), { start: -2, end: 0 }));
+-test('rejects malformed ranges', () => assert.equal(parseRange('2-7'), null));
++test('accepts the inclusive bounds', () => assert.deepEqual(parseRange('-100000..100000'), { start: -100000, end: 100000 }));
+ test('rejects a reversed range', () => assert.equal(parseRange('7..2'), null));
++
++test('rejects non-string input', () => {
++  for (const value of [null, undefined, 27, {}, []]) assert.equal(parseRange(value), null);
++});
++
++test('rejects malformed ranges', () => {
++  for (const value of ['2-7', '..7', '2..', '1..2..3', '1 ..2', '1.. 2', '1.5..2', '1..2.5']) {
++    assert.equal(parseRange(value), null);
++  }
++});
++
++test('rejects values outside the inclusive bounds', () => {
++  assert.equal(parseRange('-100001..0'), null);
++  assert.equal(parseRange('0..100001'), null);
++});
+PATCH" in /home/pickleshell/workspace/models-test/.worktrees/phase2/47-gpt-5-6-sol/tests-edge-cases
+ exited 2 in 0ms:
+patching file fixtures/phase2/tests-edge-cases/src/range.js
+Hunk #1 FAILED at 1.
+patch: **** malformed patch at line 45:  
+
+
+exec
+/bin/bash -lc "sed -n '1,120p' fixtures/phase2/tests-edge-cases/src/range.js && sed -n '1,160p' fixtures/phase2/tests-edge-cases/test/range.test.mjs && rg --files -g '*.rej'" in /home/pickleshell/workspace/models-test/.worktrees/phase2/47-gpt-5-6-sol/tests-edge-cases
+ exited 1 in 0ms:
+export function parseRange(value) {
+  if (typeof value !== 'string') return null;
+  const [left, right] = value.split('..');
+  const start = Number(left);
+  const end = Number(right);
+  if (!Number.isInteger(start) || !Number.isInteger(end)) return null;
+  return { start, end };
+}
+import test from 'node:test';
+import assert from 'node:assert/strict';
+const { parseRange } = await import(process.env.BENCHMARK_SOURCE ? `${process.env.BENCHMARK_SOURCE}/range.js` : '../src/range.js');
+
+test('parses an inclusive range', () => assert.deepEqual(parseRange('2..7'), { start: 2, end: 7 }));
+test('accepts surrounding whitespace', () => assert.deepEqual(parseRange(' -2..0 '), { start: -2, end: 0 }));
+test('rejects malformed ranges', () => assert.equal(parseRange('2-7'), null));
+test('rejects a reversed range', () => assert.equal(parseRange('7..2'), null));
+
+exec
+/bin/bash -lc "patch -p1 <<'PATCH'
+--- a/fixtures/phase2/tests-edge-cases/src/range.js
++++ b/fixtures/phase2/tests-edge-cases/src/range.js
+@@ -1,8 +1,15 @@
+ export function parseRange(value) {
+   if (typeof value "'!== '"'string') return null;
+-  const [left, right] = value.split('..');
+-  const start = Number(left);
+-  const end = Number(right);
+-  if ("'!Number.isInteger(start) || !Number.isInteger(end)) return null;
++
++  const match = /''^'"\\s*([+-]?\\d+)\\.\\.([+-]?\\d+)\\s*"'$/.exec(value);
++  if (!match) return null;
++
++  const start = Number(match[1]);
++  const end = Number(match[2]);
++  if (start < -100000 || start > 100000 || end < -100000 || end > 100000 || start > end) {
++    return null;
++  }
++
+   return { start, end };
+ }
+PATCH
+patch -p1 <<'"'PATCH'
+--- a/fixtures/phase2/tests-edge-cases/test/range.test.mjs
++++ b/fixtures/phase2/tests-edge-cases/test/range.test.mjs
+@@ -5,4 +5,22 @@
+ test('parses an inclusive range', () => assert.deepEqual(parseRange('2..7'), { start: 2, end: 7 }));
+ test('accepts surrounding whitespace', () => assert.deepEqual(parseRange(' -2..0 '), { start: -2, end: 0 }));
+-test('rejects malformed ranges', () => assert.equal(parseRange('2-7'), null));
++test('accepts the inclusive bounds', () => assert.deepEqual(parseRange('-100000..100000'), { start: -100000, end: 100000 }));
+ test('rejects a reversed range', () => assert.equal(parseRange('7..2'), null));
++
++test('rejects non-string input', () => {
++  for (const value of [null, undefined, 27, {}, []]) assert.equal(parseRange(value), null);
++});
++
++test('rejects malformed ranges', () => {
++  for (const value of ['2-7', '..7', '2..', '1..2..3', '1 ..2', '1.. 2', '1.5..2', '1..2.5']) {
++    assert.equal(parseRange(value), null);
++  }
++});
++
++test('rejects values outside the inclusive bounds', () => {
++  assert.equal(parseRange('-100001..0'), null);
++  assert.equal(parseRange('0..100001'), null);
++});
+PATCH" in /home/pickleshell/workspace/models-test/.worktrees/phase2/47-gpt-5-6-sol/tests-edge-cases
+ exited 2 in 0ms:
+patching file fixtures/phase2/tests-edge-cases/src/range.js
+patch: **** malformed patch at line 21:  
+
+patching file fixtures/phase2/tests-edge-cases/test/range.test.mjs
+patch: **** malformed patch at line 23:  
+
+
+exec
+/bin/bash -lc "patch -p1 <<'PATCH'
+--- a/fixtures/phase2/tests-edge-cases/src/range.js
++++ b/fixtures/phase2/tests-edge-cases/src/range.js
+@@ -1,8 +1,14 @@
+ export function parseRange(value) {
+   if (typeof value "'!== '"'string') return null;
+-  const [left, right] = value.split('..');
+-  const start = Number(left);
+-  const end = Number(right);
+-  if ("'!Number.isInteger(start) || !Number.isInteger(end)) return null;
++
++  const match = /''^'"\\s*([+-]?\\d+)\\.\\.([+-]?\\d+)\\s*"'$/.exec(value);
++  if (!match) return null;
++
++  const start = Number(match[1]);
++  const end = Number(match[2]);
++  if (start < -100000 || start > 100000 || end < -100000 || end > 100000 || start > end) {
++    return null;
++  }
++
+   return { start, end };
+ }
+PATCH
+patch -p1 <<'"'PATCH'
+--- a/fixtures/phase2/tests-edge-cases/test/range.test.mjs
++++ b/fixtures/phase2/tests-edge-cases/test/range.test.mjs
+@@ -5,4 +5,18 @@
+ test('parses an inclusive range', () => assert.deepEqual(parseRange('2..7'), { start: 2, end: 7 }));
+ test('accepts surrounding whitespace', () => assert.deepEqual(parseRange(' -2..0 '), { start: -2, end: 0 }));
+-test('rejects malformed ranges', () => assert.equal(parseRange('2-7'), null));
++test('accepts the inclusive bounds', () => assert.deepEqual(parseRange('-100000..100000'), { start: -100000, end: 100000 }));
+ test('rejects a reversed range', () => assert.equal(parseRange('7..2'), null));
++
++test('rejects non-string input', () => {
++  for (const value of [null, undefined, 27, {}, []]) assert.equal(parseRange(value), null);
++});
++
++test('rejects malformed ranges', () => {
++  for (const value of ['2-7', '..7', '2..', '1..2..3', '1 ..2', '1.. 2', '1.5..2', '1..2.5']) {
++    assert.equal(parseRange(value), null);
++  }
++});
++
++test('rejects values outside the inclusive bounds', () => {
++  assert.equal(parseRange('-100001..0'), null);
++  assert.equal(parseRange('0..100001'), null);
++});
+PATCH" in /home/pickleshell/workspace/models-test/.worktrees/phase2/47-gpt-5-6-sol/tests-edge-cases
+ succeeded in 0ms:
+patching file fixtures/phase2/tests-edge-cases/src/range.js
+patching file fixtures/phase2/tests-edge-cases/test/range.test.mjs
+
+codex
+Implementation and focused cases are in place. I’m running the fixture’s full public test command now, then I’ll verify the diff is limited to the two authorized files.
+exec
+/bin/bash -lc 'npm test' in /home/pickleshell/workspace/models-test/.worktrees/phase2/47-gpt-5-6-sol/tests-edge-cases/fixtures/phase2/tests-edge-cases
+ exited 1 in 0ms:
+
+> test
+> node --test test/*.test.mjs
+
+TAP version 13
+# file:///home/pickleshell/workspace/models-test/.worktrees/phase2/47-gpt-5-6-sol/tests-edge-cases/fixtures/phase2/tests-edge-cases/test/range.test.mjs:23
+# SyntaxError: Unexpected end of input
+#     at compileSourceTextModule (node:internal/modules/esm/utils:346:16)
+#     at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:146:18)
+#     at \#translate (node:internal/modules/esm/loader:497:12)
+#     at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:544:27)
+#     at async ModuleJob._link (node:internal/modules/esm/module_job:148:19)
+# Node.js v20.20.2
+# Subtest: /home/pickleshell/workspace/models-test/.worktrees/phase2/47-gpt-5-6-sol/tests-edge-cases/fixtures/phase2/tests-edge-cases/test/range.test.mjs
+not ok 1 - /home/pickleshell/workspace/models-test/.worktrees/phase2/47-gpt-5-6-sol/tests-edge-cases/fixtures/phase2/tests-edge-cases/test/range.test.mjs
+  ---
+  duration_ms: 28.591527
+  location: '/home/pickleshell/workspace/models-test/.worktrees/phase2/47-gpt-5-6-sol/tests-edge-cases/fixtures/phase2/tests-edge-cases/test/range.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 0
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 32.053366
+
+exec
+/bin/bash -lc 'nl -ba fixtures/phase2/tests-edge-cases/test/range.test.mjs && git diff -- fixtures/phase2/tests-edge-cases/src/range.js fixtures/phase2/tests-edge-cases/test/range.test.mjs' in /home/pickleshell/workspace/models-test/.worktrees/phase2/47-gpt-5-6-sol/tests-edge-cases
+ succeeded in 0ms:
+     1	import test from 'node:test';
+     2	import assert from 'node:assert/strict';
+     3	const { parseRange } = await import(process.env.BENCHMARK_SOURCE ? `${process.env.BENCHMARK_SOURCE}/range.js` : '../src/range.js');
+     4	
+     5	test('parses an inclusive range', () => assert.deepEqual(parseRange('2..7'), { start: 2, end: 7 }));
+     6	test('accepts surrounding whitespace', () => assert.deepEqual(parseRange(' -2..0 '), { start: -2, end: 0 }));
+     7	test('accepts the inclusive bounds', () => assert.deepEqual(parseRange('-100000..100000'), { start: -100000, end: 100000 }));
+     8	test('rejects a reversed range', () => assert.equal(parseRange('7..2'), null));
+     9	
+    10	test('rejects non-string input', () => {
+    11	  for (const value of [null, undefined, 27, {}, []]) assert.equal(parseRange(value), null);
+    12	});
+    13	
+    14	test('rejects malformed ranges', () => {
+    15	  for (const value of ['2-7', '..7', '2..', '1..2..3', '1 ..2', '1.. 2', '1.5..2', '1..2.5']) {
+    16	    assert.equal(parseRange(value), null);
+    17	  }
+    18	});
+    19	
+    20	test('rejects values outside the inclusive bounds', () => {
+    21	  assert.equal(parseRange('-100001..0'), null);
+    22	  assert.equal(parseRange('0..100001'), null);
+diff --git a/fixtures/phase2/tests-edge-cases/src/range.js b/fixtures/phase2/tests-edge-cases/src/range.js
+index caf34d8..0e988a6 100644
+--- a/fixtures/phase2/tests-edge-cases/src/range.js
++++ b/fixtures/phase2/tests-edge-cases/src/range.js
+@@ -1,8 +1,14 @@
+ export function parseRange(value) {
+   if (typeof value !== 'string') return null;
+-  const [left, right] = value.split('..');
+-  const start = Number(left);
+-  const end = Number(right);
+-  if (!Number.isInteger(start) || !Number.isInteger(end)) return null;
++
++  const match = /^\s*([+-]?\d+)\.\.([+-]?\d+)\s*$/.exec(value);
++  if (!match) return null;
++
++  const start = Number(match[1]);
++  const end = Number(match[2]);
++  if (start < -100000 || start > 100000 || end < -100000 || end > 100000 || start > end) {
++    return null;
++  }
++
+   return { start, end };
+ }
+diff --git a/fixtures/phase2/tests-edge-cases/test/range.test.mjs b/fixtures/phase2/tests-edge-cases/test/range.test.mjs
+index f2758d0..f3da744 100644
+--- a/fixtures/phase2/tests-edge-cases/test/range.test.mjs
++++ b/fixtures/phase2/tests-edge-cases/test/range.test.mjs
+@@ -4,5 +4,19 @@ const { parseRange } = await import(process.env.BENCHMARK_SOURCE ? `${process.en
+ 
+ test('parses an inclusive range', () => assert.deepEqual(parseRange('2..7'), { start: 2, end: 7 }));
+ test('accepts surrounding whitespace', () => assert.deepEqual(parseRange(' -2..0 '), { start: -2, end: 0 }));
+-test('rejects malformed ranges', () => assert.equal(parseRange('2-7'), null));
++test('accepts the inclusive bounds', () => assert.deepEqual(parseRange('-100000..100000'), { start: -100000, end: 100000 }));
+ test('rejects a reversed range', () => assert.equal(parseRange('7..2'), null));
++
++test('rejects non-string input', () => {
++  for (const value of [null, undefined, 27, {}, []]) assert.equal(parseRange(value), null);
++});
++
++test('rejects malformed ranges', () => {
++  for (const value of ['2-7', '..7', '2..', '1..2..3', '1 ..2', '1.. 2', '1.5..2', '1..2.5']) {
++    assert.equal(parseRange(value), null);
++  }
++});
++
++test('rejects values outside the inclusive bounds', () => {
++  assert.equal(parseRange('-100001..0'), null);
++  assert.equal(parseRange('0..100001'), null);
+
+exec
+/bin/bash -lc "patch -p1 <<'PATCH'
+--- a/fixtures/phase2/tests-edge-cases/test/range.test.mjs
++++ b/fixtures/phase2/tests-edge-cases/test/range.test.mjs
+@@ -20,3 +20,4 @@
+ test('rejects values outside the inclusive bounds', () => {
+   assert.equal(parseRange('-100001..0'), null);
+   assert.equal(parseRange('0..100001'), null);
++});
+PATCH" in /home/pickleshell/workspace/models-test/.worktrees/phase2/47-gpt-5-6-sol/tests-edge-cases
+ succeeded in 0ms:
+patching file fixtures/phase2/tests-edge-cases/test/range.test.mjs
+
+exec
+/bin/bash -lc 'npm test && git diff --check && git status --short && git diff -- fixtures/phase2/tests-edge-cases/src/range.js fixtures/phase2/tests-edge-cases/test/range.test.mjs' in /home/pickleshell/workspace/models-test/.worktrees/phase2/47-gpt-5-6-sol/tests-edge-cases/fixtures/phase2/tests-edge-cases
+ succeeded in 11ms:
+ D ../hidden/tests-edge-cases.mjs
+ M src/range.js
+ M test/range.test.mjs
+
+codex
+Implemented `parseRange` with:
+
+- Exact `start..end` syntax and surrounding whitespace support
+- Integer, bounds, ordering, and input-type validation
+- Rejection of decimals, missing/extra delimiters, and internal whitespace
+
+Added focused edge-case tests. Full public suite passes: **7/7 tests**.
+
+Only the requested source and test files were modified; the pre-existing hidden-test deletion was untouched.
+tokens used
+50,727

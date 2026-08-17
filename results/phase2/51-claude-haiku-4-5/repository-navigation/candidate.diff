@@ -1,0 +1,27 @@
+diff --git a/fixtures/phase2/repository-navigation/src/labels.js b/fixtures/phase2/repository-navigation/src/labels.js
+index b4b08eb..3aeff27 100644
+--- a/fixtures/phase2/repository-navigation/src/labels.js
++++ b/fixtures/phase2/repository-navigation/src/labels.js
+@@ -1,4 +1,21 @@
+ export function formatLabel(value) {
+   if (typeof value !== 'string') return '';
+-  return typeof value === 'string' ? value.trim() : '';
++  
++  // Trim the input
++  const trimmed = value.trim();
++  
++  // If empty after trimming, return empty string
++  if (!trimmed) return '';
++  
++  // Collapse internal whitespace and split into words
++  const words = trimmed.split(/\s+/);
++  
++  // Title-case each word (capitalize first letter, lowercase the rest)
++  const titleCased = words.map(word => {
++    if (!word) return word;
++    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
++  });
++  
++  // Join words with single space
++  return titleCased.join(' ');
+ }

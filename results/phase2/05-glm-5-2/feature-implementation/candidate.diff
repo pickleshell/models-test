@@ -1,0 +1,46 @@
+diff --git a/fixtures/phase2/feature-implementation/src/featureFlags.js b/fixtures/phase2/feature-implementation/src/featureFlags.js
+index 489ea67..055085f 100644
+--- a/fixtures/phase2/feature-implementation/src/featureFlags.js
++++ b/fixtures/phase2/feature-implementation/src/featureFlags.js
+@@ -1,5 +1,38 @@
+ export function resolveFeature(config, context) {
+-  if (!config || !context || typeof context !== 'object') return false;
+-  const flag = config[context.feature];
+-  return typeof flag === 'boolean' ? flag : Boolean(flag && flag.enabled);
++  if (config == null || typeof config !== 'object') return false;
++  if (context == null || typeof context !== 'object') return false;
++  const feature = context.feature;
++  if (typeof feature !== 'string' || feature === '') return false;
++
++  const overrides = context.overrides;
++  if (overrides != null && typeof overrides === 'object' && typeof overrides[feature] === 'boolean') {
++    return overrides[feature];
++  }
++
++  const flag = config[feature];
++  if (flag == null) return false;
++  if (typeof flag === 'boolean') return flag;
++  if (typeof flag !== 'object') return false;
++
++  if (flag.enabled !== true) return false;
++
++  const rollout = flag.rollout;
++  if (rollout === undefined) return true;
++  if (typeof rollout !== 'number' || !Number.isInteger(rollout) || rollout < 0 || rollout > 100) return false;
++  if (rollout === 0) return false;
++  if (rollout === 100) return true;
++
++  const userId = context.userId;
++  if (typeof userId !== 'string' || userId === '') return false;
++
++  return stableHash(userId) % 100 < rollout;
++}
++
++function stableHash(str) {
++  let hash = 0x811c9dc5;
++  for (let i = 0; i < str.length; i++) {
++    hash ^= str.charCodeAt(i);
++    hash = Math.imul(hash, 0x01000193);
++  }
++  return hash >>> 0;
+ }

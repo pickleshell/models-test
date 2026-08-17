@@ -1,0 +1,54 @@
+diff --git a/fixtures/phase2/tests-edge-cases/src/range.js b/fixtures/phase2/tests-edge-cases/src/range.js
+index caf34d8..52a435c 100644
+--- a/fixtures/phase2/tests-edge-cases/src/range.js
++++ b/fixtures/phase2/tests-edge-cases/src/range.js
+@@ -1,8 +1,21 @@
++const BOUND = 100000;
++const RANGE_RE = /^\s*(-?\d+)\.\.(-?\d+)\s*$/;
++
+ export function parseRange(value) {
+   if (typeof value !== 'string') return null;
+-  const [left, right] = value.split('..');
+-  const start = Number(left);
+-  const end = Number(right);
++
++  const match = RANGE_RE.exec(value);
++  if (!match) return null;
++
++  const start = Number(match[1]);
++  const end = Number(match[2]);
++
+   if (!Number.isInteger(start) || !Number.isInteger(end)) return null;
++
++  if (start < -BOUND || start > BOUND) return null;
++  if (end < -BOUND || end > BOUND) return null;
++
++  if (start > end) return null;
++
+   return { start, end };
+ }
+diff --git a/fixtures/phase2/tests-edge-cases/test/range.test.mjs b/fixtures/phase2/tests-edge-cases/test/range.test.mjs
+index f2758d0..7d31205 100644
+--- a/fixtures/phase2/tests-edge-cases/test/range.test.mjs
++++ b/fixtures/phase2/tests-edge-cases/test/range.test.mjs
+@@ -6,3 +6,20 @@ test('parses an inclusive range', () => assert.deepEqual(parseRange('2..7'), { s
+ test('accepts surrounding whitespace', () => assert.deepEqual(parseRange(' -2..0 '), { start: -2, end: 0 }));
+ test('rejects malformed ranges', () => assert.equal(parseRange('2-7'), null));
+ test('rejects a reversed range', () => assert.equal(parseRange('7..2'), null));
++
++test('accepts equal start and end', () => assert.deepEqual(parseRange('5..5'), { start: 5, end: 5 }));
++test('parses negative bounds', () => assert.deepEqual(parseRange('-100000..100000'), { start: -100000, end: 100000 }));
++test('rejects internal whitespace', () => assert.equal(parseRange('2 .. 7'), null));
++test('rejects decimal start', () => assert.equal(parseRange('2.5..7'), null));
++test('rejects decimal end', () => assert.equal(parseRange('2..7.5'), null));
++test('rejects empty string', () => assert.equal(parseRange(''), null));
++test('rejects missing start', () => assert.equal(parseRange('..7'), null));
++test('rejects missing end', () => assert.equal(parseRange('2..'), null));
++test('rejects multiple separators', () => assert.equal(parseRange('2...7'), null));
++test('rejects out-of-bounds start', () => assert.equal(parseRange('100001..100002'), null));
++test('rejects out-of-bounds end', () => assert.equal(parseRange('-2..-100001'), null));
++test('rejects non-base10 hexadecimal', () => assert.equal(parseRange('0x10..7'), null));
++test('rejects exponent notation', () => assert.equal(parseRange('1e3..2'), null));
++test('rejects non-string input (number)', () => assert.equal(parseRange(5), null));
++test('rejects non-string input (null)', () => assert.equal(parseRange(null), null));
++test('rejects non-string input (object)', () => assert.equal(parseRange({}), null));

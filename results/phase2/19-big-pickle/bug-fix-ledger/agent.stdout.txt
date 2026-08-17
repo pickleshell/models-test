@@ -1,0 +1,124 @@
+[0m
+> build · big-pickle
+[0m
+[0m→ [0mRead fixtures/phase1-ledger
+[0m→ [0mRead fixtures/phase1-ledger/src/reconcile.js
+[0m→ [0mRead fixtures/phase1-ledger/PROMPT.md
+[0m→ [0mRead fixtures/phase1-ledger/README.md
+[0m→ [0mRead fixtures/phase1-ledger/test
+[0m→ [0mRead fixtures/phase1-ledger/test/reconcile.test.mjs
+[0m→ [0mRead fixtures/phase1-ledger/package.json
+[0m
+[0m$ [0mnpm test --prefix fixtures/phase1-ledger 2>&1
+> phase1-ledger-fixture@0.1.0 test
+> node --test test/*.test.mjs
+
+TAP version 13
+# Subtest: parses ordinary decimal money into cents
+ok 1 - parses ordinary decimal money into cents
+  ---
+  duration_ms: 1.018172
+  ...
+# Subtest: summarizes sales by account, currency, and UTC day
+ok 2 - summarizes sales by account, currency, and UTC day
+  ---
+  duration_ms: 11.931894
+  ...
+# Subtest: does not double count duplicate transaction ids
+not ok 3 - does not double count duplicate transaction ids
+  ---
+  duration_ms: 1.142635
+  location: '/home/pickleshell/workspace/models-test/.worktrees/phase2/19-big-pickle/bug-fix-ledger/fixtures/phase1-ledger/test/reconcile.test.mjs:24:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    2 !== 1
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 1
+  actual: 2
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///home/pickleshell/workspace/models-test/.worktrees/phase2/19-big-pickle/bug-fix-ledger/fixtures/phase1-ledger/test/reconcile.test.mjs:31:10)
+    Test.runInAsyncScope (node:async_hooks:206:9)
+    Test.run (node:internal/test_runner/test:796:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:526:18)
+    Test.postRun (node:internal/test_runner/test:889:19)
+    Test.run (node:internal/test_runner/test:835:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:526:7)
+  ...
+# Subtest: counts invalid rows and orphan refunds without adding them to totals
+ok 4 - counts invalid rows and orphan refunds without adding them to totals
+  ---
+  duration_ms: 0.225744
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 3
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 60.729739
+[0m
+Let me run the tests first to see what's failing:
+[0m
+[0m← [0mEdit fixtures/phase1-ledger/src/reconcile.js
+Index: /home/pickleshell/workspace/models-test/.worktrees/phase2/19-big-pickle/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+===================================================================
+--- /home/pickleshell/workspace/models-test/.worktrees/phase2/19-big-pickle/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
++++ /home/pickleshell/workspace/models-test/.worktrees/phase2/19-big-pickle/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+@@ -51,8 +51,9 @@
+ if (!entry.currency) throw new Error('missing currency');
+ 
+ if (seenIds.has(entry.id)) {
+   metrics.duplicateCount += 1;
++  continue;
+ }
+ seenIds.add(entry.id);
+ 
+ const cents = parseAmountToCents(entry.amount);
+
+[0m
+The failing test shows `processed: 2` when it should be `1` — duplicate entries are being counted in totals. The fix: skip processing when a duplicate ID is detected.
+[0m
+[0m$ [0mnpm test --prefix fixtures/phase1-ledger 2>&1
+> phase1-ledger-fixture@0.1.0 test
+> node --test test/*.test.mjs
+
+TAP version 13
+# Subtest: parses ordinary decimal money into cents
+ok 1 - parses ordinary decimal money into cents
+  ---
+  duration_ms: 0.940666
+  ...
+# Subtest: summarizes sales by account, currency, and UTC day
+ok 2 - summarizes sales by account, currency, and UTC day
+  ---
+  duration_ms: 11.500134
+  ...
+# Subtest: does not double count duplicate transaction ids
+ok 3 - does not double count duplicate transaction ids
+  ---
+  duration_ms: 0.167014
+  ...
+# Subtest: counts invalid rows and orphan refunds without adding them to totals
+ok 4 - counts invalid rows and orphan refunds without adding them to totals
+  ---
+  duration_ms: 0.172995
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 4
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 58.18416
+[0m
+All 4 tests pass. The fix was a single `continue` added at `src/reconcile.js:55` — when a duplicate `id` is detected, the entry is now skipped instead of being processed and added to totals.
+[0m

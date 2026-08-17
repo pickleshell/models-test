@@ -1,0 +1,11 @@
+diff --git a/fixtures/phase2/refactoring/src/events.js b/fixtures/phase2/refactoring/src/events.js
+index 3804f8e..bb53758 100644
+--- a/fixtures/phase2/refactoring/src/events.js
++++ b/fixtures/phase2/refactoring/src/events.js
+@@ -1,5 +1,5 @@
+ function matching(events, type) {
+-  return events.filter((event) => event && event.type === type);
++  return events.filter((event) => event && event.type === type && typeof event.timestamp === 'number' && !Number.isNaN(event.timestamp));
+ }
+ 
+ export function countByType(events, type) {

@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "benchmark": "phase2",
+  "task": "tests-edge-cases",
+  "category": "tests-and-edge-cases",
+  "model": "opencode-go/glm-5.1",
+  "pass": true,
+  "metrics": {
+    "public_status": 0,
+    "hidden_passed": 1,
+    "hidden_failed": 0,
+    "forbidden_change_count": 0,
+    "changed_files": [
+      "fixtures/phase2/tests-edge-cases/src/range.js",
+      "fixtures/phase2/tests-edge-cases/test/range.test.mjs"
+    ],
+    "duration_ms": 182
+  },
+  "public_test": {
+    "command": "npm test --prefix fixtures/phase2/tests-edge-cases",
+    "stdout": "\n> test\n> node --test test/*.test.mjs\n\nTAP version 13\n# Subtest: parses an inclusive range\nok 1 - parses an inclusive range\n  ---\n  duration_ms: 1.225622\n  ...\n# Subtest: accepts surrounding whitespace\nok 2 - accepts surrounding whitespace\n  ---\n  duration_ms: 0.117912\n  ...\n# Subtest: rejects malformed ranges\nok 3 - rejects malformed ranges\n  ---\n  duration_ms: 0.171733\n  ...\n# Subtest: rejects a reversed range\nok 4 - rejects a reversed range\n  ---\n  duration_ms: 0.108944\n  ...\n# Subtest: rejects non-string input\nok 5 - rejects non-string input\n  ---\n  duration_ms: 0.112602\n  ...\n# Subtest: rejects decimal values\nok 6 - rejects decimal values\n  ---\n  duration_ms: 0.1007\n  ...\n# Subtest: rejects out-of-bound values\nok 7 - rejects out-of-bound values\n  ---\n  duration_ms: 0.10123\n  ...\n# Subtest: accepts inclusive boundaries\nok 8 - accepts inclusive boundaries\n  ---\n  duration_ms: 0.179017\n  ...\n# Subtest: rejects extra separators and empty input\nok 9 - rejects extra separators and empty input\n  ---\n  duration_ms: 0.168857\n  ...\n# Subtest: rejects internal whitespace\nok 10 - rejects internal whitespace\n  ---\n  duration_ms: 0.173676\n  ...\n# Subtest: accepts equal start and end\nok 11 - accepts equal start and end\n  ---\n  duration_ms: 0.153689\n  ...\n# Subtest: accepts negative ranges\nok 12 - accepts negative ranges\n  ---\n  duration_ms: 0.117852\n  ...\n# Subtest: rejects non-base-10 forms\nok 13 - rejects non-base-10 forms\n  ---\n  duration_ms: 0.110458\n  ...\n# Subtest: normalizes negative zero\nok 14 - normalizes negative zero\n  ---\n  duration_ms: 0.161273\n  ...\n1..14\n# tests 14\n# suites 0\n# pass 14\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 49.548231\n",
+    "stderr": ""
+  },
+  "hidden": {
+    "stdout": "",
+    "stderr": ""
+  },
+  "forbidden_changes": []
+}

@@ -1,0 +1,257 @@
+[0m
+> build · claude-opus-5
+[0m
+I'll start by exploring the fixture directory to understand the task.
+[0m
+[0m$ [0mfind . -path ./node_modules -prune -o -type f -print | head -50
+./.git
+./benchmarks/opencode-go-model-manifest.json
+./benchmarks/phase1/protocol.md
+./benchmarks/phase1/model-order.json
+./benchmarks/phase1/README.md
+./benchmarks/phase2/manifest.json
+./benchmarks/phase2/README.md
+./benchmarks/phase2/prompts/bug-fix-ledger.md
+./benchmarks/phase2/prompts/tests-edge-cases.md
+./benchmarks/phase2/prompts/refactoring.md
+./benchmarks/phase2/prompts/feature-implementation.md
+./benchmarks/phase2/prompts/repository-navigation.md
+./benchmarks/phase2/result-schema.json
+./benchmarks/README.md
+./.gitignore
+./rubrics/scoring.md
+./rubrics/README.md
+./scripts/phase2-runner.mjs
+./scripts/benchmark.mjs
+./scripts/validate-layout.sh
+./scripts/evaluate-phase1.mjs
+./scripts/phase1-prepare-worktrees.mjs
+./scripts/test-phase2-runner.mjs
+./scripts/test-benchmark.mjs
+./scripts/phase1-print-prompt.mjs
+./fixtures/phase1-ledger/test/reconcile.test.mjs
+./fixtures/phase1-ledger/PROMPT.md
+./fixtures/phase1-ledger/package.json
+./fixtures/phase1-ledger/src/reconcile.js
+./fixtures/phase1-ledger/README.md
+./fixtures/phase2/repository-navigation/test/labels.test.mjs
+./fixtures/phase2/repository-navigation/package.json
+./fixtures/phase2/repository-navigation/src/labels.js
+./fixtures/phase2/repository-navigation/README.md
+./fixtures/phase2/refactoring/test/events.test.mjs
+./fixtures/phase2/refactoring/package.json
+./fixtures/phase2/refactoring/src/events.js
+./fixtures/phase2/refactoring/README.md
+./fixtures/phase2/tests-edge-cases/test/range.test.mjs
+./fixtures/phase2/tests-edge-cases/package.json
+./fixtures/phase2/tests-edge-cases/src/range.js
+./fixtures/phase2/tests-edge-cases/README.md
+./fixtures/phase2/references/repository-navigation/labels.js
+./fixtures/phase2/references/refactoring/events.js
+./fixtures/phase2/references/tests-edge-cases/range.js
+./fixtures/phase2/references/bug-fix-ledger/reconcile.js
+./fixtures/phase2/references/feature-implementation/featureFlags.js
+./fixtures/phase2/feature-implementation/test/featureFlags.test.mjs
+./fixtures/phase2/feature-implementation/package.json
+./fixtures/phase2/feature-implementation/src/featureFlags.js
+[0m
+[0m→ [0mRead fixtures/phase2/tests-edge-cases/README.md
+[0m→ [0mRead fixtures/phase2/tests-edge-cases/src/range.js
+[0m→ [0mRead fixtures/phase2/tests-edge-cases/test/range.test.mjs
+[0m→ [0mRead fixtures/phase2/tests-edge-cases/package.json
+[0m→ [0mRead benchmarks/phase2/prompts/tests-edge-cases.md
+[0m→ [0mRead benchmarks/phase2/manifest.json
+[0m
+Now let me implement. I'll work from the README contract only (not peeking at the reference implementation, to keep the exercise honest).
+[0m
+[0m# [0mTodos
+[•] Implement parseRange per README contract in src/range.js
+[ ] Add focused edge-case tests to test/range.test.mjs
+[ ] Run full public suite (npm test --prefix fixtures/phase2/tests-edge-cases)
+[0m
+[0m← [0mWrite fixtures/phase2/tests-edge-cases/src/range.js
+Wrote file successfully.
+[0m
+Now the tests — keeping the existing four and adding focused edge cases:
+[0m
+[0m← [0mWrite fixtures/phase2/tests-edge-cases/test/range.test.mjs
+Wrote file successfully.
+[0m
+Two of my assertions encode genuinely ambiguous behavior the README doesn't specify (explicit `+` sign, leading zeros). I'll drop those assertions rather than lock in a guess as a requirement:
+[0m
+[0m← [0mEdit fixtures/phase2/tests-edge-cases/test/range.test.mjs
+Index: /home/pickleshell/workspace/models-test/.worktrees/phase2/53-claude-opus-5/tests-edge-cases/fixtures/phase2/tests-edge-cases/test/range.test.mjs
+===================================================================
+--- /home/pickleshell/workspace/models-test/.worktrees/phase2/53-claude-opus-5/tests-edge-cases/fixtures/phase2/tests-edge-cases/test/range.test.mjs
++++ /home/pickleshell/workspace/models-test/.worktrees/phase2/53-claude-opus-5/tests-edge-cases/fixtures/phase2/tests-edge-cases/test/range.test.mjs
+@@ -73,28 +73,24 @@
+   assert.equal(parseRange('2..Infinity'), null);
+   assert.equal(parseRange('NaN..7'), null);
+ });
+ 
+-test('rejects explicitly signed positives and doubled signs', () => {
+-  assert.equal(parseRange('+2..7'), null);
+-  assert.equal(parseRange('2..+7'), null);
++test('rejects doubled and dangling signs', () => {
+   assert.equal(parseRange('--2..7'), null);
+   assert.equal(parseRange('2..-'), null);
++  assert.equal(parseRange('-..7'), null);
+ });
+ 
+-test('rejects a misplaced sign after the separator', () => assert.equal(parseRange('2..7-'), null));
++test('rejects a misplaced trailing sign', () => assert.equal(parseRange('2..7-'), null));
+ 
+-test('normalizes negative zero endpoints', () => {
++test('does not report a negative zero endpoint', () => {
+   const range = parseRange('-0..0');
+-  assert.deepEqual(range, { start: 0, end: 0 });
+-  assert.equal(Object.is(range.start, -0), false);
+-  assert.equal(Object.is(range.end, -0), false);
++  if (range !== null) {
++    assert.deepEqual(range, { start: 0, end: 0 });
++    assert.equal(Object.is(range.start, -0), false);
++    assert.equal(Object.is(range.end, -0), false);
++  }
+ });
+ 
+-test('accepts leading zeros as base-10 digits', () => {
+-  assert.deepEqual(parseRange('007..010'), { start: 7, end: 10 });
+-  assert.deepEqual(parseRange('-007..-006'), { start: -7, end: -6 });
+-});
+-
+ test('returns only start and end keys', () => {
+   assert.deepEqual(Object.keys(parseRange('1..2')), ['start', 'end']);
+ });
+
+[0m
+[0m$ [0mnpm test --prefix fixtures/phase2/tests-edge-cases 2>&1 | tail -30
+...
+# Subtest: rejects doubled and dangling signs
+ok 17 - rejects doubled and dangling signs
+  ---
+  duration_ms: 0.103054
+  ...
+# Subtest: rejects a misplaced trailing sign
+ok 18 - rejects a misplaced trailing sign
+  ---
+  duration_ms: 0.156113
+  ...
+# Subtest: does not report a negative zero endpoint
+ok 19 - does not report a negative zero endpoint
+  ---
+  duration_ms: 0.127309
+  ...
+# Subtest: returns only start and end keys
+ok 20 - returns only start and end keys
+  ---
+  duration_ms: 0.721264
+  ...
+1..20
+# tests 20
+# suites 0
+# pass 20
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 54.782837
+[0m
+All 20 pass. Let me verify the tests actually have teeth by running them against the original stub implementation:
+[0m
+[0m$ [0mmkdir -p /tmp/opencode/mut && cat > /tmp/opencode/mut/range.js <<'EOF'
+export function parseRange(value) {
+  if (typeof value !== 'string') return null;
+  const [left, right] = value.split('..');
+  const start = Number(left);
+  const end = Number(right);
+  if (!Number.isInteger(start) || !Number.isInteger(end)) return null;
+  return { start, end };
+}
+EOF
+BENCHMARK_SOURCE=/tmp/opencode/mut npm test --prefix fixtures/phase2/tests-edge-cases 2>&1 | grep -E '^# (tests|pass|fail)'
+# tests 20
+# pass 11
+# fail 9
+[0m
+The suite catches the original stub (9 failures). Let me confirm each individual guard in my implementation is covered by a test:
+[0m
+[0m$ [0mcd fixtures/phase2/tests-edge-cases
+SRC=src/range.js
+run() { name="$1"; python3 - "$2" "$3" <<'PY'
+import sys,re
+old,new=sys.argv[1],sys.argv[2]
+s=open('src/range.js').read()
+assert old in s, old
+open('/tmp/opencode/mut/range.js','w').write(s.replace(old,new,1))
+PY
+res=$(BENCHMARK_SOURCE=/tmp/opencode/mut npm test 2>&1 | grep -E '^# fail' | tr -dc '0-9')
+printf '%-34s fail=%s\n' "$name" "$res"; }
+
+run "drop start>end guard" "if (start > end) return null;" ""
+run "drop upper-bound guard (start)" "if (start < -LIMIT || start > LIMIT) return null;" ""
+run "drop upper-bound guard (end)" "if (end < -LIMIT || end > LIMIT) return null;" ""
+run "off-by-one LIMIT" "const LIMIT = 100000;" "const LIMIT = 100001;"
+run "unanchored regex" "/^(-?\d+)\.\.(-?\d+)\$/" "/(-?\d+)\.\.(-?\d+)/"
+run "allow decimals in regex" "/^(-?\d+)\.\.(-?\d+)\$/" "/^(-?[\d.]+)\.\.(-?[\d.]+)\$/"
+run "drop typeof guard" "if (typeof value !== 'string') return null;" ""
+run "drop trim" "value.trim()" "value"
+git checkout -- "\$SRC" 2>/dev/null; true
+drop start>end guard               fail=2
+drop upper-bound guard (start)     fail=1
+drop upper-bound guard (end)       fail=1
+off-by-one LIMIT                   fail=1
+unanchored regex                   fail=6
+allow decimals in regex            fail=2
+drop typeof guard                  fail=1
+drop trim                          fail=1
+[0m
+Every mutation is caught by at least one test. Let me clean up and confirm final state:
+[0m
+[0m$ [0mrm -rf /tmp/opencode/mut && git status --short && echo '---' && npm test --prefix fixtures/phase2/tests-edge-cases 2>&1 | grep -E '^# (tests|pass|fail)'
+D fixtures/phase2/hidden/tests-edge-cases.mjs
+ M fixtures/phase2/tests-edge-cases/src/range.js
+ M fixtures/phase2/tests-edge-cases/test/range.test.mjs
+---
+# tests 20
+# pass 20
+# fail 0
+[0m
+[0m$ [0mgit log --oneline -3 && echo '--- hidden dir:' && ls fixtures/phase2/hidden/ 2>&1
+880f20f Run Phase 2 agents through a PTY
+94bcd93 Fix Phase 2 process group handling
+bf2e430 Isolate Phase 2 OpenCode workspaces
+--- hidden dir:
+bug-fix-ledger.mjs
+feature-implementation.mjs
+refactoring.mjs
+repository-navigation.mjs
+[0m
+Done. All 20 public tests pass.
+
+## Implementation (`src/range.js:1`)
+
+Replaced the naive `split('..')` + `Number()` approach with an anchored regex plus explicit contract checks:
+
+- **Anchored pattern** `/^(-?\d+)\.\.(-?\d+)$/` — enforces *exactly* `start..end` with base-10 digits. This alone fixes the largest class of bugs: `split('..')` silently accepted `2..7..9`, `2...7`, `0x10..20`, `1e2..300`, and internal whitespace (`Number(' 2 ')` coerces fine).
+- **Bounds check** against ±100000 for both endpoints.
+- **Ordering check** `start > end` → `null`.
+- **`-0` normalization** so `-0..0` can't leak a negative zero into the returned object.
+
+`value.trim()` handles the surrounding-whitespace allowance; the `typeof` guard and named export are preserved.
+
+## Tests (`test/range.test.mjs`)
+
+Kept the original four, added 16 focused cases: inclusive bounds and just-outside-bounds (±100001), equal endpoints, reversed negatives, decimals, non-string inputs (incl. `NaN` and `Symbol`), empty/whitespace-only, missing endpoints, wrong/repeated separators, internal whitespace, leading/trailing junk, non-decimal numeric forms, malformed signs, and object shape.
+
+## Verification beyond "tests pass"
+
+Green tests prove little on their own, so I mutation-tested the suite. Against the original stub it fails 9/20, and each guard in my implementation is independently covered — removing the ordering check, either bounds check, the `typeof` guard, or `trim`, un-anchoring the regex, allowing decimals, or an off-by-one on `LIMIT` all produce failures. No mutation survived.
+
+## Two judgment calls worth flagging
+
+The README doesn't specify behavior for **explicitly signed positives** (`+2..7`) or **leading zeros** (`007..010`). My implementation rejects the former and accepts the latter, but I deliberately did *not* assert either in the tests — encoding a guess as a requirement would be worse than leaving it uncovered. The `-0..0` test is likewise written to tolerate `null`, asserting only that *if* a range comes back it has no negative zero. If you want a definitive answer on those, that's a contract decision for the README.
+
+I also worked only from the README and did not open `fixtures/phase2/references/tests-edge-cases/range.js`, since consulting the reference would defeat the point of the benchmark.
+
+One unrelated note: `fixtures/phase2/hidden/tests-edge-cases.mjs` shows as deleted in `git status`. That predates my changes (the harness withholds the evaluator for the active task), so I left it alone.
+[0m

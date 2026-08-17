@@ -1,0 +1,182 @@
+[0m
+> build · glm-5.2
+[0m
+[0m$ [0mls -la
+total 52
+drwxrwx---+ 7 pickleshell pickleshell 4096 Aug 17 06:17 .
+drwxrwx---+ 6 pickleshell pickleshell 4096 Aug 17 06:17 ..
+drwxrwx---+ 4 pickleshell pickleshell 4096 Aug 17 06:17 benchmarks
+drwxrwx---+ 4 pickleshell pickleshell 4096 Aug 17 06:17 fixtures
+-rw-rw----+ 1 pickleshell pickleshell   86 Aug 17 06:17 .git
+-rw-rw----+ 1 pickleshell pickleshell   85 Aug 17 06:17 .gitignore
+-rw-rw----+ 1 pickleshell pickleshell 1081 Aug 17 06:17 LICENSE
+-rw-rw----+ 1 pickleshell pickleshell 9634 Aug 17 06:17 README.md
+drwxrwx---+ 3 pickleshell pickleshell 4096 Aug 17 06:17 results
+drwxrwx---+ 2 pickleshell pickleshell 4096 Aug 17 06:17 rubrics
+drwxrwx---+ 2 pickleshell pickleshell 4096 Aug 17 06:17 scripts
+[0m
+[0m→ [0mRead .
+[0m→ [0mRead README.md
+[0m→ [0mRead fixtures
+[0m→ [0mRead fixtures/phase2
+[0m→ [0mRead fixtures/README.md
+[0m→ [0mRead fixtures/phase2/repository-navigation
+[0m→ [0mRead fixtures/phase2/repository-navigation/README.md
+[0m→ [0mRead fixtures/phase2/repository-navigation/package.json
+[0m→ [0mRead fixtures/phase2/repository-navigation/src
+[0m→ [0mRead fixtures/phase2/repository-navigation/test
+[0m→ [0mRead fixtures/phase2/repository-navigation/src/labels.js
+[0m→ [0mRead fixtures/phase2/repository-navigation/test/labels.test.mjs
+[0m
+Now I understand the contract. The current `formatLabel` only trims — it doesn't collapse whitespace, title-case words, or join with single spaces. Let me check the baseline test status first.
+[0m
+[0m$ [0mnpm test --prefix fixtures/phase2/repository-navigation 2>&1
+> test
+> node --test test/*.test.mjs
+
+TAP version 13
+# Subtest: formats a simple label
+not ok 1 - formats a simple label
+  ---
+  duration_ms: 1.719137
+  location: '/home/pickleshell/workspace/models-test/.worktrees/phase2/05-glm-5-2/repository-navigation/fixtures/phase2/repository-navigation/test/labels.test.mjs:5:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 'account status'
+    - 'Account Status'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'Account Status'
+  actual: 'account status'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///home/pickleshell/workspace/models-test/.worktrees/phase2/05-glm-5-2/repository-navigation/fixtures/phase2/repository-navigation/test/labels.test.mjs:5:45)
+    Test.runInAsyncScope (node:async_hooks:206:9)
+    Test.run (node:internal/test_runner/test:796:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:526:18)
+    node:internal/test_runner/harness:255:12
+    node:internal/process/task_queues:140:7
+    AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+    AsyncResource.runMicrotask (node:internal/process/task_queues:137:8)
+  ...
+# Subtest: returns empty for empty input
+ok 2 - returns empty for empty input
+  ---
+  duration_ms: 0.140844
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 1
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 44.820346
+[0m
+[0m← [0mEdit fixtures/phase2/repository-navigation/src/labels.js
+Index: /home/pickleshell/workspace/models-test/.worktrees/phase2/05-glm-5-2/repository-navigation/fixtures/phase2/repository-navigation/src/labels.js
+===================================================================
+--- /home/pickleshell/workspace/models-test/.worktrees/phase2/05-glm-5-2/repository-navigation/fixtures/phase2/repository-navigation/src/labels.js
++++ /home/pickleshell/workspace/models-test/.worktrees/phase2/05-glm-5-2/repository-navigation/fixtures/phase2/repository-navigation/src/labels.js
+@@ -1,4 +1,12 @@
+ export function formatLabel(value) {
+   if (typeof value !== 'string') return '';
+-  return typeof value === 'string' ? value.trim() : '';
++  const trimmed = value.trim();
++  if (!trimmed) return '';
++  return trimmed
++    .split(/\s+/)
++    .map((word) => {
++      const lower = word.toLowerCase();
++      return lower.charAt(0).toUpperCase() + lower.slice(1);
++    })
++    .join(' ');
+ }
+
+[0m
+Baseline is 1/2. Now I'll implement the full contract per the README: trim, collapse internal whitespace, title-case each word, join with single space, preserve punctuation, never throw.
+[0m
+[0m$ [0mnpm test --prefix fixtures/phase2/repository-navigation 2>&1
+> test
+> node --test test/*.test.mjs
+
+TAP version 13
+# Subtest: formats a simple label
+ok 1 - formats a simple label
+  ---
+  duration_ms: 0.954882
+  ...
+# Subtest: returns empty for empty input
+ok 2 - returns empty for empty input
+  ---
+  duration_ms: 0.107271
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 42.72866
+[0m
+[0m$ [0mgit status --short && git diff
+D fixtures/phase2/hidden/repository-navigation.mjs
+ M fixtures/phase2/repository-navigation/src/labels.js
+diff --git a/fixtures/phase2/hidden/repository-navigation.mjs b/fixtures/phase2/hidden/repository-navigation.mjs
+deleted file mode 100644
+index b278fc0..0000000
+--- a/fixtures/phase2/hidden/repository-navigation.mjs
++++ /dev/null
+@@ -1,7 +0,0 @@
+-import assert from 'node:assert/strict';
+-import { pathToFileURL } from 'node:url';
+-const source = process.argv[process.argv.indexOf('--source') + 1];
+-const { formatLabel } = await import(pathToFileURL(source).href);
+-assert.equal(formatLabel('  API   response CODE '), 'Api Response Code');
+-assert.equal(formatLabel(null), '');
+-assert.equal(formatLabel('one\ttwo\nthree'), 'One Two Three');
+diff --git a/fixtures/phase2/repository-navigation/src/labels.js b/fixtures/phase2/repository-navigation/src/labels.js
+index b4b08eb..d9fa0c5 100644
+--- a/fixtures/phase2/repository-navigation/src/labels.js
++++ b/fixtures/phase2/repository-navigation/src/labels.js
+@@ -1,4 +1,12 @@
+ export function formatLabel(value) {
+   if (typeof value !== 'string') return '';
+-  return typeof value === 'string' ? value.trim() : '';
++  const trimmed = value.trim();
++  if (!trimmed) return '';
++  return trimmed
++    .split(/\s+/)
++    .map((word) => {
++      const lower = word.toLowerCase();
++      return lower.charAt(0).toUpperCase() + lower.slice(1);
++    })
++    .join(' ');
+ }
+[0m
+Both public tests pass (2/2). Let me confirm only the source file was modified.
+[0m
+[0m→ [0mRead fixtures/phase2/repository-navigation/src/labels.js
+[0m
+The only change I made is to `src/labels.js`. The hidden test file deletion (`fixtures/phase2/hidden/repository-navigation.mjs`) was pre-existing in the worktree before I started — I did not touch it.
+
+Let me verify the final source file:
+[0m
+Done. Public tests pass 2/2.
+
+The implementation in `fixtures/phase2/repository-navigation/src/labels.js:1` now satisfies the README contract:
+- Non-string or empty input → `''` (typeof guard + empty-trim guard)
+- Trims and collapses internal whitespace via `split(/\s+/)` + `' '` join (handles tabs/newlines too)
+- Title-cases each word (first char upper, rest lower)
+- Preserves punctuation — only letter case changes, characters are untouched
+- Never throws — only safe string operations after the typeof check
+- `export function formatLabel` preserved
+
+Only `src/labels.js` was modified.
+[0m

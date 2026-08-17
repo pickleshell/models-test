@@ -1,0 +1,136 @@
+[0m
+> build · hy3-free
+[0m
+[0m→ [0mRead fixtures/phase1-ledger/src/reconcile.js
+[0m
+[0m$ [0mls /home/pickleshell/workspace/models-test/.worktrees/phase2/27-hy3-free/bug-fix-ledger/fixtures/phase1-ledger/
+package.json
+PROMPT.md
+README.md
+src
+test
+[0m
+[0m✱ [0mGlob "/home/pickleshell/workspace/models-test/.worktrees/phase2/27-hy3-free/bug-fix-ledger/**/*.md"[90m 0 matches[0m
+[0m→ [0mRead fixtures/phase1-ledger/PROMPT.md
+[0m→ [0mRead fixtures/phase1-ledger/README.md
+[0m
+[0m$ [0mls /home/pickleshell/workspace/models-test/.worktrees/phase2/27-hy3-free/bug-fix-ledger/fixtures/phase1-ledger/test/
+reconcile.test.mjs
+[0m
+[0m→ [0mRead fixtures/phase1-ledger/test/reconcile.test.mjs
+[0m
+[0m← [0mEdit fixtures/phase1-ledger/src/reconcile.js
+Index: /home/pickleshell/workspace/models-test/.worktrees/phase2/27-hy3-free/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+===================================================================
+--- /home/pickleshell/workspace/models-test/.worktrees/phase2/27-hy3-free/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
++++ /home/pickleshell/workspace/models-test/.worktrees/phase2/27-hy3-free/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+@@ -7,8 +7,11 @@
+   const value = Number(normalized);
+   if (!Number.isFinite(value)) {
+     throw new Error(`invalid amount: ${amount}`);
+   }
++  if (value < 0 || !/^\d+(\.\d{1,2})?$/.test(normalized)) {
++    throw new Error(`invalid amount: ${amount}`);
++  }
+ 
+   return Math.round(value * 100);
+ }
+ 
+
+[0m
+The defects per PROMPT.md: (1) duplicates aren't ignored, (2) negative/over-precision amounts aren't rejected, (3) day grouping uses local not UTC, (4) refunds use refund's account not original's.
+[0m
+[0m← [0mEdit fixtures/phase1-ledger/src/reconcile.js
+Index: /home/pickleshell/workspace/models-test/.worktrees/phase2/27-hy3-free/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+===================================================================
+--- /home/pickleshell/workspace/models-test/.worktrees/phase2/27-hy3-free/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
++++ /home/pickleshell/workspace/models-test/.worktrees/phase2/27-hy3-free/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+@@ -19,9 +19,9 @@
+   const date = new Date(createdAt);
+   if (Number.isNaN(date.getTime())) {
+     throw new Error(`invalid createdAt: ${createdAt}`);
+   }
+-  return date.toLocaleDateString('en-CA');
++  return date.toISOString().slice(0, 10);
+ }
+ 
+ function addTotal(totals, accountId, currency, day, cents) {
+   const key = `${accountId}|${currency}|${day}`;
+
+[0m
+[0m← [0mEdit fixtures/phase1-ledger/src/reconcile.js
+Index: /home/pickleshell/workspace/models-test/.worktrees/phase2/27-hy3-free/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+===================================================================
+--- /home/pickleshell/workspace/models-test/.worktrees/phase2/27-hy3-free/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
++++ /home/pickleshell/workspace/models-test/.worktrees/phase2/27-hy3-free/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+@@ -54,8 +54,9 @@
+ if (!entry.currency) throw new Error('missing currency');
+ 
+ if (seenIds.has(entry.id)) {
+   metrics.duplicateCount += 1;
++  continue;
+ }
+ seenIds.add(entry.id);
+ 
+ const cents = parseAmountToCents(entry.amount);
+
+[0m
+[0m← [0mEdit fixtures/phase1-ledger/src/reconcile.js
+Index: /home/pickleshell/workspace/models-test/.worktrees/phase2/27-hy3-free/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+===================================================================
+--- /home/pickleshell/workspace/models-test/.worktrees/phase2/27-hy3-free/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
++++ /home/pickleshell/workspace/models-test/.worktrees/phase2/27-hy3-free/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+@@ -71,9 +71,9 @@
+   if (!original) {
+     metrics.orphanRefundCount += 1;
+     continue;
+   }
+-  addTotal(totals, entry.accountId, entry.currency, day, -cents);
++  addTotal(totals, original.accountId, original.currency, day, -cents);
+   metrics.processed += 1;
+ } else {
+   throw new Error(`unsupported type: ${entry.type}`);
+ }
+
+[0m
+[0m$ [0mnpm test --prefix /home/pickleshell/workspace/models-test/.worktrees/phase2/27-hy3-free/bug-fix-ledger/fixtures/phase1-ledger
+> phase1-ledger-fixture@0.1.0 test
+> node --test test/*.test.mjs
+
+TAP version 13
+# Subtest: parses ordinary decimal money into cents
+ok 1 - parses ordinary decimal money into cents
+  ---
+  duration_ms: 0.970041
+  ...
+# Subtest: summarizes sales by account, currency, and UTC day
+ok 2 - summarizes sales by account, currency, and UTC day
+  ---
+  duration_ms: 5.944782
+  ...
+# Subtest: does not double count duplicate transaction ids
+ok 3 - does not double count duplicate transaction ids
+  ---
+  duration_ms: 0.17046
+  ...
+# Subtest: counts invalid rows and orphan refunds without adding them to totals
+ok 4 - counts invalid rows and orphan refunds without adding them to totals
+  ---
+  duration_ms: 0.161293
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 4
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 50.004141
+[0m
+All 4 public tests pass. Fixed four defects in `reconcile.js`:
+- Reject negative/over-2-decimal amounts (`parseAmountToCents`)
+- UTC calendar-day grouping (`dayKey`)
+- Ignore duplicate ids after first (`continue`)
+- Refunds subtract from original sale's account/currency
+[0m

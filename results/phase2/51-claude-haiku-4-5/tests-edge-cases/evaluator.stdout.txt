@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "benchmark": "phase2",
+  "task": "tests-edge-cases",
+  "category": "tests-and-edge-cases",
+  "model": "opencode/claude-haiku-4-5",
+  "pass": true,
+  "metrics": {
+    "public_status": 0,
+    "hidden_passed": 1,
+    "hidden_failed": 0,
+    "forbidden_change_count": 0,
+    "changed_files": [
+      "fixtures/phase2/tests-edge-cases/src/range.js",
+      "fixtures/phase2/tests-edge-cases/test/range.test.mjs"
+    ],
+    "duration_ms": 194
+  },
+  "public_test": {
+    "command": "npm test --prefix fixtures/phase2/tests-edge-cases",
+    "stdout": "\n> test\n> node --test test/*.test.mjs\n\nTAP version 13\n# Subtest: parses an inclusive range\nok 1 - parses an inclusive range\n  ---\n  duration_ms: 1.735448\n  ...\n# Subtest: accepts surrounding whitespace\nok 2 - accepts surrounding whitespace\n  ---\n  duration_ms: 0.140504\n  ...\n# Subtest: rejects malformed ranges\nok 3 - rejects malformed ranges\n  ---\n  duration_ms: 0.14348\n  ...\n# Subtest: rejects a reversed range\nok 4 - rejects a reversed range\n  ---\n  duration_ms: 0.113473\n  ...\n# Subtest: accepts lower bound -100000\nok 5 - accepts lower bound -100000\n  ---\n  duration_ms: 0.115066\n  ...\n# Subtest: accepts upper bound 100000\nok 6 - accepts upper bound 100000\n  ---\n  duration_ms: 0.103674\n  ...\n# Subtest: rejects value below -100000\nok 7 - rejects value below -100000\n  ---\n  duration_ms: 0.098475\n  ...\n# Subtest: rejects value above 100000\nok 8 - rejects value above 100000\n  ---\n  duration_ms: 0.093906\n  ...\n# Subtest: accepts equal range (0..0)\nok 9 - accepts equal range (0..0)\n  ---\n  duration_ms: 0.17032\n  ...\n# Subtest: rejects non-string input\nok 10 - rejects non-string input\n  ---\n  duration_ms: 0.165571\n  ...\n# Subtest: rejects decimal numbers\nok 11 - rejects decimal numbers\n  ---\n  duration_ms: 0.10605\n  ...\n# Subtest: rejects missing range part\nok 12 - rejects missing range part\n  ---\n  duration_ms: 0.105678\n  ...\n# Subtest: rejects single number\nok 13 - rejects single number\n  ---\n  duration_ms: 0.137138\n  ...\n# Subtest: rejects triple dots\nok 14 - rejects triple dots\n  ---\n  duration_ms: 0.131226\n  ...\n# Subtest: rejects single dot\nok 15 - rejects single dot\n  ---\n  duration_ms: 0.099958\n  ...\n# Subtest: uses SafeInteger constraint\nok 16 - uses SafeInteger constraint\n  ---\n  duration_ms: 0.158878\n  ...\n# Subtest: rejects internal whitespace\nok 17 - rejects internal whitespace\n  ---\n  duration_ms: 0.103154\n  ...\n# Subtest: accepts multiple leading spaces\nok 18 - accepts multiple leading spaces\n  ---\n  duration_ms: 0.174508\n  ...\n# Subtest: accepts tabs around range\nok 19 - accepts tabs around range\n  ---\n  duration_ms: 0.114394\n  ...\n1..19\n# tests 19\n# suites 0\n# pass 19\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 56.540222\n",
+    "stderr": ""
+  },
+  "hidden": {
+    "stdout": "",
+    "stderr": ""
+  },
+  "forbidden_changes": []
+}

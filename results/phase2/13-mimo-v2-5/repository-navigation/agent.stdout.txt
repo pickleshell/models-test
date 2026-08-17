@@ -1,0 +1,97 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m# [0mTodos
+[•] Explore repository structure and understand the codebase
+[ ] Read README for formatLabel contract
+[ ] Read current labels.js implementation
+[ ] Read existing tests
+[ ] Implement formatLabel behavior
+[ ] Run tests to verify
+[0m
+[0m→ [0mRead .
+[0m→ [0mRead README.md
+[0m→ [0mRead fixtures/phase2/repository-navigation
+[0m→ [0mRead benchmarks/phase2
+[0m→ [0mRead fixtures/phase2/repository-navigation/README.md
+[0m→ [0mRead fixtures/phase2/repository-navigation/src
+[0m→ [0mRead fixtures/phase2/repository-navigation/test
+[0m→ [0mRead fixtures/phase2/repository-navigation/package.json
+[0m→ [0mRead fixtures/phase2/repository-navigation/src/labels.js
+[0m→ [0mRead fixtures/phase2/repository-navigation/test/labels.test.mjs
+[0m
+[0m# [0mTodos
+[✓] Explore repository structure and understand the codebase
+[✓] Read README for formatLabel contract
+[✓] Read current labels.js implementation
+[✓] Read existing tests
+[•] Implement formatLabel behavior
+[ ] Run tests to verify
+[0m
+[0m← [0mEdit fixtures/phase2/repository-navigation/src/labels.js
+Index: /home/pickleshell/workspace/models-test/.worktrees/phase2/13-mimo-v2-5/repository-navigation/fixtures/phase2/repository-navigation/src/labels.js
+===================================================================
+--- /home/pickleshell/workspace/models-test/.worktrees/phase2/13-mimo-v2-5/repository-navigation/fixtures/phase2/repository-navigation/src/labels.js
++++ /home/pickleshell/workspace/models-test/.worktrees/phase2/13-mimo-v2-5/repository-navigation/fixtures/phase2/repository-navigation/src/labels.js
+@@ -1,4 +1,9 @@
+ export function formatLabel(value) {
+   if (typeof value !== 'string') return '';
+-  return typeof value === 'string' ? value.trim() : '';
++  return value
++    .trim()
++    .replace(/\s+/g, ' ')
++    .split(' ')
++    .map((w) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase())
++    .join(' ');
+ }
+
+[0m
+[0m# [0mTodos
+[✓] Explore repository structure and understand the codebase
+[✓] Read README for formatLabel contract
+[✓] Read current labels.js implementation
+[✓] Read existing tests
+[✓] Implement formatLabel behavior
+[•] Run tests to verify
+[0m
+[0m$ [0mnpm test
+> test
+> node --test test/*.test.mjs
+
+TAP version 13
+# Subtest: formats a simple label
+ok 1 - formats a simple label
+  ---
+  duration_ms: 0.97429
+  ...
+# Subtest: returns empty for empty input
+ok 2 - returns empty for empty input
+  ---
+  duration_ms: 0.115717
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 43.313536
+[0m
+[0m# [0mTodos
+[✓] Explore repository structure and understand the codebase
+[✓] Read README for formatLabel contract
+[✓] Read current labels.js implementation
+[✓] Read existing tests
+[✓] Implement formatLabel behavior
+[✓] Run tests to verify
+[0m
+Done. Both tests pass (2/2).
+
+The `formatLabel` implementation now follows the README contract:
+- Returns `''` for non-string input
+- Trims whitespace
+- Collapses internal whitespace to single spaces
+- Title-cases each word
+[0m

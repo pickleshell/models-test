@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "benchmark": "phase2",
+  "task": "tests-edge-cases",
+  "category": "tests-and-edge-cases",
+  "model": "opencode/deepseek-v4-flash-free",
+  "pass": true,
+  "metrics": {
+    "public_status": 0,
+    "hidden_passed": 1,
+    "hidden_failed": 0,
+    "forbidden_change_count": 0,
+    "changed_files": [
+      "fixtures/phase2/tests-edge-cases/src/range.js",
+      "fixtures/phase2/tests-edge-cases/test/range.test.mjs"
+    ],
+    "duration_ms": 190
+  },
+  "public_test": {
+    "command": "npm test --prefix fixtures/phase2/tests-edge-cases",
+    "stdout": "\n> test\n> node --test test/*.test.mjs\n\nTAP version 13\n# Subtest: parses an inclusive range\nok 1 - parses an inclusive range\n  ---\n  duration_ms: 1.848841\n  ...\n# Subtest: accepts surrounding whitespace\nok 2 - accepts surrounding whitespace\n  ---\n  duration_ms: 0.1653\n  ...\n# Subtest: rejects malformed ranges\nok 3 - rejects malformed ranges\n  ---\n  duration_ms: 0.128491\n  ...\n# Subtest: rejects a reversed range\nok 4 - rejects a reversed range\n  ---\n  duration_ms: 0.108514\n  ...\n# Subtest: accepts equal bounds\nok 5 - accepts equal bounds\n  ---\n  duration_ms: 0.162916\n  ...\n# Subtest: accepts boundary values inclusive\nok 6 - accepts boundary values inclusive\n  ---\n  duration_ms: 0.108294\n  ...\n# Subtest: rejects values below the lower bound\nok 7 - rejects values below the lower bound\n  ---\n  duration_ms: 0.161313\n  ...\n# Subtest: rejects values above the upper bound\nok 8 - rejects values above the upper bound\n  ---\n  duration_ms: 0.105147\n  ...\n# Subtest: rejects decimals\nok 9 - rejects decimals\n  ---\n  duration_ms: 0.190377\n  ...\n# Subtest: rejects whole-number decimals\nok 10 - rejects whole-number decimals\n  ---\n  duration_ms: 0.172574\n  ...\n# Subtest: rejects non-string input\nok 11 - rejects non-string input\n  ---\n  duration_ms: 0.153137\n  ...\n# Subtest: rejects multiple separators\nok 12 - rejects multiple separators\n  ---\n  duration_ms: 0.114946\n  ...\n# Subtest: rejects a missing bound\nok 13 - rejects a missing bound\n  ---\n  duration_ms: 0.103705\n  ...\n# Subtest: rejects an empty string\nok 14 - rejects an empty string\n  ---\n  duration_ms: 0.140113\n  ...\n# Subtest: rejects a single value without a separator\nok 15 - rejects a single value without a separator\n  ---\n  duration_ms: 0.107321\n  ...\n# Subtest: rejects a leading plus sign\nok 16 - rejects a leading plus sign\n  ---\n  duration_ms: 0.134803\n  ...\n# Subtest: rejects scientific notation\nok 17 - rejects scientific notation\n  ---\n  duration_ms: 0.109766\n  ...\n# Subtest: rejects whitespace inside the range\nok 18 - rejects whitespace inside the range\n  ---\n  duration_ms: 0.183294\n  ...\n# Subtest: accepts tabs and newlines around the range\nok 19 - accepts tabs and newlines around the range\n  ---\n  duration_ms: 0.129833\n  ...\n# Subtest: rejects a negative bound outside the range\nok 20 - rejects a negative bound outside the range\n  ---\n  duration_ms: 0.135795\n  ...\n1..20\n# tests 20\n# suites 0\n# pass 20\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 57.792684\n",
+    "stderr": ""
+  },
+  "hidden": {
+    "stdout": "",
+    "stderr": ""
+  },
+  "forbidden_changes": []
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "benchmark": "phase2",
+  "task": "tests-edge-cases",
+  "category": "tests-and-edge-cases",
+  "model": "opencode-go/deepseek-v4-pro",
+  "pass": true,
+  "metrics": {
+    "public_status": 0,
+    "hidden_passed": 1,
+    "hidden_failed": 0,
+    "forbidden_change_count": 0,
+    "changed_files": [
+      "fixtures/phase2/tests-edge-cases/src/range.js",
+      "fixtures/phase2/tests-edge-cases/test/range.test.mjs"
+    ],
+    "duration_ms": 187
+  },
+  "public_test": {
+    "command": "npm test --prefix fixtures/phase2/tests-edge-cases",
+    "stdout": "\n> test\n> node --test test/*.test.mjs\n\nTAP version 13\n# Subtest: parses an inclusive range\nok 1 - parses an inclusive range\n  ---\n  duration_ms: 1.203228\n  ...\n# Subtest: accepts surrounding whitespace\nok 2 - accepts surrounding whitespace\n  ---\n  duration_ms: 0.139933\n  ...\n# Subtest: rejects malformed ranges\nok 3 - rejects malformed ranges\n  ---\n  duration_ms: 0.112881\n  ...\n# Subtest: rejects a reversed range\nok 4 - rejects a reversed range\n  ---\n  duration_ms: 0.158958\n  ...\n# Subtest: accepts a single-element range\nok 5 - accepts a single-element range\n  ---\n  duration_ms: 0.119755\n  ...\n# Subtest: accepts boundary values\nok 6 - accepts boundary values\n  ---\n  duration_ms: 0.10154\n  ...\n# Subtest: rejects non-string input\nok 7 - rejects non-string input\n  ---\n  duration_ms: 0.09027\n  ...\n# Subtest: rejects decimal values\nok 8 - rejects decimal values\n  ---\n  duration_ms: 0.142417\n  ...\n# Subtest: rejects values below the lower bound\nok 9 - rejects values below the lower bound\n  ---\n  duration_ms: 0.188804\n  ...\n# Subtest: rejects values above the upper bound\nok 10 - rejects values above the upper bound\n  ---\n  duration_ms: 0.154971\n  ...\n# Subtest: rejects extra separators\nok 11 - rejects extra separators\n  ---\n  duration_ms: 0.115917\n  ...\n# Subtest: rejects non-base-10 values\nok 12 - rejects non-base-10 values\n  ---\n  duration_ms: 0.099437\n  ...\n1..12\n# tests 12\n# suites 0\n# pass 12\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 50.577467\n",
+    "stderr": ""
+  },
+  "hidden": {
+    "stdout": "",
+    "stderr": ""
+  },
+  "forbidden_changes": []
+}

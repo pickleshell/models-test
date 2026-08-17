@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "benchmark": "phase2",
+  "task": "tests-edge-cases",
+  "category": "tests-and-edge-cases",
+  "model": "opencode/nemotron-3.5-lightning-free",
+  "pass": true,
+  "metrics": {
+    "public_status": 0,
+    "hidden_passed": 1,
+    "hidden_failed": 0,
+    "forbidden_change_count": 0,
+    "changed_files": [
+      "fixtures/phase2/tests-edge-cases/src/range.js",
+      "fixtures/phase2/tests-edge-cases/test/range.test.mjs"
+    ],
+    "duration_ms": 189
+  },
+  "public_test": {
+    "command": "npm test --prefix fixtures/phase2/tests-edge-cases",
+    "stdout": "\n> test\n> node --test test/*.test.mjs\n\nTAP version 13\n# Subtest: parses an inclusive range\nok 1 - parses an inclusive range\n  ---\n  duration_ms: 1.207577\n  ...\n# Subtest: accepts surrounding whitespace\nok 2 - accepts surrounding whitespace\n  ---\n  duration_ms: 0.136616\n  ...\n# Subtest: rejects malformed ranges\nok 3 - rejects malformed ranges\n  ---\n  duration_ms: 0.636365\n  ...\n# Subtest: rejects a reversed range\nok 4 - rejects a reversed range\n  ---\n  duration_ms: 0.11166\n  ...\n# Subtest: rejects non-string input\nok 5 - rejects non-string input\n  ---\n  duration_ms: 0.140844\n  ...\n# Subtest: rejects empty string\nok 6 - rejects empty string\n  ---\n  duration_ms: 0.09596\n  ...\n# Subtest: rejects missing delimiter\nok 7 - rejects missing delimiter\n  ---\n  duration_ms: 0.09605\n  ...\n# Subtest: rejects floating point\nok 8 - rejects floating point\n  ---\n  duration_ms: 0.097784\n  ...\n# Subtest: rejects out-of-bounds start\nok 9 - rejects out-of-bounds start\n  ---\n  duration_ms: 0.148839\n  ...\n# Subtest: rejects out-of-bounds end\nok 10 - rejects out-of-bounds end\n  ---\n  duration_ms: 0.155281\n  ...\n# Subtest: accepts negative start\nok 11 - accepts negative start\n  ---\n  duration_ms: 0.126338\n  ...\n# Subtest: accepts negative end\nok 12 - accepts negative end\n  ---\n  duration_ms: 0.124433\n  ...\n# Subtest: rejects multiple delimiters\nok 13 - rejects multiple delimiters\n  ---\n  duration_ms: 0.099927\n  ...\n1..13\n# tests 13\n# suites 0\n# pass 13\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 51.670507\n",
+    "stderr": ""
+  },
+  "hidden": {
+    "stdout": "",
+    "stderr": ""
+  },
+  "forbidden_changes": []
+}

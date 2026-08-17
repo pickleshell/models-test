@@ -1,0 +1,9 @@
+[0m
+> build · nemotron-3-ultra-free
+[0m
+[0m✱ [0mGlob "**/*"[90m 100 matches[0m
+[0m✱ [0mGlob "fixtures/**/*"[90m 32 matches[0m
+[0m→ [0mRead fixtures/phase2/repository-navigation/README.md
+[0m→ [0mRead fixtures/phase2/repository-navigation/src/labels.js
+[0m→ [0mRead fixtures/phase2/repository-navigation/test/labels.test.mjs
+[91m[1mError: [0m"Streaming response failed: [502] Upstream error from Nvidia: Internal server error"

@@ -1,0 +1,30 @@
+diff --git a/fixtures/phase2/refactoring/src/events.js b/fixtures/phase2/refactoring/src/events.js
+index 3804f8e..4cea123 100644
+--- a/fixtures/phase2/refactoring/src/events.js
++++ b/fixtures/phase2/refactoring/src/events.js
+@@ -1,11 +1,21 @@
+-function matching(events, type) {
+-  return events.filter((event) => event && event.type === type);
++function findLatestAndCount(events, type) {
++  let count = 0;
++  let latest = null;
++  for (const event of events) {
++    if (event && event.type === type && Number.isFinite(event.timestamp)) {
++      count++;
++      if (!latest || event.timestamp > latest.timestamp) {
++        latest = event;
++      }
++    }
++  }
++  return { count, latest };
+ }
+ 
+ export function countByType(events, type) {
+-  return matching(events, type).length;
++  return findLatestAndCount(events, type).count;
+ }
+ 
+ export function latestByType(events, type) {
+-  return matching(events, type).reduce((latest, event) => !latest || event.timestamp > latest.timestamp ? event : latest, null);
++  return findLatestAndCount(events, type).latest;
+ }

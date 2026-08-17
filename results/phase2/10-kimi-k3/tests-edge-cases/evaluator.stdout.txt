@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "benchmark": "phase2",
+  "task": "tests-edge-cases",
+  "category": "tests-and-edge-cases",
+  "model": "opencode-go/kimi-k3",
+  "pass": true,
+  "metrics": {
+    "public_status": 0,
+    "hidden_passed": 1,
+    "hidden_failed": 0,
+    "forbidden_change_count": 0,
+    "changed_files": [
+      "fixtures/phase2/tests-edge-cases/src/range.js",
+      "fixtures/phase2/tests-edge-cases/test/range.test.mjs"
+    ],
+    "duration_ms": 187
+  },
+  "public_test": {
+    "command": "npm test --prefix fixtures/phase2/tests-edge-cases",
+    "stdout": "\n> test\n> node --test test/*.test.mjs\n\nTAP version 13\n# Subtest: parses an inclusive range\nok 1 - parses an inclusive range\n  ---\n  duration_ms: 1.212937\n  ...\n# Subtest: accepts surrounding whitespace\nok 2 - accepts surrounding whitespace\n  ---\n  duration_ms: 0.147487\n  ...\n# Subtest: rejects malformed ranges\nok 3 - rejects malformed ranges\n  ---\n  duration_ms: 0.153268\n  ...\n# Subtest: rejects a reversed range\nok 4 - rejects a reversed range\n  ---\n  duration_ms: 0.100308\n  ...\n# Subtest: accepts the inclusive bounds\nok 5 - accepts the inclusive bounds\n  ---\n  duration_ms: 0.115988\n  ...\n# Subtest: accepts a single-value range\nok 6 - accepts a single-value range\n  ---\n  duration_ms: 0.097443\n  ...\n# Subtest: parses negative ranges\nok 7 - parses negative ranges\n  ---\n  duration_ms: 0.107421\n  ...\n# Subtest: accepts tabs and newlines as surrounding whitespace\nok 8 - accepts tabs and newlines as surrounding whitespace\n  ---\n  duration_ms: 0.108243\n  ...\n# Subtest: rejects non-string input\nok 9 - rejects non-string input\n  ---\n  duration_ms: 0.183785\n  ...\n# Subtest: rejects empty or missing parts\nok 10 - rejects empty or missing parts\n  ---\n  duration_ms: 0.175109\n  ...\n# Subtest: rejects extra range segments\nok 11 - rejects extra range segments\n  ---\n  duration_ms: 0.142448\n  ...\n# Subtest: rejects non-numeric text\nok 12 - rejects non-numeric text\n  ---\n  duration_ms: 0.105037\n  ...\n# Subtest: rejects decimals\nok 13 - rejects decimals\n  ---\n  duration_ms: 0.13307\n  ...\n# Subtest: rejects non-base-10 notation\nok 14 - rejects non-base-10 notation\n  ---\n  duration_ms: 0.132579\n  ...\n# Subtest: rejects whitespace inside the range\nok 15 - rejects whitespace inside the range\n  ---\n  duration_ms: 0.096902\n  ...\n# Subtest: rejects out-of-bound endpoints\nok 16 - rejects out-of-bound endpoints\n  ---\n  duration_ms: 0.153849\n  ...\n# Subtest: rejects reversed ranges across signs and bounds\nok 17 - rejects reversed ranges across signs and bounds\n  ---\n  duration_ms: 0.104586\n  ...\n1..17\n# tests 17\n# suites 0\n# pass 17\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 51.337181\n",
+    "stderr": ""
+  },
+  "hidden": {
+    "stdout": "",
+    "stderr": ""
+  },
+  "forbidden_changes": []
+}

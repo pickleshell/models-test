@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "benchmark": "phase2",
+  "task": "tests-edge-cases",
+  "category": "tests-and-edge-cases",
+  "model": "opencode-go/kimi-k2.7-code",
+  "pass": true,
+  "metrics": {
+    "public_status": 0,
+    "hidden_passed": 1,
+    "hidden_failed": 0,
+    "forbidden_change_count": 0,
+    "changed_files": [
+      "fixtures/phase2/tests-edge-cases/src/range.js",
+      "fixtures/phase2/tests-edge-cases/test/range.test.mjs"
+    ],
+    "duration_ms": 184
+  },
+  "public_test": {
+    "command": "npm test --prefix fixtures/phase2/tests-edge-cases",
+    "stdout": "\n> test\n> node --test test/*.test.mjs\n\nTAP version 13\n# Subtest: parses an inclusive range\nok 1 - parses an inclusive range\n  ---\n  duration_ms: 1.212676\n  ...\n# Subtest: accepts surrounding whitespace\nok 2 - accepts surrounding whitespace\n  ---\n  duration_ms: 0.144301\n  ...\n# Subtest: rejects malformed ranges\nok 3 - rejects malformed ranges\n  ---\n  duration_ms: 0.115888\n  ...\n# Subtest: rejects a reversed range\nok 4 - rejects a reversed range\n  ---\n  duration_ms: 0.170651\n  ...\n# Subtest: rejects non-string inputs\nok 5 - rejects non-string inputs\n  ---\n  duration_ms: 0.113283\n  ...\n# Subtest: accepts boundary values\nok 6 - accepts boundary values\n  ---\n  duration_ms: 0.119715\n  ...\n# Subtest: rejects out-of-bound values\nok 7 - rejects out-of-bound values\n  ---\n  duration_ms: 0.102181\n  ...\n# Subtest: rejects decimal numbers\nok 8 - rejects decimal numbers\n  ---\n  duration_ms: 0.146234\n  ...\n# Subtest: rejects empty or partial ranges\nok 9 - rejects empty or partial ranges\n  ---\n  duration_ms: 0.179787\n  ...\n# Subtest: rejects extra separators\nok 10 - rejects extra separators\n  ---\n  duration_ms: 0.161363\n  ...\n# Subtest: rejects non-decimal and non-numeric strings\nok 11 - rejects non-decimal and non-numeric strings\n  ---\n  duration_ms: 0.128071\n  ...\n# Subtest: rejects plus signs and internal whitespace\nok 12 - rejects plus signs and internal whitespace\n  ---\n  duration_ms: 0.104246\n  ...\n1..12\n# tests 12\n# suites 0\n# pass 12\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 47.758685\n",
+    "stderr": ""
+  },
+  "hidden": {
+    "stdout": "",
+    "stderr": ""
+  },
+  "forbidden_changes": []
+}

@@ -1,0 +1,43 @@
+[0m
+> build · mimo-v2.5-free
+[0m
+[0m→ [0mRead fixtures/phase2/refactoring/src/events.js
+[0m✱ [0mGlob "fixtures/phase2/refactoring/**"[90m 4 matches[0m
+[0m→ [0mRead fixtures/phase2/refactoring/test/events.test.mjs
+[0m→ [0mRead fixtures/phase2/refactoring/README.md
+[0m→ [0mRead fixtures/phase2/refactoring/package.json
+[0m
+Here's what I found:
+
+**Current state of `src/events.js`:** Contains a `matching` helper used by both `countByType` and `latestByType`. However, the `matching` function only checks `event.type === type` — it doesn't validate events per the documented behavior in the README.
+
+**README contract:** "An event is valid only when it is an object with a non-empty string `type` and a finite numeric `timestamp`"
+
+**Failing test:** `countByType([{ type: 'push', timestamp: NaN }], 'push')` expects `0`, but the current `matching` function would return the NaN-timestamp event (since `event.type === 'push'` is true), making the count `1`.
+
+**The refactoring plan:**
+
+Enhance the `matching` helper to implement the full validity check per the README:
+- Event must be a non-null object
+- `type` must be a non-empty string
+- `timestamp` must be a finite number (`Number.isFinite`)
+
+Both public functions already delegate to `matching`, so the filtering logic stays in one place. This fixes the NaN-timestamp test and aligns the implementation with the documented contract — no other files need changes.
+
+The updated `matching` function would look like:
+
+```js
+function matching(events, type) {
+  return events.filter(
+    (event) =>
+      event &&
+      typeof event.type === 'string' &&
+      event.type.length > 0 &&
+      Number.isFinite(event.timestamp) &&
+      event.type === type
+  );
+}
+```
+
+No changes to tests or other files. Shall I proceed with this plan?
+[0m

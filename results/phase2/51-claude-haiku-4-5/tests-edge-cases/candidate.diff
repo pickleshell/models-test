@@ -1,0 +1,49 @@
+diff --git a/fixtures/phase2/tests-edge-cases/src/range.js b/fixtures/phase2/tests-edge-cases/src/range.js
+index caf34d8..72d23a4 100644
+--- a/fixtures/phase2/tests-edge-cases/src/range.js
++++ b/fixtures/phase2/tests-edge-cases/src/range.js
+@@ -1,8 +1,9 @@
+ export function parseRange(value) {
+   if (typeof value !== 'string') return null;
+-  const [left, right] = value.split('..');
+-  const start = Number(left);
+-  const end = Number(right);
+-  if (!Number.isInteger(start) || !Number.isInteger(end)) return null;
++  const match = /^\s*(-?\d+)\.\.(-?\d+)\s*$/.exec(value);
++  if (!match) return null;
++  const start = Number(match[1]);
++  const end = Number(match[2]);
++  if (!Number.isSafeInteger(start) || !Number.isSafeInteger(end) || start < -100000 || end > 100000 || start > end) return null;
+   return { start, end };
+ }
+diff --git a/fixtures/phase2/tests-edge-cases/test/range.test.mjs b/fixtures/phase2/tests-edge-cases/test/range.test.mjs
+index f2758d0..568ee87 100644
+--- a/fixtures/phase2/tests-edge-cases/test/range.test.mjs
++++ b/fixtures/phase2/tests-edge-cases/test/range.test.mjs
+@@ -6,3 +6,26 @@ test('parses an inclusive range', () => assert.deepEqual(parseRange('2..7'), { s
+ test('accepts surrounding whitespace', () => assert.deepEqual(parseRange(' -2..0 '), { start: -2, end: 0 }));
+ test('rejects malformed ranges', () => assert.equal(parseRange('2-7'), null));
+ test('rejects a reversed range', () => assert.equal(parseRange('7..2'), null));
++
++// Edge cases: bounds
++test('accepts lower bound -100000', () => assert.deepEqual(parseRange('-100000..-50000'), { start: -100000, end: -50000 }));
++test('accepts upper bound 100000', () => assert.deepEqual(parseRange('50000..100000'), { start: 50000, end: 100000 }));
++test('rejects value below -100000', () => assert.equal(parseRange('-100001..0'), null));
++test('rejects value above 100000', () => assert.equal(parseRange('0..100001'), null));
++test('accepts equal range (0..0)', () => assert.deepEqual(parseRange('0..0'), { start: 0, end: 0 }));
++
++// Edge cases: format and type
++test('rejects non-string input', () => assert.equal(parseRange(5), null));
++test('rejects decimal numbers', () => assert.equal(parseRange('1.5..3.5'), null));
++test('rejects missing range part', () => assert.equal(parseRange('5..'), null));
++test('rejects single number', () => assert.equal(parseRange('5'), null));
++test('rejects triple dots', () => assert.equal(parseRange('1...2'), null));
++test('rejects single dot', () => assert.equal(parseRange('1.2'), null));
++
++// Edge cases: safety
++test('uses SafeInteger constraint', () => assert.equal(parseRange('9007199254740992..9007199254740993'), null));
++
++// Edge cases: whitespace
++test('rejects internal whitespace', () => assert.equal(parseRange('2 .. 7'), null));
++test('accepts multiple leading spaces', () => assert.deepEqual(parseRange('  1..2  '), { start: 1, end: 2 }));
++test('accepts tabs around range', () => assert.deepEqual(parseRange('\t-5..5\t'), { start: -5, end: 5 }));

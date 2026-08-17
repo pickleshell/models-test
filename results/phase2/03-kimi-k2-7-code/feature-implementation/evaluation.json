@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "benchmark": "phase2",
+  "task": "feature-implementation",
+  "category": "feature-implementation",
+  "model": "opencode-go/kimi-k2.7-code",
+  "pass": true,
+  "metrics": {
+    "public_status": 0,
+    "hidden_passed": 1,
+    "hidden_failed": 0,
+    "forbidden_change_count": 0,
+    "changed_files": [
+      "fixtures/phase2/feature-implementation/src/featureFlags.js"
+    ],
+    "duration_ms": 175
+  },
+  "public_test": {
+    "command": "npm test --prefix fixtures/phase2/feature-implementation",
+    "stdout": "\n> test\n> node --test test/*.test.mjs\n\nTAP version 13\n# Subtest: supports boolean flags and explicit overrides\nok 1 - supports boolean flags and explicit overrides\n  ---\n  duration_ms: 0.935166\n  ...\n# Subtest: enables a 100 percent rollout for a user\nok 2 - enables a 100 percent rollout for a user\n  ---\n  duration_ms: 0.113594\n  ...\n1..2\n# tests 2\n# suites 0\n# pass 2\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 41.187584\n",
+    "stderr": ""
+  },
+  "hidden": {
+    "stdout": "",
+    "stderr": ""
+  },
+  "forbidden_changes": []
+}

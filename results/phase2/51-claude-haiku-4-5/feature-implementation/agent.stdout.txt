@@ -1,0 +1,190 @@
+[0m
+> build · claude-haiku-4-5
+[0m
+I'll help you implement the `resolveFeature` function in the feature flags file. Let me start by understanding the project structure and requirements.
+[0m
+[0m→ [0mRead .
+[0m→ [0mRead README.md
+[0m
+Now let me look at the feature-implementation fixture:
+[0m
+[0m$ [0mfind /home/pickleshell/workspace/models-test/.worktrees/phase2/51-claude-haiku-4-5/feature-implementation/fixtures -type f -name "*.md" | head -5
+/home/pickleshell/workspace/models-test/.worktrees/phase2/51-claude-haiku-4-5/feature-implementation/fixtures/phase1-ledger/PROMPT.md
+/home/pickleshell/workspace/models-test/.worktrees/phase2/51-claude-haiku-4-5/feature-implementation/fixtures/phase1-ledger/README.md
+/home/pickleshell/workspace/models-test/.worktrees/phase2/51-claude-haiku-4-5/feature-implementation/fixtures/phase2/repository-navigation/README.md
+/home/pickleshell/workspace/models-test/.worktrees/phase2/51-claude-haiku-4-5/feature-implementation/fixtures/phase2/refactoring/README.md
+/home/pickleshell/workspace/models-test/.worktrees/phase2/51-claude-haiku-4-5/feature-implementation/fixtures/phase2/tests-edge-cases/README.md
+[0m
+[0m$ [0mfind /home/pickleshell/workspace/models-test/.worktrees/phase2/51-claude-haiku-4-5/feature-implementation/fixtures -type d -name "feature-implementation"
+/home/pickleshell/workspace/models-test/.worktrees/phase2/51-claude-haiku-4-5/feature-implementation/fixtures/phase2/references/feature-implementation
+/home/pickleshell/workspace/models-test/.worktrees/phase2/51-claude-haiku-4-5/feature-implementation/fixtures/phase2/feature-implementation
+[0m
+[0m→ [0mRead fixtures/phase2/feature-implementation
+[0m→ [0mRead fixtures/phase2/feature-implementation/README.md
+[0m
+Now let me look at the source file:
+[0m
+[0m→ [0mRead fixtures/phase2/feature-implementation/src
+[0m→ [0mRead fixtures/phase2/feature-implementation/src/featureFlags.js
+[0m
+Now let me check the tests to understand the full requirements:
+[0m
+[0m→ [0mRead fixtures/phase2/feature-implementation/test
+[0m→ [0mRead fixtures/phase2/feature-implementation/test/featureFlags.test.mjs
+[0m→ [0mRead fixtures/phase2/feature-implementation/package.json
+[0m
+[0m# [0mTodos
+[✓] Understand the resolveFeature contract and requirements
+[•] Implement resolveFeature with override handling, flag booleans, and rollout logic
+[ ] Run public tests to verify implementation
+[0m
+Now I understand the requirements based on the README contract. The function must:
+
+1. Check for exact boolean in `context.overrides` first (wins over everything)
+2. Then use boolean flag value directly if it's a boolean
+3. If flag is an object with `enabled` and `rollout`, use rollout logic with a stable hash of `context.userId`
+4. Rollout is an integer percentage 0-100
+5. Missing or invalid input is disabled (returns false)
+6. Must not mutate either argument
+
+Let me implement this properly:
+[0m
+[0m← [0mEdit fixtures/phase2/feature-implementation/src/featureFlags.js
+Index: /home/pickleshell/workspace/models-test/.worktrees/phase2/51-claude-haiku-4-5/feature-implementation/fixtures/phase2/feature-implementation/src/featureFlags.js
+===================================================================
+--- /home/pickleshell/workspace/models-test/.worktrees/phase2/51-claude-haiku-4-5/feature-implementation/fixtures/phase2/feature-implementation/src/featureFlags.js
++++ /home/pickleshell/workspace/models-test/.worktrees/phase2/51-claude-haiku-4-5/feature-implementation/fixtures/phase2/feature-implementation/src/featureFlags.js
+@@ -1,5 +1,74 @@
+ export function resolveFeature(config, context) {
+-  if (!config || !context || typeof context !== 'object') return false;
+-  const flag = config[context.feature];
+-  return typeof flag === 'boolean' ? flag : Boolean(flag && flag.enabled);
++  // Validate inputs - missing or invalid input is disabled
++  if (!config || !context || typeof config !== 'object' || typeof context !== 'object') {
++    return false;
++  }
++
++  const { feature, overrides, userId } = context;
++  
++  // Check for exact boolean override first (wins over everything)
++  if (overrides && typeof overrides === 'object' && feature in overrides) {
++    const override = overrides[feature];
++    if (typeof override === 'boolean') {
++      return override;
++    }
++  }
++
++  // Get the flag value from config
++  const flag = config[feature];
++  
++  // If flag is a boolean, return it directly
++  if (typeof flag === 'boolean') {
++    return flag;
++  }
++  
++  // If flag is an object with enabled and rollout properties
++  if (flag && typeof flag === 'object') {
++    // If enabled is false, always return false
++    if (flag.enabled !== true) {
++      return false;
++    }
++    
++    // Handle rollout percentage
++    if (typeof flag.rollout === 'number') {
++      // Validate rollout is between 0 and 100
++      if (flag.rollout < 0 || flag.rollout > 100 || !Number.isInteger(flag.rollout)) {
++        return false;
++      }
++      
++      // If rollout is 100%, always enabled
++      if (flag.rollout === 100) {
++        return true;
++      }
++      
++      // If rollout is 0%, always disabled
++      if (flag.rollout === 0) {
++        return false;
++      }
++      
++      // Use stable hash of userId for rollout determination
++      if (userId) {
++        // Simple stable hash function using user ID
++        let hash = 0;
++        for (let i = 0; i < userId.length; i++) {
++          const char = userId.charCodeAt(i);
++          hash = ((hash << 5) - hash) + char;
++          hash = hash & hash; // Convert to 32bit integer
++        }
++        
++        // Normalize hash to 0-100 range
++        const hashPercentage = Math.abs(hash) % 100;
++        return hashPercentage < flag.rollout;
++      }
++      
++      // If no userId, treat as rollout not applicable
++      return false;
++    }
++    
++    // If enabled exists and no rollout, return enabled value
++    return flag.enabled === true;
++  }
++  
++  // Missing or invalid input is disabled
++  return false;
+ }
+
+[0m
+Now let's run the tests to verify the implementation:
+[0m
+[0m$ [0mcd /home/pickleshell/workspace/models-test/.worktrees/phase2/51-claude-haiku-4-5/feature-implementation/fixtures/phase2/feature-implementation && npm test
+> test
+> node --test test/*.test.mjs
+
+TAP version 13
+# Subtest: supports boolean flags and explicit overrides
+ok 1 - supports boolean flags and explicit overrides
+  ---
+  duration_ms: 0.963629
+  ...
+# Subtest: enables a 100 percent rollout for a user
+ok 2 - enables a 100 percent rollout for a user
+  ---
+  duration_ms: 0.116449
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 44.652281
+[0m
+Perfect! All tests pass. Let me mark the todos as completed:
+[0m
+[0m# [0mTodos
+[✓] Understand the resolveFeature contract and requirements
+[✓] Implement resolveFeature with override handling, flag booleans, and rollout logic
+[✓] Run public tests to verify implementation
+[0m
+Excellent! I've successfully implemented `resolveFeature` in `fixtures/phase2/feature-implementation/src/featureFlags.js`. Here's what the implementation does:
+
+**Implementation Summary:**
+
+The function follows the README contract exactly:
+
+1. **Override handling** - Checks `context.overrides[feature]` first; an exact boolean there wins over everything
+2. **Boolean flags** - Returns the flag directly if it's already a boolean
+3. **Flag objects with rollout** - Handles objects with `enabled` and `rollout` properties:
+   - Returns false if `enabled` is not true
+   - For rollout percentages (0-100), uses a stable hash of `context.userId` to deterministically assign the user to the rollout
+   - 100% rollout always enables, 0% always disables
+4. **Input validation** - Invalid or missing input returns false
+5. **Non-mutating** - The function only reads from both arguments without modifying them
+
+**Test Results:**
+✅ All 2 public tests pass:
+- `supports boolean flags and explicit overrides` ✓
+- `enables a 100 percent rollout for a user` ✓
+[0m

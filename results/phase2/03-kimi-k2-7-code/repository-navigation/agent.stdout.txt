@@ -1,0 +1,67 @@
+[0m
+> build · kimi-k2.7-code
+[0m
+[0m→ [0mRead README.md
+[0m→ [0mRead fixtures/phase2/repository-navigation/src/labels.js
+[0m→ [0mRead .
+[0m
+I'll explore the repository, understand the contract, and implement the missing behavior.
+[0m
+[0m→ [0mRead fixtures/phase2/repository-navigation
+[0m→ [0mRead fixtures/phase2/repository-navigation/README.md
+[0m→ [0mRead fixtures/phase2/repository-navigation/package.json
+[0m→ [0mRead fixtures/phase2/repository-navigation/test
+[0m→ [0mRead fixtures/phase2/repository-navigation/test/labels.test.mjs
+[0m
+[0m← [0mEdit fixtures/phase2/repository-navigation/src/labels.js
+Index: /home/pickleshell/workspace/models-test/.worktrees/phase2/03-kimi-k2-7-code/repository-navigation/fixtures/phase2/repository-navigation/src/labels.js
+===================================================================
+--- /home/pickleshell/workspace/models-test/.worktrees/phase2/03-kimi-k2-7-code/repository-navigation/fixtures/phase2/repository-navigation/src/labels.js
++++ /home/pickleshell/workspace/models-test/.worktrees/phase2/03-kimi-k2-7-code/repository-navigation/fixtures/phase2/repository-navigation/src/labels.js
+@@ -1,4 +1,8 @@
+ export function formatLabel(value) {
+   if (typeof value !== 'string') return '';
+-  return typeof value === 'string' ? value.trim() : '';
++  return value
++    .trim()
++    .split(/\s+/)
++    .map(word => word ? word[0].toUpperCase() + word.slice(1).toLowerCase() : '')
++    .join(' ');
+ }
+
+[0m
+[0m$ [0mnpm test
+> test
+> node --test test/*.test.mjs
+
+TAP version 13
+# Subtest: formats a simple label
+ok 1 - formats a simple label
+  ---
+  duration_ms: 0.972855
+  ...
+# Subtest: returns empty for empty input
+ok 2 - returns empty for empty input
+  ---
+  duration_ms: 0.107952
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 43.739473
+[0m
+Implemented `formatLabel` in `fixtures/phase2/repository-navigation/src/labels.js`. The function now trims input, collapses internal whitespace, title-cases each word, preserves punctuation, and safely returns an empty string for non-string input.
+
+Public tests pass:
+
+```
+# tests 2
+# pass 2
+# fail 0
+```
+[0m

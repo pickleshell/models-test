@@ -1,0 +1,46 @@
+[0m
+> build · grok-4.5
+[0m
+[0m→ [0mRead README.md[90m [offset=1, limit=200][0m
+[0m✱ [0mGlob "**/*"[90m in . · 100 matches[0m
+[0m→ [0mRead fixtures/phase2/repository-navigation/src/labels.js[90m [offset=1, limit=200][0m
+[0m
+I'll explore the repo and README contract, then implement `formatLabel` and run the public tests.
+[0m
+[0m✱ [0mGlob "**/*"[90m in fixtures/phase2/repository-navigation · 4 matches[0m
+[0m✱ [0mGrep "formatLabel|label"[90m in fixtures/phase2/repository-navigation · 5 matches[0m
+[0m
+Looking at the fixture README and tests next.
+[0m
+[0m← [0mWrite fixtures/phase2/repository-navigation/src/labels.js
+Wrote file successfully.
+[0m
+[0m$ [0mnpm test --prefix fixtures/phase2/repository-navigation
+> test
+> node --test test/*.test.mjs
+
+TAP version 13
+# Subtest: formats a simple label
+ok 1 - formats a simple label
+  ---
+  duration_ms: 0.981655
+  ...
+# Subtest: returns empty for empty input
+ok 2 - returns empty for empty input
+  ---
+  duration_ms: 0.110197
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 43.771567
+[0m
+Implementing per the contract and running tests.
+[0m
+Done. `formatLabel` trims, collapses whitespace, title-cases words, and returns `''` for non-strings/empty. Public tests: 2/2 pass.
+[0m

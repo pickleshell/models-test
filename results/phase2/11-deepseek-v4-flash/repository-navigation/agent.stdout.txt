@@ -1,0 +1,41 @@
+[0m
+> build · deepseek-v4-flash
+[0m
+[0m→ [0mRead .
+[0m→ [0mRead fixtures/phase2/repository-navigation/src/labels.js
+[0m→ [0mRead README.md
+[0m✱ [0mGlob "fixtures/phase2/repository-navigation/**/*"[90m 4 matches[0m
+[0m→ [0mRead fixtures/phase2/repository-navigation/README.md
+[0m→ [0mRead fixtures/phase2/repository-navigation/test/labels.test.mjs
+[0m→ [0mRead fixtures/phase2/repository-navigation/package.json
+[0m
+[0m← [0mWrite fixtures/phase2/repository-navigation/src/labels.js
+Wrote file successfully.
+[0m
+[0m$ [0mnpm test
+> test
+> node --test test/*.test.mjs
+
+TAP version 13
+# Subtest: formats a simple label
+ok 1 - formats a simple label
+  ---
+  duration_ms: 0.957768
+  ...
+# Subtest: returns empty for empty input
+ok 2 - returns empty for empty input
+  ---
+  duration_ms: 0.102212
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 43.295296
+[0m
+Implemented `formatLabel` in `src/labels.js:1` — trims, collapses internal whitespace, title-cases each word, preserves punctuation, and returns `''` for empty/non-string input without throwing. Public tests pass 2/2.
+[0m

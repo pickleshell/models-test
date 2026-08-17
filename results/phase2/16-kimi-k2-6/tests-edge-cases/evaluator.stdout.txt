@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "benchmark": "phase2",
+  "task": "tests-edge-cases",
+  "category": "tests-and-edge-cases",
+  "model": "opencode-go/kimi-k2.6",
+  "pass": true,
+  "metrics": {
+    "public_status": 0,
+    "hidden_passed": 1,
+    "hidden_failed": 0,
+    "forbidden_change_count": 0,
+    "changed_files": [
+      "fixtures/phase2/tests-edge-cases/src/range.js",
+      "fixtures/phase2/tests-edge-cases/test/range.test.mjs"
+    ],
+    "duration_ms": 189
+  },
+  "public_test": {
+    "command": "npm test --prefix fixtures/phase2/tests-edge-cases",
+    "stdout": "\n> test\n> node --test test/*.test.mjs\n\nTAP version 13\n# Subtest: parses an inclusive range\nok 1 - parses an inclusive range\n  ---\n  duration_ms: 1.193662\n  ...\n# Subtest: accepts surrounding whitespace\nok 2 - accepts surrounding whitespace\n  ---\n  duration_ms: 0.136346\n  ...\n# Subtest: rejects malformed ranges\nok 3 - rejects malformed ranges\n  ---\n  duration_ms: 0.679976\n  ...\n# Subtest: rejects a reversed range\nok 4 - rejects a reversed range\n  ---\n  duration_ms: 0.169749\n  ...\n# Subtest: rejects non-string input\nok 5 - rejects non-string input\n  ---\n  duration_ms: 0.156263\n  ...\n# Subtest: rejects empty string\nok 6 - rejects empty string\n  ---\n  duration_ms: 0.134192\n  ...\n# Subtest: rejects extra dots\nok 7 - rejects extra dots\n  ---\n  duration_ms: 0.13303\n  ...\n# Subtest: rejects non-integer values\nok 8 - rejects non-integer values\n  ---\n  duration_ms: 0.102763\n  ...\n# Subtest: rejects values outside safe integer bounds\nok 9 - rejects values outside safe integer bounds\n  ---\n  duration_ms: 0.152677\n  ...\n# Subtest: rejects values above upper bound\nok 10 - rejects values above upper bound\n  ---\n  duration_ms: 0.162134\n  ...\n# Subtest: accepts boundary values\nok 11 - accepts boundary values\n  ---\n  duration_ms: 0.126688\n  ...\n# Subtest: rejects single dot separator\nok 12 - rejects single dot separator\n  ---\n  duration_ms: 0.10078\n  ...\n# Subtest: rejects missing start\nok 13 - rejects missing start\n  ---\n  duration_ms: 0.098605\n  ...\n# Subtest: rejects missing end\nok 14 - rejects missing end\n  ---\n  duration_ms: 0.157425\n  ...\n1..14\n# tests 14\n# suites 0\n# pass 14\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 52.561665\n",
+    "stderr": ""
+  },
+  "hidden": {
+    "stdout": "",
+    "stderr": ""
+  },
+  "forbidden_changes": []
+}

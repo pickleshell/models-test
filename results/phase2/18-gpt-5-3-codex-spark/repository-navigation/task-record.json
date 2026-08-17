@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "state": "completed",
+  "benchmark": "phase2",
+  "task": "repository-navigation",
+  "category": "repository-navigation-change",
+  "candidate": "18-gpt-5-3-codex-spark",
+  "runtime": "codex",
+  "model": "gpt-5.3-codex-spark",
+  "baseline": "1a72728fc696df66e6f6fd6845adabcea6c9ce03",
+  "workspace": "/home/pickleshell/workspace/models-test/.worktrees/phase2/18-gpt-5-3-codex-spark/repository-navigation",
+  "prompt": "benchmarks/phase2/prompts/repository-navigation.md",
+  "command": {
+    "command": "codex",
+    "args": [
+      "exec",
+      "--model",
+      "gpt-5.3-codex-spark",
+      "--cd",
+      "/home/pickleshell/workspace/models-test/.worktrees/phase2/18-gpt-5-3-codex-spark/repository-navigation",
+      "--approve-for-me"
+    ],
+    "working_directory": "/home/pickleshell/workspace/models-test/.worktrees/phase2/18-gpt-5-3-codex-spark/repository-navigation"
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "wall_time_ms": 41755,
+    "timed_out": false,
+    "failure_class": null
+  },
+  "evaluator": {
+    "status": 0,
+    "signal": null,
+    "wall_time_ms": 202,
+    "failure_class": null
+  },
+  "patch": {
+    "file": "/home/pickleshell/workspace/models-test/results/phase2/18-gpt-5-3-codex-spark/repository-navigation/candidate.diff",
+    "changed_files": [
+      "fixtures/phase2/repository-navigation/src/labels.js"
+    ]
+  },
+  "evaluation_json": "/home/pickleshell/workspace/models-test/results/phase2/18-gpt-5-3-codex-spark/repository-navigation/evaluation.json",
+  "raw_output": {
+    "agent_stdout": "/home/pickleshell/workspace/models-test/results/phase2/18-gpt-5-3-codex-spark/repository-navigation/agent.stdout.txt",
+    "agent_stderr": "/home/pickleshell/workspace/models-test/results/phase2/18-gpt-5-3-codex-spark/repository-navigation/agent.stderr.txt",
+    "evaluator_stdout": "/home/pickleshell/workspace/models-test/results/phase2/18-gpt-5-3-codex-spark/repository-navigation/evaluator.stdout.txt",
+    "evaluator_stderr": "/home/pickleshell/workspace/models-test/results/phase2/18-gpt-5-3-codex-spark/repository-navigation/evaluator.stderr.txt"
+  },
+  "completed_at": "2026-08-17T13:10:16.753Z"
+}

@@ -1,0 +1,141 @@
+[0m
+> build · claude-haiku-4-5
+[0m
+I'll start by exploring the repository to understand its structure and the contract for the `formatLabel` function.
+[0m
+[0m→ [0mRead .
+[0m→ [0mRead README.md
+[0m
+Now let me look at the fixtures directory to find the phase2 repository-navigation task:
+[0m
+[0m→ [0mRead .
+[0m
+Let me check the fixtures directory more thoroughly:
+[0m
+[0m$ [0mfind /home/pickleshell/workspace/models-test/.worktrees/phase2/51-claude-haiku-4-5/repository-navigation/fixtures -type f -name "*.md" | head -20
+/home/pickleshell/workspace/models-test/.worktrees/phase2/51-claude-haiku-4-5/repository-navigation/fixtures/phase1-ledger/PROMPT.md
+/home/pickleshell/workspace/models-test/.worktrees/phase2/51-claude-haiku-4-5/repository-navigation/fixtures/phase1-ledger/README.md
+/home/pickleshell/workspace/models-test/.worktrees/phase2/51-claude-haiku-4-5/repository-navigation/fixtures/phase2/repository-navigation/README.md
+/home/pickleshell/workspace/models-test/.worktrees/phase2/51-claude-haiku-4-5/repository-navigation/fixtures/phase2/refactoring/README.md
+/home/pickleshell/workspace/models-test/.worktrees/phase2/51-claude-haiku-4-5/repository-navigation/fixtures/phase2/tests-edge-cases/README.md
+/home/pickleshell/workspace/models-test/.worktrees/phase2/51-claude-haiku-4-5/repository-navigation/fixtures/phase2/feature-implementation/README.md
+/home/pickleshell/workspace/models-test/.worktrees/phase2/51-claude-haiku-4-5/repository-navigation/fixtures/README.md
+[0m
+Great! Now let me read the README for the repository-navigation task:
+[0m
+[0m→ [0mRead fixtures/phase2/repository-navigation/README.md
+[0m
+Now let me look at the labels.js file to see the current implementation:
+[0m
+[0m→ [0mRead fixtures/phase2/repository-navigation/src/labels.js
+[0m
+Now let me check what tests exist:
+[0m
+[0m$ [0mfind /home/pickleshell/workspace/models-test/.worktrees/phase2/51-claude-haiku-4-5/repository-navigation/fixtures/phase2/repository-navigation -type f -name "*.test.js" -o -name "*.spec.js" -o -name "*test*.js" 2>/dev/null
+(no output)
+[0m
+Let me check the directory structure:
+[0m
+[0m→ [0mRead fixtures/phase2/repository-navigation
+[0m
+Let me check the test directory:
+[0m
+[0m$ [0mfind /home/pickleshell/workspace/models-test/.worktrees/phase2/51-claude-haiku-4-5/repository-navigation/fixtures/phase2/repository-navigation/test -type f
+/home/pickleshell/workspace/models-test/.worktrees/phase2/51-claude-haiku-4-5/repository-navigation/fixtures/phase2/repository-navigation/test/labels.test.mjs
+[0m
+Perfect! Let me read the test file to understand what behavior is expected:
+[0m
+[0m→ [0mRead fixtures/phase2/repository-navigation/test/labels.test.mjs
+[0m
+Good! Now I understand the requirements. Let me create a plan and implement the function. Based on the README and tests, `formatLabel` should:
+1. Accept a string and trim it
+2. Collapse internal whitespace (convert multiple spaces to single spaces)
+3. Title-case each word
+4. Preserve punctuation
+5. Return empty string for empty or non-string input
+6. Not throw for arbitrary input
+
+Let me update the labels.js file:
+[0m
+[0m← [0mEdit fixtures/phase2/repository-navigation/src/labels.js
+Index: /home/pickleshell/workspace/models-test/.worktrees/phase2/51-claude-haiku-4-5/repository-navigation/fixtures/phase2/repository-navigation/src/labels.js
+===================================================================
+--- /home/pickleshell/workspace/models-test/.worktrees/phase2/51-claude-haiku-4-5/repository-navigation/fixtures/phase2/repository-navigation/src/labels.js
++++ /home/pickleshell/workspace/models-test/.worktrees/phase2/51-claude-haiku-4-5/repository-navigation/fixtures/phase2/repository-navigation/src/labels.js
+@@ -1,4 +1,21 @@
+ export function formatLabel(value) {
+   if (typeof value !== 'string') return '';
+-  return typeof value === 'string' ? value.trim() : '';
++  
++  // Trim the input
++  const trimmed = value.trim();
++  
++  // If empty after trimming, return empty string
++  if (!trimmed) return '';
++  
++  // Collapse internal whitespace and split into words
++  const words = trimmed.split(/\s+/);
++  
++  // Title-case each word (capitalize first letter, lowercase the rest)
++  const titleCased = words.map(word => {
++    if (!word) return word;
++    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
++  });
++  
++  // Join words with single space
++  return titleCased.join(' ');
+ }
+
+[0m
+Now let me run the tests to verify the implementation:
+[0m
+[0m$ [0mcd /home/pickleshell/workspace/models-test/.worktrees/phase2/51-claude-haiku-4-5/repository-navigation/fixtures/phase2/repository-navigation && npm test
+> test
+> node --test test/*.test.mjs
+
+TAP version 13
+# Subtest: formats a simple label
+ok 1 - formats a simple label
+  ---
+  duration_ms: 0.98513
+  ...
+# Subtest: returns empty for empty input
+ok 2 - returns empty for empty input
+  ---
+  duration_ms: 0.109004
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 42.22799
+[0m
+Perfect! All tests pass. Let me verify the implementation one more time by checking the final code:
+[0m
+[0m→ [0mRead fixtures/phase2/repository-navigation/src/labels.js
+[0m
+Excellent! The implementation is complete and correct. Here's a summary of what I did:
+
+## Summary
+
+I successfully implemented the `formatLabel` function in `src/labels.js` following the contract specified in the README:
+
+**Implementation details:**
+- **Non-string input**: Returns empty string if value is not a string
+- **Trimming**: Removes leading and trailing whitespace using `.trim()`
+- **Whitespace collapsing**: Collapses multiple internal spaces into single spaces using `/\s+/` split
+- **Title-casing**: Capitalizes the first letter of each word and lowercases the rest
+- **Punctuation preservation**: The implementation preserves existing punctuation (all punctuation remains unchanged)
+- **Error safety**: The function doesn't throw on arbitrary input
+
+**Test results:**
+✅ Both public tests pass (2/2):
+- "formats a simple label" - converts `'  account status '` to `'Account Status'`
+- "returns empty for empty input" - returns `''` for `''`
+
+The export was preserved and only the source file was modified as requested.
+[0m

@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "benchmark": "phase2",
+  "task": "tests-edge-cases",
+  "category": "tests-and-edge-cases",
+  "model": "opencode-go/minimax-m3",
+  "pass": true,
+  "metrics": {
+    "public_status": 0,
+    "hidden_passed": 1,
+    "hidden_failed": 0,
+    "forbidden_change_count": 0,
+    "changed_files": [
+      "fixtures/phase2/tests-edge-cases/src/range.js",
+      "fixtures/phase2/tests-edge-cases/test/range.test.mjs"
+    ],
+    "duration_ms": 187
+  },
+  "public_test": {
+    "command": "npm test --prefix fixtures/phase2/tests-edge-cases",
+    "stdout": "\n> test\n> node --test test/*.test.mjs\n\nTAP version 13\n# Subtest: parses an inclusive range\nok 1 - parses an inclusive range\n  ---\n  duration_ms: 1.191035\n  ...\n# Subtest: accepts surrounding whitespace\nok 2 - accepts surrounding whitespace\n  ---\n  duration_ms: 0.656623\n  ...\n# Subtest: rejects malformed ranges\nok 3 - rejects malformed ranges\n  ---\n  duration_ms: 0.159399\n  ...\n# Subtest: rejects a reversed range\nok 4 - rejects a reversed range\n  ---\n  duration_ms: 0.101931\n  ...\n# Subtest: accepts the lower bound\nok 5 - accepts the lower bound\n  ---\n  duration_ms: 0.127239\n  ...\n# Subtest: accepts the upper bound\nok 6 - accepts the upper bound\n  ---\n  duration_ms: 0.103324\n  ...\n# Subtest: accepts a single-point range\nok 7 - accepts a single-point range\n  ---\n  duration_ms: 0.10134\n  ...\n# Subtest: rejects a range below the lower bound\nok 8 - rejects a range below the lower bound\n  ---\n  duration_ms: 0.10638\n  ...\n# Subtest: rejects a range above the upper bound\nok 9 - rejects a range above the upper bound\n  ---\n  duration_ms: 0.171632\n  ...\n# Subtest: rejects decimal values\nok 10 - rejects decimal values\n  ---\n  duration_ms: 0.167274\n  ...\n# Subtest: rejects non-string input\nok 11 - rejects non-string input\n  ---\n  duration_ms: 0.129152\n  ...\n# Subtest: rejects an empty string\nok 12 - rejects an empty string\n  ---\n  duration_ms: 0.12799\n  ...\n# Subtest: rejects input with no separator\nok 13 - rejects input with no separator\n  ---\n  duration_ms: 0.098555\n  ...\n# Subtest: rejects input with too many separators\nok 14 - rejects input with too many separators\n  ---\n  duration_ms: 0.130855\n  ...\n# Subtest: rejects a sign-only token\nok 15 - rejects a sign-only token\n  ---\n  duration_ms: 0.128572\n  ...\n# Subtest: rejects internal whitespace between operands\nok 16 - rejects internal whitespace between operands\n  ---\n  duration_ms: 0.134373\n  ...\n1..16\n# tests 16\n# suites 0\n# pass 16\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 51.403439\n",
+    "stderr": ""
+  },
+  "hidden": {
+    "stdout": "",
+    "stderr": ""
+  },
+  "forbidden_changes": []
+}

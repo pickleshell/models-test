@@ -1,0 +1,232 @@
+[0m
+> build · mimo-v2.5-pro
+[0m
+[0m→ [0mRead fixtures/phase1-ledger/src/reconcile.js
+[0m✱ [0mGlob "fixtures/phase1-ledger/**/*.md"[90m 2 matches[0m
+[0m✱ [0mGlob "fixtures/phase1-ledger/package.json"[90m 1 match[0m
+[0m→ [0mRead fixtures/phase1-ledger/PROMPT.md
+[0m→ [0mRead fixtures/phase1-ledger/package.json
+[0m✱ [0mGlob "fixtures/phase1-ledger/test*/**"[90m 1 match[0m
+[0m✱ [0mGlob "fixtures/phase1-ledger/**/*.test.*"[90m 1 match[0m
+[0m→ [0mRead fixtures/phase1-ledger/test/reconcile.test.mjs
+[0m
+[0m# [0mTodos
+[ ] Fix parseAmountToCents: reject negative values and >2 decimal places (don't round)
+[ ] Fix duplicate handling: skip processing after first occurrence
+[ ] Fix dayKey: use UTC instead of local timezone
+[ ] Fix refund: use original sale's accountId/currency, not refund's
+[ ] Run tests to verify
+[0m
+Let me analyze the defects by comparing the PROMPT.md spec with the implementation:
+[0m
+[0m← [0mEdit fixtures/phase1-ledger/src/reconcile.js
+Index: /home/pickleshell/workspace/models-test/.worktrees/phase2/07-mimo-v2-5-pro/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+===================================================================
+--- /home/pickleshell/workspace/models-test/.worktrees/phase2/07-mimo-v2-5-pro/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
++++ /home/pickleshell/workspace/models-test/.worktrees/phase2/07-mimo-v2-5-pro/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+@@ -4,12 +4,17 @@
+   }
+ 
+   const normalized = String(amount).trim().replace(/[$,]/g, '');
+   const value = Number(normalized);
+-  if (!Number.isFinite(value)) {
++  if (!Number.isFinite(value) || value < 0) {
+     throw new Error(`invalid amount: ${amount}`);
+   }
+ 
++  const parts = normalized.split('.');
++  if (parts.length === 2 && parts[1].length > 2) {
++    throw new Error(`invalid amount: ${amount}`);
++  }
++
+   return Math.round(value * 100);
+ }
+ 
+ function dayKey(createdAt) {
+
+[0m
+Four defects identified. Applying fixes:
+[0m
+[0m← [0mEdit fixtures/phase1-ledger/src/reconcile.js
+Index: /home/pickleshell/workspace/models-test/.worktrees/phase2/07-mimo-v2-5-pro/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+===================================================================
+--- /home/pickleshell/workspace/models-test/.worktrees/phase2/07-mimo-v2-5-pro/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
++++ /home/pickleshell/workspace/models-test/.worktrees/phase2/07-mimo-v2-5-pro/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+@@ -56,8 +56,9 @@
+ if (!entry.currency) throw new Error('missing currency');
+ 
+ if (seenIds.has(entry.id)) {
+   metrics.duplicateCount += 1;
++  continue;
+ }
+ seenIds.add(entry.id);
+ 
+ const cents = parseAmountToCents(entry.amount);
+
+[0m
+[0m← [0mEdit fixtures/phase1-ledger/src/reconcile.js
+Index: /home/pickleshell/workspace/models-test/.worktrees/phase2/07-mimo-v2-5-pro/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+===================================================================
+--- /home/pickleshell/workspace/models-test/.worktrees/phase2/07-mimo-v2-5-pro/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
++++ /home/pickleshell/workspace/models-test/.worktrees/phase2/07-mimo-v2-5-pro/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+@@ -21,9 +21,9 @@
+   const date = new Date(createdAt);
+   if (Number.isNaN(date.getTime())) {
+     throw new Error(`invalid createdAt: ${createdAt}`);
+   }
+-  return date.toLocaleDateString('en-CA');
++  return date.toISOString().slice(0, 10);
+ }
+ 
+ function addTotal(totals, accountId, currency, day, cents) {
+   const key = `${accountId}|${currency}|${day}`;
+
+[0m
+[0m← [0mEdit fixtures/phase1-ledger/src/reconcile.js
+Index: /home/pickleshell/workspace/models-test/.worktrees/phase2/07-mimo-v2-5-pro/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+===================================================================
+--- /home/pickleshell/workspace/models-test/.worktrees/phase2/07-mimo-v2-5-pro/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
++++ /home/pickleshell/workspace/models-test/.worktrees/phase2/07-mimo-v2-5-pro/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+@@ -73,9 +73,9 @@
+   if (!original) {
+     metrics.orphanRefundCount += 1;
+     continue;
+   }
+-  addTotal(totals, entry.accountId, entry.currency, day, -cents);
++  addTotal(totals, original.accountId, original.currency, day, -cents);
+   metrics.processed += 1;
+ } else {
+   throw new Error(`unsupported type: ${entry.type}`);
+ }
+
+[0m
+[0m# [0mTodos
+[✓] Fix parseAmountToCents: reject negative values and >2 decimal places (don't round)
+[✓] Fix duplicate handling: skip processing after first occurrence
+[✓] Fix dayKey: use UTC instead of local timezone
+[✓] Fix refund: use original sale's accountId/currency, not refund's
+[•] Run tests to verify
+[0m
+[0m$ [0mnpm test --prefix fixtures/phase1-ledger
+> phase1-ledger-fixture@0.1.0 test
+> node --test test/*.test.mjs
+
+TAP version 13
+# Subtest: parses ordinary decimal money into cents
+ok 1 - parses ordinary decimal money into cents
+  ---
+  duration_ms: 0.99056
+  ...
+# Subtest: summarizes sales by account, currency, and UTC day
+ok 2 - summarizes sales by account, currency, and UTC day
+  ---
+  duration_ms: 5.901057
+  ...
+# Subtest: does not double count duplicate transaction ids
+ok 3 - does not double count duplicate transaction ids
+  ---
+  duration_ms: 0.158087
+  ...
+# Subtest: counts invalid rows and orphan refunds without adding them to totals
+ok 4 - counts invalid rows and orphan refunds without adding them to totals
+  ---
+  duration_ms: 0.163066
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 4
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 51.023987
+[0m
+[0m$ [0mgit diff
+diff --git a/fixtures/phase1-ledger/src/reconcile.js b/fixtures/phase1-ledger/src/reconcile.js
+index 496d11c..9cd6257 100644
+--- a/fixtures/phase1-ledger/src/reconcile.js
++++ b/fixtures/phase1-ledger/src/reconcile.js
+@@ -5,7 +5,12 @@ export function parseAmountToCents(amount) {
+ 
+   const normalized = String(amount).trim().replace(/[$,]/g, '');
+   const value = Number(normalized);
+-  if (!Number.isFinite(value)) {
++  if (!Number.isFinite(value) || value < 0) {
++    throw new Error(`invalid amount: ${amount}`);
++  }
++
++  const parts = normalized.split('.');
++  if (parts.length === 2 && parts[1].length > 2) {
+     throw new Error(`invalid amount: ${amount}`);
+   }
+ 
+@@ -17,7 +22,7 @@ function dayKey(createdAt) {
+   if (Number.isNaN(date.getTime())) {
+     throw new Error(`invalid createdAt: ${createdAt}`);
+   }
+-  return date.toLocaleDateString('en-CA');
++  return date.toISOString().slice(0, 10);
+ }
+ 
+ function addTotal(totals, accountId, currency, day, cents) {
+@@ -52,6 +57,7 @@ export function reconcileLedger(entries) {
+ 
+       if (seenIds.has(entry.id)) {
+         metrics.duplicateCount += 1;
++        continue;
+       }
+       seenIds.add(entry.id);
+ 
+@@ -68,7 +74,7 @@ export function reconcileLedger(entries) {
+           metrics.orphanRefundCount += 1;
+           continue;
+         }
+-        addTotal(totals, entry.accountId, entry.currency, day, -cents);
++        addTotal(totals, original.accountId, original.currency, day, -cents);
+         metrics.processed += 1;
+       } else {
+         throw new Error(`unsupported type: ${entry.type}`);
+diff --git a/fixtures/phase2/hidden/bug-fix-ledger.mjs b/fixtures/phase2/hidden/bug-fix-ledger.mjs
+deleted file mode 100644
+index dd54299..0000000
+--- a/fixtures/phase2/hidden/bug-fix-ledger.mjs
++++ /dev/null
+@@ -1,16 +0,0 @@
+-import assert from 'node:assert/strict';
+-import { pathToFileURL } from 'node:url';
+-const source = process.argv[process.argv.indexOf('--source') + 1];
+-const api = await import(pathToFileURL(source).href);
+-assert.throws(() => api.parseAmountToCents('1.005'));
+-assert.throws(() => api.parseAmountToCents('-1'));
+-const result = api.reconcileLedger([
+-  { id: 's', type: 'sale', accountId: 'merchant', currency: 'USD', amount: '5.00', createdAt: '2026-01-01T00:00:00Z' },
+-  { id: 'r', type: 'refund', originalId: 's', accountId: 'other', currency: 'EUR', amount: '2.00', createdAt: '2026-01-02T00:00:00Z' },
+-  { id: 's', type: 'sale', accountId: 'merchant', currency: 'USD', amount: 'bad', createdAt: '2026-01-01T00:00:00Z' }
+-]);
+-assert.deepEqual(result.totals, [
+-  { accountId: 'merchant', currency: 'USD', day: '2026-01-01', netCents: 500, count: 1 },
+-  { accountId: 'merchant', currency: 'USD', day: '2026-01-02', netCents: -200, count: 1 }
+-]);
+-assert.deepEqual(result.metrics, { processed: 2, duplicateCount: 1, invalidCount: 0, orphanRefundCount: 0 });
+[0m
+All 4 tests pass. Let me verify the final diff:
+[0m
+[0m$ [0mgit diff --stat -- fixtures/phase1-ledger/src/reconcile.js
+fixtures/phase1-ledger/src/reconcile.js | 12 +++++++++---
+ 1 file changed, 9 insertions(+), 3 deletions(-)
+[0m
+[0m# [0mTodos
+[✓] Fix parseAmountToCents: reject negative values and >2 decimal places (don't round)
+[✓] Fix duplicate handling: skip processing after first occurrence
+[✓] Fix dayKey: use UTC instead of local timezone
+[✓] Fix refund: use original sale's accountId/currency, not refund's
+[✓] Run tests to verify
+[0m
+All 4 tests pass. Four defects fixed in `fixtures/phase1-ledger/src/reconcile.js` (9 insertions, 3 deletions):
+
+1. **`parseAmountToCents`** — reject negative values and amounts with >2 decimal places instead of rounding them
+2. **Duplicate handling** — `continue` after counting a duplicate so it's never processed
+3. **`dayKey`** — use `toISOString().slice(0,10)` for UTC calendar day instead of `toLocaleDateString` (local timezone)
+4. **Refund accounting** — use the original sale's `accountId`/`currency` (not the refund's own) when subtracting
+[0m

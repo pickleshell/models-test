@@ -1,0 +1,119 @@
+[0m
+> build · nemotron-3-ultra-free
+[0m
+[0m→ [0mRead fixtures/phase1-ledger/src/reconcile.js
+[0m✱ [0mGlob "fixtures/phase1-ledger/**/*.test.js"[90m 0 matches[0m
+[0m✱ [0mGlob "fixtures/phase1-ledger/**/*test*"[90m 1 match[0m
+[0m→ [0mRead fixtures/phase1-ledger/test/reconcile.test.mjs
+[0m
+[0m$ [0mcd /home/pickleshell/workspace/models-test/.worktrees/phase2/35-nemotron-3-ultra-free/bug-fix-ledger/fixtures/phase1-ledger && npm test
+> phase1-ledger-fixture@0.1.0 test
+> node --test test/*.test.mjs
+
+TAP version 13
+# Subtest: parses ordinary decimal money into cents
+ok 1 - parses ordinary decimal money into cents
+  ---
+  duration_ms: 0.962928
+  ...
+# Subtest: summarizes sales by account, currency, and UTC day
+ok 2 - summarizes sales by account, currency, and UTC day
+  ---
+  duration_ms: 11.333205
+  ...
+# Subtest: does not double count duplicate transaction ids
+not ok 3 - does not double count duplicate transaction ids
+  ---
+  duration_ms: 1.007492
+  location: '/home/pickleshell/workspace/models-test/.worktrees/phase2/35-nemotron-3-ultra-free/bug-fix-ledger/fixtures/phase1-ledger/test/reconcile.test.mjs:24:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    2 !== 1
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 1
+  actual: 2
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///home/pickleshell/workspace/models-test/.worktrees/phase2/35-nemotron-3-ultra-free/bug-fix-ledger/fixtures/phase1-ledger/test/reconcile.test.mjs:31:10)
+    Test.runInAsyncScope (node:async_hooks:206:9)
+    Test.run (node:internal/test_runner/test:796:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:526:18)
+    Test.postRun (node:internal/test_runner/test:889:19)
+    Test.run (node:internal/test_runner/test:835:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:526:7)
+  ...
+# Subtest: counts invalid rows and orphan refunds without adding them to totals
+ok 4 - counts invalid rows and orphan refunds without adding them to totals
+  ---
+  duration_ms: 0.163217
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 3
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 60.139937
+[0m
+[0m← [0mEdit fixtures/phase1-ledger/src/reconcile.js
+Index: /home/pickleshell/workspace/models-test/.worktrees/phase2/35-nemotron-3-ultra-free/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+===================================================================
+--- /home/pickleshell/workspace/models-test/.worktrees/phase2/35-nemotron-3-ultra-free/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
++++ /home/pickleshell/workspace/models-test/.worktrees/phase2/35-nemotron-3-ultra-free/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+@@ -51,8 +51,9 @@
+ if (!entry.currency) throw new Error('missing currency');
+ 
+ if (seenIds.has(entry.id)) {
+   metrics.duplicateCount += 1;
++  continue;
+ }
+ seenIds.add(entry.id);
+ 
+ const cents = parseAmountToCents(entry.amount);
+
+[0m
+The bug is that duplicate entries are still being processed and added to totals. After detecting a duplicate, the code should skip processing that entry entirely. Let me fix this:
+[0m
+[0m$ [0mcd /home/pickleshell/workspace/models-test/.worktrees/phase2/35-nemotron-3-ultra-free/bug-fix-ledger/fixtures/phase1-ledger && npm test
+> phase1-ledger-fixture@0.1.0 test
+> node --test test/*.test.mjs
+
+TAP version 13
+# Subtest: parses ordinary decimal money into cents
+ok 1 - parses ordinary decimal money into cents
+  ---
+  duration_ms: 0.970943
+  ...
+# Subtest: summarizes sales by account, currency, and UTC day
+ok 2 - summarizes sales by account, currency, and UTC day
+  ---
+  duration_ms: 11.370055
+  ...
+# Subtest: does not double count duplicate transaction ids
+ok 3 - does not double count duplicate transaction ids
+  ---
+  duration_ms: 0.160932
+  ...
+# Subtest: counts invalid rows and orphan refunds without adding them to totals
+ok 4 - counts invalid rows and orphan refunds without adding them to totals
+  ---
+  duration_ms: 0.157466
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 4
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 56.917969
+[0m
+All tests pass. The fix was adding a `continue` statement after detecting a duplicate ID so duplicate entries are skipped entirely instead of being processed and added to totals.
+[0m

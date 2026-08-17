@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "benchmark": "phase2",
+  "task": "feature-implementation",
+  "category": "feature-implementation",
+  "model": "opencode/laguna-s-2.1-free",
+  "pass": false,
+  "metrics": {
+    "public_status": 1,
+    "hidden_passed": 0,
+    "hidden_failed": 1,
+    "forbidden_change_count": 0,
+    "changed_files": [],
+    "duration_ms": 182
+  },
+  "public_test": {
+    "command": "npm test --prefix fixtures/phase2/feature-implementation",
+    "stdout": "\n> test\n> node --test test/*.test.mjs\n\nTAP version 13\n# Subtest: supports boolean flags and explicit overrides\nnot ok 1 - supports boolean flags and explicit overrides\n  ---\n  duration_ms: 1.595205\n  location: '/home/pickleshell/workspace/models-test/.worktrees/phase2/20-laguna-s-2-1-free/feature-implementation/fixtures/phase2/feature-implementation/test/featureFlags.test.mjs:5:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly equal:\n    \n    true !== false\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: false\n  actual: true\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///home/pickleshell/workspace/models-test/.worktrees/phase2/20-laguna-s-2-1-free/feature-implementation/fixtures/phase2/feature-implementation/test/featureFlags.test.mjs:7:10)\n    Test.runInAsyncScope (node:async_hooks:206:9)\n    Test.run (node:internal/test_runner/test:796:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:526:18)\n    node:internal/test_runner/harness:255:12\n    node:internal/process/task_queues:140:7\n    AsyncResource.runInAsyncScope (node:async_hooks:206:9)\n    AsyncResource.runMicrotask (node:internal/process/task_queues:137:8)\n  ...\n# Subtest: enables a 100 percent rollout for a user\nok 2 - enables a 100 percent rollout for a user\n  ---\n  duration_ms: 0.146274\n  ...\n1..2\n# tests 2\n# suites 0\n# pass 1\n# fail 1\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 43.106203\n",
+    "stderr": ""
+  },
+  "hidden": {
+    "stdout": "",
+    "stderr": "node:internal/modules/run_main:123\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\ntrue !== false\n\n    at file:///home/pickleshell/workspace/models-test/.worktrees/phase2/20-laguna-s-2-1-free/feature-implementation/fixtures/phase2/hidden/feature-implementation.mjs:5:8 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: true,\n  expected: false,\n  operator: 'strictEqual'\n}\n\nNode.js v20.20.2\n"
+  },
+  "forbidden_changes": []
+}

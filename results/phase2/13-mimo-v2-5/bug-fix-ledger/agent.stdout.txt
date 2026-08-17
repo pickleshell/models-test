@@ -1,0 +1,195 @@
+[0m
+> build · mimo-v2.5
+[0m
+[0m→ [0mRead fixtures/phase1-ledger/src/reconcile.js
+[0m✱ [0mGlob "fixtures/phase1-ledger/**/*"[90m 5 matches[0m
+[0m→ [0mRead fixtures/phase1-ledger/PROMPT.md
+[0m→ [0mRead fixtures/phase1-ledger/README.md
+[0m→ [0mRead fixtures/phase1-ledger/test/reconcile.test.mjs
+[0m
+[0m# [0mTodos
+[ ] Fix dayKey to use UTC calendar day instead of local timezone
+[ ] Fix parseAmountToCents to reject negative values
+[ ] Fix parseAmountToCents to reject values with more than 2 decimal places
+[ ] Run public tests
+[0m
+[0m# [0mTodos
+[•] Fix dayKey to use UTC calendar day instead of local timezone
+[ ] Fix duplicate entries being processed (missing continue after duplicateCount)
+[ ] Fix parseAmountToCents to reject negative values
+[ ] Fix parseAmountToCents to reject values with more than 2 decimal places
+[ ] Run public tests
+[0m
+I see three documented defects:
+
+1. **`dayKey` uses local timezone** instead of UTC (`toLocaleDateString('en-CA')`).
+2. **Duplicate entries are still processed** — after counting a duplicate, there's no `continue` to skip processing.
+3. **`parseAmountToCents` rounds instead of rejecting** negative values and values with >2 decimal places.
+[0m
+[0m← [0mEdit fixtures/phase1-ledger/src/reconcile.js
+Index: /home/pickleshell/workspace/models-test/.worktrees/phase2/13-mimo-v2-5/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+===================================================================
+--- /home/pickleshell/workspace/models-test/.worktrees/phase2/13-mimo-v2-5/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
++++ /home/pickleshell/workspace/models-test/.worktrees/phase2/13-mimo-v2-5/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+@@ -16,9 +16,9 @@
+   const date = new Date(createdAt);
+   if (Number.isNaN(date.getTime())) {
+     throw new Error(`invalid createdAt: ${createdAt}`);
+   }
+-  return date.toLocaleDateString('en-CA');
++  return date.toISOString().slice(0, 10);
+ }
+ 
+ function addTotal(totals, accountId, currency, day, cents) {
+   const key = `${accountId}|${currency}|${day}`;
+
+[0m
+[0m# [0mTodos
+[✓] Fix dayKey to use UTC calendar day instead of local timezone
+[•] Fix duplicate entries being processed (missing continue after duplicateCount)
+[ ] Fix parseAmountToCents to reject negative values
+[ ] Fix parseAmountToCents to reject values with more than 2 decimal places
+[ ] Run public tests
+[0m
+[0m← [0mEdit fixtures/phase1-ledger/src/reconcile.js
+Index: /home/pickleshell/workspace/models-test/.worktrees/phase2/13-mimo-v2-5/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+===================================================================
+--- /home/pickleshell/workspace/models-test/.worktrees/phase2/13-mimo-v2-5/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
++++ /home/pickleshell/workspace/models-test/.worktrees/phase2/13-mimo-v2-5/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+@@ -51,8 +51,9 @@
+ if (!entry.currency) throw new Error('missing currency');
+ 
+ if (seenIds.has(entry.id)) {
+   metrics.duplicateCount += 1;
++  continue;
+ }
+ seenIds.add(entry.id);
+ 
+ const cents = parseAmountToCents(entry.amount);
+
+[0m
+[0m# [0mTodos
+[✓] Fix dayKey to use UTC calendar day instead of local timezone
+[✓] Fix duplicate entries being processed (missing continue after duplicateCount)
+[•] Fix parseAmountToCents to reject negative values
+[•] Fix parseAmountToCents to reject values with more than 2 decimal places
+[ ] Run public tests
+[0m
+[0m← [0mEdit fixtures/phase1-ledger/src/reconcile.js
+Index: /home/pickleshell/workspace/models-test/.worktrees/phase2/13-mimo-v2-5/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+===================================================================
+--- /home/pickleshell/workspace/models-test/.worktrees/phase2/13-mimo-v2-5/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
++++ /home/pickleshell/workspace/models-test/.worktrees/phase2/13-mimo-v2-5/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+@@ -7,8 +7,14 @@
+   const value = Number(normalized);
+   if (!Number.isFinite(value)) {
+     throw new Error(`invalid amount: ${amount}`);
+   }
++  if (value < 0) {
++    throw new Error(`invalid amount: ${amount}`);
++  }
++  if (normalized.includes('.') && normalized.split('.')[1].length > 2) {
++    throw new Error(`invalid amount: ${amount}`);
++  }
+ 
+   return Math.round(value * 100);
+ }
+ 
+
+[0m
+[0m# [0mTodos
+[✓] Fix dayKey to use UTC calendar day instead of local timezone
+[✓] Fix duplicate entries being processed (missing continue after duplicateCount)
+[✓] Fix parseAmountToCents to reject negative values
+[✓] Fix parseAmountToCents to reject values with more than 2 decimal places
+[•] Run public tests
+[0m
+[0m→ [0mRead fixtures/phase1-ledger/src/reconcile.js
+[0m
+[0m$ [0mnpm test --prefix fixtures/phase1-ledger
+> phase1-ledger-fixture@0.1.0 test
+> node --test test/*.test.mjs
+
+TAP version 13
+# Subtest: parses ordinary decimal money into cents
+ok 1 - parses ordinary decimal money into cents
+  ---
+  duration_ms: 0.956366
+  ...
+# Subtest: summarizes sales by account, currency, and UTC day
+ok 2 - summarizes sales by account, currency, and UTC day
+  ---
+  duration_ms: 5.888406
+  ...
+# Subtest: does not double count duplicate transaction ids
+ok 3 - does not double count duplicate transaction ids
+  ---
+  duration_ms: 0.163938
+  ...
+# Subtest: counts invalid rows and orphan refunds without adding them to totals
+ok 4 - counts invalid rows and orphan refunds without adding them to totals
+  ---
+  duration_ms: 0.158608
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 4
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 54.854687
+[0m
+[0m$ [0mgit diff fixtures/phase1-ledger/src/reconcile.js
+diff --git a/fixtures/phase1-ledger/src/reconcile.js b/fixtures/phase1-ledger/src/reconcile.js
+index 496d11c..7b3c2ae 100644
+--- a/fixtures/phase1-ledger/src/reconcile.js
++++ b/fixtures/phase1-ledger/src/reconcile.js
+@@ -8,6 +8,12 @@ export function parseAmountToCents(amount) {
+   if (!Number.isFinite(value)) {
+     throw new Error(`invalid amount: ${amount}`);
+   }
++  if (value < 0) {
++    throw new Error(`invalid amount: ${amount}`);
++  }
++  if (normalized.includes('.') && normalized.split('.')[1].length > 2) {
++    throw new Error(`invalid amount: ${amount}`);
++  }
+ 
+   return Math.round(value * 100);
+ }
+@@ -17,7 +23,7 @@ function dayKey(createdAt) {
+   if (Number.isNaN(date.getTime())) {
+     throw new Error(`invalid createdAt: ${createdAt}`);
+   }
+-  return date.toLocaleDateString('en-CA');
++  return date.toISOString().slice(0, 10);
+ }
+ 
+ function addTotal(totals, accountId, currency, day, cents) {
+@@ -52,6 +58,7 @@ export function reconcileLedger(entries) {
+ 
+       if (seenIds.has(entry.id)) {
+         metrics.duplicateCount += 1;
++        continue;
+       }
+       seenIds.add(entry.id);
+[0m
+All 4 tests pass. Let me verify the diff.
+[0m
+[0m# [0mTodos
+[✓] Fix dayKey to use UTC calendar day instead of local timezone
+[✓] Fix duplicate entries being processed (missing continue after duplicateCount)
+[✓] Fix parseAmountToCents to reject negative values
+[✓] Fix parseAmountToCents to reject values with more than 2 decimal places
+[✓] Run public tests
+[0m
+Three bugs fixed in `fixtures/phase1-ledger/src/reconcile.js`:
+
+1. **`dayKey` used local timezone** — changed `date.toLocaleDateString('en-CA')` to `date.toISOString().slice(0, 10)` for UTC day grouping.
+2. **Duplicates still processed** — added `continue` after `metrics.duplicateCount += 1` so duplicate entries are skipped instead of added to totals.
+3. **`parseAmountToCents` didn't reject invalid money** — added checks to reject negative values (`value < 0`) and values with more than 2 decimal places.
+
+All 4 public tests pass.
+[0m

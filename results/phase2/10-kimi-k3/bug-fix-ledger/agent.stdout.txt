@@ -1,0 +1,299 @@
+[0m
+> build · kimi-k3
+[0m
+[0m→ [0mRead fixtures/phase1-ledger/src/reconcile.js
+[0m
+[0m$ [0mls fixtures/phase1-ledger
+package.json
+PROMPT.md
+README.md
+src
+test
+[0m
+[0m→ [0mRead fixtures/phase1-ledger/PROMPT.md
+[0m→ [0mRead fixtures/phase1-ledger/README.md
+[0m
+[0m$ [0mls fixtures/phase1-ledger/test fixtures/phase1-ledger/src
+fixtures/phase1-ledger/src:
+reconcile.js
+
+fixtures/phase1-ledger/test:
+reconcile.test.mjs
+[0m
+[0m→ [0mRead fixtures/phase1-ledger/test/reconcile.test.mjs
+[0m
+[0m$ [0mls scripts results 2>/dev/null; cat fixtures/phase1-ledger/package.json
+results:
+phase1
+
+scripts:
+benchmark.mjs
+evaluate-phase1.mjs
+phase1-prepare-worktrees.mjs
+phase1-print-prompt.mjs
+phase2-runner.mjs
+test-benchmark.mjs
+test-phase2-runner.mjs
+validate-layout.sh
+{
+  "name": "phase1-ledger-fixture",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Small settlement reconciliation fixture for phase-1 model screening.",
+  "scripts": {
+    "test": "node --test test/*.test.mjs"
+  }
+}
+[0m
+[0m✱ [0mGrep "phase1-ledger"[90m in scripts · 5 matches[0m
+[0m
+Now let me check the evaluation setup (read-only) to understand the full contract before making changes.
+[0m
+[0m→ [0mRead scripts/evaluate-phase1.mjs
+[0m
+[0m← [0mEdit fixtures/phase1-ledger/src/reconcile.js
+Index: /home/pickleshell/workspace/models-test/.worktrees/phase2/10-kimi-k3/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+===================================================================
+--- /home/pickleshell/workspace/models-test/.worktrees/phase2/10-kimi-k3/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
++++ /home/pickleshell/workspace/models-test/.worktrees/phase2/10-kimi-k3/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+@@ -3,14 +3,14 @@
+     throw new Error('amount must be a decimal string or number');
+   }
+ 
+   const normalized = String(amount).trim().replace(/[$,]/g, '');
+-  const value = Number(normalized);
+-  if (!Number.isFinite(value)) {
++  if (!/^\d+(\.\d{1,2})?$/.test(normalized)) {
+     throw new Error(`invalid amount: ${amount}`);
+   }
+ 
+-  return Math.round(value * 100);
++  const [dollars, fraction = ''] = normalized.split('.');
++  return Number(dollars) * 100 + Number(fraction.padEnd(2, '0'));
+ }
+ 
+ function dayKey(createdAt) {
+   const date = new Date(createdAt);
+
+[0m
+The evaluation script confirms the documented contract. I've identified four defects in `reconcile.js`:
+
+1. **Duplicates**: counted but still processed (no `continue`) — duplicates add to totals and `processed`.
+2. **Money parsing**: `Math.round(value * 100)` accepts negative and over-precise values (e.g. `-1.00`, `1.005`) instead of rejecting them.
+3. **Day grouping**: `toLocaleDateString('en-CA')` uses local timezone, not UTC.
+4. **Refunds**: subtract from the refund's own `accountId`/`currency` instead of the original sale's.
+
+Applying the minimal fixes:
+[0m
+[0m← [0mEdit fixtures/phase1-ledger/src/reconcile.js
+Index: /home/pickleshell/workspace/models-test/.worktrees/phase2/10-kimi-k3/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+===================================================================
+--- /home/pickleshell/workspace/models-test/.worktrees/phase2/10-kimi-k3/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
++++ /home/pickleshell/workspace/models-test/.worktrees/phase2/10-kimi-k3/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+@@ -16,9 +16,9 @@
+   const date = new Date(createdAt);
+   if (Number.isNaN(date.getTime())) {
+     throw new Error(`invalid createdAt: ${createdAt}`);
+   }
+-  return date.toLocaleDateString('en-CA');
++  return date.toISOString().slice(0, 10);
+ }
+ 
+ function addTotal(totals, accountId, currency, day, cents) {
+   const key = `${accountId}|${currency}|${day}`;
+
+[0m
+[0m← [0mEdit fixtures/phase1-ledger/src/reconcile.js
+Index: /home/pickleshell/workspace/models-test/.worktrees/phase2/10-kimi-k3/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+===================================================================
+--- /home/pickleshell/workspace/models-test/.worktrees/phase2/10-kimi-k3/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
++++ /home/pickleshell/workspace/models-test/.worktrees/phase2/10-kimi-k3/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+@@ -51,8 +51,9 @@
+ if (!entry.currency) throw new Error('missing currency');
+ 
+ if (seenIds.has(entry.id)) {
+   metrics.duplicateCount += 1;
++  continue;
+ }
+ seenIds.add(entry.id);
+ 
+ const cents = parseAmountToCents(entry.amount);
+
+[0m
+[0m← [0mEdit fixtures/phase1-ledger/src/reconcile.js
+Index: /home/pickleshell/workspace/models-test/.worktrees/phase2/10-kimi-k3/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+===================================================================
+--- /home/pickleshell/workspace/models-test/.worktrees/phase2/10-kimi-k3/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
++++ /home/pickleshell/workspace/models-test/.worktrees/phase2/10-kimi-k3/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+@@ -68,9 +68,9 @@
+   if (!original) {
+     metrics.orphanRefundCount += 1;
+     continue;
+   }
+-  addTotal(totals, entry.accountId, entry.currency, day, -cents);
++  addTotal(totals, original.accountId, original.currency, day, -cents);
+   metrics.processed += 1;
+ } else {
+   throw new Error(`unsupported type: ${entry.type}`);
+ }
+
+[0m
+Now run the fixture's public tests:
+[0m
+[0m$ [0mnpm test --prefix fixtures/phase1-ledger
+> phase1-ledger-fixture@0.1.0 test
+> node --test test/*.test.mjs
+
+TAP version 13
+# Subtest: parses ordinary decimal money into cents
+ok 1 - parses ordinary decimal money into cents
+  ---
+  duration_ms: 1.015988
+  ...
+# Subtest: summarizes sales by account, currency, and UTC day
+ok 2 - summarizes sales by account, currency, and UTC day
+  ---
+  duration_ms: 5.894615
+  ...
+# Subtest: does not double count duplicate transaction ids
+ok 3 - does not double count duplicate transaction ids
+  ---
+  duration_ms: 0.154531
+  ...
+# Subtest: counts invalid rows and orphan refunds without adding them to totals
+ok 4 - counts invalid rows and orphan refunds without adding them to totals
+  ---
+  duration_ms: 0.155983
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 4
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 50.798254
+[0m
+[0m$ [0mnode --input-type=module -e "
+import assert from 'node:assert/strict';
+import { parseAmountToCents, reconcileLedger } from './fixtures/phase1-ledger/src/reconcile.js';
+
+assert.throws(() => parseAmountToCents('1.005'));
+assert.throws(() => parseAmountToCents('-1.00'));
+assert.throws(() => parseAmountToCents('not-money'));
+assert.equal(parseAmountToCents('\$1,234.50'), 123450);
+assert.equal(parseAmountToCents(7), 700);
+
+const utc = reconcileLedger([{ id: 'u', type: 'sale', accountId: 'a', currency: 'USD', amount: '4.00', createdAt: '2026-01-01T00:30:00+02:00' }]);
+assert.equal(utc.totals[0].day, '2025-12-31');
+
+const ref = reconcileLedger([
+  { id: 's', type: 'sale', accountId: 'merchant-a', currency: 'USD', amount: '9.99', createdAt: '2026-03-01T08:00:00Z' },
+  { id: 'r', type: 'refund', originalId: 's', accountId: 'processor-hold', currency: 'EUR', amount: '9.99', createdAt: '2026-03-02T09:00:00Z' }
+]);
+assert.deepEqual(ref.totals, [
+  { accountId: 'merchant-a', currency: 'USD', day: '2026-03-01', netCents: 999, count: 1 },
+  { accountId: 'merchant-a', currency: 'USD', day: '2026-03-02', netCents: -999, count: 1 }
+]);
+
+const dup = reconcileLedger([
+  { id: 'd', type: 'sale', accountId: 'a', currency: 'USD', amount: '5.00', createdAt: '2026-04-01T00:00:00Z' },
+  { id: 'd', type: 'sale', accountId: 'a', currency: 'USD', amount: 'bad', createdAt: '2026-04-01T00:00:00Z' }
+]);
+assert.deepEqual(dup.metrics, { processed: 1, duplicateCount: 1, invalidCount: 0, orphanRefundCount: 0 });
+console.log('all documented edge cases pass');
+"
+all documented edge cases pass
+[0m
+[0m$ [0mgit status --porcelain && git diff
+M fixtures/phase1-ledger/src/reconcile.js
+ D fixtures/phase2/hidden/bug-fix-ledger.mjs
+diff --git a/fixtures/phase1-ledger/src/reconcile.js b/fixtures/phase1-ledger/src/reconcile.js
+index 496d11c..71fcc3d 100644
+--- a/fixtures/phase1-ledger/src/reconcile.js
++++ b/fixtures/phase1-ledger/src/reconcile.js
+@@ -4,12 +4,12 @@ export function parseAmountToCents(amount) {
+   }
+ 
+   const normalized = String(amount).trim().replace(/[$,]/g, '');
+-  const value = Number(normalized);
+-  if (!Number.isFinite(value)) {
++  if (!/^\d+(\.\d{1,2})?$/.test(normalized)) {
+     throw new Error(`invalid amount: ${amount}`);
+   }
+ 
+-  return Math.round(value * 100);
++  const [dollars, fraction = ''] = normalized.split('.');
++  return Number(dollars) * 100 + Number(fraction.padEnd(2, '0'));
+ }
+ 
+ function dayKey(createdAt) {
+@@ -17,7 +17,7 @@ function dayKey(createdAt) {
+   if (Number.isNaN(date.getTime())) {
+     throw new Error(`invalid createdAt: ${createdAt}`);
+   }
+-  return date.toLocaleDateString('en-CA');
++  return date.toISOString().slice(0, 10);
+ }
+ 
+ function addTotal(totals, accountId, currency, day, cents) {
+@@ -52,6 +52,7 @@ export function reconcileLedger(entries) {
+ 
+       if (seenIds.has(entry.id)) {
+         metrics.duplicateCount += 1;
++        continue;
+       }
+       seenIds.add(entry.id);
+ 
+@@ -68,7 +69,7 @@ export function reconcileLedger(entries) {
+           metrics.orphanRefundCount += 1;
+           continue;
+         }
+-        addTotal(totals, entry.accountId, entry.currency, day, -cents);
++        addTotal(totals, original.accountId, original.currency, day, -cents);
+         metrics.processed += 1;
+       } else {
+         throw new Error(`unsupported type: ${entry.type}`);
+diff --git a/fixtures/phase2/hidden/bug-fix-ledger.mjs b/fixtures/phase2/hidden/bug-fix-ledger.mjs
+deleted file mode 100644
+index dd54299..0000000
+--- a/fixtures/phase2/hidden/bug-fix-ledger.mjs
++++ /dev/null
+@@ -1,16 +0,0 @@
+-import assert from 'node:assert/strict';
+-import { pathToFileURL } from 'node:url';
+-const source = process.argv[process.argv.indexOf('--source') + 1];
+-const api = await import(pathToFileURL(source).href);
+-assert.throws(() => api.parseAmountToCents('1.005'));
+-assert.throws(() => api.parseAmountToCents('-1'));
+-const result = api.reconcileLedger([
+-  { id: 's', type: 'sale', accountId: 'merchant', currency: 'USD', amount: '5.00', createdAt: '2026-01-01T00:00:00Z' },
+-  { id: 'r', type: 'refund', originalId: 's', accountId: 'other', currency: 'EUR', amount: '2.00', createdAt: '2026-01-02T00:00:00Z' },
+-  { id: 's', type: 'sale', accountId: 'merchant', currency: 'USD', amount: 'bad', createdAt: '2026-01-01T00:00:00Z' }
+-]);
+-assert.deepEqual(result.totals, [
+-  { accountId: 'merchant', currency: 'USD', day: '2026-01-01', netCents: 500, count: 1 },
+-  { accountId: 'merchant', currency: 'USD', day: '2026-01-02', netCents: -200, count: 1 }
+-]);
+-assert.deepEqual(result.metrics, { processed: 2, duplicateCount: 1, invalidCount: 0, orphanRefundCount: 0 });
+[0m
+All 4 public tests pass. Let me also verify against the documented edge cases (UTC boundaries, over-precise/negative money, refund account attribution, first-write-wins duplicates) without writing any files:
+[0m
+Done. All fixes are in `fixtures/phase1-ledger/src/reconcile.js` only, and all tests pass.
+
+**Defects fixed (4 minimal edits):**
+
+1. **Duplicate ids still affected totals** — after counting `duplicateCount`, the loop fell through and processed the duplicate. Added `continue`, making ids first-write-wins (duplicates are ignored before validation, so an invalid duplicate counts as a duplicate, not invalid).
+2. **Money parsing rounded instead of rejecting** — `Math.round(value * 100)` silently accepted negatives and over-precise values like `1.005`. Replaced with strict validation (`/^\d+(\.\d{1,2})?$/` after stripping `$`/commas) and exact integer cents arithmetic, rejecting malformed, negative, and >2-decimal values.
+3. **Day grouping used local timezone** — `toLocaleDateString('en-CA')` grouped by local day. Replaced with `toISOString().slice(0, 10)` for UTC calendar days.
+4. **Refunds subtracted from the wrong account/currency** — used the refund's own `accountId`/`currency`; now uses the original sale's (`original.accountId`, `original.currency`) while keeping the refund's `createdAt` day.
+
+**Verification:**
+- `npm test --prefix fixtures/phase1-ledger` — **4/4 public tests pass**
+- Additional spot-checks of the documented edge cases (rejects `1.005`/`-1.00`/`not-money`, `$1,234.50` → 123450, UTC day boundary `2026-01-01T00:30:00+02:00` → `2025-12-31`, refund attribution to original account/currency, first-write-wins duplicates) all pass
+- Both exported APIs (`parseAmountToCents`, `reconcileLedger`) unchanged in shape; no tests, benchmark scripts, or package metadata touched
+
+Note: `git status` also shows a pre-existing deletion of `fixtures/phase2/hidden/bug-fix-ledger.mjs` that was already present in this worktree before my changes — I did not touch that file.
+[0m

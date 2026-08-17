@@ -1,0 +1,19 @@
+diff --git a/fixtures/phase2/repository-navigation/src/labels.js b/fixtures/phase2/repository-navigation/src/labels.js
+index b4b08eb..02f8a8c 100644
+--- a/fixtures/phase2/repository-navigation/src/labels.js
++++ b/fixtures/phase2/repository-navigation/src/labels.js
+@@ -1,4 +1,13 @@
+ export function formatLabel(value) {
+   if (typeof value !== 'string') return '';
+-  return typeof value === 'string' ? value.trim() : '';
++  return value
++    .trim()
++    .split(/\s+/)
++    .filter((word) => word.length > 0)
++    .map((word) => {
++      const first = word.charAt(0).toUpperCase();
++      const rest = word.slice(1).toLowerCase();
++      return first + rest;
++    })
++    .join(' ');
+ }

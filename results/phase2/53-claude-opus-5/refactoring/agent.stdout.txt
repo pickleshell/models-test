@@ -1,0 +1,105 @@
+[0m
+> build · claude-opus-5
+[0m
+I'll start by exploring the file and its tests.
+[0m
+[0m→ [0mRead fixtures/phase2/refactoring/src/events.js
+[0m
+[0m$ [0mls -R fixtures/phase2/refactoring
+fixtures/phase2/refactoring:
+package.json
+README.md
+src
+test
+
+fixtures/phase2/refactoring/src:
+events.js
+
+fixtures/phase2/refactoring/test:
+events.test.mjs
+[0m
+[0m$ [0mcat fixtures/phase2/refactoring/README.md fixtures/phase2/refactoring/package.json fixtures/phase2/refactoring/test/events.test.mjs; git -C . status --short; git log --oneline -3
+# Event summaries
+
+`countByType(events, type)` counts valid events with the requested type. `latestByType(events, type)` returns the valid event with the greatest numeric `timestamp`, or `null`. An event is valid only when it is an object with a non-empty string `type` and a finite numeric `timestamp`; input must not be mutated.
+{"name":"refactoring-fixture","private":true,"type":"module","scripts":{"test":"node --test test/*.test.mjs"}}
+import test from 'node:test';
+import assert from 'node:assert/strict';
+const { countByType, latestByType } = await import(process.env.BENCHMARK_SOURCE ? `${process.env.BENCHMARK_SOURCE}/events.js` : '../src/events.js');
+
+const events = [{ type: 'push', timestamp: 2 }, { type: 'push', timestamp: 5 }, { type: 'issue', timestamp: 3 }];
+test('counts matching events', () => assert.equal(countByType(events, 'push'), 2));
+test('returns the latest matching event', () => assert.deepEqual(latestByType(events, 'push'), events[1]));
+test('ignores malformed timestamps', () => assert.equal(countByType([{ type: 'push', timestamp: NaN }], 'push'), 0));
+ D fixtures/phase2/hidden/refactoring.mjs
+880f20f Run Phase 2 agents through a PTY
+94bcd93 Fix Phase 2 process group handling
+bf2e430 Isolate Phase 2 OpenCode workspaces
+[0m
+[0m$ [0mnpm test --prefix fixtures/phase2/refactoring 2>&1 | tail -25
+1 !== 0
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 0
+  actual: 1
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///home/pickleshell/workspace/models-test/.worktrees/phase2/53-claude-opus-5/refactoring/fixtures/phase2/refactoring/test/events.test.mjs:8:51)
+    Test.runInAsyncScope (node:async_hooks:206:9)
+    Test.run (node:internal/test_runner/test:796:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:526:18)
+    Test.postRun (node:internal/test_runner/test:889:19)
+    Test.run (node:internal/test_runner/test:835:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:526:7)
+  ...
+1..3
+# tests 3
+# suites 0
+# pass 2
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 44.055316
+[0m
+[0m← [0mWrite fixtures/phase2/refactoring/src/events.js
+Wrote file successfully.
+[0m
+[0m$ [0mnpm test --prefix fixtures/phase2/refactoring 2>&1 | tail -12
+---
+  duration_ms: 0.123402
+  ...
+1..3
+# tests 3
+# suites 0
+# pass 3
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 41.618149
+[0m
+[0m$ [0mnode --input-type=module -e "
+import { countByType, latestByType } from './fixtures/phase2/refactoring/src/events.js';
+const bad = [null, undefined, 'x', 42, {}, {type:'',timestamp:1}, {type:'push'}, {type:'push',timestamp:'2'}, {type:'push',timestamp:NaN}, {type:'push',timestamp:Infinity}];
+console.log(countByType(bad,'push'), latestByType(bad,'push'));
+const ok = [{type:'push',timestamp:2},{type:'push',timestamp:5},{type:'issue',timestamp:3}];
+const snap = JSON.stringify(ok);
+console.log(countByType(ok,'push'), latestByType(ok,'push'), latestByType(ok,'nope'), JSON.stringify(ok)===snap);
+console.log(countByType(undefined,'push'), latestByType(null,'push'));
+console.log(latestByType([{type:'push',timestamp:-0}],'push'), countByType([{type:'push',timestamp:0}],'push'));
+"
+0 null
+2 { type: 'push', timestamp: 5 } null true
+0 null
+{ type: 'push', timestamp: -0 } 1
+[0m
+Refactored `fixtures/phase2/refactoring/src/events.js`:
+
+- Extracted the validity rule from the README into `isValidEvent` (object, non-empty string `type`, finite numeric `timestamp`), so the duplicated/incomplete filtering predicate lives in one place.
+- `matching` is now the single filtering helper used by both exports, plus a non-array guard so bad input yields `0`/`null` instead of throwing.
+- Public API unchanged, no mutation of input, and `latestByType` still returns the greatest-`timestamp` match (first one wins on ties) or `null`.
+
+Tests: `npm test --prefix fixtures/phase2/refactoring` → 3 passing (previously 1 failing on the `NaN` timestamp case, which the old code let through).
+[0m

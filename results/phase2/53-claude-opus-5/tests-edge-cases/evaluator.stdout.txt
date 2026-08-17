@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "benchmark": "phase2",
+  "task": "tests-edge-cases",
+  "category": "tests-and-edge-cases",
+  "model": "opencode/claude-opus-5",
+  "pass": true,
+  "metrics": {
+    "public_status": 0,
+    "hidden_passed": 1,
+    "hidden_failed": 0,
+    "forbidden_change_count": 0,
+    "changed_files": [
+      "fixtures/phase2/tests-edge-cases/src/range.js",
+      "fixtures/phase2/tests-edge-cases/test/range.test.mjs"
+    ],
+    "duration_ms": 189
+  },
+  "public_test": {
+    "command": "npm test --prefix fixtures/phase2/tests-edge-cases",
+    "stdout": "\n> test\n> node --test test/*.test.mjs\n\nTAP version 13\n# Subtest: parses an inclusive range\nok 1 - parses an inclusive range\n  ---\n  duration_ms: 1.227435\n  ...\n# Subtest: accepts surrounding whitespace\nok 2 - accepts surrounding whitespace\n  ---\n  duration_ms: 0.141967\n  ...\n# Subtest: rejects malformed ranges\nok 3 - rejects malformed ranges\n  ---\n  duration_ms: 0.129944\n  ...\n# Subtest: rejects a reversed range\nok 4 - rejects a reversed range\n  ---\n  duration_ms: 0.100759\n  ...\n# Subtest: accepts an equal start and end\nok 5 - accepts an equal start and end\n  ---\n  duration_ms: 0.14916\n  ...\n# Subtest: accepts both inclusive bounds\nok 6 - accepts both inclusive bounds\n  ---\n  duration_ms: 0.121979\n  ...\n# Subtest: rejects values just outside the bounds\nok 7 - rejects values just outside the bounds\n  ---\n  duration_ms: 0.144662\n  ...\n# Subtest: rejects a reversed range of negatives\nok 8 - rejects a reversed range of negatives\n  ---\n  duration_ms: 0.10619\n  ...\n# Subtest: rejects decimal endpoints\nok 9 - rejects decimal endpoints\n  ---\n  duration_ms: 0.19701\n  ...\n# Subtest: rejects non-string input\nok 10 - rejects non-string input\n  ---\n  duration_ms: 0.199294\n  ...\n# Subtest: rejects empty and whitespace-only input\nok 11 - rejects empty and whitespace-only input\n  ---\n  duration_ms: 0.113723\n  ...\n# Subtest: rejects a missing endpoint\nok 12 - rejects a missing endpoint\n  ---\n  duration_ms: 0.140403\n  ...\n# Subtest: rejects a wrong or repeated separator\nok 13 - rejects a wrong or repeated separator\n  ---\n  duration_ms: 0.103424\n  ...\n# Subtest: rejects internal whitespace around the separator\nok 14 - rejects internal whitespace around the separator\n  ---\n  duration_ms: 0.134142\n  ...\n# Subtest: rejects trailing or leading junk\nok 15 - rejects trailing or leading junk\n  ---\n  duration_ms: 0.098145\n  ...\n# Subtest: rejects non-decimal and non-integer numeric forms\nok 16 - rejects non-decimal and non-integer numeric forms\n  ---\n  duration_ms: 0.155442\n  ...\n# Subtest: rejects doubled and dangling signs\nok 17 - rejects doubled and dangling signs\n  ---\n  duration_ms: 0.105548\n  ...\n# Subtest: rejects a misplaced trailing sign\nok 18 - rejects a misplaced trailing sign\n  ---\n  duration_ms: 0.162405\n  ...\n# Subtest: does not report a negative zero endpoint\nok 19 - does not report a negative zero endpoint\n  ---\n  duration_ms: 0.130435\n  ...\n# Subtest: returns only start and end keys\nok 20 - returns only start and end keys\n  ---\n  duration_ms: 0.168256\n  ...\n1..20\n# tests 20\n# suites 0\n# pass 20\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 53.976733\n",
+    "stderr": ""
+  },
+  "hidden": {
+    "stdout": "",
+    "stderr": ""
+  },
+  "forbidden_changes": []
+}

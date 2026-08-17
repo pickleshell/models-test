@@ -1,0 +1,203 @@
+[0m
+> build · deepseek-v4-pro
+[0m
+[0m$ [0mls -la && git status && git log --oneline -5
+total 52
+drwxrwx---+ 7 pickleshell pickleshell 4096 Aug 17 06:05 .
+drwxrwx---+ 3 pickleshell pickleshell 4096 Aug 17 06:05 ..
+drwxrwx---+ 4 pickleshell pickleshell 4096 Aug 17 06:05 benchmarks
+drwxrwx---+ 4 pickleshell pickleshell 4096 Aug 17 06:05 fixtures
+-rw-rw----+ 1 pickleshell pickleshell   79 Aug 17 06:05 .git
+-rw-rw----+ 1 pickleshell pickleshell   85 Aug 17 06:05 .gitignore
+-rw-rw----+ 1 pickleshell pickleshell 1081 Aug 17 06:05 LICENSE
+-rw-rw----+ 1 pickleshell pickleshell 9634 Aug 17 06:05 README.md
+drwxrwx---+ 3 pickleshell pickleshell 4096 Aug 17 06:05 results
+drwxrwx---+ 2 pickleshell pickleshell 4096 Aug 17 06:05 rubrics
+drwxrwx---+ 2 pickleshell pickleshell 4096 Aug 17 06:05 scripts
+Not currently on any branch.
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	deleted:    fixtures/phase2/hidden/bug-fix-ledger.mjs
+
+no changes added to commit (use "git add" and/or "git commit -a")
+880f20f Run Phase 2 agents through a PTY
+94bcd93 Fix Phase 2 process group handling
+bf2e430 Isolate Phase 2 OpenCode workspaces
+9eb02fa Fix Phase 2 OpenCode invocation
+852213c Add resumable sequential Phase 2 runner
+[0m
+[0m✱ [0mGlob "fixtures/phase1-ledger/**/*"[90m 5 matches[0m
+[0m→ [0mRead fixtures/phase1-ledger/src/reconcile.js
+[0m→ [0mRead fixtures/phase1-ledger/test/reconcile.test.mjs
+[0m→ [0mRead fixtures/phase1-ledger/README.md
+[0m→ [0mRead fixtures/phase1-ledger/PROMPT.md
+[0m→ [0mRead fixtures/phase1-ledger/package.json
+[0m
+[0m← [0mEdit fixtures/phase1-ledger/src/reconcile.js
+Index: /home/pickleshell/workspace/models-test/.worktrees/phase2/04-deepseek-v4-pro/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+===================================================================
+--- /home/pickleshell/workspace/models-test/.worktrees/phase2/04-deepseek-v4-pro/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
++++ /home/pickleshell/workspace/models-test/.worktrees/phase2/04-deepseek-v4-pro/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+@@ -3,14 +3,13 @@
+     throw new Error('amount must be a decimal string or number');
+   }
+ 
+   const normalized = String(amount).trim().replace(/[$,]/g, '');
+-  const value = Number(normalized);
+-  if (!Number.isFinite(value)) {
++  if (!/^\d+(\.\d{1,2})?$/.test(normalized)) {
+     throw new Error(`invalid amount: ${amount}`);
+   }
+ 
+-  return Math.round(value * 100);
++  return Math.round(Number(normalized) * 100);
+ }
+ 
+ function dayKey(createdAt) {
+   const date = new Date(createdAt);
+
+[0m
+[0m← [0mEdit fixtures/phase1-ledger/src/reconcile.js
+Index: /home/pickleshell/workspace/models-test/.worktrees/phase2/04-deepseek-v4-pro/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+===================================================================
+--- /home/pickleshell/workspace/models-test/.worktrees/phase2/04-deepseek-v4-pro/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
++++ /home/pickleshell/workspace/models-test/.worktrees/phase2/04-deepseek-v4-pro/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+@@ -15,9 +15,9 @@
+   const date = new Date(createdAt);
+   if (Number.isNaN(date.getTime())) {
+     throw new Error(`invalid createdAt: ${createdAt}`);
+   }
+-  return date.toLocaleDateString('en-CA');
++  return date.toISOString().slice(0, 10);
+ }
+ 
+ function addTotal(totals, accountId, currency, day, cents) {
+   const key = `${accountId}|${currency}|${day}`;
+
+[0m
+[0m← [0mEdit fixtures/phase1-ledger/src/reconcile.js
+Index: /home/pickleshell/workspace/models-test/.worktrees/phase2/04-deepseek-v4-pro/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+===================================================================
+--- /home/pickleshell/workspace/models-test/.worktrees/phase2/04-deepseek-v4-pro/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
++++ /home/pickleshell/workspace/models-test/.worktrees/phase2/04-deepseek-v4-pro/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+@@ -50,8 +50,9 @@
+ if (!entry.currency) throw new Error('missing currency');
+ 
+ if (seenIds.has(entry.id)) {
+   metrics.duplicateCount += 1;
++  continue;
+ }
+ seenIds.add(entry.id);
+ 
+ const cents = parseAmountToCents(entry.amount);
+
+[0m
+[0m← [0mEdit fixtures/phase1-ledger/src/reconcile.js
+Index: /home/pickleshell/workspace/models-test/.worktrees/phase2/04-deepseek-v4-pro/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+===================================================================
+--- /home/pickleshell/workspace/models-test/.worktrees/phase2/04-deepseek-v4-pro/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
++++ /home/pickleshell/workspace/models-test/.worktrees/phase2/04-deepseek-v4-pro/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+@@ -67,9 +67,9 @@
+   if (!original) {
+     metrics.orphanRefundCount += 1;
+     continue;
+   }
+-  addTotal(totals, entry.accountId, entry.currency, day, -cents);
++  addTotal(totals, original.accountId, original.currency, day, -cents);
+   metrics.processed += 1;
+ } else {
+   throw new Error(`unsupported type: ${entry.type}`);
+ }
+
+[0m
+[0m$ [0mnpm test --prefix fixtures/phase1-ledger
+> phase1-ledger-fixture@0.1.0 test
+> node --test test/*.test.mjs
+
+TAP version 13
+# Subtest: parses ordinary decimal money into cents
+ok 1 - parses ordinary decimal money into cents
+  ---
+  duration_ms: 1.024642
+  ...
+# Subtest: summarizes sales by account, currency, and UTC day
+ok 2 - summarizes sales by account, currency, and UTC day
+  ---
+  duration_ms: 6.004806
+  ...
+# Subtest: does not double count duplicate transaction ids
+ok 3 - does not double count duplicate transaction ids
+  ---
+  duration_ms: 0.158387
+  ...
+# Subtest: counts invalid rows and orphan refunds without adding them to totals
+ok 4 - counts invalid rows and orphan refunds without adding them to totals
+  ---
+  duration_ms: 0.161513
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 4
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 53.615749
+[0m
+[0m$ [0mgit diff -- fixtures/phase1-ledger/src/reconcile.js
+diff --git a/fixtures/phase1-ledger/src/reconcile.js b/fixtures/phase1-ledger/src/reconcile.js
+index 496d11c..679bc29 100644
+--- a/fixtures/phase1-ledger/src/reconcile.js
++++ b/fixtures/phase1-ledger/src/reconcile.js
+@@ -4,12 +4,11 @@ export function parseAmountToCents(amount) {
+   }
+ 
+   const normalized = String(amount).trim().replace(/[$,]/g, '');
+-  const value = Number(normalized);
+-  if (!Number.isFinite(value)) {
++  if (!/^\d+(\.\d{1,2})?$/.test(normalized)) {
+     throw new Error(`invalid amount: ${amount}`);
+   }
+ 
+-  return Math.round(value * 100);
++  return Math.round(Number(normalized) * 100);
+ }
+ 
+ function dayKey(createdAt) {
+@@ -17,7 +16,7 @@ function dayKey(createdAt) {
+   if (Number.isNaN(date.getTime())) {
+     throw new Error(`invalid createdAt: ${createdAt}`);
+   }
+-  return date.toLocaleDateString('en-CA');
++  return date.toISOString().slice(0, 10);
+ }
+ 
+ function addTotal(totals, accountId, currency, day, cents) {
+@@ -52,6 +51,7 @@ export function reconcileLedger(entries) {
+ 
+       if (seenIds.has(entry.id)) {
+         metrics.duplicateCount += 1;
++        continue;
+       }
+       seenIds.add(entry.id);
+ 
+@@ -68,7 +68,7 @@ export function reconcileLedger(entries) {
+           metrics.orphanRefundCount += 1;
+           continue;
+         }
+-        addTotal(totals, entry.accountId, entry.currency, day, -cents);
++        addTotal(totals, original.accountId, original.currency, day, -cents);
+         metrics.processed += 1;
+       } else {
+         throw new Error(`unsupported type: ${entry.type}`);
+[0m
+All four defects fixed and tests pass (4/4).
+
+**Changes in `fixtures/phase1-ledger/src/reconcile.js`:**
+- `parseAmountToCents`: reject negative/malformed/`>2` decimal values via regex instead of rounding.
+- `dayKey`: use UTC (`toISOString`) instead of local timezone.
+- Duplicate ids now `continue` instead of being processed twice.
+- Refunds subtract from the original sale's `accountId`/`currency`, using the refund's `createdAt` day.
+[0m

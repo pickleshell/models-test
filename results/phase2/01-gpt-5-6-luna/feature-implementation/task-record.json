@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "state": "completed",
+  "benchmark": "phase2",
+  "task": "feature-implementation",
+  "category": "feature-implementation",
+  "candidate": "01-gpt-5-6-luna",
+  "runtime": "opencode-go",
+  "model": "opencode-go/gpt-5.6-luna",
+  "baseline": "880f20fa2924cc10a55ba6e423b9c4a22261e740",
+  "workspace": "/home/pickleshell/workspace/models-test/.worktrees/phase2/01-gpt-5-6-luna/feature-implementation",
+  "prompt": "benchmarks/phase2/prompts/feature-implementation.md",
+  "command": {
+    "command": "opencode",
+    "args": [
+      "run",
+      "--model",
+      "opencode-go/gpt-5.6-luna",
+      "--dir",
+      "/home/pickleshell/workspace/models-test/.worktrees/phase2/01-gpt-5-6-luna/feature-implementation",
+      "--auto"
+    ],
+    "working_directory": "/home/pickleshell/workspace/models-test/.worktrees/phase2/01-gpt-5-6-luna/feature-implementation"
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "wall_time_ms": 31443,
+    "timed_out": false,
+    "failure_class": null
+  },
+  "evaluator": {
+    "status": 0,
+    "signal": null,
+    "wall_time_ms": 199,
+    "failure_class": null
+  },
+  "patch": {
+    "file": "/home/pickleshell/workspace/models-test/results/phase2/01-gpt-5-6-luna/feature-implementation/candidate.diff",
+    "changed_files": [
+      "fixtures/phase2/feature-implementation/src/featureFlags.js"
+    ]
+  },
+  "evaluation_json": "/home/pickleshell/workspace/models-test/results/phase2/01-gpt-5-6-luna/feature-implementation/evaluation.json",
+  "raw_output": {
+    "agent_stdout": "/home/pickleshell/workspace/models-test/results/phase2/01-gpt-5-6-luna/feature-implementation/agent.stdout.txt",
+    "agent_stderr": "/home/pickleshell/workspace/models-test/results/phase2/01-gpt-5-6-luna/feature-implementation/agent.stderr.txt",
+    "evaluator_stdout": "/home/pickleshell/workspace/models-test/results/phase2/01-gpt-5-6-luna/feature-implementation/evaluator.stdout.txt",
+    "evaluator_stderr": "/home/pickleshell/workspace/models-test/results/phase2/01-gpt-5-6-luna/feature-implementation/evaluator.stderr.txt"
+  },
+  "completed_at": "2026-08-17T02:36:56.533Z"
+}

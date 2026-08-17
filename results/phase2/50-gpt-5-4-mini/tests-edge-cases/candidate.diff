@@ -1,0 +1,43 @@
+diff --git a/fixtures/phase2/tests-edge-cases/src/range.js b/fixtures/phase2/tests-edge-cases/src/range.js
+index caf34d8..68b4196 100644
+--- a/fixtures/phase2/tests-edge-cases/src/range.js
++++ b/fixtures/phase2/tests-edge-cases/src/range.js
+@@ -1,8 +1,14 @@
+ export function parseRange(value) {
+   if (typeof value !== 'string') return null;
+-  const [left, right] = value.split('..');
+-  const start = Number(left);
+-  const end = Number(right);
++
++  const match = value.trim().match(/^(-?\d+)\.\.(-?\d+)$/);
++  if (!match) return null;
++
++  const start = Number(match[1]);
++  const end = Number(match[2]);
+   if (!Number.isInteger(start) || !Number.isInteger(end)) return null;
++  if (start < -100000 || start > 100000 || end < -100000 || end > 100000) return null;
++  if (start > end) return null;
++
+   return { start, end };
+ }
+diff --git a/fixtures/phase2/tests-edge-cases/test/range.test.mjs b/fixtures/phase2/tests-edge-cases/test/range.test.mjs
+index f2758d0..452d1f3 100644
+--- a/fixtures/phase2/tests-edge-cases/test/range.test.mjs
++++ b/fixtures/phase2/tests-edge-cases/test/range.test.mjs
+@@ -4,5 +4,16 @@ const { parseRange } = await import(process.env.BENCHMARK_SOURCE ? `${process.en
+ 
+ test('parses an inclusive range', () => assert.deepEqual(parseRange('2..7'), { start: 2, end: 7 }));
+ test('accepts surrounding whitespace', () => assert.deepEqual(parseRange(' -2..0 '), { start: -2, end: 0 }));
++test('accepts boundary values', () => assert.deepEqual(parseRange('-100000..100000'), { start: -100000, end: 100000 }));
+ test('rejects malformed ranges', () => assert.equal(parseRange('2-7'), null));
+ test('rejects a reversed range', () => assert.equal(parseRange('7..2'), null));
++test('rejects non-string input', () => assert.equal(parseRange(42), null));
++test('rejects decimals and extra separators', () => {
++  assert.equal(parseRange('2.5..7'), null);
++  assert.equal(parseRange('2....7'), null);
++});
++test('rejects out-of-bounds values', () => {
++  assert.equal(parseRange('-100001..0'), null);
++  assert.equal(parseRange('0..100001'), null);
++});
++test('rejects whitespace inside the range syntax', () => assert.equal(parseRange('2 .. 7'), null));

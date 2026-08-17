@@ -1,0 +1,122 @@
+[0m
+> build · big-pickle
+[0m
+[0m# [0mTodos
+[•] Read README contract for resolveFeature
+[ ] Read existing source file
+[ ] Read tests to understand expectations
+[ ] Implement resolveFeature
+[ ] Run tests
+[0m
+[0m✱ [0mGlob "fixtures/phase2/feature-implementation/**"[90m 4 matches[0m
+[0m→ [0mRead fixtures/phase2/feature-implementation/README.md
+[0m→ [0mRead fixtures/phase2/feature-implementation/src/featureFlags.js
+[0m→ [0mRead fixtures/phase2/feature-implementation/test/featureFlags.test.mjs
+[0m→ [0mRead fixtures/phase2/feature-implementation/package.json
+[0m
+[0m# [0mTodos
+[✓] Read README contract for resolveFeature
+[✓] Read existing source file
+[✓] Read tests to understand expectations
+[•] Implement resolveFeature
+[ ] Run tests
+[0m
+[0m← [0mEdit fixtures/phase2/feature-implementation/src/featureFlags.js
+Index: /home/pickleshell/workspace/models-test/.worktrees/phase2/19-big-pickle/feature-implementation/fixtures/phase2/feature-implementation/src/featureFlags.js
+===================================================================
+--- /home/pickleshell/workspace/models-test/.worktrees/phase2/19-big-pickle/feature-implementation/fixtures/phase2/feature-implementation/src/featureFlags.js
++++ /home/pickleshell/workspace/models-test/.worktrees/phase2/19-big-pickle/feature-implementation/fixtures/phase2/feature-implementation/src/featureFlags.js
+@@ -1,5 +1,35 @@
++function stableHash(str) {
++  let hash = 0;
++  for (let i = 0; i < str.length; i++) {
++    hash = ((hash << 5) - hash + str.charCodeAt(i)) | 0;
++  }
++  return Math.abs(hash);
++}
++
+ export function resolveFeature(config, context) {
+   if (!config || !context || typeof context !== 'object') return false;
+-  const flag = config[context.feature];
+-  return typeof flag === 'boolean' ? flag : Boolean(flag && flag.enabled);
++
++  const feature = context.feature;
++  if (typeof feature !== 'string') return false;
++
++  const overrides = context.overrides;
++  if (overrides && typeof overrides === 'object' && typeof overrides[feature] === 'boolean') {
++    return overrides[feature];
++  }
++
++  const flag = config[feature];
++
++  if (typeof flag === 'boolean') return flag;
++
++  if (flag && typeof flag === 'object') {
++    if (typeof flag.rollout === 'number' && flag.rollout >= 0 && flag.rollout <= 100) {
++      if (flag.rollout === 0) return false;
++      if (flag.rollout === 100) return true;
++      if (typeof context.userId !== 'string') return false;
++      return stableHash(context.userId) % 100 < flag.rollout;
++    }
++    return Boolean(flag.enabled);
++  }
++
++  return false;
+ }
+
+[0m
+Now I understand the contract. The existing code is missing:
+1. `overrides` support (boolean override wins over config)
+2. `rollout` support (percentage-based with stable hash of userId)
+3. Missing/invalid input → disabled
+[0m
+[0m# [0mTodos
+[✓] Read README contract for resolveFeature
+[✓] Read existing source file
+[✓] Read tests to understand expectations
+[✓] Implement resolveFeature
+[•] Run tests
+[0m
+[0m$ [0mnpm test
+> test
+> node --test test/*.test.mjs
+
+TAP version 13
+# Subtest: supports boolean flags and explicit overrides
+ok 1 - supports boolean flags and explicit overrides
+  ---
+  duration_ms: 0.953019
+  ...
+# Subtest: enables a 100 percent rollout for a user
+ok 2 - enables a 100 percent rollout for a user
+  ---
+  duration_ms: 0.116619
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 45.644093
+[0m
+[0m# [0mTodos
+[✓] Read README contract for resolveFeature
+[✓] Read existing source file
+[✓] Read tests to understand expectations
+[✓] Implement resolveFeature
+[✓] Run tests
+[0m
+Both tests pass.
+[0m
+Done. The implementation at `src/featureFlags.js` now handles all contract requirements:
+
+1. **Overrides** — exact boolean in `context.overrides[feature]` wins first
+2. **Boolean flags** — directly returned
+3. **Flag objects** — respects `enabled` and `rollout` (0–100%); uses a stable deterministic hash of `context.userId` for partial rollout
+4. **Missing/invalid input** — returns `false`
+5. **No mutation** of either argument
+[0m

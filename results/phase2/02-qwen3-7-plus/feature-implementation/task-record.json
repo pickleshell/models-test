@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "state": "completed",
+  "benchmark": "phase2",
+  "task": "feature-implementation",
+  "category": "feature-implementation",
+  "candidate": "02-qwen3-7-plus",
+  "runtime": "opencode-go",
+  "model": "opencode-go/qwen3.7-plus",
+  "baseline": "880f20fa2924cc10a55ba6e423b9c4a22261e740",
+  "workspace": "/home/pickleshell/workspace/models-test/.worktrees/phase2/02-qwen3-7-plus/feature-implementation",
+  "prompt": "benchmarks/phase2/prompts/feature-implementation.md",
+  "command": {
+    "command": "opencode",
+    "args": [
+      "run",
+      "--model",
+      "opencode-go/qwen3.7-plus",
+      "--dir",
+      "/home/pickleshell/workspace/models-test/.worktrees/phase2/02-qwen3-7-plus/feature-implementation",
+      "--auto"
+    ],
+    "working_directory": "/home/pickleshell/workspace/models-test/.worktrees/phase2/02-qwen3-7-plus/feature-implementation"
+  },
+  "agent": {
+    "status": null,
+    "signal": "SIGKILL",
+    "wall_time_ms": 900003,
+    "timed_out": true,
+    "failure_class": "timeout"
+  },
+  "evaluator": {
+    "status": 1,
+    "signal": null,
+    "wall_time_ms": 209,
+    "failure_class": "infrastructure_or_evaluator_failure"
+  },
+  "patch": {
+    "file": "/home/pickleshell/workspace/models-test/results/phase2/02-qwen3-7-plus/feature-implementation/candidate.diff",
+    "changed_files": []
+  },
+  "evaluation_json": "/home/pickleshell/workspace/models-test/results/phase2/02-qwen3-7-plus/feature-implementation/evaluation.json",
+  "raw_output": {
+    "agent_stdout": "/home/pickleshell/workspace/models-test/results/phase2/02-qwen3-7-plus/feature-implementation/agent.stdout.txt",
+    "agent_stderr": "/home/pickleshell/workspace/models-test/results/phase2/02-qwen3-7-plus/feature-implementation/agent.stderr.txt",
+    "evaluator_stdout": "/home/pickleshell/workspace/models-test/results/phase2/02-qwen3-7-plus/feature-implementation/evaluator.stdout.txt",
+    "evaluator_stderr": "/home/pickleshell/workspace/models-test/results/phase2/02-qwen3-7-plus/feature-implementation/evaluator.stderr.txt"
+  },
+  "completed_at": "2026-08-17T03:12:10.417Z"
+}

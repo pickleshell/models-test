@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "benchmark": "phase2",
+  "task": "tests-edge-cases",
+  "category": "tests-and-edge-cases",
+  "model": "opencode/mimo-v2.5-free",
+  "pass": true,
+  "metrics": {
+    "public_status": 0,
+    "hidden_passed": 1,
+    "hidden_failed": 0,
+    "forbidden_change_count": 0,
+    "changed_files": [
+      "fixtures/phase2/tests-edge-cases/src/range.js",
+      "fixtures/phase2/tests-edge-cases/test/range.test.mjs"
+    ],
+    "duration_ms": 196
+  },
+  "public_test": {
+    "command": "npm test --prefix fixtures/phase2/tests-edge-cases",
+    "stdout": "\n> test\n> node --test test/*.test.mjs\n\nTAP version 13\n# Subtest: parses an inclusive range\nok 1 - parses an inclusive range\n  ---\n  duration_ms: 1.242012\n  ...\n# Subtest: accepts surrounding whitespace\nok 2 - accepts surrounding whitespace\n  ---\n  duration_ms: 0.115987\n  ...\n# Subtest: rejects malformed ranges\nok 3 - rejects malformed ranges\n  ---\n  duration_ms: 0.157977\n  ...\n# Subtest: rejects a reversed range\nok 4 - rejects a reversed range\n  ---\n  duration_ms: 0.105869\n  ...\n# Subtest: rejects non-string input: null\nok 5 - rejects non-string input: null\n  ---\n  duration_ms: 0.105017\n  ...\n# Subtest: rejects non-string input: undefined\nok 6 - rejects non-string input: undefined\n  ---\n  duration_ms: 0.098364\n  ...\n# Subtest: rejects non-string input: number\nok 7 - rejects non-string input: number\n  ---\n  duration_ms: 0.103685\n  ...\n# Subtest: rejects non-string input: object\nok 8 - rejects non-string input: object\n  ---\n  duration_ms: 0.095409\n  ...\n# Subtest: rejects non-string input: array\nok 9 - rejects non-string input: array\n  ---\n  duration_ms: 0.168868\n  ...\n# Subtest: rejects non-string input: boolean\nok 10 - rejects non-string input: boolean\n  ---\n  duration_ms: 0.164159\n  ...\n# Subtest: rejects empty string\nok 11 - rejects empty string\n  ---\n  duration_ms: 0.111058\n  ...\n# Subtest: rejects whitespace-only string\nok 12 - rejects whitespace-only string\n  ---\n  duration_ms: 0.099166\n  ...\n# Subtest: rejects missing left part\nok 13 - rejects missing left part\n  ---\n  duration_ms: 0.13817\n  ...\n# Subtest: rejects missing right part\nok 14 - rejects missing right part\n  ---\n  duration_ms: 0.131718\n  ...\n# Subtest: rejects missing both parts\nok 15 - rejects missing both parts\n  ---\n  duration_ms: 0.630774\n  ...\n# Subtest: rejects multiple separators\nok 16 - rejects multiple separators\n  ---\n  duration_ms: 0.153748\n  ...\n# Subtest: rejects triple-dot separator\nok 17 - rejects triple-dot separator\n  ---\n  duration_ms: 0.099918\n  ...\n# Subtest: rejects single-dot separator\nok 18 - rejects single-dot separator\n  ---\n  duration_ms: 0.157776\n  ...\n# Subtest: rejects decimals in start\nok 19 - rejects decimals in start\n  ---\n  duration_ms: 0.10679\n  ...\n# Subtest: rejects decimals in end\nok 20 - rejects decimals in end\n  ---\n  duration_ms: 0.129994\n  ...\n# Subtest: rejects start below lower bound\nok 21 - rejects start below lower bound\n  ---\n  duration_ms: 0.09033\n  ...\n# Subtest: rejects end above upper bound\nok 22 - rejects end above upper bound\n  ---\n  duration_ms: 0.07499\n  ...\n# Subtest: rejects both out of bounds\nok 23 - rejects both out of bounds\n  ---\n  duration_ms: 0.0694\n  ...\n# Subtest: accepts boundary: full range\nok 24 - accepts boundary: full range\n  ---\n  duration_ms: 0.087815\n  ...\n# Subtest: accepts boundary: lower bound only\nok 25 - accepts boundary: lower bound only\n  ---\n  duration_ms: 0.084929\n  ...\n# Subtest: accepts boundary: upper bound only\nok 26 - accepts boundary: upper bound only\n  ---\n  duration_ms: 0.077525\n  ...\n# Subtest: accepts boundary: zero range\nok 27 - accepts boundary: zero range\n  ---\n  duration_ms: 0.076123\n  ...\n# Subtest: rejects leading zeros\nok 28 - rejects leading zeros\n  ---\n  duration_ms: 0.067927\n  ...\n# Subtest: rejects scientific notation\nok 29 - rejects scientific notation\n  ---\n  duration_ms: 0.11709\n  ...\n# Subtest: rejects hex notation\nok 30 - rejects hex notation\n  ---\n  duration_ms: 0.072135\n  ...\n# Subtest: rejects spaces inside numbers\nok 31 - rejects spaces inside numbers\n  ---\n  duration_ms: 0.067497\n  ...\n1..31\n# tests 31\n# suites 0\n# pass 31\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 57.642399\n",
+    "stderr": ""
+  },
+  "hidden": {
+    "stdout": "",
+    "stderr": ""
+  },
+  "forbidden_changes": []
+}

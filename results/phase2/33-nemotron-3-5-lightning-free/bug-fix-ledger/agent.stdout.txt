@@ -1,0 +1,130 @@
+[0m
+> build · nemotron-3.5-lightning-free
+[0m
+[0m→ [0mRead .
+[0m✱ [0mGlob "**/reconcile.js"[90m in . · 2 matches[0m
+[0m→ [0mRead fixtures/phase1-ledger/src/reconcile.js
+[0m→ [0mRead fixtures/phase1-ledger
+[0m→ [0mRead fixtures/phase1-ledger/test
+[0m→ [0mRead fixtures/phase1-ledger/package.json
+[0m→ [0mRead fixtures/phase1-ledger/test/reconcile.test.mjs
+[0m
+Let me run the existing tests to see the current state:
+[0m
+[0m$ [0mnpm test
+> phase1-ledger-fixture@0.1.0 test
+> node --test test/*.test.mjs
+
+TAP version 13
+# Subtest: parses ordinary decimal money into cents
+ok 1 - parses ordinary decimal money into cents
+  ---
+  duration_ms: 0.939905
+  ...
+# Subtest: summarizes sales by account, currency, and UTC day
+ok 2 - summarizes sales by account, currency, and UTC day
+  ---
+  duration_ms: 11.47249
+  ...
+# Subtest: does not double count duplicate transaction ids
+not ok 3 - does not double count duplicate transaction ids
+  ---
+  duration_ms: 1.01751
+  location: '/home/pickleshell/workspace/models-test/.worktrees/phase2/33-nemotron-3-5-lightning-free/bug-fix-ledger/fixtures/phase1-ledger/test/reconcile.test.mjs:24:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    2 !== 1
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 1
+  actual: 2
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///home/pickleshell/workspace/models-test/.worktrees/phase2/33-nemotron-3-5-lightning-free/bug-fix-ledger/fixtures/phase1-ledger/test/reconcile.test.mjs:31:10)
+    Test.runInAsyncScope (node:async_hooks:206:9)
+    Test.run (node:internal/test_runner/test:796:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:526:18)
+    Test.postRun (node:internal/test_runner/test:889:19)
+    Test.run (node:internal/test_runner/test:835:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:526:7)
+  ...
+# Subtest: counts invalid rows and orphan refunds without adding them to totals
+ok 4 - counts invalid rows and orphan refunds without adding them to totals
+  ---
+  duration_ms: 0.178505
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 3
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 57.329431
+[0m
+[0m← [0mEdit fixtures/phase1-ledger/src/reconcile.js
+Index: /home/pickleshell/workspace/models-test/.worktrees/phase2/33-nemotron-3-5-lightning-free/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+===================================================================
+--- /home/pickleshell/workspace/models-test/.worktrees/phase2/33-nemotron-3-5-lightning-free/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
++++ /home/pickleshell/workspace/models-test/.worktrees/phase2/33-nemotron-3-5-lightning-free/bug-fix-ledger/fixtures/phase1-ledger/src/reconcile.js
+@@ -51,8 +51,9 @@
+ if (!entry.currency) throw new Error('missing currency');
+ 
+ if (seenIds.has(entry.id)) {
+   metrics.duplicateCount += 1;
++  continue;
+ }
+ seenIds.add(entry.id);
+ 
+ const cents = parseAmountToCents(entry.amount);
+
+[0m
+I can see the issue. Test 3 fails because duplicate entries are still being processed (added to totals, incrementing `processed`) even though they're counted as duplicates. The `seenIds.has(entry.id)` check only increments `duplicateCount` but doesn't skip the entry.
+
+The fix: add `continue` after detecting a duplicate so the entry is skipped entirely.
+[0m
+[0m$ [0mnpm test
+> phase1-ledger-fixture@0.1.0 test
+> node --test test/*.test.mjs
+
+TAP version 13
+# Subtest: parses ordinary decimal money into cents
+ok 1 - parses ordinary decimal money into cents
+  ---
+  duration_ms: 0.967306
+  ...
+# Subtest: summarizes sales by account, currency, and UTC day
+ok 2 - summarizes sales by account, currency, and UTC day
+  ---
+  duration_ms: 12.227448
+  ...
+# Subtest: does not double count duplicate transaction ids
+ok 3 - does not double count duplicate transaction ids
+  ---
+  duration_ms: 0.160731
+  ...
+# Subtest: counts invalid rows and orphan refunds without adding them to totals
+ok 4 - counts invalid rows and orphan refunds without adding them to totals
+  ---
+  duration_ms: 0.158648
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 4
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 57.679338
+[0m
+[0m→ [0mRead fixtures/phase1-ledger/src/reconcile.js[90m [limit=5, offset=53][0m
+[0m
+All 4 tests pass. The fix was adding `continue` after detecting a duplicate transaction ID in `reconcile.js:55`, so duplicate entries are skipped entirely rather than being counted as duplicates but still processed into the totals.
+[0m
+The fix is complete. The single-line change at `reconcile.js:55` adds `continue` after incrementing `duplicateCount`, ensuring that duplicate transaction entries are fully skipped instead of being counted as duplicates while still being processed into the reconciliation totals. All 4 tests pass.
+[0m

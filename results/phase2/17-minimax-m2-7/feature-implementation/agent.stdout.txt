@@ -1,0 +1,99 @@
+[0m
+> build · minimax-m2.7
+[0m
+[0m✱ [0mGlob "fixtures/phase2/feature-implementation/**/*"[90m 4 matches[0m
+[0m→ [0mRead fixtures/phase2/feature-implementation/README.md
+[0m→ [0mRead fixtures/phase2/feature-implementation/src/featureFlags.js
+[0m→ [0mRead fixtures/phase2/feature-implementation/test/featureFlags.test.mjs
+[0m
+Let me read the package.json to understand the test setup:
+[0m
+[0m→ [0mRead fixtures/phase2/feature-implementation/package.json
+[0m
+Based on the README contract, I need to implement `resolveFeature` that handles:
+1. `context.overrides` - exact boolean wins
+2. Boolean flag values
+3. Rollout percentage using stable hash of `userId`
+[0m
+[0m← [0mEdit fixtures/phase2/feature-implementation/src/featureFlags.js
+Index: /home/pickleshell/workspace/models-test/.worktrees/phase2/17-minimax-m2-7/feature-implementation/fixtures/phase2/feature-implementation/src/featureFlags.js
+===================================================================
+--- /home/pickleshell/workspace/models-test/.worktrees/phase2/17-minimax-m2-7/feature-implementation/fixtures/phase2/feature-implementation/src/featureFlags.js
++++ /home/pickleshell/workspace/models-test/.worktrees/phase2/17-minimax-m2-7/feature-implementation/fixtures/phase2/feature-implementation/src/featureFlags.js
+@@ -1,5 +1,36 @@
+ export function resolveFeature(config, context) {
+   if (!config || !context || typeof context !== 'object') return false;
+-  const flag = config[context.feature];
+-  return typeof flag === 'boolean' ? flag : Boolean(flag && flag.enabled);
++
++  const featureName = context.feature;
++  if (typeof featureName !== 'string') return false;
++
++  if (context.overrides && typeof context.overrides === 'object') {
++    const override = context.overrides[featureName];
++    if (typeof override === 'boolean') return override;
++  }
++
++  const flag = config[featureName];
++
++  if (typeof flag === 'boolean') return flag;
++
++  if (flag && typeof flag === 'object') {
++    const rollout = flag.rollout;
++    if (typeof rollout === 'number' && rollout >= 0 && rollout <= 100) {
++      if (rollout === 100) return true;
++      if (rollout === 0) return false;
++      if (context.userId && typeof context.userId === 'string') {
++        let hash = 0;
++        for (let i = 0; i < context.userId.length; i++) {
++          const char = context.userId.charCodeAt(i);
++          hash = ((hash << 5) - hash) + char;
++          hash = hash & hash;
++        }
++        return Math.abs(hash % 100) < rollout;
++      }
++      return false;
++    }
++    if (flag.enabled) return true;
++  }
++
++  return false;
+ }
+
+[0m
+[0m$ [0mnpm test --prefix fixtures/phase2/feature-implementation
+> test
+> node --test test/*.test.mjs
+
+TAP version 13
+# Subtest: supports boolean flags and explicit overrides
+ok 1 - supports boolean flags and explicit overrides
+  ---
+  duration_ms: 0.968508
+  ...
+# Subtest: enables a 100 percent rollout for a user
+ok 2 - enables a 100 percent rollout for a user
+  ---
+  duration_ms: 0.112782
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 45.373958
+[0m
+All tests pass. Here's the final implementation:
+[0m
+[0m→ [0mRead fixtures/phase2/feature-implementation/src/featureFlags.js
+[0m
+Done. The implementation:
+- Respects `context.overrides` first (exact boolean wins)
+- Handles boolean flags directly
+- Handles flag objects with `enabled` and `rollout` (0-100 percentage using stable hash of `userId`)
+- Returns false for invalid/missing input
+- Preserves the existing export
+[0m

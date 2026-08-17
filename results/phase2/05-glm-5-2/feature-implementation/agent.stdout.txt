@@ -1,0 +1,146 @@
+[0m
+> build · glm-5.2
+[0m
+[0m→ [0mRead fixtures/phase2/feature-implementation/src/featureFlags.js
+[0m→ [0mRead fixtures/phase2/feature-implementation/README.md
+[0m
+[0m$ [0mls -la /home/pickleshell/workspace/models-test/.worktrees/phase2/05-glm-5-2/feature-implementation/fixtures/phase2/feature-implementation/
+total 24
+drwxrwx---+ 4 pickleshell pickleshell 4096 Aug 17 06:13 .
+drwxrwx---+ 8 pickleshell pickleshell 4096 Aug 17 06:13 ..
+-rw-rw----+ 1 pickleshell pickleshell  122 Aug 17 06:13 package.json
+-rw-rw----+ 1 pickleshell pickleshell  406 Aug 17 06:13 README.md
+drwxrwx---+ 2 pickleshell pickleshell 4096 Aug 17 06:13 src
+drwxrwx---+ 2 pickleshell pickleshell 4096 Aug 17 06:13 test
+[0m
+[0m→ [0mRead fixtures/phase2/feature-implementation/package.json
+[0m
+[0m$ [0mls -la /home/pickleshell/workspace/models-test/.worktrees/phase2/05-glm-5-2/feature-implementation/fixtures/phase2/feature-implementation/test/ /home/pickleshell/workspace/models-test/.worktrees/phase2/05-glm-5-2/feature-implementation/fixtures/phase2/feature-implementation/src/
+/home/pickleshell/workspace/models-test/.worktrees/phase2/05-glm-5-2/feature-implementation/fixtures/phase2/feature-implementation/src/:
+total 12
+drwxrwx---+ 2 pickleshell pickleshell 4096 Aug 17 06:13 .
+drwxrwx---+ 4 pickleshell pickleshell 4096 Aug 17 06:13 ..
+-rw-rw----+ 1 pickleshell pickleshell  239 Aug 17 06:13 featureFlags.js
+
+/home/pickleshell/workspace/models-test/.worktrees/phase2/05-glm-5-2/feature-implementation/fixtures/phase2/feature-implementation/test/:
+total 12
+drwxrwx---+ 2 pickleshell pickleshell 4096 Aug 17 06:13 .
+drwxrwx---+ 4 pickleshell pickleshell 4096 Aug 17 06:13 ..
+-rw-rw----+ 1 pickleshell pickleshell  662 Aug 17 06:13 featureFlags.test.mjs
+[0m
+[0m→ [0mRead fixtures/phase2/feature-implementation/test/featureFlags.test.mjs
+[0m
+Now I understand the contract. Let me check the existing tests pass against the current implementation first to see what's failing.
+[0m
+[0m$ [0mcd /home/pickleshell/workspace/models-test/.worktrees/phase2/05-glm-5-2/feature-implementation/fixtures/phase2/feature-implementation && npm test 2>&1
+> test
+> node --test test/*.test.mjs
+
+TAP version 13
+# Subtest: supports boolean flags and explicit overrides
+not ok 1 - supports boolean flags and explicit overrides
+  ---
+  duration_ms: 1.634418
+  location: '/home/pickleshell/workspace/models-test/.worktrees/phase2/05-glm-5-2/feature-implementation/fixtures/phase2/feature-implementation/test/featureFlags.test.mjs:5:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    true !== false
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: false
+  actual: true
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///home/pickleshell/workspace/models-test/.worktrees/phase2/05-glm-5-2/feature-implementation/fixtures/phase2/feature-implementation/test/featureFlags.test.mjs:7:10)
+    Test.runInAsyncScope (node:async_hooks:206:9)
+    Test.run (node:internal/test_runner/test:796:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:526:18)
+    node:internal/test_runner/harness:255:12
+    node:internal/process/task_queues:140:7
+    AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+    AsyncResource.runMicrotask (node:internal/process/task_queues:137:8)
+  ...
+# Subtest: enables a 100 percent rollout for a user
+ok 2 - enables a 100 percent rollout for a user
+  ---
+  duration_ms: 0.141356
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 1
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 43.31127
+[0m
+[0m← [0mWrite fixtures/phase2/feature-implementation/src/featureFlags.js
+Wrote file successfully.
+[0m
+Confirmed: the override test fails because overrides aren't handled. Now let me implement the full contract.
+[0m
+[0m$ [0mcd /home/pickleshell/workspace/models-test/.worktrees/phase2/05-glm-5-2/feature-implementation/fixtures/phase2/feature-implementation && npm test 2>&1
+> test
+> node --test test/*.test.mjs
+
+TAP version 13
+# Subtest: supports boolean flags and explicit overrides
+ok 1 - supports boolean flags and explicit overrides
+  ---
+  duration_ms: 0.93248
+  ...
+# Subtest: enables a 100 percent rollout for a user
+ok 2 - enables a 100 percent rollout for a user
+  ---
+  duration_ms: 0.112791
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 45.383299
+[0m
+[0m$ [0mcd /home/pickleshell/workspace/models-test/.worktrees/phase2/05-glm-5-2/feature-implementation/fixtures/phase2/feature-implementation && node --input-type=module -e "
+import { resolveFeature } from './src/featureFlags.js';
+const assert = (c, v) => { if (c !== v) throw new Error('got ' + c + ' want ' + v); };
+assert(resolveFeature(null, { feature: 'x' }), false);
+assert(resolveFeature({}, null), false);
+assert(resolveFeature({}, { feature: 'x' }), false);
+assert(resolveFeature({ b: false }, { feature: 'b' }), false);
+assert(resolveFeature({ b: false }, { feature: 'b', overrides: { b: true } }), true);
+assert(resolveFeature({ b: true }, { feature: 'b', overrides: { b: 1 } }), true);
+assert(resolveFeature({ o: { enabled: false } }, { feature: 'o' }), false);
+assert(resolveFeature({ o: { enabled: true } }, { feature: 'o' }), true);
+assert(resolveFeature({ o: { enabled: true, rollout: 0 } }, { feature: 'o', userId: 'u1' }), false);
+assert(resolveFeature({ o: { enabled: true, rollout: 'bad' } }, { feature: 'o' }), false);
+assert(resolveFeature({ o: { enabled: true, rollout: 50 } }, { feature: 'o' }), false);
+assert(resolveFeature({ o: { enabled: true, rollout: 50 } }, { feature: 'o', userId: '' }), false);
+const cfg = { a: true, o: { enabled: true, rollout: 50 } };
+const ctx = { feature: 'o', userId: 'u1', overrides: { a: false } };
+const before = JSON.stringify([cfg, ctx]);
+resolveFeature(cfg, ctx);
+assert(JSON.stringify([cfg, ctx]), before);
+console.log('all edge checks ok');
+"
+all edge checks ok
+[0m
+Both tests pass. Let me verify no-mutation and a few edge cases behave sanely.
+[0m
+Done. `resolveFeature` is implemented in `src/featureFlags.js:1` per the README contract:
+
+- **Validation**: non-object `config`/`context`, or missing/empty `feature` → `false`.
+- **Overrides win**: an exact boolean at `context.overrides[feature]` is returned first.
+- **Boolean flag**: returned directly.
+- **Flag object**: requires `enabled === true`; `rollout` is optional (missing → fully on), must be an integer 0–100 (invalid → disabled), `0` → off, `100` → on, otherwise gated by a stable FNV-1a hash of `context.userId` (`hash % 100 < rollout`); missing/invalid `userId` → disabled.
+- **No mutation**: only reads from arguments; verified.
+
+Only `resolveFeature` is exported (helper `stableHash` is private). Public tests pass 2/2; no files outside `src/featureFlags.js` were modified.
+[0m

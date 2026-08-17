@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "benchmark": "phase2",
+  "task": "tests-edge-cases",
+  "category": "tests-and-edge-cases",
+  "model": "opencode/claude-sonnet-5",
+  "pass": true,
+  "metrics": {
+    "public_status": 0,
+    "hidden_passed": 1,
+    "hidden_failed": 0,
+    "forbidden_change_count": 0,
+    "changed_files": [
+      "fixtures/phase2/tests-edge-cases/src/range.js",
+      "fixtures/phase2/tests-edge-cases/test/range.test.mjs"
+    ],
+    "duration_ms": 183
+  },
+  "public_test": {
+    "command": "npm test --prefix fixtures/phase2/tests-edge-cases",
+    "stdout": "\n> test\n> node --test test/*.test.mjs\n\nTAP version 13\n# Subtest: parses an inclusive range\nok 1 - parses an inclusive range\n  ---\n  duration_ms: 1.1827\n  ...\n# Subtest: accepts surrounding whitespace\nok 2 - accepts surrounding whitespace\n  ---\n  duration_ms: 0.658817\n  ...\n# Subtest: rejects malformed ranges\nok 3 - rejects malformed ranges\n  ---\n  duration_ms: 0.16543\n  ...\n# Subtest: rejects a reversed range\nok 4 - rejects a reversed range\n  ---\n  duration_ms: 0.102693\n  ...\n# Subtest: rejects non-string input\nok 5 - rejects non-string input\n  ---\n  duration_ms: 0.103204\n  ...\n# Subtest: rejects decimal bounds\nok 6 - rejects decimal bounds\n  ---\n  duration_ms: 0.091392\n  ...\n# Subtest: rejects a missing bound\nok 7 - rejects a missing bound\n  ---\n  duration_ms: 0.095038\n  ...\n# Subtest: rejects extra dots\nok 8 - rejects extra dots\n  ---\n  duration_ms: 0.103765\n  ...\n# Subtest: rejects trailing garbage\nok 9 - rejects trailing garbage\n  ---\n  duration_ms: 0.140163\n  ...\n# Subtest: rejects internal whitespace\nok 10 - rejects internal whitespace\n  ---\n  duration_ms: 0.162375\n  ...\n# Subtest: accepts the same start and end\nok 11 - accepts the same start and end\n  ---\n  duration_ms: 0.128712\n  ...\n# Subtest: accepts the lower bound\nok 12 - accepts the lower bound\n  ---\n  duration_ms: 0.113954\n  ...\n# Subtest: accepts the upper bound\nok 13 - accepts the upper bound\n  ---\n  duration_ms: 0.137408\n  ...\n# Subtest: rejects a start below the lower bound\nok 14 - rejects a start below the lower bound\n  ---\n  duration_ms: 0.130735\n  ...\n# Subtest: rejects an end above the upper bound\nok 15 - rejects an end above the upper bound\n  ---\n  duration_ms: 0.130525\n  ...\n1..15\n# tests 15\n# suites 0\n# pass 15\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 51.084421\n",
+    "stderr": ""
+  },
+  "hidden": {
+    "stdout": "",
+    "stderr": ""
+  },
+  "forbidden_changes": []
+}

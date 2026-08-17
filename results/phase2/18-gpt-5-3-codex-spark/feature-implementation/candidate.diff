@@ -1,0 +1,75 @@
+diff --git a/fixtures/phase2/feature-implementation/src/featureFlags.js b/fixtures/phase2/feature-implementation/src/featureFlags.js
+index 489ea67..12e21bf 100644
+--- a/fixtures/phase2/feature-implementation/src/featureFlags.js
++++ b/fixtures/phase2/feature-implementation/src/featureFlags.js
+@@ -1,5 +1,67 @@
+ export function resolveFeature(config, context) {
+-  if (!config || !context || typeof context !== 'object') return false;
+-  const flag = config[context.feature];
+-  return typeof flag === 'boolean' ? flag : Boolean(flag && flag.enabled);
++  if (
++    !config ||
++    !context ||
++    typeof context !== 'object' ||
++    typeof context.feature !== 'string'
++  ) {
++    return false;
++  }
++
++  const feature = context.feature;
++  const overrides = context.overrides;
++
++  if (
++    overrides &&
++    typeof overrides === 'object' &&
++    Object.prototype.hasOwnProperty.call(overrides, feature) &&
++    typeof overrides[feature] === 'boolean'
++  ) {
++    return overrides[feature];
++  }
++
++  const flag = config[feature];
++
++  if (typeof flag === 'boolean') {
++    return flag;
++  }
++
++  if (!flag || typeof flag !== 'object' || typeof flag.enabled !== 'boolean') {
++    return false;
++  }
++
++  if (!flag.enabled) {
++    return false;
++  }
++
++  if (!Object.prototype.hasOwnProperty.call(flag, 'rollout')) {
++    return true;
++  }
++
++  const rollout = flag.rollout;
++  if (!Number.isInteger(rollout) || rollout < 0 || rollout > 100) {
++    return false;
++  }
++
++  if (rollout === 100) {
++    return true;
++  }
++
++  if (rollout === 0 || typeof context.userId !== 'string') {
++    return false;
++  }
++
++  return hashPercent(context.userId) < rollout;
++}
++
++function hashPercent(input) {
++  let hash = 2166136261;
++
++  for (let i = 0; i < input.length; i += 1) {
++    hash ^= input.charCodeAt(i);
++    hash = Math.imul(hash, 16777619);
++    hash >>>= 0;
++  }
++
++  return hash % 100;
+ }

@@ -1,0 +1,66 @@
+[0m
+> build · grok-4.5
+[0m
+[0m✱ [0mGlob "**/*"[90m in fixtures/phase1-ledger · 5 matches[0m
+[0m✱ [0mGrep "defect|bug|FIXME|TODO|incorrect|broken"[90m in fixtures/phase1-ledger · 1 match[0m
+[0m→ [0mRead fixtures/phase1-ledger/src/reconcile.js[90m [limit=200, offset=1][0m
+[0m
+I'll inspect the reconcile source and its docs/tests to identify the defect.
+[0m
+[0m→ [0mRead fixtures/phase1-ledger/README.md[90m [limit=200, offset=1][0m
+[0m→ [0mRead fixtures/phase1-ledger/PROMPT.md[90m [limit=200, offset=1][0m
+[0m→ [0mRead fixtures/phase1-ledger/test/reconcile.test.mjs[90m [limit=300, offset=1][0m
+[0m
+Checking the docs and tests for the expected behavior.
+[0m
+[0m← [0mWrite fixtures/phase1-ledger/src/reconcile.js
+Wrote file successfully.
+[0m
+Fixing the documented bugs: duplicate handling, strict amount parsing, UTC days, and refund account/currency from the original sale.
+[0m
+[0m$ [0mnpm test --prefix fixtures/phase1-ledger
+> phase1-ledger-fixture@0.1.0 test
+> node --test test/*.test.mjs
+
+TAP version 13
+# Subtest: parses ordinary decimal money into cents
+ok 1 - parses ordinary decimal money into cents
+  ---
+  duration_ms: 1.020618
+  ...
+# Subtest: summarizes sales by account, currency, and UTC day
+ok 2 - summarizes sales by account, currency, and UTC day
+  ---
+  duration_ms: 6.036448
+  ...
+# Subtest: does not double count duplicate transaction ids
+ok 3 - does not double count duplicate transaction ids
+  ---
+  duration_ms: 0.16454
+  ...
+# Subtest: counts invalid rows and orphan refunds without adding them to totals
+ok 4 - counts invalid rows and orphan refunds without adding them to totals
+  ---
+  duration_ms: 0.156264
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 4
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 51.336663
+[0m
+Running the fixture's public tests.
+[0m
+Fixed `fixtures/phase1-ledger/src/reconcile.js`:
+
+- **Duplicates**: skip after first id (still count in `duplicateCount`)
+- **Amounts**: reject negatives / >2 decimals; exact cents (no float round)
+- **Days**: UTC via `toISOString().slice(0, 10)`
+- **Refunds**: use original sale’s `accountId`/`currency`
+
+Public tests: **4/4 pass**
+[0m

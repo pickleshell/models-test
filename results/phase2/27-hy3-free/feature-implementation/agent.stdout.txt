@@ -1,0 +1,51 @@
+[0m
+> build · hy3-free
+[0m
+[0m→ [0mRead fixtures/phase2/feature-implementation/src/featureFlags.js
+[0m→ [0mRead fixtures/phase2/feature-implementation/README.md
+[0m
+[0m$ [0mls -R /home/pickleshell/workspace/models-test/.worktrees/phase2/27-hy3-free/feature-implementation/fixtures/phase2/feature-implementation
+/home/pickleshell/workspace/models-test/.worktrees/phase2/27-hy3-free/feature-implementation/fixtures/phase2/feature-implementation:
+package.json
+README.md
+src
+test
+
+/home/pickleshell/workspace/models-test/.worktrees/phase2/27-hy3-free/feature-implementation/fixtures/phase2/feature-implementation/src:
+featureFlags.js
+
+/home/pickleshell/workspace/models-test/.worktrees/phase2/27-hy3-free/feature-implementation/fixtures/phase2/feature-implementation/test:
+featureFlags.test.mjs
+[0m
+[0m→ [0mRead fixtures/phase2/feature-implementation/test/featureFlags.test.mjs
+[0m→ [0mRead fixtures/phase2/feature-implementation/package.json
+[0m
+[0m← [0mWrite fixtures/phase2/feature-implementation/src/featureFlags.js
+Wrote file successfully.
+[0m
+Now I understand the contract. Let me implement `resolveFeature`:
+[0m
+[0m$ [0mcd "/home/pickleshell/workspace/models-test/.worktrees/phase2/27-hy3-free/feature-implementation/fixtures/phase2/feature-implementation" && npm test 2>&1 | tail -20
+TAP version 13
+# Subtest: supports boolean flags and explicit overrides
+ok 1 - supports boolean flags and explicit overrides
+  ---
+  duration_ms: 0.912293
+  ...
+# Subtest: enables a 100 percent rollout for a user
+ok 2 - enables a 100 percent rollout for a user
+  ---
+  duration_ms: 0.112871
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 43.131368
+[0m
+All tests pass.
+[0m
