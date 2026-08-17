@@ -4,7 +4,7 @@ import { mkdtemp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import test from 'node:test';
-import { agentCommand, deriveCandidates, executePlan } from './phase2-runner.mjs';
+import { agentCommand, deriveCandidates, executePlan, runProcess } from './phase2-runner.mjs';
 
 const root = process.cwd();
 
@@ -22,9 +22,37 @@ test('builds the isolated OpenCode invocation with exact args and workspace cwd'
   const workspace = path.join(root, '.worktrees/phase2/01-test-model/task');
   assert.deepEqual(agentCommand(candidate(), 'Do the task.\n', workspace), {
     command: 'opencode',
-    args: ['run', '--model', 'opencode/test-model', '--dir', workspace, 'Do the task.\n'],
+    args: ['run', '--model', 'opencode/test-model', '--dir', workspace, '--auto', 'Do the task.\n'],
     cwd: workspace
   });
+});
+
+test('runs a command to completion with captured output', async () => {
+  const result = await runProcess(process.execPath, ['-e', "process.stdout.write('ok')"], { timeoutMs: 1000 });
+  assert.equal(result.status, 0);
+  assert.equal(result.signal, null);
+  assert.equal(result.stdout, 'ok');
+  assert.equal(result.timed_out, false);
+  assert.equal(result.cancelled, false);
+});
+
+test('timeout kills the complete spawned process group', async () => {
+  const directory = await mkdtemp(path.join(os.tmpdir(), 'phase2-runner-timeout-'));
+  const marker = path.join(directory, 'grandchild-ran');
+  const childScript = path.join(directory, 'child.mjs');
+  await writeFile(childScript, `
+    import { spawn } from 'node:child_process';
+    import { writeFile } from 'node:fs/promises';
+    spawn(process.execPath, ['-e', ${JSON.stringify(`setTimeout(() => writeFile(${JSON.stringify(marker)}, 'unexpected'), 150)`)}]);
+    setTimeout(() => {}, 10000);
+  `);
+  const result = await runProcess(process.execPath, [childScript], { timeoutMs: 50 });
+  await new Promise((resolve) => setTimeout(resolve, 250));
+  assert.equal(result.timed_out, true);
+  assert.equal(result.signal, 'SIGKILL');
+  assert.equal(result.status, null);
+  assert.equal(await readFile(marker, 'utf8').catch(() => null), null);
+  await rm(directory, { recursive: true, force: true });
 });
 
 async function fakeRepo() {

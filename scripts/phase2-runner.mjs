@@ -54,7 +54,7 @@ export function agentCommand(candidate, prompt, workspace) {
   }
   return {
     command: 'opencode',
-    args: ['run', '--model', candidate.model, '--dir', workspace, prompt],
+    args: ['run', '--model', candidate.model, '--dir', workspace, '--auto', prompt],
     cwd: workspace
   };
 }
@@ -71,21 +71,31 @@ export async function runProcess(command, args, options = {}) {
   const started = Date.now();
   return new Promise((resolve) => {
     let timedOut = false;
-    const child = spawn(command, args, { cwd: options.cwd, env: options.env, detached: true });
+    let cancelled = false;
+    // setsid makes the spawned command the leader of a separate process group
+    // without detaching its stdio, so normal OpenCode runs remain interactive
+    // through pipes while cleanup can signal the entire descendant tree.
+    const child = spawn('setsid', ['--', command, ...args], { cwd: options.cwd, env: options.env });
     const stdout = [], stderr = [];
     child.stdout.on('data', (chunk) => stdout.push(chunk));
     child.stderr.on('data', (chunk) => stderr.push(chunk));
-    const timer = setTimeout(() => {
-      timedOut = true;
+    const terminate = (reason) => {
+      if (reason === 'timeout') timedOut = true;
+      if (reason === 'cancel') cancelled = true;
       try { process.kill(-child.pid, 'SIGKILL'); } catch { child.kill('SIGKILL'); }
-    }, timeoutMs);
+    };
+    const timer = setTimeout(() => terminate('timeout'), timeoutMs);
+    const onAbort = () => terminate('cancel');
+    options.signal?.addEventListener('abort', onAbort, { once: true });
     child.on('error', (error) => {
       clearTimeout(timer);
+      options.signal?.removeEventListener('abort', onAbort);
       resolve({ status: null, signal: null, stdout: Buffer.concat(stdout).toString(), stderr: `${Buffer.concat(stderr)}${error.message}`, duration_ms: Date.now() - started, timed_out: timedOut, spawn_error: error.message });
     });
     child.on('close', (status, signal) => {
       clearTimeout(timer);
-      resolve({ status, signal, stdout: Buffer.concat(stdout).toString(), stderr: Buffer.concat(stderr).toString(), duration_ms: Date.now() - started, timed_out: timedOut });
+      options.signal?.removeEventListener('abort', onAbort);
+      resolve({ status, signal, stdout: Buffer.concat(stdout).toString(), stderr: Buffer.concat(stderr).toString(), duration_ms: Date.now() - started, timed_out: timedOut, cancelled });
     });
   });
 }
