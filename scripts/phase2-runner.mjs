@@ -49,7 +49,7 @@ export function agentCommand(candidate, prompt, workspace) {
   if (candidate.runtime === 'codex') {
     return {
       command: 'codex',
-      args: ['exec', '--model', candidate.model, '--cd', workspace, '--sandbox', 'workspace-write', '--approve-for-me', prompt],
+      args: ['exec', '--model', candidate.model, '--cd', workspace, '--approve-for-me', prompt],
       pty: true
     };
   }
