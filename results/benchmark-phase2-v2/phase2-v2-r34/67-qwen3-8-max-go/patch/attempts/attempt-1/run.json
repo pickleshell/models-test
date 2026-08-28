@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r34",
+  "nomination": "patch",
+  "run_id": "phase2-v2-r34:67-qwen3-8-max-go:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "67-qwen3-8-max-go",
+    "label": "Qwen 3.8 Max (OpenCode Go)",
+    "agent": "opencode",
+    "model": "opencode-go/qwen3.8-max",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-27T21:47:22.051Z",
+  "completed_at": "2026-08-27T21:49:59.443Z",
+  "duration_ms": 157392,
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-27T21:47:22.051Z",
+    "completed_at": "2026-08-27T21:49:58.489Z",
+    "duration_ms": 156438,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0.095734,
+      "steps": 10,
+      "tokens": {
+        "input": 14063,
+        "output": 2982,
+        "reasoning": 3694,
+        "cache_read": 110208,
+        "cache_write": 0,
+        "total": 130947
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-27T21:49:58.847Z",
+    "completed_at": "2026-08-27T21:49:59.443Z",
+    "duration_ms": 596
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/patch-retry-policy/src/retryPolicy.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r34/67-qwen3-8-max-go/patch/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "bacbf7ccea1110a40531e33d29c3f303525fccb5caeb69cc71003dde94d678b7"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "f1e554973ebe42b34bed4993da5dd8d0b4c32390c64fb520012227fe6802b900"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "d67a1ced53179b375dfa5a7e21ebef345ff4948578bfb056ccf5a8e6c5b088ae"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "b95b09b51926aa232571f408bdef7e6ce91b4e07493ae707a7530b547068a080"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "54-inkling-openrouter",
+    "agent": "opencode",
+    "model": "openrouter/thinkingmachines/inkling",
+    "subscription": "paid"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-26T23:12:13.173Z",
+  "completed_at": "2026-08-26T23:12:17.153Z",
+  "duration_ms": 3980,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "1ce0e06cc2bdf92dbd2f988a8267490d4c89f25b34ad32d9ed720e0702b626d2"
+  }
+}

@@ -1,0 +1,420 @@
+{
+  "schema_version": 2,
+  "release": "crosscheck-ledger-to-retry-r1",
+  "criteria": [
+    "functional_correctness",
+    "reliability_edge_cases",
+    "maintainability_clarity",
+    "scope_discipline"
+  ],
+  "candidates": [
+    {
+      "candidate": {
+        "id": "hy3-free",
+        "agent": "opencode",
+        "model": "opencode/hy3-free",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "retry-policy",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-28T09:45:32.887Z",
+            "completed_at": "2026-08-28T09:45:53.376Z",
+            "duration_ms": 20489,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 5,
+              "tokens": {
+                "input": 14944,
+                "output": 552,
+                "reasoning": 425,
+                "cache_read": 30464,
+                "cache_write": 0,
+                "total": 46385
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-28T09:45:53.738Z",
+            "completed_at": "2026-08-28T09:45:54.333Z",
+            "duration_ms": 595
+          },
+          "agent_duration_ms": 20489,
+          "test_duration_ms": 595,
+          "duration_ms": 21446,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-patch-retry-policy-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "retry-policy",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-28T09:45:32.887Z",
+            "completed_at": "2026-08-28T09:45:53.376Z",
+            "duration_ms": 20489,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 5,
+              "tokens": {
+                "input": 14944,
+                "output": 552,
+                "reasoning": 425,
+                "cache_read": 30464,
+                "cache_write": 0,
+                "total": 46385
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-28T09:45:53.738Z",
+            "completed_at": "2026-08-28T09:45:54.333Z",
+            "duration_ms": 595
+          },
+          "agent_duration_ms": 20489,
+          "test_duration_ms": 595,
+          "duration_ms": 21446,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-patch-retry-policy-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 20489,
+      "test_duration_ms": 595,
+      "duration_ms": 21446,
+      "cost_usd": 0,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 0,
+      "objective_total": 1,
+      "objective_pass_rate": 0,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "deepseek-v4-flash-free",
+        "agent": "opencode",
+        "model": "opencode/deepseek-v4-flash-free",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "retry-policy",
+          "attempt": 1,
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "cost_usd": null,
+          "cost_source": null,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": null
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "retry-policy",
+          "attempt": 1,
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "cost_usd": null,
+          "cost_source": null,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": null
+        }
+      ],
+      "outcome": "unavailable",
+      "agent_duration_ms": null,
+      "test_duration_ms": null,
+      "duration_ms": 0,
+      "cost_usd": null,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": null,
+      "objective_total": null,
+      "objective_pass_rate": null,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "laguna-s-2-1-free",
+        "agent": "opencode",
+        "model": "opencode/laguna-s-2.1-free",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "retry-policy",
+          "attempt": 1,
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "cost_usd": null,
+          "cost_source": null,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": null
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "retry-policy",
+          "attempt": 1,
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "cost_usd": null,
+          "cost_source": null,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": null
+        }
+      ],
+      "outcome": "unavailable",
+      "agent_duration_ms": null,
+      "test_duration_ms": null,
+      "duration_ms": 0,
+      "cost_usd": null,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": null,
+      "objective_total": null,
+      "objective_pass_rate": null,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "nemotron-3-5-lightning-free",
+        "agent": "opencode",
+        "model": "opencode/nemotron-3.5-lightning-free",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "retry-policy",
+          "attempt": 1,
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "cost_usd": null,
+          "cost_source": null,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": null
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "retry-policy",
+          "attempt": 1,
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "cost_usd": null,
+          "cost_source": null,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": null
+        }
+      ],
+      "outcome": "unavailable",
+      "agent_duration_ms": null,
+      "test_duration_ms": null,
+      "duration_ms": 0,
+      "cost_usd": null,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": null,
+      "objective_total": null,
+      "objective_pass_rate": null,
+      "overall_average": null
+    }
+  ],
+  "generated_at": "2026-08-28T09:58:12.166Z",
+  "reproducibility": {
+    "runner_version": "unknown",
+    "repository_commit": "dcadd91d6d8fdb970fb0d8a1a964a0bcc29ec911",
+    "config_hash": "1ec786f283ceb56c8478035e87bdf3d956fdf415fa7dba7544e028d55b06b715",
+    "schema_registry": {
+      "schema_registry_version": 1,
+      "artifact_schemas": {
+        "run": 1,
+        "judge": 1,
+        "preflight": 1,
+        "aggregate": 2,
+        "test_result": 1,
+        "candidate_diff": 1,
+        "objective_evaluator": 1
+      }
+    },
+    "effective_limits": {
+      "timeout_ms": 900000,
+      "max_output_bytes": 2097152
+    },
+    "judge_prompt": {
+      "version": 3,
+      "template_hash": "3b0265ce6a626409d7d01a8c28f1d2a8541056ed8634241a7dc13ac2acf97ce2"
+    },
+    "outcomes": {
+      "hy3-free": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "retry-policy",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "retry-policy",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "deepseek-v4-flash-free": {
+        "overall": "unavailable",
+        "nominations": [
+          {
+            "nomination": "retry-policy",
+            "attempt": 1,
+            "outcome": "unavailable"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "retry-policy",
+            "outcome": "unavailable"
+          }
+        ]
+      },
+      "laguna-s-2-1-free": {
+        "overall": "unavailable",
+        "nominations": [
+          {
+            "nomination": "retry-policy",
+            "attempt": 1,
+            "outcome": "unavailable"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "retry-policy",
+            "outcome": "unavailable"
+          }
+        ]
+      },
+      "nemotron-3-5-lightning-free": {
+        "overall": "unavailable",
+        "nominations": [
+          {
+            "nomination": "retry-policy",
+            "attempt": 1,
+            "outcome": "unavailable"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "retry-policy",
+            "outcome": "unavailable"
+          }
+        ]
+      }
+    }
+  }
+}

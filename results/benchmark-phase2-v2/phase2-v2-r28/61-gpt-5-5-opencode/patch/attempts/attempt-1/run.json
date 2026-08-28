@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r28",
+  "nomination": "patch",
+  "run_id": "phase2-v2-r28:61-gpt-5-5-opencode:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "61-gpt-5-5-opencode",
+    "label": "GPT-5.5 (OpenCode)",
+    "agent": "opencode",
+    "model": "opencode/gpt-5.5",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-27T21:16:15.703Z",
+  "completed_at": "2026-08-27T21:16:39.706Z",
+  "duration_ms": 24003,
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-27T21:16:15.703Z",
+    "completed_at": "2026-08-27T21:16:38.751Z",
+    "duration_ms": 23048,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0.0821,
+      "steps": 5,
+      "tokens": {
+        "input": 5076,
+        "output": 1272,
+        "reasoning": 64,
+        "cache_read": 33280,
+        "cache_write": 0,
+        "total": 39692
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-27T21:16:39.114Z",
+    "completed_at": "2026-08-27T21:16:39.706Z",
+    "duration_ms": 592
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/patch-retry-policy/src/retryPolicy.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r28/61-gpt-5-5-opencode/patch/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "15c869f31dca86e2d90e2e839bc1040ade48153c299dcda8a210e0bcdb6a137c"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "f9c804c2ad4f671d0709825859d6f222bd90805282595b554f730fec53ddd8c7"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "eae082129ffe96fd66f9a4b7561ef8d42102cd51d23809d924a0b6ca198c54b2"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "78672a9802b0ae3f7ecc517afc3db855f271de1dfb7e4fba93756479f7ffeb00"
+  }
+}

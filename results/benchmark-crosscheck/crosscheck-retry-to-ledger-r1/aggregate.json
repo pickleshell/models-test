@@ -1,0 +1,484 @@
+{
+  "schema_version": 2,
+  "release": "crosscheck-retry-to-ledger-r1",
+  "criteria": [
+    "functional_correctness",
+    "reliability_edge_cases",
+    "maintainability_clarity",
+    "scope_discipline"
+  ],
+  "candidates": [
+    {
+      "candidate": {
+        "id": "glm-5-3-go",
+        "agent": "opencode",
+        "model": "opencode-go/glm-5.3",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-28T09:49:06.519Z",
+            "completed_at": "2026-08-28T09:52:22.412Z",
+            "duration_ms": 195893,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.11981584,
+              "steps": 15,
+              "tokens": {
+                "input": 15024,
+                "output": 2341,
+                "reasoning": 7361,
+                "cache_read": 215744,
+                "cache_write": 0,
+                "total": 240470
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-28T09:52:22.775Z",
+            "completed_at": "2026-08-28T09:52:23.378Z",
+            "duration_ms": 603
+          },
+          "agent_duration_ms": 195893,
+          "test_duration_ms": 603,
+          "duration_ms": 196859,
+          "cost_usd": 0.11981584,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-28T09:49:06.519Z",
+            "completed_at": "2026-08-28T09:52:22.412Z",
+            "duration_ms": 195893,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.11981584,
+              "steps": 15,
+              "tokens": {
+                "input": 15024,
+                "output": 2341,
+                "reasoning": 7361,
+                "cache_read": 215744,
+                "cache_write": 0,
+                "total": 240470
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-28T09:52:22.775Z",
+            "completed_at": "2026-08-28T09:52:23.378Z",
+            "duration_ms": 603
+          },
+          "agent_duration_ms": 195893,
+          "test_duration_ms": 603,
+          "duration_ms": 196859,
+          "cost_usd": 0.11981584,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 195893,
+      "test_duration_ms": 603,
+      "duration_ms": 196859,
+      "cost_usd": 0.11981584,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 0,
+      "objective_total": 1,
+      "objective_pass_rate": 0,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "qwen3-8-max-go",
+        "agent": "opencode",
+        "model": "opencode-go/qwen3.8-max",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-28T09:52:28.213Z",
+            "completed_at": "2026-08-28T09:56:13.031Z",
+            "duration_ms": 224818,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.13562,
+              "steps": 15,
+              "tokens": {
+                "input": 18956,
+                "output": 2402,
+                "reasoning": 5584,
+                "cache_read": 199168,
+                "cache_write": 0,
+                "total": 226110
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-28T09:56:13.389Z",
+            "completed_at": "2026-08-28T09:56:14.004Z",
+            "duration_ms": 615
+          },
+          "agent_duration_ms": 224818,
+          "test_duration_ms": 615,
+          "duration_ms": 225791,
+          "cost_usd": 0.13562,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-28T09:52:28.213Z",
+            "completed_at": "2026-08-28T09:56:13.031Z",
+            "duration_ms": 224818,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.13562,
+              "steps": 15,
+              "tokens": {
+                "input": 18956,
+                "output": 2402,
+                "reasoning": 5584,
+                "cache_read": 199168,
+                "cache_write": 0,
+                "total": 226110
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-28T09:56:13.389Z",
+            "completed_at": "2026-08-28T09:56:14.004Z",
+            "duration_ms": 615
+          },
+          "agent_duration_ms": 224818,
+          "test_duration_ms": 615,
+          "duration_ms": 225791,
+          "cost_usd": 0.13562,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 224818,
+      "test_duration_ms": 615,
+      "duration_ms": 225791,
+      "cost_usd": 0.13562,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 0,
+      "objective_total": 1,
+      "objective_pass_rate": 0,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "gpt-5-3-codex-opencode",
+        "agent": "opencode",
+        "model": "opencode/gpt-5.3-codex",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "ledger",
+          "attempt": 1,
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "cost_usd": null,
+          "cost_source": null,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": null
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "ledger",
+          "attempt": 1,
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "cost_usd": null,
+          "cost_source": null,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": null
+        }
+      ],
+      "outcome": "unavailable",
+      "agent_duration_ms": null,
+      "test_duration_ms": null,
+      "duration_ms": 0,
+      "cost_usd": null,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": null,
+      "objective_total": null,
+      "objective_pass_rate": null,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "gpt-5-5-pro-opencode",
+        "agent": "opencode",
+        "model": "opencode/gpt-5.5-pro",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "ledger",
+          "attempt": 1,
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "cost_usd": null,
+          "cost_source": null,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": null
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "ledger",
+          "attempt": 1,
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "cost_usd": null,
+          "cost_source": null,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": null
+        }
+      ],
+      "outcome": "unavailable",
+      "agent_duration_ms": null,
+      "test_duration_ms": null,
+      "duration_ms": 0,
+      "cost_usd": null,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": null,
+      "objective_total": null,
+      "objective_pass_rate": null,
+      "overall_average": null
+    }
+  ],
+  "generated_at": "2026-08-28T09:56:31.465Z",
+  "reproducibility": {
+    "runner_version": "unknown",
+    "repository_commit": "dcadd91d6d8fdb970fb0d8a1a964a0bcc29ec911",
+    "config_hash": "94448559d6bda932ebc77f3f4732d46f4b5734f61bc6463923cb7c1fae5df27c",
+    "schema_registry": {
+      "schema_registry_version": 1,
+      "artifact_schemas": {
+        "run": 1,
+        "judge": 1,
+        "preflight": 1,
+        "aggregate": 2,
+        "test_result": 1,
+        "candidate_diff": 1,
+        "objective_evaluator": 1
+      }
+    },
+    "effective_limits": {
+      "timeout_ms": 900000,
+      "max_output_bytes": 2097152
+    },
+    "judge_prompt": {
+      "version": 3,
+      "template_hash": "3b0265ce6a626409d7d01a8c28f1d2a8541056ed8634241a7dc13ac2acf97ce2"
+    },
+    "outcomes": {
+      "glm-5-3-go": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "ledger",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "ledger",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "qwen3-8-max-go": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "ledger",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "ledger",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "gpt-5-3-codex-opencode": {
+        "overall": "unavailable",
+        "nominations": [
+          {
+            "nomination": "ledger",
+            "attempt": 1,
+            "outcome": "unavailable"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "ledger",
+            "outcome": "unavailable"
+          }
+        ]
+      },
+      "gpt-5-5-pro-opencode": {
+        "overall": "unavailable",
+        "nominations": [
+          {
+            "nomination": "ledger",
+            "attempt": 1,
+            "outcome": "unavailable"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "ledger",
+            "outcome": "unavailable"
+          }
+        ]
+      }
+    }
+  }
+}

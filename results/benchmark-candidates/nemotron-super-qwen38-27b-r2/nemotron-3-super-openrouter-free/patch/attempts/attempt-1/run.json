@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "release": "nemotron-super-qwen38-27b-r2",
+  "nomination": "patch",
+  "run_id": "nemotron-super-qwen38-27b-r2:nemotron-3-super-openrouter-free:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "nemotron-3-super-openrouter-free",
+    "label": "Nemotron 3 Super OpenRouter Free",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "provider": "openrouter",
+    "model": "openrouter/nvidia/nemotron-3-super-120b-a12b:free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-28T09:15:43.092Z",
+  "completed_at": "2026-08-28T09:20:08.248Z",
+  "duration_ms": 265156,
+  "benchmark_metrics": {
+    "duration_ms": 265156,
+    "model_duration_ms": 264070,
+    "public_tests_duration_ms": 683,
+    "cost_usd": 0,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-28T09:15:43.092Z",
+    "completed_at": "2026-08-28T09:20:07.162Z",
+    "duration_ms": 264070,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0,
+      "steps": 33,
+      "tokens": {
+        "input": 272990,
+        "output": 3575,
+        "reasoning": 14859,
+        "cache_read": 544896,
+        "cache_write": 0,
+        "total": 836173
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-28T09:20:07.565Z",
+    "completed_at": "2026-08-28T09:20:08.248Z",
+    "duration_ms": 683
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase1-ledger/src/reconcile.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-candidates/nemotron-super-qwen38-27b-r2/nemotron-3-super-openrouter-free/patch/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "088ff57875f95452684823f7f343b88096896749c1224e8a361631bd5f4fb8d0"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "3963c8d1efd583172b73484053645241a561e836941c6f0d9f1abcd662ad0d09"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "36bba9ec4c419ff17e1d914ae44a3963a41c3fa0c5de3027b3450994a3ac22cb"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "e902d4c93ae748c7a2f0620c0cb657dbb81db70e60574f1dff7cde63c1aeb2d8"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "judge": {
+    "id": "claude-opus-4-8",
+    "agent": "opencode",
+    "model": "opencode/claude-opus-4-8",
+    "subscription": "paid",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "failed",
+  "response": "{\"type\":\"error\",\"timestamp\":1787855918809,\"sessionID\":\"ses_fbb7baad1ffeqICfGUWqEJGmqy\",\"error\":{\"name\":\"UnknownError\",\"data\":{\"message\":\"Unexpected server error. Check server logs for details.\",\"ref\":\"err_22beb4bd\"}}}",
+  "scores": null,
+  "confidence": null,
+  "explanation": null,
+  "concerns": [],
+  "execution": {
+    "status": 1,
+    "signal": null,
+    "timed_out": false,
+    "started_at": "2026-08-27T18:38:37.308Z",
+    "completed_at": "2026-08-27T18:38:38.868Z",
+    "duration_ms": 1560,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": null,
+      "steps": 0,
+      "tokens": {
+        "input": 0,
+        "output": 0,
+        "reasoning": 0,
+        "cache_read": 0,
+        "cache_write": 0,
+        "total": 0
+      }
+    }
+  },
+  "judge_prompt_version": 3,
+  "judge_prompt_hash": "d1079ac7ed7543ad2573302c42d6b6e262a73dc477e1772a3fb03171fa2d01ea",
+  "candidate": "59-nemotron-3-super-openrouter-free",
+  "nomination": "patch",
+  "run_id": "phase2-v2-r17:59-nemotron-3-super-openrouter-free:patch",
+  "attempt": 1,
+  "artifact_hash": {
+    "path": "claude-opus-4-8.json",
+    "sha256": "f95c42c472fa573e101fe1ead30b9cfd2a1770902f8e61dd8200fdc0ddf55243"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "release": "crosscheck-ledger-to-retry-r1",
+  "nomination": "retry-policy",
+  "run_id": "crosscheck-ledger-to-retry-r1:laguna-s-2-1-free:retry-policy",
+  "attempt": 1,
+  "candidate": {
+    "id": "laguna-s-2-1-free",
+    "agent": "opencode",
+    "model": "opencode/laguna-s-2.1-free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-28T09:45:56.242Z",
+  "completed_at": "2026-08-28T09:45:56.242Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-28T09:45:54.636Z",
+    "completed_at": "2026-08-28T09:45:56.241Z",
+    "duration_ms": 1605
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-crosscheck/crosscheck-ledger-to-retry-r1/laguna-s-2-1-free/retry-policy/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "74d2aace14a0235655f80ca80c92b1bd181864cbc406dd425504a7b8eb69c559"
+  }
+}

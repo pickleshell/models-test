@@ -1,0 +1,370 @@
+{
+  "schema_version": 2,
+  "release": "phase2-v2-r24",
+  "criteria": [
+    "functional_correctness",
+    "reliability_edge_cases",
+    "maintainability_clarity",
+    "scope_discipline"
+  ],
+  "candidates": [
+    {
+      "candidate": {
+        "id": "51-claude-haiku-4-5",
+        "label": "Claude Haiku 4.5",
+        "agent": "opencode",
+        "model": "opencode/claude-haiku-4-5",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 6,
+      "nominations": [
+        {
+          "nomination": "patch",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-27T20:23:34.098Z",
+            "completed_at": "2026-08-27T20:23:59.592Z",
+            "duration_ms": 25494,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.02885935,
+              "steps": 12,
+              "tokens": {
+                "input": 62,
+                "output": 1981,
+                "reasoning": 0,
+                "cache_read": 124661,
+                "cache_write": 5141,
+                "total": 131845
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-27T20:23:59.948Z",
+            "completed_at": "2026-08-27T20:24:00.544Z",
+            "duration_ms": 596
+          },
+          "agent_duration_ms": 25494,
+          "test_duration_ms": 596,
+          "duration_ms": 26446,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 1,
+          "judge_durations": [
+            {
+              "id": "gemini-3-7-flash",
+              "status": "failed",
+              "duration_ms": 1574
+            }
+          ],
+          "judge_duration_ms": 1574,
+          "objective_evaluator": {
+            "id": "phase2-v2-patch-retry-policy-v1",
+            "status": "completed",
+            "passed": false
+          }
+        },
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "missing_artifacts",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": null
+        },
+        {
+          "nomination": "feature-implementation",
+          "attempt": 1,
+          "outcome": "missing_artifacts",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": null
+        },
+        {
+          "nomination": "refactoring",
+          "attempt": 1,
+          "outcome": "missing_artifacts",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": null
+        },
+        {
+          "nomination": "repository-navigation",
+          "attempt": 1,
+          "outcome": "missing_artifacts",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": null
+        },
+        {
+          "nomination": "tests-edge-cases",
+          "attempt": 1,
+          "outcome": "missing_artifacts",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": null
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "patch",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-27T20:23:34.098Z",
+            "completed_at": "2026-08-27T20:23:59.592Z",
+            "duration_ms": 25494,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.02885935,
+              "steps": 12,
+              "tokens": {
+                "input": 62,
+                "output": 1981,
+                "reasoning": 0,
+                "cache_read": 124661,
+                "cache_write": 5141,
+                "total": 131845
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-27T20:23:59.948Z",
+            "completed_at": "2026-08-27T20:24:00.544Z",
+            "duration_ms": 596
+          },
+          "agent_duration_ms": 25494,
+          "test_duration_ms": 596,
+          "duration_ms": 26446,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 1,
+          "judge_durations": [
+            {
+              "id": "gemini-3-7-flash",
+              "status": "failed",
+              "duration_ms": 1574
+            }
+          ],
+          "judge_duration_ms": 1574,
+          "objective_evaluator": {
+            "id": "phase2-v2-patch-retry-policy-v1",
+            "status": "completed",
+            "passed": false
+          }
+        },
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "missing_artifacts",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": null
+        },
+        {
+          "nomination": "feature-implementation",
+          "attempt": 1,
+          "outcome": "missing_artifacts",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": null
+        },
+        {
+          "nomination": "refactoring",
+          "attempt": 1,
+          "outcome": "missing_artifacts",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": null
+        },
+        {
+          "nomination": "repository-navigation",
+          "attempt": 1,
+          "outcome": "missing_artifacts",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": null
+        },
+        {
+          "nomination": "tests-edge-cases",
+          "attempt": 1,
+          "outcome": "missing_artifacts",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": null
+        }
+      ],
+      "outcome": "missing_artifacts",
+      "agent_duration_ms": null,
+      "test_duration_ms": null,
+      "duration_ms": null,
+      "judge_count": 0,
+      "judge_average_by_id": {
+        "gemini-3-7-flash": null
+      },
+      "judge_duration_by_id": {
+        "gemini-3-7-flash": 1574
+      },
+      "judge_duration_ms": null,
+      "judge_average": {},
+      "objective_pass_count": 0,
+      "objective_total": 1,
+      "objective_pass_rate": 0,
+      "overall_average": null
+    }
+  ],
+  "generated_at": "2026-08-27T20:25:37.715Z",
+  "reproducibility": {
+    "runner_version": "unknown",
+    "repository_commit": "665d9b60d736848a26347588423ef6f33cb2c856",
+    "config_hash": "d04791bb99df7a079dc06c113822c7e167df2bc72901ef6805c5ff0b7335851e",
+    "schema_registry": {
+      "schema_registry_version": 1,
+      "artifact_schemas": {
+        "run": 1,
+        "judge": 1,
+        "preflight": 1,
+        "aggregate": 2,
+        "test_result": 1,
+        "candidate_diff": 1,
+        "objective_evaluator": 1
+      }
+    },
+    "effective_limits": {
+      "timeout_ms": 900000,
+      "max_output_bytes": 2097152
+    },
+    "judge_prompt": {
+      "version": 3,
+      "template_hash": "3b0265ce6a626409d7d01a8c28f1d2a8541056ed8634241a7dc13ac2acf97ce2"
+    },
+    "outcomes": {
+      "51-claude-haiku-4-5": {
+        "overall": "missing_artifacts",
+        "nominations": [
+          {
+            "nomination": "patch",
+            "attempt": 1,
+            "outcome": "completed"
+          },
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "missing_artifacts"
+          },
+          {
+            "nomination": "feature-implementation",
+            "attempt": 1,
+            "outcome": "missing_artifacts"
+          },
+          {
+            "nomination": "refactoring",
+            "attempt": 1,
+            "outcome": "missing_artifacts"
+          },
+          {
+            "nomination": "repository-navigation",
+            "attempt": 1,
+            "outcome": "missing_artifacts"
+          },
+          {
+            "nomination": "tests-edge-cases",
+            "attempt": 1,
+            "outcome": "missing_artifacts"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "patch",
+            "outcome": "completed"
+          },
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "missing_artifacts"
+          },
+          {
+            "task": "feature-implementation",
+            "outcome": "missing_artifacts"
+          },
+          {
+            "task": "refactoring",
+            "outcome": "missing_artifacts"
+          },
+          {
+            "task": "repository-navigation",
+            "outcome": "missing_artifacts"
+          },
+          {
+            "task": "tests-edge-cases",
+            "outcome": "missing_artifacts"
+          }
+        ]
+      }
+    }
+  }
+}

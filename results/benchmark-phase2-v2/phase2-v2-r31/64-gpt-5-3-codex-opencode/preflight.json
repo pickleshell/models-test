@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "64-gpt-5-3-codex-opencode",
+    "label": "GPT-5.3 Codex (OpenCode)",
+    "agent": "opencode",
+    "model": "opencode/gpt-5.3-codex",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-27T21:36:36.992Z",
+  "completed_at": "2026-08-27T21:36:40.968Z",
+  "duration_ms": 3976,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0.0081193,
+    "steps": 1,
+    "tokens": {
+      "input": 4446,
+      "output": 5,
+      "reasoning": 0,
+      "cache_read": 1536,
+      "cache_write": 0,
+      "total": 5987
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "be3d8a8b65ef1057e0841dd6b776c12dda08c74b7b11d91d83625aa119f4f2f7"
+  }
+}

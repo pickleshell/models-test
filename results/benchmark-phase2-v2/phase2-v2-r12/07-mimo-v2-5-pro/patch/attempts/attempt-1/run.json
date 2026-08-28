@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r12",
+  "nomination": "patch",
+  "run_id": "phase2-v2-r12:07-mimo-v2-5-pro:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "07-mimo-v2-5-pro",
+    "label": "MiMo V2.5 Pro",
+    "agent": "opencode",
+    "model": "opencode-go/mimo-v2.5-pro",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-27T15:31:38.684Z",
+  "completed_at": "2026-08-27T15:32:43.720Z",
+  "duration_ms": 65036,
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-27T15:31:38.684Z",
+    "completed_at": "2026-08-27T15:32:42.753Z",
+    "duration_ms": 64069,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0.004208915,
+      "steps": 8,
+      "tokens": {
+        "input": 4447,
+        "output": 2309,
+        "reasoning": 0,
+        "cache_read": 73280,
+        "cache_write": 0,
+        "total": 80036
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-27T15:32:43.120Z",
+    "completed_at": "2026-08-27T15:32:43.720Z",
+    "duration_ms": 600
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/patch-retry-policy/src/retryPolicy.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r12/07-mimo-v2-5-pro/patch/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "3138af2c12e2f0c4f4c61bfc9b46698ad448271ffab45327f0a5aba941e1938e"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "761f3ef7062f06aa9a5032f264c37affa118ade5a0e45a485971e66585b7225f"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "482b773f7a93b71f61232bdd5e375ee9d51aa015f3bd4f12833bf66c9160915e"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "ccd8c7837bd2f6ad2115ce9c62325579b8fbac258e887d205fcc08c113dbb829"
+  }
+}

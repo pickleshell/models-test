@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "35-nemotron-3-ultra-free",
+    "label": "Nemotron 3 Ultra Free",
+    "agent": "opencode",
+    "model": "opencode/nemotron-3-ultra-free",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-27T19:02:39.178Z",
+  "completed_at": "2026-08-27T19:02:46.273Z",
+  "duration_ms": 7095,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0,
+    "steps": 1,
+    "tokens": {
+      "input": 8140,
+      "output": 2,
+      "reasoning": 24,
+      "cache_read": 0,
+      "cache_write": 0,
+      "total": 8166
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "400c00f8bf8adf38beee88c57e6c7154e6a758ee8bd1d68f16eb60af73c501de"
+  }
+}

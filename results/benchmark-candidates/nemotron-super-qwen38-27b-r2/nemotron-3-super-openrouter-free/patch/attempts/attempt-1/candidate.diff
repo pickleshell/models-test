@@ -1,0 +1,87 @@
+diff --git a/fixtures/phase1-ledger/src/reconcile.js b/fixtures/phase1-ledger/src/reconcile.js
+index 496d11c..83e767f 100644
+--- a/fixtures/phase1-ledger/src/reconcile.js
++++ b/fixtures/phase1-ledger/src/reconcile.js
+@@ -4,12 +4,44 @@ export function parseAmountToCents(amount) {
+   }
+ 
+   const normalized = String(amount).trim().replace(/[$,]/g, '');
+-  const value = Number(normalized);
+-  if (!Number.isFinite(value)) {
++  if (normalized === '') {
+     throw new Error(`invalid amount: ${amount}`);
+   }
+-
+-  return Math.round(value * 100);
++  // Check for negative sign
++  if (normalized.includes('-')) {
++    throw new Error(`invalid amount: ${amount}`);
++  }
++  // Check for multiple decimal points
++  if (normalized.split('.').length > 2) {
++    throw new Error(`invalid amount: ${amount}`);
++  }
++  // Split into integer and fractional parts
++  const parts = normalized.split('.');
++  let integerPart = parts[0];
++  let fractionalPart = parts[1] || '';
++  // Check that integerPart and fractionalPart consist only of digits
++  if (/[^0-9]/.test(integerPart)) {
++    throw new Error(`invalid amount: ${amount}`);
++  }
++  if (fractionalPart && /[^0-9]/.test(fractionalPart)) {
++    throw new Error(`invalid amount: ${amount}`);
++  }
++  // Check fractional part length
++  if (fractionalPart.length > 2) {
++    throw new Error(`invalid amount: ${amount}`);
++  }
++  // Compute cents without floating point
++  let cents = 0;
++  if (integerPart !== '') {
++    cents += parseInt(integerPart, 10) * 100;
++  }
++  if (fractionalPart.length === 1) {
++    cents += parseInt(fractionalPart, 10) * 10;
++  } else if (fractionalPart.length === 2) {
++    cents += parseInt(fractionalPart, 10);
++  }
++  // Note: if fractionalPart is empty, we add nothing (which is correct for integer dollars)
++  return cents;
+ }
+ 
+ function dayKey(createdAt) {
+@@ -17,7 +49,7 @@ function dayKey(createdAt) {
+   if (Number.isNaN(date.getTime())) {
+     throw new Error(`invalid createdAt: ${createdAt}`);
+   }
+-  return date.toLocaleDateString('en-CA');
++  return date.toISOString().slice(0, 10);
+ }
+ 
+ function addTotal(totals, accountId, currency, day, cents) {
+@@ -50,10 +82,11 @@ export function reconcileLedger(entries) {
+       if (!entry.accountId) throw new Error('missing accountId');
+       if (!entry.currency) throw new Error('missing currency');
+ 
+-      if (seenIds.has(entry.id)) {
+-        metrics.duplicateCount += 1;
+-      }
+-      seenIds.add(entry.id);
++if (seenIds.has(entry.id)) {
++         metrics.duplicateCount += 1;
++         continue;
++       }
++       seenIds.add(entry.id);
+ 
+       const cents = parseAmountToCents(entry.amount);
+       const day = dayKey(entry.createdAt);
+@@ -68,7 +101,7 @@ export function reconcileLedger(entries) {
+           metrics.orphanRefundCount += 1;
+           continue;
+         }
+-        addTotal(totals, entry.accountId, entry.currency, day, -cents);
++        addTotal(totals, original.accountId, original.currency, day, -cents);
+         metrics.processed += 1;
+       } else {
+         throw new Error(`unsupported type: ${entry.type}`);

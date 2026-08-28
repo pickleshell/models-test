@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "16-kimi-k2-6",
+    "label": "Kimi K2.6",
+    "agent": "opencode",
+    "model": "opencode-go/kimi-k2.6",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-27T20:15:10.477Z",
+  "completed_at": "2026-08-27T20:15:15.068Z",
+  "duration_ms": 4591,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0.00293866,
+    "steps": 1,
+    "tokens": {
+      "input": 2214,
+      "output": 3,
+      "reasoning": 42,
+      "cache_read": 4096,
+      "cache_write": 0,
+      "total": 6355
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "21f9bda90559ddf086c513b4d7e15fe2c15da1612f90dbf1a4e2285288550667"
+  }
+}

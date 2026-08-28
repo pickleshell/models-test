@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "kind": "manual_code_review",
+  "release": "crosscheck-codex-hostfix-r2",
+  "candidate": "gpt-5-6-luna",
+  "nomination": "retry-policy",
+  "attempt": 1,
+  "reviewer": { "id": "codex", "type": "assistant_manual_review" },
+  "identity_blind": false,
+  "scores": {
+    "functional_correctness": 8,
+    "reliability_edge_cases": 5,
+    "maintainability_clarity": 9,
+    "scope_discipline": 10
+  },
+  "average": 8.0,
+  "summary": "The focused patch fixes digit-only delta-seconds, past-date clamping, positive-integer attempts, the backoff exponent, and overflow capping, and it passes public tests. It does not reject numeric-looking invalid forms before Date.parse, so values such as signed, fractional, exponent, or hexadecimal strings can be interpreted as dates instead of returning null.",
+  "evidence": { "public_tests_passed": true, "objective_evaluator_passed": false, "forbidden_changes": 0 }
+}

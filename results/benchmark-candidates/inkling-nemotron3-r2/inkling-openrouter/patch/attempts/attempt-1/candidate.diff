@@ -1,0 +1,80 @@
+diff --git a/fixtures/phase1-ledger/src/reconcile.js b/fixtures/phase1-ledger/src/reconcile.js
+index 496d11c..71370fc 100644
+--- a/fixtures/phase1-ledger/src/reconcile.js
++++ b/fixtures/phase1-ledger/src/reconcile.js
+@@ -3,9 +3,33 @@ export function parseAmountToCents(amount) {
+     throw new Error('amount must be a decimal string or number');
+   }
+ 
+-  const normalized = String(amount).trim().replace(/[$,]/g, '');
++  const str = String(amount).trim();
++  if (!str) {
++    throw new Error(`invalid amount: ${amount}`);
++  }
++
++  const normalized = str.replace(/[$,]/g, '');
++  if (!normalized) {
++    throw new Error(`invalid amount: ${amount}`);
++  }
++  if (normalized.startsWith('-')) {
++    throw new Error(`invalid amount: ${amount}`);
++  }
++
++  const parts = normalized.split('.');
++  if (parts.length > 2) {
++    throw new Error(`invalid amount: ${amount}`);
++  }
++  const integerPart = parts[0] || '0';
++  const decimalPart = parts[1] || '';
++  if (!/^[0-9]*$/.test(integerPart) || !/^[0-9]*$/.test(decimalPart)) {
++    throw new Error(`invalid amount: ${amount}`);
++  }
++  if (decimalPart.length > 2) {
++    throw new Error(`invalid amount: ${amount}`);
++  }
+   const value = Number(normalized);
+-  if (!Number.isFinite(value)) {
++  if (!Number.isFinite(value) || value < 0) {
+     throw new Error(`invalid amount: ${amount}`);
+   }
+ 
+@@ -17,7 +41,10 @@ function dayKey(createdAt) {
+   if (Number.isNaN(date.getTime())) {
+     throw new Error(`invalid createdAt: ${createdAt}`);
+   }
+-  return date.toLocaleDateString('en-CA');
++  const year = date.getUTCFullYear();
++  const month = String(date.getUTCMonth() + 1).padStart(2, '0');
++  const day = String(date.getUTCDate()).padStart(2, '0');
++  return `${year}-${month}-${day}`;
+ }
+ 
+ function addTotal(totals, accountId, currency, day, cents) {
+@@ -47,14 +74,16 @@ export function reconcileLedger(entries) {
+     try {
+       if (!entry || typeof entry !== 'object') throw new Error('entry must be an object');
+       if (!entry.id) throw new Error('missing id');
+-      if (!entry.accountId) throw new Error('missing accountId');
+-      if (!entry.currency) throw new Error('missing currency');
+ 
+       if (seenIds.has(entry.id)) {
+         metrics.duplicateCount += 1;
++        continue;
+       }
+       seenIds.add(entry.id);
+ 
++      if (!entry.accountId) throw new Error('missing accountId');
++      if (!entry.currency) throw new Error('missing currency');
++
+       const cents = parseAmountToCents(entry.amount);
+       const day = dayKey(entry.createdAt);
+ 
+@@ -68,7 +97,7 @@ export function reconcileLedger(entries) {
+           metrics.orphanRefundCount += 1;
+           continue;
+         }
+-        addTotal(totals, entry.accountId, entry.currency, day, -cents);
++        addTotal(totals, original.accountId, original.currency, day, -cents);
+         metrics.processed += 1;
+       } else {
+         throw new Error(`unsupported type: ${entry.type}`);

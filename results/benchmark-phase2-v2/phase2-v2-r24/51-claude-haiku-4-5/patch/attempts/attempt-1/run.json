@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r24",
+  "nomination": "patch",
+  "run_id": "phase2-v2-r24:51-claude-haiku-4-5:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "51-claude-haiku-4-5",
+    "label": "Claude Haiku 4.5",
+    "agent": "opencode",
+    "model": "opencode/claude-haiku-4-5",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-27T20:23:34.098Z",
+  "completed_at": "2026-08-27T20:24:00.544Z",
+  "duration_ms": 26446,
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-27T20:23:34.098Z",
+    "completed_at": "2026-08-27T20:23:59.592Z",
+    "duration_ms": 25494,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0.02885935,
+      "steps": 12,
+      "tokens": {
+        "input": 62,
+        "output": 1981,
+        "reasoning": 0,
+        "cache_read": 124661,
+        "cache_write": 5141,
+        "total": 131845
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-27T20:23:59.948Z",
+    "completed_at": "2026-08-27T20:24:00.544Z",
+    "duration_ms": 596
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/patch-retry-policy/src/retryPolicy.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r24/51-claude-haiku-4-5/patch/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "581b88a9f7a5d1fba2a2a67afa66bdf11249b29a31891e8a5bc9a81b4a052298"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "f633b9075d0a1718f26cc3e7a6e0ac2cc23fad58d8fcde6df020cdef223463b4"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "ee90caea60c756ac150670d91d8fe214d2c84e36f4be9493bab27aaa14668b6d"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "959d1451b03aebd149156c24b8d7e6902945d963180149142a09f4449c0fca6a"
+  }
+}

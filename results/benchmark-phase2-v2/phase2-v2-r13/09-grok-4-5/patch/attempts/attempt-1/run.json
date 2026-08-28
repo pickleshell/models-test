@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r13",
+  "nomination": "patch",
+  "run_id": "phase2-v2-r13:09-grok-4-5:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "09-grok-4-5",
+    "label": "Grok 4.5",
+    "agent": "opencode",
+    "model": "opencode-go/grok-4.5",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-27T17:56:32.194Z",
+  "completed_at": "2026-08-27T17:56:32.194Z",
+  "duration_ms": 0,
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-27T17:56:30.596Z",
+    "completed_at": "2026-08-27T17:56:32.192Z",
+    "duration_ms": 1596
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r13/09-grok-4-5/patch/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "340feaf224641d1ad739f1f6103430713568b2bbebb483398dbdd856211cdc3e"
+  }
+}

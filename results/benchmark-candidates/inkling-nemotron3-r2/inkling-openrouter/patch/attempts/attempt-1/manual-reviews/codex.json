@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "kind": "manual_code_review",
+  "release": "inkling-nemotron3-r2",
+  "candidate": "inkling-openrouter",
+  "nomination": "patch",
+  "attempt": 1,
+  "reviewer": {
+    "id": "codex",
+    "type": "assistant_manual_review"
+  },
+  "identity_blind": false,
+  "scores": {
+    "functional_correctness": 7,
+    "reliability_edge_cases": 4,
+    "maintainability_clarity": 7,
+    "scope_discipline": 10
+  },
+  "average": 7.0,
+  "summary": "The patch fixes duplicate handling, UTC grouping, refund attribution, negative values, and excess decimal places, and it passes public tests. It does not validate the original placement of currency and comma separators, so realistic malformed money inputs are accepted and the objective evaluator fails.",
+  "evidence": {
+    "public_tests_passed": true,
+    "objective_evaluator_passed": false,
+    "forbidden_changes": 0
+  }
+}

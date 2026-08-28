@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "release": "crosscheck-codex-ledger-to-retry-r1",
+  "nomination": "retry-policy",
+  "run_id": "crosscheck-codex-ledger-to-retry-r1:gpt-5-3-codex-spark:retry-policy",
+  "attempt": 1,
+  "candidate": {
+    "id": "gpt-5-3-codex-spark",
+    "agent": "codex",
+    "model": "gpt-5.3-codex-spark",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-28T10:06:47.394Z",
+  "completed_at": "2026-08-28T10:06:47.394Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-28T10:06:47.208Z",
+    "completed_at": "2026-08-28T10:06:47.392Z",
+    "duration_ms": 184
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-crosscheck/crosscheck-codex-ledger-to-retry-r1/gpt-5-3-codex-spark/retry-policy/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "cb3724ec6c942f7128b46e15e1dc07be8a3c3c4dcb544eae59a53037eecf01c2"
+  }
+}

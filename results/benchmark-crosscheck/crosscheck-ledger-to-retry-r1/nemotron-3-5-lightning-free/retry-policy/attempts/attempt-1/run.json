@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "release": "crosscheck-ledger-to-retry-r1",
+  "nomination": "retry-policy",
+  "run_id": "crosscheck-ledger-to-retry-r1:nemotron-3-5-lightning-free:retry-policy",
+  "attempt": 1,
+  "candidate": {
+    "id": "nemotron-3-5-lightning-free",
+    "agent": "opencode",
+    "model": "opencode/nemotron-3.5-lightning-free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-28T09:57:58.498Z",
+  "completed_at": "2026-08-28T09:57:58.498Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "timeout",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-28T09:56:53.380Z",
+    "completed_at": "2026-08-28T09:57:58.496Z",
+    "duration_ms": 65116
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-crosscheck/crosscheck-ledger-to-retry-r1/nemotron-3-5-lightning-free/retry-policy/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "c7f4d339b146138faf5c20dc6fec1fc9cb2779e34cd91c1ee5e4c5866e9e6afd"
+  }
+}

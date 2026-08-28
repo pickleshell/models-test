@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r20",
+  "nomination": "patch",
+  "run_id": "phase2-v2-r20:53-claude-opus-5:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "53-claude-opus-5",
+    "label": "Claude Opus 5",
+    "agent": "opencode",
+    "model": "opencode/claude-opus-5",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-27T19:33:08.358Z",
+  "completed_at": "2026-08-27T19:34:39.670Z",
+  "duration_ms": 91312,
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-27T19:33:08.358Z",
+    "completed_at": "2026-08-27T19:34:38.718Z",
+    "duration_ms": 90360,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0.30080325,
+      "steps": 10,
+      "tokens": {
+        "input": 20,
+        "output": 6710,
+        "reasoning": 0,
+        "cache_read": 153694,
+        "cache_write": 8977,
+        "total": 169401
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-27T19:34:39.079Z",
+    "completed_at": "2026-08-27T19:34:39.670Z",
+    "duration_ms": 591
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/patch-retry-policy/src/retryPolicy.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r20/53-claude-opus-5/patch/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "0b85cde3f2a7aede55b6befdbb2cd15a859acb67d742b29c720e9064f2857eb4"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "23a78fd416d88b786e5680ffdcb11bce1a82974ee30b29dd5dc01bf53a2266d0"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "f280e3cddb03d30bd1dca57bbda5bfe8c60341b161593e7fe62a106723caff63"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "bdb48cb293c2e3b0c56485ad90309ce2ff3d4e8835150e3b132300623b23073e"
+  }
+}

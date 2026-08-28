@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r4",
+  "nomination": "patch",
+  "run_id": "phase2-v2-r4:54-inkling-openrouter:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "54-inkling-openrouter",
+    "agent": "opencode",
+    "model": "openrouter/thinkingmachines/inkling",
+    "subscription": "paid"
+  },
+  "started_at": "2026-08-26T23:12:17.420Z",
+  "completed_at": "2026-08-26T23:12:42.194Z",
+  "duration_ms": 24774,
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-26T23:12:17.420Z",
+    "completed_at": "2026-08-26T23:12:41.241Z",
+    "duration_ms": 23821
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-26T23:12:41.601Z",
+    "completed_at": "2026-08-26T23:12:42.194Z",
+    "duration_ms": 593
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/patch-retry-policy/src/retryPolicy.js"
+  ],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r4/54-inkling-openrouter/patch/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "e058a457d728d5a6c77b07f33966f046a3a9c62beecaf6bcbfddd3b44f8ebc20"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "69fb6e049a12c9069b004fad19d296fa9634fde863b0562902483bd2e90e5b82"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "312f8c0c96e678807e15d192a4ee5b51539c6c8f1cd810082eae02eadb426ae8"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "ab1889247757d43ab9f7de8c393e42308f9cc4a87b03ba8268d6d1b7509ba670"
+  }
+}

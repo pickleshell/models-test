@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "release": "inkling-nemotron3-r2",
+  "nomination": "patch",
+  "run_id": "inkling-nemotron3-r2:inkling-openrouter:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "inkling-openrouter",
+    "label": "Inkling OpenRouter",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "provider": "openrouter",
+    "model": "openrouter/thinkingmachines/inkling",
+    "subscription": "paid",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-28T08:54:31.764Z",
+  "completed_at": "2026-08-28T08:56:19.090Z",
+  "duration_ms": 107326,
+  "benchmark_metrics": {
+    "duration_ms": 107326,
+    "model_duration_ms": 106218,
+    "public_tests_duration_ms": 699,
+    "cost_usd": 0.08485171,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-28T08:54:31.764Z",
+    "completed_at": "2026-08-28T08:56:17.982Z",
+    "duration_ms": 106218,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0.08485171,
+      "steps": 23,
+      "tokens": {
+        "input": 26102,
+        "output": 1542,
+        "reasoning": 3327,
+        "cache_read": 252096,
+        "cache_write": 0,
+        "total": 282949
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-28T08:56:18.391Z",
+    "completed_at": "2026-08-28T08:56:19.090Z",
+    "duration_ms": 699
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase1-ledger/src/reconcile.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-candidates/inkling-nemotron3-r2/inkling-openrouter/patch/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "39ef61be94458ac9a0fab5170d0704be5856f8bec5a7685c1e04526c4436deae"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "5304d19ca8876e42c58b1c9881e780f0b87e85cc545b3718487b95c8562bf167"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "91e24e1ee6071095652540265211c87cafdd3f7ba85cfaa2d2317d1ee6539fa6"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "ddd6a53321125cc649b77e99d250b86c4a669ff653f8d526a46f4298ff9fa8bc"
+  }
+}

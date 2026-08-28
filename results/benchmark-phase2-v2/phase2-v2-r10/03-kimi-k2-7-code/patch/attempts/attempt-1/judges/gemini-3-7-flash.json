@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "judge": {
+    "id": "gemini-3-7-flash",
+    "agent": "opencode",
+    "model": "opencode/gemini-3.7-flash",
+    "subscription": "paid",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "failed",
+  "response": "{\"type\":\"error\",\"timestamp\":1787819081559,\"sessionID\":\"ses_fbdadc253ffeUBDuvmXtcGbzqe\",\"error\":{\"name\":\"UnknownError\",\"data\":{\"message\":\"Unexpected server error. Check server logs for details.\",\"ref\":\"err_b85508a6\"}}}",
+  "scores": null,
+  "confidence": null,
+  "explanation": null,
+  "concerns": [],
+  "execution": {
+    "status": 1,
+    "signal": null,
+    "timed_out": false,
+    "started_at": "2026-08-27T08:24:40.043Z",
+    "completed_at": "2026-08-27T08:24:41.611Z",
+    "duration_ms": 1568,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": null,
+      "steps": 0,
+      "tokens": {
+        "input": 0,
+        "output": 0,
+        "reasoning": 0,
+        "cache_read": 0,
+        "cache_write": 0,
+        "total": 0
+      }
+    }
+  },
+  "judge_prompt_version": 3,
+  "judge_prompt_hash": "d1079ac7ed7543ad2573302c42d6b6e262a73dc477e1772a3fb03171fa2d01ea",
+  "candidate": "03-kimi-k2-7-code",
+  "nomination": "patch",
+  "run_id": "phase2-v2-r10:03-kimi-k2-7-code:patch",
+  "attempt": 1,
+  "artifact_hash": {
+    "path": "gemini-3-7-flash.json",
+    "sha256": "a1415aa979c78411a82618bed7d013aebbd1ba775cbef98089579042e0e0b6d7"
+  }
+}

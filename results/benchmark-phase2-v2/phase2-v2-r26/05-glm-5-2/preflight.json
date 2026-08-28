@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "05-glm-5-2",
+    "label": "GLM-5.2",
+    "agent": "opencode",
+    "model": "opencode-go/glm-5.2",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-27T20:39:18.659Z",
+  "completed_at": "2026-08-27T20:39:22.513Z",
+  "duration_ms": 3854,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0.00726328,
+    "steps": 1,
+    "tokens": {
+      "input": 4745,
+      "output": 4,
+      "reasoning": 0,
+      "cache_read": 2318,
+      "cache_write": 0,
+      "total": 7067
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "18b0484f2cc83a563726dcd7de0067aeabe899a8cdb14ab6b5a1ef539b9c4ce9"
+  }
+}

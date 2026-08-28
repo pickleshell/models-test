@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r21",
+  "nomination": "patch",
+  "run_id": "phase2-v2-r21:52-claude-sonnet-5:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "52-claude-sonnet-5",
+    "label": "Claude Sonnet 5",
+    "agent": "opencode",
+    "model": "opencode/claude-sonnet-5",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-27T19:53:37.004Z",
+  "completed_at": "2026-08-27T19:55:07.786Z",
+  "duration_ms": 90782,
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-27T19:53:37.004Z",
+    "completed_at": "2026-08-27T19:55:06.843Z",
+    "duration_ms": 89839,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0.1478449,
+      "steps": 15,
+      "tokens": {
+        "input": 30,
+        "output": 7134,
+        "reasoning": 0,
+        "cache_read": 246737,
+        "cache_write": 10839,
+        "total": 264740
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-27T19:55:07.195Z",
+    "completed_at": "2026-08-27T19:55:07.786Z",
+    "duration_ms": 591
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/patch-retry-policy/src/retryPolicy.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r21/52-claude-sonnet-5/patch/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "1449fdcd555e9320adb75e9ce7e9add239e6006d37cecbe0f01817f5aabc4833"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "78a70af5ce92525dec4df815f524099dbab88f2cd97f363af2b3ce8fd8eaa1ff"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "252fb8c72bd2b2b16336fe2e2cd167807805fa1b2f825fed5b8dd953ccab6df5"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "ae26c32d5d7732fcd390883f3dd01299c600effc65b86d9b14f0dd79d18d7669"
+  }
+}

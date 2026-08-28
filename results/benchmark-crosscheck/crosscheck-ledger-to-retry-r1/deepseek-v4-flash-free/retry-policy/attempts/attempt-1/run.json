@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "release": "crosscheck-ledger-to-retry-r1",
+  "nomination": "retry-policy",
+  "run_id": "crosscheck-ledger-to-retry-r1:deepseek-v4-flash-free:retry-policy",
+  "attempt": 1,
+  "candidate": {
+    "id": "deepseek-v4-flash-free",
+    "agent": "opencode",
+    "model": "opencode/deepseek-v4-flash-free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-28T09:45:27.610Z",
+  "completed_at": "2026-08-28T09:45:27.610Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-28T09:45:26.037Z",
+    "completed_at": "2026-08-28T09:45:27.608Z",
+    "duration_ms": 1571
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-crosscheck/crosscheck-ledger-to-retry-r1/deepseek-v4-flash-free/retry-policy/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "1295d44fefcf09ccc296664e0cf66aca405b7357f291dfc5fca4f2ad89bea7a6"
+  }
+}

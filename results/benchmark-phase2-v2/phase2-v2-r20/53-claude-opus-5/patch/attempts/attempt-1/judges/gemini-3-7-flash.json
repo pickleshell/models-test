@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "judge": {
+    "id": "gemini-3-7-flash",
+    "agent": "opencode",
+    "model": "opencode/gemini-3.7-flash",
+    "subscription": "paid",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "failed",
+  "response": "{\"type\":\"error\",\"timestamp\":1787859402468,\"sessionID\":\"ses_fbb4682b4ffe2hP7ZxFqJsbbFv\",\"error\":{\"name\":\"UnknownError\",\"data\":{\"message\":\"Unexpected server error. Check server logs for details.\",\"ref\":\"err_ecbbc6d6\"}}}",
+  "scores": null,
+  "confidence": null,
+  "explanation": null,
+  "concerns": [],
+  "execution": {
+    "status": 1,
+    "signal": null,
+    "timed_out": false,
+    "started_at": "2026-08-27T19:36:40.978Z",
+    "completed_at": "2026-08-27T19:36:42.527Z",
+    "duration_ms": 1549,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": null,
+      "steps": 0,
+      "tokens": {
+        "input": 0,
+        "output": 0,
+        "reasoning": 0,
+        "cache_read": 0,
+        "cache_write": 0,
+        "total": 0
+      }
+    }
+  },
+  "judge_prompt_version": 3,
+  "judge_prompt_hash": "d1079ac7ed7543ad2573302c42d6b6e262a73dc477e1772a3fb03171fa2d01ea",
+  "candidate": "53-claude-opus-5",
+  "nomination": "patch",
+  "run_id": "phase2-v2-r20:53-claude-opus-5:patch",
+  "attempt": 1,
+  "artifact_hash": {
+    "path": "gemini-3-7-flash.json",
+    "sha256": "9a0786d222b8e31ffe48e9e196e8784330c69080fdf956eb7c01a78b89e5d185"
+  }
+}

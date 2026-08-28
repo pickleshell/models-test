@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "evaluator": {
+    "id": "phase2-v2-patch-retry-policy-v1",
+    "sha256": "e41934b6219b70cf5d84e1005e3b7a27d331665ac86faff7973d1a7a2d6450b7"
+  },
+  "status": "completed",
+  "passed": false,
+  "started_at": "2026-08-27T03:22:18.847Z",
+  "completed_at": "2026-08-27T03:22:19.026Z",
+  "duration_ms": 179,
+  "execution": {
+    "status": 1,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-27T03:22:18.847Z",
+    "completed_at": "2026-08-27T03:22:19.026Z",
+    "duration_ms": 179
+  },
+  "artifact_hash": {
+    "path": "objective-evaluator.json",
+    "sha256": "3f19f61f013d8f28938716c3ba0f53fbe8972f09eb01080b3030f622a10cf1e4"
+  }
+}

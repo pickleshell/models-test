@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "release": "nemotron-super-qwen38-27b-r2",
+  "nomination": "patch",
+  "run_id": "nemotron-super-qwen38-27b-r2:qwen3-8-27b-openrouter:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "qwen3-8-27b-openrouter",
+    "label": "Qwen 3.8 27B OpenRouter",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "provider": "openrouter",
+    "model": "openrouter/qwen/qwen3.8-27b",
+    "subscription": "paid",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-28T09:20:14.383Z",
+  "completed_at": "2026-08-28T09:24:59.197Z",
+  "duration_ms": 284814,
+  "benchmark_metrics": {
+    "duration_ms": 284814,
+    "model_duration_ms": 283855,
+    "public_tests_duration_ms": 599,
+    "cost_usd": 0.077952225,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-28T09:20:14.383Z",
+    "completed_at": "2026-08-28T09:24:58.238Z",
+    "duration_ms": 283855,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0.077952225,
+      "steps": 10,
+      "tokens": {
+        "input": 130387,
+        "output": 8145,
+        "reasoning": 0,
+        "cache_read": 20800,
+        "cache_write": 0,
+        "total": 159332
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-28T09:24:58.598Z",
+    "completed_at": "2026-08-28T09:24:59.197Z",
+    "duration_ms": 599
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase1-ledger/src/reconcile.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-candidates/nemotron-super-qwen38-27b-r2/qwen3-8-27b-openrouter/patch/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "bc8f33bec9fc63c1d2661296cf19854b56793397db345b39b22b33ec76646828"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "3ab79608f6ab7be664bbf9b0f9645ba2654e34442bb4bbeade89b3b8bf6e64c8"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "f49a3f38569d59027c0e6dd02f2273e49716af47486e5dbc4db7be7f71452a60"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "6d867e91b6ceb559d74c144d0c26f7688da1b90becc466a8ec3ae39222e8e980"
+  }
+}

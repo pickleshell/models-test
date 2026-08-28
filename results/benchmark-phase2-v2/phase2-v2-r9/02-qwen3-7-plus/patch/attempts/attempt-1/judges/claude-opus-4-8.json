@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "judge": {
+    "id": "claude-opus-4-8",
+    "agent": "opencode",
+    "model": "opencode/claude-opus-4-8",
+    "subscription": "paid",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "failed",
+  "response": "{\"type\":\"error\",\"timestamp\":1787816938749,\"sessionID\":\"ses_fbdce74b1ffex15oWNa4o6pV0e\",\"error\":{\"name\":\"UnknownError\",\"data\":{\"message\":\"Unexpected server error. Check server logs for details.\",\"ref\":\"err_26de3512\"}}}",
+  "scores": null,
+  "confidence": null,
+  "explanation": null,
+  "concerns": [],
+  "execution": {
+    "status": 1,
+    "signal": null,
+    "timed_out": false,
+    "started_at": "2026-08-27T07:48:57.235Z",
+    "completed_at": "2026-08-27T07:48:58.804Z",
+    "duration_ms": 1569,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": null,
+      "steps": 0,
+      "tokens": {
+        "input": 0,
+        "output": 0,
+        "reasoning": 0,
+        "cache_read": 0,
+        "cache_write": 0,
+        "total": 0
+      }
+    }
+  },
+  "judge_prompt_version": 3,
+  "judge_prompt_hash": "d1079ac7ed7543ad2573302c42d6b6e262a73dc477e1772a3fb03171fa2d01ea",
+  "candidate": "02-qwen3-7-plus",
+  "nomination": "patch",
+  "run_id": "phase2-v2-r9:02-qwen3-7-plus:patch",
+  "attempt": 1,
+  "artifact_hash": {
+    "path": "claude-opus-4-8.json",
+    "sha256": "f64cdc6d888ef7ef8e9c1b9cbf0aa58f6a94785e9b41b70cd21ba7e142712c1e"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "60-gpt-5-6-terra-opencode",
+    "label": "GPT-5.6 Terra (OpenCode)",
+    "agent": "opencode",
+    "model": "opencode/gpt-5.6-terra",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-27T21:04:15.983Z",
+  "completed_at": "2026-08-27T21:04:19.529Z",
+  "duration_ms": 3546,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0.019685625,
+    "steps": 1,
+    "tokens": {
+      "input": 3,
+      "output": 5,
+      "reasoning": 0,
+      "cache_read": 0,
+      "cache_write": 6273,
+      "total": 6281
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "704e993d265eac77b6df0d276fba1d4f32c9e8b628c5542a5a1981958a75c311"
+  }
+}

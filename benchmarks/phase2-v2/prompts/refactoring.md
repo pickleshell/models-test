@@ -1,0 +1,1 @@
+Refactor the event summaries as documented in the fixture README. Extract exactly one shared, non-exported helper named `matchingValidEvents(events, type)` and route both existing exports through it. Preserve only the two existing exports and public API; update only the allowed source file.

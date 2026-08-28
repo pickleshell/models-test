@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "11-deepseek-v4-flash",
+    "label": "DeepSeek V4 Flash",
+    "agent": "opencode",
+    "model": "opencode-go/deepseek-v4-flash",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-27T18:00:41.984Z",
+  "completed_at": "2026-08-27T18:00:45.254Z",
+  "duration_ms": 3270,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0.001261484,
+    "steps": 1,
+    "tokens": {
+      "input": 5665,
+      "output": 4,
+      "reasoning": 0,
+      "cache_read": 1792,
+      "cache_write": 0,
+      "total": 7461
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "41f3946c9f29bd4ffd09b019e2518a83c480b280dc6a445d7746c14185ef3623"
+  }
+}

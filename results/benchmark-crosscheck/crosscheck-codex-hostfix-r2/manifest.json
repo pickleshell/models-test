@@ -1,0 +1,70 @@
+{
+  "schema_version": 3,
+  "release": "crosscheck-codex-hostfix-r2",
+  "nominations": [
+    {
+      "id": "retry-policy",
+      "fixture": "fixtures/phase2-v2/patch-retry-policy",
+      "prompt": "benchmarks/phase2-v2/prompts/patch.md",
+      "test_command": [
+        "npm",
+        "test",
+        "--prefix",
+        "fixtures/phase2-v2/patch-retry-policy"
+      ],
+      "allowed_changes": [
+        "fixtures/phase2-v2/patch-retry-policy/src/retryPolicy.js"
+      ],
+      "frozen_inputs": {
+        "fixture_tree": {
+          "algorithm": "sha256-tree-v1",
+          "sha256": "0bbd7d657f208c2147754e77c03e8a5606aca4e2736c201c2390b0a1ea2d531e",
+          "files": 4
+        },
+        "prompt_sha256": "cd8edc8375eb912c6022fdc1cde2f72b53d524f881f5d994ac291b94af55785f"
+      },
+      "objective_evaluator": {
+        "id": "phase2-v2-patch-retry-policy-v1",
+        "sha256": "e41934b6219b70cf5d84e1005e3b7a27d331665ac86faff7973d1a7a2d6450b7",
+        "source_sha256": "5abe30317770b4cbb03c18df5a91ca50ace87d1ec171db2feaeb3c1dfb6cc010"
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "id": "gpt-5-6-luna",
+      "agent": "codex",
+      "model": "gpt-5.6-luna",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "gpt-5-6-sol",
+      "agent": "codex",
+      "model": "gpt-5.6-sol",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "gpt-5-6-terra",
+      "agent": "codex",
+      "model": "gpt-5.6-terra",
+      "reasoning_variant": "provider_default"
+    }
+  ],
+  "judges": [],
+  "criteria": [
+    "functional_correctness",
+    "reliability_edge_cases",
+    "maintainability_clarity",
+    "scope_discipline"
+  ],
+  "retry_policy": {
+    "canonical_attempt": 1,
+    "allow_retries": false
+  },
+  "judge_prompt": {
+    "version": 3,
+    "template_hash": "3b0265ce6a626409d7d01a8c28f1d2a8541056ed8634241a7dc13ac2acf97ce2"
+  },
+  "config_sha256": "45da0f64ab2d05d7ced113e2d584dbe6dade6d19bd06ff9232abe75774bc9cc4",
+  "spec_hash": "cf8e7538944b89e1d444a07b7fcae5d4e782d60579eb18508336618525888700"
+}

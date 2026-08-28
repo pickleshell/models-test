@@ -1,0 +1,70 @@
+{
+  "schema_version": 3,
+  "release": "inkling-nemotron3-r1",
+  "nominations": [
+    {
+      "id": "patch",
+      "fixture": "fixtures/phase1-ledger",
+      "prompt": "fixtures/phase1-ledger/PROMPT.md",
+      "test_command": [
+        "npm",
+        "test"
+      ],
+      "allowed_changes": [
+        "fixtures/phase1-ledger/src/reconcile.js"
+      ],
+      "frozen_inputs": {
+        "fixture_tree": {
+          "algorithm": "sha256-tree-v1",
+          "sha256": "06ad193feec22c6a5d93747726cd2237b764d2a1f05d17182bef9f5683bb55d4",
+          "files": 5
+        },
+        "prompt_sha256": "e99d613647b1d741d3f746ccfbbd0b723d106e46c42ab1fd6df398ad2d5e9d58"
+      },
+      "objective_evaluator": {
+        "id": "phase2-bug-fix-v1",
+        "sha256": "f3bf35b4af253b4b83bfa8351f078c9e198d89cc63fba4e3d086b1fe56739b99",
+        "source_sha256": "52e1fef85a80bdc158f0ab9bd03107ebb8782754a0341da3844b03a374f54782"
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "id": "inkling-openrouter",
+      "label": "Inkling OpenRouter",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "openrouter",
+      "model": "openrouter/thinkingmachines/inkling",
+      "subscription": "paid",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "nemotron-3-ultra-free",
+      "label": "Nemotron 3 Ultra Free",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "opencode",
+      "model": "opencode/nemotron-3-ultra-free",
+      "subscription": "free",
+      "reasoning_variant": "provider_default"
+    }
+  ],
+  "judges": [],
+  "criteria": [
+    "functional_correctness",
+    "reliability_edge_cases",
+    "maintainability_clarity",
+    "scope_discipline"
+  ],
+  "retry_policy": {
+    "canonical_attempt": 1,
+    "allow_retries": false
+  },
+  "judge_prompt": {
+    "version": 3,
+    "template_hash": "3b0265ce6a626409d7d01a8c28f1d2a8541056ed8634241a7dc13ac2acf97ce2"
+  },
+  "config_sha256": "13c3daea115cb7742ca7477aa477cf54161663f1789b7aa07443ce69eea888e6",
+  "spec_hash": "b8e7a7accf8ada9743a0312dfb778e1318506ae43a2c9d16c54baeb12af3bc50"
+}

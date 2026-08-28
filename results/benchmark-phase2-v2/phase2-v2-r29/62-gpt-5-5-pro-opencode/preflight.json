@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "62-gpt-5-5-pro-opencode",
+    "label": "GPT-5.5 Pro (OpenCode)",
+    "agent": "opencode",
+    "model": "opencode/gpt-5.5-pro",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-27T21:18:34.805Z",
+  "completed_at": "2026-08-27T21:18:41.327Z",
+  "duration_ms": 6522,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0.19398,
+    "steps": 1,
+    "tokens": {
+      "input": 6274,
+      "output": 7,
+      "reasoning": 25,
+      "cache_read": 0,
+      "cache_write": 0,
+      "total": 6306
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "5e8f5e1c56fa614c4126fe8deaf6d019df6e842cc047a2b79ddde224909915b4"
+  }
+}

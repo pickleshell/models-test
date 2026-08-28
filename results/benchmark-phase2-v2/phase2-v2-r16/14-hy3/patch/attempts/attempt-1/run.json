@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r16",
+  "nomination": "patch",
+  "run_id": "phase2-v2-r16:14-hy3:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "14-hy3",
+    "label": "Hy3",
+    "agent": "opencode",
+    "model": "opencode-go/hy3",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-27T18:30:06.258Z",
+  "completed_at": "2026-08-27T18:30:38.008Z",
+  "duration_ms": 31750,
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-27T18:30:06.258Z",
+    "completed_at": "2026-08-27T18:30:37.054Z",
+    "duration_ms": 30796,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0.0005663575,
+      "steps": 8,
+      "tokens": {
+        "input": 9569,
+        "output": 1102,
+        "reasoning": 538,
+        "cache_read": 64000,
+        "cache_write": 0,
+        "total": 75209
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-27T18:30:37.406Z",
+    "completed_at": "2026-08-27T18:30:38.008Z",
+    "duration_ms": 602
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/patch-retry-policy/src/retryPolicy.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r16/14-hy3/patch/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "c695f44ddfdb3838fe82269c88cbcbb89612bcaaae1cdceceb7efb4fa88978d1"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "0557b0c4b80f8a20d6649f8defd4793faed03608eb2fac6983d8ed2d71748613"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "fb1ecf79acf28826e09c62383f061cd15537d6c18361d8eae0c5145427a2ea2a"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "2131cbab10416c8b232dd644dbd83c1e0b97d3fa1f20010070235eacc6b308c3"
+  }
+}

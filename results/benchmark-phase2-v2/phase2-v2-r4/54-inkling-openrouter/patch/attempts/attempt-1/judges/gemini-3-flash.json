@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "judge": {
+    "id": "gemini-3-flash",
+    "agent": "opencode",
+    "model": "opencode/gemini-3-flash",
+    "subscription": "paid-low-cost"
+  },
+  "status": "failed",
+  "response": "{\"type\":\"error\",\"timestamp\":1787786107681,\"sessionID\":\"ses_fbfa4e690ffeUS26HhhfXgXtsy\",\"error\":{\"name\":\"UnknownError\",\"data\":{\"message\":\"Unexpected server error. Check server logs for details.\",\"ref\":\"err_8290f2dc\"}}}",
+  "scores": null,
+  "confidence": null,
+  "explanation": null,
+  "concerns": [],
+  "execution": {
+    "status": 1,
+    "signal": null,
+    "timed_out": false,
+    "started_at": "2026-08-26T23:15:06.156Z",
+    "completed_at": "2026-08-26T23:15:07.739Z",
+    "duration_ms": 1583
+  },
+  "judge_prompt_version": 2,
+  "judge_prompt_hash": "1b7e80e9451004f96ce5054e9d8f14deb57eeaba6d610f43d11795b6064ee7f1",
+  "candidate": "54-inkling-openrouter",
+  "nomination": "patch",
+  "run_id": "phase2-v2-r4:54-inkling-openrouter:patch",
+  "attempt": 1,
+  "artifact_hash": {
+    "path": "gemini-3-flash.json",
+    "sha256": "1f4f443eb968d2221e264be3184dfc7707f9b63d3f10f5ca92203cdbf018a5bd"
+  }
+}

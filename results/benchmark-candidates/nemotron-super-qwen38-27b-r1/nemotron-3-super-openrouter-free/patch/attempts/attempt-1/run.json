@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "release": "nemotron-super-qwen38-27b-r1",
+  "nomination": "patch",
+  "run_id": "nemotron-super-qwen38-27b-r1:nemotron-3-super-openrouter-free:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "nemotron-3-super-openrouter-free",
+    "label": "Nemotron 3 Super OpenRouter Free",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "provider": "openrouter",
+    "model": "openrouter/nvidia/nemotron-3-super-120b-a12b:free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-28T09:14:55.898Z",
+  "completed_at": "2026-08-28T09:14:55.898Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-28T09:14:52.868Z",
+    "completed_at": "2026-08-28T09:14:55.897Z",
+    "duration_ms": 3029
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-candidates/nemotron-super-qwen38-27b-r1/nemotron-3-super-openrouter-free/patch/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "85178727f9e154a0f59d5d416a2a8d449e7b52e0452f6d411aebd03b2f7f0f91"
+  }
+}

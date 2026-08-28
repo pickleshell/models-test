@@ -1,0 +1,27 @@
+diff --git a/fixtures/phase2-v2/patch-retry-policy/src/retryPolicy.js b/fixtures/phase2-v2/patch-retry-policy/src/retryPolicy.js
+index 5472bcd..7385aac 100644
+--- a/fixtures/phase2-v2/patch-retry-policy/src/retryPolicy.js
++++ b/fixtures/phase2-v2/patch-retry-policy/src/retryPolicy.js
+@@ -4,17 +4,17 @@ export function parseRetryAfter(value, nowMs) {
+   if (typeof value !== 'string') return null;
+   const trimmed = value.trim();
+   if (!trimmed) return null;
+-  const seconds = Number(trimmed);
+-  if (Number.isFinite(seconds) && seconds >= 0) return seconds * 1000;
++  if (/^[0-9]+$/.test(trimmed)) return Number(trimmed) * 1000;
++  if (/^[+-]?(?:0[xX][0-9a-fA-F]+|(?:[0-9]+(?:\.[0-9]*)?|\.[0-9]+)(?:[eE][+-]?[0-9]+)?)$/.test(trimmed)) return null;
+   const dateMs = Date.parse(trimmed);
+   if (!Number.isFinite(dateMs) || !Number.isFinite(nowMs)) return null;
+-  return dateMs - nowMs;
++  return Math.max(0, dateMs - nowMs);
+ }
+ 
+ export function computeRetryDelay({ attempt, retryAfter, nowMs }) {
+-  if (!Number.isFinite(attempt) || attempt < 1) throw new Error('attempt must be positive');
++  if (!Number.isInteger(attempt) || attempt < 1) throw new Error('attempt must be a positive integer');
+   if (!Number.isFinite(nowMs)) throw new Error('nowMs must be finite');
+   const retryAfterMs = parseRetryAfter(retryAfter, nowMs);
+   if (retryAfterMs !== null) return Math.min(MAX_DELAY_MS, retryAfterMs);
+-  return Math.min(MAX_DELAY_MS, 1000 * (2 ** attempt));
++  return Math.min(MAX_DELAY_MS, 1000 * (2 ** (attempt - 1)));
+ }

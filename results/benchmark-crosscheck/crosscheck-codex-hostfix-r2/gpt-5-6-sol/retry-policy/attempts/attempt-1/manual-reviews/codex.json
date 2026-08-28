@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "kind": "manual_code_review",
+  "release": "crosscheck-codex-hostfix-r2",
+  "candidate": "gpt-5-6-sol",
+  "nomination": "retry-policy",
+  "attempt": 1,
+  "reviewer": { "id": "codex", "type": "assistant_manual_review" },
+  "identity_blind": false,
+  "scores": {
+    "functional_correctness": 10,
+    "reliability_edge_cases": 10,
+    "maintainability_clarity": 8,
+    "scope_discipline": 10
+  },
+  "average": 9.5,
+  "summary": "The patch satisfies the complete observable contract and passes both public and hidden objective tests. It correctly separates digit-only delta-seconds from prohibited numeric syntax before falling back to Date.parse, clamps past dates, validates attempts, and safely caps huge exponential delays. The numeric-syntax regular expression is dense but localized and purposeful.",
+  "evidence": { "public_tests_passed": true, "objective_evaluator_passed": true, "forbidden_changes": 0 }
+}

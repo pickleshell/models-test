@@ -1,0 +1,7 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { reconcileLedger, parseAmountToCents } from '../src/reconcile.js';
+test('parses ordinary money', () => { assert.equal(parseAmountToCents('12.34'), 1234); assert.equal(parseAmountToCents('$1,200.05'), 120005); });
+test('aggregates sales', () => { const r = reconcileLedger([{ id: 's1', type: 'sale', accountId: 'a', currency: 'USD', amount: '10.00', createdAt: '2026-02-03T10:00:00Z' }, { id: 's2', type: 'sale', accountId: 'a', currency: 'USD', amount: '2.50', createdAt: '2026-02-03T18:00:00Z' }]); assert.deepEqual(r.totals, [{ accountId: 'a', currency: 'USD', day: '2026-02-03', netCents: 1250, count: 2 }]); assert.equal(r.metrics.processed, 2); });
+test('ignores duplicate ids', () => { const r = reconcileLedger([{ id: 's1', type: 'sale', accountId: 'a', currency: 'USD', amount: '10.00', createdAt: '2026-02-03T10:00:00Z' }, { id: 's1', type: 'sale', accountId: 'a', currency: 'USD', amount: '99.00', createdAt: '2026-02-03T10:05:00Z' }]); assert.equal(r.metrics.duplicateCount, 1); assert.equal(r.metrics.processed, 1); });
+test('counts invalid rows and orphan refunds', () => { const r = reconcileLedger([{ id: 'bad', type: 'sale', accountId: 'a', currency: 'USD', amount: 'not-money', createdAt: '2026-02-03T10:00:00Z' }, { id: 'r1', type: 'refund', originalId: 'missing', accountId: 'a', currency: 'USD', amount: '3.00', createdAt: '2026-02-04T10:00:00Z' }]); assert.equal(r.metrics.invalidCount, 1); assert.equal(r.metrics.orphanRefundCount, 1); assert.deepEqual(r.totals, []); });

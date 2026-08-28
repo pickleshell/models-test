@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "55-glm-5-3-go",
+    "agent": "opencode",
+    "model": "opencode-go/glm-5.3",
+    "subscription": "paid"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-26T22:39:38.168Z",
+  "completed_at": "2026-08-26T22:39:46.940Z",
+  "duration_ms": 8772,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "2402f11271766b903caa4e6cf508f10ef513ca13cd58a8949c94e12d6300a0c6"
+  }
+}

@@ -1,0 +1,1 @@
+Explore the repository and fix the user-visible status-label behavior described in the fixture README through the smallest appropriate implementation change. Preserve the public API. Do not modify tests or package metadata.

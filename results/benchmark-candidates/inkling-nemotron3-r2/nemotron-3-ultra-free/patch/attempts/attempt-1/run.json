@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "release": "inkling-nemotron3-r2",
+  "nomination": "patch",
+  "run_id": "inkling-nemotron3-r2:nemotron-3-ultra-free:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "nemotron-3-ultra-free",
+    "label": "Nemotron 3 Ultra Free",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "provider": "opencode",
+    "model": "opencode/nemotron-3-ultra-free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-28T08:56:27.014Z",
+  "completed_at": "2026-08-28T08:58:03.878Z",
+  "duration_ms": 96864,
+  "benchmark_metrics": {
+    "duration_ms": 96864,
+    "model_duration_ms": 95889,
+    "public_tests_duration_ms": 613,
+    "cost_usd": 0,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 1,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-28T08:56:27.014Z",
+    "completed_at": "2026-08-28T08:58:02.903Z",
+    "duration_ms": 95889,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0,
+      "steps": 5,
+      "tokens": {
+        "input": 40810,
+        "output": 258,
+        "reasoning": 147,
+        "cache_read": 8640,
+        "cache_write": 0,
+        "total": 49855
+      }
+    }
+  },
+  "tests": {
+    "status": 1,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-28T08:58:03.265Z",
+    "completed_at": "2026-08-28T08:58:03.878Z",
+    "duration_ms": 613
+  },
+  "outcome": "agent_failure",
+  "changed_files": [],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-candidates/inkling-nemotron3-r2/nemotron-3-ultra-free/patch/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "914144025f72c08a749acc3c281a9aaef4a0362c7afa264c8c82f3a2f764a1a4"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "7fb9007cb54da63420a94b988a4e49b9fb698d7c6194ead45d3c87f10e9bb0d0"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "fcd185a98184082a79816a7b95daf3ed9d3f8868e7e0eec165edd3bc77bfd018"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "56-kimi-k3-opencode",
+    "agent": "opencode",
+    "model": "opencode/kimi-k3",
+    "subscription": "paid"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-26T22:47:50.776Z",
+  "completed_at": "2026-08-26T22:47:54.940Z",
+  "duration_ms": 4164,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "8060e32cbadb9e4ee6c22a9e55cd631043afdb4bd8bdc2b760188556e88ebad5"
+  }
+}

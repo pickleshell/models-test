@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "judge": {
+    "id": "claude-opus-4-8",
+    "agent": "opencode",
+    "model": "opencode/claude-opus-4-8",
+    "subscription": "paid",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "failed",
+  "response": "{\"type\":\"error\",\"timestamp\":1787795290348,\"sessionID\":\"ses_fbf18c8b8ffeTF8JCWhafHAnJb\",\"error\":{\"name\":\"UnknownError\",\"data\":{\"message\":\"Unexpected server error. Check server logs for details.\",\"ref\":\"err_fa7dbd73\"}}}",
+  "scores": null,
+  "confidence": null,
+  "explanation": null,
+  "concerns": [],
+  "execution": {
+    "status": 1,
+    "signal": null,
+    "timed_out": false,
+    "started_at": "2026-08-27T01:48:08.831Z",
+    "completed_at": "2026-08-27T01:48:10.403Z",
+    "duration_ms": 1572,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": null,
+      "steps": 0,
+      "tokens": {
+        "input": 0,
+        "output": 0,
+        "reasoning": 0,
+        "cache_read": 0,
+        "cache_write": 0,
+        "total": 0
+      }
+    }
+  },
+  "judge_prompt_version": 3,
+  "judge_prompt_hash": "d1079ac7ed7543ad2573302c42d6b6e262a73dc477e1772a3fb03171fa2d01ea",
+  "candidate": "56-kimi-k3-opencode",
+  "nomination": "patch",
+  "run_id": "phase2-v2-r6:56-kimi-k3-opencode:patch",
+  "attempt": 1,
+  "artifact_hash": {
+    "path": "claude-opus-4-8.json",
+    "sha256": "32362ebbb53aac21602aaa77a6bd4b5534edc422cde3da2ee722bc717cc8af84"
+  }
+}

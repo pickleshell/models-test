@@ -1,0 +1,834 @@
+{
+  "schema_version": 2,
+  "release": "crosscheck-codex-ledger-to-retry-r1",
+  "criteria": [
+    "functional_correctness",
+    "reliability_edge_cases",
+    "maintainability_clarity",
+    "scope_discipline"
+  ],
+  "candidates": [
+    {
+      "candidate": {
+        "id": "gpt-5-4",
+        "agent": "codex",
+        "model": "gpt-5.4",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "retry-policy",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-28T10:07:28.788Z",
+            "completed_at": "2026-08-28T10:08:01.735Z",
+            "duration_ms": 32947,
+            "usage": {
+              "source": "provider_not_reported",
+              "reported_cost_usd": null,
+              "steps": null,
+              "tokens": {
+                "input": null,
+                "output": null,
+                "reasoning": null,
+                "cache_read": null,
+                "cache_write": null,
+                "total": null
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-28T10:08:02.107Z",
+            "completed_at": "2026-08-28T10:08:02.699Z",
+            "duration_ms": 592
+          },
+          "agent_duration_ms": 32947,
+          "test_duration_ms": 592,
+          "duration_ms": 33911,
+          "cost_usd": null,
+          "cost_source": "provider_not_reported",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-patch-retry-policy-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "retry-policy",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-28T10:07:28.788Z",
+            "completed_at": "2026-08-28T10:08:01.735Z",
+            "duration_ms": 32947,
+            "usage": {
+              "source": "provider_not_reported",
+              "reported_cost_usd": null,
+              "steps": null,
+              "tokens": {
+                "input": null,
+                "output": null,
+                "reasoning": null,
+                "cache_read": null,
+                "cache_write": null,
+                "total": null
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-28T10:08:02.107Z",
+            "completed_at": "2026-08-28T10:08:02.699Z",
+            "duration_ms": 592
+          },
+          "agent_duration_ms": 32947,
+          "test_duration_ms": 592,
+          "duration_ms": 33911,
+          "cost_usd": null,
+          "cost_source": "provider_not_reported",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-patch-retry-policy-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 32947,
+      "test_duration_ms": 592,
+      "duration_ms": 33911,
+      "cost_usd": null,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 0,
+      "objective_total": 1,
+      "objective_pass_rate": 0,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "gpt-5-4-mini",
+        "agent": "codex",
+        "model": "gpt-5.4-mini",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "retry-policy",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-28T10:08:18.386Z",
+            "completed_at": "2026-08-28T10:09:08.032Z",
+            "duration_ms": 49646,
+            "usage": {
+              "source": "provider_not_reported",
+              "reported_cost_usd": null,
+              "steps": null,
+              "tokens": {
+                "input": null,
+                "output": null,
+                "reasoning": null,
+                "cache_read": null,
+                "cache_write": null,
+                "total": null
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-28T10:09:08.394Z",
+            "completed_at": "2026-08-28T10:09:08.992Z",
+            "duration_ms": 598
+          },
+          "agent_duration_ms": 49646,
+          "test_duration_ms": 598,
+          "duration_ms": 50606,
+          "cost_usd": null,
+          "cost_source": "provider_not_reported",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-patch-retry-policy-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "retry-policy",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-28T10:08:18.386Z",
+            "completed_at": "2026-08-28T10:09:08.032Z",
+            "duration_ms": 49646,
+            "usage": {
+              "source": "provider_not_reported",
+              "reported_cost_usd": null,
+              "steps": null,
+              "tokens": {
+                "input": null,
+                "output": null,
+                "reasoning": null,
+                "cache_read": null,
+                "cache_write": null,
+                "total": null
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-28T10:09:08.394Z",
+            "completed_at": "2026-08-28T10:09:08.992Z",
+            "duration_ms": 598
+          },
+          "agent_duration_ms": 49646,
+          "test_duration_ms": 598,
+          "duration_ms": 50606,
+          "cost_usd": null,
+          "cost_source": "provider_not_reported",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-patch-retry-policy-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 49646,
+      "test_duration_ms": 598,
+      "duration_ms": 50606,
+      "cost_usd": null,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 0,
+      "objective_total": 1,
+      "objective_pass_rate": 0,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "gpt-5-6-luna",
+        "agent": "codex",
+        "model": "gpt-5.6-luna",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "retry-policy",
+          "attempt": 1,
+          "outcome": "tests_failed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-28T10:09:14.556Z",
+            "completed_at": "2026-08-28T10:09:38.391Z",
+            "duration_ms": 23835,
+            "usage": {
+              "source": "provider_not_reported",
+              "reported_cost_usd": null,
+              "steps": null,
+              "tokens": {
+                "input": null,
+                "output": null,
+                "reasoning": null,
+                "cache_read": null,
+                "cache_write": null,
+                "total": null
+              }
+            }
+          },
+          "tests": {
+            "status": 1,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-28T10:09:38.751Z",
+            "completed_at": "2026-08-28T10:09:39.351Z",
+            "duration_ms": 600
+          },
+          "agent_duration_ms": 23835,
+          "test_duration_ms": 600,
+          "duration_ms": 24795,
+          "cost_usd": null,
+          "cost_source": "provider_not_reported",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-patch-retry-policy-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "retry-policy",
+          "attempt": 1,
+          "outcome": "tests_failed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-28T10:09:14.556Z",
+            "completed_at": "2026-08-28T10:09:38.391Z",
+            "duration_ms": 23835,
+            "usage": {
+              "source": "provider_not_reported",
+              "reported_cost_usd": null,
+              "steps": null,
+              "tokens": {
+                "input": null,
+                "output": null,
+                "reasoning": null,
+                "cache_read": null,
+                "cache_write": null,
+                "total": null
+              }
+            }
+          },
+          "tests": {
+            "status": 1,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-28T10:09:38.751Z",
+            "completed_at": "2026-08-28T10:09:39.351Z",
+            "duration_ms": 600
+          },
+          "agent_duration_ms": 23835,
+          "test_duration_ms": 600,
+          "duration_ms": 24795,
+          "cost_usd": null,
+          "cost_source": "provider_not_reported",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-patch-retry-policy-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "outcome": "tests_failed",
+      "agent_duration_ms": 23835,
+      "test_duration_ms": 600,
+      "duration_ms": 24795,
+      "cost_usd": null,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 0,
+      "objective_total": 1,
+      "objective_pass_rate": 0,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "gpt-5-6-sol",
+        "agent": "codex",
+        "model": "gpt-5.6-sol",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "retry-policy",
+          "attempt": 1,
+          "outcome": "tests_failed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-28T10:09:46.624Z",
+            "completed_at": "2026-08-28T10:10:21.028Z",
+            "duration_ms": 34404,
+            "usage": {
+              "source": "provider_not_reported",
+              "reported_cost_usd": null,
+              "steps": null,
+              "tokens": {
+                "input": null,
+                "output": null,
+                "reasoning": null,
+                "cache_read": null,
+                "cache_write": null,
+                "total": null
+              }
+            }
+          },
+          "tests": {
+            "status": 1,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-28T10:10:21.385Z",
+            "completed_at": "2026-08-28T10:10:21.982Z",
+            "duration_ms": 597
+          },
+          "agent_duration_ms": 34404,
+          "test_duration_ms": 597,
+          "duration_ms": 35358,
+          "cost_usd": null,
+          "cost_source": "provider_not_reported",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-patch-retry-policy-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "retry-policy",
+          "attempt": 1,
+          "outcome": "tests_failed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-28T10:09:46.624Z",
+            "completed_at": "2026-08-28T10:10:21.028Z",
+            "duration_ms": 34404,
+            "usage": {
+              "source": "provider_not_reported",
+              "reported_cost_usd": null,
+              "steps": null,
+              "tokens": {
+                "input": null,
+                "output": null,
+                "reasoning": null,
+                "cache_read": null,
+                "cache_write": null,
+                "total": null
+              }
+            }
+          },
+          "tests": {
+            "status": 1,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-28T10:10:21.385Z",
+            "completed_at": "2026-08-28T10:10:21.982Z",
+            "duration_ms": 597
+          },
+          "agent_duration_ms": 34404,
+          "test_duration_ms": 597,
+          "duration_ms": 35358,
+          "cost_usd": null,
+          "cost_source": "provider_not_reported",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-patch-retry-policy-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "outcome": "tests_failed",
+      "agent_duration_ms": 34404,
+      "test_duration_ms": 597,
+      "duration_ms": 35358,
+      "cost_usd": null,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 0,
+      "objective_total": 1,
+      "objective_pass_rate": 0,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "gpt-5-6-terra",
+        "agent": "codex",
+        "model": "gpt-5.6-terra",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "retry-policy",
+          "attempt": 1,
+          "outcome": "tests_failed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-28T10:10:29.444Z",
+            "completed_at": "2026-08-28T10:10:43.383Z",
+            "duration_ms": 13939,
+            "usage": {
+              "source": "provider_not_reported",
+              "reported_cost_usd": null,
+              "steps": null,
+              "tokens": {
+                "input": null,
+                "output": null,
+                "reasoning": null,
+                "cache_read": null,
+                "cache_write": null,
+                "total": null
+              }
+            }
+          },
+          "tests": {
+            "status": 1,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-28T10:10:43.739Z",
+            "completed_at": "2026-08-28T10:10:44.336Z",
+            "duration_ms": 597
+          },
+          "agent_duration_ms": 13939,
+          "test_duration_ms": 597,
+          "duration_ms": 14892,
+          "cost_usd": null,
+          "cost_source": "provider_not_reported",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-patch-retry-policy-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "retry-policy",
+          "attempt": 1,
+          "outcome": "tests_failed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-28T10:10:29.444Z",
+            "completed_at": "2026-08-28T10:10:43.383Z",
+            "duration_ms": 13939,
+            "usage": {
+              "source": "provider_not_reported",
+              "reported_cost_usd": null,
+              "steps": null,
+              "tokens": {
+                "input": null,
+                "output": null,
+                "reasoning": null,
+                "cache_read": null,
+                "cache_write": null,
+                "total": null
+              }
+            }
+          },
+          "tests": {
+            "status": 1,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-28T10:10:43.739Z",
+            "completed_at": "2026-08-28T10:10:44.336Z",
+            "duration_ms": 597
+          },
+          "agent_duration_ms": 13939,
+          "test_duration_ms": 597,
+          "duration_ms": 14892,
+          "cost_usd": null,
+          "cost_source": "provider_not_reported",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-patch-retry-policy-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "outcome": "tests_failed",
+      "agent_duration_ms": 13939,
+      "test_duration_ms": 597,
+      "duration_ms": 14892,
+      "cost_usd": null,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 0,
+      "objective_total": 1,
+      "objective_pass_rate": 0,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "gpt-5-3-codex-spark",
+        "agent": "codex",
+        "model": "gpt-5.3-codex-spark",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "retry-policy",
+          "attempt": 1,
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "cost_usd": null,
+          "cost_source": null,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": null
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "retry-policy",
+          "attempt": 1,
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "cost_usd": null,
+          "cost_source": null,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": null
+        }
+      ],
+      "outcome": "unavailable",
+      "agent_duration_ms": null,
+      "test_duration_ms": null,
+      "duration_ms": 0,
+      "cost_usd": null,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": null,
+      "objective_total": null,
+      "objective_pass_rate": null,
+      "overall_average": null
+    }
+  ],
+  "generated_at": "2026-08-28T10:11:43.621Z",
+  "reproducibility": {
+    "runner_version": "unknown",
+    "repository_commit": "27fdf9b6cfd266b3760cc37f7a9ef8368f8f75d9",
+    "config_hash": "b0b794a7a4767f89f3dd0bf115911c86589d34e87f33786fcf460f3284ee46f8",
+    "schema_registry": {
+      "schema_registry_version": 1,
+      "artifact_schemas": {
+        "run": 1,
+        "judge": 1,
+        "preflight": 1,
+        "aggregate": 2,
+        "test_result": 1,
+        "candidate_diff": 1,
+        "objective_evaluator": 1
+      }
+    },
+    "effective_limits": {
+      "timeout_ms": 900000,
+      "max_output_bytes": 2097152
+    },
+    "judge_prompt": {
+      "version": 3,
+      "template_hash": "3b0265ce6a626409d7d01a8c28f1d2a8541056ed8634241a7dc13ac2acf97ce2"
+    },
+    "outcomes": {
+      "gpt-5-4": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "retry-policy",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "retry-policy",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "gpt-5-4-mini": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "retry-policy",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "retry-policy",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "gpt-5-6-luna": {
+        "overall": "tests_failed",
+        "nominations": [
+          {
+            "nomination": "retry-policy",
+            "attempt": 1,
+            "outcome": "tests_failed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "retry-policy",
+            "outcome": "tests_failed"
+          }
+        ]
+      },
+      "gpt-5-6-sol": {
+        "overall": "tests_failed",
+        "nominations": [
+          {
+            "nomination": "retry-policy",
+            "attempt": 1,
+            "outcome": "tests_failed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "retry-policy",
+            "outcome": "tests_failed"
+          }
+        ]
+      },
+      "gpt-5-6-terra": {
+        "overall": "tests_failed",
+        "nominations": [
+          {
+            "nomination": "retry-policy",
+            "attempt": 1,
+            "outcome": "tests_failed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "retry-policy",
+            "outcome": "tests_failed"
+          }
+        ]
+      },
+      "gpt-5-3-codex-spark": {
+        "overall": "unavailable",
+        "nominations": [
+          {
+            "nomination": "retry-policy",
+            "attempt": 1,
+            "outcome": "unavailable"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "retry-policy",
+            "outcome": "unavailable"
+          }
+        ]
+      }
+    }
+  }
+}

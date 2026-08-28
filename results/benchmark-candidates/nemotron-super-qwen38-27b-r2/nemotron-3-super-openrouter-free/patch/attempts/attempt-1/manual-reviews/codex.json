@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "kind": "manual_code_review",
+  "release": "nemotron-super-qwen38-27b-r2",
+  "candidate": "nemotron-3-super-openrouter-free",
+  "nomination": "patch",
+  "attempt": 1,
+  "reviewer": {
+    "id": "codex",
+    "type": "assistant_manual_review"
+  },
+  "identity_blind": false,
+  "scores": {
+    "functional_correctness": 7,
+    "reliability_edge_cases": 3,
+    "maintainability_clarity": 5,
+    "scope_discipline": 10
+  },
+  "average": 6.25,
+  "summary": "The patch fixes duplicate totals, UTC grouping, refund attribution, and floating-point rounding, and it passes public tests. Money validation remains permissive after stripping separators, additional malformed forms are accepted, duplicate validation ordering is imperfect, and formatting and commentary reduce clarity.",
+  "evidence": {
+    "public_tests_passed": true,
+    "objective_evaluator_passed": false,
+    "forbidden_changes": 0
+  }
+}

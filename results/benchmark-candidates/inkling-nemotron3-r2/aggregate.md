@@ -1,0 +1,8 @@
+# inkling-nemotron3-r2
+
+Ranking policy is decided separately; objective evaluator results are reported independently and are not blended into judge scores.
+
+| Candidate | Agent | Model | Tasks | Outcome | Test time | Test price (USD) | Objective | Combined average | Judges |
+|---|---|---|---:|---|---:|---:|---:|---:|---:|
+| inkling-openrouter | opencode | openrouter/thinkingmachines/inkling | 1 | completed | 107.326 s | 0.084852 | 0/1 (0%) | N/A | 0 |
+| nemotron-3-ultra-free | opencode | opencode/nemotron-3-ultra-free | 1 | agent_failure | 96.864 s | 0.000000 | 0/1 (0%) | N/A | 0 |

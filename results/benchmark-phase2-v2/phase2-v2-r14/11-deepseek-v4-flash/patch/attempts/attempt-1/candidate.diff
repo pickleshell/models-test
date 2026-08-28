@@ -1,0 +1,32 @@
+diff --git a/fixtures/phase2-v2/patch-retry-policy/src/retryPolicy.js b/fixtures/phase2-v2/patch-retry-policy/src/retryPolicy.js
+index 5472bcd..d659621 100644
+--- a/fixtures/phase2-v2/patch-retry-policy/src/retryPolicy.js
++++ b/fixtures/phase2-v2/patch-retry-policy/src/retryPolicy.js
+@@ -1,20 +1,22 @@
+ const MAX_DELAY_MS = 300_000;
++const HTTP_DATE_RE =
++  /^((Mon|Tue|Wed|Thu|Fri|Sat|Sun), \d{2} (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) \d{4} \d{2}:\d{2}:\d{2} GMT|(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday), \d{2}-(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)-\d{2} \d{2}:\d{2}:\d{2} GMT|(Mon|Tue|Wed|Thu|Fri|Sat|Sun) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) ( \d|\d{2}) \d{2}:\d{2}:\d{2} \d{4})$/i;
+ 
+ export function parseRetryAfter(value, nowMs) {
+   if (typeof value !== 'string') return null;
+   const trimmed = value.trim();
+   if (!trimmed) return null;
+-  const seconds = Number(trimmed);
+-  if (Number.isFinite(seconds) && seconds >= 0) return seconds * 1000;
++  if (/^\d+$/.test(trimmed)) return Number(trimmed) * 1000;
++  if (!HTTP_DATE_RE.test(trimmed)) return null;
+   const dateMs = Date.parse(trimmed);
+   if (!Number.isFinite(dateMs) || !Number.isFinite(nowMs)) return null;
+-  return dateMs - nowMs;
++  return Math.max(0, dateMs - nowMs);
+ }
+ 
+ export function computeRetryDelay({ attempt, retryAfter, nowMs }) {
+-  if (!Number.isFinite(attempt) || attempt < 1) throw new Error('attempt must be positive');
++  if (!Number.isInteger(attempt) || attempt < 1) throw new Error('attempt must be a positive integer');
+   if (!Number.isFinite(nowMs)) throw new Error('nowMs must be finite');
+   const retryAfterMs = parseRetryAfter(retryAfter, nowMs);
+   if (retryAfterMs !== null) return Math.min(MAX_DELAY_MS, retryAfterMs);
+-  return Math.min(MAX_DELAY_MS, 1000 * (2 ** attempt));
++  return Math.min(MAX_DELAY_MS, 1000 * (2 ** (attempt - 1)));
+ }

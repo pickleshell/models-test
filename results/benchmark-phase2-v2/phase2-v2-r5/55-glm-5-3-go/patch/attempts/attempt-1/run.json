@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r5",
+  "nomination": "patch",
+  "run_id": "phase2-v2-r5:55-glm-5-3-go:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "55-glm-5-3-go",
+    "agent": "opencode",
+    "model": "opencode-go/glm-5.3",
+    "subscription": "paid",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-27T00:22:26.456Z",
+  "completed_at": "2026-08-27T00:26:32.891Z",
+  "duration_ms": 246435,
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-27T00:22:26.456Z",
+    "completed_at": "2026-08-27T00:26:31.924Z",
+    "duration_ms": 245468
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-27T00:26:32.290Z",
+    "completed_at": "2026-08-27T00:26:32.891Z",
+    "duration_ms": 601
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/patch-retry-policy/src/retryPolicy.js"
+  ],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r5/55-glm-5-3-go/patch/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "bf0cd96584444a2e1e8f60d02b9351b7d8b845fd8c54f00f7eae5e97e5c19ca5"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "30ff1d9e6d0b1415ec0453efa58a4ba32153d292031542b5bcb336d1c54ddaa7"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "db3e97aeec272da32c3ec29ddaa15aa14debf1997587b1df5665913a461908c5"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "8b0fb28baa025d85c9fd107651031f27bcddb781169658cb673bf5c4346efaf5"
+  }
+}

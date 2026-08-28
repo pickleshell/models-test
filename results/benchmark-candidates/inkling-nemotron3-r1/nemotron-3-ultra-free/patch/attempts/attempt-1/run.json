@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "release": "inkling-nemotron3-r1",
+  "nomination": "patch",
+  "run_id": "inkling-nemotron3-r1:nemotron-3-ultra-free:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "nemotron-3-ultra-free",
+    "label": "Nemotron 3 Ultra Free",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "provider": "opencode",
+    "model": "opencode/nemotron-3-ultra-free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-28T08:53:50.596Z",
+  "completed_at": "2026-08-28T08:53:50.596Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-28T08:53:46.708Z",
+    "completed_at": "2026-08-28T08:53:50.594Z",
+    "duration_ms": 3886
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-candidates/inkling-nemotron3-r1/nemotron-3-ultra-free/patch/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "ba59cce0a48ea06654597bdabeb6eb1958c9034242431f2b1fc3ab5832bcd3a9"
+  }
+}

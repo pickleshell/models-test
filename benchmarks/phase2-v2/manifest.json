@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "stage": "prepared",
+  "executed": false,
+  "runtime": "node",
+  "tasks": [
+    {
+      "id": "patch",
+      "category": "patch",
+      "fixture": "fixtures/phase2-v2/patch-retry-policy",
+      "prompt": "benchmarks/phase2-v2/prompts/patch.md",
+      "public_test": "npm test --prefix fixtures/phase2-v2/patch-retry-policy",
+      "objective_evaluator_id": "phase2-v2-patch-retry-policy-v1",
+      "baseline_public_tests": "fail (fallback retry delay)"
+    },
+    {
+      "id": "bug-fix-ledger",
+      "category": "bug-fix",
+      "fixture": "fixtures/phase2-v2/bug-fix-ledger",
+      "prompt": "benchmarks/phase2-v2/prompts/bug-fix-ledger.md",
+      "public_test": "npm test --prefix fixtures/phase2-v2/bug-fix-ledger",
+      "objective_evaluator_id": "phase2-v2-bug-fix-ledger-v1",
+      "baseline_public_tests": "fail (duplicate-id handling)"
+    },
+    {
+      "id": "feature-implementation",
+      "category": "feature-implementation",
+      "fixture": "fixtures/phase2-v2/feature-implementation",
+      "prompt": "benchmarks/phase2-v2/prompts/feature-implementation.md",
+      "public_test": "npm test --prefix fixtures/phase2-v2/feature-implementation",
+      "objective_evaluator_id": "phase2-v2-feature-implementation-v1",
+      "baseline_public_tests": "fail (override and rollout handling)"
+    },
+    {
+      "id": "refactoring",
+      "category": "refactoring",
+      "fixture": "fixtures/phase2-v2/refactoring",
+      "prompt": "benchmarks/phase2-v2/prompts/refactoring.md",
+      "public_test": "npm test --prefix fixtures/phase2-v2/refactoring",
+      "objective_evaluator_id": "phase2-v2-refactoring-v1",
+      "baseline_public_tests": "pass (behavior is already correct; required change is structural)"
+    },
+    {
+      "id": "repository-navigation",
+      "category": "repository-navigation-change",
+      "fixture": "fixtures/phase2-v2/repository-navigation",
+      "prompt": "benchmarks/phase2-v2/prompts/repository-navigation.md",
+      "public_test": "npm test --prefix fixtures/phase2-v2/repository-navigation",
+      "objective_evaluator_id": "phase2-v2-repository-navigation-v1",
+      "baseline_public_tests": "fail (status label formatting)"
+    },
+    {
+      "id": "tests-edge-cases",
+      "category": "tests-and-edge-cases",
+      "fixture": "fixtures/phase2-v2/tests-edge-cases",
+      "prompt": "benchmarks/phase2-v2/prompts/tests-edge-cases.md",
+      "public_test": "npm test --prefix fixtures/phase2-v2/tests-edge-cases",
+      "objective_evaluator_id": "phase2-v2-tests-edge-cases-v1",
+      "baseline_public_tests": "fail (reversed ranges accepted)"
+    }
+  ],
+  "release": "phase2-v2-r2"
+}

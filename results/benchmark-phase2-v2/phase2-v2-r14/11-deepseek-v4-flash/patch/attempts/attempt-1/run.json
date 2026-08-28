@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r14",
+  "nomination": "patch",
+  "run_id": "phase2-v2-r14:11-deepseek-v4-flash:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "11-deepseek-v4-flash",
+    "label": "DeepSeek V4 Flash",
+    "agent": "opencode",
+    "model": "opencode-go/deepseek-v4-flash",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-27T18:00:45.518Z",
+  "completed_at": "2026-08-27T18:04:09.481Z",
+  "duration_ms": 203963,
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-27T18:00:45.518Z",
+    "completed_at": "2026-08-27T18:04:08.530Z",
+    "duration_ms": 203012,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0.010074088,
+      "steps": 16,
+      "tokens": {
+        "input": 6421,
+        "output": 10859,
+        "reasoning": 0,
+        "cache_read": 213504,
+        "cache_write": 0,
+        "total": 230784
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-27T18:04:08.887Z",
+    "completed_at": "2026-08-27T18:04:09.481Z",
+    "duration_ms": 594
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/patch-retry-policy/src/retryPolicy.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r14/11-deepseek-v4-flash/patch/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "73325a2f8a78fa47d30b9c1fcbe6aa212d6c1816f0d2c27a432ebc7adb09ec49"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "b1379acfcde6008c7f73bc123ed7b1c1ca841e97dbe20402581588e98dbd5545"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "8e7ab947791fbf3a86c32be07662f6f176c85960a060545b70f1757b19f3c3bc"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "879945734ef1e43d58a761a3c023ffe36ea87c13512da08c8b0f0b279b8b948b"
+  }
+}

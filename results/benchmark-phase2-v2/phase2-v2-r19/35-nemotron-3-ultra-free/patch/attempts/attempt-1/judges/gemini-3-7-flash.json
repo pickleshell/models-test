@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "judge": {
+    "id": "gemini-3-7-flash",
+    "agent": "opencode",
+    "model": "opencode/gemini-3.7-flash",
+    "subscription": "paid",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "skipped",
+  "reason": "agent_failure",
+  "candidate": "35-nemotron-3-ultra-free",
+  "nomination": "patch",
+  "run_id": "phase2-v2-r19:35-nemotron-3-ultra-free:patch",
+  "attempt": 1,
+  "artifact_hash": {
+    "path": "gemini-3-7-flash.json",
+    "sha256": "840c19aba197608fa92e7ebfcf3f412bc2d7bba38899a6d524a13032ecd3ef19"
+  }
+}

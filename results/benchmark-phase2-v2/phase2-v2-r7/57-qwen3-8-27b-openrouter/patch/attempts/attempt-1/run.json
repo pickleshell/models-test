@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r7",
+  "nomination": "patch",
+  "run_id": "phase2-v2-r7:57-qwen3-8-27b-openrouter:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "57-qwen3-8-27b-openrouter",
+    "agent": "opencode",
+    "model": "openrouter/qwen/qwen3.8-27b",
+    "subscription": "paid",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-27T02:20:02.093Z",
+  "completed_at": "2026-08-27T02:23:49.077Z",
+  "duration_ms": 226984,
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-27T02:20:02.093Z",
+    "completed_at": "2026-08-27T02:23:48.119Z",
+    "duration_ms": 226026,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0.091643175,
+      "steps": 12,
+      "tokens": {
+        "input": 156659,
+        "output": 9482,
+        "reasoning": 0,
+        "cache_read": 10400,
+        "cache_write": 0,
+        "total": 176541
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-27T02:23:48.476Z",
+    "completed_at": "2026-08-27T02:23:49.077Z",
+    "duration_ms": 601
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/patch-retry-policy/src/retryPolicy.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r7/57-qwen3-8-27b-openrouter/patch/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "94d6fde7ed9ad0c0a902cb211df8f8e735ea69cde07a995fac8484038f61d691"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "ba8f9b79d4a11c0a30a51867822d63a3e52b14c9c2d640d5fb040ce6c92ab3e5"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "29f29322d6a35e3511dbcff7e71f86d5074a0b25146e644a1c1635635838dbb2"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "7c3e1aafdfd5eee62b88db51f886c4ef6739ebd06f2438040d2c7197aed52c3c"
+  }
+}

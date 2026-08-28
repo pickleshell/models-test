@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r17",
+  "nomination": "patch",
+  "run_id": "phase2-v2-r17:59-nemotron-3-super-openrouter-free:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "59-nemotron-3-super-openrouter-free",
+    "label": "Nemotron 3 Super OpenRouter Free",
+    "agent": "opencode",
+    "model": "openrouter/nvidia/nemotron-3-super-120b-a12b:free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-27T18:35:21.134Z",
+  "completed_at": "2026-08-27T18:37:13.393Z",
+  "duration_ms": 112259,
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-27T18:35:21.134Z",
+    "completed_at": "2026-08-27T18:37:12.415Z",
+    "duration_ms": 111281,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0,
+      "steps": 9,
+      "tokens": {
+        "input": 78992,
+        "output": 1973,
+        "reasoning": 6303,
+        "cache_read": 50688,
+        "cache_write": 0,
+        "total": 137956
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-27T18:37:12.780Z",
+    "completed_at": "2026-08-27T18:37:13.393Z",
+    "duration_ms": 613
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/patch-retry-policy/src/retryPolicy.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r17/59-nemotron-3-super-openrouter-free/patch/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "a93f9c776c97fd6d2d81e26f78e2a855e620c15f188b81bc8d678e7ec0cb671c"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "0ba786e03bf3379bbe1149a355037f093c4ee973f0bb2e04a58e0aadd151ee07"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "6465348c9aedf279f356eb049bfbf737c5d72bd9a1b1e016df6ce6d14b22d440"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "751a7884f982baeef9adb9ffb4ba017d5f6a3d05463459414f7e55d3b8133cbf"
+  }
+}

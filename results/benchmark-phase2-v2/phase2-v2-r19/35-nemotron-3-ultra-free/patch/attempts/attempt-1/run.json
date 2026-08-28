@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r19",
+  "nomination": "patch",
+  "run_id": "phase2-v2-r19:35-nemotron-3-ultra-free:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "35-nemotron-3-ultra-free",
+    "label": "Nemotron 3 Ultra Free",
+    "agent": "opencode",
+    "model": "opencode/nemotron-3-ultra-free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-27T19:02:46.602Z",
+  "completed_at": "2026-08-27T19:03:59.068Z",
+  "duration_ms": 72466,
+  "agent": {
+    "status": 1,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-27T19:02:46.602Z",
+    "completed_at": "2026-08-27T19:03:58.103Z",
+    "duration_ms": 71501,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0,
+      "steps": 4,
+      "tokens": {
+        "input": 29848,
+        "output": 798,
+        "reasoning": 654,
+        "cache_read": 8640,
+        "cache_write": 0,
+        "total": 39940
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-27T19:03:58.465Z",
+    "completed_at": "2026-08-27T19:03:59.068Z",
+    "duration_ms": 603
+  },
+  "outcome": "agent_failure",
+  "changed_files": [
+    "fixtures/phase2-v2/patch-retry-policy/src/retryPolicy.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r19/35-nemotron-3-ultra-free/patch/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "95e06f857a87633e0ea2c841dd3120d5a629f8276e874389d3e27c4799d4cbfa"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "bbb8fd5c8b82389e8d809a0a3adbf60e283421136dc27f43d00d780aaa585243"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "727e3be0547ae1005ac1c5a023358ad16a343fd7ac590fe67f18953bdf912fe5"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "1c169e18973c059a34b14fad605bc9ba79d949d01d4508bb981751b040e225a6"
+  }
+}

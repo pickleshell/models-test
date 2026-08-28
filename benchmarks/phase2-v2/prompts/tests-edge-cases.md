@@ -1,0 +1,1 @@
+Fix `parseRange` according to the fixture README and add meaningful tests to the provided test file. Evaluation includes unseen behavioral cases and mutation testing of the tests you author. Update only the allowed source and test files.

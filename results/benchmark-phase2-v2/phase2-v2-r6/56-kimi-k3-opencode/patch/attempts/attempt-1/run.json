@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r6",
+  "nomination": "patch",
+  "run_id": "phase2-v2-r6:56-kimi-k3-opencode:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "56-kimi-k3-opencode",
+    "agent": "opencode",
+    "model": "opencode/kimi-k3",
+    "subscription": "paid",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-27T01:44:38.899Z",
+  "completed_at": "2026-08-27T01:45:24.297Z",
+  "duration_ms": 45398,
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-27T01:44:38.899Z",
+    "completed_at": "2026-08-27T01:45:23.344Z",
+    "duration_ms": 44445,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0.0797889,
+      "steps": 7,
+      "tokens": {
+        "input": 11160,
+        "output": 1063,
+        "reasoning": 941,
+        "cache_read": 54163,
+        "cache_write": 0,
+        "total": 67327
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-27T01:45:23.702Z",
+    "completed_at": "2026-08-27T01:45:24.297Z",
+    "duration_ms": 595
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/patch-retry-policy/src/retryPolicy.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r6/56-kimi-k3-opencode/patch/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "12106c8485b6bdb0c335faff08520e76e2b66bc81a81349e7f86fe876abe0b93"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "aee824bdb93554fb811aa41506a978ca41b952c6b92b8e0cf47023db1649c3ec"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "5551b8c5a2b085bcae316315130b42d3ff3cfdd0ba8b46802f22b0aebb0eb8d0"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "122f44238562be8345bb9758fc4480e80d6baaa5f40211c894da1595be263b34"
+  }
+}

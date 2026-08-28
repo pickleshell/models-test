@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r15",
+  "nomination": "patch",
+  "run_id": "phase2-v2-r15:58-grok-4-5-openrouter:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "58-grok-4-5-openrouter",
+    "label": "Grok 4.5 OpenRouter",
+    "agent": "opencode",
+    "model": "openrouter/x-ai/grok-4.5",
+    "subscription": "paid",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-27T18:19:08.299Z",
+  "completed_at": "2026-08-27T18:19:42.306Z",
+  "duration_ms": 34007,
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-27T18:19:08.299Z",
+    "completed_at": "2026-08-27T18:19:41.354Z",
+    "duration_ms": 33055,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0.03889,
+      "steps": 5,
+      "tokens": {
+        "input": 11009,
+        "output": 742,
+        "reasoning": 278,
+        "cache_read": 35840,
+        "cache_write": 0,
+        "total": 47869
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-27T18:19:41.711Z",
+    "completed_at": "2026-08-27T18:19:42.306Z",
+    "duration_ms": 595
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/patch-retry-policy/src/retryPolicy.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r15/58-grok-4-5-openrouter/patch/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "99bd1962f3274cb093f1f4813c91f637cbc220d4f0fbb764ee5de9918b28be04"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "00d4857ba8bab52ae0fcfa0f0f4a789754979efb8107c2687bce535a7b4554f5"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "307f82e3c8f369b07612fa29f7ebf67505f49f41bb36589aaf6760ccc44baf7f"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "2248080e780feb6e3cf0d638548184270c0816033f1376de6a67013a9d717c5c"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "judge": {
+    "id": "gpt-5-nano",
+    "agent": "opencode",
+    "model": "opencode/gpt-5-nano",
+    "subscription": "paid-low-cost"
+  },
+  "status": "failed",
+  "response": "{\"type\":\"error\",\"timestamp\":1787786153845,\"sessionID\":\"ses_fbfa43230ffevDGHDXuNQx4Tb4\",\"error\":{\"name\":\"UnknownError\",\"data\":{\"message\":\"Unexpected server error. Check server logs for details.\",\"ref\":\"err_5e8d147a\"}}}",
+  "scores": null,
+  "confidence": null,
+  "explanation": null,
+  "concerns": [],
+  "execution": {
+    "status": 1,
+    "signal": null,
+    "timed_out": false,
+    "started_at": "2026-08-26T23:15:52.319Z",
+    "completed_at": "2026-08-26T23:15:53.903Z",
+    "duration_ms": 1584
+  },
+  "judge_prompt_version": 2,
+  "judge_prompt_hash": "1b7e80e9451004f96ce5054e9d8f14deb57eeaba6d610f43d11795b6064ee7f1",
+  "candidate": "54-inkling-openrouter",
+  "nomination": "patch",
+  "run_id": "phase2-v2-r4:54-inkling-openrouter:patch",
+  "attempt": 1,
+  "artifact_hash": {
+    "path": "gpt-5-nano.json",
+    "sha256": "8f196029f02e78a61b1276dcf8b4165882f1d238492c5bf12c8ce35f00310fe8"
+  }
+}

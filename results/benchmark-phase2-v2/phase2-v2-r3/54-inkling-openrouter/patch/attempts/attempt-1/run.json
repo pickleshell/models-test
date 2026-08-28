@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r3",
+  "nomination": "patch",
+  "run_id": "phase2-v2-r3:54-inkling-openrouter:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "54-inkling-openrouter",
+    "agent": "opencode",
+    "model": "openrouter/thinkingmachines/inkling",
+    "subscription": "paid"
+  },
+  "started_at": "2026-08-26T22:32:03.328Z",
+  "completed_at": "2026-08-26T22:39:37.970Z",
+  "duration_ms": 454642,
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-26T22:32:03.328Z",
+    "completed_at": "2026-08-26T22:39:37.204Z",
+    "duration_ms": 453876
+  },
+  "tests": {
+    "status": 254,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-26T22:39:37.566Z",
+    "completed_at": "2026-08-26T22:39:37.970Z",
+    "duration_ms": 404
+  },
+  "outcome": "tests_failed",
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r3/54-inkling-openrouter/patch/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "d399edd9d31479ef152e8559b67bb9ba9b5bc5085df4b667d9cbb737b1547c8c"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "c87b72dc9fb73a7a64a84e153079e1e7c1d3a5d9c62d8e3c459fb847ae89768b"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "21bdd0fc835d6d834da7e3cf2bbd35cd15b17f0034900ae0cdda43509ba4626f"
+  }
+}

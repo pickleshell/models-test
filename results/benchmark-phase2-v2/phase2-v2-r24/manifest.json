@@ -1,0 +1,204 @@
+{
+  "schema_version": 3,
+  "release": "phase2-v2-r24",
+  "nominations": [
+    {
+      "id": "patch",
+      "fixture": "fixtures/phase2-v2/patch-retry-policy",
+      "prompt": "benchmarks/phase2-v2/prompts/patch.md",
+      "test_command": [
+        "npm",
+        "test",
+        "--prefix",
+        "fixtures/phase2-v2/patch-retry-policy"
+      ],
+      "allowed_changes": [
+        "fixtures/phase2-v2/patch-retry-policy/src/retryPolicy.js"
+      ],
+      "frozen_inputs": {
+        "fixture_tree": {
+          "algorithm": "sha256-tree-v1",
+          "sha256": "0bbd7d657f208c2147754e77c03e8a5606aca4e2736c201c2390b0a1ea2d531e",
+          "files": 4
+        },
+        "prompt_sha256": "cd8edc8375eb912c6022fdc1cde2f72b53d524f881f5d994ac291b94af55785f"
+      },
+      "objective_evaluator": {
+        "id": "phase2-v2-patch-retry-policy-v1",
+        "sha256": "e41934b6219b70cf5d84e1005e3b7a27d331665ac86faff7973d1a7a2d6450b7",
+        "source_sha256": "5abe30317770b4cbb03c18df5a91ca50ace87d1ec171db2feaeb3c1dfb6cc010"
+      }
+    },
+    {
+      "id": "bug-fix-ledger",
+      "fixture": "fixtures/phase2-v2/bug-fix-ledger",
+      "prompt": "benchmarks/phase2-v2/prompts/bug-fix-ledger.md",
+      "test_command": [
+        "npm",
+        "test",
+        "--prefix",
+        "fixtures/phase2-v2/bug-fix-ledger"
+      ],
+      "allowed_changes": [
+        "fixtures/phase2-v2/bug-fix-ledger/src/reconcile.js"
+      ],
+      "frozen_inputs": {
+        "fixture_tree": {
+          "algorithm": "sha256-tree-v1",
+          "sha256": "eaa5ce8e68a1d6243f48ded5f7495a8c26e2fee98d6d3536ff7f585ac0fc19f8",
+          "files": 4
+        },
+        "prompt_sha256": "9c69e7ecacc9520663b9cc693748b7516c76a98a195192acefb333eb48e8612b"
+      },
+      "objective_evaluator": {
+        "id": "phase2-v2-bug-fix-ledger-v1",
+        "sha256": "f3bf35b4af253b4b83bfa8351f078c9e198d89cc63fba4e3d086b1fe56739b99",
+        "source_sha256": "b0f6f42ae361f634678b596b6bb630df9dbdad33693bf96089d862291d5ee4ba"
+      }
+    },
+    {
+      "id": "feature-implementation",
+      "fixture": "fixtures/phase2-v2/feature-implementation",
+      "prompt": "benchmarks/phase2-v2/prompts/feature-implementation.md",
+      "test_command": [
+        "npm",
+        "test",
+        "--prefix",
+        "fixtures/phase2-v2/feature-implementation"
+      ],
+      "allowed_changes": [
+        "fixtures/phase2-v2/feature-implementation/src/featureFlags.js"
+      ],
+      "frozen_inputs": {
+        "fixture_tree": {
+          "algorithm": "sha256-tree-v1",
+          "sha256": "129693dfac79821222390bd47561cf5dddc678aeb6bbda3ee1a32d910d156ad0",
+          "files": 4
+        },
+        "prompt_sha256": "782c41e89716242d0b40b1c4fda7d35bbb9dfcc6956ef9f2eb556e7272a24724"
+      },
+      "objective_evaluator": {
+        "id": "phase2-v2-feature-implementation-v1",
+        "sha256": "9ed728fa9fcdff190f075d26b0b05d6ce0ddb32d28022c2a312e82efae5c999b",
+        "source_sha256": "9d127bb03f7eac460ff3864aaf4474038ae7c6d35961dc87645d182d5743233e"
+      }
+    },
+    {
+      "id": "refactoring",
+      "fixture": "fixtures/phase2-v2/refactoring",
+      "prompt": "benchmarks/phase2-v2/prompts/refactoring.md",
+      "test_command": [
+        "npm",
+        "test",
+        "--prefix",
+        "fixtures/phase2-v2/refactoring"
+      ],
+      "allowed_changes": [
+        "fixtures/phase2-v2/refactoring/src/events.js"
+      ],
+      "frozen_inputs": {
+        "fixture_tree": {
+          "algorithm": "sha256-tree-v1",
+          "sha256": "312a4607ed1fd3db807e469e71d1e12261752506a5b3b23e107d8f8136a8742a",
+          "files": 4
+        },
+        "prompt_sha256": "a4260b413c66ce01e0fb7ab76de9e9055d50ecd61abba80130fc1d4d4a197c74"
+      },
+      "objective_evaluator": {
+        "id": "phase2-v2-refactoring-v1",
+        "sha256": "1eecdcef4e801661b94ed7edf9767c07202fc72b5873cbafb36005194fcca6ea",
+        "source_sha256": "007de38ce9ce97b8c24be0b0edfccc34c2ef90d2081527665f7fa4f149876a7b"
+      }
+    },
+    {
+      "id": "repository-navigation",
+      "fixture": "fixtures/phase2-v2/repository-navigation",
+      "prompt": "benchmarks/phase2-v2/prompts/repository-navigation.md",
+      "test_command": [
+        "npm",
+        "test",
+        "--prefix",
+        "fixtures/phase2-v2/repository-navigation"
+      ],
+      "allowed_changes": [
+        "fixtures/phase2-v2/repository-navigation/src/labels/statusLabel.js"
+      ],
+      "frozen_inputs": {
+        "fixture_tree": {
+          "algorithm": "sha256-tree-v1",
+          "sha256": "70a20fc7e53a6340bb8ffe382dcf3e285b99ccb6553403d60b43cd7d5a5a6287",
+          "files": 12
+        },
+        "prompt_sha256": "f8e3b422cf991aed799c77cb65122ab93e069841a99adb8fca46f2d7c3a17ab6"
+      },
+      "objective_evaluator": {
+        "id": "phase2-v2-repository-navigation-v1",
+        "sha256": "ed8a981830788ab242a60e32a3d581aeab6e9d25bd409bf658b61cc85b7af2dd",
+        "source_sha256": "6814645c4bc03b83badf1a5b0638bd280431dc54c23313ceb1b2412072844ed9"
+      }
+    },
+    {
+      "id": "tests-edge-cases",
+      "fixture": "fixtures/phase2-v2/tests-edge-cases",
+      "prompt": "benchmarks/phase2-v2/prompts/tests-edge-cases.md",
+      "test_command": [
+        "npm",
+        "test",
+        "--prefix",
+        "fixtures/phase2-v2/tests-edge-cases"
+      ],
+      "allowed_changes": [
+        "fixtures/phase2-v2/tests-edge-cases/src/range.js",
+        "fixtures/phase2-v2/tests-edge-cases/test/range.test.mjs"
+      ],
+      "frozen_inputs": {
+        "fixture_tree": {
+          "algorithm": "sha256-tree-v1",
+          "sha256": "9e57428b15c998d6af2cf6e32c75bdbf64084d193397c4c2710d9d37546da2bd",
+          "files": 4
+        },
+        "prompt_sha256": "c0ef0325255e571095921ca55d1d0cd9f50e545110b54e6aebbe519f1cd6d70c"
+      },
+      "objective_evaluator": {
+        "id": "phase2-v2-tests-edge-cases-v1",
+        "sha256": "64ebafc702fed24f9bb7870c4696550ed4c6823f7194207a3fcb6d23bee925b9",
+        "source_sha256": "ecc559035b982bce88551c8c7dbd6c08cb90a1cce4f12ea6c286290a6ad5d787"
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "id": "51-claude-haiku-4-5",
+      "label": "Claude Haiku 4.5",
+      "agent": "opencode",
+      "model": "opencode/claude-haiku-4-5",
+      "reasoning_variant": "provider_default"
+    }
+  ],
+  "judges": [
+    {
+      "id": "gemini-3-7-flash",
+      "agent": "opencode",
+      "provider": "opencode",
+      "model": "opencode/gemini-3.7-flash",
+      "subscription": "paid",
+      "reasoning_variant": "provider_default"
+    }
+  ],
+  "criteria": [
+    "functional_correctness",
+    "reliability_edge_cases",
+    "maintainability_clarity",
+    "scope_discipline"
+  ],
+  "retry_policy": {
+    "canonical_attempt": 1,
+    "allow_retries": false
+  },
+  "judge_prompt": {
+    "version": 3,
+    "template_hash": "3b0265ce6a626409d7d01a8c28f1d2a8541056ed8634241a7dc13ac2acf97ce2"
+  },
+  "config_sha256": "d04791bb99df7a079dc06c113822c7e167df2bc72901ef6805c5ff0b7335851e",
+  "spec_hash": "373893db6321d3881f8f4166506e36a5ae1153b88c17c0f749e67239e903e0c8"
+}

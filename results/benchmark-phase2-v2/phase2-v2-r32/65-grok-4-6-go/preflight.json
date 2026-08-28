@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "65-grok-4-6-go",
+    "label": "Grok 4.6 (OpenCode Go)",
+    "agent": "opencode",
+    "model": "opencode-go/grok-4.6",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-27T21:40:53.831Z",
+  "completed_at": "2026-08-27T21:40:57.942Z",
+  "duration_ms": 4111,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0.014118,
+    "steps": 1,
+    "tokens": {
+      "input": 6922,
+      "output": 1,
+      "reasoning": 34,
+      "cache_read": 128,
+      "cache_write": 0,
+      "total": 7085
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "150b2e4201b38bc47b3da1c0cdcc7fe7cc9d68ac1a446a079a67adc5359d67c8"
+  }
+}

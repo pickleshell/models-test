@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r3",
+  "nomination": "patch",
+  "run_id": "phase2-v2-r3:56-kimi-k3-opencode:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "56-kimi-k3-opencode",
+    "agent": "opencode",
+    "model": "opencode/kimi-k3",
+    "subscription": "paid"
+  },
+  "started_at": "2026-08-26T22:47:55.170Z",
+  "completed_at": "2026-08-26T22:51:58.287Z",
+  "duration_ms": 243117,
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-26T22:47:55.170Z",
+    "completed_at": "2026-08-26T22:51:57.524Z",
+    "duration_ms": 242354
+  },
+  "tests": {
+    "status": 254,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-26T22:51:57.885Z",
+    "completed_at": "2026-08-26T22:51:58.287Z",
+    "duration_ms": 402
+  },
+  "outcome": "tests_failed",
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r3/56-kimi-k3-opencode/patch/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "7909adbab49d1aa825bc24427ddef7d1df1496813a8f5addc5284556bff65f21"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "b949d923b56f6cc00eda74d5cd8a3a78b1adccb3e20c0ec7dc7215c81b817508"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "474c2b8e26240990a42e1edfa5541eb154dd4c1e42184cb4762cedc953e7812c"
+  }
+}
