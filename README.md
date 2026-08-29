@@ -1,6 +1,6 @@
 # models-test
 
-> [!WARNING]
+> [!NOTE]
 > A newer, more reliable model-testing pipeline is available in [models-benchmark](https://github.com/pickleshell/models-benchmark).
 
 A reproducible benchmark for empirical model selection in coding-agent workflows. Rather than relying on generic leaderboards, this repository compares models on the same small, auditable software-maintenance task and preserves each candidate patch, execution record, evaluator report, and comparative code-quality review.
