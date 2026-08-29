@@ -1,0 +1,3072 @@
+{
+  "schema_version": 1,
+  "benchmark": "phase2-historical",
+  "reviewer": {
+    "name": "ChatGPT",
+    "model": "gpt-5.6-sol"
+  },
+  "policy": "Objective public/hidden evidence constrains correctness and reliability; maintainability is assessed from focused change size and clarity; forbidden changes constrain scope. No-patch outcomes are N/A.",
+  "criteria": [
+    "functional_correctness",
+    "reliability_edge_cases",
+    "maintainability_clarity",
+    "scope_discipline"
+  ],
+  "reviews": [
+    {
+      "candidate": "01-gpt-5-6-luna",
+      "model": "opencode-go/gpt-5.6-luna",
+      "task": "bug-fix-ledger",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 13
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted bug-fix-ledger patch is somewhat verbose (13 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "01-gpt-5-6-luna",
+      "model": "opencode-go/gpt-5.6-luna",
+      "task": "feature-implementation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 12
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted feature-implementation patch is focused (12 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "01-gpt-5-6-luna",
+      "model": "opencode-go/gpt-5.6-luna",
+      "task": "refactoring",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 9
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted refactoring patch is focused (9 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "01-gpt-5-6-luna",
+      "model": "opencode-go/gpt-5.6-luna",
+      "task": "repository-navigation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 6
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted repository-navigation patch is focused (6 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "01-gpt-5-6-luna",
+      "model": "opencode-go/gpt-5.6-luna",
+      "task": "tests-edge-cases",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 21
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted tests-edge-cases patch is focused (21 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "02-qwen3-7-plus",
+      "model": "opencode-go/qwen3.7-plus",
+      "task": "bug-fix-ledger",
+      "status": "no_patch",
+      "scores": null,
+      "overall": null,
+      "evidence": {
+        "public_pass": false,
+        "hidden_pass": false,
+        "forbidden_changes": 0,
+        "changed_lines": 0
+      },
+      "explanation": "No candidate patch was produced, so code quality is not scored."
+    },
+    {
+      "candidate": "02-qwen3-7-plus",
+      "model": "opencode-go/qwen3.7-plus",
+      "task": "feature-implementation",
+      "status": "no_patch",
+      "scores": null,
+      "overall": null,
+      "evidence": {
+        "public_pass": false,
+        "hidden_pass": false,
+        "forbidden_changes": 0,
+        "changed_lines": 0
+      },
+      "explanation": "No candidate patch was produced, so code quality is not scored."
+    },
+    {
+      "candidate": "02-qwen3-7-plus",
+      "model": "opencode-go/qwen3.7-plus",
+      "task": "refactoring",
+      "status": "no_patch",
+      "scores": null,
+      "overall": null,
+      "evidence": {
+        "public_pass": false,
+        "hidden_pass": false,
+        "forbidden_changes": 0,
+        "changed_lines": 0
+      },
+      "explanation": "No candidate patch was produced, so code quality is not scored."
+    },
+    {
+      "candidate": "02-qwen3-7-plus",
+      "model": "opencode-go/qwen3.7-plus",
+      "task": "repository-navigation",
+      "status": "no_patch",
+      "scores": null,
+      "overall": null,
+      "evidence": {
+        "public_pass": false,
+        "hidden_pass": false,
+        "forbidden_changes": 0,
+        "changed_lines": 0
+      },
+      "explanation": "No candidate patch was produced, so code quality is not scored."
+    },
+    {
+      "candidate": "02-qwen3-7-plus",
+      "model": "opencode-go/qwen3.7-plus",
+      "task": "tests-edge-cases",
+      "status": "no_patch",
+      "scores": null,
+      "overall": null,
+      "evidence": {
+        "public_pass": false,
+        "hidden_pass": false,
+        "forbidden_changes": 0,
+        "changed_lines": 0
+      },
+      "explanation": "No candidate patch was produced, so code quality is not scored."
+    },
+    {
+      "candidate": "03-kimi-k2-7-code",
+      "model": "opencode-go/kimi-k2.7-code",
+      "task": "bug-fix-ledger",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 9
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted bug-fix-ledger patch is focused (9 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "03-kimi-k2-7-code",
+      "model": "opencode-go/kimi-k2.7-code",
+      "task": "feature-implementation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 12
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted feature-implementation patch is focused (12 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "03-kimi-k2-7-code",
+      "model": "opencode-go/kimi-k2.7-code",
+      "task": "refactoring",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 12
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted refactoring patch is focused (12 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "03-kimi-k2-7-code",
+      "model": "opencode-go/kimi-k2.7-code",
+      "task": "repository-navigation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 6
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted repository-navigation patch is focused (6 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "03-kimi-k2-7-code",
+      "model": "opencode-go/kimi-k2.7-code",
+      "task": "tests-edge-cases",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 58
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted tests-edge-cases patch is somewhat verbose (58 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "04-deepseek-v4-pro",
+      "model": "opencode-go/deepseek-v4-pro",
+      "task": "bug-fix-ledger",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 10
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted bug-fix-ledger patch is focused (10 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "04-deepseek-v4-pro",
+      "model": "opencode-go/deepseek-v4-pro",
+      "task": "feature-implementation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 12
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted feature-implementation patch is focused (12 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "04-deepseek-v4-pro",
+      "model": "opencode-go/deepseek-v4-pro",
+      "task": "refactoring",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 3
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted refactoring patch is focused (3 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "04-deepseek-v4-pro",
+      "model": "opencode-go/deepseek-v4-pro",
+      "task": "repository-navigation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 2
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted repository-navigation patch is focused (2 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "04-deepseek-v4-pro",
+      "model": "opencode-go/deepseek-v4-pro",
+      "task": "tests-edge-cases",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 17
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted tests-edge-cases patch is focused (17 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "05-glm-5-2",
+      "model": "opencode-go/glm-5.2",
+      "task": "bug-fix-ledger",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 9
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted bug-fix-ledger patch is focused (9 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "05-glm-5-2",
+      "model": "opencode-go/glm-5.2",
+      "task": "feature-implementation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 39
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted feature-implementation patch is focused (39 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "05-glm-5-2",
+      "model": "opencode-go/glm-5.2",
+      "task": "refactoring",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 8
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted refactoring patch is focused (8 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "05-glm-5-2",
+      "model": "opencode-go/glm-5.2",
+      "task": "repository-navigation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 10
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted repository-navigation patch is focused (10 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "05-glm-5-2",
+      "model": "opencode-go/glm-5.2",
+      "task": "tests-edge-cases",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 34
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted tests-edge-cases patch is focused (34 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "06-minimax-m3",
+      "model": "opencode-go/minimax-m3",
+      "task": "bug-fix-ledger",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 15
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted bug-fix-ledger patch is somewhat verbose (15 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "06-minimax-m3",
+      "model": "opencode-go/minimax-m3",
+      "task": "feature-implementation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 12
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted feature-implementation patch is focused (12 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "06-minimax-m3",
+      "model": "opencode-go/minimax-m3",
+      "task": "refactoring",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 10
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted refactoring patch is focused (10 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "06-minimax-m3",
+      "model": "opencode-go/minimax-m3",
+      "task": "repository-navigation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 2
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted repository-navigation patch is focused (2 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "06-minimax-m3",
+      "model": "opencode-go/minimax-m3",
+      "task": "tests-edge-cases",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 29
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted tests-edge-cases patch is focused (29 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "07-mimo-v2-5-pro",
+      "model": "opencode-go/mimo-v2.5-pro",
+      "task": "bug-fix-ledger",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 12
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted bug-fix-ledger patch is somewhat verbose (12 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "07-mimo-v2-5-pro",
+      "model": "opencode-go/mimo-v2.5-pro",
+      "task": "feature-implementation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 26
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted feature-implementation patch is focused (26 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "07-mimo-v2-5-pro",
+      "model": "opencode-go/mimo-v2.5-pro",
+      "task": "refactoring",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 2
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted refactoring patch is focused (2 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "07-mimo-v2-5-pro",
+      "model": "opencode-go/mimo-v2.5-pro",
+      "task": "repository-navigation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 8
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted repository-navigation patch is focused (8 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "07-mimo-v2-5-pro",
+      "model": "opencode-go/mimo-v2.5-pro",
+      "task": "tests-edge-cases",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 63
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted tests-edge-cases patch is somewhat verbose (63 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "09-grok-4-5",
+      "model": "opencode-go/grok-4.5",
+      "task": "bug-fix-ledger",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 16
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted bug-fix-ledger patch is somewhat verbose (16 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "09-grok-4-5",
+      "model": "opencode-go/grok-4.5",
+      "task": "feature-implementation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 58
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted feature-implementation patch is somewhat verbose (58 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "09-grok-4-5",
+      "model": "opencode-go/grok-4.5",
+      "task": "refactoring",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 3
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted refactoring patch is focused (3 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "09-grok-4-5",
+      "model": "opencode-go/grok-4.5",
+      "task": "repository-navigation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 7
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted repository-navigation patch is focused (7 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "09-grok-4-5",
+      "model": "opencode-go/grok-4.5",
+      "task": "tests-edge-cases",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 27
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted tests-edge-cases patch is focused (27 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "10-kimi-k3",
+      "model": "opencode-go/kimi-k3",
+      "task": "bug-fix-ledger",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 11
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted bug-fix-ledger patch is somewhat verbose (11 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "10-kimi-k3",
+      "model": "opencode-go/kimi-k3",
+      "task": "feature-implementation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 29
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted feature-implementation patch is focused (29 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "10-kimi-k3",
+      "model": "opencode-go/kimi-k3",
+      "task": "refactoring",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 18
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted refactoring patch is somewhat verbose (18 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "10-kimi-k3",
+      "model": "opencode-go/kimi-k3",
+      "task": "repository-navigation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 7
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted repository-navigation patch is focused (7 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "10-kimi-k3",
+      "model": "opencode-go/kimi-k3",
+      "task": "tests-edge-cases",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 58
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted tests-edge-cases patch is somewhat verbose (58 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "11-deepseek-v4-flash",
+      "model": "opencode-go/deepseek-v4-flash",
+      "task": "bug-fix-ledger",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 8
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted bug-fix-ledger patch is focused (8 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "11-deepseek-v4-flash",
+      "model": "opencode-go/deepseek-v4-flash",
+      "task": "feature-implementation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 12
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted feature-implementation patch is focused (12 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "11-deepseek-v4-flash",
+      "model": "opencode-go/deepseek-v4-flash",
+      "task": "refactoring",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 17
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted refactoring patch is somewhat verbose (17 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "11-deepseek-v4-flash",
+      "model": "opencode-go/deepseek-v4-flash",
+      "task": "repository-navigation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 6
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted repository-navigation patch is focused (6 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "11-deepseek-v4-flash",
+      "model": "opencode-go/deepseek-v4-flash",
+      "task": "tests-edge-cases",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 25
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted tests-edge-cases patch is focused (25 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "13-mimo-v2-5",
+      "model": "opencode-go/mimo-v2.5",
+      "task": "bug-fix-ledger",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 7,
+        "reliability_edge_cases": 5,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 7.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": false,
+        "forbidden_changes": 0,
+        "changed_lines": 9
+      },
+      "explanation": "Public tests pass but the hidden evaluator fails, so the patch implements the visible path while missing required edge-case or contract behavior. The patch is focused (9 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "13-mimo-v2-5",
+      "model": "opencode-go/mimo-v2.5",
+      "task": "feature-implementation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 34
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted feature-implementation patch is focused (34 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "13-mimo-v2-5",
+      "model": "opencode-go/mimo-v2.5",
+      "task": "refactoring",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 8
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted refactoring patch is focused (8 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "13-mimo-v2-5",
+      "model": "opencode-go/mimo-v2.5",
+      "task": "repository-navigation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 7
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted repository-navigation patch is focused (7 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "13-mimo-v2-5",
+      "model": "opencode-go/mimo-v2.5",
+      "task": "tests-edge-cases",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 48
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted tests-edge-cases patch is somewhat verbose (48 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "14-hy3",
+      "model": "opencode-go/hy3",
+      "task": "bug-fix-ledger",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 5,
+        "reliability_edge_cases": 3,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 6.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": false,
+        "forbidden_changes": 0,
+        "changed_lines": 1
+      },
+      "explanation": "Public tests pass but the hidden evaluator fails, so the patch implements the visible path while missing required edge-case or contract behavior. The patch is focused (1 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "14-hy3",
+      "model": "opencode-go/hy3",
+      "task": "feature-implementation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 38
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted feature-implementation patch is focused (38 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "14-hy3",
+      "model": "opencode-go/hy3",
+      "task": "refactoring",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 10
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted refactoring patch is focused (10 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "14-hy3",
+      "model": "opencode-go/hy3",
+      "task": "repository-navigation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 2
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted repository-navigation patch is focused (2 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "14-hy3",
+      "model": "opencode-go/hy3",
+      "task": "tests-edge-cases",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 52
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted tests-edge-cases patch is somewhat verbose (52 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "15-glm-5-1",
+      "model": "opencode-go/glm-5.1",
+      "task": "bug-fix-ledger",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 8
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted bug-fix-ledger patch is focused (8 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "15-glm-5-1",
+      "model": "opencode-go/glm-5.1",
+      "task": "feature-implementation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 12
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted feature-implementation patch is focused (12 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "15-glm-5-1",
+      "model": "opencode-go/glm-5.1",
+      "task": "refactoring",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 13
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted refactoring patch is focused (13 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "15-glm-5-1",
+      "model": "opencode-go/glm-5.1",
+      "task": "repository-navigation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 7
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted repository-navigation patch is focused (7 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "15-glm-5-1",
+      "model": "opencode-go/glm-5.1",
+      "task": "tests-edge-cases",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 65
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted tests-edge-cases patch is somewhat verbose (65 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "16-kimi-k2-6",
+      "model": "opencode-go/kimi-k2.6",
+      "task": "bug-fix-ledger",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 14
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted bug-fix-ledger patch is somewhat verbose (14 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "16-kimi-k2-6",
+      "model": "opencode-go/kimi-k2.6",
+      "task": "feature-implementation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 17
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted feature-implementation patch is focused (17 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "16-kimi-k2-6",
+      "model": "opencode-go/kimi-k2.6",
+      "task": "refactoring",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 2
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted refactoring patch is focused (2 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "16-kimi-k2-6",
+      "model": "opencode-go/kimi-k2.6",
+      "task": "repository-navigation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 7
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted repository-navigation patch is focused (7 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "16-kimi-k2-6",
+      "model": "opencode-go/kimi-k2.6",
+      "task": "tests-edge-cases",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 19
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted tests-edge-cases patch is focused (19 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "17-minimax-m2-7",
+      "model": "opencode-go/minimax-m2.7",
+      "task": "bug-fix-ledger",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 5,
+        "reliability_edge_cases": 3,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 6.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": false,
+        "forbidden_changes": 0,
+        "changed_lines": 1
+      },
+      "explanation": "Public tests pass but the hidden evaluator fails, so the patch implements the visible path while missing required edge-case or contract behavior. The patch is focused (1 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "17-minimax-m2-7",
+      "model": "opencode-go/minimax-m2.7",
+      "task": "feature-implementation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 35
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted feature-implementation patch is focused (35 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "17-minimax-m2-7",
+      "model": "opencode-go/minimax-m2.7",
+      "task": "refactoring",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 18
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted refactoring patch is somewhat verbose (18 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "17-minimax-m2-7",
+      "model": "opencode-go/minimax-m2.7",
+      "task": "repository-navigation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 5
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted repository-navigation patch is focused (5 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "17-minimax-m2-7",
+      "model": "opencode-go/minimax-m2.7",
+      "task": "tests-edge-cases",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 8,
+        "reliability_edge_cases": 6,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 8.25,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": false,
+        "forbidden_changes": 0,
+        "changed_lines": 21
+      },
+      "explanation": "Public tests pass but the hidden evaluator fails, so the patch implements the visible path while missing required edge-case or contract behavior. The patch is focused (21 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "18-gpt-5-3-codex-spark",
+      "model": "gpt-5.3-codex-spark",
+      "task": "bug-fix-ledger",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 19
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted bug-fix-ledger patch is somewhat verbose (19 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "18-gpt-5-3-codex-spark",
+      "model": "gpt-5.3-codex-spark",
+      "task": "feature-implementation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 7,
+        "scope_discipline": 10
+      },
+      "overall": 9.25,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 68
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted feature-implementation patch is materially verbose (68 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "18-gpt-5-3-codex-spark",
+      "model": "gpt-5.3-codex-spark",
+      "task": "refactoring",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 23
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted refactoring patch is somewhat verbose (23 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "18-gpt-5-3-codex-spark",
+      "model": "gpt-5.3-codex-spark",
+      "task": "repository-navigation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 9
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted repository-navigation patch is focused (9 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "18-gpt-5-3-codex-spark",
+      "model": "gpt-5.3-codex-spark",
+      "task": "tests-edge-cases",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 22
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted tests-edge-cases patch is focused (22 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "19-big-pickle",
+      "model": "opencode/big-pickle",
+      "task": "bug-fix-ledger",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 5,
+        "reliability_edge_cases": 3,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 6.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": false,
+        "forbidden_changes": 0,
+        "changed_lines": 1
+      },
+      "explanation": "Public tests pass but the hidden evaluator fails, so the patch implements the visible path while missing required edge-case or contract behavior. The patch is focused (1 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "19-big-pickle",
+      "model": "opencode/big-pickle",
+      "task": "feature-implementation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 34
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted feature-implementation patch is focused (34 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "19-big-pickle",
+      "model": "opencode/big-pickle",
+      "task": "refactoring",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 7
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted refactoring patch is focused (7 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "19-big-pickle",
+      "model": "opencode/big-pickle",
+      "task": "repository-navigation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 2
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted repository-navigation patch is focused (2 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "19-big-pickle",
+      "model": "opencode/big-pickle",
+      "task": "tests-edge-cases",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 29
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted tests-edge-cases patch is focused (29 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "20-laguna-s-2-1-free",
+      "model": "opencode/laguna-s-2.1-free",
+      "task": "bug-fix-ledger",
+      "status": "no_patch",
+      "scores": null,
+      "overall": null,
+      "evidence": {
+        "public_pass": false,
+        "hidden_pass": false,
+        "forbidden_changes": 0,
+        "changed_lines": 0
+      },
+      "explanation": "No candidate patch was produced, so code quality is not scored."
+    },
+    {
+      "candidate": "20-laguna-s-2-1-free",
+      "model": "opencode/laguna-s-2.1-free",
+      "task": "feature-implementation",
+      "status": "no_patch",
+      "scores": null,
+      "overall": null,
+      "evidence": {
+        "public_pass": false,
+        "hidden_pass": false,
+        "forbidden_changes": 0,
+        "changed_lines": 0
+      },
+      "explanation": "No candidate patch was produced, so code quality is not scored."
+    },
+    {
+      "candidate": "20-laguna-s-2-1-free",
+      "model": "opencode/laguna-s-2.1-free",
+      "task": "refactoring",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 11
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted refactoring patch is focused (11 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "20-laguna-s-2-1-free",
+      "model": "opencode/laguna-s-2.1-free",
+      "task": "repository-navigation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 2
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted repository-navigation patch is focused (2 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "20-laguna-s-2-1-free",
+      "model": "opencode/laguna-s-2.1-free",
+      "task": "tests-edge-cases",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 48
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted tests-edge-cases patch is somewhat verbose (48 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "22-deepseek-v4-flash-free",
+      "model": "opencode/deepseek-v4-flash-free",
+      "task": "bug-fix-ledger",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 13
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted bug-fix-ledger patch is somewhat verbose (13 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "22-deepseek-v4-flash-free",
+      "model": "opencode/deepseek-v4-flash-free",
+      "task": "feature-implementation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 26
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted feature-implementation patch is focused (26 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "22-deepseek-v4-flash-free",
+      "model": "opencode/deepseek-v4-flash-free",
+      "task": "refactoring",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 8
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted refactoring patch is focused (8 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "22-deepseek-v4-flash-free",
+      "model": "opencode/deepseek-v4-flash-free",
+      "task": "repository-navigation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 2
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted repository-navigation patch is focused (2 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "22-deepseek-v4-flash-free",
+      "model": "opencode/deepseek-v4-flash-free",
+      "task": "tests-edge-cases",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 34
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted tests-edge-cases patch is focused (34 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "27-hy3-free",
+      "model": "opencode/hy3-free",
+      "task": "bug-fix-ledger",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 8
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted bug-fix-ledger patch is focused (8 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "27-hy3-free",
+      "model": "opencode/hy3-free",
+      "task": "feature-implementation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 7,
+        "reliability_edge_cases": 5,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 7.5,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": false,
+        "forbidden_changes": 0,
+        "changed_lines": 44
+      },
+      "explanation": "Public tests pass but the hidden evaluator fails, so the patch implements the visible path while missing required edge-case or contract behavior. The patch is somewhat verbose (44 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "27-hy3-free",
+      "model": "opencode/hy3-free",
+      "task": "refactoring",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 11
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted refactoring patch is focused (11 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "27-hy3-free",
+      "model": "opencode/hy3-free",
+      "task": "repository-navigation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 11
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted repository-navigation patch is somewhat verbose (11 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "27-hy3-free",
+      "model": "opencode/hy3-free",
+      "task": "tests-edge-cases",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 36
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted tests-edge-cases patch is focused (36 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "28-mimo-v2-5-free",
+      "model": "opencode/mimo-v2.5-free",
+      "task": "bug-fix-ledger",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 5,
+        "reliability_edge_cases": 3,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 6.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": false,
+        "forbidden_changes": 0,
+        "changed_lines": 1
+      },
+      "explanation": "Public tests pass but the hidden evaluator fails, so the patch implements the visible path while missing required edge-case or contract behavior. The patch is focused (1 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "28-mimo-v2-5-free",
+      "model": "opencode/mimo-v2.5-free",
+      "task": "feature-implementation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 7,
+        "reliability_edge_cases": 5,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 7.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": false,
+        "forbidden_changes": 0,
+        "changed_lines": 35
+      },
+      "explanation": "Public tests pass but the hidden evaluator fails, so the patch implements the visible path while missing required edge-case or contract behavior. The patch is focused (35 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "28-mimo-v2-5-free",
+      "model": "opencode/mimo-v2.5-free",
+      "task": "refactoring",
+      "status": "no_patch",
+      "scores": null,
+      "overall": null,
+      "evidence": {
+        "public_pass": false,
+        "hidden_pass": false,
+        "forbidden_changes": 0,
+        "changed_lines": 0
+      },
+      "explanation": "No candidate patch was produced, so code quality is not scored."
+    },
+    {
+      "candidate": "28-mimo-v2-5-free",
+      "model": "opencode/mimo-v2.5-free",
+      "task": "repository-navigation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 2
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted repository-navigation patch is focused (2 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "28-mimo-v2-5-free",
+      "model": "opencode/mimo-v2.5-free",
+      "task": "tests-edge-cases",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 48
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted tests-edge-cases patch is somewhat verbose (48 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "33-nemotron-3-5-lightning-free",
+      "model": "opencode/nemotron-3.5-lightning-free",
+      "task": "bug-fix-ledger",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 5,
+        "reliability_edge_cases": 3,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 6.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": false,
+        "forbidden_changes": 0,
+        "changed_lines": 1
+      },
+      "explanation": "Public tests pass but the hidden evaluator fails, so the patch implements the visible path while missing required edge-case or contract behavior. The patch is focused (1 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "33-nemotron-3-5-lightning-free",
+      "model": "opencode/nemotron-3.5-lightning-free",
+      "task": "feature-implementation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 12
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted feature-implementation patch is focused (12 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "33-nemotron-3-5-lightning-free",
+      "model": "opencode/nemotron-3.5-lightning-free",
+      "task": "refactoring",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 5
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted refactoring patch is focused (5 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "33-nemotron-3-5-lightning-free",
+      "model": "opencode/nemotron-3.5-lightning-free",
+      "task": "repository-navigation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 7,
+        "reliability_edge_cases": 5,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 7.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": false,
+        "forbidden_changes": 0,
+        "changed_lines": 7
+      },
+      "explanation": "Public tests pass but the hidden evaluator fails, so the patch implements the visible path while missing required edge-case or contract behavior. The patch is focused (7 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "33-nemotron-3-5-lightning-free",
+      "model": "opencode/nemotron-3.5-lightning-free",
+      "task": "tests-edge-cases",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 18
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted tests-edge-cases patch is focused (18 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "35-nemotron-3-ultra-free",
+      "model": "opencode/nemotron-3-ultra-free",
+      "task": "bug-fix-ledger",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 5,
+        "reliability_edge_cases": 3,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 6.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": false,
+        "forbidden_changes": 0,
+        "changed_lines": 1
+      },
+      "explanation": "Public tests pass but the hidden evaluator fails, so the patch implements the visible path while missing required edge-case or contract behavior. The patch is focused (1 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "35-nemotron-3-ultra-free",
+      "model": "opencode/nemotron-3-ultra-free",
+      "task": "feature-implementation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 14
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted feature-implementation patch is focused (14 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "35-nemotron-3-ultra-free",
+      "model": "opencode/nemotron-3-ultra-free",
+      "task": "refactoring",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 8
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted refactoring patch is focused (8 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "35-nemotron-3-ultra-free",
+      "model": "opencode/nemotron-3-ultra-free",
+      "task": "repository-navigation",
+      "status": "no_patch",
+      "scores": null,
+      "overall": null,
+      "evidence": {
+        "public_pass": false,
+        "hidden_pass": false,
+        "forbidden_changes": 0,
+        "changed_lines": 0
+      },
+      "explanation": "No candidate patch was produced, so code quality is not scored."
+    },
+    {
+      "candidate": "35-nemotron-3-ultra-free",
+      "model": "opencode/nemotron-3-ultra-free",
+      "task": "tests-edge-cases",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 25
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted tests-edge-cases patch is focused (25 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "46-gpt-5-6-luna",
+      "model": "gpt-5.6-luna",
+      "task": "bug-fix-ledger",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 7,
+        "scope_discipline": 10
+      },
+      "overall": 9.25,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 24
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted bug-fix-ledger patch is materially verbose (24 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "46-gpt-5-6-luna",
+      "model": "gpt-5.6-luna",
+      "task": "feature-implementation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 12
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted feature-implementation patch is focused (12 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "46-gpt-5-6-luna",
+      "model": "gpt-5.6-luna",
+      "task": "refactoring",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 11
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted refactoring patch is focused (11 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "46-gpt-5-6-luna",
+      "model": "gpt-5.6-luna",
+      "task": "repository-navigation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 8
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted repository-navigation patch is focused (8 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "46-gpt-5-6-luna",
+      "model": "gpt-5.6-luna",
+      "task": "tests-edge-cases",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 29
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted tests-edge-cases patch is focused (29 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "47-gpt-5-6-sol",
+      "model": "gpt-5.6-sol",
+      "task": "bug-fix-ledger",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 7,
+        "scope_discipline": 10
+      },
+      "overall": 9.25,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 34
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted bug-fix-ledger patch is materially verbose (34 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "47-gpt-5-6-sol",
+      "model": "gpt-5.6-sol",
+      "task": "feature-implementation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 12
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted feature-implementation patch is focused (12 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "47-gpt-5-6-sol",
+      "model": "gpt-5.6-sol",
+      "task": "refactoring",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 12
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted refactoring patch is focused (12 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "47-gpt-5-6-sol",
+      "model": "gpt-5.6-sol",
+      "task": "repository-navigation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 7
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted repository-navigation patch is focused (7 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "47-gpt-5-6-sol",
+      "model": "gpt-5.6-sol",
+      "task": "tests-edge-cases",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 31
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted tests-edge-cases patch is focused (31 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "48-gpt-5-6-terra",
+      "model": "gpt-5.6-terra",
+      "task": "bug-fix-ledger",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 17
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted bug-fix-ledger patch is somewhat verbose (17 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "48-gpt-5-6-terra",
+      "model": "gpt-5.6-terra",
+      "task": "feature-implementation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 26
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted feature-implementation patch is focused (26 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "48-gpt-5-6-terra",
+      "model": "gpt-5.6-terra",
+      "task": "refactoring",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 10
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted refactoring patch is focused (10 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "48-gpt-5-6-terra",
+      "model": "gpt-5.6-terra",
+      "task": "repository-navigation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 8
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted repository-navigation patch is focused (8 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "48-gpt-5-6-terra",
+      "model": "gpt-5.6-terra",
+      "task": "tests-edge-cases",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 37
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted tests-edge-cases patch is focused (37 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "49-gpt-5-4",
+      "model": "gpt-5.4",
+      "task": "bug-fix-ledger",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 11
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted bug-fix-ledger patch is somewhat verbose (11 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "49-gpt-5-4",
+      "model": "gpt-5.4",
+      "task": "feature-implementation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 29
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted feature-implementation patch is focused (29 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "49-gpt-5-4",
+      "model": "gpt-5.4",
+      "task": "refactoring",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 11
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted refactoring patch is focused (11 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "49-gpt-5-4",
+      "model": "gpt-5.4",
+      "task": "repository-navigation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 8
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted repository-navigation patch is focused (8 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "49-gpt-5-4",
+      "model": "gpt-5.4",
+      "task": "tests-edge-cases",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 19
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted tests-edge-cases patch is focused (19 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "50-gpt-5-4-mini",
+      "model": "gpt-5.4-mini",
+      "task": "bug-fix-ledger",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 11
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted bug-fix-ledger patch is somewhat verbose (11 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "50-gpt-5-4-mini",
+      "model": "gpt-5.4-mini",
+      "task": "feature-implementation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 37
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted feature-implementation patch is focused (37 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "50-gpt-5-4-mini",
+      "model": "gpt-5.4-mini",
+      "task": "refactoring",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 16
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted refactoring patch is somewhat verbose (16 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "50-gpt-5-4-mini",
+      "model": "gpt-5.4-mini",
+      "task": "repository-navigation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 9
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted repository-navigation patch is focused (9 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "50-gpt-5-4-mini",
+      "model": "gpt-5.4-mini",
+      "task": "tests-edge-cases",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 23
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted tests-edge-cases patch is focused (23 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "51-claude-haiku-4-5",
+      "model": "opencode/claude-haiku-4-5",
+      "task": "bug-fix-ledger",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 5,
+        "reliability_edge_cases": 3,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 6.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": false,
+        "forbidden_changes": 0,
+        "changed_lines": 1
+      },
+      "explanation": "Public tests pass but the hidden evaluator fails, so the patch implements the visible path while missing required edge-case or contract behavior. The patch is focused (1 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "51-claude-haiku-4-5",
+      "model": "opencode/claude-haiku-4-5",
+      "task": "feature-implementation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 7,
+        "scope_discipline": 10
+      },
+      "overall": 9.25,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 75
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted feature-implementation patch is materially verbose (75 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "51-claude-haiku-4-5",
+      "model": "opencode/claude-haiku-4-5",
+      "task": "refactoring",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 2
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted refactoring patch is focused (2 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "51-claude-haiku-4-5",
+      "model": "opencode/claude-haiku-4-5",
+      "task": "repository-navigation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 7,
+        "scope_discipline": 10
+      },
+      "overall": 9.25,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 19
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted repository-navigation patch is materially verbose (19 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "51-claude-haiku-4-5",
+      "model": "opencode/claude-haiku-4-5",
+      "task": "tests-edge-cases",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 32
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted tests-edge-cases patch is focused (32 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "52-claude-sonnet-5",
+      "model": "opencode/claude-sonnet-5",
+      "task": "bug-fix-ledger",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 8
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted bug-fix-ledger patch is focused (8 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "52-claude-sonnet-5",
+      "model": "opencode/claude-sonnet-5",
+      "task": "feature-implementation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 41
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted feature-implementation patch is somewhat verbose (41 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "52-claude-sonnet-5",
+      "model": "opencode/claude-sonnet-5",
+      "task": "refactoring",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 12
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted refactoring patch is focused (12 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "52-claude-sonnet-5",
+      "model": "opencode/claude-sonnet-5",
+      "task": "repository-navigation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 8
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted repository-navigation patch is focused (8 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "52-claude-sonnet-5",
+      "model": "opencode/claude-sonnet-5",
+      "task": "tests-edge-cases",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 20
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted tests-edge-cases patch is focused (20 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "53-claude-opus-5",
+      "model": "opencode/claude-opus-5",
+      "task": "bug-fix-ledger",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 12
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted bug-fix-ledger patch is somewhat verbose (12 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "53-claude-opus-5",
+      "model": "opencode/claude-opus-5",
+      "task": "feature-implementation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 34
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted feature-implementation patch is focused (34 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "53-claude-opus-5",
+      "model": "opencode/claude-opus-5",
+      "task": "refactoring",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 19
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted refactoring patch is somewhat verbose (19 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "53-claude-opus-5",
+      "model": "opencode/claude-opus-5",
+      "task": "repository-navigation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 7
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted repository-navigation patch is focused (7 changed lines) and stays within the allowed files."
+    },
+    {
+      "candidate": "53-claude-opus-5",
+      "model": "opencode/claude-opus-5",
+      "task": "tests-edge-cases",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 7,
+        "scope_discipline": 10
+      },
+      "overall": 9.25,
+      "evidence": {
+        "public_pass": true,
+        "hidden_pass": true,
+        "forbidden_changes": 0,
+        "changed_lines": 113
+      },
+      "explanation": "Public and hidden evaluators pass. The submitted tests-edge-cases patch is materially verbose (113 changed lines) and stays within the allowed files."
+    }
+  ]
+}
