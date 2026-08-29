@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r36",
+  "nomination": "feature-implementation",
+  "run_id": "phase2-v2-r36:70-muse-spark-1-2-free:feature-implementation",
+  "attempt": 1,
+  "candidate": {
+    "id": "70-muse-spark-1-2-free",
+    "label": "Muse Spark 1.2 Free (OpenCode Zen)",
+    "agent": "opencode",
+    "model": "opencode/muse-spark-1.2-contributor-free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-29T21:34:48.059Z",
+  "completed_at": "2026-08-29T21:35:40.506Z",
+  "duration_ms": 52447,
+  "benchmark_metrics": {
+    "duration_ms": 52447,
+    "model_duration_ms": 51525,
+    "public_tests_duration_ms": 579,
+    "cost_usd": 0,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-29T21:34:48.059Z",
+    "completed_at": "2026-08-29T21:35:39.584Z",
+    "duration_ms": 51525,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0,
+      "steps": 13,
+      "tokens": {
+        "input": 16753,
+        "output": 4298,
+        "reasoning": 4160,
+        "cache_read": 144829,
+        "cache_write": 0,
+        "total": 170040
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-29T21:35:39.927Z",
+    "completed_at": "2026-08-29T21:35:40.506Z",
+    "duration_ms": 579
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/feature-implementation/src/featureFlags.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r36/70-muse-spark-1-2-free/feature-implementation/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "02d33dc74b0d4642ba5a00026d7d2e09f8fe173b5255e22a165dd55f9a265499"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "0c23b3bfc2bb6220ca941806a0a267a0769ecf1dd0d3f74a2a00da8230ad2e32"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "929f3578fd00490bb5ebe0b24cffbaa67e983c12c9bf886cd5428c429ab4d76c"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "70e24869a8540c271b3d3fea43407481a46dc4b60e8437e2c1b608a9d41032e8"
+  }
+}

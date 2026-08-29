@@ -1,0 +1,118 @@
+diff --git a/fixtures/phase2-v2/tests-edge-cases/src/range.js b/fixtures/phase2-v2/tests-edge-cases/src/range.js
+index caf34d8..c805135 100644
+--- a/fixtures/phase2-v2/tests-edge-cases/src/range.js
++++ b/fixtures/phase2-v2/tests-edge-cases/src/range.js
+@@ -1,8 +1,12 @@
+ export function parseRange(value) {
+   if (typeof value !== 'string') return null;
+-  const [left, right] = value.split('..');
+-  const start = Number(left);
+-  const end = Number(right);
++  const trimmed = value.trim();
++  const match = trimmed.match(/^([+-]?\d+)\.\.([+-]?\d+)$/);
++  if (!match) return null;
++  const start = Number(match[1]);
++  const end = Number(match[2]);
+   if (!Number.isInteger(start) || !Number.isInteger(end)) return null;
++  if (start < -100000 || start > 100000 || end < -100000 || end > 100000) return null;
++  if (start > end) return null;
+   return { start, end };
+ }
+diff --git a/fixtures/phase2-v2/tests-edge-cases/test/range.test.mjs b/fixtures/phase2-v2/tests-edge-cases/test/range.test.mjs
+index 70f623d..be4b75e 100644
+--- a/fixtures/phase2-v2/tests-edge-cases/test/range.test.mjs
++++ b/fixtures/phase2-v2/tests-edge-cases/test/range.test.mjs
+@@ -5,3 +5,93 @@ test('parses an inclusive range', () => assert.deepEqual(parseRange('2..7'), { s
+ test('accepts surrounding whitespace', () => assert.deepEqual(parseRange(' -2..0 '), { start: -2, end: 0 }));
+ test('rejects one malformed range', () => assert.equal(parseRange('2-7'), null));
+ test('rejects a reversed range', () => assert.equal(parseRange('7..2'), null));
++
++// valid ranges
++test('parses zero range', () => assert.deepEqual(parseRange('0..0'), { start: 0, end: 0 }));
++test('parses single-value range at boundary', () => assert.deepEqual(parseRange('5..5'), { start: 5, end: 5 }));
++test('parses with explicit plus sign', () => assert.deepEqual(parseRange('+1..+2'), { start: 1, end: 2 }));
++test('parses negative to positive', () => assert.deepEqual(parseRange('-5..5'), { start: -5, end: 5 }));
++test('parses leading zeros', () => assert.deepEqual(parseRange('001..002'), { start: 1, end: 2 }));
++test('parses lower bound inclusive', () => assert.deepEqual(parseRange('-100000..-100000'), { start: -100000, end: -100000 }));
++test('parses upper bound inclusive', () => assert.deepEqual(parseRange('100000..100000'), { start: 100000, end: 100000 }));
++test('parses full bound range', () => assert.deepEqual(parseRange('-100000..100000'), { start: -100000, end: 100000 }));
++test('parses with tabs and newlines surrounding', () => assert.deepEqual(parseRange('\t1..2\n'), { start: 1, end: 2 }));
++test('parses with multiple surrounding spaces', () => assert.deepEqual(parseRange('   10..20   '), { start: 10, end: 20 }));
++test('parses mixed signs', () => assert.deepEqual(parseRange('-10..+10'), { start: -10, end: 10 }));
++test('parses +0..0', () => assert.deepEqual(parseRange('+0..0'), { start: 0, end: 0 }));
++
++// non-string inputs
++test('rejects null', () => assert.equal(parseRange(null), null));
++test('rejects undefined', () => assert.equal(parseRange(undefined), null));
++test('rejects number input', () => assert.equal(parseRange(123), null));
++test('rejects object', () => assert.equal(parseRange({}), null));
++test('rejects array', () => assert.equal(parseRange([]), null));
++test('rejects boolean', () => assert.equal(parseRange(true), null));
++
++// empty / whitespace
++test('rejects empty string', () => assert.equal(parseRange(''), null));
++test('rejects whitespace only', () => assert.equal(parseRange('   '), null));
++test('rejects whitespace only with tabs', () => assert.equal(parseRange('\t\n '), null));
++
++// missing parts / extra separators
++test('rejects missing end', () => assert.equal(parseRange('1..'), null));
++test('rejects missing start', () => assert.equal(parseRange('..2'), null));
++test('rejects just separator', () => assert.equal(parseRange('..'), null));
++test('rejects three dots', () => assert.equal(parseRange('1...2'), null));
++test('rejects duplicate range separator', () => assert.equal(parseRange('1..2..3'), null));
++test('rejects four dots', () => assert.equal(parseRange('1....2'), null));
++test('rejects extra trailing separator', () => assert.equal(parseRange('1..2..'), null));
++
++// decimals
++test('rejects decimal on left', () => assert.equal(parseRange('1.0..2'), null));
++test('rejects decimal on right', () => assert.equal(parseRange('1..2.0'), null));
++test('rejects decimal on both', () => assert.equal(parseRange('1.5..2.5'), null));
++test('rejects trailing dot', () => assert.equal(parseRange('1..2.'), null));
++
++// exponents
++test('rejects exponent on left', () => assert.equal(parseRange('1e2..2'), null));
++test('rejects exponent on right', () => assert.equal(parseRange('1..2e3'), null));
++test('rejects uppercase exponent', () => assert.equal(parseRange('1E10..2'), null));
++test('rejects exponent with sign', () => assert.equal(parseRange('1e+2..3'), null));
++
++// hexadecimal
++test('rejects hex on left', () => assert.equal(parseRange('0x10..20'), null));
++test('rejects hex on right', () => assert.equal(parseRange('10..0x20'), null));
++test('rejects hex on both', () => assert.equal(parseRange('0x1..0x2'), null));
++
++// invalid sign syntax
++test('rejects double minus', () => assert.equal(parseRange('--1..2'), null));
++test('rejects double plus', () => assert.equal(parseRange('++1..2'), null));
++test('rejects plus-minus combo', () => assert.equal(parseRange('+-1..2'), null));
++test('rejects lone plus on left', () => assert.equal(parseRange('+..2'), null));
++test('rejects lone minus on right', () => assert.equal(parseRange('1..-'), null));
++test('rejects sign only on both', () => assert.equal(parseRange('+..-'), null));
++test('rejects double sign on right', () => assert.equal(parseRange('1..--2'), null));
++
++// internal whitespace (should be invalid, only surrounding allowed)
++test('rejects space before separator', () => assert.equal(parseRange('1 ..2'), null));
++test('rejects space after separator', () => assert.equal(parseRange('1.. 2'), null));
++test('rejects spaces around separator', () => assert.equal(parseRange('1 .. 2'), null));
++test('rejects space between sign and digits', () => assert.equal(parseRange('+ 1..2'), null));
++test('rejects internal tab', () => assert.equal(parseRange('1\t..2'), null));
++
++// extra characters
++test('rejects trailing letter', () => assert.equal(parseRange('1..2b'), null));
++test('rejects leading letter', () => assert.equal(parseRange('a1..2'), null));
++test('rejects comma separator', () => assert.equal(parseRange('1,2..3'), null));
++test('rejects letters on both sides', () => assert.equal(parseRange('a..b'), null));
++
++// bounds
++test('rejects start below lower bound', () => assert.equal(parseRange('-100001..0'), null));
++test('rejects end above upper bound', () => assert.equal(parseRange('0..100001'), null));
++test('rejects both out of bounds low', () => assert.equal(parseRange('-100001..-100001'), null));
++test('rejects both out of bounds high', () => assert.equal(parseRange('100001..100001'), null));
++test('rejects start out of bounds high but end in bounds reversed would also be invalid', () => assert.equal(parseRange('100001..100002'), null));
++test('rejects end just over bound', () => assert.equal(parseRange('-100000..100001'), null));
++test('rejects start just over bound negative', () => assert.equal(parseRange('-100001..100000'), null));
++
++// ordering
++test('rejects reversed single step', () => assert.equal(parseRange('2..1'), null));
++test('rejects reversed negative', () => assert.equal(parseRange('-1..-2'), null));
++test('rejects reversed huge', () => assert.equal(parseRange('100000..-100000'), null));
++test('rejects reversed with surrounding whitespace', () => assert.equal(parseRange(' 5..2 '), null));

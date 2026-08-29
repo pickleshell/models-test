@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r36",
+  "nomination": "tests-edge-cases",
+  "run_id": "phase2-v2-r36:70-muse-spark-1-2-free:tests-edge-cases",
+  "attempt": 1,
+  "candidate": {
+    "id": "70-muse-spark-1-2-free",
+    "label": "Muse Spark 1.2 Free (OpenCode Zen)",
+    "agent": "opencode",
+    "model": "opencode/muse-spark-1.2-contributor-free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-29T21:39:33.166Z",
+  "completed_at": "2026-08-29T21:40:53.526Z",
+  "duration_ms": 80360,
+  "benchmark_metrics": {
+    "duration_ms": 80360,
+    "model_duration_ms": 79386,
+    "public_tests_duration_ms": 618,
+    "cost_usd": 0,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-29T21:39:33.166Z",
+    "completed_at": "2026-08-29T21:40:52.552Z",
+    "duration_ms": 79386,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0,
+      "steps": 10,
+      "tokens": {
+        "input": 19402,
+        "output": 3447,
+        "reasoning": 4006,
+        "cache_read": 111082,
+        "cache_write": 0,
+        "total": 137937
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-29T21:40:52.908Z",
+    "completed_at": "2026-08-29T21:40:53.526Z",
+    "duration_ms": 618
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/tests-edge-cases/src/range.js",
+    "fixtures/phase2-v2/tests-edge-cases/test/range.test.mjs"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r36/70-muse-spark-1-2-free/tests-edge-cases/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "b70b29177f100f07e5e6bc09644810518fff5ae4ff1047dd568f88a097548dce"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "be7ff5ce6682aa6bcce8e09610c7dec1e2d1be2f2e87f8e96a5c877aaf835238"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "485e98866548c854b9015d58343c272caa8eca0b894ecff6c721201079c84f05"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "d03770e73045262c4f0b5dcaaa0735a7b24aa8ae7b95ae663aede24c4ea52f4d"
+  }
+}

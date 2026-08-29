@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r36",
+  "nomination": "feature-implementation",
+  "run_id": "phase2-v2-r36:69-ling-3-0-flash-fin-free:feature-implementation",
+  "attempt": 1,
+  "candidate": {
+    "id": "69-ling-3-0-flash-fin-free",
+    "label": "Ling 3.0 Flash Fin Free (OpenCode Zen)",
+    "agent": "opencode",
+    "model": "opencode/ling-3.0-flash-fin-free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-29T21:34:01.914Z",
+  "completed_at": "2026-08-29T21:34:47.719Z",
+  "duration_ms": 45805,
+  "benchmark_metrics": {
+    "duration_ms": 45805,
+    "model_duration_ms": 44872,
+    "public_tests_duration_ms": 577,
+    "cost_usd": 0,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-29T21:34:01.914Z",
+    "completed_at": "2026-08-29T21:34:46.786Z",
+    "duration_ms": 44872,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0,
+      "steps": 5,
+      "tokens": {
+        "input": 13606,
+        "output": 1081,
+        "reasoning": 3229,
+        "cache_read": 39272,
+        "cache_write": 0,
+        "total": 57188
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-29T21:34:47.142Z",
+    "completed_at": "2026-08-29T21:34:47.719Z",
+    "duration_ms": 577
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/feature-implementation/src/featureFlags.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r36/69-ling-3-0-flash-fin-free/feature-implementation/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "503f1f8ce1ef3dd24a8e3d45a838e20bc1a6acbd665d2cb1503574ebe92649ee"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "1b568e5aa9424c4f7106351d31cfd1b627ee735d81f74051891c6a9d87b4a850"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "47ac10f7fb283f65943fe66dda51e8693bdcbc19fe29c8b91acb120f6c0a1785"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "79dd0c225779b588238fca0fb4521bbb47608b67538b210d6c22e54c6bc70e55"
+  }
+}

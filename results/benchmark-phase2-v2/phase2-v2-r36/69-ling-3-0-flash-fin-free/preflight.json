@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "69-ling-3-0-flash-fin-free",
+    "label": "Ling 3.0 Flash Fin Free (OpenCode Zen)",
+    "agent": "opencode",
+    "model": "opencode/ling-3.0-flash-fin-free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-29T21:26:05.870Z",
+  "completed_at": "2026-08-29T21:26:09.670Z",
+  "duration_ms": 3800,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0,
+    "steps": 1,
+    "tokens": {
+      "input": 8051,
+      "output": 2,
+      "reasoning": 25,
+      "cache_read": 0,
+      "cache_write": 0,
+      "total": 8078
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "71c25942949335d5fcad79b1f0416784476254cb1c3255901a4219088c817f99"
+  }
+}

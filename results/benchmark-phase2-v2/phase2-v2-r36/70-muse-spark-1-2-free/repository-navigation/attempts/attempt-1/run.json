@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r36",
+  "nomination": "repository-navigation",
+  "run_id": "phase2-v2-r36:70-muse-spark-1-2-free:repository-navigation",
+  "attempt": 1,
+  "candidate": {
+    "id": "70-muse-spark-1-2-free",
+    "label": "Muse Spark 1.2 Free (OpenCode Zen)",
+    "agent": "opencode",
+    "model": "opencode/muse-spark-1.2-contributor-free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-29T21:37:45.297Z",
+  "completed_at": "2026-08-29T21:38:24.699Z",
+  "duration_ms": 39402,
+  "benchmark_metrics": {
+    "duration_ms": 39402,
+    "model_duration_ms": 38467,
+    "public_tests_duration_ms": 578,
+    "cost_usd": 0,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-29T21:37:45.297Z",
+    "completed_at": "2026-08-29T21:38:23.764Z",
+    "duration_ms": 38467,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0,
+      "steps": 13,
+      "tokens": {
+        "input": 16437,
+        "output": 2934,
+        "reasoning": 1596,
+        "cache_read": 141885,
+        "cache_write": 0,
+        "total": 162852
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-29T21:38:24.121Z",
+    "completed_at": "2026-08-29T21:38:24.699Z",
+    "duration_ms": 578
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/repository-navigation/src/labels/statusLabel.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r36/70-muse-spark-1-2-free/repository-navigation/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "cc23942e67bc4d2566aa63aa2437d8dbec212b0b2be1bc8332847a5aa149d076"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "e8463b4a16a101fdec5c35654ebde5e048ee66b21eaba7d92169b3a73278f64f"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "345a3893b494d2628e7d55bf63e4e72cbe2df454519a1bc5f767f807d1331005"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "6fac11c9dd63a4b7b29e14c9297b9f2b4a709b15a7cba44c0c4b74e0bd16dab5"
+  }
+}

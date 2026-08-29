@@ -1,0 +1,1428 @@
+{
+  "schema_version": 2,
+  "release": "phase2-v2-r36",
+  "criteria": [
+    "functional_correctness",
+    "reliability_edge_cases",
+    "maintainability_clarity",
+    "scope_discipline"
+  ],
+  "candidates": [
+    {
+      "candidate": {
+        "id": "70-muse-spark-1-2-free",
+        "label": "Muse Spark 1.2 Free (OpenCode Zen)",
+        "agent": "opencode",
+        "model": "opencode/muse-spark-1.2-contributor-free",
+        "subscription": "free",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 6,
+      "nominations": [
+        {
+          "nomination": "patch",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:27:07.824Z",
+            "completed_at": "2026-08-29T21:28:12.743Z",
+            "duration_ms": 64919,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 13,
+              "tokens": {
+                "input": 17720,
+                "output": 3563,
+                "reasoning": 4913,
+                "cache_read": 162557,
+                "cache_write": 0,
+                "total": 188753
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:28:13.102Z",
+            "completed_at": "2026-08-29T21:28:13.681Z",
+            "duration_ms": 579
+          },
+          "agent_duration_ms": 64919,
+          "test_duration_ms": 579,
+          "duration_ms": 65857,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-patch-retry-policy-v1",
+            "status": "completed",
+            "passed": true
+          }
+        },
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:31:19.345Z",
+            "completed_at": "2026-08-29T21:33:59.735Z",
+            "duration_ms": 160390,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 16,
+              "tokens": {
+                "input": 31196,
+                "output": 8414,
+                "reasoning": 9348,
+                "cache_read": 248720,
+                "cache_write": 0,
+                "total": 297678
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:34:00.097Z",
+            "completed_at": "2026-08-29T21:34:00.682Z",
+            "duration_ms": 585
+          },
+          "agent_duration_ms": 160390,
+          "test_duration_ms": 585,
+          "duration_ms": 161337,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        },
+        {
+          "nomination": "feature-implementation",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:34:48.059Z",
+            "completed_at": "2026-08-29T21:35:39.584Z",
+            "duration_ms": 51525,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 13,
+              "tokens": {
+                "input": 16753,
+                "output": 4298,
+                "reasoning": 4160,
+                "cache_read": 144829,
+                "cache_write": 0,
+                "total": 170040
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:35:39.927Z",
+            "completed_at": "2026-08-29T21:35:40.506Z",
+            "duration_ms": 579
+          },
+          "agent_duration_ms": 51525,
+          "test_duration_ms": 579,
+          "duration_ms": 52447,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-feature-implementation-v1",
+            "status": "completed",
+            "passed": true
+          }
+        },
+        {
+          "nomination": "refactoring",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:36:15.535Z",
+            "completed_at": "2026-08-29T21:36:52.632Z",
+            "duration_ms": 37097,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 17,
+              "tokens": {
+                "input": 13970,
+                "output": 2569,
+                "reasoning": 1884,
+                "cache_read": 167617,
+                "cache_write": 0,
+                "total": 186040
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:36:52.985Z",
+            "completed_at": "2026-08-29T21:36:53.559Z",
+            "duration_ms": 574
+          },
+          "agent_duration_ms": 37097,
+          "test_duration_ms": 574,
+          "duration_ms": 38024,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-refactoring-v1",
+            "status": "completed",
+            "passed": true
+          }
+        },
+        {
+          "nomination": "repository-navigation",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:37:45.297Z",
+            "completed_at": "2026-08-29T21:38:23.764Z",
+            "duration_ms": 38467,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 13,
+              "tokens": {
+                "input": 16437,
+                "output": 2934,
+                "reasoning": 1596,
+                "cache_read": 141885,
+                "cache_write": 0,
+                "total": 162852
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:38:24.121Z",
+            "completed_at": "2026-08-29T21:38:24.699Z",
+            "duration_ms": 578
+          },
+          "agent_duration_ms": 38467,
+          "test_duration_ms": 578,
+          "duration_ms": 39402,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-repository-navigation-v1",
+            "status": "completed",
+            "passed": true
+          }
+        },
+        {
+          "nomination": "tests-edge-cases",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:39:33.166Z",
+            "completed_at": "2026-08-29T21:40:52.552Z",
+            "duration_ms": 79386,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 10,
+              "tokens": {
+                "input": 19402,
+                "output": 3447,
+                "reasoning": 4006,
+                "cache_read": 111082,
+                "cache_write": 0,
+                "total": 137937
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:40:52.908Z",
+            "completed_at": "2026-08-29T21:40:53.526Z",
+            "duration_ms": 618
+          },
+          "agent_duration_ms": 79386,
+          "test_duration_ms": 618,
+          "duration_ms": 80360,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-tests-edge-cases-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "patch",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:27:07.824Z",
+            "completed_at": "2026-08-29T21:28:12.743Z",
+            "duration_ms": 64919,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 13,
+              "tokens": {
+                "input": 17720,
+                "output": 3563,
+                "reasoning": 4913,
+                "cache_read": 162557,
+                "cache_write": 0,
+                "total": 188753
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:28:13.102Z",
+            "completed_at": "2026-08-29T21:28:13.681Z",
+            "duration_ms": 579
+          },
+          "agent_duration_ms": 64919,
+          "test_duration_ms": 579,
+          "duration_ms": 65857,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-patch-retry-policy-v1",
+            "status": "completed",
+            "passed": true
+          }
+        },
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:31:19.345Z",
+            "completed_at": "2026-08-29T21:33:59.735Z",
+            "duration_ms": 160390,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 16,
+              "tokens": {
+                "input": 31196,
+                "output": 8414,
+                "reasoning": 9348,
+                "cache_read": 248720,
+                "cache_write": 0,
+                "total": 297678
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:34:00.097Z",
+            "completed_at": "2026-08-29T21:34:00.682Z",
+            "duration_ms": 585
+          },
+          "agent_duration_ms": 160390,
+          "test_duration_ms": 585,
+          "duration_ms": 161337,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        },
+        {
+          "nomination": "feature-implementation",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:34:48.059Z",
+            "completed_at": "2026-08-29T21:35:39.584Z",
+            "duration_ms": 51525,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 13,
+              "tokens": {
+                "input": 16753,
+                "output": 4298,
+                "reasoning": 4160,
+                "cache_read": 144829,
+                "cache_write": 0,
+                "total": 170040
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:35:39.927Z",
+            "completed_at": "2026-08-29T21:35:40.506Z",
+            "duration_ms": 579
+          },
+          "agent_duration_ms": 51525,
+          "test_duration_ms": 579,
+          "duration_ms": 52447,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-feature-implementation-v1",
+            "status": "completed",
+            "passed": true
+          }
+        },
+        {
+          "nomination": "refactoring",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:36:15.535Z",
+            "completed_at": "2026-08-29T21:36:52.632Z",
+            "duration_ms": 37097,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 17,
+              "tokens": {
+                "input": 13970,
+                "output": 2569,
+                "reasoning": 1884,
+                "cache_read": 167617,
+                "cache_write": 0,
+                "total": 186040
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:36:52.985Z",
+            "completed_at": "2026-08-29T21:36:53.559Z",
+            "duration_ms": 574
+          },
+          "agent_duration_ms": 37097,
+          "test_duration_ms": 574,
+          "duration_ms": 38024,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-refactoring-v1",
+            "status": "completed",
+            "passed": true
+          }
+        },
+        {
+          "nomination": "repository-navigation",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:37:45.297Z",
+            "completed_at": "2026-08-29T21:38:23.764Z",
+            "duration_ms": 38467,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 13,
+              "tokens": {
+                "input": 16437,
+                "output": 2934,
+                "reasoning": 1596,
+                "cache_read": 141885,
+                "cache_write": 0,
+                "total": 162852
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:38:24.121Z",
+            "completed_at": "2026-08-29T21:38:24.699Z",
+            "duration_ms": 578
+          },
+          "agent_duration_ms": 38467,
+          "test_duration_ms": 578,
+          "duration_ms": 39402,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-repository-navigation-v1",
+            "status": "completed",
+            "passed": true
+          }
+        },
+        {
+          "nomination": "tests-edge-cases",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:39:33.166Z",
+            "completed_at": "2026-08-29T21:40:52.552Z",
+            "duration_ms": 79386,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 10,
+              "tokens": {
+                "input": 19402,
+                "output": 3447,
+                "reasoning": 4006,
+                "cache_read": 111082,
+                "cache_write": 0,
+                "total": 137937
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:40:52.908Z",
+            "completed_at": "2026-08-29T21:40:53.526Z",
+            "duration_ms": 618
+          },
+          "agent_duration_ms": 79386,
+          "test_duration_ms": 618,
+          "duration_ms": 80360,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-tests-edge-cases-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 431784,
+      "test_duration_ms": 3513,
+      "duration_ms": 437427,
+      "cost_usd": 0,
+      "judge_count": 0,
+      "judge_average_by_id": {
+        "gemini-3-7-flash": null
+      },
+      "judge_duration_by_id": {
+        "gemini-3-7-flash": null
+      },
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 6,
+      "objective_total": 6,
+      "objective_pass_rate": 1,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "69-ling-3-0-flash-fin-free",
+        "label": "Ling 3.0 Flash Fin Free (OpenCode Zen)",
+        "agent": "opencode",
+        "model": "opencode/ling-3.0-flash-fin-free",
+        "subscription": "free",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 6,
+      "nominations": [
+        {
+          "nomination": "patch",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:26:09.942Z",
+            "completed_at": "2026-08-29T21:27:01.620Z",
+            "duration_ms": 51678,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 7,
+              "tokens": {
+                "input": 15614,
+                "output": 1449,
+                "reasoning": 3586,
+                "cache_read": 74615,
+                "cache_write": 0,
+                "total": 95264
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:27:01.982Z",
+            "completed_at": "2026-08-29T21:27:02.564Z",
+            "duration_ms": 582
+          },
+          "agent_duration_ms": 51678,
+          "test_duration_ms": 582,
+          "duration_ms": 52622,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-patch-retry-policy-v1",
+            "status": "completed",
+            "passed": false
+          }
+        },
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:28:14.908Z",
+            "completed_at": "2026-08-29T21:31:18.063Z",
+            "duration_ms": 183155,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 12,
+              "tokens": {
+                "input": 30846,
+                "output": 5004,
+                "reasoning": 12227,
+                "cache_read": 234363,
+                "cache_write": 0,
+                "total": 282440
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:31:18.424Z",
+            "completed_at": "2026-08-29T21:31:19.007Z",
+            "duration_ms": 583
+          },
+          "agent_duration_ms": 183155,
+          "test_duration_ms": 583,
+          "duration_ms": 184099,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        },
+        {
+          "nomination": "feature-implementation",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:34:01.914Z",
+            "completed_at": "2026-08-29T21:34:46.786Z",
+            "duration_ms": 44872,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 5,
+              "tokens": {
+                "input": 13606,
+                "output": 1081,
+                "reasoning": 3229,
+                "cache_read": 39272,
+                "cache_write": 0,
+                "total": 57188
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:34:47.142Z",
+            "completed_at": "2026-08-29T21:34:47.719Z",
+            "duration_ms": 577
+          },
+          "agent_duration_ms": 44872,
+          "test_duration_ms": 577,
+          "duration_ms": 45805,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-feature-implementation-v1",
+            "status": "completed",
+            "passed": false
+          }
+        },
+        {
+          "nomination": "refactoring",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:35:41.740Z",
+            "completed_at": "2026-08-29T21:36:14.252Z",
+            "duration_ms": 32512,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 5,
+              "tokens": {
+                "input": 11810,
+                "output": 621,
+                "reasoning": 1821,
+                "cache_read": 37616,
+                "cache_write": 0,
+                "total": 51868
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:36:14.609Z",
+            "completed_at": "2026-08-29T21:36:15.197Z",
+            "duration_ms": 588
+          },
+          "agent_duration_ms": 32512,
+          "test_duration_ms": 588,
+          "duration_ms": 33457,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-refactoring-v1",
+            "status": "completed",
+            "passed": true
+          }
+        },
+        {
+          "nomination": "repository-navigation",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:36:54.811Z",
+            "completed_at": "2026-08-29T21:37:44.008Z",
+            "duration_ms": 49197,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 14,
+              "tokens": {
+                "input": 12171,
+                "output": 1198,
+                "reasoning": 1610,
+                "cache_read": 133461,
+                "cache_write": 0,
+                "total": 148440
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:37:44.371Z",
+            "completed_at": "2026-08-29T21:37:44.950Z",
+            "duration_ms": 579
+          },
+          "agent_duration_ms": 49197,
+          "test_duration_ms": 579,
+          "duration_ms": 50139,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-repository-navigation-v1",
+            "status": "completed",
+            "passed": true
+          }
+        },
+        {
+          "nomination": "tests-edge-cases",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:38:25.946Z",
+            "completed_at": "2026-08-29T21:39:31.862Z",
+            "duration_ms": 65916,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 10,
+              "tokens": {
+                "input": 15638,
+                "output": 2518,
+                "reasoning": 2597,
+                "cache_read": 117391,
+                "cache_write": 0,
+                "total": 138144
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:39:32.224Z",
+            "completed_at": "2026-08-29T21:39:32.826Z",
+            "duration_ms": 602
+          },
+          "agent_duration_ms": 65916,
+          "test_duration_ms": 602,
+          "duration_ms": 66880,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-tests-edge-cases-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "patch",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:26:09.942Z",
+            "completed_at": "2026-08-29T21:27:01.620Z",
+            "duration_ms": 51678,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 7,
+              "tokens": {
+                "input": 15614,
+                "output": 1449,
+                "reasoning": 3586,
+                "cache_read": 74615,
+                "cache_write": 0,
+                "total": 95264
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:27:01.982Z",
+            "completed_at": "2026-08-29T21:27:02.564Z",
+            "duration_ms": 582
+          },
+          "agent_duration_ms": 51678,
+          "test_duration_ms": 582,
+          "duration_ms": 52622,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-patch-retry-policy-v1",
+            "status": "completed",
+            "passed": false
+          }
+        },
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:28:14.908Z",
+            "completed_at": "2026-08-29T21:31:18.063Z",
+            "duration_ms": 183155,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 12,
+              "tokens": {
+                "input": 30846,
+                "output": 5004,
+                "reasoning": 12227,
+                "cache_read": 234363,
+                "cache_write": 0,
+                "total": 282440
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:31:18.424Z",
+            "completed_at": "2026-08-29T21:31:19.007Z",
+            "duration_ms": 583
+          },
+          "agent_duration_ms": 183155,
+          "test_duration_ms": 583,
+          "duration_ms": 184099,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        },
+        {
+          "nomination": "feature-implementation",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:34:01.914Z",
+            "completed_at": "2026-08-29T21:34:46.786Z",
+            "duration_ms": 44872,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 5,
+              "tokens": {
+                "input": 13606,
+                "output": 1081,
+                "reasoning": 3229,
+                "cache_read": 39272,
+                "cache_write": 0,
+                "total": 57188
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:34:47.142Z",
+            "completed_at": "2026-08-29T21:34:47.719Z",
+            "duration_ms": 577
+          },
+          "agent_duration_ms": 44872,
+          "test_duration_ms": 577,
+          "duration_ms": 45805,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-feature-implementation-v1",
+            "status": "completed",
+            "passed": false
+          }
+        },
+        {
+          "nomination": "refactoring",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:35:41.740Z",
+            "completed_at": "2026-08-29T21:36:14.252Z",
+            "duration_ms": 32512,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 5,
+              "tokens": {
+                "input": 11810,
+                "output": 621,
+                "reasoning": 1821,
+                "cache_read": 37616,
+                "cache_write": 0,
+                "total": 51868
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:36:14.609Z",
+            "completed_at": "2026-08-29T21:36:15.197Z",
+            "duration_ms": 588
+          },
+          "agent_duration_ms": 32512,
+          "test_duration_ms": 588,
+          "duration_ms": 33457,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-refactoring-v1",
+            "status": "completed",
+            "passed": true
+          }
+        },
+        {
+          "nomination": "repository-navigation",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:36:54.811Z",
+            "completed_at": "2026-08-29T21:37:44.008Z",
+            "duration_ms": 49197,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 14,
+              "tokens": {
+                "input": 12171,
+                "output": 1198,
+                "reasoning": 1610,
+                "cache_read": 133461,
+                "cache_write": 0,
+                "total": 148440
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:37:44.371Z",
+            "completed_at": "2026-08-29T21:37:44.950Z",
+            "duration_ms": 579
+          },
+          "agent_duration_ms": 49197,
+          "test_duration_ms": 579,
+          "duration_ms": 50139,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-repository-navigation-v1",
+            "status": "completed",
+            "passed": true
+          }
+        },
+        {
+          "nomination": "tests-edge-cases",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:38:25.946Z",
+            "completed_at": "2026-08-29T21:39:31.862Z",
+            "duration_ms": 65916,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 10,
+              "tokens": {
+                "input": 15638,
+                "output": 2518,
+                "reasoning": 2597,
+                "cache_read": 117391,
+                "cache_write": 0,
+                "total": 138144
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-29T21:39:32.224Z",
+            "completed_at": "2026-08-29T21:39:32.826Z",
+            "duration_ms": 602
+          },
+          "agent_duration_ms": 65916,
+          "test_duration_ms": 602,
+          "duration_ms": 66880,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-tests-edge-cases-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 427330,
+      "test_duration_ms": 3511,
+      "duration_ms": 433002,
+      "cost_usd": 0,
+      "judge_count": 0,
+      "judge_average_by_id": {
+        "gemini-3-7-flash": null
+      },
+      "judge_duration_by_id": {
+        "gemini-3-7-flash": null
+      },
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 3,
+      "objective_total": 6,
+      "objective_pass_rate": 0.5,
+      "overall_average": null
+    }
+  ],
+  "generated_at": "2026-08-29T21:40:59.228Z",
+  "reproducibility": {
+    "runner_version": "unknown",
+    "repository_commit": "919a1d3ccb65356a97e8ac23647aff129a64796e",
+    "config_hash": "515ee9b93be47a02c2b2b5a7989e32dd9722ca56cf145a19c7df6245bec2618c",
+    "schema_registry": {
+      "schema_registry_version": 1,
+      "artifact_schemas": {
+        "run": 1,
+        "judge": 1,
+        "preflight": 1,
+        "aggregate": 2,
+        "test_result": 1,
+        "candidate_diff": 1,
+        "objective_evaluator": 1
+      }
+    },
+    "effective_limits": {
+      "timeout_ms": 900000,
+      "max_output_bytes": 2097152
+    },
+    "judge_prompt": {
+      "version": 3,
+      "template_hash": "3b0265ce6a626409d7d01a8c28f1d2a8541056ed8634241a7dc13ac2acf97ce2"
+    },
+    "outcomes": {
+      "70-muse-spark-1-2-free": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "patch",
+            "attempt": 1,
+            "outcome": "completed"
+          },
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "completed"
+          },
+          {
+            "nomination": "feature-implementation",
+            "attempt": 1,
+            "outcome": "completed"
+          },
+          {
+            "nomination": "refactoring",
+            "attempt": 1,
+            "outcome": "completed"
+          },
+          {
+            "nomination": "repository-navigation",
+            "attempt": 1,
+            "outcome": "completed"
+          },
+          {
+            "nomination": "tests-edge-cases",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "patch",
+            "outcome": "completed"
+          },
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "completed"
+          },
+          {
+            "task": "feature-implementation",
+            "outcome": "completed"
+          },
+          {
+            "task": "refactoring",
+            "outcome": "completed"
+          },
+          {
+            "task": "repository-navigation",
+            "outcome": "completed"
+          },
+          {
+            "task": "tests-edge-cases",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "69-ling-3-0-flash-fin-free": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "patch",
+            "attempt": 1,
+            "outcome": "completed"
+          },
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "completed"
+          },
+          {
+            "nomination": "feature-implementation",
+            "attempt": 1,
+            "outcome": "completed"
+          },
+          {
+            "nomination": "refactoring",
+            "attempt": 1,
+            "outcome": "completed"
+          },
+          {
+            "nomination": "repository-navigation",
+            "attempt": 1,
+            "outcome": "completed"
+          },
+          {
+            "nomination": "tests-edge-cases",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "patch",
+            "outcome": "completed"
+          },
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "completed"
+          },
+          {
+            "task": "feature-implementation",
+            "outcome": "completed"
+          },
+          {
+            "task": "refactoring",
+            "outcome": "completed"
+          },
+          {
+            "task": "repository-navigation",
+            "outcome": "completed"
+          },
+          {
+            "task": "tests-edge-cases",
+            "outcome": "completed"
+          }
+        ]
+      }
+    }
+  }
+}

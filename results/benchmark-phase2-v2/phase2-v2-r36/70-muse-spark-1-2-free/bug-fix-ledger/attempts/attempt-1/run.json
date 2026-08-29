@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r36",
+  "nomination": "bug-fix-ledger",
+  "run_id": "phase2-v2-r36:70-muse-spark-1-2-free:bug-fix-ledger",
+  "attempt": 1,
+  "candidate": {
+    "id": "70-muse-spark-1-2-free",
+    "label": "Muse Spark 1.2 Free (OpenCode Zen)",
+    "agent": "opencode",
+    "model": "opencode/muse-spark-1.2-contributor-free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-29T21:31:19.345Z",
+  "completed_at": "2026-08-29T21:34:00.682Z",
+  "duration_ms": 161337,
+  "benchmark_metrics": {
+    "duration_ms": 161337,
+    "model_duration_ms": 160390,
+    "public_tests_duration_ms": 585,
+    "cost_usd": 0,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-29T21:31:19.345Z",
+    "completed_at": "2026-08-29T21:33:59.735Z",
+    "duration_ms": 160390,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0,
+      "steps": 16,
+      "tokens": {
+        "input": 31196,
+        "output": 8414,
+        "reasoning": 9348,
+        "cache_read": 248720,
+        "cache_write": 0,
+        "total": 297678
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-29T21:34:00.097Z",
+    "completed_at": "2026-08-29T21:34:00.682Z",
+    "duration_ms": 585
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/bug-fix-ledger/src/reconcile.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r36/70-muse-spark-1-2-free/bug-fix-ledger/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "f334dccac18869e282742bed94e2acb259a323a04fc7a326b42e1daed4bfcc75"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "29c4ddfc8b338c62867107c8ca48a8ab471a7178456dd923ca0c0bd6eaa82918"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "4ee611ab9dcee72aa2a8e5633caede0ba6258a12f37ef2248f5e189ed1724e20"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "72bdfa750ee8b38c04eec50ef5499722cb664fcdb4b1bb811f12181c9406aab2"
+  }
+}

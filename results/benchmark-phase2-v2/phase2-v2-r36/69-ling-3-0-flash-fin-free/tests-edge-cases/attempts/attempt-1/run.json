@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r36",
+  "nomination": "tests-edge-cases",
+  "run_id": "phase2-v2-r36:69-ling-3-0-flash-fin-free:tests-edge-cases",
+  "attempt": 1,
+  "candidate": {
+    "id": "69-ling-3-0-flash-fin-free",
+    "label": "Ling 3.0 Flash Fin Free (OpenCode Zen)",
+    "agent": "opencode",
+    "model": "opencode/ling-3.0-flash-fin-free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-29T21:38:25.946Z",
+  "completed_at": "2026-08-29T21:39:32.826Z",
+  "duration_ms": 66880,
+  "benchmark_metrics": {
+    "duration_ms": 66880,
+    "model_duration_ms": 65916,
+    "public_tests_duration_ms": 602,
+    "cost_usd": 0,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-29T21:38:25.946Z",
+    "completed_at": "2026-08-29T21:39:31.862Z",
+    "duration_ms": 65916,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0,
+      "steps": 10,
+      "tokens": {
+        "input": 15638,
+        "output": 2518,
+        "reasoning": 2597,
+        "cache_read": 117391,
+        "cache_write": 0,
+        "total": 138144
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-29T21:39:32.224Z",
+    "completed_at": "2026-08-29T21:39:32.826Z",
+    "duration_ms": 602
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/tests-edge-cases/src/range.js",
+    "fixtures/phase2-v2/tests-edge-cases/test/range.test.mjs"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r36/69-ling-3-0-flash-fin-free/tests-edge-cases/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "66803af1afe17c1180dc175e9c1b34753ae1d55526465d32eb9ef5eea290bf28"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "382b0d2572a1a9533f0f033b5700c9bbdbae22068afa21b77ad64574759824b8"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "5adad17e38ec48ff4374c585b1d2b80626f8aef94fc9bdd391548d2f59361151"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "31df7ff2e99e4cbed8e93ddcc076f5c06a3042caf50cfbe1f4a8a12bc1a903dd"
+  }
+}

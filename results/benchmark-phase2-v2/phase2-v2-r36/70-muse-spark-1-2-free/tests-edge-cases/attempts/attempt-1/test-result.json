@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "started_at": "2026-08-29T21:40:52.908Z",
+  "completed_at": "2026-08-29T21:40:53.526Z",
+  "duration_ms": 618,
+  "stdout_sha256": "2a9b9451417af7b29fdf915e6b7c0a61d85581c6d6a58cdb07a6037b988a3e19",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "artifact_hash": {
+    "path": "test-result.json",
+    "sha256": "768862958e17c3043e6f54bd75c98bedf2574a077026abbf290750868f901e78"
+  }
+}
