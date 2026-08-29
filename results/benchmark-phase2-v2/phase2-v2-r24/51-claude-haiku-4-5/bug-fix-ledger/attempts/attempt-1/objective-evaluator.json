@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "evaluator": {
+    "id": "phase2-v2-bug-fix-ledger-v1",
+    "sha256": "f3bf35b4af253b4b83bfa8351f078c9e198d89cc63fba4e3d086b1fe56739b99"
+  },
+  "status": "completed",
+  "passed": false,
+  "started_at": "2026-08-28T16:25:14.089Z",
+  "completed_at": "2026-08-28T16:25:14.265Z",
+  "duration_ms": 176,
+  "execution": {
+    "status": 1,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-28T16:25:14.089Z",
+    "completed_at": "2026-08-28T16:25:14.265Z",
+    "duration_ms": 176
+  },
+  "artifact_hash": {
+    "path": "objective-evaluator.json",
+    "sha256": "86fa241e1ab8ff4e542124f1b6977f8d53fab382ee778d6d2e03c8fc8930a844"
+  }
+}

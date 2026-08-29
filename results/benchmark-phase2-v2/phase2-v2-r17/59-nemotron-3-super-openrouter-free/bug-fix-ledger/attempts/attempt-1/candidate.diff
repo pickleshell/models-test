@@ -1,0 +1,63 @@
+diff --git a/fixtures/phase2-v2/bug-fix-ledger/src/reconcile.js b/fixtures/phase2-v2/bug-fix-ledger/src/reconcile.js
+index bbeacb2..d34dc53 100644
+--- a/fixtures/phase2-v2/bug-fix-ledger/src/reconcile.js
++++ b/fixtures/phase2-v2/bug-fix-ledger/src/reconcile.js
+@@ -25,17 +25,48 @@ export function reconcileLedger(entries) {
+   const metrics = { processed: 0, duplicateCount: 0, invalidCount: 0, orphanRefundCount: 0 };
+   for (const entry of entries) {
+     try {
+-      if (!entry || typeof entry !== 'object' || !entry.id || !entry.accountId || !entry.currency) throw new Error('invalid entry');
+-      if (seenIds.has(entry.id)) metrics.duplicateCount += 1;
+-      seenIds.add(entry.id);
+-      const cents = parseAmountToCents(entry.amount), day = dayKey(entry.createdAt);
+-      if (entry.type === 'sale') {
+-        originals.set(entry.id, entry); addTotal(totals, entry.accountId, entry.currency, day, cents); metrics.processed += 1;
+-      } else if (entry.type === 'refund') {
++      if (!entry || typeof entry !== 'object') {
++        throw new Error('invalid entry');
++      }
++      const id = entry.id;
++      if (typeof id !== 'string' || id === '') {
++        throw new Error('invalid entry');
++      }
++      if (seenIds.has(id)) {
++        metrics.duplicateCount += 1;
++        continue;
++      }
++      seenIds.add(id);
++
++      const accountId = entry.accountId;
++      const currency = entry.currency;
++      const type = entry.type;
++      const amount = entry.amount;
++      const createdAt = entry.createdAt;
++
++      if (typeof accountId !== 'string' || accountId === '' || typeof currency !== 'string' || currency === '') {
++        throw new Error('invalid entry');
++      }
++      if (type !== 'sale' && type !== 'refund') {
++        throw new Error('unsupported type');
++      }
++
++      const cents = parseAmountToCents(amount);
++      const day = dayKey(createdAt);
++
++      if (type === 'sale') {
++        originals.set(id, { accountId, currency });
++        addTotal(totals, accountId, currency, day, cents);
++        metrics.processed++;
++      } else { // type === 'refund'
+         const original = originals.get(entry.originalId);
+-        if (!original) { metrics.orphanRefundCount += 1; continue; }
+-        addTotal(totals, entry.accountId, entry.currency, day, -cents); metrics.processed += 1;
+-      } else throw new Error('unsupported type');
++        if (!original) {
++          metrics.orphanRefundCount += 1;
++          continue;
++        }
++        addTotal(totals, original.accountId, original.currency, day, -cents);
++        metrics.processed++;
++      }
+     } catch { metrics.invalidCount += 1; }
+   }
+   return { totals: [...totals.values()].sort((a, b) => a.accountId.localeCompare(b.accountId) || a.currency.localeCompare(b.currency) || a.day.localeCompare(b.day)), metrics };

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "release": "bug-fix-ledger-retry-r1",
+  "nomination": "bug-fix-ledger",
+  "run_id": "bug-fix-ledger-retry-r1:64-gpt-5-3-codex-opencode:bug-fix-ledger",
+  "attempt": 1,
+  "candidate": {
+    "id": "64-gpt-5-3-codex-opencode",
+    "agent": "opencode",
+    "model": "opencode/gpt-5.3-codex",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-28T21:34:47.611Z",
+  "completed_at": "2026-08-28T21:34:47.611Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-28T21:34:45.079Z",
+    "completed_at": "2026-08-28T21:34:47.610Z",
+    "duration_ms": 2531
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-bug-fixing/bug-fix-ledger-retry-r1/64-gpt-5-3-codex-opencode/bug-fix-ledger/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "da77331600615ac3220d19414d3bb90d98b601ec68c715a82e4b19f03daa48e9"
+  }
+}

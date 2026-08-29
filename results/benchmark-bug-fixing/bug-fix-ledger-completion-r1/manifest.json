@@ -1,0 +1,101 @@
+{
+  "schema_version": 3,
+  "release": "bug-fix-ledger-completion-r1",
+  "nominations": [
+    {
+      "id": "bug-fix-ledger",
+      "fixture": "fixtures/phase2-v2/bug-fix-ledger",
+      "prompt": "benchmarks/phase2-v2/prompts/bug-fix-ledger.md",
+      "test_command": [
+        "npm",
+        "test",
+        "--prefix",
+        "fixtures/phase2-v2/bug-fix-ledger"
+      ],
+      "allowed_changes": [
+        "fixtures/phase2-v2/bug-fix-ledger/src/reconcile.js"
+      ],
+      "frozen_inputs": {
+        "fixture_tree": {
+          "algorithm": "sha256-tree-v1",
+          "sha256": "eaa5ce8e68a1d6243f48ded5f7495a8c26e2fee98d6d3536ff7f585ac0fc19f8",
+          "files": 4
+        },
+        "prompt_sha256": "9c69e7ecacc9520663b9cc693748b7516c76a98a195192acefb333eb48e8612b"
+      },
+      "objective_evaluator": {
+        "id": "phase2-v2-bug-fix-ledger-v1",
+        "sha256": "f3bf35b4af253b4b83bfa8351f078c9e198d89cc63fba4e3d086b1fe56739b99",
+        "source_sha256": "b0f6f42ae361f634678b596b6bb630df9dbdad33693bf96089d862291d5ee4ba"
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "id": "54-inkling-openrouter",
+      "agent": "opencode",
+      "model": "openrouter/thinkingmachines/inkling",
+      "subscription": "paid",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "27-hy3-free",
+      "agent": "opencode",
+      "model": "opencode/hy3-free",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "18-gpt-5-3-codex-spark",
+      "agent": "codex",
+      "model": "gpt-5.3-codex-spark",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "49-gpt-5-4",
+      "agent": "codex",
+      "model": "gpt-5.4",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "50-gpt-5-4-mini",
+      "agent": "codex",
+      "model": "gpt-5.4-mini",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "46-gpt-5-6-luna",
+      "agent": "codex",
+      "model": "gpt-5.6-luna",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "47-gpt-5-6-sol",
+      "agent": "codex",
+      "model": "gpt-5.6-sol",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "48-gpt-5-6-terra",
+      "agent": "codex",
+      "model": "gpt-5.6-terra",
+      "reasoning_variant": "provider_default"
+    }
+  ],
+  "judges": [],
+  "criteria": [
+    "functional_correctness",
+    "reliability_edge_cases",
+    "maintainability_clarity",
+    "scope_discipline"
+  ],
+  "retry_policy": {
+    "canonical_attempt": 1,
+    "allow_retries": false
+  },
+  "judge_prompt": {
+    "version": 3,
+    "template_hash": "3b0265ce6a626409d7d01a8c28f1d2a8541056ed8634241a7dc13ac2acf97ce2"
+  },
+  "config_sha256": "194709985aa0304bbe8090fecc4bf4a706a3651c00f64506e58fd0d10b31024a",
+  "spec_hash": "915cfad12ac50b4a55e475e43c64e028309e2097e71b931a45b68dcac180a054"
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "release": "bug-fix-ledger-retry-r1",
+  "nomination": "bug-fix-ledger",
+  "run_id": "bug-fix-ledger-retry-r1:63-gpt-5-4-pro-opencode:bug-fix-ledger",
+  "attempt": 1,
+  "candidate": {
+    "id": "63-gpt-5-4-pro-opencode",
+    "agent": "opencode",
+    "model": "opencode/gpt-5.4-pro",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-28T21:34:31.174Z",
+  "completed_at": "2026-08-28T21:34:31.174Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-28T21:34:28.811Z",
+    "completed_at": "2026-08-28T21:34:31.173Z",
+    "duration_ms": 2362
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-bug-fixing/bug-fix-ledger-retry-r1/63-gpt-5-4-pro-opencode/bug-fix-ledger/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "205fbd8b2d7873fb12b1405eeb15a6f8ee4066742b05beef22d6764e744e20bf"
+  }
+}

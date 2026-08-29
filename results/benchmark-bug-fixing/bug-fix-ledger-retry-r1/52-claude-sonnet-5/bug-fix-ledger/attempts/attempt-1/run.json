@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "release": "bug-fix-ledger-retry-r1",
+  "nomination": "bug-fix-ledger",
+  "run_id": "bug-fix-ledger-retry-r1:52-claude-sonnet-5:bug-fix-ledger",
+  "attempt": 1,
+  "candidate": {
+    "id": "52-claude-sonnet-5",
+    "agent": "opencode",
+    "model": "opencode/claude-sonnet-5",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-28T21:34:42.117Z",
+  "completed_at": "2026-08-28T21:34:42.117Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-28T21:34:39.547Z",
+    "completed_at": "2026-08-28T21:34:42.116Z",
+    "duration_ms": 2569
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-bug-fixing/bug-fix-ledger-retry-r1/52-claude-sonnet-5/bug-fix-ledger/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "60bc4948f049c7ac63f91a4432ee104f9db2ec13daa6e5bcb0d742a6672a4af3"
+  }
+}

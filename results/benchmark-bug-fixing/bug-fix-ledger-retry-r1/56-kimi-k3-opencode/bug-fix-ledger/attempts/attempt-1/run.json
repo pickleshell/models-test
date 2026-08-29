@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "release": "bug-fix-ledger-retry-r1",
+  "nomination": "bug-fix-ledger",
+  "run_id": "bug-fix-ledger-retry-r1:56-kimi-k3-opencode:bug-fix-ledger",
+  "attempt": 1,
+  "candidate": {
+    "id": "56-kimi-k3-opencode",
+    "agent": "opencode",
+    "model": "opencode/kimi-k3",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-28T21:34:36.739Z",
+  "completed_at": "2026-08-28T21:34:36.739Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-28T21:34:33.963Z",
+    "completed_at": "2026-08-28T21:34:36.738Z",
+    "duration_ms": 2775
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-bug-fixing/bug-fix-ledger-retry-r1/56-kimi-k3-opencode/bug-fix-ledger/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "834d6a208fc62cced1d80e0efa194129a5a58a1493b9798e4bb066cb07948d76"
+  }
+}

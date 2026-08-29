@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "54-inkling-openrouter",
+    "agent": "opencode",
+    "model": "openrouter/thinkingmachines/inkling",
+    "subscription": "paid",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-28T18:16:14.989Z",
+  "completed_at": "2026-08-28T18:16:19.300Z",
+  "duration_ms": 4311,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0.0065981,
+    "steps": 1,
+    "tokens": {
+      "input": 6745,
+      "output": 2,
+      "reasoning": 45,
+      "cache_read": 0,
+      "cache_write": 0,
+      "total": 6792
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "ebc87e697d0fb1c18696027e7c0039e3d37f7c9449213e777cf590af21a90884"
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r27",
+  "nomination": "bug-fix-ledger",
+  "run_id": "phase2-v2-r27:60-gpt-5-6-terra-opencode:bug-fix-ledger",
+  "attempt": 1,
+  "candidate": {
+    "id": "60-gpt-5-6-terra-opencode",
+    "label": "GPT-5.6 Terra (OpenCode)",
+    "agent": "opencode",
+    "model": "opencode/gpt-5.6-terra",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-28T16:17:32.042Z",
+  "completed_at": "2026-08-28T16:17:35.503Z",
+  "duration_ms": 3461,
+  "benchmark_metrics": {
+    "duration_ms": 3461,
+    "model_duration_ms": 2484,
+    "public_tests_duration_ms": 610,
+    "cost_usd": null,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 1,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-28T16:17:32.042Z",
+    "completed_at": "2026-08-28T16:17:34.526Z",
+    "duration_ms": 2484,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": null,
+      "steps": 0,
+      "tokens": {
+        "input": 0,
+        "output": 0,
+        "reasoning": 0,
+        "cache_read": 0,
+        "cache_write": 0,
+        "total": 0
+      }
+    }
+  },
+  "tests": {
+    "status": 1,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-28T16:17:34.893Z",
+    "completed_at": "2026-08-28T16:17:35.503Z",
+    "duration_ms": 610
+  },
+  "outcome": "agent_failure",
+  "changed_files": [],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r27/60-gpt-5-6-terra-opencode/bug-fix-ledger/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "35d6dcd99d281733e1ca626d0b70b856c851a4bd2b09edfe5e263f42d6b5ce89"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "37c6b4493ca3932b8c6a1ffee9de4727e73855a919c73afffaf3bd900a934d75"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "3ad7d16d0b188522679b10eb4b8fd3e05f1de44817968ebd0b769d4bbc054fc8"
+  }
+}
