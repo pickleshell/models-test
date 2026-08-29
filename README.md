@@ -1,7 +1,7 @@
 # models-test
 
 > [!NOTE]
-> This is an independent open-source benchmark created and maintained by an individual developer. It is not an official test suite from OpenAI, OpenCode, or any model provider.
+> This is an independent open-source benchmark created and maintained by an individual developer for personal purposes and shared with the public. It is not an official test suite from OpenAI, OpenCode, or any model provider.
 >
 > A newer, more reliable model-testing pipeline is available in [models-benchmark](https://github.com/pickleshell/models-benchmark).
 
