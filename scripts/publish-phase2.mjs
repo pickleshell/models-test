@@ -44,13 +44,14 @@ const sortRows = (rows) => rows.slice().sort((a, b) => {
   return Number(Boolean(b.review?.scores)) - Number(Boolean(a.review?.scores)) || (b.review?.overall ?? -1) - (a.review?.overall ?? -1) || Number(b.hiddenPass) - Number(a.hiddenPass) || a.duration - b.duration || a.candidate.localeCompare(b.candidate, undefined, { numeric: true });
 });
 const display = (value) => Number.isFinite(value) ? value.toFixed(2) : 'N/A';
+const displayCriterion = (value, aggregate = false) => Number.isFinite(value) ? (aggregate ? value.toFixed(1) : String(value)) : 'N/A';
 const table = (rows, aggregate = false) => {
   const header = aggregate
     ? '| Rank | Candidate | Model | Reviewed | Harnesses passed | Public | Hidden | Functional | Reliability | Maintainability | Scope | Review overall | Avg time (s) |\n|---:|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|'
     : '| Rank | Candidate | Model | Public | Hidden | Functional | Reliability | Maintainability | Scope | Review overall | Time (s) |\n|---:|---|---|---:|---:|---:|---:|---:|---:|---:|---:|';
   const lines = sortRows(rows).map((row, index) => aggregate
-    ? `| ${row.reviewed === 5 ? index + 1 : 'N/A'} | ${row.candidate} | ${row.model} | ${row.reviewed}/5 | ${row.passed}/5 | ${row.public} | ${row.hidden} | ${display(row.functional)} | ${display(row.reliability)} | ${display(row.maintainability)} | ${display(row.scope)} | ${display(row.reviewOverall)} | ${row.time.toFixed(3)} |`
-    : `| ${row.review?.scores ? index + 1 : 'N/A'} | ${row.candidate} | ${row.model} | ${row.publicPass ? 'pass' : 'fail'} | ${row.hiddenPass ? 'pass' : 'fail'} | ${display(row.review?.scores?.functional_correctness)} | ${display(row.review?.scores?.reliability_edge_cases)} | ${display(row.review?.scores?.maintainability_clarity)} | ${display(row.review?.scores?.scope_discipline)} | ${display(row.review?.overall)} | ${row.duration.toFixed(3)} |`);
+    ? `| ${row.reviewed === 5 ? index + 1 : 'N/A'} | ${row.candidate} | ${row.model} | ${row.reviewed}/5 | ${row.passed}/5 | ${row.public} | ${row.hidden} | ${displayCriterion(row.functional, true)} | ${displayCriterion(row.reliability, true)} | ${displayCriterion(row.maintainability, true)} | ${displayCriterion(row.scope, true)} | ${display(row.reviewOverall)} | ${row.time.toFixed(3)} |`
+    : `| ${row.review?.scores ? index + 1 : 'N/A'} | ${row.candidate} | ${row.model} | ${row.publicPass ? 'pass' : 'fail'} | ${row.hiddenPass ? 'pass' : 'fail'} | ${displayCriterion(row.review?.scores?.functional_correctness)} | ${displayCriterion(row.review?.scores?.reliability_edge_cases)} | ${displayCriterion(row.review?.scores?.maintainability_clarity)} | ${displayCriterion(row.review?.scores?.scope_discipline)} | ${display(row.review?.overall)} | ${row.duration.toFixed(3)} |`);
   return [header, ...lines].join('\n');
 };
 
@@ -110,7 +111,7 @@ await writeFile(path.join(resultsRoot, 'aggregate-ranking.md'), aggregateMarkdow
 
 const csv = ['rank,candidate,model,reviewed_patches,harnesses_passed,public_passes,hidden_passes,functional_correctness,reliability_edge_cases,maintainability_clarity,scope_discipline,review_overall,average_time_seconds'];
 for (const [index, row] of sortRows(aggregate).entries()) {
-  csv.push([row.reviewed === 5 ? index + 1 : '', row.candidate, row.model, `${row.reviewed}/5`, `${row.passed}/5`, row.public, row.hidden, display(row.functional), display(row.reliability), display(row.maintainability), display(row.scope), display(row.reviewOverall), row.time.toFixed(3)].join(','));
+  csv.push([row.reviewed === 5 ? index + 1 : '', row.candidate, row.model, `${row.reviewed}/5`, `${row.passed}/5`, row.public, row.hidden, displayCriterion(row.functional, true), displayCriterion(row.reliability, true), displayCriterion(row.maintainability, true), displayCriterion(row.scope, true), display(row.reviewOverall), row.time.toFixed(3)].join(','));
 }
 await writeFile(path.join(resultsRoot, 'aggregate-ranking.csv'), `${csv.join('\n')}\n`);
 console.log(JSON.stringify({ candidates: candidates.length, tasks: manifest.tasks.length, records: records.length, audit: { reference_path_matches: '55/155', hidden_path_matches: '25/155', blind: false } }, null, 2));
