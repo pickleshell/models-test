@@ -128,3 +128,11 @@ Use an exact detached worktree for each candidate and save evaluator output unde
 ## Limitations
 
 This phase covers one maintenance task, one JavaScript fixture, and a small hidden case set. Provider availability and latency vary over time, and execution duration is not a stable model property. Quality scores are reviewer judgments grounded in visible code and recorded correctness rather than a universal measure. Pricing has not yet been added.
+
+## Contact
+
+Open a GitHub issue to report a bug, suggest an improvement, or ask for help.
+
+- [Create an issue](https://github.com/pickleshell/models-test/issues/new)
+- [Browse existing issues](https://github.com/pickleshell/models-test/issues)
+- Email: [pickleshell.plugin@gmail.com](mailto:pickleshell.plugin@gmail.com)
