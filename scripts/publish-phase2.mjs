@@ -26,7 +26,7 @@ for (const candidate of candidates) {
       publicPass: evaluation.metrics.public_status === 0,
       hiddenPass: evaluation.metrics.hidden_passed === 1,
       forbidden: evaluation.metrics.forbidden_change_count,
-      duration: evaluation.metrics.duration_ms / 1000
+      duration: record.agent.wall_time_ms / 1000
     });
   }
 }
