@@ -136,3 +136,7 @@ Open a GitHub issue to report a bug, suggest an improvement, or ask for help.
 - [Create an issue](https://github.com/pickleshell/models-test/issues/new)
 - [Browse existing issues](https://github.com/pickleshell/models-test/issues)
 - Email: [pickleshell.plugin@gmail.com](mailto:pickleshell.plugin@gmail.com)
+
+## License
+
+Models Test is available under the [MIT License](LICENSE).
