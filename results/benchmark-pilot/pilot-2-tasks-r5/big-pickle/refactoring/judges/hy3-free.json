@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "judge": {
+    "id": "hy3-free",
+    "agent": "opencode",
+    "model": "opencode/hy3-free",
+    "subscription": "free"
+  },
+  "status": "completed",
+  "response": "```json\n{\n  \"scores\": {\n    \"functional_correctness\": 10,\n    \"reliability_edge_cases\": 9,\n    \"maintainability_clarity\": 9,\n    \"scope_discipline\": 9\n  },\n  \"confidence\": 0.92,\n  \"explanation\": \"The refactoring extracts a reusable isValidEvent() guard and uses it in matching(). All 3 public tests pass, including the previously-failing 'ignores malformed timestamps' case (NaN timestamp now yields 0). The change is minimal, well-scoped, and improves robustness by validating object type, non-empty string type, and finite timestamp before comparison.\",\n  \"concerns\": [\n    \"isValidEvent rejects events whose type is an empty string or whose timestamp is non-finite — a stricter contract than the original loose `event && event.type === type` check; this is consistent with the test intent but is a behavior change for callers relying on the old lenient filtering.\",\n    \"latestByType still relies on timestamp comparisons; valid events guarantee finite timestamps, but the reduce logic is unchanged and untested for empty/single-element type groups beyond the passing cases.\"\n  ]\n}\n```",
+  "scores": {
+    "functional_correctness": 10,
+    "reliability_edge_cases": 9,
+    "maintainability_clarity": 9,
+    "scope_discipline": 9
+  },
+  "confidence": 0.92,
+  "explanation": "The refactoring extracts a reusable isValidEvent() guard and uses it in matching(). All 3 public tests pass, including the previously-failing 'ignores malformed timestamps' case (NaN timestamp now yields 0). The change is minimal, well-scoped, and improves robustness by validating object type, non-empty string type, and finite timestamp before comparison.",
+  "concerns": [
+    "isValidEvent rejects events whose type is an empty string or whose timestamp is non-finite — a stricter contract than the original loose `event && event.type === type` check; this is consistent with the test intent but is a behavior change for callers relying on the old lenient filtering.",
+    "latestByType still relies on timestamp comparisons; valid events guarantee finite timestamps, but the reduce logic is unchanged and untested for empty/single-element type groups beyond the passing cases."
+  ],
+  "execution": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "started_at": "2026-08-21T23:18:34.495Z",
+    "completed_at": "2026-08-21T23:19:08.759Z",
+    "duration_ms": 34264
+  },
+  "candidate": "big-pickle",
+  "task": "refactoring"
+}

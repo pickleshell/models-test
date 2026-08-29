@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "status": 1,
+  "timed_out": false,
+  "output_limited": false,
+  "started_at": "2026-08-25T17:00:47.580Z",
+  "completed_at": "2026-08-25T17:00:48.193Z",
+  "duration_ms": 613,
+  "stdout": "\n> test\n> node --test test/*.test.mjs\n\nTAP version 13\n# Subtest: parses an inclusive range\nok 1 - parses an inclusive range\n  ---\n  duration_ms: 1.818775\n  ...\n# Subtest: accepts surrounding whitespace\nok 2 - accepts surrounding whitespace\n  ---\n  duration_ms: 0.117551\n  ...\n# Subtest: rejects malformed ranges\nok 3 - rejects malformed ranges\n  ---\n  duration_ms: 0.13835\n  ...\n# Subtest: rejects a reversed range\nnot ok 4 - rejects a reversed range\n  ---\n  duration_ms: 2.13039\n  location: 'file:///home/test/.models-benchmark/workspace/fixtures/phase2/tests-edge-cases/test/range.test.mjs:8:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly equal:\n    + actual - expected\n    \n    + {\n    +   end: 2,\n    +   start: 7\n    + }\n    - null\n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  actual:\n    start: 7\n    end: 2\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///home/test/.models-benchmark/workspace/fixtures/phase2/tests-edge-cases/test/range.test.mjs:8:47)\n    Test.runInAsyncScope (node:async_hooks:203:9)\n    Test.run (node:internal/test_runner/test:631:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:374:18)\n    Test.postRun (node:internal/test_runner/test:715:19)\n    Test.run (node:internal/test_runner/test:673:12)\n    async Test.processPendingSubtests (node:internal/test_runner/test:374:7)\n  ...\n1..4\n# tests 4\n# suites 0\n# pass 3\n# fail 1\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 121.150668\n",
+  "stderr": "",
+  "artifact_hash": {
+    "path": "test-result.json",
+    "sha256": "c022246b810d94827b303c73af89338b00c650019e73479b44d421d2200a3344"
+  }
+}

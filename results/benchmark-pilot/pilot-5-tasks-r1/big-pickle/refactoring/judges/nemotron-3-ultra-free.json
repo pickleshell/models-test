@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "judge": {
+    "id": "nemotron-3-ultra-free",
+    "agent": "opencode",
+    "model": "opencode/nemotron-3-ultra-free",
+    "subscription": "free"
+  },
+  "status": "completed",
+  "response": "{\n  \"functional_correctness\": 9,\n  \"reliability_edge_cases\": 9,\n  \"maintainability_clarity\": 7,\n  \"scope_discipline\": 10,\n  \"confidence\": 9,\n  \"explanation\": \"The refactoring adds robust input validation to the internal `matching` function: checks for null/undefined, object type, non-empty string type, and finite timestamps. All public tests pass, including the 'ignores malformed timestamps' test. The public API (countByType, latestByType) remains unchanged.\",\n  \"concerns\": \"The validation logic is compressed into a single long filter predicate line, reducing readability. Consider extracting validation to a separate `isValidEvent` helper function for clarity.\"\n}",
+  "scores": {
+    "functional_correctness": 9,
+    "reliability_edge_cases": 9,
+    "maintainability_clarity": 7,
+    "scope_discipline": 10
+  },
+  "confidence": 9,
+  "explanation": "The refactoring adds robust input validation to the internal `matching` function: checks for null/undefined, object type, non-empty string type, and finite timestamps. All public tests pass, including the 'ignores malformed timestamps' test. The public API (countByType, latestByType) remains unchanged.",
+  "concerns": "The validation logic is compressed into a single long filter predicate line, reducing readability. Consider extracting validation to a separate `isValidEvent` helper function for clarity.",
+  "execution": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "started_at": "2026-08-25T16:51:39.372Z",
+    "completed_at": "2026-08-25T16:53:01.431Z",
+    "duration_ms": 82059
+  },
+  "judge_prompt_version": 1,
+  "judge_prompt_hash": "aff92196e7e2322bc8998b8fd1ce710762698b088343a9f7e1adfcfaf98c79a6",
+  "candidate": "big-pickle",
+  "task": "refactoring",
+  "artifact_hash": {
+    "path": "nemotron-3-ultra-free.json",
+    "sha256": "da9ddb358a9d048252ea4574f3256815cc4b3a2ee66def81d8c8edf6c6a636aa"
+  }
+}

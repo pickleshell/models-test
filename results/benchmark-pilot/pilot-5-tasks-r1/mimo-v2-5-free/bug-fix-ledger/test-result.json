@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "started_at": "2026-08-25T17:17:44.078Z",
+  "completed_at": "2026-08-25T17:17:44.698Z",
+  "duration_ms": 620,
+  "stdout": "\n> phase1-ledger-fixture@0.1.0 test\n> node --test test/*.test.mjs\n\nTAP version 13\n# Subtest: parses ordinary decimal money into cents\nok 1 - parses ordinary decimal money into cents\n  ---\n  duration_ms: 1.284091\n  ...\n# Subtest: summarizes sales by account, currency, and UTC day\nok 2 - summarizes sales by account, currency, and UTC day\n  ---\n  duration_ms: 6.123368\n  ...\n# Subtest: does not double count duplicate transaction ids\nok 3 - does not double count duplicate transaction ids\n  ---\n  duration_ms: 0.151434\n  ...\n# Subtest: counts invalid rows and orphan refunds without adding them to totals\nok 4 - counts invalid rows and orphan refunds without adding them to totals\n  ---\n  duration_ms: 0.23979\n  ...\n1..4\n# tests 4\n# suites 0\n# pass 4\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 124.165339\n",
+  "stderr": "",
+  "artifact_hash": {
+    "path": "test-result.json",
+    "sha256": "d90662578844fdb7f97846fd5774319a6cf5ac30927e57be4a9d9188398041d9"
+  }
+}

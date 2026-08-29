@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "release": "pilot-1-task",
+  "task": "feature-implementation",
+  "candidate": {
+    "id": "deepseek-v4-flash-free",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "model": "opencode/deepseek-v4-flash-free",
+    "subscription": "free"
+  },
+  "agent": {
+    "status": 1,
+    "signal": null,
+    "timed_out": false
+  },
+  "tests": {
+    "status": 1,
+    "timed_out": false
+  },
+  "changed_files": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-pilot/pilot-1-task/deepseek-v4-flash-free/feature-implementation",
+    "private_dir": "/home/test/.models-benchmark/runs/pilot-1-task/deepseek-v4-flash-free/feature-implementation"
+  },
+  "completed_at": "2026-08-21T16:49:00.779Z"
+}

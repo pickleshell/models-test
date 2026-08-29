@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "status": 254,
+  "timed_out": false,
+  "output_limited": false,
+  "started_at": "2026-08-25T18:29:35.254Z",
+  "completed_at": "2026-08-25T18:29:35.660Z",
+  "duration_ms": 406,
+  "stdout": "",
+  "stderr": "npm ERR! code ENOENT\nnpm ERR! syscall open\nnpm ERR! path /home/test/.models-benchmark/workspace/fixtures/phase1-ledger/fixtures/phase1-ledger/package.json\nnpm ERR! errno -2\nnpm ERR! enoent ENOENT: no such file or directory, open '/home/test/.models-benchmark/workspace/fixtures/phase1-ledger/fixtures/phase1-ledger/package.json'\nnpm ERR! enoent This is related to npm not being able to find a file.\nnpm ERR! enoent \n\nnpm ERR! A complete log of this run can be found in:\nnpm ERR!     /home/test/.models-benchmark/agent-home/.npm/_logs/2026-08-25T18_29_35_615Z-debug-0.log\n",
+  "artifact_hash": {
+    "path": "test-result.json",
+    "sha256": "774b07c52a29357e3ec024648bcd207ac86f5126afb8480ae8540e463095dd9b"
+  }
+}

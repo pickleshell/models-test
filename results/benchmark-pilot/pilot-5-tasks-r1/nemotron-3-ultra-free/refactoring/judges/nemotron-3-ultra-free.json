@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "judge": {
+    "id": "nemotron-3-ultra-free",
+    "agent": "opencode",
+    "model": "opencode/nemotron-3-ultra-free",
+    "subscription": "free"
+  },
+  "status": "skipped",
+  "reason": "agent_failure",
+  "candidate": "nemotron-3-ultra-free",
+  "task": "refactoring",
+  "artifact_hash": {
+    "path": "nemotron-3-ultra-free.json",
+    "sha256": "30e0345655bf7ebbb6b3e7c58130f73308195f1df6748f78139fa5b6c3dc0299"
+  }
+}

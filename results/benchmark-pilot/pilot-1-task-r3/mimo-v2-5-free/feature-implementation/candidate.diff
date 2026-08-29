@@ -1,0 +1,33 @@
+diff --git a/fixtures/phase2/feature-implementation/src/featureFlags.js b/fixtures/phase2/feature-implementation/src/featureFlags.js
+index 489ea67..91b9cd6 100644
+--- a/fixtures/phase2/feature-implementation/src/featureFlags.js
++++ b/fixtures/phase2/feature-implementation/src/featureFlags.js
+@@ -1,5 +1,26 @@
++function hashToPercent(userId) {
++  let hash = 0;
++  const str = String(userId);
++  for (let i = 0; i < str.length; i++) {
++    hash = (hash * 31 + str.charCodeAt(i)) | 0;
++  }
++  return (Math.abs(hash) % 100) + 1;
++}
++
+ export function resolveFeature(config, context) {
+   if (!config || !context || typeof context !== 'object') return false;
+-  const flag = config[context.feature];
+-  return typeof flag === 'boolean' ? flag : Boolean(flag && flag.enabled);
++  const { feature, overrides } = context;
++  if (overrides && typeof overrides[feature] === 'boolean') {
++    return overrides[feature];
++  }
++  const flag = config[feature];
++  if (typeof flag === 'boolean') return flag;
++  if (flag && typeof flag === 'object') {
++    if (typeof flag.enabled !== 'boolean') return false;
++    if (flag.rollout === undefined) return flag.enabled;
++    if (!flag.enabled) return false;
++    if (typeof context.userId !== 'string') return false;
++    return hashToPercent(context.userId) <= flag.rollout;
++  }
++  return false;
+ }

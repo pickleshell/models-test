@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "started_at": "2026-08-25T17:00:05.528Z",
+  "completed_at": "2026-08-25T17:00:06.162Z",
+  "duration_ms": 634,
+  "stdout": "\n> test\n> node --test test/*.test.mjs\n\nTAP version 13\n# Subtest: formats a simple label\nok 1 - formats a simple label\n  ---\n  duration_ms: 1.257952\n  ...\n# Subtest: returns empty for empty input\nok 2 - returns empty for empty input\n  ---\n  duration_ms: 0.100108\n  ...\n1..2\n# tests 2\n# suites 0\n# pass 2\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 125.90707\n",
+  "stderr": "",
+  "artifact_hash": {
+    "path": "test-result.json",
+    "sha256": "2e3b0d562c261559fbf3f291e8baab8e6f090f9643c50cfffa0878f84301ee86"
+  }
+}

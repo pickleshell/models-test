@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "judge": {
+    "id": "inkling-free",
+    "agent": "opencode",
+    "model": "openrouter/thinkingmachines/inkling:free",
+    "subscription": "free"
+  },
+  "status": "failed",
+  "response": "[19:18:16.909] ERROR (#10954): failed {\n  ref: \"err_8269b815\",\n  error: {\n    providerID: \"openrouter\",\n    modelID: \"thinkingmachines/inkling:free\",\n    suggestions: [ \"thinkingmachines/inkling:free\", \"thinkingmachines/inkling-small:free\" ],\n    _tag: \"ProviderModelNotFoundError\",\n  },\n  cause: \"ProviderModelNotFoundError: \\n    at <anonymous> (/$bunfs/root/chunk-9dzgnn7g.js:687:64414)\\n    at SessionPrompt.getModel (/$bunfs/root/chunk-e4nspvjx.js:1015:1895)\\n    at SessionPrompt.getModel (definition) (/$bunfs/root/chunk-e4nspvjx.js:1014:1062)\\n    at SessionPrompt.run (/$bunfs/root/chunk-e4nspvjx.js:1015:5632)\\n    at SessionPrompt.run (definition) (/$bunfs/root/chunk-e4nspvjx.js:1015:904)\\n    at SessionRunState.ensureRunning (/$bunfs/root/chunk-e4nspvjx.js:1015:5603)\\n    at SessionRunState.ensureRunning (definition) (/$bunfs/root/chunk-e4nspvjx.js:2:8043)\\n    at SessionPrompt.loop (/$bunfs/root/chunk-e4nspvjx.js:1015:628)\\n    at SessionPrompt.loop (definition) (/$bunfs/root/chunk-e4nspvjx.js:1015:5539)\\n    at SessionPrompt.prompt (/$bunfs/root/chunk-e6zcxa2p.js:3:13189)\\n    at SessionPrompt.prompt (definition) (/$bunfs/root/chunk-e4nspvjx.js:1015:247)\",\n}\n{\"type\":\"error\",\"timestamp\":1787678296910,\"sessionID\":\"ses_fc611f830ffe4oLSdx6xLu7ztl\",\"error\":{\"name\":\"UnknownError\",\"data\":{\"message\":\"Unexpected server error. Check server logs for details.\",\"ref\":\"err_8269b815\"}}}\n{\"type\":\"error\",\"timestamp\":1787678297095,\"sessionID\":\"ses_fc611f830ffe4oLSdx6xLu7ztl\",\"error\":{\"name\":\"UnknownError\",\"data\":{\"message\":\"Model not found: openrouter/thinkingmachines/inkling:free. Did you mean: thinkingmachines/inkling:free, thinkingmachines/inkling-small:free?\"}}}",
+  "scores": null,
+  "confidence": null,
+  "explanation": null,
+  "concerns": [],
+  "execution": {
+    "status": 1,
+    "signal": null,
+    "timed_out": false,
+    "started_at": "2026-08-25T17:18:15.035Z",
+    "completed_at": "2026-08-25T17:18:17.224Z",
+    "duration_ms": 2189
+  },
+  "judge_prompt_version": 1,
+  "judge_prompt_hash": "501e133321ba08be341e89c034447a4f2b513bdd566f7b55ab0efd63984ff6d3",
+  "candidate": "mimo-v2-5-free",
+  "task": "bug-fix-ledger",
+  "artifact_hash": {
+    "path": "inkling-free.json",
+    "sha256": "1b5bdb08a8f10046bdcf0821cbd388915b81b86067faa3dd3b5c14d27f8ec8d5"
+  }
+}

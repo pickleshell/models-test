@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "nemotron-3-ultra-free",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "model": "opencode/nemotron-3-ultra-free",
+    "subscription": "free"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-25T16:57:54.581Z",
+  "completed_at": "2026-08-25T16:58:23.618Z",
+  "duration_ms": 29037,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "b4671cc3ffe894c8cc42db4d46f90b9b1360b29c6a975d6fce8fa08366a75346"
+  }
+}

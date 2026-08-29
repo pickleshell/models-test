@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "judge": {
+    "id": "inkling-free",
+    "agent": "opencode",
+    "model": "openrouter/thinkingmachines/inkling:free",
+    "subscription": "free"
+  },
+  "status": "skipped",
+  "reason": "agent_failure",
+  "candidate": "nemotron-3-ultra-free",
+  "task": "tests-edge-cases",
+  "artifact_hash": {
+    "path": "inkling-free.json",
+    "sha256": "d6520376d601982205a4d67ff15bd941b4ceef36b55d4ddcf24ca5a3f26e0f22"
+  }
+}

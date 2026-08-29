@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "judge": {
+    "id": "nemotron-3-ultra-free",
+    "agent": "opencode",
+    "model": "opencode/nemotron-3-ultra-free",
+    "subscription": "free"
+  },
+  "status": "failed",
+  "response": "{\"type\":\"step_start\",\"timestamp\":1787677523852,\"sessionID\":\"ses_fc61dc8e7ffepyIy1pq1blPDwC\",\"part\":{\"id\":\"prt_039e23f81001pLiUJxQdbgNPpF\",\"messageID\":\"msg_039e23aa8001xVBMpTNo8gGIus\",\"sessionID\":\"ses_fc61dc8e7ffepyIy1pq1blPDwC\",\"snapshot\":\"9068a0042453b564737dbce5aa513176fdc08ff3\",\"type\":\"step-start\"}}\n{\"type\":\"error\",\"timestamp\":1787677523852,\"sessionID\":\"ses_fc61dc8e7ffepyIy1pq1blPDwC\",\"error\":{\"name\":\"UnknownError\",\"data\":{\"message\":\"\\\"Streaming response failed: [502] Upstream error from Nvidia: Service temporarily overloaded\\\"\"}}}",
+  "scores": null,
+  "confidence": null,
+  "explanation": null,
+  "concerns": [],
+  "execution": {
+    "status": 1,
+    "signal": null,
+    "timed_out": false,
+    "started_at": "2026-08-25T17:05:20.642Z",
+    "completed_at": "2026-08-25T17:05:24.252Z",
+    "duration_ms": 3610
+  },
+  "judge_prompt_version": 1,
+  "judge_prompt_hash": "f253b14a09212c61bb74739d478d381829e92bafc1eb37c4a087c8abad07fd73",
+  "candidate": "inkling-free",
+  "task": "tests-edge-cases",
+  "artifact_hash": {
+    "path": "nemotron-3-ultra-free.json",
+    "sha256": "27e848c87642940ca9f8713d7113b63ab5d6bbbce065bbbaa2704bc3a995c8dd"
+  }
+}

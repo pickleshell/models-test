@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "judge": {
+    "id": "hy3-free",
+    "agent": "opencode",
+    "model": "opencode/hy3-free",
+    "subscription": "free"
+  },
+  "status": "completed",
+  "response": "```json\n{\n  \"scores\": {\n    \"functional_correctness\": 10,\n    \"reliability_edge_cases\": 9,\n    \"maintainability_clarity\": 9,\n    \"scope_discipline\": 10\n  },\n  \"confidence\": 0.95,\n  \"explanation\": \"The submission extracts a single `isValid` helper and routes both public functions through the shared `matching` filter, eliminating the duplicated predicate. All 3 public tests pass (including 'ignores malformed timestamps', which the original code actually failed). The change aligns the implementation with the documented validity contract (non-empty string type + finite numeric timestamp) and keeps the same public API while modifying only the allowed source file.\",\n  \"concerns\": \"The new `isValid` is stricter than the original `event && event.type === type` predicate (now also rejects empty-string types and non-finite/non-numeric timestamps). This is consistent with the README spec and fixes a latent bug, but it is a behavioral change beyond pure de-duplication; no other edge cases (e.g. non-object events, extra properties) are problematic since truthiness/typeof guards handle them.\"\n}\n```",
+  "scores": {
+    "functional_correctness": 10,
+    "reliability_edge_cases": 9,
+    "maintainability_clarity": 9,
+    "scope_discipline": 10
+  },
+  "confidence": 0.95,
+  "explanation": "The submission extracts a single `isValid` helper and routes both public functions through the shared `matching` filter, eliminating the duplicated predicate. All 3 public tests pass (including 'ignores malformed timestamps', which the original code actually failed). The change aligns the implementation with the documented validity contract (non-empty string type + finite numeric timestamp) and keeps the same public API while modifying only the allowed source file.",
+  "concerns": "The new `isValid` is stricter than the original `event && event.type === type` predicate (now also rejects empty-string types and non-finite/non-numeric timestamps). This is consistent with the README spec and fixes a latent bug, but it is a behavioral change beyond pure de-duplication; no other edge cases (e.g. non-object events, extra properties) are problematic since truthiness/typeof guards handle them.",
+  "execution": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "started_at": "2026-08-21T23:22:56.179Z",
+    "completed_at": "2026-08-21T23:23:28.173Z",
+    "duration_ms": 31994
+  },
+  "candidate": "mimo-v2-5-free",
+  "task": "refactoring"
+}

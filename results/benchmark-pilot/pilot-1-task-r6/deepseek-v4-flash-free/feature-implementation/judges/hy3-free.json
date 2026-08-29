@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "judge": {
+    "id": "hy3-free",
+    "agent": "opencode",
+    "model": "opencode/hy3-free",
+    "subscription": "free"
+  },
+  "status": "invalid_output",
+  "response": "I inspected the workspace, the task contract (README), and ran the public tests.\n\n**Findings:**\n- `changed_files` is empty and working tree is clean — the candidate recorded no modifications in this workspace.\n- The fixture `src/featureFlags.js` contains an implementation, but it **fails the public test suite (1 of 2 passing)**.\n- Failure: `resolveFeature({chat:true},{feature:'chat',overrides:{chat:false}})` returns `true` but must be `false`. The implementation **ignores `context.overrides` entirely** and does **not implement rollout % hashing** (README contract). It only handles bare booleans and `{enabled}` flags, which happens to satisfy the 100% rollout test but not partial rollout or overrides.\n- It does preserve exports and avoids mutation, and does not touch tests/package files.\n\n```json\n{\n  \"scores\": {\n    \"functional_correctness\": 3,\n    \"reliability_edge_cases\": 3,\n    \"maintainability_clarity\": 7,\n    \"scope_discipline\": 8\n  },\n  \"confidence\": 0.7,\n  \"explanation\": \"The delivered artifact fails a public test: it ignores context.overrides (a required README behavior) and never implements rollout-percentage hashing, only handling bare booleans and {enabled} objects. No scope violations occurred (tests/package untouched, exports preserved), and the code is concise, but the core contract is unmet and one public test fails. Note: changed_files is empty and the working tree is clean, so it is unclear the candidate actually executed the implementation task in this workspace.\",\n  \"concerns\": [\n    \"Public test fails (overrides not honored): resolveFeature returns true instead of false on line 7 of the test.\",\n    \"Rollout % hashing (stable hash of userId) is not implemented, violating the README for partial rollouts.\",\n    \"Candidate recorded zero changed_files; it is ambiguous whether the candidate ran at all or this is a seed state.\"\n  ]\n}\n```",
+  "scores": null,
+  "confidence": null,
+  "explanation": null,
+  "concerns": [],
+  "execution": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false
+  },
+  "candidate": "deepseek-v4-flash-free",
+  "task": "feature-implementation"
+}

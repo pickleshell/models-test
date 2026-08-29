@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "judge": {
+    "id": "gemini-3-1-pro",
+    "agent": "opencode",
+    "model": "gemini-3.1-pro",
+    "subscription": "paid"
+  },
+  "status": "skipped",
+  "reason": "agent_failure",
+  "candidate": "deepseek-v4-flash-free",
+  "task": "refactoring"
+}

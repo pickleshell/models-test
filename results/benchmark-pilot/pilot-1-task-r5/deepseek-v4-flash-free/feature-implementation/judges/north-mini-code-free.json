@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "judge": {
+    "id": "north-mini-code-free",
+    "agent": "opencode",
+    "model": "opencode/north-mini-code-free",
+    "subscription": "free"
+  },
+  "status": "failed",
+  "response": "[18:57:57.944] ERROR (#10951): failed {\n  ref: \"err_ca22fce3\",\n  error: {\n    providerID: \"opencode\",\n    modelID: \"north-mini-code-free\",\n    suggestions: [ \"hy3-free\", \"mimo-v2.5-free\", \"muse-spark-1.2-contributor-free\" ],\n    _tag: \"ProviderModelNotFoundError\",\n  },\n  cause: \"ProviderModelNotFoundError: \\n    at <anonymous> (/$bunfs/root/chunk-9dzgnn7g.js:687:64599)\\n    at SessionPrompt.getModel (/$bunfs/root/chunk-e4nspvjx.js:1015:1895)\\n    at SessionPrompt.getModel (definition) (/$bunfs/root/chunk-e4nspvjx.js:1014:1062)\\n    at SessionPrompt.run (/$bunfs/root/chunk-e4nspvjx.js:1015:5632)\\n    at SessionPrompt.run (definition) (/$bunfs/root/chunk-e4nspvjx.js:1015:904)\\n    at SessionRunState.ensureRunning (/$bunfs/root/chunk-e4nspvjx.js:1015:5603)\\n    at SessionRunState.ensureRunning (definition) (/$bunfs/root/chunk-e4nspvjx.js:2:8043)\\n    at SessionPrompt.loop (/$bunfs/root/chunk-e4nspvjx.js:1015:628)\\n    at SessionPrompt.loop (definition) (/$bunfs/root/chunk-e4nspvjx.js:1015:5539)\\n    at SessionPrompt.prompt (/$bunfs/root/chunk-e6zcxa2p.js:3:13189)\\n    at SessionPrompt.prompt (definition) (/$bunfs/root/chunk-e4nspvjx.js:1015:247)\",\n}\n{\"type\":\"error\",\"timestamp\":1787331477945,\"sessionID\":\"ses_fdabe018cffe5fxc1tVRaILGoh\",\"error\":{\"name\":\"UnknownError\",\"data\":{\"message\":\"Unexpected server error. Check server logs for details.\",\"ref\":\"err_ca22fce3\"}}}\n{\"type\":\"error\",\"timestamp\":1787331478112,\"sessionID\":\"ses_fdabe018cffe5fxc1tVRaILGoh\",\"error\":{\"name\":\"UnknownError\",\"data\":{\"message\":\"Model not found: opencode/north-mini-code-free. Did you mean: hy3-free, mimo-v2.5-free, muse-spark-1.2-contributor-free?\"}}}",
+  "execution": {
+    "status": 1,
+    "signal": null,
+    "timed_out": false
+  },
+  "candidate": "deepseek-v4-flash-free",
+  "task": "feature-implementation"
+}

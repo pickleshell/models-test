@@ -1,0 +1,72 @@
+{
+  "schema_version": 3,
+  "release": "pilot-patch-r3",
+  "nominations": [
+    {
+      "id": "patch",
+      "fixture": "fixtures/phase1-ledger",
+      "prompt": "fixtures/phase1-ledger/PROMPT.md",
+      "test_command": [
+        "npm",
+        "test"
+      ],
+      "allowed_changes": [
+        "fixtures/phase1-ledger/src/reconcile.js"
+      ],
+      "frozen_inputs": {
+        "fixture_tree": {
+          "algorithm": "sha256-tree-v1",
+          "sha256": "06ad193feec22c6a5d93747726cd2237b764d2a1f05d17182bef9f5683bb55d4",
+          "files": 5
+        },
+        "prompt_sha256": "e99d613647b1d741d3f746ccfbbd0b723d106e46c42ab1fd6df398ad2d5e9d58"
+      },
+      "objective_evaluator": {
+        "id": "phase2-bug-fix-v1",
+        "sha256": "f3bf35b4af253b4b83bfa8351f078c9e198d89cc63fba4e3d086b1fe56739b99",
+        "source_sha256": "52e1fef85a80bdc158f0ab9bd03107ebb8782754a0341da3844b03a374f54782"
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "id": "mimo-v2-5-free",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "model": "opencode/mimo-v2.5-free",
+      "subscription": "free"
+    }
+  ],
+  "judges": [
+    {
+      "id": "gemini-3-flash",
+      "agent": "opencode",
+      "provider": "opencode",
+      "model": "opencode/gemini-3-flash",
+      "subscription": "paid-low-cost"
+    },
+    {
+      "id": "gpt-5-nano",
+      "agent": "opencode",
+      "provider": "opencode",
+      "model": "opencode/gpt-5-nano",
+      "subscription": "paid-low-cost"
+    }
+  ],
+  "criteria": [
+    "functional_correctness",
+    "reliability_edge_cases",
+    "maintainability_clarity",
+    "scope_discipline"
+  ],
+  "retry_policy": {
+    "canonical_attempt": 1,
+    "allow_retries": false
+  },
+  "judge_prompt": {
+    "version": 3,
+    "template_hash": "3b0265ce6a626409d7d01a8c28f1d2a8541056ed8634241a7dc13ac2acf97ce2"
+  },
+  "config_sha256": "59cb2cfd370c31b728e2714caecbd1a2d507197e20db2aa5e3a5d190bedaa77c",
+  "spec_hash": "4728868530c7c9e5df5904981060fd77a817e76fafe47fe754c96b6096988fdb"
+}

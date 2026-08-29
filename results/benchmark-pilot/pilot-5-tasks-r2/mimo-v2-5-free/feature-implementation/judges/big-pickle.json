@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "judge": {
+    "id": "big-pickle",
+    "agent": "opencode",
+    "model": "opencode/big-pickle",
+    "subscription": "free"
+  },
+  "status": "completed",
+  "response": "All tests pass (2/2). Now let me analyze the implementation against the README contract.\n\n```json\n{\n  \"scores\": {\n    \"functional_correctness\": 9,\n    \"reliability_edge_cases\": 9,\n    \"maintainability_clarity\": 9,\n    \"scope_discipline\": 10\n  },\n  \"confidence\": 0.92,\n  \"explanation\": \"The implementation correctly follows the priority chain (override > boolean flag > enabled+rollout object), uses a deterministic hash for rollout bucketing, never mutates arguments, and handles all specified edge cases. Public tests pass.\",\n  \"concerns\": [\n    \"The `in` operator checks the prototype chain for overrides—minor theoretical concern if overrides inherits from a polluted prototype, though effectively negligible.\",\n    \"The stableHash is a djb2 variant; while sufficient for feature-flag bucketing, it could produce less uniform distributions than a stronger hash for adversarial userIds.\",\n    \"Public test coverage is minimal (only 2 tests). The implementation handles far more edge cases than tested, but those untested paths cannot be fully verified.\"\n  ]\n}\n```",
+  "scores": {
+    "functional_correctness": 9,
+    "reliability_edge_cases": 9,
+    "maintainability_clarity": 9,
+    "scope_discipline": 10
+  },
+  "confidence": 0.92,
+  "explanation": "The implementation correctly follows the priority chain (override > boolean flag > enabled+rollout object), uses a deterministic hash for rollout bucketing, never mutates arguments, and handles all specified edge cases. Public tests pass.",
+  "concerns": [
+    "The `in` operator checks the prototype chain for overrides—minor theoretical concern if overrides inherits from a polluted prototype, though effectively negligible.",
+    "The stableHash is a djb2 variant; while sufficient for feature-flag bucketing, it could produce less uniform distributions than a stronger hash for adversarial userIds.",
+    "Public test coverage is minimal (only 2 tests). The implementation handles far more edge cases than tested, but those untested paths cannot be fully verified."
+  ],
+  "execution": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "started_at": "2026-08-25T18:19:59.687Z",
+    "completed_at": "2026-08-25T18:20:53.221Z",
+    "duration_ms": 53534
+  },
+  "judge_prompt_version": 1,
+  "judge_prompt_hash": "a2d191dc10baa7610c2764c53e6ccb3c7385f422dc516a11c21e9173cf5694fa",
+  "candidate": "mimo-v2-5-free",
+  "task": "feature-implementation",
+  "artifact_hash": {
+    "path": "big-pickle.json",
+    "sha256": "e1dca4a8ec580c130a5cfc01dd3b4d362b097409aea33ce72d0d7f40a83c1a18"
+  }
+}

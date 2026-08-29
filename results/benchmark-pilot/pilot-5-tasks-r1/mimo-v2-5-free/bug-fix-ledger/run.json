@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "release": "pilot-5-tasks-r1",
+  "task": "bug-fix-ledger",
+  "candidate": {
+    "id": "mimo-v2-5-free",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "model": "opencode/mimo-v2.5-free",
+    "subscription": "free"
+  },
+  "started_at": "2026-08-25T17:11:53.513Z",
+  "completed_at": "2026-08-25T17:17:44.698Z",
+  "duration_ms": 351185,
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-25T17:11:53.513Z",
+    "completed_at": "2026-08-25T17:17:44.078Z",
+    "duration_ms": 350565
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-25T17:17:44.078Z",
+    "completed_at": "2026-08-25T17:17:44.698Z",
+    "duration_ms": 620
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase1-ledger/src/reconcile.js"
+  ],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-pilot/pilot-5-tasks-r1/mimo-v2-5-free/bug-fix-ledger",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "77eae774eaa8b34ea840dd0d77252e38f48410ddeb8010ef2c9b33fff3ef9c4b"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "d90662578844fdb7f97846fd5774319a6cf5ac30927e57be4a9d9188398041d9"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "8655f13ef011c66d4b9b3d89ff8b30726252a36f7fb7d4819dc2cf25517bde16"
+  }
+}

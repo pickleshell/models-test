@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "judge": {
+    "id": "inkling-free",
+    "agent": "opencode",
+    "model": "openrouter/thinkingmachines/inkling:free",
+    "subscription": "free"
+  },
+  "status": "failed",
+  "response": "[19:00:41.478] ERROR (#10954): failed {\n  ref: \"err_7735d478\",\n  error: {\n    providerID: \"openrouter\",\n    modelID: \"thinkingmachines/inkling:free\",\n    suggestions: [ \"thinkingmachines/inkling:free\", \"thinkingmachines/inkling-small:free\" ],\n    _tag: \"ProviderModelNotFoundError\",\n  },\n  cause: \"ProviderModelNotFoundError: \\n    at <anonymous> (/$bunfs/root/chunk-9dzgnn7g.js:687:64414)\\n    at SessionPrompt.getModel (/$bunfs/root/chunk-e4nspvjx.js:1015:1895)\\n    at SessionPrompt.getModel (definition) (/$bunfs/root/chunk-e4nspvjx.js:1014:1062)\\n    at SessionPrompt.run (/$bunfs/root/chunk-e4nspvjx.js:1015:5632)\\n    at SessionPrompt.run (definition) (/$bunfs/root/chunk-e4nspvjx.js:1015:904)\\n    at SessionRunState.ensureRunning (/$bunfs/root/chunk-e4nspvjx.js:1015:5603)\\n    at SessionRunState.ensureRunning (definition) (/$bunfs/root/chunk-e4nspvjx.js:2:8043)\\n    at SessionPrompt.loop (/$bunfs/root/chunk-e4nspvjx.js:1015:628)\\n    at SessionPrompt.loop (definition) (/$bunfs/root/chunk-e4nspvjx.js:1015:5539)\\n    at SessionPrompt.prompt (/$bunfs/root/chunk-e6zcxa2p.js:3:13189)\\n    at SessionPrompt.prompt (definition) (/$bunfs/root/chunk-e4nspvjx.js:1015:247)\",\n}\n{\"type\":\"error\",\"timestamp\":1787677241479,\"sessionID\":\"ses_fc622130bffeTfKY7gzN5E8wMW\",\"error\":{\"name\":\"UnknownError\",\"data\":{\"message\":\"Unexpected server error. Check server logs for details.\",\"ref\":\"err_7735d478\"}}}\n{\"type\":\"error\",\"timestamp\":1787677241657,\"sessionID\":\"ses_fc622130bffeTfKY7gzN5E8wMW\",\"error\":{\"name\":\"UnknownError\",\"data\":{\"message\":\"Model not found: openrouter/thinkingmachines/inkling:free. Did you mean: thinkingmachines/inkling:free, thinkingmachines/inkling-small:free?\"}}}",
+  "scores": null,
+  "confidence": null,
+  "explanation": null,
+  "concerns": [],
+  "execution": {
+    "status": 1,
+    "signal": null,
+    "timed_out": false,
+    "started_at": "2026-08-25T17:00:39.513Z",
+    "completed_at": "2026-08-25T17:00:41.786Z",
+    "duration_ms": 2273
+  },
+  "judge_prompt_version": 1,
+  "judge_prompt_hash": "e6971e1ccd3eac1627ef328eb242327298dd6f384f2101d6ba7d4483145b3193",
+  "candidate": "nemotron-3-ultra-free",
+  "task": "repository-navigation",
+  "artifact_hash": {
+    "path": "inkling-free.json",
+    "sha256": "d20e845768c625fc0ba05ac04175b337c2b6b8f5fa1e04c645ef470075fe7a93"
+  }
+}

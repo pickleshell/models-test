@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "release": "pilot-5-tasks-r1",
+  "task": "tests-edge-cases",
+  "candidate": {
+    "id": "inkling-free",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "model": "openrouter/thinkingmachines/inkling:free",
+    "subscription": "free"
+  },
+  "started_at": "2026-08-25T17:04:58.881Z",
+  "completed_at": "2026-08-25T17:05:20.096Z",
+  "duration_ms": 21215,
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-25T17:04:58.881Z",
+    "completed_at": "2026-08-25T17:05:19.450Z",
+    "duration_ms": 20569
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-25T17:05:19.450Z",
+    "completed_at": "2026-08-25T17:05:20.096Z",
+    "duration_ms": 646
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2/tests-edge-cases/src/range.js",
+    "fixtures/phase2/tests-edge-cases/test/range.test.mjs"
+  ],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-pilot/pilot-5-tasks-r1/inkling-free/tests-edge-cases",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "d793d6a5fd9d003609be904bcfc8fee42600d0a0a8fee51f6f1aa2359868a09c"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "8ed5ddccc8fa6e36dcdd7527c650e0560e4fad129712b0c564084592807b001e"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "406abd5231479e047c2e14e42e164b896ee9729e3f60492f23a2f0b6d0af9374"
+  }
+}

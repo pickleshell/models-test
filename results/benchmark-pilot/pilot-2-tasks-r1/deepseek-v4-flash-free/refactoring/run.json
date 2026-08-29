@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "release": "pilot-2-tasks-r1",
+  "task": "refactoring",
+  "candidate": {
+    "id": "deepseek-v4-flash-free",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "model": "opencode/deepseek-v4-flash-free",
+    "subscription": "free"
+  },
+  "started_at": "2026-08-21T20:15:08.764Z",
+  "completed_at": "2026-08-21T20:15:11.607Z",
+  "duration_ms": 2843,
+  "agent": {
+    "status": 1,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-21T20:15:08.764Z",
+    "completed_at": "2026-08-21T20:15:10.994Z",
+    "duration_ms": 2230
+  },
+  "tests": {
+    "status": 1,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-21T20:15:10.995Z",
+    "completed_at": "2026-08-21T20:15:11.607Z",
+    "duration_ms": 612
+  },
+  "outcome": "agent_failure",
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-pilot/pilot-2-tasks-r1/deepseek-v4-flash-free/refactoring"
+  }
+}

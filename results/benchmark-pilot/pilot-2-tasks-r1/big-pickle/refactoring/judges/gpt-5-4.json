@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "judge": {
+    "id": "gpt-5-4",
+    "agent": "opencode",
+    "model": "opencode/gpt-5.4",
+    "subscription": "paid"
+  },
+  "status": "failed",
+  "response": "[22:15:02.789] ERROR (#10951): failed {\n  ref: \"err_0202e121\",\n  error: {\n    providerID: \"opencode\",\n    modelID: \"gpt-5.4\",\n    suggestions: [ \"gpt-5.4\", \"gpt-5.4-pro\", \"gpt-5.4-mini\" ],\n    _tag: \"ProviderModelNotFoundError\",\n  },\n  cause: \"ProviderModelNotFoundError: \\n    at <anonymous> (/$bunfs/root/chunk-9dzgnn7g.js:687:64599)\\n    at SessionPrompt.getModel (/$bunfs/root/chunk-e4nspvjx.js:1015:1895)\\n    at SessionPrompt.getModel (definition) (/$bunfs/root/chunk-e4nspvjx.js:1014:1062)\\n    at SessionPrompt.run (/$bunfs/root/chunk-e4nspvjx.js:1015:5632)\\n    at SessionPrompt.run (definition) (/$bunfs/root/chunk-e4nspvjx.js:1015:904)\\n    at SessionRunState.ensureRunning (/$bunfs/root/chunk-e4nspvjx.js:1015:5603)\\n    at SessionRunState.ensureRunning (definition) (/$bunfs/root/chunk-e4nspvjx.js:2:8043)\\n    at SessionPrompt.loop (/$bunfs/root/chunk-e4nspvjx.js:1015:628)\\n    at SessionPrompt.loop (definition) (/$bunfs/root/chunk-e4nspvjx.js:1015:5539)\\n    at SessionPrompt.prompt (/$bunfs/root/chunk-e6zcxa2p.js:3:13189)\\n    at SessionPrompt.prompt (definition) (/$bunfs/root/chunk-e4nspvjx.js:1015:247)\",\n}\n{\"type\":\"error\",\"timestamp\":1787343302790,\"sessionID\":\"ses_fda0992f3ffeLmiWKlUaHzylES\",\"error\":{\"name\":\"UnknownError\",\"data\":{\"message\":\"Unexpected server error. Check server logs for details.\",\"ref\":\"err_0202e121\"}}}\n{\"type\":\"error\",\"timestamp\":1787343302963,\"sessionID\":\"ses_fda0992f3ffeLmiWKlUaHzylES\",\"error\":{\"name\":\"UnknownError\",\"data\":{\"message\":\"Model not found: opencode/gpt-5.4. Did you mean: gpt-5.4, gpt-5.4-pro, gpt-5.4-mini?\"}}}",
+  "scores": null,
+  "confidence": null,
+  "explanation": null,
+  "concerns": [],
+  "execution": {
+    "status": 1,
+    "signal": null,
+    "timed_out": false,
+    "started_at": "2026-08-21T20:15:00.913Z",
+    "completed_at": "2026-08-21T20:15:03.076Z",
+    "duration_ms": 2163
+  },
+  "candidate": "big-pickle",
+  "task": "refactoring"
+}

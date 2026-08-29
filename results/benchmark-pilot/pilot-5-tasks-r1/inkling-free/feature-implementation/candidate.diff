@@ -1,0 +1,44 @@
+diff --git a/fixtures/phase2/feature-implementation/src/featureFlags.js b/fixtures/phase2/feature-implementation/src/featureFlags.js
+index 489ea67..330eaf6 100644
+--- a/fixtures/phase2/feature-implementation/src/featureFlags.js
++++ b/fixtures/phase2/feature-implementation/src/featureFlags.js
+@@ -1,5 +1,37 @@
+ export function resolveFeature(config, context) {
+   if (!config || !context || typeof context !== 'object') return false;
+-  const flag = config[context.feature];
+-  return typeof flag === 'boolean' ? flag : Boolean(flag && flag.enabled);
++  const featureName = context.feature;
++  if (context.overrides && typeof context.overrides === 'object' && featureName in context.overrides) {
++    const override = context.overrides[featureName];
++    if (typeof override === 'boolean') return override;
++    return false;
++  }
++  const flag = config[featureName];
++  if (typeof flag === 'boolean') return flag;
++  if (flag && typeof flag === 'object') {
++    if (typeof flag.enabled === 'boolean') {
++      if (!flag.enabled) return false;
++      const rollout = flag.rollout;
++      if (typeof rollout !== 'number' || rollout < 0 || rollout > 100 || !Number.isFinite(rollout)) return false;
++      if (rollout === 0) return false;
++      if (rollout === 100) return true;
++      const userId = context.userId;
++      if (!userId || typeof userId !== 'string') return false;
++      const hash = hashString(userId);
++      const pct = hash % 100;
++      return pct < rollout;
++    }
++    return false;
++  }
++  return false;
++}
++
++function hashString(str) {
++  let hash = 0;
++  for (let i = 0; i < str.length; i++) {
++    const char = str.charCodeAt(i);
++    hash = ((hash << 5) - hash) + char;
++    hash |= 0;
++  }
++  return Math.abs(hash) % 100;
+ }

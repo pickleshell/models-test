@@ -1,0 +1,10 @@
+{
+  "status": 1,
+  "timed_out": false,
+  "output_limited": false,
+  "started_at": "2026-08-21T20:15:07.704Z",
+  "completed_at": "2026-08-21T20:15:08.304Z",
+  "duration_ms": 600,
+  "stdout": "\n> test\n> node --test test/*.test.mjs\n\nTAP version 13\n# Subtest: supports boolean flags and explicit overrides\nnot ok 1 - supports boolean flags and explicit overrides\n  ---\n  duration_ms: 2.122762\n  location: 'file:///home/test/.models-benchmark/workspace/fixtures/phase2/feature-implementation/test/featureFlags.test.mjs:5:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly equal:\n    \n    true !== false\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: false\n  actual: true\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///home/test/.models-benchmark/workspace/fixtures/phase2/feature-implementation/test/featureFlags.test.mjs:7:10)\n    Test.runInAsyncScope (node:async_hooks:203:9)\n    Test.run (node:internal/test_runner/test:631:25)\n    Test.start (node:internal/test_runner/test:542:17)\n    startSubtest (node:internal/test_runner/harness:214:17)\n  ...\n# Subtest: enables a 100 percent rollout for a user\nok 2 - enables a 100 percent rollout for a user\n  ---\n  duration_ms: 0.23419\n  ...\n1..2\n# tests 2\n# suites 0\n# pass 1\n# fail 1\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 112.075638\n",
+  "stderr": ""
+}

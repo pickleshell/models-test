@@ -1,0 +1,37 @@
+diff --git a/fixtures/phase2/feature-implementation/src/featureFlags.js b/fixtures/phase2/feature-implementation/src/featureFlags.js
+index 489ea67..887eb86 100644
+--- a/fixtures/phase2/feature-implementation/src/featureFlags.js
++++ b/fixtures/phase2/feature-implementation/src/featureFlags.js
+@@ -1,5 +1,30 @@
++function stableHash(str) {
++  let hash = 0;
++  for (let i = 0; i < str.length; i++) {
++    hash = ((hash << 5) - hash + str.charCodeAt(i)) | 0;
++  }
++  return Math.abs(hash);
++}
++
+ export function resolveFeature(config, context) {
+   if (!config || !context || typeof context !== 'object') return false;
+-  const flag = config[context.feature];
+-  return typeof flag === 'boolean' ? flag : Boolean(flag && flag.enabled);
++  const feature = context.feature;
++  if (!feature) return false;
++
++  if (context.overrides && typeof context.overrides[feature] === 'boolean') {
++    return context.overrides[feature];
++  }
++
++  const flag = config[feature];
++
++  if (typeof flag === 'boolean') return flag;
++
++  if (flag && typeof flag === 'object') {
++    if (typeof flag.rollout === 'number' && context.userId) {
++      return Boolean(flag.enabled && stableHash(String(context.userId)) % 100 < flag.rollout);
++    }
++    return Boolean(flag.enabled);
++  }
++
++  return false;
+ }

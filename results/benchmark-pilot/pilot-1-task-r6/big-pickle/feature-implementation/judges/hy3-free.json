@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "judge": {
+    "id": "hy3-free",
+    "agent": "opencode",
+    "model": "opencode/hy3-free",
+    "subscription": "free"
+  },
+  "status": "completed",
+  "response": "Tests pass (2/2). Implementation reviewed against the README spec.\n\n```json\n{\n  \"functional_correctness\": 10,\n  \"reliability_edge_cases\": 9,\n  \"maintainability_clarity\": 9,\n  \"scope_discipline\": 10,\n  \"confidence\": \"high\",\n  \"explanation\": \"The public tests pass. The implementation correctly follows the spec: boolean overrides win, then boolean flag values, then object flags with enabled/rollout. The FNV-1a hash-based bucketing gives stable rollout, and missing/invalid inputs (non-string/number userId, non-finite numbers, out-of-range or non-integer rollout, missing config/feature, non-object args) are all safely disabled. No arguments are mutated. Code is concise and readable.\",\n  \"concerns\": \"Minor: rollout is only checked when flag.enabled is truthy; a flag object lacking 'enabled' is disabled even with a valid rollout — consistent with 'missing input is disabled' but worth noting. No handling for userId types beyond string/number (objects/arrays return null/disabled), which aligns with spec. No explicit guard if context.feature is absent, but it safely falls through to false.\"\n}\n```",
+  "scores": {
+    "functional_correctness": 10,
+    "reliability_edge_cases": 9,
+    "maintainability_clarity": 9,
+    "scope_discipline": 10
+  },
+  "confidence": "high",
+  "explanation": "The public tests pass. The implementation correctly follows the spec: boolean overrides win, then boolean flag values, then object flags with enabled/rollout. The FNV-1a hash-based bucketing gives stable rollout, and missing/invalid inputs (non-string/number userId, non-finite numbers, out-of-range or non-integer rollout, missing config/feature, non-object args) are all safely disabled. No arguments are mutated. Code is concise and readable.",
+  "concerns": "Minor: rollout is only checked when flag.enabled is truthy; a flag object lacking 'enabled' is disabled even with a valid rollout — consistent with 'missing input is disabled' but worth noting. No handling for userId types beyond string/number (objects/arrays return null/disabled), which aligns with spec. No explicit guard if context.feature is absent, but it safely falls through to false.",
+  "execution": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false
+  },
+  "candidate": "big-pickle",
+  "task": "feature-implementation"
+}

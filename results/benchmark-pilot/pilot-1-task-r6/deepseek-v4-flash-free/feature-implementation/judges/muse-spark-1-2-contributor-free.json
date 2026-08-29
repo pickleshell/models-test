@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "judge": {
+    "id": "muse-spark-1-2-contributor-free",
+    "agent": "opencode",
+    "model": "opencode/muse-spark-1.2-contributor-free",
+    "subscription": "free"
+  },
+  "status": "completed",
+  "response": "Judging feature-implementation — inspecting workspace and test results.\n{\"scores\":{\"functional_correctness\":2,\"reliability_edge_cases\":2,\"maintainability_clarity\":5,\"scope_discipline\":10},\"confidence\":0.95,\"explanation\":\"Stub implementation fails public test 'supports boolean flags and explicit overrides' (true !== false) - ignores context.overrides. No rollout hash logic, no validation of rollout 0-100 or missing userId, only handles boolean and flag.enabled. 1/2 public tests pass only by coincidence.\",\"concerns\":[\"No overrides handling - core README contract violated\",\"No stable hash rollout implementation\",\"Missing/invalid input handling incomplete\",\"Zero files changed - feature not implemented\"]}",
+  "scores": {
+    "functional_correctness": 2,
+    "reliability_edge_cases": 2,
+    "maintainability_clarity": 5,
+    "scope_discipline": 10
+  },
+  "confidence": 0.95,
+  "explanation": "Stub implementation fails public test 'supports boolean flags and explicit overrides' (true !== false) - ignores context.overrides. No rollout hash logic, no validation of rollout 0-100 or missing userId, only handles boolean and flag.enabled. 1/2 public tests pass only by coincidence.",
+  "concerns": [
+    "No overrides handling - core README contract violated",
+    "No stable hash rollout implementation",
+    "Missing/invalid input handling incomplete",
+    "Zero files changed - feature not implemented"
+  ],
+  "execution": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false
+  },
+  "candidate": "deepseek-v4-flash-free",
+  "task": "feature-implementation"
+}

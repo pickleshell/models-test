@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "judge": {
+    "id": "nemotron-3-ultra-free",
+    "agent": "opencode",
+    "model": "opencode/nemotron-3-ultra-free",
+    "subscription": "free"
+  },
+  "status": "completed",
+  "response": "The tests pass. The solution has already been refactored - it extracts the repeated filtering logic into `filterValidEvents` and `isValidEvent` helpers.\n\n```json\n{\n  \"functional_correctness\": 10,\n  \"reliability_edge_cases\": 10,\n  \"maintainability_clarity\": 10,\n  \"scope_discipline\": 10,\n  \"confidence\": 100,\n  \"explanation\": \"The solution successfully refactors the code by extracting repeated event-filtering logic into two helper functions: `isValidEvent` for validation and `filterValidEvents` for filtering by type. All public tests pass. The implementation correctly handles all documented behavior including counting events, finding latest by timestamp, and rejecting malformed events (null, non-objects, empty types, NaN/Infinity timestamps). The code is clean, well-named, and maintains a clear separation of concerns. Only the source file was modified, respecting scope constraints.\",\n  \"concerns\": []\n}\n```",
+  "scores": {
+    "functional_correctness": 10,
+    "reliability_edge_cases": 10,
+    "maintainability_clarity": 10,
+    "scope_discipline": 10
+  },
+  "confidence": 100,
+  "explanation": "The solution successfully refactors the code by extracting repeated event-filtering logic into two helper functions: `isValidEvent` for validation and `filterValidEvents` for filtering by type. All public tests pass. The implementation correctly handles all documented behavior including counting events, finding latest by timestamp, and rejecting malformed events (null, non-objects, empty types, NaN/Infinity timestamps). The code is clean, well-named, and maintains a clear separation of concerns. Only the source file was modified, respecting scope constraints.",
+  "concerns": [],
+  "execution": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "started_at": "2026-08-25T17:01:41.140Z",
+    "completed_at": "2026-08-25T17:03:14.069Z",
+    "duration_ms": 92929
+  },
+  "judge_prompt_version": 1,
+  "judge_prompt_hash": "aff92196e7e2322bc8998b8fd1ce710762698b088343a9f7e1adfcfaf98c79a6",
+  "candidate": "inkling-free",
+  "task": "refactoring",
+  "artifact_hash": {
+    "path": "nemotron-3-ultra-free.json",
+    "sha256": "07a4ad9c0cb1f20dd6b09cedead46570fd0141619075bec7cb2e8b3d976d553d"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "release": "pilot-5-tasks-r1",
+  "task": "feature-implementation",
+  "candidate": {
+    "id": "nemotron-3-ultra-free",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "model": "opencode/nemotron-3-ultra-free",
+    "subscription": "free"
+  },
+  "started_at": "2026-08-25T16:58:23.943Z",
+  "completed_at": "2026-08-25T16:59:11.139Z",
+  "duration_ms": 47196,
+  "agent": {
+    "status": 1,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-25T16:58:23.943Z",
+    "completed_at": "2026-08-25T16:59:10.523Z",
+    "duration_ms": 46580
+  },
+  "tests": {
+    "status": 1,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-25T16:59:10.524Z",
+    "completed_at": "2026-08-25T16:59:11.139Z",
+    "duration_ms": 615
+  },
+  "outcome": "agent_failure",
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-pilot/pilot-5-tasks-r1/nemotron-3-ultra-free/feature-implementation",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "21d0f89c51657e76883a3de88a1d3729dd4b187e28163f488fcabe231ca6f499"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "a364eff491b0de4f9b4184a379f7f404c4f6fba90c73c2c92a7d7f6e08891a97"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "judge": {
+    "id": "hy3-free",
+    "agent": "opencode",
+    "model": "opencode/hy3-free",
+    "subscription": "free"
+  },
+  "status": "completed",
+  "response": "Tests pass (2/2). The solution correctly implements README requirements: override wins, boolean flags, rollout with stable hash, no mutation, and handles invalid/missing input as disabled.\n\n```json\n{\n  \"functional_correctness\": 9,\n  \"reliability_edge_cases\": 9,\n  \"maintainability_clarity\": 9,\n  \"scope_discipline\": 10,\n  \"confidence\": \"high\",\n  \"explanation\": \"resolveFeature correctly handles: boolean overrides (exact boolean wins), boolean flag values, flag objects with enabled/rollout, stable consistent hashing of userId for rollout (0-100), and treats missing/invalid input as disabled. It does not mutate arguments and is clearly structured. Public tests pass.\",\n  \"concerns\": [\n    \"Override check returns Boolean(overrides[feature]) rather than strictly requiring an exact boolean as the README states; non-boolean truthy/falsy override values would still take effect.\",\n    \"Edge: an array used as overrides would pass the typeof 'object' check, though behavior remains reasonable.\"\n  ]\n}\n```",
+  "scores": {
+    "functional_correctness": 9,
+    "reliability_edge_cases": 9,
+    "maintainability_clarity": 9,
+    "scope_discipline": 10
+  },
+  "confidence": "high",
+  "explanation": "resolveFeature correctly handles: boolean overrides (exact boolean wins), boolean flag values, flag objects with enabled/rollout, stable consistent hashing of userId for rollout (0-100), and treats missing/invalid input as disabled. It does not mutate arguments and is clearly structured. Public tests pass.",
+  "concerns": [
+    "Override check returns Boolean(overrides[feature]) rather than strictly requiring an exact boolean as the README states; non-boolean truthy/falsy override values would still take effect.",
+    "Edge: an array used as overrides would pass the typeof 'object' check, though behavior remains reasonable."
+  ],
+  "execution": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "started_at": "2026-08-21T23:20:31.906Z",
+    "completed_at": "2026-08-21T23:21:11.655Z",
+    "duration_ms": 39749
+  },
+  "candidate": "mimo-v2-5-free",
+  "task": "feature-implementation"
+}

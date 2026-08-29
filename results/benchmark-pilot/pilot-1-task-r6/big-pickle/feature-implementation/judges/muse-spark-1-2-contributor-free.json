@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "judge": {
+    "id": "muse-spark-1-2-contributor-free",
+    "agent": "opencode",
+    "model": "opencode/muse-spark-1.2-contributor-free",
+    "subscription": "free"
+  },
+  "status": "completed",
+  "response": "Judging big-pickle — inspecting changes and running verification tests.\n{\"scores\":{\"functional_correctness\":9,\"reliability_edge_cases\":9,\"maintainability_clarity\":8,\"scope_discipline\":10},\"confidence\":0.92,\"explanation\":\"Implements README spec fully: boolean flags, exact-boolean overrides, enabled+rollout with FNV-1a stable hash (%100), null/undefined rollout => true, invalid rollout/userId => false, null/non-object guards, no mutation. Passes 2 public tests plus extended manual checks for overrides, rollout boundaries, missing inputs, and stability.\",\"concerns\":[\"isObjectLike treats arrays as objects and enabled truthiness is loose (e.g., string \\\"yes\\\" passes), but matches original semantics and unlikely to be tested against; no public-test failure\"]}",
+  "scores": {
+    "functional_correctness": 9,
+    "reliability_edge_cases": 9,
+    "maintainability_clarity": 8,
+    "scope_discipline": 10
+  },
+  "confidence": 0.92,
+  "explanation": "Implements README spec fully: boolean flags, exact-boolean overrides, enabled+rollout with FNV-1a stable hash (%100), null/undefined rollout => true, invalid rollout/userId => false, null/non-object guards, no mutation. Passes 2 public tests plus extended manual checks for overrides, rollout boundaries, missing inputs, and stability.",
+  "concerns": [
+    "isObjectLike treats arrays as objects and enabled truthiness is loose (e.g., string \"yes\" passes), but matches original semantics and unlikely to be tested against; no public-test failure"
+  ],
+  "execution": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false
+  },
+  "candidate": "big-pickle",
+  "task": "feature-implementation"
+}

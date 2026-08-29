@@ -1,0 +1,277 @@
+{
+  "schema_version": 2,
+  "release": "pilot-2-tasks-r5",
+  "criteria": [
+    "functional_correctness",
+    "reliability_edge_cases",
+    "maintainability_clarity",
+    "scope_discipline"
+  ],
+  "candidates": [
+    {
+      "candidate": {
+        "id": "mimo-v2-5-free",
+        "agent": "opencode",
+        "runtime": "opencode",
+        "model": "opencode/mimo-v2.5-free",
+        "subscription": "free"
+      },
+      "task_count": 2,
+      "tasks": [
+        {
+          "task": "feature-implementation",
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-21T23:20:01.202Z",
+            "completed_at": "2026-08-21T23:20:30.822Z",
+            "duration_ms": 29620
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-21T23:20:30.823Z",
+            "completed_at": "2026-08-21T23:20:31.415Z",
+            "duration_ms": 592
+          },
+          "agent_duration_ms": 29620,
+          "test_duration_ms": 592,
+          "duration_ms": 30213,
+          "judge_count": 1,
+          "judge_invocation_count": 2,
+          "judge_durations": [
+            {
+              "id": "hy3-free",
+              "status": "completed",
+              "duration_ms": 39749
+            },
+            {
+              "id": "nemotron-3-5-lightning-free",
+              "status": "invalid_output",
+              "duration_ms": 62996
+            }
+          ],
+          "judge_duration_ms": 102745
+        },
+        {
+          "task": "refactoring",
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-21T23:22:15.341Z",
+            "completed_at": "2026-08-21T23:22:55.084Z",
+            "duration_ms": 39743
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-21T23:22:55.085Z",
+            "completed_at": "2026-08-21T23:22:55.681Z",
+            "duration_ms": 596
+          },
+          "agent_duration_ms": 39743,
+          "test_duration_ms": 596,
+          "duration_ms": 40340,
+          "judge_count": 1,
+          "judge_invocation_count": 2,
+          "judge_durations": [
+            {
+              "id": "hy3-free",
+              "status": "completed",
+              "duration_ms": 31994
+            },
+            {
+              "id": "nemotron-3-5-lightning-free",
+              "status": "invalid_output",
+              "duration_ms": 73710
+            }
+          ],
+          "judge_duration_ms": 105704
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 69363,
+      "test_duration_ms": 1188,
+      "duration_ms": 70553,
+      "judge_count": 2,
+      "judge_duration_by_id": {
+        "hy3-free": 71743,
+        "nemotron-3-5-lightning-free": 136706
+      },
+      "judge_duration_ms": 208449,
+      "judge_average": {
+        "functional_correctness": 9.5,
+        "reliability_edge_cases": 9,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall_average": 9.375
+    },
+    {
+      "candidate": {
+        "id": "big-pickle",
+        "agent": "opencode",
+        "runtime": "opencode",
+        "model": "opencode/big-pickle",
+        "subscription": "free"
+      },
+      "task_count": 2,
+      "tasks": [
+        {
+          "task": "feature-implementation",
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-21T23:14:07.625Z",
+            "completed_at": "2026-08-21T23:15:40.669Z",
+            "duration_ms": 93044
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-21T23:15:40.670Z",
+            "completed_at": "2026-08-21T23:15:41.265Z",
+            "duration_ms": 595
+          },
+          "agent_duration_ms": 93044,
+          "test_duration_ms": 595,
+          "duration_ms": 93640,
+          "judge_count": 1,
+          "judge_invocation_count": 2,
+          "judge_durations": [
+            {
+              "id": "hy3-free",
+              "status": "invalid_output",
+              "duration_ms": 51318
+            },
+            {
+              "id": "nemotron-3-5-lightning-free",
+              "status": "completed",
+              "duration_ms": 33031
+            }
+          ],
+          "judge_duration_ms": 84349
+        },
+        {
+          "task": "refactoring",
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-21T23:17:06.806Z",
+            "completed_at": "2026-08-21T23:18:33.401Z",
+            "duration_ms": 86595
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-21T23:18:33.402Z",
+            "completed_at": "2026-08-21T23:18:33.993Z",
+            "duration_ms": 591
+          },
+          "agent_duration_ms": 86595,
+          "test_duration_ms": 591,
+          "duration_ms": 87187,
+          "judge_count": 1,
+          "judge_invocation_count": 2,
+          "judge_durations": [
+            {
+              "id": "hy3-free",
+              "status": "completed",
+              "duration_ms": 34264
+            },
+            {
+              "id": "nemotron-3-5-lightning-free",
+              "status": "invalid_output",
+              "duration_ms": 44386
+            }
+          ],
+          "judge_duration_ms": 78650
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 179639,
+      "test_duration_ms": 1186,
+      "duration_ms": 180827,
+      "judge_count": 2,
+      "judge_duration_by_id": {
+        "hy3-free": 85582,
+        "nemotron-3-5-lightning-free": 77417
+      },
+      "judge_duration_ms": 162999,
+      "judge_average": {
+        "functional_correctness": 9.5,
+        "reliability_edge_cases": 8.5,
+        "maintainability_clarity": 8.5,
+        "scope_discipline": 9.5
+      },
+      "overall_average": 9
+    },
+    {
+      "candidate": {
+        "id": "deepseek-v4-flash-free",
+        "agent": "opencode",
+        "runtime": "opencode",
+        "model": "opencode/deepseek-v4-flash-free",
+        "subscription": "free"
+      },
+      "task_count": 2,
+      "tasks": [
+        {
+          "task": "feature-implementation",
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "judge_count": 0,
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0
+        },
+        {
+          "task": "refactoring",
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "judge_count": 0,
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0
+        }
+      ],
+      "outcome": "unavailable",
+      "agent_duration_ms": null,
+      "test_duration_ms": null,
+      "duration_ms": 0,
+      "judge_count": 0,
+      "judge_duration_by_id": {
+        "hy3-free": null,
+        "nemotron-3-5-lightning-free": null
+      },
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "overall_average": null
+    }
+  ],
+  "generated_at": "2026-08-22T00:13:18.185Z"
+}

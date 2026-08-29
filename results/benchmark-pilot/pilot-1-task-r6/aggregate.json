@@ -1,0 +1,131 @@
+{
+  "schema_version": 2,
+  "release": "pilot-1-task-r6",
+  "criteria": [
+    "functional_correctness",
+    "reliability_edge_cases",
+    "maintainability_clarity",
+    "scope_discipline"
+  ],
+  "candidates": [
+    {
+      "candidate": {
+        "id": "big-pickle",
+        "agent": "opencode",
+        "runtime": "opencode",
+        "model": "opencode/big-pickle",
+        "subscription": "free"
+      },
+      "task_count": 1,
+      "tasks": [
+        {
+          "task": "feature-implementation",
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false
+          },
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": null,
+          "judge_count": 2
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": null,
+      "test_duration_ms": null,
+      "duration_ms": null,
+      "judge_count": 2,
+      "judge_average": {
+        "functional_correctness": 9.5,
+        "reliability_edge_cases": 9,
+        "maintainability_clarity": 8.5,
+        "scope_discipline": 10
+      },
+      "overall_average": 9.25
+    },
+    {
+      "candidate": {
+        "id": "mimo-v2-5-free",
+        "agent": "opencode",
+        "runtime": "opencode",
+        "model": "opencode/mimo-v2.5-free",
+        "subscription": "free"
+      },
+      "task_count": 1,
+      "tasks": [
+        {
+          "task": "feature-implementation",
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false
+          },
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": null,
+          "judge_count": 2
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": null,
+      "test_duration_ms": null,
+      "duration_ms": null,
+      "judge_count": 2,
+      "judge_average": {
+        "functional_correctness": 8.5,
+        "reliability_edge_cases": 8.5,
+        "maintainability_clarity": 8,
+        "scope_discipline": 9
+      },
+      "overall_average": 8.5
+    },
+    {
+      "candidate": {
+        "id": "deepseek-v4-flash-free",
+        "agent": "opencode",
+        "runtime": "opencode",
+        "model": "opencode/deepseek-v4-flash-free",
+        "subscription": "free"
+      },
+      "task_count": 1,
+      "tasks": [
+        {
+          "task": "feature-implementation",
+          "outcome": "agent_failure",
+          "agent": {
+            "status": 1,
+            "signal": null,
+            "timed_out": false
+          },
+          "tests": {
+            "status": 1,
+            "timed_out": false
+          },
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": null,
+          "judge_count": 0
+        }
+      ],
+      "outcome": "agent_failure",
+      "agent_duration_ms": null,
+      "test_duration_ms": null,
+      "duration_ms": null,
+      "judge_count": 0,
+      "judge_average": {},
+      "overall_average": null
+    }
+  ],
+  "generated_at": "2026-08-21T19:58:27.203Z"
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "inkling-free",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "model": "openrouter/thinkingmachines/inkling:free",
+    "subscription": "free"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-25T17:00:48.627Z",
+  "completed_at": "2026-08-25T17:00:57.750Z",
+  "duration_ms": 9123,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "14cc8e81533335b3c1cb6c2742dd9e24ca397d5a3d0efc7567c1b5077a2f5ffb"
+  }
+}

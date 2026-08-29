@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "judge": {
+    "id": "hy3-free",
+    "agent": "opencode",
+    "model": "opencode/hy3-free",
+    "subscription": "free"
+  },
+  "status": "invalid_output",
+  "response": "Tests pass (2/2). The implementation adds robust validation (record checks, string feature, override precedence, rollout validation, stable FNV-1a hash) while not mutating inputs. One behavioral note: an empty flag object `{}` now returns `true` (original returned `false` via `Boolean(undefined)`), since missing `enabled` is treated as enabled rather than disabled—defensible per spec wording but a deviation from prior semantics.\n\n```json\n{\n  \"scores\": {\n    \"functional_correctness\": 9,\n    \"reliability_edge_cases\": 9,\n    \"maintainability_clarity\": 9,\n    \"scope_discipline\": 10\n  },\n  \"confidence\": 0.9,\n  \"explanation\": \"Implementation faithfully follows the README spec: override booleans win, boolean flags, flag objects with enabled/rollout, stable FNV-1a hash rollout bounded 0-100, and all missing/invalid inputs return false without mutating arguments. Public tests pass (2/2). Code is clean, well-named, and confined to the single target file.\",\n  \"concerns\": [\n    \"Empty flag object {} now returns true (missing 'enabled' treated as enabled), whereas original returned false via Boolean(flag.enabled). Ambiguous per spec but a semantics change for that edge input.\",\n    \"Non-boolean values in context.overrides (e.g. a string) silently fall through to flag config rather than being rejected as invalid override; acceptable but worth noting.\",\n    \"rollout evaluation when userId is missing/non-string returns false even though a flag with rollout:100 would otherwise be enabled—this matches 'invalid input disabled' but could surprise callers expecting full rollout.\"\n  ]\n}\n```",
+  "scores": null,
+  "confidence": null,
+  "explanation": null,
+  "concerns": [],
+  "execution": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "started_at": "2026-08-21T23:15:41.760Z",
+    "completed_at": "2026-08-21T23:16:33.078Z",
+    "duration_ms": 51318
+  },
+  "candidate": "big-pickle",
+  "task": "feature-implementation"
+}

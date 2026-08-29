@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "release": "pilot-2-tasks-r4",
+  "task": "refactoring",
+  "candidate": {
+    "id": "big-pickle",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "model": "opencode/big-pickle",
+    "subscription": "free"
+  },
+  "started_at": "2026-08-21T21:00:12.729Z",
+  "completed_at": "2026-08-21T21:01:52.905Z",
+  "duration_ms": 100176,
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-21T21:00:12.729Z",
+    "completed_at": "2026-08-21T21:01:52.315Z",
+    "duration_ms": 99586
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-21T21:01:52.315Z",
+    "completed_at": "2026-08-21T21:01:52.905Z",
+    "duration_ms": 590
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2/refactoring/src/events.js"
+  ],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-pilot/pilot-2-tasks-r4/big-pickle/refactoring"
+  }
+}

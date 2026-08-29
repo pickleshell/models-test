@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "release": "pilot-5-tasks-r2",
+  "task": "feature-implementation",
+  "candidate": {
+    "id": "mimo-v2-5-free",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "model": "opencode/mimo-v2.5-free",
+    "subscription": "free"
+  },
+  "started_at": "2026-08-25T18:18:56.997Z",
+  "completed_at": "2026-08-25T18:19:55.820Z",
+  "duration_ms": 58823,
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-25T18:18:56.997Z",
+    "completed_at": "2026-08-25T18:19:55.094Z",
+    "duration_ms": 58097
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-25T18:19:55.095Z",
+    "completed_at": "2026-08-25T18:19:55.820Z",
+    "duration_ms": 725
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2/feature-implementation/src/featureFlags.js"
+  ],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-pilot/pilot-5-tasks-r2/mimo-v2-5-free/feature-implementation",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "4760fc7e21824791699f26f80a170bf0c12fe57129b91b383e397d678070bf5b"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "b58e70e12115a46cd8795c1ecdecef5eaf44445ad48e6d5b477940ca97d72fe6"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "9853c2019b9e4779cee1a50336bf9bd23d478fec8652814c96f6b9ca52c5900e"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "judge": {
+    "id": "gpt-5-4",
+    "agent": "opencode",
+    "model": "gpt-5.4",
+    "subscription": "paid"
+  },
+  "status": "failed",
+  "response": "[22:54:01.923] ERROR (#10954): failed {\n  ref: \"err_59a5ece6\",\n  error: {\n    providerID: \"gpt-5.4\",\n    modelID: \"\",\n    suggestions: [],\n    _tag: \"ProviderModelNotFoundError\",\n  },\n  cause: \"ProviderModelNotFoundError: \\n    at <anonymous> (/$bunfs/root/chunk-9dzgnn7g.js:687:64414)\\n    at SessionPrompt.getModel (/$bunfs/root/chunk-e4nspvjx.js:1015:1895)\\n    at SessionPrompt.getModel (definition) (/$bunfs/root/chunk-e4nspvjx.js:1014:1062)\\n    at SessionPrompt.run (/$bunfs/root/chunk-e4nspvjx.js:1015:5632)\\n    at SessionPrompt.run (definition) (/$bunfs/root/chunk-e4nspvjx.js:1015:904)\\n    at SessionRunState.ensureRunning (/$bunfs/root/chunk-e4nspvjx.js:1015:5603)\\n    at SessionRunState.ensureRunning (definition) (/$bunfs/root/chunk-e4nspvjx.js:2:8043)\\n    at SessionPrompt.loop (/$bunfs/root/chunk-e4nspvjx.js:1015:628)\\n    at SessionPrompt.loop (definition) (/$bunfs/root/chunk-e4nspvjx.js:1015:5539)\\n    at SessionPrompt.prompt (/$bunfs/root/chunk-e6zcxa2p.js:3:13189)\\n    at SessionPrompt.prompt (definition) (/$bunfs/root/chunk-e4nspvjx.js:1015:247)\",\n}\n{\"type\":\"error\",\"timestamp\":1787345641923,\"sessionID\":\"ses_fd9e5e19bffebTcbOfqnDaCvdr\",\"error\":{\"name\":\"UnknownError\",\"data\":{\"message\":\"Unexpected server error. Check server logs for details.\",\"ref\":\"err_59a5ece6\"}}}\n{\"type\":\"error\",\"timestamp\":1787345642119,\"sessionID\":\"ses_fd9e5e19bffebTcbOfqnDaCvdr\",\"error\":{\"name\":\"UnknownError\",\"data\":{\"message\":\"Model not found: gpt-5.4/.\"}}}",
+  "scores": null,
+  "confidence": null,
+  "explanation": null,
+  "concerns": [],
+  "execution": {
+    "status": 1,
+    "signal": null,
+    "timed_out": false,
+    "started_at": "2026-08-21T20:54:00.079Z",
+    "completed_at": "2026-08-21T20:54:02.233Z",
+    "duration_ms": 2154
+  },
+  "candidate": "big-pickle",
+  "task": "feature-implementation"
+}

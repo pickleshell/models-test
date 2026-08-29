@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "started_at": "2026-08-25T17:05:19.450Z",
+  "completed_at": "2026-08-25T17:05:20.096Z",
+  "duration_ms": 646,
+  "stdout": "\n> test\n> node --test test/*.test.mjs\n\nTAP version 13\n# Subtest: parses an inclusive range\nok 1 - parses an inclusive range\n  ---\n  duration_ms: 2.36445\n  ...\n# Subtest: accepts surrounding whitespace\nok 2 - accepts surrounding whitespace\n  ---\n  duration_ms: 0.113343\n  ...\n# Subtest: rejects malformed ranges\nok 3 - rejects malformed ranges\n  ---\n  duration_ms: 0.118091\n  ...\n# Subtest: rejects a reversed range\nok 4 - rejects a reversed range\n  ---\n  duration_ms: 0.094778\n  ...\n# Subtest: rejects out of bounds positive\nok 5 - rejects out of bounds positive\n  ---\n  duration_ms: 0.092935\n  ...\n# Subtest: rejects out of bounds negative\nok 6 - rejects out of bounds negative\n  ---\n  duration_ms: 0.086653\n  ...\n# Subtest: accepts boundary values\nok 7 - accepts boundary values\n  ---\n  duration_ms: 0.108163\n  ...\n# Subtest: rejects decimal values\nok 8 - rejects decimal values\n  ---\n  duration_ms: 0.096631\n  ...\n# Subtest: rejects non-string input\nok 9 - rejects non-string input\n  ---\n  duration_ms: 0.167675\n  ...\n# Subtest: rejects missing separator\nok 10 - rejects missing separator\n  ---\n  duration_ms: 0.206137\n  ...\n# Subtest: rejects extra separator\nok 11 - rejects extra separator\n  ---\n  duration_ms: 0.115186\n  ...\n# Subtest: accepts negative start with positive end\nok 12 - accepts negative start with positive end\n  ---\n  duration_ms: 0.113894\n  ...\n1..12\n# tests 12\n# suites 0\n# pass 12\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 127.19118\n",
+  "stderr": "",
+  "artifact_hash": {
+    "path": "test-result.json",
+    "sha256": "8ed5ddccc8fa6e36dcdd7527c650e0560e4fad129712b0c564084592807b001e"
+  }
+}

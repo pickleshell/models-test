@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "release": "pilot-5-tasks-r1",
+  "task": "bug-fix-ledger",
+  "candidate": {
+    "id": "inkling-free",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "model": "openrouter/thinkingmachines/inkling:free",
+    "subscription": "free"
+  },
+  "started_at": "2026-08-25T17:03:17.317Z",
+  "completed_at": "2026-08-25T17:03:53.440Z",
+  "duration_ms": 36123,
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-25T17:03:17.317Z",
+    "completed_at": "2026-08-25T17:03:52.835Z",
+    "duration_ms": 35518
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-25T17:03:52.835Z",
+    "completed_at": "2026-08-25T17:03:53.440Z",
+    "duration_ms": 605
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase1-ledger/src/reconcile.js"
+  ],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-pilot/pilot-5-tasks-r1/inkling-free/bug-fix-ledger",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "af009a09c41e9c8b4c84b727f180872b3b62c059094aa07edb1bf6dbe6a81c4a"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "fa9e2c4bb5ed9a391c45374e0c22f8b542eddafe245e8eead949aaccc07b0818"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "dab3618749a0b9d6232e864ff13a5a52adc0a8b1e8658fdf96c3d4db71806a32"
+  }
+}

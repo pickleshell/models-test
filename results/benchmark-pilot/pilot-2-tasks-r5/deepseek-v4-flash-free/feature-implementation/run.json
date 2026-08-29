@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "release": "pilot-2-tasks-r5",
+  "task": "feature-implementation",
+  "candidate": {
+    "id": "deepseek-v4-flash-free",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "model": "opencode/deepseek-v4-flash-free",
+    "subscription": "free"
+  },
+  "started_at": "2026-08-21T23:19:56.057Z",
+  "completed_at": "2026-08-21T23:19:56.057Z",
+  "duration_ms": 0,
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-21T23:19:53.792Z",
+    "completed_at": "2026-08-21T23:19:56.056Z",
+    "duration_ms": 2264
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-pilot/pilot-2-tasks-r5/deepseek-v4-flash-free/feature-implementation"
+  }
+}

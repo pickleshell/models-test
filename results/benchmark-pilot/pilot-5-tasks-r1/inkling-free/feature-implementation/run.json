@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "release": "pilot-5-tasks-r1",
+  "task": "feature-implementation",
+  "candidate": {
+    "id": "inkling-free",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "model": "openrouter/thinkingmachines/inkling:free",
+    "subscription": "free"
+  },
+  "started_at": "2026-08-25T17:00:58.082Z",
+  "completed_at": "2026-08-25T17:01:13.171Z",
+  "duration_ms": 15089,
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-25T17:00:58.082Z",
+    "completed_at": "2026-08-25T17:01:12.570Z",
+    "duration_ms": 14488
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-25T17:01:12.570Z",
+    "completed_at": "2026-08-25T17:01:13.171Z",
+    "duration_ms": 601
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2/feature-implementation/src/featureFlags.js"
+  ],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-pilot/pilot-5-tasks-r1/inkling-free/feature-implementation",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "b67495c2a370d3245115e43a077d4a759811135be3fecf819932b8ba7d2534df"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "a6fb9bcf3b00f9236e26dc2719d0123b7b50d584eaad38d65a3c2433faf1bd4e"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "ce9601607564c6ee6929cc12854fd7f2c31ff8385571fdf8ecdc1bd25516f3a6"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "judge": {
+    "id": "nemotron-3-ultra-free",
+    "agent": "opencode",
+    "model": "opencode/nemotron-3-ultra-free",
+    "subscription": "free"
+  },
+  "status": "completed",
+  "response": "{\"functional_correctness\": 10, \"reliability_edge_cases\": 9, \"maintainability_clarity\": 9, \"scope_discipline\": 10, \"confidence\": 0.95, \"explanation\": \"All 4 public tests pass. The fix correctly addresses three bugs: (1) rejecting negative amounts, (2) rejecting amounts with >2 decimal places, (3) skipping duplicate entries after counting them (added missing 'continue'). Code is well-structured with helper functions, clear variable names, proper error handling, and metrics tracking. Only minor concern: catch-all error handling could be more specific, but is appropriate for this use case.\", \"concerns\": [\"Catch-all error handler catches all errors uniformly - could distinguish validation errors from unexpected ones, though current behavior matches test expectations.\"]}",
+  "scores": {
+    "functional_correctness": 10,
+    "reliability_edge_cases": 9,
+    "maintainability_clarity": 9,
+    "scope_discipline": 10
+  },
+  "confidence": 0.95,
+  "explanation": "All 4 public tests pass. The fix correctly addresses three bugs: (1) rejecting negative amounts, (2) rejecting amounts with >2 decimal places, (3) skipping duplicate entries after counting them (added missing 'continue'). Code is well-structured with helper functions, clear variable names, proper error handling, and metrics tracking. Only minor concern: catch-all error handling could be more specific, but is appropriate for this use case.",
+  "concerns": [
+    "Catch-all error handler catches all errors uniformly - could distinguish validation errors from unexpected ones, though current behavior matches test expectations."
+  ],
+  "execution": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "started_at": "2026-08-25T16:53:38.051Z",
+    "completed_at": "2026-08-25T16:55:13.155Z",
+    "duration_ms": 95104
+  },
+  "judge_prompt_version": 1,
+  "judge_prompt_hash": "501e133321ba08be341e89c034447a4f2b513bdd566f7b55ab0efd63984ff6d3",
+  "candidate": "big-pickle",
+  "task": "bug-fix-ledger",
+  "artifact_hash": {
+    "path": "nemotron-3-ultra-free.json",
+    "sha256": "131b03501dc8b1a33f11262401c536d514fa512cd2bd02998e6cbb0a04d1eae1"
+  }
+}

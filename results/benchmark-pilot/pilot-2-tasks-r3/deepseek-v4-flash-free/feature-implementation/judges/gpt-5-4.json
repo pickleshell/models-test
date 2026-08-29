@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "judge": {
+    "id": "gpt-5-4",
+    "agent": "opencode",
+    "model": "gpt-5.4",
+    "subscription": "paid"
+  },
+  "status": "skipped",
+  "reason": "agent_failure",
+  "candidate": "deepseek-v4-flash-free",
+  "task": "feature-implementation"
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "deepseek-v4-flash-free",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "model": "opencode/deepseek-v4-flash-free",
+    "subscription": "free"
+  },
+  "status": "unavailable",
+  "reason": "process_failure",
+  "started_at": "2026-08-21T23:19:53.792Z",
+  "completed_at": "2026-08-21T23:19:56.056Z",
+  "duration_ms": 2264,
+  "process_status": 1,
+  "timed_out": false,
+  "output_limited": false
+}

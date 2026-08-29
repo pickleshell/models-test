@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "judge": {
+    "id": "muse-spark-1-2-contributor-free",
+    "agent": "opencode",
+    "model": "opencode/muse-spark-1.2-contributor-free",
+    "subscription": "free"
+  },
+  "status": "completed",
+  "response": "Judging mimo-v2-5-free — inspecting the implementation and running tests.\n{\"scores\": {\"functional_correctness\": 8, \"reliability_edge_cases\": 8, \"maintainability_clarity\": 8, \"scope_discipline\": 10}, \"confidence\": 0.86, \"explanation\": \"Public tests 2/2 pass; impl correctly handles boolean flags, exact-boolean overrides, object enabled, rollout 0-100 via stable hash, and null/invalid input disabled without mutation. Minor spec gaps: rollout integer not enforced (float string), non-number rollout ignored vs disabled.\", \"concerns\": [\"rollout validation allows floats and ignores non-number rollout type (returns Boolean(enabled) instead of disabled)\", \"integer percentage requirement not enforced\", \"Math.abs on INT_MIN edge theoretically still negative though negligible\"]}",
+  "scores": {
+    "functional_correctness": 8,
+    "reliability_edge_cases": 8,
+    "maintainability_clarity": 8,
+    "scope_discipline": 10
+  },
+  "confidence": 0.86,
+  "explanation": "Public tests 2/2 pass; impl correctly handles boolean flags, exact-boolean overrides, object enabled, rollout 0-100 via stable hash, and null/invalid input disabled without mutation. Minor spec gaps: rollout integer not enforced (float string), non-number rollout ignored vs disabled.",
+  "concerns": [
+    "rollout validation allows floats and ignores non-number rollout type (returns Boolean(enabled) instead of disabled)",
+    "integer percentage requirement not enforced",
+    "Math.abs on INT_MIN edge theoretically still negative though negligible"
+  ],
+  "execution": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false
+  },
+  "candidate": "mimo-v2-5-free",
+  "task": "feature-implementation"
+}

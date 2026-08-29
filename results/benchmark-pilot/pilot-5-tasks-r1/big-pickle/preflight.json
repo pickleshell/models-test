@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "big-pickle",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "model": "opencode/big-pickle",
+    "subscription": "free"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-25T16:49:06.395Z",
+  "completed_at": "2026-08-25T16:49:10.382Z",
+  "duration_ms": 3987,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "b3213fed89dce05dde1dda3f329f8b69284a765c763dcd0d1f7f3c02021682c5"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "mimo-v2-5-free",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "model": "opencode/mimo-v2.5-free",
+    "subscription": "free"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-25T19:38:59.231Z",
+  "completed_at": "2026-08-25T19:39:05.244Z",
+  "duration_ms": 6013,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "bbe3387041330404b90f1ead7bd8977a4dd56f195d067284288fbd8bbfdbc048"
+  }
+}

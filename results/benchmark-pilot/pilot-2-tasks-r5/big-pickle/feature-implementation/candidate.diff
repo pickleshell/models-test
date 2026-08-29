@@ -1,0 +1,46 @@
+diff --git a/fixtures/phase2/feature-implementation/src/featureFlags.js b/fixtures/phase2/feature-implementation/src/featureFlags.js
+index 489ea67..9ee2eb6 100644
+--- a/fixtures/phase2/feature-implementation/src/featureFlags.js
++++ b/fixtures/phase2/feature-implementation/src/featureFlags.js
+@@ -1,5 +1,38 @@
++function isRecord(value) {
++  return typeof value === 'object' && value !== null && !Array.isArray(value);
++}
++
++function hashString(value) {
++  let hash = 0x811c9dc5;
++  for (let i = 0; i < value.length; i++) {
++    hash ^= value.charCodeAt(i);
++    hash = Math.imul(hash, 0x01000193);
++  }
++  return hash >>> 0;
++}
++
+ export function resolveFeature(config, context) {
+-  if (!config || !context || typeof context !== 'object') return false;
+-  const flag = config[context.feature];
+-  return typeof flag === 'boolean' ? flag : Boolean(flag && flag.enabled);
++  if (!isRecord(config) || !isRecord(context)) return false;
++  const { feature } = context;
++  if (typeof feature !== 'string') return false;
++
++  const override = isRecord(context.overrides)
++    ? context.overrides[feature]
++    : undefined;
++  if (typeof override === 'boolean') return override;
++
++  const flag = config[feature];
++  if (typeof flag === 'boolean') return flag;
++  if (!isRecord(flag)) return false;
++  if (flag.enabled === false) return false;
++
++  if (flag.rollout !== undefined) {
++    const { rollout } = flag;
++    if (!Number.isInteger(rollout) || rollout < 0 || rollout > 100) return false;
++    const { userId } = context;
++    if (typeof userId !== 'string') return false;
++    return hashString(userId) % 100 < rollout;
++  }
++
++  return true;
+ }

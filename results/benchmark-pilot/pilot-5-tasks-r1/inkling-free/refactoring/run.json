@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "release": "pilot-5-tasks-r1",
+  "task": "refactoring",
+  "candidate": {
+    "id": "inkling-free",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "model": "openrouter/thinkingmachines/inkling:free",
+    "subscription": "free"
+  },
+  "started_at": "2026-08-25T17:01:25.617Z",
+  "completed_at": "2026-08-25T17:01:40.629Z",
+  "duration_ms": 15012,
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-25T17:01:25.617Z",
+    "completed_at": "2026-08-25T17:01:40.032Z",
+    "duration_ms": 14415
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-25T17:01:40.032Z",
+    "completed_at": "2026-08-25T17:01:40.629Z",
+    "duration_ms": 597
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2/refactoring/src/events.js"
+  ],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-pilot/pilot-5-tasks-r1/inkling-free/refactoring",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "c5d0c4cbe126ef2e46a417d7fb0704df2141f3efddedd1136e7f8d9a5b3b9222"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "a4d17cbf5f8942e3db23f2b2c28af99a2e58d4f563861c7e0e0525bc8da0aad0"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "f2be0be077ea45328e1f745e6b8f41d1144711756da980fa7b0d500b58195a69"
+  }
+}

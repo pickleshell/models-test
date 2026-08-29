@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "release": "pilot-5-tasks-r1",
+  "task": "refactoring",
+  "candidate": {
+    "id": "big-pickle",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "model": "opencode/big-pickle",
+    "subscription": "free"
+  },
+  "started_at": "2026-08-25T16:51:00.495Z",
+  "completed_at": "2026-08-25T16:51:38.831Z",
+  "duration_ms": 38336,
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-25T16:51:00.495Z",
+    "completed_at": "2026-08-25T16:51:38.212Z",
+    "duration_ms": 37717
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-25T16:51:38.213Z",
+    "completed_at": "2026-08-25T16:51:38.831Z",
+    "duration_ms": 618
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2/refactoring/src/events.js"
+  ],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-pilot/pilot-5-tasks-r1/big-pickle/refactoring",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "1fadfa5e3de5caa81cc4b24e206386b4d88fa58a6072af4cc2ded5d12009479b"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "c5d5940ccd88e2c0d001e92d20f36c2e378f5183241d89e401e1f911361325b3"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "b4c6352d4af99499b9e26f8e2bc2180b42b140cd179ae4b356167f0151cedbd9"
+  }
+}

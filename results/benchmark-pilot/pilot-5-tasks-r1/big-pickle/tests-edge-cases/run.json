@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "release": "pilot-5-tasks-r1",
+  "task": "tests-edge-cases",
+  "candidate": {
+    "id": "big-pickle",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "model": "opencode/big-pickle",
+    "subscription": "free"
+  },
+  "started_at": "2026-08-25T16:55:48.126Z",
+  "completed_at": "2026-08-25T16:57:02.117Z",
+  "duration_ms": 73991,
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-25T16:55:48.126Z",
+    "completed_at": "2026-08-25T16:57:01.499Z",
+    "duration_ms": 73373
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-25T16:57:01.499Z",
+    "completed_at": "2026-08-25T16:57:02.117Z",
+    "duration_ms": 618
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2/tests-edge-cases/src/range.js",
+    "fixtures/phase2/tests-edge-cases/test/range.test.mjs"
+  ],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-pilot/pilot-5-tasks-r1/big-pickle/tests-edge-cases",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "03bf508021e4568b9339953c3720720a977987fa2eff21728d12245857f0aedc"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "ed9ba7a51a4c95f83dc201cdc32450a516cfdac3cb6ff1d971b13b22093ab75f"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "83f4c5c5208fb349e5edc235256f49803d7ca0f679ffd60678bc7a4c733a50f5"
+  }
+}

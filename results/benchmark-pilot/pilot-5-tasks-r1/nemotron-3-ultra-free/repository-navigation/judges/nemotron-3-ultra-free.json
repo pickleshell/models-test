@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "judge": {
+    "id": "nemotron-3-ultra-free",
+    "agent": "opencode",
+    "model": "opencode/nemotron-3-ultra-free",
+    "subscription": "free"
+  },
+  "status": "failed",
+  "response": "{\"type\":\"step_start\",\"timestamp\":1787677222903,\"sessionID\":\"ses_fc622932fffefPzatI47qqs1OH\",\"part\":{\"id\":\"prt_039dda7f1001sWI2UZRR2t4OGM\",\"messageID\":\"msg_039dd706e001npnGozs81gUsh8\",\"sessionID\":\"ses_fc622932fffefPzatI47qqs1OH\",\"snapshot\":\"d73584053fabe77bb0a1e9d11d010fb4bef48f7c\",\"type\":\"step-start\"}}\n{\"type\":\"tool_use\",\"timestamp\":1787677235458,\"sessionID\":\"ses_fc622932fffefPzatI47qqs1OH\",\"part\":{\"type\":\"tool\",\"tool\":\"bash\",\"callID\":\"call-2da79b10-9fa8-49cf-ba35-b52027320bd2\",\"state\":{\"status\":\"completed\",\"input\":{\"description\":\"List files in workspace\",\"command\":\"ls -la\"},\"output\":\"total 16\\ndrwxrwxr-x 5 test test 4096 Aug 25 19:00 .\\ndrwxr-xr-x 3 root root   60 Aug 25 19:00 ..\\ndrwxrwxr-x 3 test test 4096 Aug 25 19:00 benchmarks\\ndrwxrwxr-x 3 test test 4096 Aug 25 19:00 fixtures\\ndrwxrwxr-x 8 test test 4096 Aug 25 19:00 .git\\n\",\"metadata\":{\"output\":\"total 16\\ndrwxrwxr-x 5 test test 4096 Aug 25 19:00 .\\ndrwxr-xr-x 3 root root   60 Aug 25 19:00 ..\\ndrwxrwxr-x 3 test test 4096 Aug 25 19:00 benchmarks\\ndrwxrwxr-x 3 test test 4096 Aug 25 19:00 fixtures\\ndrwxrwxr-x 8 test test 4096 Aug 25 19:00 .git\\n\",\"exit\":0,\"description\":\"List files in workspace\",\"truncated\":false},\"title\":\"List files in workspace\",\"time\":{\"start\":1787677235447,\"end\":1787677235453}},\"id\":\"prt_039ddd89b001b4l0B0xKO20NcI\",\"sessionID\":\"ses_fc622932fffefPzatI47qqs1OH\",\"messageID\":\"msg_039dd706e001npnGozs81gUsh8\"}}\n{\"type\":\"step_finish\",\"timestamp\":1787677235480,\"sessionID\":\"ses_fc622932fffefPzatI47qqs1OH\",\"part\":{\"id\":\"prt_039ddd9130010Igt9C6qSW14p7\",\"reason\":\"tool-calls\",\"snapshot\":\"d73584053fabe77bb0a1e9d11d010fb4bef48f7c\",\"messageID\":\"msg_039dd706e001npnGozs81gUsh8\",\"sessionID\":\"ses_fc622932fffefPzatI47qqs1OH\",\"type\":\"step-finish\",\"tokens\":{\"total\":8588,\"input\":8490,\"output\":20,\"reasoning\":78,\"cache\":{\"write\":0,\"read\":0}},\"cost\":0}}\n{\"type\":\"step_start\",\"timestamp\":1787677238699,\"sessionID\":\"ses_fc622932fffefPzatI47qqs1OH\",\"part\":{\"id\":\"prt_039dde5a4001KTJvePoIewa6Ir\",\"messageID\":\"msg_039ddd92c00134L3DIWofOGpbC\",\"sessionID\":\"ses_fc622932fffefPzatI47qqs1OH\",\"snapshot\":\"d73584053fabe77bb0a1e9d11d010fb4bef48f7c\",\"type\":\"step-start\"}}\n{\"type\":\"error\",\"timestamp\":1787677238699,\"sessionID\":\"ses_fc622932fffefPzatI47qqs1OH\",\"error\":{\"name\":\"UnknownError\",\"data\":{\"message\":\"\\\"Streaming response failed: [502] Upstream error from Nvidia: Service temporarily overloaded\\\"\"}}}",
+  "scores": null,
+  "confidence": null,
+  "explanation": null,
+  "concerns": [],
+  "execution": {
+    "status": 1,
+    "signal": null,
+    "timed_out": false,
+    "started_at": "2026-08-25T17:00:06.704Z",
+    "completed_at": "2026-08-25T17:00:39.085Z",
+    "duration_ms": 32381
+  },
+  "judge_prompt_version": 1,
+  "judge_prompt_hash": "e6971e1ccd3eac1627ef328eb242327298dd6f384f2101d6ba7d4483145b3193",
+  "candidate": "nemotron-3-ultra-free",
+  "task": "repository-navigation",
+  "artifact_hash": {
+    "path": "nemotron-3-ultra-free.json",
+    "sha256": "dfb39dddf0e7b47fb9df72cdaea6ef7be342832e84089defab49c168aeef0d37"
+  }
+}

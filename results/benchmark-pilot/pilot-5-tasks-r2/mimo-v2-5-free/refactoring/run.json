@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "release": "pilot-5-tasks-r2",
+  "task": "refactoring",
+  "candidate": {
+    "id": "mimo-v2-5-free",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "model": "opencode/mimo-v2.5-free",
+    "subscription": "free"
+  },
+  "started_at": "2026-08-25T18:20:53.554Z",
+  "completed_at": "2026-08-25T18:21:49.749Z",
+  "duration_ms": 56195,
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-25T18:20:53.554Z",
+    "completed_at": "2026-08-25T18:21:49.054Z",
+    "duration_ms": 55500
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-25T18:21:49.055Z",
+    "completed_at": "2026-08-25T18:21:49.749Z",
+    "duration_ms": 694
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2/refactoring/src/events.js"
+  ],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-pilot/pilot-5-tasks-r2/mimo-v2-5-free/refactoring",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "7f4dedbf4c2ef6c6ea2c56283211bda1710b7179464ed68bd91007eef9e7b689"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "1f3edb04e8bcc8364734a427e69cac863c04dfe8bd83c21fb85fb0f2bf69685e"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "c133545b510f40feea548cb08eb2633ee9206c4691095b892df663bc9cb6a7bb"
+  }
+}

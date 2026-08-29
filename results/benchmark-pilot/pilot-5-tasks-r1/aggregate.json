@@ -1,0 +1,986 @@
+{
+  "schema_version": 2,
+  "release": "pilot-5-tasks-r1",
+  "criteria": [
+    "functional_correctness",
+    "reliability_edge_cases",
+    "maintainability_clarity",
+    "scope_discipline"
+  ],
+  "candidates": [
+    {
+      "candidate": {
+        "id": "inkling-free",
+        "agent": "opencode",
+        "runtime": "opencode",
+        "model": "openrouter/thinkingmachines/inkling:free",
+        "subscription": "free"
+      },
+      "task_count": 5,
+      "tasks": [
+        {
+          "task": "feature-implementation",
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-25T17:00:58.082Z",
+            "completed_at": "2026-08-25T17:01:12.570Z",
+            "duration_ms": 14488
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-25T17:01:12.570Z",
+            "completed_at": "2026-08-25T17:01:13.171Z",
+            "duration_ms": 601
+          },
+          "agent_duration_ms": 14488,
+          "test_duration_ms": 601,
+          "duration_ms": 15089,
+          "judge_count": 0,
+          "judge_invocation_count": 2,
+          "judge_durations": [
+            {
+              "id": "inkling-free",
+              "status": "failed",
+              "duration_ms": 2269
+            },
+            {
+              "id": "nemotron-3-ultra-free",
+              "status": "failed",
+              "duration_ms": 8993
+            }
+          ],
+          "judge_duration_ms": 11262
+        },
+        {
+          "task": "refactoring",
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-25T17:01:25.617Z",
+            "completed_at": "2026-08-25T17:01:40.032Z",
+            "duration_ms": 14415
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-25T17:01:40.032Z",
+            "completed_at": "2026-08-25T17:01:40.629Z",
+            "duration_ms": 597
+          },
+          "agent_duration_ms": 14415,
+          "test_duration_ms": 597,
+          "duration_ms": 15012,
+          "judge_count": 1,
+          "judge_invocation_count": 2,
+          "judge_durations": [
+            {
+              "id": "inkling-free",
+              "status": "failed",
+              "duration_ms": 2536
+            },
+            {
+              "id": "nemotron-3-ultra-free",
+              "status": "completed",
+              "duration_ms": 92929
+            }
+          ],
+          "judge_duration_ms": 95465
+        },
+        {
+          "task": "bug-fix-ledger",
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-25T17:03:17.317Z",
+            "completed_at": "2026-08-25T17:03:52.835Z",
+            "duration_ms": 35518
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-25T17:03:52.835Z",
+            "completed_at": "2026-08-25T17:03:53.440Z",
+            "duration_ms": 605
+          },
+          "agent_duration_ms": 35518,
+          "test_duration_ms": 605,
+          "duration_ms": 36123,
+          "judge_count": 0,
+          "judge_invocation_count": 2,
+          "judge_durations": [
+            {
+              "id": "inkling-free",
+              "status": "failed",
+              "duration_ms": 2202
+            },
+            {
+              "id": "nemotron-3-ultra-free",
+              "status": "failed",
+              "duration_ms": 3537
+            }
+          ],
+          "judge_duration_ms": 5739
+        },
+        {
+          "task": "repository-navigation",
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-25T17:04:00.316Z",
+            "completed_at": "2026-08-25T17:04:11.917Z",
+            "duration_ms": 11601
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-25T17:04:11.918Z",
+            "completed_at": "2026-08-25T17:04:12.525Z",
+            "duration_ms": 607
+          },
+          "agent_duration_ms": 11601,
+          "test_duration_ms": 607,
+          "duration_ms": 12209,
+          "judge_count": 0,
+          "judge_invocation_count": 2,
+          "judge_durations": [
+            {
+              "id": "inkling-free",
+              "status": "failed",
+              "duration_ms": 2221
+            },
+            {
+              "id": "nemotron-3-ultra-free",
+              "status": "failed",
+              "duration_ms": 42925
+            }
+          ],
+          "judge_duration_ms": 45146
+        },
+        {
+          "task": "tests-edge-cases",
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-25T17:04:58.881Z",
+            "completed_at": "2026-08-25T17:05:19.450Z",
+            "duration_ms": 20569
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-25T17:05:19.450Z",
+            "completed_at": "2026-08-25T17:05:20.096Z",
+            "duration_ms": 646
+          },
+          "agent_duration_ms": 20569,
+          "test_duration_ms": 646,
+          "duration_ms": 21215,
+          "judge_count": 0,
+          "judge_invocation_count": 2,
+          "judge_durations": [
+            {
+              "id": "inkling-free",
+              "status": "failed",
+              "duration_ms": 2242
+            },
+            {
+              "id": "nemotron-3-ultra-free",
+              "status": "failed",
+              "duration_ms": 3610
+            }
+          ],
+          "judge_duration_ms": 5852
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 96591,
+      "test_duration_ms": 3056,
+      "duration_ms": 99648,
+      "judge_count": 1,
+      "judge_duration_by_id": {
+        "nemotron-3-ultra-free": 151994,
+        "inkling-free": 11470
+      },
+      "judge_duration_ms": 163464,
+      "judge_average": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 10,
+        "scope_discipline": 10
+      },
+      "overall_average": 10
+    },
+    {
+      "candidate": {
+        "id": "mimo-v2-5-free",
+        "agent": "opencode",
+        "runtime": "opencode",
+        "model": "opencode/mimo-v2.5-free",
+        "subscription": "free"
+      },
+      "task_count": 5,
+      "tasks": [
+        {
+          "task": "feature-implementation",
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-25T17:06:30.150Z",
+            "completed_at": "2026-08-25T17:08:16.764Z",
+            "duration_ms": 106614
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-25T17:08:16.764Z",
+            "completed_at": "2026-08-25T17:08:17.364Z",
+            "duration_ms": 600
+          },
+          "agent_duration_ms": 106614,
+          "test_duration_ms": 600,
+          "duration_ms": 107214,
+          "judge_count": 0,
+          "judge_invocation_count": 2,
+          "judge_durations": [
+            {
+              "id": "inkling-free",
+              "status": "failed",
+              "duration_ms": 2220
+            },
+            {
+              "id": "nemotron-3-ultra-free",
+              "status": "failed",
+              "duration_ms": 3369
+            }
+          ],
+          "judge_duration_ms": 5589
+        },
+        {
+          "task": "refactoring",
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-25T17:08:24.075Z",
+            "completed_at": "2026-08-25T17:11:46.203Z",
+            "duration_ms": 202128
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-25T17:11:46.203Z",
+            "completed_at": "2026-08-25T17:11:46.804Z",
+            "duration_ms": 601
+          },
+          "agent_duration_ms": 202128,
+          "test_duration_ms": 601,
+          "duration_ms": 202729,
+          "judge_count": 0,
+          "judge_invocation_count": 2,
+          "judge_durations": [
+            {
+              "id": "inkling-free",
+              "status": "failed",
+              "duration_ms": 2191
+            },
+            {
+              "id": "nemotron-3-ultra-free",
+              "status": "failed",
+              "duration_ms": 3402
+            }
+          ],
+          "judge_duration_ms": 5593
+        },
+        {
+          "task": "bug-fix-ledger",
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-25T17:11:53.513Z",
+            "completed_at": "2026-08-25T17:17:44.078Z",
+            "duration_ms": 350565
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-25T17:17:44.078Z",
+            "completed_at": "2026-08-25T17:17:44.698Z",
+            "duration_ms": 620
+          },
+          "agent_duration_ms": 350565,
+          "test_duration_ms": 620,
+          "duration_ms": 351185,
+          "judge_count": 0,
+          "judge_invocation_count": 2,
+          "judge_durations": [
+            {
+              "id": "inkling-free",
+              "status": "failed",
+              "duration_ms": 2189
+            },
+            {
+              "id": "nemotron-3-ultra-free",
+              "status": "failed",
+              "duration_ms": 29436
+            }
+          ],
+          "judge_duration_ms": 31625
+        },
+        {
+          "task": "repository-navigation",
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-25T17:18:17.494Z",
+            "completed_at": "2026-08-25T17:21:16.734Z",
+            "duration_ms": 179240
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-25T17:21:16.735Z",
+            "completed_at": "2026-08-25T17:21:17.329Z",
+            "duration_ms": 594
+          },
+          "agent_duration_ms": 179240,
+          "test_duration_ms": 594,
+          "duration_ms": 179835,
+          "judge_count": 0,
+          "judge_invocation_count": 2,
+          "judge_durations": [
+            {
+              "id": "inkling-free",
+              "status": "failed",
+              "duration_ms": 2364
+            },
+            {
+              "id": "nemotron-3-ultra-free",
+              "status": "failed",
+              "duration_ms": 63592
+            }
+          ],
+          "judge_duration_ms": 65956
+        },
+        {
+          "task": "tests-edge-cases",
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-25T17:22:24.505Z",
+            "completed_at": "2026-08-25T17:23:37.398Z",
+            "duration_ms": 72893
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-25T17:23:37.399Z",
+            "completed_at": "2026-08-25T17:23:38.027Z",
+            "duration_ms": 628
+          },
+          "agent_duration_ms": 72893,
+          "test_duration_ms": 628,
+          "duration_ms": 73522,
+          "judge_count": 1,
+          "judge_invocation_count": 2,
+          "judge_durations": [
+            {
+              "id": "inkling-free",
+              "status": "failed",
+              "duration_ms": 2696
+            },
+            {
+              "id": "nemotron-3-ultra-free",
+              "status": "completed",
+              "duration_ms": 84283
+            }
+          ],
+          "judge_duration_ms": 86979
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 911440,
+      "test_duration_ms": 3043,
+      "duration_ms": 914485,
+      "judge_count": 1,
+      "judge_duration_by_id": {
+        "nemotron-3-ultra-free": 184082,
+        "inkling-free": 11660
+      },
+      "judge_duration_ms": 195742,
+      "judge_average": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall_average": 9.75
+    },
+    {
+      "candidate": {
+        "id": "big-pickle",
+        "agent": "opencode",
+        "runtime": "opencode",
+        "model": "opencode/big-pickle",
+        "subscription": "free"
+      },
+      "task_count": 5,
+      "tasks": [
+        {
+          "task": "feature-implementation",
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-25T16:49:10.658Z",
+            "completed_at": "2026-08-25T16:50:02.080Z",
+            "duration_ms": 51422
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-25T16:50:02.081Z",
+            "completed_at": "2026-08-25T16:50:02.689Z",
+            "duration_ms": 608
+          },
+          "agent_duration_ms": 51422,
+          "test_duration_ms": 608,
+          "duration_ms": 52031,
+          "judge_count": 0,
+          "judge_invocation_count": 2,
+          "judge_durations": [
+            {
+              "id": "inkling-free",
+              "status": "failed",
+              "duration_ms": 2272
+            },
+            {
+              "id": "nemotron-3-ultra-free",
+              "status": "failed",
+              "duration_ms": 54341
+            }
+          ],
+          "judge_duration_ms": 56613
+        },
+        {
+          "task": "refactoring",
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-25T16:51:00.495Z",
+            "completed_at": "2026-08-25T16:51:38.212Z",
+            "duration_ms": 37717
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-25T16:51:38.213Z",
+            "completed_at": "2026-08-25T16:51:38.831Z",
+            "duration_ms": 618
+          },
+          "agent_duration_ms": 37717,
+          "test_duration_ms": 618,
+          "duration_ms": 38336,
+          "judge_count": 1,
+          "judge_invocation_count": 2,
+          "judge_durations": [
+            {
+              "id": "inkling-free",
+              "status": "failed",
+              "duration_ms": 2202
+            },
+            {
+              "id": "nemotron-3-ultra-free",
+              "status": "completed",
+              "duration_ms": 82059
+            }
+          ],
+          "judge_duration_ms": 84261
+        },
+        {
+          "task": "bug-fix-ledger",
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-25T16:53:04.299Z",
+            "completed_at": "2026-08-25T16:53:36.816Z",
+            "duration_ms": 32517
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-25T16:53:36.816Z",
+            "completed_at": "2026-08-25T16:53:37.483Z",
+            "duration_ms": 667
+          },
+          "agent_duration_ms": 32517,
+          "test_duration_ms": 667,
+          "duration_ms": 33184,
+          "judge_count": 1,
+          "judge_invocation_count": 2,
+          "judge_durations": [
+            {
+              "id": "inkling-free",
+              "status": "failed",
+              "duration_ms": 2235
+            },
+            {
+              "id": "nemotron-3-ultra-free",
+              "status": "completed",
+              "duration_ms": 95104
+            }
+          ],
+          "judge_duration_ms": 97339
+        },
+        {
+          "task": "repository-navigation",
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-25T16:55:16.089Z",
+            "completed_at": "2026-08-25T16:55:40.732Z",
+            "duration_ms": 24643
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-25T16:55:40.733Z",
+            "completed_at": "2026-08-25T16:55:41.344Z",
+            "duration_ms": 611
+          },
+          "agent_duration_ms": 24643,
+          "test_duration_ms": 611,
+          "duration_ms": 25255,
+          "judge_count": 0,
+          "judge_invocation_count": 2,
+          "judge_durations": [
+            {
+              "id": "inkling-free",
+              "status": "failed",
+              "duration_ms": 2265
+            },
+            {
+              "id": "nemotron-3-ultra-free",
+              "status": "failed",
+              "duration_ms": 3392
+            }
+          ],
+          "judge_duration_ms": 5657
+        },
+        {
+          "task": "tests-edge-cases",
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-25T16:55:48.126Z",
+            "completed_at": "2026-08-25T16:57:01.499Z",
+            "duration_ms": 73373
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-25T16:57:01.499Z",
+            "completed_at": "2026-08-25T16:57:02.117Z",
+            "duration_ms": 618
+          },
+          "agent_duration_ms": 73373,
+          "test_duration_ms": 618,
+          "duration_ms": 73991,
+          "judge_count": 0,
+          "judge_invocation_count": 2,
+          "judge_durations": [
+            {
+              "id": "inkling-free",
+              "status": "failed",
+              "duration_ms": 2193
+            },
+            {
+              "id": "nemotron-3-ultra-free",
+              "status": "failed",
+              "duration_ms": 49116
+            }
+          ],
+          "judge_duration_ms": 51309
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 219672,
+      "test_duration_ms": 3122,
+      "duration_ms": 222797,
+      "judge_count": 2,
+      "judge_duration_by_id": {
+        "nemotron-3-ultra-free": 284012,
+        "inkling-free": 11167
+      },
+      "judge_duration_ms": 295179,
+      "judge_average": {
+        "functional_correctness": 9.5,
+        "reliability_edge_cases": 9,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall_average": 9.125
+    },
+    {
+      "candidate": {
+        "id": "nemotron-3-ultra-free",
+        "agent": "opencode",
+        "runtime": "opencode",
+        "model": "opencode/nemotron-3-ultra-free",
+        "subscription": "free"
+      },
+      "task_count": 5,
+      "tasks": [
+        {
+          "task": "feature-implementation",
+          "outcome": "agent_failure",
+          "agent": {
+            "status": 1,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-25T16:58:23.943Z",
+            "completed_at": "2026-08-25T16:59:10.523Z",
+            "duration_ms": 46580
+          },
+          "tests": {
+            "status": 1,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-25T16:59:10.524Z",
+            "completed_at": "2026-08-25T16:59:11.139Z",
+            "duration_ms": 615
+          },
+          "agent_duration_ms": 46580,
+          "test_duration_ms": 615,
+          "duration_ms": 47196,
+          "judge_count": 0,
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0
+        },
+        {
+          "task": "refactoring",
+          "outcome": "agent_failure",
+          "agent": {
+            "status": 1,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-25T16:59:11.604Z",
+            "completed_at": "2026-08-25T16:59:24.240Z",
+            "duration_ms": 12636
+          },
+          "tests": {
+            "status": 1,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-25T16:59:24.241Z",
+            "completed_at": "2026-08-25T16:59:24.841Z",
+            "duration_ms": 600
+          },
+          "agent_duration_ms": 12636,
+          "test_duration_ms": 600,
+          "duration_ms": 13237,
+          "judge_count": 0,
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0
+        },
+        {
+          "task": "bug-fix-ledger",
+          "outcome": "agent_failure",
+          "agent": {
+            "status": 1,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-25T16:59:25.305Z",
+            "completed_at": "2026-08-25T16:59:35.215Z",
+            "duration_ms": 9910
+          },
+          "tests": {
+            "status": 1,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-25T16:59:35.215Z",
+            "completed_at": "2026-08-25T16:59:35.844Z",
+            "duration_ms": 629
+          },
+          "agent_duration_ms": 9910,
+          "test_duration_ms": 629,
+          "duration_ms": 10539,
+          "judge_count": 0,
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0
+        },
+        {
+          "task": "repository-navigation",
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-25T16:59:36.319Z",
+            "completed_at": "2026-08-25T17:00:05.527Z",
+            "duration_ms": 29208
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-25T17:00:05.528Z",
+            "completed_at": "2026-08-25T17:00:06.162Z",
+            "duration_ms": 634
+          },
+          "agent_duration_ms": 29208,
+          "test_duration_ms": 634,
+          "duration_ms": 29843,
+          "judge_count": 0,
+          "judge_invocation_count": 2,
+          "judge_durations": [
+            {
+              "id": "inkling-free",
+              "status": "failed",
+              "duration_ms": 2273
+            },
+            {
+              "id": "nemotron-3-ultra-free",
+              "status": "failed",
+              "duration_ms": 32381
+            }
+          ],
+          "judge_duration_ms": 34654
+        },
+        {
+          "task": "tests-edge-cases",
+          "outcome": "agent_failure",
+          "agent": {
+            "status": 1,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-25T17:00:42.055Z",
+            "completed_at": "2026-08-25T17:00:47.579Z",
+            "duration_ms": 5524
+          },
+          "tests": {
+            "status": 1,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-25T17:00:47.580Z",
+            "completed_at": "2026-08-25T17:00:48.193Z",
+            "duration_ms": 613
+          },
+          "agent_duration_ms": 5524,
+          "test_duration_ms": 613,
+          "duration_ms": 6138,
+          "judge_count": 0,
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0
+        }
+      ],
+      "outcome": "agent_failure",
+      "agent_duration_ms": 103858,
+      "test_duration_ms": 3091,
+      "duration_ms": 106953,
+      "judge_count": 0,
+      "judge_duration_by_id": {
+        "nemotron-3-ultra-free": 32381,
+        "inkling-free": 2273
+      },
+      "judge_duration_ms": 34654,
+      "judge_average": {},
+      "overall_average": null
+    }
+  ],
+  "generated_at": "2026-08-25T17:25:09.798Z",
+  "reproducibility": {
+    "runner_version": "unknown",
+    "repository_commit": "665d9b60d736848a26347588423ef6f33cb2c856",
+    "config_hash": "0fb9eeaf2390c3d4e8a04b66395d36d34da0dcd44c8917f598e65090001aad29",
+    "schema_registry": {
+      "schema_registry_version": 1,
+      "artifact_schemas": {
+        "run": 1,
+        "judge": 1,
+        "preflight": 1,
+        "aggregate": 2,
+        "test_result": 1,
+        "candidate_diff": 1
+      }
+    },
+    "effective_limits": {
+      "timeout_ms": 900000,
+      "max_output_bytes": 2097152
+    },
+    "judge_prompt": {
+      "version": 1,
+      "template_hash": "c3d0cc14500c968cabf86246b96577b6e63b57c61de4f070db30cadd7cebe008"
+    },
+    "outcomes": {
+      "inkling-free": {
+        "overall": "completed",
+        "tasks": [
+          {
+            "task": "feature-implementation",
+            "outcome": "completed"
+          },
+          {
+            "task": "refactoring",
+            "outcome": "completed"
+          },
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "completed"
+          },
+          {
+            "task": "repository-navigation",
+            "outcome": "completed"
+          },
+          {
+            "task": "tests-edge-cases",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "mimo-v2-5-free": {
+        "overall": "completed",
+        "tasks": [
+          {
+            "task": "feature-implementation",
+            "outcome": "completed"
+          },
+          {
+            "task": "refactoring",
+            "outcome": "completed"
+          },
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "completed"
+          },
+          {
+            "task": "repository-navigation",
+            "outcome": "completed"
+          },
+          {
+            "task": "tests-edge-cases",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "big-pickle": {
+        "overall": "completed",
+        "tasks": [
+          {
+            "task": "feature-implementation",
+            "outcome": "completed"
+          },
+          {
+            "task": "refactoring",
+            "outcome": "completed"
+          },
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "completed"
+          },
+          {
+            "task": "repository-navigation",
+            "outcome": "completed"
+          },
+          {
+            "task": "tests-edge-cases",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "nemotron-3-ultra-free": {
+        "overall": "agent_failure",
+        "tasks": [
+          {
+            "task": "feature-implementation",
+            "outcome": "agent_failure"
+          },
+          {
+            "task": "refactoring",
+            "outcome": "agent_failure"
+          },
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "agent_failure"
+          },
+          {
+            "task": "repository-navigation",
+            "outcome": "completed"
+          },
+          {
+            "task": "tests-edge-cases",
+            "outcome": "agent_failure"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "started_at": "2026-08-25T16:51:38.213Z",
+  "completed_at": "2026-08-25T16:51:38.831Z",
+  "duration_ms": 618,
+  "stdout": "\n> test\n> node --test test/*.test.mjs\n\nTAP version 13\n# Subtest: counts matching events\nok 1 - counts matching events\n  ---\n  duration_ms: 1.126986\n  ...\n# Subtest: returns the latest matching event\nok 2 - returns the latest matching event\n  ---\n  duration_ms: 0.58572\n  ...\n# Subtest: ignores malformed timestamps\nok 3 - ignores malformed timestamps\n  ---\n  duration_ms: 0.113453\n  ...\n1..3\n# tests 3\n# suites 0\n# pass 3\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 115.154499\n",
+  "stderr": "",
+  "artifact_hash": {
+    "path": "test-result.json",
+    "sha256": "c5d5940ccd88e2c0d001e92d20f36c2e378f5183241d89e401e1f911361325b3"
+  }
+}

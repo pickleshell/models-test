@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "release": "pilot-1-task-r5",
+  "task": "feature-implementation",
+  "candidate": {
+    "id": "big-pickle",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "model": "opencode/big-pickle",
+    "subscription": "free"
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false
+  },
+  "changed_files": [
+    "fixtures/phase2/feature-implementation/src/featureFlags.js"
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-pilot/pilot-1-task-r5/big-pickle/feature-implementation",
+    "private_dir": "/home/test/.models-benchmark/runs/pilot-1-task-r5/big-pickle/feature-implementation"
+  },
+  "completed_at": "2026-08-21T16:57:17.852Z"
+}

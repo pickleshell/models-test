@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "release": "pilot-patch-r3",
+  "task": "patch",
+  "candidate": {
+    "id": "mimo-v2-5-free",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "model": "opencode/mimo-v2.5-free",
+    "subscription": "free"
+  },
+  "started_at": "2026-08-25T19:39:05.567Z",
+  "completed_at": "2026-08-25T19:40:30.984Z",
+  "duration_ms": 85417,
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-25T19:39:05.567Z",
+    "completed_at": "2026-08-25T19:40:30.373Z",
+    "duration_ms": 84806
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-25T19:40:30.374Z",
+    "completed_at": "2026-08-25T19:40:30.984Z",
+    "duration_ms": 610
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase1-ledger/src/reconcile.js"
+  ],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-pilot/pilot-patch-r3/mimo-v2-5-free/patch",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "ca0887f6334f754ea6b53bde71116dce9b825cf163a72098e222082087249ccf"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "3327238cddcc1a986685cf3e1d66ef58441f10b1640a1533f0814053ce0cc435"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "ce3c944718badbf2ce96eabfb4fbf16c777190cfca09a73ee01c27228cabb8ee"
+  }
+}

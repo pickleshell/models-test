@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "judge": {
+    "id": "nemotron-3-ultra-free",
+    "agent": "opencode",
+    "model": "opencode/nemotron-3-ultra-free",
+    "subscription": "free"
+  },
+  "status": "completed",
+  "response": "{\n  \"functional_correctness\": 10,\n  \"reliability_edge_cases\": 10,\n  \"maintainability_clarity\": 9,\n  \"scope_discipline\": 10,\n  \"confidence\": 100,\n  \"explanation\": \"All 26 public tests pass. The implementation correctly parses 'start..end' format with whitespace handling, validates bounds (-100000 to 100000), rejects non-strings, malformed input, reversed ranges, decimals, out-of-bounds values, Infinity, NaN, and handles leading zeros. The test file comprehensively covers all edge cases from the README contract. Code is clean, readable, and well-structured with clear sequential validation.\",\n  \"concerns\": []\n}",
+  "scores": {
+    "functional_correctness": 10,
+    "reliability_edge_cases": 10,
+    "maintainability_clarity": 9,
+    "scope_discipline": 10
+  },
+  "confidence": 100,
+  "explanation": "All 26 public tests pass. The implementation correctly parses 'start..end' format with whitespace handling, validates bounds (-100000 to 100000), rejects non-strings, malformed input, reversed ranges, decimals, out-of-bounds values, Infinity, NaN, and handles leading zeros. The test file comprehensively covers all edge cases from the README contract. Code is clean, readable, and well-structured with clear sequential validation.",
+  "concerns": [],
+  "execution": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "started_at": "2026-08-25T17:23:38.558Z",
+    "completed_at": "2026-08-25T17:25:02.841Z",
+    "duration_ms": 84283
+  },
+  "judge_prompt_version": 1,
+  "judge_prompt_hash": "f253b14a09212c61bb74739d478d381829e92bafc1eb37c4a087c8abad07fd73",
+  "candidate": "mimo-v2-5-free",
+  "task": "tests-edge-cases",
+  "artifact_hash": {
+    "path": "nemotron-3-ultra-free.json",
+    "sha256": "63a760a76a73d6f3371f065f11c8d9a7294e1d3e055068b67f0dba5130dc3831"
+  }
+}
