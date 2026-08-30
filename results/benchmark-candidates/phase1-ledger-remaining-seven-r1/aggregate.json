@@ -1,0 +1,614 @@
+{
+  "schema_version": 2,
+  "release": "phase1-ledger-remaining-seven-r1",
+  "criteria": [
+    "functional_correctness",
+    "reliability_edge_cases",
+    "maintainability_clarity",
+    "scope_discipline"
+  ],
+  "candidates": [
+    {
+      "candidate": {
+        "id": "or-grok-code-free",
+        "label": "Grok Code",
+        "agent": "opencode",
+        "runtime": "opencode",
+        "provider": "openrouter",
+        "model": "openrouter/x-ai/grok-code-fast-1:free",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "patch",
+          "attempt": 1,
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "cost_usd": null,
+          "cost_source": null,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": null
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "patch",
+          "attempt": 1,
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "cost_usd": null,
+          "cost_source": null,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": null
+        }
+      ],
+      "outcome": "unavailable",
+      "agent_duration_ms": null,
+      "test_duration_ms": null,
+      "duration_ms": 0,
+      "cost_usd": null,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": null,
+      "objective_total": null,
+      "objective_pass_rate": null,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "or-trinity-large-preview-free",
+        "label": "Trinity Large Preview Free",
+        "agent": "opencode",
+        "runtime": "opencode",
+        "provider": "openrouter",
+        "model": "openrouter/arcee-ai/trinity-large-preview:free",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "patch",
+          "attempt": 1,
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "cost_usd": null,
+          "cost_source": null,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": null
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "patch",
+          "attempt": 1,
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "cost_usd": null,
+          "cost_source": null,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": null
+        }
+      ],
+      "outcome": "unavailable",
+      "agent_duration_ms": null,
+      "test_duration_ms": null,
+      "duration_ms": 0,
+      "cost_usd": null,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": null,
+      "objective_total": null,
+      "objective_pass_rate": null,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "or-ring-2-6-1t-free",
+        "label": "Ring 2.6 1T Free",
+        "agent": "opencode",
+        "runtime": "opencode",
+        "provider": "openrouter",
+        "model": "openrouter/inclusionai/ring-2.6-1t:free",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "patch",
+          "attempt": 1,
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "cost_usd": null,
+          "cost_source": null,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": null
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "patch",
+          "attempt": 1,
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "cost_usd": null,
+          "cost_source": null,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": null
+        }
+      ],
+      "outcome": "unavailable",
+      "agent_duration_ms": null,
+      "test_duration_ms": null,
+      "duration_ms": 0,
+      "cost_usd": null,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": null,
+      "objective_total": null,
+      "objective_pass_rate": null,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "or-ling-3-0-tiny-free",
+        "label": "Ling 3.0 Tiny Free",
+        "agent": "opencode",
+        "runtime": "opencode",
+        "provider": "openrouter",
+        "model": "openrouter/inclusionai/ling-3.0-tiny:free",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "patch",
+          "attempt": 1,
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "cost_usd": null,
+          "cost_source": null,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": null
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "patch",
+          "attempt": 1,
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "cost_usd": null,
+          "cost_source": null,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": null
+        }
+      ],
+      "outcome": "unavailable",
+      "agent_duration_ms": null,
+      "test_duration_ms": null,
+      "duration_ms": 0,
+      "cost_usd": null,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": null,
+      "objective_total": null,
+      "objective_pass_rate": null,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "or-ling-2-6-flash-free",
+        "label": "Ling 2.6 Flash Free",
+        "agent": "opencode",
+        "runtime": "opencode",
+        "provider": "openrouter",
+        "model": "openrouter/inclusionai/ling-2.6-flash:free",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "patch",
+          "attempt": 1,
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "cost_usd": null,
+          "cost_source": null,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": null
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "patch",
+          "attempt": 1,
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "cost_usd": null,
+          "cost_source": null,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": null
+        }
+      ],
+      "outcome": "unavailable",
+      "agent_duration_ms": null,
+      "test_duration_ms": null,
+      "duration_ms": 0,
+      "cost_usd": null,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": null,
+      "objective_total": null,
+      "objective_pass_rate": null,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "or-mimo-v2-flash-free",
+        "label": "MiMo V2 Flash Free",
+        "agent": "opencode",
+        "runtime": "opencode",
+        "provider": "openrouter",
+        "model": "openrouter/xiaomi/mimo-v2-flash:free",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "patch",
+          "attempt": 1,
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "cost_usd": null,
+          "cost_source": null,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": null
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "patch",
+          "attempt": 1,
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "cost_usd": null,
+          "cost_source": null,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": null
+        }
+      ],
+      "outcome": "unavailable",
+      "agent_duration_ms": null,
+      "test_duration_ms": null,
+      "duration_ms": 0,
+      "cost_usd": null,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": null,
+      "objective_total": null,
+      "objective_pass_rate": null,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "or-mimo-v2-omni-free",
+        "label": "MiMo V2 Omni Free",
+        "agent": "opencode",
+        "runtime": "opencode",
+        "provider": "openrouter",
+        "model": "openrouter/xiaomi/mimo-v2-omni:free",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "patch",
+          "attempt": 1,
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "cost_usd": null,
+          "cost_source": null,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": null
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "patch",
+          "attempt": 1,
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "cost_usd": null,
+          "cost_source": null,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": null
+        }
+      ],
+      "outcome": "unavailable",
+      "agent_duration_ms": null,
+      "test_duration_ms": null,
+      "duration_ms": 0,
+      "cost_usd": null,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": null,
+      "objective_total": null,
+      "objective_pass_rate": null,
+      "overall_average": null
+    }
+  ],
+  "generated_at": "2026-08-30T23:35:54.641Z",
+  "reproducibility": {
+    "runner_version": "unknown",
+    "repository_commit": "7c0aea11d7403e2f65be80b979582363b53efb51",
+    "config_hash": "4ce27ea71838a866e7165f7184103dbd460d1fa5f07919aed2528f2191053aef",
+    "schema_registry": {
+      "schema_registry_version": 1,
+      "artifact_schemas": {
+        "run": 1,
+        "judge": 1,
+        "preflight": 1,
+        "aggregate": 2,
+        "test_result": 1,
+        "candidate_diff": 1,
+        "objective_evaluator": 1
+      }
+    },
+    "effective_limits": {
+      "timeout_ms": 900000,
+      "max_output_bytes": 2097152
+    },
+    "judge_prompt": {
+      "version": 3,
+      "template_hash": "3b0265ce6a626409d7d01a8c28f1d2a8541056ed8634241a7dc13ac2acf97ce2"
+    },
+    "outcomes": {
+      "or-grok-code-free": {
+        "overall": "unavailable",
+        "nominations": [
+          {
+            "nomination": "patch",
+            "attempt": 1,
+            "outcome": "unavailable"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "patch",
+            "outcome": "unavailable"
+          }
+        ]
+      },
+      "or-trinity-large-preview-free": {
+        "overall": "unavailable",
+        "nominations": [
+          {
+            "nomination": "patch",
+            "attempt": 1,
+            "outcome": "unavailable"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "patch",
+            "outcome": "unavailable"
+          }
+        ]
+      },
+      "or-ring-2-6-1t-free": {
+        "overall": "unavailable",
+        "nominations": [
+          {
+            "nomination": "patch",
+            "attempt": 1,
+            "outcome": "unavailable"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "patch",
+            "outcome": "unavailable"
+          }
+        ]
+      },
+      "or-ling-3-0-tiny-free": {
+        "overall": "unavailable",
+        "nominations": [
+          {
+            "nomination": "patch",
+            "attempt": 1,
+            "outcome": "unavailable"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "patch",
+            "outcome": "unavailable"
+          }
+        ]
+      },
+      "or-ling-2-6-flash-free": {
+        "overall": "unavailable",
+        "nominations": [
+          {
+            "nomination": "patch",
+            "attempt": 1,
+            "outcome": "unavailable"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "patch",
+            "outcome": "unavailable"
+          }
+        ]
+      },
+      "or-mimo-v2-flash-free": {
+        "overall": "unavailable",
+        "nominations": [
+          {
+            "nomination": "patch",
+            "attempt": 1,
+            "outcome": "unavailable"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "patch",
+            "outcome": "unavailable"
+          }
+        ]
+      },
+      "or-mimo-v2-omni-free": {
+        "overall": "unavailable",
+        "nominations": [
+          {
+            "nomination": "patch",
+            "attempt": 1,
+            "outcome": "unavailable"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "patch",
+            "outcome": "unavailable"
+          }
+        ]
+      }
+    }
+  }
+}

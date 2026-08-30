@@ -14,7 +14,8 @@
     "simplicity": 8,
     "readability": 7,
     "no_extra_code": 9,
-    "reliability": 10
+    "reliability": 10,
+    "edge_cases": 0
   },
   "average": 6.8,
   "summary": "The patch covers the major contract requirements with exact cent construction, but it accepts malformed comma grouping after normalization.",

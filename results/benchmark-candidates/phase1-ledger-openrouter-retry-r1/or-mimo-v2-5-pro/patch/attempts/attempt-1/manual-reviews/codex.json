@@ -14,7 +14,8 @@
     "simplicity": 7,
     "readability": 5,
     "no_extra_code": 8,
-    "reliability": 10
+    "reliability": 10,
+    "edge_cases": 0
   },
   "average": 6,
   "summary": "The patch fixes the major behaviors, but uses permissive normalization and parseInt-based amount conversion that mishandles some numeric formats.",

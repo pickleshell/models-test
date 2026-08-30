@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "release": "phase1-ledger-remaining-seven-r1",
+  "nomination": "patch",
+  "run_id": "phase1-ledger-remaining-seven-r1:or-ring-2-6-1t-free:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "or-ring-2-6-1t-free",
+    "label": "Ring 2.6 1T Free",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "provider": "openrouter",
+    "model": "openrouter/inclusionai/ring-2.6-1t:free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T23:35:19.026Z",
+  "completed_at": "2026-08-30T23:35:19.026Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-30T23:35:17.427Z",
+    "completed_at": "2026-08-30T23:35:19.025Z",
+    "duration_ms": 1598
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-candidates/phase1-ledger-remaining-seven-r1/or-ring-2-6-1t-free/patch/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "8975826b7d176ff509171164ff1389fb90fba572219e9127901bd0439bf7ce03"
+  }
+}

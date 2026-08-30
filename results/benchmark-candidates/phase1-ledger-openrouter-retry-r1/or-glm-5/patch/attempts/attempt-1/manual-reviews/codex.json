@@ -14,7 +14,8 @@
     "simplicity": 6,
     "readability": 5,
     "no_extra_code": 10,
-    "reliability": 10
+    "reliability": 10,
+    "edge_cases": 0
   },
   "average": 6.2,
   "summary": "The patch fixes UTC grouping, duplicate handling, and refund attribution but leaves strict money parsing unchanged.",

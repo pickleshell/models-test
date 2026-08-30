@@ -14,7 +14,8 @@
     "simplicity": 7,
     "readability": 5,
     "no_extra_code": 9,
-    "reliability": 10
+    "reliability": 10,
+    "edge_cases": 0
   },
   "average": 6.2,
   "summary": "The agent ended abnormally after a partial patch. The preserved change addresses major behavior but retains permissive money parsing.",

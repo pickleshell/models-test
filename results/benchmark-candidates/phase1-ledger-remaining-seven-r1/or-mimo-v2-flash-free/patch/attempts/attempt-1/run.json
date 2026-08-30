@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "release": "phase1-ledger-remaining-seven-r1",
+  "nomination": "patch",
+  "run_id": "phase1-ledger-remaining-seven-r1:or-mimo-v2-flash-free:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "or-mimo-v2-flash-free",
+    "label": "MiMo V2 Flash Free",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "provider": "openrouter",
+    "model": "openrouter/xiaomi/mimo-v2-flash:free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T23:35:24.382Z",
+  "completed_at": "2026-08-30T23:35:24.382Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-30T23:35:22.835Z",
+    "completed_at": "2026-08-30T23:35:24.381Z",
+    "duration_ms": 1546
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-candidates/phase1-ledger-remaining-seven-r1/or-mimo-v2-flash-free/patch/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "6a95a60aa308407fcbb0ca959924836d29a7666638e097557ad7cf14810c3f42"
+  }
+}

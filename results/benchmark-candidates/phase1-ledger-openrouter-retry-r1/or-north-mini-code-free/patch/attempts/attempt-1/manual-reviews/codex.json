@@ -14,7 +14,8 @@
     "simplicity": 3,
     "readability": 3,
     "no_extra_code": 8,
-    "reliability": 10
+    "reliability": 10,
+    "edge_cases": 0
   },
   "average": 4.8,
   "summary": "The patch only changes duplicate handling and invalid-entry bookkeeping; the central money, UTC-day, and refund-attribution defects remain.",

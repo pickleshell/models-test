@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "or-ring-2-6-1t-free",
+    "label": "Ring 2.6 1T Free",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "provider": "openrouter",
+    "model": "openrouter/inclusionai/ring-2.6-1t:free",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "unavailable",
+  "reason": "process_failure",
+  "started_at": "2026-08-30T23:35:17.427Z",
+  "completed_at": "2026-08-30T23:35:19.025Z",
+  "duration_ms": 1598,
+  "process_status": 1,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": null,
+    "steps": 0,
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "cache_read": 0,
+      "cache_write": 0,
+      "total": 0
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "30006a608496737bdee291aa76d296bf5b2721503ce31287cb1a8cf806d95f32"
+  }
+}

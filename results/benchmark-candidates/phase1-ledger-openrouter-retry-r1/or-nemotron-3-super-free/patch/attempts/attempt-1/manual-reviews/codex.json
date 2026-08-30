@@ -14,7 +14,8 @@
     "simplicity": 5,
     "readability": 4,
     "no_extra_code": 6,
-    "reliability": 10
+    "reliability": 10,
+    "edge_cases": 0
   },
   "average": 5,
   "summary": "The patch improves money validation and duplicate handling but does not repair UTC day grouping or refund attribution.",

@@ -1,0 +1,115 @@
+{
+  "schema_version": 3,
+  "release": "phase1-ledger-remaining-seven-r1",
+  "nominations": [
+    {
+      "id": "patch",
+      "fixture": "fixtures/phase1-ledger",
+      "prompt": "fixtures/phase1-ledger/PROMPT.md",
+      "test_command": [
+        "npm",
+        "test",
+        "--prefix",
+        "fixtures/phase1-ledger"
+      ],
+      "allowed_changes": [
+        "fixtures/phase1-ledger/src/reconcile.js"
+      ],
+      "frozen_inputs": {
+        "fixture_tree": {
+          "algorithm": "sha256-tree-v1",
+          "sha256": "06ad193feec22c6a5d93747726cd2237b764d2a1f05d17182bef9f5683bb55d4",
+          "files": 5
+        },
+        "prompt_sha256": "e99d613647b1d741d3f746ccfbbd0b723d106e46c42ab1fd6df398ad2d5e9d58"
+      },
+      "objective_evaluator": {
+        "id": "phase2-bug-fix-v1",
+        "sha256": "f3bf35b4af253b4b83bfa8351f078c9e198d89cc63fba4e3d086b1fe56739b99",
+        "source_sha256": "52e1fef85a80bdc158f0ab9bd03107ebb8782754a0341da3844b03a374f54782"
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "id": "or-grok-code-free",
+      "label": "Grok Code",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "openrouter",
+      "model": "openrouter/x-ai/grok-code-fast-1:free",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "or-trinity-large-preview-free",
+      "label": "Trinity Large Preview Free",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "openrouter",
+      "model": "openrouter/arcee-ai/trinity-large-preview:free",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "or-ring-2-6-1t-free",
+      "label": "Ring 2.6 1T Free",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "openrouter",
+      "model": "openrouter/inclusionai/ring-2.6-1t:free",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "or-ling-3-0-tiny-free",
+      "label": "Ling 3.0 Tiny Free",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "openrouter",
+      "model": "openrouter/inclusionai/ling-3.0-tiny:free",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "or-ling-2-6-flash-free",
+      "label": "Ling 2.6 Flash Free",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "openrouter",
+      "model": "openrouter/inclusionai/ling-2.6-flash:free",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "or-mimo-v2-flash-free",
+      "label": "MiMo V2 Flash Free",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "openrouter",
+      "model": "openrouter/xiaomi/mimo-v2-flash:free",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "or-mimo-v2-omni-free",
+      "label": "MiMo V2 Omni Free",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "openrouter",
+      "model": "openrouter/xiaomi/mimo-v2-omni:free",
+      "reasoning_variant": "provider_default"
+    }
+  ],
+  "judges": [],
+  "criteria": [
+    "functional_correctness",
+    "reliability_edge_cases",
+    "maintainability_clarity",
+    "scope_discipline"
+  ],
+  "retry_policy": {
+    "canonical_attempt": 1,
+    "allow_retries": false
+  },
+  "judge_prompt": {
+    "version": 3,
+    "template_hash": "3b0265ce6a626409d7d01a8c28f1d2a8541056ed8634241a7dc13ac2acf97ce2"
+  },
+  "config_sha256": "4ce27ea71838a866e7165f7184103dbd460d1fa5f07919aed2528f2191053aef",
+  "spec_hash": "f0953063da3158976f1e550ea8ff5003337dfa896deb1033f8dd6e255931b414"
+}

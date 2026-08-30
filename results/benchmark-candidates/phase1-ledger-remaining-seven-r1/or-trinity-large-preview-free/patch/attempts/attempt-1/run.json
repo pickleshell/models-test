@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "release": "phase1-ledger-remaining-seven-r1",
+  "nomination": "patch",
+  "run_id": "phase1-ledger-remaining-seven-r1:or-trinity-large-preview-free:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "or-trinity-large-preview-free",
+    "label": "Trinity Large Preview Free",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "provider": "openrouter",
+    "model": "openrouter/arcee-ai/trinity-large-preview:free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T23:35:17.203Z",
+  "completed_at": "2026-08-30T23:35:17.203Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-30T23:35:15.641Z",
+    "completed_at": "2026-08-30T23:35:17.202Z",
+    "duration_ms": 1561
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-candidates/phase1-ledger-remaining-seven-r1/or-trinity-large-preview-free/patch/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "04d037b3c56a7a1bb5b2b9631659250f73fe9d4a0ca80068a72e2f45488a3e2d"
+  }
+}

@@ -14,7 +14,8 @@
     "simplicity": 3,
     "readability": 2,
     "no_extra_code": 10,
-    "reliability": 10
+    "reliability": 10,
+    "edge_cases": 0
   },
   "average": 5,
   "summary": "The patch only makes duplicate IDs idempotent. Money validation, UTC grouping, and refund attribution remain unfixed.",

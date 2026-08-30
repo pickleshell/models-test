@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "release": "phase1-ledger-remaining-seven-r1",
+  "nomination": "patch",
+  "run_id": "phase1-ledger-remaining-seven-r1:or-ling-2-6-flash-free:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "or-ling-2-6-flash-free",
+    "label": "Ling 2.6 Flash Free",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "provider": "openrouter",
+    "model": "openrouter/inclusionai/ling-2.6-flash:free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T23:35:22.611Z",
+  "completed_at": "2026-08-30T23:35:22.611Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-30T23:35:21.025Z",
+    "completed_at": "2026-08-30T23:35:22.610Z",
+    "duration_ms": 1585
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-candidates/phase1-ledger-remaining-seven-r1/or-ling-2-6-flash-free/patch/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "70d610544aa0dea38155128a0cf24e8fd2ebf218c7f9614285abe78afcd63e85"
+  }
+}
