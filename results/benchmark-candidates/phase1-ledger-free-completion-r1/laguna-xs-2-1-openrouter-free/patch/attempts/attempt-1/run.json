@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "release": "phase1-ledger-free-completion-r1",
+  "nomination": "patch",
+  "run_id": "phase1-ledger-free-completion-r1:laguna-xs-2-1-openrouter-free:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "laguna-xs-2-1-openrouter-free",
+    "label": "Laguna XS 2.1 Free",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "provider": "openrouter",
+    "model": "openrouter/poolside/laguna-xs-2.1:free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T12:58:51.480Z",
+  "completed_at": "2026-08-30T13:10:44.800Z",
+  "duration_ms": 713320,
+  "benchmark_metrics": {
+    "duration_ms": 713320,
+    "model_duration_ms": 712378,
+    "public_tests_duration_ms": 588,
+    "cost_usd": 0,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T12:58:51.480Z",
+    "completed_at": "2026-08-30T13:10:43.858Z",
+    "duration_ms": 712378,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0,
+      "steps": 17,
+      "tokens": {
+        "input": 37309,
+        "output": 1016,
+        "reasoning": 2512,
+        "cache_read": 178416,
+        "cache_write": 0,
+        "total": 219253
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T13:10:44.212Z",
+    "completed_at": "2026-08-30T13:10:44.800Z",
+    "duration_ms": 588
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase1-ledger/src/reconcile.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-candidates/phase1-ledger-free-completion-r1/laguna-xs-2-1-openrouter-free/patch/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "1116323ab0e76dcb46d90cc528fb2c694b7fae5efd0e27f12a586daf4f3438aa"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "4ca1305bbedf8d366a0dfdc155fc5c2f73da1276accfaae444d1daa23309be05"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "a4bda57555eaa361d89c0f0bbbaf9215ac4fd08cc6115be22fc2ee3056e5e78c"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "407566d48e6d5e1dfc505dc3a2c8e04d9d860ffde2bbf0f6bf377eedaa3c3a92"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "benchmark": "phase1-ledger-free-completion-r1",
+  "evaluator": "scripts/evaluate-phase1.mjs",
+  "evaluations": [
+    { "candidate": "inkling-small-openrouter-free", "public_status": 0, "hidden_passed": 4, "hidden_failed": 0, "forbidden_changes": 0, "passed": true },
+    { "candidate": "dots-3-note-openrouter-free", "public_status": 0, "hidden_passed": 4, "hidden_failed": 0, "forbidden_changes": 0, "passed": true },
+    { "candidate": "laguna-xs-2-1-openrouter-free", "public_status": 0, "hidden_passed": 2, "hidden_failed": 2, "forbidden_changes": 0, "passed": false },
+    { "candidate": "nemotron-3-nano-omni-openrouter-free", "public_status": null, "hidden_passed": null, "hidden_failed": null, "forbidden_changes": null, "passed": null },
+    { "candidate": "lfm-2-5-2-6b-openrouter-free", "public_status": 1, "hidden_passed": 2, "hidden_failed": 2, "forbidden_changes": 0, "passed": false }
+  ]
+}

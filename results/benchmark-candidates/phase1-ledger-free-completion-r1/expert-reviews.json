@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "benchmark": "phase1-ledger-free-completion-r1",
+  "reviewer": { "name": "ChatGPT", "model": "gpt-5.6-sol" },
+  "criteria": ["simplicity", "readability", "no_extra_code", "reliability", "edge_cases"],
+  "reviews": [
+    {
+      "candidate": "inkling-small-openrouter-free",
+      "status": "reviewed",
+      "scores": { "simplicity": 7, "readability": 7, "no_extra_code": 6, "reliability": 8, "edge_cases": 9 },
+      "overall": 7.4,
+      "evidence": { "public_pass": true, "hidden_passed": 4, "hidden_failed": 0, "diff_lines": 82 },
+      "explanation": "The complete patch passes all recorded checks and uses exact BigInt cent construction, but its validation is longer than necessary and strips currency punctuation before validating its placement."
+    },
+    {
+      "candidate": "dots-3-note-openrouter-free",
+      "status": "reviewed",
+      "scores": { "simplicity": 8, "readability": 8, "no_extra_code": 8, "reliability": 7, "edge_cases": 8 },
+      "overall": 7.8,
+      "evidence": { "public_pass": true, "hidden_passed": 4, "hidden_failed": 0, "diff_lines": 57 },
+      "explanation": "The patch is direct and passes every recorded case, though removing dollar signs and commas before grammar validation permits malformed currency formatting."
+    },
+    {
+      "candidate": "laguna-xs-2-1-openrouter-free",
+      "status": "reviewed",
+      "scores": { "simplicity": 10, "readability": 10, "no_extra_code": 10, "reliability": 2, "edge_cases": 2 },
+      "overall": 6.8,
+      "evidence": { "public_pass": true, "hidden_passed": 2, "hidden_failed": 2, "diff_lines": 12 },
+      "explanation": "The one-line duplicate guard is exceptionally economical, but the recorded hidden checks show that money validation and refund attribution remain unfixed."
+    },
+    {
+      "candidate": "nemotron-3-nano-omni-openrouter-free",
+      "status": "no_patch",
+      "scores": null,
+      "overall": null,
+      "evidence": { "outcome": "unavailable", "reason": "process_failure", "diff_lines": 0 },
+      "explanation": "The route was unavailable during preflight, so no code-quality score is assigned."
+    },
+    {
+      "candidate": "lfm-2-5-2-6b-openrouter-free",
+      "status": "reviewed",
+      "scores": { "simplicity": 8, "readability": 7, "no_extra_code": 7, "reliability": 1, "edge_cases": 1 },
+      "overall": 4.8,
+      "evidence": { "public_pass": false, "hidden_passed": 2, "hidden_failed": 2, "diff_lines": 36 },
+      "explanation": "The patch adds the duplicate guard but its decimal-place check is ineffective, public tests fail, and refund attribution remains incorrect."
+    }
+  ]
+}

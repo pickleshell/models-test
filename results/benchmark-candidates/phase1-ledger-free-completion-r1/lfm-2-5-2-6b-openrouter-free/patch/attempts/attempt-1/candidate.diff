@@ -1,0 +1,36 @@
+diff --git a/fixtures/phase1-ledger/src/reconcile.js b/fixtures/phase1-ledger/src/reconcile.js
+index 496d11c..2e93506 100644
+--- a/fixtures/phase1-ledger/src/reconcile.js
++++ b/fixtures/phase1-ledger/src/reconcile.js
+@@ -5,7 +5,15 @@ export function parseAmountToCents(amount) {
+ 
+   const normalized = String(amount).trim().replace(/[$,]/g, '');
+   const value = Number(normalized);
+-  if (!Number.isFinite(value)) {
++
++  // Reject negative values
++  if (value < 0) {
++    throw new Error(`invalid amount: ${amount}`);
++  }
++
++  // Reject values with more than two decimal places
++  const decimalPlaces = parseInt(normalized.split('.')[1])?.length || 0;
++  if (decimalPlaces > 2) {
+     throw new Error(`invalid amount: ${amount}`);
+   }
+ 
+@@ -52,6 +60,7 @@ export function reconcileLedger(entries) {
+ 
+       if (seenIds.has(entry.id)) {
+         metrics.duplicateCount += 1;
++        continue;
+       }
+       seenIds.add(entry.id);
+ 
+@@ -86,4 +95,4 @@ export function reconcileLedger(entries) {
+     ),
+     metrics
+   };
+-}
++}
+\ No newline at end of file

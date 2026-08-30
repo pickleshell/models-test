@@ -1,0 +1,711 @@
+{
+  "schema_version": 2,
+  "release": "phase1-ledger-free-completion-r1",
+  "criteria": [
+    "functional_correctness",
+    "reliability_edge_cases",
+    "maintainability_clarity",
+    "scope_discipline"
+  ],
+  "candidates": [
+    {
+      "candidate": {
+        "id": "inkling-small-openrouter-free",
+        "label": "Inkling Small Free",
+        "agent": "opencode",
+        "runtime": "opencode",
+        "provider": "openrouter",
+        "model": "openrouter/thinkingmachines/inkling-small:free",
+        "subscription": "free",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "patch",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T12:55:33.645Z",
+            "completed_at": "2026-08-30T12:56:16.462Z",
+            "duration_ms": 42817,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 19,
+              "tokens": {
+                "input": 7179,
+                "output": 1880,
+                "reasoning": 6179,
+                "cache_read": 275328,
+                "cache_write": 0,
+                "total": 290236
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T12:56:16.820Z",
+            "completed_at": "2026-08-30T12:56:17.408Z",
+            "duration_ms": 588
+          },
+          "agent_duration_ms": 42817,
+          "test_duration_ms": 588,
+          "duration_ms": 43763,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-bug-fix-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "patch",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T12:55:33.645Z",
+            "completed_at": "2026-08-30T12:56:16.462Z",
+            "duration_ms": 42817,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 19,
+              "tokens": {
+                "input": 7179,
+                "output": 1880,
+                "reasoning": 6179,
+                "cache_read": 275328,
+                "cache_write": 0,
+                "total": 290236
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T12:56:16.820Z",
+            "completed_at": "2026-08-30T12:56:17.408Z",
+            "duration_ms": 588
+          },
+          "agent_duration_ms": 42817,
+          "test_duration_ms": 588,
+          "duration_ms": 43763,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-bug-fix-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 42817,
+      "test_duration_ms": 588,
+      "duration_ms": 43763,
+      "cost_usd": 0,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 0,
+      "objective_total": 1,
+      "objective_pass_rate": 0,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "dots-3-note-openrouter-free",
+        "label": "Dots 3 Note Preview Free",
+        "agent": "opencode",
+        "runtime": "opencode",
+        "provider": "openrouter",
+        "model": "openrouter/dots-studio/dots-3-note-preview:free",
+        "subscription": "free",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "patch",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T12:56:17.742Z",
+            "completed_at": "2026-08-30T12:58:50.196Z",
+            "duration_ms": 152454,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 16,
+              "tokens": {
+                "input": 25327,
+                "output": 4151,
+                "reasoning": 12006,
+                "cache_read": 160768,
+                "cache_write": 0,
+                "total": 202252
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T12:58:50.548Z",
+            "completed_at": "2026-08-30T12:58:51.138Z",
+            "duration_ms": 590
+          },
+          "agent_duration_ms": 152454,
+          "test_duration_ms": 590,
+          "duration_ms": 153396,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-bug-fix-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "patch",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T12:56:17.742Z",
+            "completed_at": "2026-08-30T12:58:50.196Z",
+            "duration_ms": 152454,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 16,
+              "tokens": {
+                "input": 25327,
+                "output": 4151,
+                "reasoning": 12006,
+                "cache_read": 160768,
+                "cache_write": 0,
+                "total": 202252
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T12:58:50.548Z",
+            "completed_at": "2026-08-30T12:58:51.138Z",
+            "duration_ms": 590
+          },
+          "agent_duration_ms": 152454,
+          "test_duration_ms": 590,
+          "duration_ms": 153396,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-bug-fix-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 152454,
+      "test_duration_ms": 590,
+      "duration_ms": 153396,
+      "cost_usd": 0,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 0,
+      "objective_total": 1,
+      "objective_pass_rate": 0,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "laguna-xs-2-1-openrouter-free",
+        "label": "Laguna XS 2.1 Free",
+        "agent": "opencode",
+        "runtime": "opencode",
+        "provider": "openrouter",
+        "model": "openrouter/poolside/laguna-xs-2.1:free",
+        "subscription": "free",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "patch",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T12:58:51.480Z",
+            "completed_at": "2026-08-30T13:10:43.858Z",
+            "duration_ms": 712378,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 17,
+              "tokens": {
+                "input": 37309,
+                "output": 1016,
+                "reasoning": 2512,
+                "cache_read": 178416,
+                "cache_write": 0,
+                "total": 219253
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T13:10:44.212Z",
+            "completed_at": "2026-08-30T13:10:44.800Z",
+            "duration_ms": 588
+          },
+          "agent_duration_ms": 712378,
+          "test_duration_ms": 588,
+          "duration_ms": 713320,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-bug-fix-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "patch",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T12:58:51.480Z",
+            "completed_at": "2026-08-30T13:10:43.858Z",
+            "duration_ms": 712378,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 17,
+              "tokens": {
+                "input": 37309,
+                "output": 1016,
+                "reasoning": 2512,
+                "cache_read": 178416,
+                "cache_write": 0,
+                "total": 219253
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T13:10:44.212Z",
+            "completed_at": "2026-08-30T13:10:44.800Z",
+            "duration_ms": 588
+          },
+          "agent_duration_ms": 712378,
+          "test_duration_ms": 588,
+          "duration_ms": 713320,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-bug-fix-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 712378,
+      "test_duration_ms": 588,
+      "duration_ms": 713320,
+      "cost_usd": 0,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 0,
+      "objective_total": 1,
+      "objective_pass_rate": 0,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "lfm-2-5-2-6b-openrouter-free",
+        "label": "LFM 2.5 2.6B Free",
+        "agent": "opencode",
+        "runtime": "opencode",
+        "provider": "openrouter",
+        "model": "openrouter/liquid/lfm-2.5-2.6b:free",
+        "subscription": "free",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "patch",
+          "attempt": 1,
+          "outcome": "tests_failed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T13:10:45.137Z",
+            "completed_at": "2026-08-30T13:13:09.518Z",
+            "duration_ms": 144381,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 18,
+              "tokens": {
+                "input": 20752,
+                "output": 2961,
+                "reasoning": 7820,
+                "cache_read": 283200,
+                "cache_write": 0,
+                "total": 314733
+              }
+            }
+          },
+          "tests": {
+            "status": 1,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T13:13:09.871Z",
+            "completed_at": "2026-08-30T13:13:10.466Z",
+            "duration_ms": 595
+          },
+          "agent_duration_ms": 144381,
+          "test_duration_ms": 595,
+          "duration_ms": 145329,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-bug-fix-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "patch",
+          "attempt": 1,
+          "outcome": "tests_failed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T13:10:45.137Z",
+            "completed_at": "2026-08-30T13:13:09.518Z",
+            "duration_ms": 144381,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 18,
+              "tokens": {
+                "input": 20752,
+                "output": 2961,
+                "reasoning": 7820,
+                "cache_read": 283200,
+                "cache_write": 0,
+                "total": 314733
+              }
+            }
+          },
+          "tests": {
+            "status": 1,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T13:13:09.871Z",
+            "completed_at": "2026-08-30T13:13:10.466Z",
+            "duration_ms": 595
+          },
+          "agent_duration_ms": 144381,
+          "test_duration_ms": 595,
+          "duration_ms": 145329,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-bug-fix-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "outcome": "tests_failed",
+      "agent_duration_ms": 144381,
+      "test_duration_ms": 595,
+      "duration_ms": 145329,
+      "cost_usd": 0,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 0,
+      "objective_total": 1,
+      "objective_pass_rate": 0,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "nemotron-3-nano-omni-openrouter-free",
+        "label": "Nemotron 3 Nano Omni Reasoning Free",
+        "agent": "opencode",
+        "runtime": "opencode",
+        "provider": "openrouter",
+        "model": "openrouter/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+        "subscription": "free",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "patch",
+          "attempt": 1,
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "cost_usd": null,
+          "cost_source": null,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": null
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "patch",
+          "attempt": 1,
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "cost_usd": null,
+          "cost_source": null,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": null
+        }
+      ],
+      "outcome": "unavailable",
+      "agent_duration_ms": null,
+      "test_duration_ms": null,
+      "duration_ms": 0,
+      "cost_usd": null,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": null,
+      "objective_total": null,
+      "objective_pass_rate": null,
+      "overall_average": null
+    }
+  ],
+  "generated_at": "2026-08-30T13:16:46.296Z",
+  "reproducibility": {
+    "runner_version": "unknown",
+    "repository_commit": "cc11621c4eb5e79e4cb6de79c97236bfc28b1a29",
+    "config_hash": "a761ed87f07dd92c0a15a22b17a14ca5c393f740f4ab95199a0c5abd8225cc90",
+    "schema_registry": {
+      "schema_registry_version": 1,
+      "artifact_schemas": {
+        "run": 1,
+        "judge": 1,
+        "preflight": 1,
+        "aggregate": 2,
+        "test_result": 1,
+        "candidate_diff": 1,
+        "objective_evaluator": 1
+      }
+    },
+    "effective_limits": {
+      "timeout_ms": 900000,
+      "max_output_bytes": 2097152
+    },
+    "judge_prompt": {
+      "version": 3,
+      "template_hash": "3b0265ce6a626409d7d01a8c28f1d2a8541056ed8634241a7dc13ac2acf97ce2"
+    },
+    "outcomes": {
+      "inkling-small-openrouter-free": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "patch",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "patch",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "dots-3-note-openrouter-free": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "patch",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "patch",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "laguna-xs-2-1-openrouter-free": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "patch",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "patch",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "lfm-2-5-2-6b-openrouter-free": {
+        "overall": "tests_failed",
+        "nominations": [
+          {
+            "nomination": "patch",
+            "attempt": 1,
+            "outcome": "tests_failed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "patch",
+            "outcome": "tests_failed"
+          }
+        ]
+      },
+      "nemotron-3-nano-omni-openrouter-free": {
+        "overall": "unavailable",
+        "nominations": [
+          {
+            "nomination": "patch",
+            "attempt": 1,
+            "outcome": "unavailable"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "patch",
+            "outcome": "unavailable"
+          }
+        ]
+      }
+    }
+  }
+}

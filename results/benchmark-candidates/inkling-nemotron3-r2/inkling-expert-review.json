@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "benchmark": "inkling-nemotron3-r2",
+  "reviewer": { "name": "ChatGPT", "model": "gpt-5.6-sol" },
+  "candidate": "inkling-openrouter",
+  "status": "reviewed",
+  "scores": { "simplicity": 7, "readability": 8, "no_extra_code": 7, "reliability": 7, "edge_cases": 8 },
+  "overall": 7.4,
+  "evidence": { "public_pass": true, "hidden_passed": 4, "hidden_failed": 0, "diff_lines": 76 },
+  "explanation": "The patch passes all recorded checks and clearly repairs all four defect classes, but its money parser is longer than necessary and validates punctuation only after stripping it."
+}

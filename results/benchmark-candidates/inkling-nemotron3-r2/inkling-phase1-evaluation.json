@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "benchmark": "inkling-nemotron3-r2",
+  "evaluator": "scripts/evaluate-phase1.mjs",
+  "candidate": "inkling-openrouter",
+  "public_status": 0,
+  "hidden_passed": 4,
+  "hidden_failed": 0,
+  "forbidden_changes": 0,
+  "passed": true
+}

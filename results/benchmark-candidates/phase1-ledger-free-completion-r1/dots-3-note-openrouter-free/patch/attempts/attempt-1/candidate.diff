@@ -1,0 +1,57 @@
+diff --git a/fixtures/phase1-ledger/src/reconcile.js b/fixtures/phase1-ledger/src/reconcile.js
+index 496d11c..305d75f 100644
+--- a/fixtures/phase1-ledger/src/reconcile.js
++++ b/fixtures/phase1-ledger/src/reconcile.js
+@@ -4,12 +4,20 @@ export function parseAmountToCents(amount) {
+   }
+ 
+   const normalized = String(amount).trim().replace(/[$,]/g, '');
+-  const value = Number(normalized);
+-  if (!Number.isFinite(value)) {
++  if (!/^-?\d+(\.\d+)?$/.test(normalized)) {
+     throw new Error(`invalid amount: ${amount}`);
+   }
++  if (normalized.startsWith('-')) {
++    throw new Error(`invalid amount: ${amount}`);
++  }
++
++  const [intPart, decPart = ''] = normalized.split('.');
++  if (decPart.length > 2) {
++    throw new Error(`invalid amount: ${amount}`);
++  }
++  const cents = parseInt(intPart, 10) * 100 + parseInt(decPart.padEnd(2, '0'), 10);
+ 
+-  return Math.round(value * 100);
++  return cents;
+ }
+ 
+ function dayKey(createdAt) {
+@@ -17,7 +25,10 @@ function dayKey(createdAt) {
+   if (Number.isNaN(date.getTime())) {
+     throw new Error(`invalid createdAt: ${createdAt}`);
+   }
+-  return date.toLocaleDateString('en-CA');
++  const year = date.getUTCFullYear();
++  const month = String(date.getUTCMonth() + 1).padStart(2, '0');
++  const day = String(date.getUTCDate()).padStart(2, '0');
++  return `${year}-${month}-${day}`;
+ }
+ 
+ function addTotal(totals, accountId, currency, day, cents) {
+@@ -52,6 +63,7 @@ export function reconcileLedger(entries) {
+ 
+       if (seenIds.has(entry.id)) {
+         metrics.duplicateCount += 1;
++        continue;
+       }
+       seenIds.add(entry.id);
+ 
+@@ -68,7 +80,7 @@ export function reconcileLedger(entries) {
+           metrics.orphanRefundCount += 1;
+           continue;
+         }
+-        addTotal(totals, entry.accountId, entry.currency, day, -cents);
++        addTotal(totals, original.accountId, original.currency, day, -cents);
+         metrics.processed += 1;
+       } else {
+         throw new Error(`unsupported type: ${entry.type}`);

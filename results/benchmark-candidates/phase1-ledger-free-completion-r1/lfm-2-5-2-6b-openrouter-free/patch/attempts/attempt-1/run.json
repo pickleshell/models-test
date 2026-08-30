@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "release": "phase1-ledger-free-completion-r1",
+  "nomination": "patch",
+  "run_id": "phase1-ledger-free-completion-r1:lfm-2-5-2-6b-openrouter-free:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "lfm-2-5-2-6b-openrouter-free",
+    "label": "LFM 2.5 2.6B Free",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "provider": "openrouter",
+    "model": "openrouter/liquid/lfm-2.5-2.6b:free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T13:10:45.137Z",
+  "completed_at": "2026-08-30T13:13:10.466Z",
+  "duration_ms": 145329,
+  "benchmark_metrics": {
+    "duration_ms": 145329,
+    "model_duration_ms": 144381,
+    "public_tests_duration_ms": 595,
+    "cost_usd": 0,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T13:10:45.137Z",
+    "completed_at": "2026-08-30T13:13:09.518Z",
+    "duration_ms": 144381,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0,
+      "steps": 18,
+      "tokens": {
+        "input": 20752,
+        "output": 2961,
+        "reasoning": 7820,
+        "cache_read": 283200,
+        "cache_write": 0,
+        "total": 314733
+      }
+    }
+  },
+  "tests": {
+    "status": 1,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T13:13:09.871Z",
+    "completed_at": "2026-08-30T13:13:10.466Z",
+    "duration_ms": 595
+  },
+  "outcome": "tests_failed",
+  "changed_files": [
+    "fixtures/phase1-ledger/src/reconcile.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-candidates/phase1-ledger-free-completion-r1/lfm-2-5-2-6b-openrouter-free/patch/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "b60be8945c2edc315a01bc85c41f59205d4890fd3ebb9df15a6085992f8b8900"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "edf64365730129ce3a60c6a2eeeb40f4ce20b6d9e1f5f24fa7087a443817491a"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "e2a111f740b331c422d69856fa2a6b219b539db8212f2db382076c7a32669581"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "bf93c5603c0df14a00dfabb14a25684c5643423f563864322c7ff06c717c7350"
+  }
+}
