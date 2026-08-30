@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r37",
+  "nomination": "tests-edge-cases",
+  "run_id": "phase2-v2-r37:71-or-inkling-free:tests-edge-cases",
+  "attempt": 1,
+  "candidate": {
+    "id": "71-or-inkling-free",
+    "label": "Inkling Free (OpenRouter)",
+    "agent": "opencode",
+    "model": "openrouter/thinkingmachines/inkling:free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T08:43:22.399Z",
+  "completed_at": "2026-08-30T08:43:40.162Z",
+  "duration_ms": 17763,
+  "benchmark_metrics": {
+    "duration_ms": 17763,
+    "model_duration_ms": 16820,
+    "public_tests_duration_ms": 588,
+    "cost_usd": 0,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T08:43:22.399Z",
+    "completed_at": "2026-08-30T08:43:39.219Z",
+    "duration_ms": 16820,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0,
+      "steps": 10,
+      "tokens": {
+        "input": 47664,
+        "output": 1244,
+        "reasoning": 71,
+        "cache_read": 30208,
+        "cache_write": 0,
+        "total": 79187
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T08:43:39.574Z",
+    "completed_at": "2026-08-30T08:43:40.162Z",
+    "duration_ms": 588
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/tests-edge-cases/src/range.js",
+    "fixtures/phase2-v2/tests-edge-cases/test/range.test.mjs"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r37/71-or-inkling-free/tests-edge-cases/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "69a91c9bcd02a93acdbad38916cc2431a34c81951196cfaeccf53e88155af101"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "523781c8b79bae1adb7382db7301e7b1ecf1af22dc19f4490c79bbbf09c38099"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "04edd505a2ba9946b6a53bb07d47249c6aaf4fe45265dadf844c9332d7275b38"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "834c47a9d6660cba298e4520e6460166bf3a0515ae5cbf389bd4f2ee6f4d8159"
+  }
+}

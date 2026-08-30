@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r37",
+  "nomination": "feature-implementation",
+  "run_id": "phase2-v2-r37:74-or-nemotron-3-super-free:feature-implementation",
+  "attempt": 1,
+  "candidate": {
+    "id": "74-or-nemotron-3-super-free",
+    "label": "Nemotron 3 Super 120B Free (OpenRouter)",
+    "agent": "opencode",
+    "model": "openrouter/nvidia/nemotron-3-super-120b-a12b:free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T00:22:11.434Z",
+  "completed_at": "2026-08-30T00:23:08.767Z",
+  "duration_ms": 57333,
+  "benchmark_metrics": {
+    "duration_ms": 57333,
+    "model_duration_ms": 56401,
+    "public_tests_duration_ms": 580,
+    "cost_usd": 0,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T00:22:11.434Z",
+    "completed_at": "2026-08-30T00:23:07.835Z",
+    "duration_ms": 56401,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0,
+      "steps": 15,
+      "tokens": {
+        "input": 118303,
+        "output": 939,
+        "reasoning": 2894,
+        "cache_read": 29568,
+        "cache_write": 0,
+        "total": 151704
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T00:23:08.187Z",
+    "completed_at": "2026-08-30T00:23:08.767Z",
+    "duration_ms": 580
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/feature-implementation/src/featureFlags.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r37/74-or-nemotron-3-super-free/feature-implementation/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "b642de7609719caa9c05a95c483ad34315c140c9074a1529bfdbbe367ee78b57"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "501b25531f2aac6b41abae7379bafda85513169caba133d6d5082134224f9f35"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "5c893bd9a89338a97ef29badd86f03aba92ff84cfe7036ec8c707b1d9a8c3ec3"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "c2fc054b4e3b9893e495cc8469a4e047224c45df23096498f16736f02b5aba33"
+  }
+}

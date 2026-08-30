@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "78-or-minimax-m2-7-free",
+    "label": "MiniMax M2.7 Free (OpenRouter)",
+    "agent": "opencode",
+    "model": "openrouter/minimax/minimax-m2.7:free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-29T23:30:34.499Z",
+  "completed_at": "2026-08-29T23:30:39.327Z",
+  "duration_ms": 4828,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0,
+    "steps": 1,
+    "tokens": {
+      "input": 379,
+      "output": 2,
+      "reasoning": 50,
+      "cache_read": 6715,
+      "cache_write": 0,
+      "total": 7146
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "85452e3d39ddad72696e1e8bc3e58e191363a96580981b423569ea2ba8a3413b"
+  }
+}

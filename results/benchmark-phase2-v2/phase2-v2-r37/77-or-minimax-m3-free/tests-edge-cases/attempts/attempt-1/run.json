@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r37",
+  "nomination": "tests-edge-cases",
+  "run_id": "phase2-v2-r37:77-or-minimax-m3-free:tests-edge-cases",
+  "attempt": 1,
+  "candidate": {
+    "id": "77-or-minimax-m3-free",
+    "label": "MiniMax M3 Free (OpenRouter)",
+    "agent": "opencode",
+    "model": "openrouter/minimax/minimax-m3:free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T09:03:46.823Z",
+  "completed_at": "2026-08-30T09:06:26.653Z",
+  "duration_ms": 159830,
+  "benchmark_metrics": {
+    "duration_ms": 159830,
+    "model_duration_ms": 158862,
+    "public_tests_duration_ms": 600,
+    "cost_usd": 0,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T09:03:46.823Z",
+    "completed_at": "2026-08-30T09:06:25.685Z",
+    "duration_ms": 158862,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0,
+      "steps": 29,
+      "tokens": {
+        "input": 15691,
+        "output": 4869,
+        "reasoning": 0,
+        "cache_read": 305269,
+        "cache_write": 0,
+        "total": 325829
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T09:06:26.053Z",
+    "completed_at": "2026-08-30T09:06:26.653Z",
+    "duration_ms": 600
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/tests-edge-cases/src/range.js",
+    "fixtures/phase2-v2/tests-edge-cases/test/range.test.mjs"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r37/77-or-minimax-m3-free/tests-edge-cases/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "95ddaeb87e46ae3d829aa06ec7323b85471c54078c0bf2c9aa781f37b8a1ee0d"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "f1f02beacafb0e53b7edae2bc7cef79b2fabfd255adb78e9bc13225899932e96"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "79e7674e025e05876d0387f9cf9617660b7f3b017bc5654b609bdb0584b7d6b3"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "2f1428c7022ecaa0113154dbc5a7a97561bfe9087e736bd5556dbf7d351c0d5a"
+  }
+}

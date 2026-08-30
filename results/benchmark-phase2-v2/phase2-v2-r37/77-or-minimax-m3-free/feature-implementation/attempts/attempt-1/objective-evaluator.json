@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "evaluator": {
+    "id": "phase2-v2-feature-implementation-v1",
+    "sha256": "9ed728fa9fcdff190f075d26b0b05d6ce0ddb32d28022c2a312e82efae5c999b"
+  },
+  "status": "completed",
+  "passed": true,
+  "started_at": "2026-08-30T00:26:53.518Z",
+  "completed_at": "2026-08-30T00:26:53.685Z",
+  "duration_ms": 167,
+  "execution": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T00:26:53.518Z",
+    "completed_at": "2026-08-30T00:26:53.685Z",
+    "duration_ms": 167
+  },
+  "artifact_hash": {
+    "path": "objective-evaluator.json",
+    "sha256": "22e6332f0e2e531266af12646522a5fa7d12110f59c2e2d88d4dd2e5ad8d17a6"
+  }
+}

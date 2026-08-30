@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "or-dots-3-note-free",
+    "label": "Dots 3 Note Preview Free",
+    "agent": "opencode",
+    "model": "openrouter/dots-studio/dots-3-note-preview:free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-29T23:16:23.632Z",
+  "completed_at": "2026-08-29T23:16:27.030Z",
+  "duration_ms": 3398,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0,
+    "steps": 1,
+    "tokens": {
+      "input": 6965,
+      "output": 1,
+      "reasoning": 20,
+      "cache_read": 0,
+      "cache_write": 0,
+      "total": 6986
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "fc392b5057cfb158bedafffa8047b83b799919232341d85774cb07b27fea1995"
+  }
+}

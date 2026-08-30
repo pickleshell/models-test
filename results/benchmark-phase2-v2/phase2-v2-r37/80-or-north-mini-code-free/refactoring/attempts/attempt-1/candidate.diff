@@ -1,0 +1,39 @@
+diff --git a/fixtures/phase2-v2/refactoring/src/events.js b/fixtures/phase2-v2/refactoring/src/events.js
+index 0d2f78a..f0d016b 100644
+--- a/fixtures/phase2-v2/refactoring/src/events.js
++++ b/fixtures/phase2-v2/refactoring/src/events.js
+@@ -1,17 +1,24 @@
+-export function countByType(events, type) {
+-  if (!Array.isArray(events) || typeof type !== 'string' || type.length === 0) return 0;
+-  let count = 0;
++function matchingValidEvents(events, type) {
++  const valid = [];
+   for (const event of events) {
+-    if (event && typeof event === 'object' && typeof event.type === 'string' && event.type.length > 0 && Number.isFinite(event.timestamp) && event.type === type) count += 1;
++    if (event && typeof event === 'object' && typeof event.type === 'string' && event.type.length > 0 && Number.isFinite(event.timestamp) && event.type === type) {
++      valid.push(event);
++    }
+   }
+-  return count;
++  return valid;
++}
++
++export function countByType(events, type) {
++  if (!Array.isArray(events) || typeof type !== 'string' || type.length === 0) return 0;
++  const validEvents = matchingValidEvents(events, type);
++  return validEvents.length;
+ }
+ 
+ export function latestByType(events, type) {
+   if (!Array.isArray(events) || typeof type !== 'string' || type.length === 0) return null;
+-  let latest = null;
+-  for (const event of events) {
+-    if (event && typeof event === 'object' && typeof event.type === 'string' && event.type.length > 0 && Number.isFinite(event.timestamp) && event.type === type && (!latest || event.timestamp > latest.timestamp)) latest = event;
+-  }
+-  return latest;
++  const validEvents = matchingValidEvents(events, type);
++  if (validEvents.length === 0) return null;
++  return validEvents.reduce((latest, event) =>
++    !latest || event.timestamp > latest.timestamp ? event : latest
++  );
+ }

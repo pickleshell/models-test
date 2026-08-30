@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r37",
+  "nomination": "patch",
+  "run_id": "phase2-v2-r37:81-or-nemotron-3-nano-omni-free:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "81-or-nemotron-3-nano-omni-free",
+    "label": "Nemotron 3 Nano Omni Reasoning Free (OpenRouter)",
+    "agent": "opencode",
+    "model": "openrouter/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-29T23:32:54.716Z",
+  "completed_at": "2026-08-29T23:34:26.450Z",
+  "duration_ms": 91734,
+  "benchmark_metrics": {
+    "duration_ms": 91734,
+    "model_duration_ms": 90781,
+    "public_tests_duration_ms": 583,
+    "cost_usd": 0,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-29T23:32:54.716Z",
+    "completed_at": "2026-08-29T23:34:25.497Z",
+    "duration_ms": 90781,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0,
+      "steps": 9,
+      "tokens": {
+        "input": 14368,
+        "output": 1268,
+        "reasoning": 6733,
+        "cache_read": 106624,
+        "cache_write": 0,
+        "total": 128993
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-29T23:34:25.867Z",
+    "completed_at": "2026-08-29T23:34:26.450Z",
+    "duration_ms": 583
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/patch-retry-policy/src/retryPolicy.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r37/81-or-nemotron-3-nano-omni-free/patch/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "9bb7bb52cc0faaf0363a1ee7c19e97bd10bac1fdea96efc6cba7481c0f4f3ea4"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "49e4218e2a2c1425802d30af48576ca377ba674b249b7ff56d8ec5b242c97383"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "4e4c6d3d3b49e2effbeb105a825853a5bfcad0e6cb01f7511e91c22189793168"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "11b6a39150111d0e0c790b6154d55619fd296b6fb4092e96bdc6fa9af16927a0"
+  }
+}

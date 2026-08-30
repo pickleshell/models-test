@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r37",
+  "nomination": "feature-implementation",
+  "run_id": "phase2-v2-r37:83-or-lfm-2-5-2-6b-free:feature-implementation",
+  "attempt": 1,
+  "candidate": {
+    "id": "83-or-lfm-2-5-2-6b-free",
+    "label": "LFM 2.5 2.6B Free (OpenRouter)",
+    "agent": "opencode",
+    "model": "openrouter/liquid/lfm-2.5-2.6b:free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T00:32:04.465Z",
+  "completed_at": "2026-08-30T00:47:10.527Z",
+  "duration_ms": 906062,
+  "benchmark_metrics": {
+    "duration_ms": 906062,
+    "model_duration_ms": 905129,
+    "public_tests_duration_ms": 581,
+    "cost_usd": 0,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": null,
+    "signal": "SIGTERM",
+    "timed_out": true,
+    "output_limited": false,
+    "started_at": "2026-08-30T00:32:04.465Z",
+    "completed_at": "2026-08-30T00:47:09.594Z",
+    "duration_ms": 905129,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0,
+      "steps": 24,
+      "tokens": {
+        "input": 20403,
+        "output": 3683,
+        "reasoning": 7951,
+        "cache_read": 282352,
+        "cache_write": 0,
+        "total": 314389
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T00:47:09.946Z",
+    "completed_at": "2026-08-30T00:47:10.527Z",
+    "duration_ms": 581
+  },
+  "outcome": "agent_failure",
+  "changed_files": [
+    "fixtures/phase2-v2/feature-implementation/src/featureFlags.js",
+    "fixtures/phase2-v2/feature-implementation/test/resolveFeature.test.js"
+  ],
+  "forbidden_changes": [
+    "fixtures/phase2-v2/feature-implementation/test/resolveFeature.test.js"
+  ],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r37/83-or-lfm-2-5-2-6b-free/feature-implementation/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "f26a0071c46a3764e6f89e53ad77235270cc5dd99ea4a36bdeb94fe50f103644"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "1ca8f4d96a8cbf82c79ee026fdb60c3a4540675c75f5dde74bd74187a217e3f9"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "acbf201d7f64334a665386ca6a3faae629c00610fca0439806b6eb370b53c326"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "f985911b107b6b890163d9f2720bf3703395fc9b47ff6c5b690887df58363e38"
+  }
+}

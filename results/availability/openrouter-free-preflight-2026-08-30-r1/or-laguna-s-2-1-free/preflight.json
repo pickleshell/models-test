@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "or-laguna-s-2-1-free",
+    "label": "Laguna S 2.1 Free",
+    "agent": "opencode",
+    "model": "openrouter/poolside/laguna-s-2.1:free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-29T23:16:27.259Z",
+  "completed_at": "2026-08-29T23:16:31.370Z",
+  "duration_ms": 4111,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0,
+    "steps": 1,
+    "tokens": {
+      "input": 5349,
+      "output": 2,
+      "reasoning": 0,
+      "cache_read": 1856,
+      "cache_write": 0,
+      "total": 7207
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "04382fa2c875b6c1afc621ec57450b76d2f0a21e0c08482bd20900171a4ccaeb"
+  }
+}

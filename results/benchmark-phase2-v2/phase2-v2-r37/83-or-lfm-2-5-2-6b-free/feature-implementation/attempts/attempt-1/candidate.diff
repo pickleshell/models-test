@@ -1,0 +1,77 @@
+diff --git a/fixtures/phase2-v2/feature-implementation/src/featureFlags.js b/fixtures/phase2-v2/feature-implementation/src/featureFlags.js
+index 489ea67..0698b90 100644
+--- a/fixtures/phase2-v2/feature-implementation/src/featureFlags.js
++++ b/fixtures/phase2-v2/feature-implementation/src/featureFlags.js
+@@ -1,5 +1,45 @@
+ export function resolveFeature(config, context) {
++  // Validate inputs - neither arg may be null/undefined
+   if (!config || !context || typeof context !== 'object') return false;
+-  const flag = config[context.feature];
+-  return typeof flag === 'boolean' ? flag : Boolean(flag && flag.enabled);
++
++  // 1. Exact boolean value at context.overrides[context.feature] wins
++  if (context.overrides && context.overrides[context.feature] !== undefined) {
++    const overrideValue = context.overrides[context.feature];
++    if (typeof overrideValue === 'boolean') {
++      return overrideValue;
++    }
++  }
++
++  // 2. Boolean flag at config[context.feature] wins
++  const configFlag = config[context.feature];
++  if (typeof configFlag === 'boolean') {
++    return configFlag;
++  }
++
++  // 3. Percentage rollout: compute hash from userId and compare with rollout
++  if (configFlag && typeof configFlag === 'object' && 'rollout' in configFlag) {
++    const rollout = configFlag.rollout;
++    if (rollout >= 0 && rollout <= 100) {
++      // Initialize unsigned 32-bit hash to zero
++      let hash = 0;
++      // Compute hash from userId (Unicode code points)
++      for (const char of context.userId) {
++        hash = (hash * 31 + char.codePointAt()) >>> 0;
++      }
++      // Determine bucket index
++      const bucket = hash % 100;
++      // Enable if bucket is less than rollout
++      return bucket < rollout;
++    }
++  }
++
++  // 4. Object flag with enabled property - must be exactly true (no rollout)
++  if (configFlag && typeof configFlag === 'object' && 'enabled' in configFlag) {
++    if (configFlag.enabled === true) {
++      return true;
++    }
++  }
++
++  // Default: disabled
++  return false;
+ }
+diff --git a/fixtures/phase2-v2/feature-implementation/test/resolveFeature.test.js b/fixtures/phase2-v2/feature-implementation/test/resolveFeature.test.js
+new file mode 100644
+index 0000000..f72a7cb
+--- /dev/null
++++ b/fixtures/phase2-v2/feature-implementation/test/resolveFeature.test.js
+@@ -0,0 +1,19 @@
++import { describe, it, expect } from 'node:test';
++import assert from 'node:assert/strict';
++import { resolveFeature } from '../src/featureFlags.js';
++
++describe('resolveFeature', () => {
++  it('supports booleans and exact boolean overrides', () => {
++    expect(resolveFeature({ chat: true, beta: false }, { feature: 'chat' })).toBe(true);
++    expect(resolveFeature({ chat: true }, { feature: 'chat', overrides: { chat: false } })).toBe(false);
++  });
++
++  it('handles zero and one hundred percent rollouts', () => {
++    expect(resolveFeature({ search: { enabled: true, rollout: 0 } }, { feature: 'search', userId: 'u1' })).toBe(false);
++    expect(resolveFeature({ search: { enabled: true, rollout: 100 } }, { feature: 'search', userId: 'u1' })).toBe(true);
++  });
++
++  it('uses the documented intermediate rollout vector', () => {
++    expect(resolveFeature({ search: { enabled: true, rollout: 50 } }, { feature: 'search', userId: 'a' })).toBe(false);
++  });
++});

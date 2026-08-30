@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "80-or-north-mini-code-free",
+    "label": "North Mini Code Free (OpenRouter)",
+    "agent": "opencode",
+    "model": "openrouter/cohere/north-mini-code:free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-29T23:32:31.774Z",
+  "completed_at": "2026-08-29T23:32:34.912Z",
+  "duration_ms": 3138,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0,
+    "steps": 1,
+    "tokens": {
+      "input": 6333,
+      "output": 0,
+      "reasoning": 90,
+      "cache_read": 0,
+      "cache_write": 0,
+      "total": 6414
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "894cc6ecafbebf35cab7f8b714f38727480ce0e98263dba827c1bf6eb3383cb8"
+  }
+}

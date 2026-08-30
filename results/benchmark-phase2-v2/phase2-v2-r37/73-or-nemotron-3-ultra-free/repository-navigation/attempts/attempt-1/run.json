@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r37",
+  "nomination": "repository-navigation",
+  "run_id": "phase2-v2-r37:73-or-nemotron-3-ultra-free:repository-navigation",
+  "attempt": 1,
+  "candidate": {
+    "id": "73-or-nemotron-3-ultra-free",
+    "label": "Nemotron 3 Ultra 550B Free (OpenRouter)",
+    "agent": "opencode",
+    "model": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T00:58:02.729Z",
+  "completed_at": "2026-08-30T01:02:13.820Z",
+  "duration_ms": 251091,
+  "benchmark_metrics": {
+    "duration_ms": 251091,
+    "model_duration_ms": 250159,
+    "public_tests_duration_ms": 573,
+    "cost_usd": 0,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 1,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T00:58:02.729Z",
+    "completed_at": "2026-08-30T01:02:12.888Z",
+    "duration_ms": 250159,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0,
+      "steps": 8,
+      "tokens": {
+        "input": 60949,
+        "output": 466,
+        "reasoning": 679,
+        "cache_read": 8640,
+        "cache_write": 0,
+        "total": 70734
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T01:02:13.247Z",
+    "completed_at": "2026-08-30T01:02:13.820Z",
+    "duration_ms": 573
+  },
+  "outcome": "agent_failure",
+  "changed_files": [
+    "fixtures/phase2-v2/repository-navigation/src/labels/statusLabel.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r37/73-or-nemotron-3-ultra-free/repository-navigation/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "58e3e4373eb79b166bd45d194b72e6cffddb572b36bc86c7379a437ba3ca7bbf"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "1f88edf3b86ed5a91e1e66e39812d14da3a474dbee8caca0c745f9f1895ae259"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "03f4e86183064961f581b06ad83d2f427e2abfb76a66026c927aca8b47d6eeb6"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "1a9a50363e8f10576f134cef6b99431d08713a0f040f72969fdb80b16adf6cab"
+  }
+}

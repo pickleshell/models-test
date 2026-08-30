@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r37",
+  "nomination": "repository-navigation",
+  "run_id": "phase2-v2-r37:82-or-nemotron-3-5-lightning-free:repository-navigation",
+  "attempt": 1,
+  "candidate": {
+    "id": "82-or-nemotron-3-5-lightning-free",
+    "label": "Nemotron 3.5 Lightning Free (OpenRouter)",
+    "agent": "opencode",
+    "model": "openrouter/nvidia/nemotron-3.5-lightning:free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T08:41:27.385Z",
+  "completed_at": "2026-08-30T08:42:50.319Z",
+  "duration_ms": 82934,
+  "benchmark_metrics": {
+    "duration_ms": 82934,
+    "model_duration_ms": 81991,
+    "public_tests_duration_ms": 583,
+    "cost_usd": 0,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T08:41:27.385Z",
+    "completed_at": "2026-08-30T08:42:49.376Z",
+    "duration_ms": 81991,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0,
+      "steps": 15,
+      "tokens": {
+        "input": 39914,
+        "output": 1771,
+        "reasoning": 1698,
+        "cache_read": 115328,
+        "cache_write": 0,
+        "total": 158711
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T08:42:49.736Z",
+    "completed_at": "2026-08-30T08:42:50.319Z",
+    "duration_ms": 583
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/repository-navigation/src/labels/statusLabel.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r37/82-or-nemotron-3-5-lightning-free/repository-navigation/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "1cc73650e2130072dca0b29b8fa31b7f63c162168ec4c18f819799357bad08b2"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "4247d5516559ab3a7848699c23d28ef6b12358c6b7368c3167a7462fb9c850f8"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "18a320c519028c96dce91db311253fd04c187094ed3ef612f7b5cac27a981f1f"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "9ac2ba61eca3f9e3f72e2858d2e3c3a92b6eb1ca3efb4ac93648ac247aba1b65"
+  }
+}

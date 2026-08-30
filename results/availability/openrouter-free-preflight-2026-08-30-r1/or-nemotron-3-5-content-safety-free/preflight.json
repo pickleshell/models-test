@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "or-nemotron-3-5-content-safety-free",
+    "label": "Nemotron 3.5 Content Safety Free",
+    "agent": "opencode",
+    "model": "openrouter/nvidia/nemotron-3.5-content-safety:free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "unavailable",
+  "reason": "process_failure",
+  "started_at": "2026-08-29T23:20:15.259Z",
+  "completed_at": "2026-08-29T23:20:17.427Z",
+  "duration_ms": 2168,
+  "process_status": 1,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": null,
+    "steps": 0,
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "cache_read": 0,
+      "cache_write": 0,
+      "total": 0
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "56135e4b862111ca768091eaf4a1a90f3e6f4eaefd67103c4af6031ba7fb8653"
+  }
+}

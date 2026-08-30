@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r37",
+  "nomination": "tests-edge-cases",
+  "run_id": "phase2-v2-r37:75-or-dots-3-note-free:tests-edge-cases",
+  "attempt": 1,
+  "candidate": {
+    "id": "75-or-dots-3-note-free",
+    "label": "Dots 3 Note Preview Free (OpenRouter)",
+    "agent": "opencode",
+    "model": "openrouter/dots-studio/dots-3-note-preview:free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T08:48:04.423Z",
+  "completed_at": "2026-08-30T08:50:09.582Z",
+  "duration_ms": 125159,
+  "benchmark_metrics": {
+    "duration_ms": 125159,
+    "model_duration_ms": 124183,
+    "public_tests_duration_ms": 619,
+    "cost_usd": 0,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T08:48:04.423Z",
+    "completed_at": "2026-08-30T08:50:08.606Z",
+    "duration_ms": 124183,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0,
+      "steps": 15,
+      "tokens": {
+        "input": 13690,
+        "output": 3607,
+        "reasoning": 9524,
+        "cache_read": 131072,
+        "cache_write": 0,
+        "total": 157893
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T08:50:08.963Z",
+    "completed_at": "2026-08-30T08:50:09.582Z",
+    "duration_ms": 619
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/tests-edge-cases/src/range.js",
+    "fixtures/phase2-v2/tests-edge-cases/test/range.test.mjs"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r37/75-or-dots-3-note-free/tests-edge-cases/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "2c1719c88e6070e6be1a18f091ddce1499398dcdac34237c32ac2a1d723f0960"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "d7c12497b94a049df2832834ebd1a35ebb983df4e7225e4b77602e924fba42ac"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "18ddd95188a03850d0a18b998bdb2dc982bf1b55df91f93192b3cc603c1505f2"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "d2134fb4e721fcbd018ac28bbbec21323ea84ca79591bd11e4233b503fc5e399"
+  }
+}

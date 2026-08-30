@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r37",
+  "nomination": "repository-navigation",
+  "run_id": "phase2-v2-r37:83-or-lfm-2-5-2-6b-free:repository-navigation",
+  "attempt": 1,
+  "candidate": {
+    "id": "83-or-lfm-2-5-2-6b-free",
+    "label": "LFM 2.5 2.6B Free (OpenRouter)",
+    "agent": "opencode",
+    "model": "openrouter/liquid/lfm-2.5-2.6b:free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T08:42:50.664Z",
+  "completed_at": "2026-08-30T08:43:21.155Z",
+  "duration_ms": 30491,
+  "benchmark_metrics": {
+    "duration_ms": 30491,
+    "model_duration_ms": 29544,
+    "public_tests_duration_ms": 585,
+    "cost_usd": 0,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T08:42:50.664Z",
+    "completed_at": "2026-08-30T08:43:20.208Z",
+    "duration_ms": 29544,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0,
+      "steps": 10,
+      "tokens": {
+        "input": 10044,
+        "output": 1175,
+        "reasoning": 1949,
+        "cache_read": 83440,
+        "cache_write": 0,
+        "total": 96608
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T08:43:20.570Z",
+    "completed_at": "2026-08-30T08:43:21.155Z",
+    "duration_ms": 585
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/repository-navigation/src/labels/statusLabel.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r37/83-or-lfm-2-5-2-6b-free/repository-navigation/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "c2ee8eb05af13593e27353005d2d6d8d573eac2367ff3f393b660f4b08616627"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "0a230d49f4c6cfddefceb96c37a9c3993e95502a66a2f4e6e595a991e7d40cee"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "323222c95c4b3c8f8774fff2d41e512c5623193a21361a07489f1922869748e4"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "ba06f4e0354bbbc2cc0eb9534b8fd307b1d9b437fcb68a350c23c4412f856754"
+  }
+}

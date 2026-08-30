@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r37",
+  "nomination": "feature-implementation",
+  "run_id": "phase2-v2-r37:76-or-laguna-s-2-1-free:feature-implementation",
+  "attempt": 1,
+  "candidate": {
+    "id": "76-or-laguna-s-2-1-free",
+    "label": "Laguna S 2.1 Free (OpenRouter)",
+    "agent": "opencode",
+    "model": "openrouter/poolside/laguna-s-2.1:free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T00:23:37.104Z",
+  "completed_at": "2026-08-30T00:26:17.126Z",
+  "duration_ms": 160022,
+  "benchmark_metrics": {
+    "duration_ms": 160022,
+    "model_duration_ms": 159083,
+    "public_tests_duration_ms": 584,
+    "cost_usd": 0,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T00:23:37.104Z",
+    "completed_at": "2026-08-30T00:26:16.187Z",
+    "duration_ms": 159083,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0,
+      "steps": 9,
+      "tokens": {
+        "input": 64444,
+        "output": 935,
+        "reasoning": 5977,
+        "cache_read": 21472,
+        "cache_write": 0,
+        "total": 92828
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T00:26:16.542Z",
+    "completed_at": "2026-08-30T00:26:17.126Z",
+    "duration_ms": 584
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/feature-implementation/src/featureFlags.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r37/76-or-laguna-s-2-1-free/feature-implementation/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "9ea5b9697eb438a53a6325d084049c3c723fc32315519da3cfae91f1930b7dbc"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "8549a49494138fe9fa00b0a3077544a5bf167cf04627b68e418c7a9f4783b436"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "b89e8c471d678005e08c2d7e665b6f8458bf669d8f8c37e27834c73fc75cb106"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "2e4107eee543d1b553e24e53a172a71d9250b39051cd6a70b5b9de92da6a9fd8"
+  }
+}

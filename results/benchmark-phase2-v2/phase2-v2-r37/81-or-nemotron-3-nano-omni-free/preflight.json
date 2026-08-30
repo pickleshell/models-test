@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "81-or-nemotron-3-nano-omni-free",
+    "label": "Nemotron 3 Nano Omni Reasoning Free (OpenRouter)",
+    "agent": "opencode",
+    "model": "openrouter/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-29T23:32:51.412Z",
+  "completed_at": "2026-08-29T23:32:54.446Z",
+  "duration_ms": 3034,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0,
+    "steps": 1,
+    "tokens": {
+      "input": 1103,
+      "output": 1,
+      "reasoning": 45,
+      "cache_read": 6528,
+      "cache_write": 0,
+      "total": 7677
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "6c163e24459ab524ce36d20d81006fa99635e91aaaf85678358916ed59f7c839"
+  }
+}

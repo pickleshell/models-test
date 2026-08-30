@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r37",
+  "nomination": "bug-fix-ledger",
+  "run_id": "phase2-v2-r37:73-or-nemotron-3-ultra-free:bug-fix-ledger",
+  "attempt": 1,
+  "candidate": {
+    "id": "73-or-nemotron-3-ultra-free",
+    "label": "Nemotron 3 Ultra 550B Free (OpenRouter)",
+    "agent": "opencode",
+    "model": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-29T23:37:46.637Z",
+  "completed_at": "2026-08-29T23:38:17.236Z",
+  "duration_ms": 30599,
+  "benchmark_metrics": {
+    "duration_ms": 30599,
+    "model_duration_ms": 29635,
+    "public_tests_duration_ms": 598,
+    "cost_usd": 0,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-29T23:37:46.637Z",
+    "completed_at": "2026-08-29T23:38:16.272Z",
+    "duration_ms": 29635,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0,
+      "steps": 8,
+      "tokens": {
+        "input": 70593,
+        "output": 1399,
+        "reasoning": 846,
+        "cache_read": 12960,
+        "cache_write": 0,
+        "total": 85798
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-29T23:38:16.638Z",
+    "completed_at": "2026-08-29T23:38:17.236Z",
+    "duration_ms": 598
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/bug-fix-ledger/src/reconcile.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r37/73-or-nemotron-3-ultra-free/bug-fix-ledger/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "c8e5a812c7f95bafdb39e4cc7a63796f4c18f45e934bac88611c18356b597c6d"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "d90bf7b6ac91df5c431cde437040118ec4376943493b88bcae9769e750137c9c"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "296167a160a2c4f369125a6ce8737d75ab7a4dfac2629a7a26839d6caec648b4"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "38b5b6696c72110aab0c3bd41e4e74c68d11bd88166c8e732a613a3bc4979bda"
+  }
+}

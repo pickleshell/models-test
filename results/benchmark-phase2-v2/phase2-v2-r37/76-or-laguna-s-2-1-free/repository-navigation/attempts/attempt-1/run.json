@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r37",
+  "nomination": "repository-navigation",
+  "run_id": "phase2-v2-r37:76-or-laguna-s-2-1-free:repository-navigation",
+  "attempt": 1,
+  "candidate": {
+    "id": "76-or-laguna-s-2-1-free",
+    "label": "Laguna S 2.1 Free (OpenRouter)",
+    "agent": "opencode",
+    "model": "openrouter/poolside/laguna-s-2.1:free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T01:05:49.504Z",
+  "completed_at": "2026-08-30T01:08:30.081Z",
+  "duration_ms": 160577,
+  "benchmark_metrics": {
+    "duration_ms": 160577,
+    "model_duration_ms": 159639,
+    "public_tests_duration_ms": 578,
+    "cost_usd": 0,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T01:05:49.504Z",
+    "completed_at": "2026-08-30T01:08:29.143Z",
+    "duration_ms": 159639,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0,
+      "steps": 14,
+      "tokens": {
+        "input": 101327,
+        "output": 1580,
+        "reasoning": 3564,
+        "cache_read": 51424,
+        "cache_write": 0,
+        "total": 157895
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T01:08:29.503Z",
+    "completed_at": "2026-08-30T01:08:30.081Z",
+    "duration_ms": 578
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/repository-navigation/src/labels/statusLabel.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r37/76-or-laguna-s-2-1-free/repository-navigation/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "d8ed7213df2ef5099a5f69ac7b8731e2fc73414bad83c36f696d73e6da0955e3"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "4f0b8e395239ef8103648713377d63cfd2ac5d23f4e11694f2e263509bf8b847"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "8fd08a2407afb078cbf4dab9c9dd5828e6a243d7cf28cdcb26dbb35536d78770"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "33d2b811625df17486646cf917381411e471e2cc981bf59b7a9c5489128208f6"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r37",
+  "nomination": "feature-implementation",
+  "run_id": "phase2-v2-r37:80-or-north-mini-code-free:feature-implementation",
+  "attempt": 1,
+  "candidate": {
+    "id": "80-or-north-mini-code-free",
+    "label": "North Mini Code Free (OpenRouter)",
+    "agent": "opencode",
+    "model": "openrouter/cohere/north-mini-code:free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T00:29:24.553Z",
+  "completed_at": "2026-08-30T00:29:43.264Z",
+  "duration_ms": 18711,
+  "benchmark_metrics": {
+    "duration_ms": 18711,
+    "model_duration_ms": 17789,
+    "public_tests_duration_ms": 577,
+    "cost_usd": 0,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T00:29:24.553Z",
+    "completed_at": "2026-08-30T00:29:42.342Z",
+    "duration_ms": 17789,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0,
+      "steps": 6,
+      "tokens": {
+        "input": 43152,
+        "output": 461,
+        "reasoning": 1101,
+        "cache_read": 0,
+        "cache_write": 0,
+        "total": 44708
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T00:29:42.687Z",
+    "completed_at": "2026-08-30T00:29:43.264Z",
+    "duration_ms": 577
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/feature-implementation/src/featureFlags.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r37/80-or-north-mini-code-free/feature-implementation/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "ecaacd62fe1c881171f556d649a816c9beb1d547b2375936bd58a45d2bf3bf19"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "71d33117d4f84cb24dcfa56d765999b2981d2e46dd6619c284a04b445b5e77f2"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "ea6cd22b6f74c2494508038a72b7f402de7363ce6082ea815fba20eb6fecfc75"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "d4f23682ff966f34689c5df401f353115c874754086aa636ef53ac758179331a"
+  }
+}

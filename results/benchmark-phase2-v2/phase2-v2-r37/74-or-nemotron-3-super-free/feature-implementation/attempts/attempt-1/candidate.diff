@@ -1,0 +1,77 @@
+diff --git a/fixtures/phase2-v2/feature-implementation/src/featureFlags.js b/fixtures/phase2-v2/feature-implementation/src/featureFlags.js
+index 489ea67..4bda44a 100644
+--- a/fixtures/phase2-v2/feature-implementation/src/featureFlags.js
++++ b/fixtures/phase2-v2/feature-implementation/src/featureFlags.js
+@@ -1,5 +1,69 @@
+ export function resolveFeature(config, context) {
+-  if (!config || !context || typeof context !== 'object') return false;
+-  const flag = config[context.feature];
+-  return typeof flag === 'boolean' ? flag : Boolean(flag && flag.enabled);
++  // Validate inputs
++  if (!config || !context || typeof context !== 'object' || !context.feature || typeof context.feature !== 'string' || context.feature === '') {
++    return false;
++  }
++
++  const feature = context.feature;
++
++  // Check for exact boolean override
++  if (context.overrides && typeof context.overrides === 'object' && context.overrides !== null) {
++    const overrideValue = context.overrides[feature];
++    if (typeof overrideValue === 'boolean') {
++      return overrideValue;
++    }
++  }
++
++  // Get flag from config
++  const flag = config[feature];
++
++  // If flag is a boolean, return it
++  if (typeof flag === 'boolean') {
++    return flag;
++  }
++
++  // If flag is an object, check its properties
++  if (flag && typeof flag === 'object' && flag !== null) {
++    // Must have enabled exactly true
++    if (flag.enabled !== true) {
++      return false;
++    }
++
++    // If rollout is omitted, enabled
++    if (flag.rollout === undefined) {
++      return true;
++    }
++
++    // Validate rollout: must be integer between 0 and 100 inclusive
++    const rollout = flag.rollout;
++    if (!Number.isInteger(rollout) || rollout < 0 || rollout > 100) {
++      return false;
++    }
++
++    // Handle 0 and 100
++    if (rollout === 0) {
++      return false;
++    }
++    if (rollout === 100) {
++      return true;
++    }
++
++    // For rollout 1-99, need userId to be non-empty string
++    const userId = context.userId;
++    if (typeof userId !== 'string' || userId === '') {
++      return false;
++    }
++
++    // Compute hash over Unicode code points
++    let hash = 0;
++    for (const ch of userId) {
++      const codePoint = ch.codePointAt(0);
++      hash = (hash * 31 + codePoint) >>> 0;
++    }
++    const bucket = hash % 100;
++    return bucket < rollout;
++  }
++
++  // Anything else is disabled
++  return false;
+ }

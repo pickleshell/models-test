@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r37",
+  "nomination": "feature-implementation",
+  "run_id": "phase2-v2-r37:75-or-dots-3-note-free:feature-implementation",
+  "attempt": 1,
+  "candidate": {
+    "id": "75-or-dots-3-note-free",
+    "label": "Dots 3 Note Preview Free (OpenRouter)",
+    "agent": "opencode",
+    "model": "openrouter/dots-studio/dots-3-note-preview:free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T00:23:09.102Z",
+  "completed_at": "2026-08-30T00:23:36.765Z",
+  "duration_ms": 27663,
+  "benchmark_metrics": {
+    "duration_ms": 27663,
+    "model_duration_ms": 26723,
+    "public_tests_duration_ms": 585,
+    "cost_usd": 0,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T00:23:09.102Z",
+    "completed_at": "2026-08-30T00:23:35.825Z",
+    "duration_ms": 26723,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0,
+      "steps": 6,
+      "tokens": {
+        "input": 14678,
+        "output": 945,
+        "reasoning": 1311,
+        "cache_read": 32768,
+        "cache_write": 0,
+        "total": 49702
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T00:23:36.180Z",
+    "completed_at": "2026-08-30T00:23:36.765Z",
+    "duration_ms": 585
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/feature-implementation/src/featureFlags.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r37/75-or-dots-3-note-free/feature-implementation/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "843161da186d10ef0ab78e154b6dfa2cb67c10bd24675f5ae7952392c6e204dd"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "bb5e470a1cb34d202d79e57f09ef5ba629fc296f6499d4d659bcb683ecef17c1"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "c722e13cac9219ba5aacd5c3541cdea5d11a93edba0176bba55e95ec18fb6ad8"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "a6620f4d841905014e243088731f1fbac37a5042764f5233b79e95a03d86b67d"
+  }
+}

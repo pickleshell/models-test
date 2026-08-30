@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r37",
+  "nomination": "bug-fix-ledger",
+  "run_id": "phase2-v2-r37:80-or-north-mini-code-free:bug-fix-ledger",
+  "attempt": 1,
+  "candidate": {
+    "id": "80-or-north-mini-code-free",
+    "label": "North Mini Code Free (OpenRouter)",
+    "agent": "opencode",
+    "model": "openrouter/cohere/north-mini-code:free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-29T23:57:11.326Z",
+  "completed_at": "2026-08-29T23:57:47.352Z",
+  "duration_ms": 36026,
+  "benchmark_metrics": {
+    "duration_ms": 36026,
+    "model_duration_ms": 35086,
+    "public_tests_duration_ms": 586,
+    "cost_usd": 0,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-29T23:57:11.326Z",
+    "completed_at": "2026-08-29T23:57:46.412Z",
+    "duration_ms": 35086,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0,
+      "steps": 14,
+      "tokens": {
+        "input": 114343,
+        "output": 823,
+        "reasoning": 4111,
+        "cache_read": 0,
+        "cache_write": 0,
+        "total": 119211
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-29T23:57:46.766Z",
+    "completed_at": "2026-08-29T23:57:47.352Z",
+    "duration_ms": 586
+  },
+  "outcome": "forbidden_changes",
+  "changed_files": [
+    "fixtures/phase2-v2/bug-fix-ledger/reproduce.js",
+    "fixtures/phase2-v2/bug-fix-ledger/reproduce.mjs",
+    "fixtures/phase2-v2/bug-fix-ledger/src/reconcile.js"
+  ],
+  "forbidden_changes": [
+    "fixtures/phase2-v2/bug-fix-ledger/reproduce.js",
+    "fixtures/phase2-v2/bug-fix-ledger/reproduce.mjs"
+  ],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r37/80-or-north-mini-code-free/bug-fix-ledger/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "897291deac1562fa3460b7144a9569e31abf683e2c104770ef7dee055a953e8e"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "14835057442c739f354011dbf17d8475df30c7371aecc8f6c0a2e6dbc6544c72"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "9ca91c79ab915f6455c8cf2333bee381226726cf5a7bdae7f86aac7f05299606"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "71883aa7dd821b065aac9432df9986fddddcb8f3bc04682ef5fb8c6621810144"
+  }
+}

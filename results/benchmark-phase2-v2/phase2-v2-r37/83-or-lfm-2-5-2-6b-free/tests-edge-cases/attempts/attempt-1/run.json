@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r37",
+  "nomination": "tests-edge-cases",
+  "run_id": "phase2-v2-r37:83-or-lfm-2-5-2-6b-free:tests-edge-cases",
+  "attempt": 1,
+  "candidate": {
+    "id": "83-or-lfm-2-5-2-6b-free",
+    "label": "LFM 2.5 2.6B Free (OpenRouter)",
+    "agent": "opencode",
+    "model": "openrouter/liquid/lfm-2.5-2.6b:free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T09:27:47.648Z",
+  "completed_at": "2026-08-30T09:33:07.333Z",
+  "duration_ms": 319685,
+  "benchmark_metrics": {
+    "duration_ms": 319685,
+    "model_duration_ms": 318734,
+    "public_tests_duration_ms": 591,
+    "cost_usd": 0,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T09:27:47.648Z",
+    "completed_at": "2026-08-30T09:33:06.382Z",
+    "duration_ms": 318734,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0,
+      "steps": 18,
+      "tokens": {
+        "input": 14128,
+        "output": 2554,
+        "reasoning": 2834,
+        "cache_read": 171936,
+        "cache_write": 0,
+        "total": 191452
+      }
+    }
+  },
+  "tests": {
+    "status": 1,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T09:33:06.742Z",
+    "completed_at": "2026-08-30T09:33:07.333Z",
+    "duration_ms": 591
+  },
+  "outcome": "tests_failed",
+  "changed_files": [
+    "fixtures/phase2-v2/tests-edge-cases/src/range.js",
+    "fixtures/phase2-v2/tests-edge-cases/test/range.test.mjs"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r37/83-or-lfm-2-5-2-6b-free/tests-edge-cases/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "482e691f683cb15800f939280eb78d018fe88d913bcebe60472cd42a13fdb0bc"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "4bfe6502437d076906f30ebf731f6c421644c5786cbe880b4842a4cf7921e366"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "76aac3aface35562a06993aa2e4ddd88219691fd35e87109f4bbfe7f4fa282c2"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "b8e13a768c8d464fffef7ca90b48bdab750dccb7b8ebb4d6255ef6060091e0cd"
+  }
+}

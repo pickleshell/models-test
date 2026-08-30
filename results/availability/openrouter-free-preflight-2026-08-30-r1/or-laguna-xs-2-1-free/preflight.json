@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "or-laguna-xs-2-1-free",
+    "label": "Laguna XS 2.1 Free",
+    "agent": "opencode",
+    "model": "openrouter/poolside/laguna-xs-2.1:free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-29T23:19:55.977Z",
+  "completed_at": "2026-08-29T23:20:05.182Z",
+  "duration_ms": 9205,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0,
+    "steps": 1,
+    "tokens": {
+      "input": 5381,
+      "output": 2,
+      "reasoning": 0,
+      "cache_read": 1824,
+      "cache_write": 0,
+      "total": 7207
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "19b02bfce2878c3048e59ec9e04d35591252c4f820196212b4e27767958fd1f8"
+  }
+}

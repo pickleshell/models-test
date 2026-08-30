@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "83-or-lfm-2-5-2-6b-free",
+    "label": "LFM 2.5 2.6B Free (OpenRouter)",
+    "agent": "opencode",
+    "model": "openrouter/liquid/lfm-2.5-2.6b:free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-29T23:35:08.924Z",
+  "completed_at": "2026-08-29T23:35:12.217Z",
+  "duration_ms": 3293,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0,
+    "steps": 1,
+    "tokens": {
+      "input": 8,
+      "output": 3,
+      "reasoning": 42,
+      "cache_read": 7232,
+      "cache_write": 0,
+      "total": 7285
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "224c5fe7882ac8cbefb78c61bd1b217457e58756cad77ffb2458ed0362f889fe"
+  }
+}

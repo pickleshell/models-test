@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r37",
+  "nomination": "tests-edge-cases",
+  "run_id": "phase2-v2-r37:82-or-nemotron-3-5-lightning-free:tests-edge-cases",
+  "attempt": 1,
+  "candidate": {
+    "id": "82-or-nemotron-3-5-lightning-free",
+    "label": "Nemotron 3.5 Lightning Free (OpenRouter)",
+    "agent": "opencode",
+    "model": "openrouter/nvidia/nemotron-3.5-lightning:free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T09:23:30.885Z",
+  "completed_at": "2026-08-30T09:27:47.310Z",
+  "duration_ms": 256425,
+  "benchmark_metrics": {
+    "duration_ms": 256425,
+    "model_duration_ms": 255479,
+    "public_tests_duration_ms": 591,
+    "cost_usd": 0,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T09:23:30.885Z",
+    "completed_at": "2026-08-30T09:27:46.364Z",
+    "duration_ms": 255479,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0,
+      "steps": 8,
+      "tokens": {
+        "input": 28668,
+        "output": 2489,
+        "reasoning": 2904,
+        "cache_read": 69632,
+        "cache_write": 0,
+        "total": 103693
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T09:27:46.719Z",
+    "completed_at": "2026-08-30T09:27:47.310Z",
+    "duration_ms": 591
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/tests-edge-cases/src/range.js",
+    "fixtures/phase2-v2/tests-edge-cases/test/range.test.mjs"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r37/82-or-nemotron-3-5-lightning-free/tests-edge-cases/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "59b2f0384931fd0f725ecc475bbb9d7641e685b904546739029539761b0be6db"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "c61fca28d4c4b7d7ef0941ee2437069b1537d9937308703fd926ea3743491e4f"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "29a16e8e1a0da176611476d0472832d66c5b8b9f9b4f1aa07efc606724e654df"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "f7d634e077ca05a2a3b3a8eb2a3a12f70a9986118d9e9ae094ecd1db951b0a92"
+  }
+}

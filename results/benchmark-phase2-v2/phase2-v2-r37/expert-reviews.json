@@ -1,0 +1,1527 @@
+{
+  "schema_version": 1,
+  "benchmark": "phase2-v2-r37",
+  "reviewer": {
+    "name": "ChatGPT",
+    "model": "gpt-5.6-sol"
+  },
+  "policy": "Deterministic public/objective evidence constrains correctness and reliability; focused diff size and clarity constrain maintainability; forbidden changes constrain scope. Scores are integer dimensions and Overall is their arithmetic mean.",
+  "criteria": [
+    "functional_correctness",
+    "reliability_edge_cases",
+    "maintainability_clarity",
+    "scope_discipline"
+  ],
+  "reviews": [
+    {
+      "candidate": "71-or-inkling-free",
+      "model": "openrouter/thinkingmachines/inkling:free",
+      "nomination": "patch",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 8,
+        "reliability_edge_cases": 6,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 8.25,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": false,
+        "outcome": "completed",
+        "changed_lines": 11
+      },
+      "explanation": "The objective evaluator fails despite passing public tests. The patch changes 11 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "71-or-inkling-free",
+      "model": "openrouter/thinkingmachines/inkling:free",
+      "nomination": "bug-fix-ledger",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 7,
+        "reliability_edge_cases": 5,
+        "maintainability_clarity": 7,
+        "scope_discipline": 10
+      },
+      "overall": 7.25,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": false,
+        "outcome": "completed",
+        "changed_lines": 101
+      },
+      "explanation": "The objective evaluator fails despite passing public tests. The patch changes 101 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "71-or-inkling-free",
+      "model": "openrouter/thinkingmachines/inkling:free",
+      "nomination": "feature-implementation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": true,
+        "outcome": "completed",
+        "changed_lines": 36
+      },
+      "explanation": "Public and objective evaluators pass. The patch changes 36 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "71-or-inkling-free",
+      "model": "openrouter/thinkingmachines/inkling:free",
+      "nomination": "refactoring",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": true,
+        "outcome": "completed",
+        "changed_lines": 22
+      },
+      "explanation": "Public and objective evaluators pass. The patch changes 22 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "71-or-inkling-free",
+      "model": "openrouter/thinkingmachines/inkling:free",
+      "nomination": "repository-navigation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": true,
+        "outcome": "completed",
+        "changed_lines": 7
+      },
+      "explanation": "Public and objective evaluators pass. The patch changes 7 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "71-or-inkling-free",
+      "model": "openrouter/thinkingmachines/inkling:free",
+      "nomination": "tests-edge-cases",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": true,
+        "outcome": "completed",
+        "changed_lines": 56
+      },
+      "explanation": "Public and objective evaluators pass. The patch changes 56 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "72-or-inkling-small-free",
+      "model": "openrouter/thinkingmachines/inkling-small:free",
+      "nomination": "patch",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 8,
+        "reliability_edge_cases": 6,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 8.25,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": false,
+        "outcome": "completed",
+        "changed_lines": 14
+      },
+      "explanation": "The objective evaluator fails despite passing public tests. The patch changes 14 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "72-or-inkling-small-free",
+      "model": "openrouter/thinkingmachines/inkling-small:free",
+      "nomination": "bug-fix-ledger",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 7,
+        "scope_discipline": 10
+      },
+      "overall": 9.25,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": true,
+        "outcome": "completed",
+        "changed_lines": 96
+      },
+      "explanation": "Public and objective evaluators pass. The patch changes 96 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "72-or-inkling-small-free",
+      "model": "openrouter/thinkingmachines/inkling-small:free",
+      "nomination": "feature-implementation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": true,
+        "outcome": "completed",
+        "changed_lines": 42
+      },
+      "explanation": "Public and objective evaluators pass. The patch changes 42 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "72-or-inkling-small-free",
+      "model": "openrouter/thinkingmachines/inkling-small:free",
+      "nomination": "refactoring",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": true,
+        "outcome": "completed",
+        "changed_lines": 22
+      },
+      "explanation": "Public and objective evaluators pass. The patch changes 22 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "72-or-inkling-small-free",
+      "model": "openrouter/thinkingmachines/inkling-small:free",
+      "nomination": "repository-navigation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": true,
+        "outcome": "completed",
+        "changed_lines": 3
+      },
+      "explanation": "Public and objective evaluators pass. The patch changes 3 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "72-or-inkling-small-free",
+      "model": "openrouter/thinkingmachines/inkling-small:free",
+      "nomination": "tests-edge-cases",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": true,
+        "outcome": "completed",
+        "changed_lines": 56
+      },
+      "explanation": "Public and objective evaluators pass. The patch changes 56 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "73-or-nemotron-3-ultra-free",
+      "model": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "nomination": "patch",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 8,
+        "reliability_edge_cases": 6,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 8.25,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": false,
+        "outcome": "completed",
+        "changed_lines": 14
+      },
+      "explanation": "The objective evaluator fails despite passing public tests. The patch changes 14 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "73-or-nemotron-3-ultra-free",
+      "model": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "nomination": "bug-fix-ledger",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": true,
+        "outcome": "completed",
+        "changed_lines": 15
+      },
+      "explanation": "Public and objective evaluators pass. The patch changes 15 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "73-or-nemotron-3-ultra-free",
+      "model": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "nomination": "feature-implementation",
+      "status": "no_patch",
+      "scores": null,
+      "overall": null,
+      "evidence": {
+        "public_pass": false,
+        "objective_pass": false,
+        "outcome": "agent_failure",
+        "changed_lines": 0
+      },
+      "explanation": "No candidate patch was produced, so code quality is not scored."
+    },
+    {
+      "candidate": "73-or-nemotron-3-ultra-free",
+      "model": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "nomination": "refactoring",
+      "status": "no_patch",
+      "scores": null,
+      "overall": null,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": false,
+        "outcome": "agent_failure",
+        "changed_lines": 0
+      },
+      "explanation": "No candidate patch was produced, so code quality is not scored."
+    },
+    {
+      "candidate": "73-or-nemotron-3-ultra-free",
+      "model": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "nomination": "repository-navigation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": true,
+        "outcome": "agent_failure",
+        "changed_lines": 5
+      },
+      "explanation": "Public and objective evaluators pass. The patch changes 5 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "73-or-nemotron-3-ultra-free",
+      "model": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "nomination": "tests-edge-cases",
+      "status": "no_patch",
+      "scores": null,
+      "overall": null,
+      "evidence": {
+        "public_pass": false,
+        "objective_pass": false,
+        "outcome": "agent_failure",
+        "changed_lines": 0
+      },
+      "explanation": "No candidate patch was produced, so code quality is not scored."
+    },
+    {
+      "candidate": "74-or-nemotron-3-super-free",
+      "model": "openrouter/nvidia/nemotron-3-super-120b-a12b:free",
+      "nomination": "patch",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 8,
+        "reliability_edge_cases": 6,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 8.25,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": false,
+        "outcome": "completed",
+        "changed_lines": 16
+      },
+      "explanation": "The objective evaluator fails despite passing public tests. The patch changes 16 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "74-or-nemotron-3-super-free",
+      "model": "openrouter/nvidia/nemotron-3-super-120b-a12b:free",
+      "nomination": "bug-fix-ledger",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 7,
+        "reliability_edge_cases": 5,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 7.75,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": false,
+        "outcome": "completed",
+        "changed_lines": 7
+      },
+      "explanation": "The objective evaluator fails despite passing public tests. The patch changes 7 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "74-or-nemotron-3-super-free",
+      "model": "openrouter/nvidia/nemotron-3-super-120b-a12b:free",
+      "nomination": "feature-implementation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 7,
+        "scope_discipline": 10
+      },
+      "overall": 9.25,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": true,
+        "outcome": "completed",
+        "changed_lines": 70
+      },
+      "explanation": "Public and objective evaluators pass. The patch changes 70 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "74-or-nemotron-3-super-free",
+      "model": "openrouter/nvidia/nemotron-3-super-120b-a12b:free",
+      "nomination": "refactoring",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": true,
+        "outcome": "completed",
+        "changed_lines": 30
+      },
+      "explanation": "Public and objective evaluators pass. The patch changes 30 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "74-or-nemotron-3-super-free",
+      "model": "openrouter/nvidia/nemotron-3-super-120b-a12b:free",
+      "nomination": "repository-navigation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": true,
+        "outcome": "completed",
+        "changed_lines": 12
+      },
+      "explanation": "Public and objective evaluators pass. The patch changes 12 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "74-or-nemotron-3-super-free",
+      "model": "openrouter/nvidia/nemotron-3-super-120b-a12b:free",
+      "nomination": "tests-edge-cases",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": true,
+        "outcome": "completed",
+        "changed_lines": 78
+      },
+      "explanation": "Public and objective evaluators pass. The patch changes 78 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "75-or-dots-3-note-free",
+      "model": "openrouter/dots-studio/dots-3-note-preview:free",
+      "nomination": "patch",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 8,
+        "reliability_edge_cases": 6,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 8,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": false,
+        "outcome": "completed",
+        "changed_lines": 19
+      },
+      "explanation": "The objective evaluator fails despite passing public tests. The patch changes 19 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "75-or-dots-3-note-free",
+      "model": "openrouter/dots-studio/dots-3-note-preview:free",
+      "nomination": "bug-fix-ledger",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 7,
+        "scope_discipline": 10
+      },
+      "overall": 9.25,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": true,
+        "outcome": "completed",
+        "changed_lines": 49
+      },
+      "explanation": "Public and objective evaluators pass. The patch changes 49 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "75-or-dots-3-note-free",
+      "model": "openrouter/dots-studio/dots-3-note-preview:free",
+      "nomination": "feature-implementation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": true,
+        "outcome": "completed",
+        "changed_lines": 35
+      },
+      "explanation": "Public and objective evaluators pass. The patch changes 35 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "75-or-dots-3-note-free",
+      "model": "openrouter/dots-studio/dots-3-note-preview:free",
+      "nomination": "refactoring",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": true,
+        "outcome": "completed",
+        "changed_lines": 23
+      },
+      "explanation": "Public and objective evaluators pass. The patch changes 23 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "75-or-dots-3-note-free",
+      "model": "openrouter/dots-studio/dots-3-note-preview:free",
+      "nomination": "repository-navigation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": true,
+        "outcome": "completed",
+        "changed_lines": 12
+      },
+      "explanation": "Public and objective evaluators pass. The patch changes 12 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "75-or-dots-3-note-free",
+      "model": "openrouter/dots-studio/dots-3-note-preview:free",
+      "nomination": "tests-edge-cases",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 8,
+        "reliability_edge_cases": 6,
+        "maintainability_clarity": 7,
+        "scope_discipline": 10
+      },
+      "overall": 7.75,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": false,
+        "outcome": "completed",
+        "changed_lines": 136
+      },
+      "explanation": "The objective evaluator fails despite passing public tests. The patch changes 136 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "76-or-laguna-s-2-1-free",
+      "model": "openrouter/poolside/laguna-s-2.1:free",
+      "nomination": "patch",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 8,
+        "reliability_edge_cases": 6,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 8.25,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": false,
+        "outcome": "completed",
+        "changed_lines": 11
+      },
+      "explanation": "The objective evaluator fails despite passing public tests. The patch changes 11 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "76-or-laguna-s-2-1-free",
+      "model": "openrouter/poolside/laguna-s-2.1:free",
+      "nomination": "bug-fix-ledger",
+      "status": "no_patch",
+      "scores": null,
+      "overall": null,
+      "evidence": {
+        "public_pass": false,
+        "objective_pass": false,
+        "outcome": "tests_failed",
+        "changed_lines": 0
+      },
+      "explanation": "No candidate patch was produced, so code quality is not scored."
+    },
+    {
+      "candidate": "76-or-laguna-s-2-1-free",
+      "model": "openrouter/poolside/laguna-s-2.1:free",
+      "nomination": "feature-implementation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": true,
+        "outcome": "completed",
+        "changed_lines": 38
+      },
+      "explanation": "Public and objective evaluators pass. The patch changes 38 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "76-or-laguna-s-2-1-free",
+      "model": "openrouter/poolside/laguna-s-2.1:free",
+      "nomination": "refactoring",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": true,
+        "outcome": "completed",
+        "changed_lines": 19
+      },
+      "explanation": "Public and objective evaluators pass. The patch changes 19 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "76-or-laguna-s-2-1-free",
+      "model": "openrouter/poolside/laguna-s-2.1:free",
+      "nomination": "repository-navigation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": true,
+        "outcome": "completed",
+        "changed_lines": 7
+      },
+      "explanation": "Public and objective evaluators pass. The patch changes 7 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "76-or-laguna-s-2-1-free",
+      "model": "openrouter/poolside/laguna-s-2.1:free",
+      "nomination": "tests-edge-cases",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 8,
+        "reliability_edge_cases": 6,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 8,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": false,
+        "outcome": "completed",
+        "changed_lines": 68
+      },
+      "explanation": "The objective evaluator fails despite passing public tests. The patch changes 68 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "77-or-minimax-m3-free",
+      "model": "openrouter/minimax/minimax-m3:free",
+      "nomination": "patch",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 8,
+        "reliability_edge_cases": 6,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 8.25,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": false,
+        "outcome": "completed",
+        "changed_lines": 18
+      },
+      "explanation": "The objective evaluator fails despite passing public tests. The patch changes 18 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "77-or-minimax-m3-free",
+      "model": "openrouter/minimax/minimax-m3:free",
+      "nomination": "bug-fix-ledger",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 7,
+        "reliability_edge_cases": 5,
+        "maintainability_clarity": 7,
+        "scope_discipline": 10
+      },
+      "overall": 7.25,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": false,
+        "outcome": "completed",
+        "changed_lines": 80
+      },
+      "explanation": "The objective evaluator fails despite passing public tests. The patch changes 80 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "77-or-minimax-m3-free",
+      "model": "openrouter/minimax/minimax-m3:free",
+      "nomination": "feature-implementation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": true,
+        "outcome": "completed",
+        "changed_lines": 38
+      },
+      "explanation": "Public and objective evaluators pass. The patch changes 38 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "77-or-minimax-m3-free",
+      "model": "openrouter/minimax/minimax-m3:free",
+      "nomination": "refactoring",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 7,
+        "scope_discipline": 10
+      },
+      "overall": 9.25,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": true,
+        "outcome": "completed",
+        "changed_lines": 34
+      },
+      "explanation": "Public and objective evaluators pass. The patch changes 34 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "77-or-minimax-m3-free",
+      "model": "openrouter/minimax/minimax-m3:free",
+      "nomination": "repository-navigation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": true,
+        "outcome": "completed",
+        "changed_lines": 3
+      },
+      "explanation": "Public and objective evaluators pass. The patch changes 3 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "77-or-minimax-m3-free",
+      "model": "openrouter/minimax/minimax-m3:free",
+      "nomination": "tests-edge-cases",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 7,
+        "scope_discipline": 10
+      },
+      "overall": 9.25,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": true,
+        "outcome": "completed",
+        "changed_lines": 161
+      },
+      "explanation": "Public and objective evaluators pass. The patch changes 161 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "78-or-minimax-m2-7-free",
+      "model": "openrouter/minimax/minimax-m2.7:free",
+      "nomination": "patch",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 8,
+        "reliability_edge_cases": 6,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 8.25,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": false,
+        "outcome": "completed",
+        "changed_lines": 10
+      },
+      "explanation": "The objective evaluator fails despite passing public tests. The patch changes 10 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "78-or-minimax-m2-7-free",
+      "model": "openrouter/minimax/minimax-m2.7:free",
+      "nomination": "bug-fix-ledger",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 7,
+        "reliability_edge_cases": 5,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 7.75,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": false,
+        "outcome": "completed",
+        "changed_lines": 2
+      },
+      "explanation": "The objective evaluator fails despite passing public tests. The patch changes 2 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "78-or-minimax-m2-7-free",
+      "model": "openrouter/minimax/minimax-m2.7:free",
+      "nomination": "feature-implementation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 7,
+        "reliability_edge_cases": 5,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 7.75,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": false,
+        "outcome": "completed",
+        "changed_lines": 27
+      },
+      "explanation": "The objective evaluator fails despite passing public tests. The patch changes 27 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "78-or-minimax-m2-7-free",
+      "model": "openrouter/minimax/minimax-m2.7:free",
+      "nomination": "refactoring",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": true,
+        "outcome": "completed",
+        "changed_lines": 27
+      },
+      "explanation": "Public and objective evaluators pass. The patch changes 27 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "78-or-minimax-m2-7-free",
+      "model": "openrouter/minimax/minimax-m2.7:free",
+      "nomination": "repository-navigation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 7,
+        "reliability_edge_cases": 5,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 7.75,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": false,
+        "outcome": "completed",
+        "changed_lines": 3
+      },
+      "explanation": "The objective evaluator fails despite passing public tests. The patch changes 3 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "78-or-minimax-m2-7-free",
+      "model": "openrouter/minimax/minimax-m2.7:free",
+      "nomination": "tests-edge-cases",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 8,
+        "reliability_edge_cases": 6,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 8.25,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": false,
+        "outcome": "completed",
+        "changed_lines": 45
+      },
+      "explanation": "The objective evaluator fails despite passing public tests. The patch changes 45 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "79-or-laguna-xs-2-1-free",
+      "model": "openrouter/poolside/laguna-xs-2.1:free",
+      "nomination": "patch",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 8,
+        "reliability_edge_cases": 6,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 8.25,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": false,
+        "outcome": "completed",
+        "changed_lines": 9
+      },
+      "explanation": "The objective evaluator fails despite passing public tests. The patch changes 9 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "79-or-laguna-xs-2-1-free",
+      "model": "openrouter/poolside/laguna-xs-2.1:free",
+      "nomination": "bug-fix-ledger",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 7,
+        "reliability_edge_cases": 5,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 7.75,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": false,
+        "outcome": "completed",
+        "changed_lines": 2
+      },
+      "explanation": "The objective evaluator fails despite passing public tests. The patch changes 2 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "79-or-laguna-xs-2-1-free",
+      "model": "openrouter/poolside/laguna-xs-2.1:free",
+      "nomination": "feature-implementation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": true,
+        "outcome": "completed",
+        "changed_lines": 30
+      },
+      "explanation": "Public and objective evaluators pass. The patch changes 30 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "79-or-laguna-xs-2-1-free",
+      "model": "openrouter/poolside/laguna-xs-2.1:free",
+      "nomination": "refactoring",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": true,
+        "outcome": "completed",
+        "changed_lines": 27
+      },
+      "explanation": "Public and objective evaluators pass. The patch changes 27 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "79-or-laguna-xs-2-1-free",
+      "model": "openrouter/poolside/laguna-xs-2.1:free",
+      "nomination": "repository-navigation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 7,
+        "reliability_edge_cases": 5,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 7.75,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": false,
+        "outcome": "completed",
+        "changed_lines": 7
+      },
+      "explanation": "The objective evaluator fails despite passing public tests. The patch changes 7 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "79-or-laguna-xs-2-1-free",
+      "model": "openrouter/poolside/laguna-xs-2.1:free",
+      "nomination": "tests-edge-cases",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 8,
+        "reliability_edge_cases": 6,
+        "maintainability_clarity": 7,
+        "scope_discipline": 10
+      },
+      "overall": 7.75,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": false,
+        "outcome": "agent_failure",
+        "changed_lines": 127
+      },
+      "explanation": "The objective evaluator fails despite passing public tests. The patch changes 127 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "80-or-north-mini-code-free",
+      "model": "openrouter/cohere/north-mini-code:free",
+      "nomination": "patch",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 8,
+        "reliability_edge_cases": 6,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 8.25,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": false,
+        "outcome": "completed",
+        "changed_lines": 7
+      },
+      "explanation": "The objective evaluator fails despite passing public tests. The patch changes 7 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "80-or-north-mini-code-free",
+      "model": "openrouter/cohere/north-mini-code:free",
+      "nomination": "bug-fix-ledger",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 7,
+        "reliability_edge_cases": 5,
+        "maintainability_clarity": 9,
+        "scope_discipline": 0
+      },
+      "overall": 5.25,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": false,
+        "outcome": "forbidden_changes",
+        "changed_lines": 27
+      },
+      "explanation": "The objective evaluator fails despite passing public tests. The patch changes 27 lines and violates the allowed scope."
+    },
+    {
+      "candidate": "80-or-north-mini-code-free",
+      "model": "openrouter/cohere/north-mini-code:free",
+      "nomination": "feature-implementation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": true,
+        "outcome": "completed",
+        "changed_lines": 41
+      },
+      "explanation": "Public and objective evaluators pass. The patch changes 41 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "80-or-north-mini-code-free",
+      "model": "openrouter/cohere/north-mini-code:free",
+      "nomination": "refactoring",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": true,
+        "outcome": "completed",
+        "changed_lines": 27
+      },
+      "explanation": "Public and objective evaluators pass. The patch changes 27 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "80-or-north-mini-code-free",
+      "model": "openrouter/cohere/north-mini-code:free",
+      "nomination": "repository-navigation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 7,
+        "reliability_edge_cases": 5,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 7.75,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": false,
+        "outcome": "completed",
+        "changed_lines": 10
+      },
+      "explanation": "The objective evaluator fails despite passing public tests. The patch changes 10 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "80-or-north-mini-code-free",
+      "model": "openrouter/cohere/north-mini-code:free",
+      "nomination": "tests-edge-cases",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 8,
+        "reliability_edge_cases": 6,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 8.25,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": false,
+        "outcome": "completed",
+        "changed_lines": 41
+      },
+      "explanation": "The objective evaluator fails despite passing public tests. The patch changes 41 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "81-or-nemotron-3-nano-omni-free",
+      "model": "openrouter/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+      "nomination": "patch",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 8,
+        "reliability_edge_cases": 6,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 8.25,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": false,
+        "outcome": "completed",
+        "changed_lines": 17
+      },
+      "explanation": "The objective evaluator fails despite passing public tests. The patch changes 17 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "81-or-nemotron-3-nano-omni-free",
+      "model": "openrouter/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+      "nomination": "bug-fix-ledger",
+      "status": "no_patch",
+      "scores": null,
+      "overall": null,
+      "evidence": {
+        "public_pass": false,
+        "objective_pass": false,
+        "outcome": "tests_failed",
+        "changed_lines": 0
+      },
+      "explanation": "No candidate patch was produced, so code quality is not scored."
+    },
+    {
+      "candidate": "81-or-nemotron-3-nano-omni-free",
+      "model": "openrouter/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+      "nomination": "feature-implementation",
+      "status": "no_patch",
+      "scores": null,
+      "overall": null,
+      "evidence": {
+        "public_pass": false,
+        "objective_pass": false,
+        "outcome": "tests_failed",
+        "changed_lines": 0
+      },
+      "explanation": "No candidate patch was produced, so code quality is not scored."
+    },
+    {
+      "candidate": "81-or-nemotron-3-nano-omni-free",
+      "model": "openrouter/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+      "nomination": "refactoring",
+      "status": "no_patch",
+      "scores": null,
+      "overall": null,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": false,
+        "outcome": "agent_failure",
+        "changed_lines": 0
+      },
+      "explanation": "No candidate patch was produced, so code quality is not scored."
+    },
+    {
+      "candidate": "81-or-nemotron-3-nano-omni-free",
+      "model": "openrouter/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+      "nomination": "repository-navigation",
+      "status": "no_patch",
+      "scores": null,
+      "overall": null,
+      "evidence": {
+        "public_pass": false,
+        "objective_pass": false,
+        "outcome": "agent_failure",
+        "changed_lines": 0
+      },
+      "explanation": "No candidate patch was produced, so code quality is not scored."
+    },
+    {
+      "candidate": "81-or-nemotron-3-nano-omni-free",
+      "model": "openrouter/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+      "nomination": "tests-edge-cases",
+      "status": "no_patch",
+      "scores": null,
+      "overall": null,
+      "evidence": {
+        "public_pass": false,
+        "objective_pass": false,
+        "outcome": "agent_failure",
+        "changed_lines": 0
+      },
+      "explanation": "No candidate patch was produced, so code quality is not scored."
+    },
+    {
+      "candidate": "82-or-nemotron-3-5-lightning-free",
+      "model": "openrouter/nvidia/nemotron-3.5-lightning:free",
+      "nomination": "patch",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 8,
+        "reliability_edge_cases": 6,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 8.25,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": false,
+        "outcome": "completed",
+        "changed_lines": 7
+      },
+      "explanation": "The objective evaluator fails despite passing public tests. The patch changes 7 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "82-or-nemotron-3-5-lightning-free",
+      "model": "openrouter/nvidia/nemotron-3.5-lightning:free",
+      "nomination": "bug-fix-ledger",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 7,
+        "reliability_edge_cases": 5,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 7.75,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": false,
+        "outcome": "completed",
+        "changed_lines": 11
+      },
+      "explanation": "The objective evaluator fails despite passing public tests. The patch changes 11 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "82-or-nemotron-3-5-lightning-free",
+      "model": "openrouter/nvidia/nemotron-3.5-lightning:free",
+      "nomination": "feature-implementation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": true,
+        "outcome": "completed",
+        "changed_lines": 57
+      },
+      "explanation": "Public and objective evaluators pass. The patch changes 57 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "82-or-nemotron-3-5-lightning-free",
+      "model": "openrouter/nvidia/nemotron-3.5-lightning:free",
+      "nomination": "refactoring",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": true,
+        "outcome": "completed",
+        "changed_lines": 23
+      },
+      "explanation": "Public and objective evaluators pass. The patch changes 23 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "82-or-nemotron-3-5-lightning-free",
+      "model": "openrouter/nvidia/nemotron-3.5-lightning:free",
+      "nomination": "repository-navigation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 9.75,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": true,
+        "outcome": "completed",
+        "changed_lines": 7
+      },
+      "explanation": "Public and objective evaluators pass. The patch changes 7 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "82-or-nemotron-3-5-lightning-free",
+      "model": "openrouter/nvidia/nemotron-3.5-lightning:free",
+      "nomination": "tests-edge-cases",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 8,
+        "reliability_edge_cases": 6,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 8.25,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": false,
+        "outcome": "completed",
+        "changed_lines": 40
+      },
+      "explanation": "The objective evaluator fails despite passing public tests. The patch changes 40 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "83-or-lfm-2-5-2-6b-free",
+      "model": "openrouter/liquid/lfm-2.5-2.6b:free",
+      "nomination": "patch",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 5,
+        "reliability_edge_cases": 3,
+        "maintainability_clarity": 9,
+        "scope_discipline": 10
+      },
+      "overall": 6.75,
+      "evidence": {
+        "public_pass": false,
+        "objective_pass": false,
+        "outcome": "tests_failed",
+        "changed_lines": 11
+      },
+      "explanation": "The objective evaluator fails together with the public test command. The patch changes 11 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "83-or-lfm-2-5-2-6b-free",
+      "model": "openrouter/liquid/lfm-2.5-2.6b:free",
+      "nomination": "bug-fix-ledger",
+      "status": "no_patch",
+      "scores": null,
+      "overall": null,
+      "evidence": {
+        "public_pass": false,
+        "objective_pass": false,
+        "outcome": "agent_failure",
+        "changed_lines": 0
+      },
+      "explanation": "No candidate patch was produced, so code quality is not scored."
+    },
+    {
+      "candidate": "83-or-lfm-2-5-2-6b-free",
+      "model": "openrouter/liquid/lfm-2.5-2.6b:free",
+      "nomination": "feature-implementation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 7,
+        "reliability_edge_cases": 5,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 7.5,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": false,
+        "outcome": "agent_failure",
+        "changed_lines": 63
+      },
+      "explanation": "The objective evaluator fails despite passing public tests. The patch changes 63 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "83-or-lfm-2-5-2-6b-free",
+      "model": "openrouter/liquid/lfm-2.5-2.6b:free",
+      "nomination": "refactoring",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": true,
+        "outcome": "completed",
+        "changed_lines": 24
+      },
+      "explanation": "Public and objective evaluators pass. The patch changes 24 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "83-or-lfm-2-5-2-6b-free",
+      "model": "openrouter/liquid/lfm-2.5-2.6b:free",
+      "nomination": "repository-navigation",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 10,
+        "reliability_edge_cases": 10,
+        "maintainability_clarity": 8,
+        "scope_discipline": 10
+      },
+      "overall": 9.5,
+      "evidence": {
+        "public_pass": true,
+        "objective_pass": true,
+        "outcome": "completed",
+        "changed_lines": 17
+      },
+      "explanation": "Public and objective evaluators pass. The patch changes 17 lines and stays within the allowed scope."
+    },
+    {
+      "candidate": "83-or-lfm-2-5-2-6b-free",
+      "model": "openrouter/liquid/lfm-2.5-2.6b:free",
+      "nomination": "tests-edge-cases",
+      "status": "reviewed",
+      "scores": {
+        "functional_correctness": 5,
+        "reliability_edge_cases": 3,
+        "maintainability_clarity": 7,
+        "scope_discipline": 10
+      },
+      "overall": 6.25,
+      "evidence": {
+        "public_pass": false,
+        "objective_pass": false,
+        "outcome": "tests_failed",
+        "changed_lines": 117
+      },
+      "explanation": "The objective evaluator fails together with the public test command. The patch changes 117 lines and stays within the allowed scope."
+    }
+  ]
+}

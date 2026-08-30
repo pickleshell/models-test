@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "evaluator": {
+    "id": "phase2-v2-tests-edge-cases-v1",
+    "sha256": "64ebafc702fed24f9bb7870c4696550ed4c6823f7194207a3fcb6d23bee925b9"
+  },
+  "status": "completed",
+  "passed": false,
+  "started_at": "2026-08-30T08:50:08.777Z",
+  "completed_at": "2026-08-30T08:50:08.953Z",
+  "duration_ms": 176,
+  "execution": {
+    "status": 1,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T08:50:08.777Z",
+    "completed_at": "2026-08-30T08:50:08.953Z",
+    "duration_ms": 176
+  },
+  "artifact_hash": {
+    "path": "objective-evaluator.json",
+    "sha256": "4848962fde928766546dd24b6e97f2209be6ca2b1d93b8f527b0c791f956f904"
+  }
+}

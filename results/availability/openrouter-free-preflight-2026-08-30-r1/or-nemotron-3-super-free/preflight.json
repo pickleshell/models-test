@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "or-nemotron-3-super-free",
+    "label": "Nemotron 3 Super 120B Free",
+    "agent": "opencode",
+    "model": "openrouter/nvidia/nemotron-3-super-120b-a12b:free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-29T23:16:15.971Z",
+  "completed_at": "2026-08-29T23:16:23.334Z",
+  "duration_ms": 7363,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0,
+    "steps": 1,
+    "tokens": {
+      "input": 7623,
+      "output": 2,
+      "reasoning": 19,
+      "cache_read": 0,
+      "cache_write": 0,
+      "total": 7644
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "d2951752027a38f33d1fa9f41fb10306053ce3ee29995d8ad1d3a844193e5fec"
+  }
+}

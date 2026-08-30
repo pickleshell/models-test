@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "73-or-nemotron-3-ultra-free",
+    "label": "Nemotron 3 Ultra 550B Free (OpenRouter)",
+    "agent": "opencode",
+    "model": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-29T23:26:07.163Z",
+  "completed_at": "2026-08-29T23:26:10.283Z",
+  "duration_ms": 3120,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0,
+    "steps": 1,
+    "tokens": {
+      "input": 7625,
+      "output": 0,
+      "reasoning": 32,
+      "cache_read": 0,
+      "cache_write": 0,
+      "total": 7657
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "bbcb76415f465f13bdfd40e703f2349975fafa1acdfad07ad7daf0db7b53dae1"
+  }
+}

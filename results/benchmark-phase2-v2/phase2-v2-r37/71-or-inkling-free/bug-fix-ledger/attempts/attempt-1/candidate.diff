@@ -1,0 +1,125 @@
+diff --git a/fixtures/phase2-v2/bug-fix-ledger/src/reconcile.js b/fixtures/phase2-v2/bug-fix-ledger/src/reconcile.js
+index bbeacb2..ba14eda 100644
+--- a/fixtures/phase2-v2/bug-fix-ledger/src/reconcile.js
++++ b/fixtures/phase2-v2/bug-fix-ledger/src/reconcile.js
+@@ -1,14 +1,55 @@
+ export function parseAmountToCents(amount) {
+-  if (typeof amount !== 'string' && typeof amount !== 'number') throw new Error('amount must be money');
+-  const value = Number(String(amount).trim().replace(/[$,]/g, ''));
+-  if (!Number.isFinite(value)) throw new Error(`invalid amount: ${amount}`);
+-  return Math.round(value * 100);
++  if (typeof amount !== 'string') throw new Error('amount must be string');
++  const trimmed = amount.trim();
++  if (trimmed === '') throw new Error('amount must be non-empty');
++
++  let str = trimmed;
++  if (str.startsWith('$')) str = str.slice(1);
++
++  // Check more than two decimal digits
++  const decimalIndex = str.indexOf('.');
++  if (decimalIndex !== -1) {
++    const frac = str.slice(decimalIndex + 1);
++    if (frac.length > 2) throw new Error('invalid amount: ' + amount);
++  }
++
++  // Validate digits and commas
++  const parts = str.split('.');
++  const integerPart = parts[0];
++  const hasCommas = integerPart.includes(',');
++
++  if (integerPart === '') throw new Error('invalid amount: ' + amount);
++  if (!/^\d{1,3}(,\d{3})*$|^\d+$/.test(integerPart)) throw new Error('invalid amount: ' + amount);
++
++  // Remove commas and compute exact cents
++  const cleaned = str.replace(/,/g, '');
++  const value = Number(cleaned);
++  if (!Number.isFinite(value)) throw new Error('invalid amount: ' + amount);
++  if (value < 0) throw new Error('invalid amount: ' + amount);
++
++  // Check no rounding needed (exact representation)
++  const fracPart = parts[1] || '';
++  const paddedFrac = fracPart.padEnd(2, '0');
++  const centsStr = (integerPart.replace(/,/g, '') + '.' + paddedFrac).split('.')[1];
++  const exactCents = Math.round(value * 100);
++  // Verify exact representation: multiply back should match original numeric value without rounding artifacts
++  // Since we use integer arithmetic, we can just build from cleaned directly.
++  const intStr = integerPart.replace(/,/g, '');
++  const cents = parseInt(intStr, 10) * 100 + parseInt(fracPart.padEnd(2, '0').slice(0, 2), 10);
++
++  // Ensure the cleaned string doesn't have leading zeros issue
++  if (intStr.length > 1 && intStr[0] === '0') throw new Error('invalid amount: ' + amount);
++
++  return cents;
+ }
+ 
+ function dayKey(createdAt) {
+   const date = new Date(createdAt);
+   if (Number.isNaN(date.getTime())) throw new Error(`invalid createdAt: ${createdAt}`);
+-  return date.toLocaleDateString('en-CA');
++  const year = date.getUTCFullYear();
++  const month = String(date.getUTCMonth() + 1).padStart(2, '0');
++  const day = String(date.getUTCDate()).padStart(2, '0');
++  return `${year}-${month}-${day}`;
+ }
+ 
+ function addTotal(totals, accountId, currency, day, cents) {
+@@ -25,18 +66,50 @@ export function reconcileLedger(entries) {
+   const metrics = { processed: 0, duplicateCount: 0, invalidCount: 0, orphanRefundCount: 0 };
+   for (const entry of entries) {
+     try {
+-      if (!entry || typeof entry !== 'object' || !entry.id || !entry.accountId || !entry.currency) throw new Error('invalid entry');
+-      if (seenIds.has(entry.id)) metrics.duplicateCount += 1;
++      if (!entry || typeof entry !== 'object' || Array.isArray(entry)) throw new Error('invalid entry');
++      if (!entry.id || typeof entry.id !== 'string' || entry.id.trim() === '') throw new Error('invalid entry');
++      if (!entry.accountId || typeof entry.accountId !== 'string' || entry.accountId.trim() === '') throw new Error('invalid entry');
++      if (!entry.currency || typeof entry.currency !== 'string' || entry.currency.trim() === '') throw new Error('invalid entry');
++      if (!entry.type || (entry.type !== 'sale' && entry.type !== 'refund')) throw new Error('invalid entry');
++      if (entry.type === 'refund' && (!entry.originalId || typeof entry.originalId !== 'string' || entry.originalId.trim() === '')) throw new Error('invalid entry');
++      if (entry.amount === undefined || entry.amount === null) throw new Error('invalid entry');
++      if (entry.createdAt === undefined || entry.createdAt === null) throw new Error('invalid entry');
++
++      // Duplicate check: first occurrence is the only one considered
++      if (seenIds.has(entry.id)) {
++        metrics.duplicateCount += 1;
++        continue; // ignore entirely
++      }
+       seenIds.add(entry.id);
+-      const cents = parseAmountToCents(entry.amount), day = dayKey(entry.createdAt);
++
++      const cents = parseAmountToCents(entry.amount);
++      const day = dayKey(entry.createdAt);
++
+       if (entry.type === 'sale') {
+-        originals.set(entry.id, entry); addTotal(totals, entry.accountId, entry.currency, day, cents); metrics.processed += 1;
++        originals.set(entry.id, entry);
++        addTotal(totals, entry.accountId, entry.currency, day, cents);
++        metrics.processed += 1;
+       } else if (entry.type === 'refund') {
+         const original = originals.get(entry.originalId);
+-        if (!original) { metrics.orphanRefundCount += 1; continue; }
+-        addTotal(totals, entry.accountId, entry.currency, day, -cents); metrics.processed += 1;
+-      } else throw new Error('unsupported type');
+-    } catch { metrics.invalidCount += 1; }
++        if (!original) {
++          metrics.orphanRefundCount += 1;
++          continue;
++        }
++        // Refund uses original sale's account and currency
++        addTotal(totals, original.accountId, original.currency, day, -cents);
++        metrics.processed += 1;
++      }
++    } catch {
++      metrics.invalidCount += 1;
++    }
+   }
+-  return { totals: [...totals.values()].sort((a, b) => a.accountId.localeCompare(b.accountId) || a.currency.localeCompare(b.currency) || a.day.localeCompare(b.day)), metrics };
++  return {
++    totals: [...totals.values()].sort(
++      (a, b) =>
++        a.accountId.localeCompare(b.accountId) ||
++        a.currency.localeCompare(b.currency) ||
++        a.day.localeCompare(b.day)
++    ),
++    metrics,
++  };
+ }

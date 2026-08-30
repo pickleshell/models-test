@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r37",
+  "nomination": "tests-edge-cases",
+  "run_id": "phase2-v2-r37:80-or-north-mini-code-free:tests-edge-cases",
+  "attempt": 1,
+  "candidate": {
+    "id": "80-or-north-mini-code-free",
+    "label": "North Mini Code Free (OpenRouter)",
+    "agent": "opencode",
+    "model": "openrouter/cohere/north-mini-code:free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T09:22:29.616Z",
+  "completed_at": "2026-08-30T09:23:18.589Z",
+  "duration_ms": 48973,
+  "benchmark_metrics": {
+    "duration_ms": 48973,
+    "model_duration_ms": 48038,
+    "public_tests_duration_ms": 584,
+    "cost_usd": 0,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T09:22:29.616Z",
+    "completed_at": "2026-08-30T09:23:17.654Z",
+    "duration_ms": 48038,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0,
+      "steps": 9,
+      "tokens": {
+        "input": 72690,
+        "output": 2766,
+        "reasoning": 1455,
+        "cache_read": 0,
+        "cache_write": 0,
+        "total": 76911
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T09:23:18.005Z",
+    "completed_at": "2026-08-30T09:23:18.589Z",
+    "duration_ms": 584
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/tests-edge-cases/src/range.js",
+    "fixtures/phase2-v2/tests-edge-cases/test/range.test.mjs"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r37/80-or-north-mini-code-free/tests-edge-cases/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "dc2f8f465a936f9f1973f02ba6f2a601090b88ffa60ed5211ac1b8ebb65375ed"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "47a56d69b73c0ce6726beab3c4dc88b833047ee99fec6b164108ac1c5eda023d"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "fbfe6c3f7eeccc7b0fe5dcabe1b2d2abc2d7dbf3a2935b823e33760eb4233064"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "a6502fe8a6786565e32e569bba6f91d3914ffce9243072f1ae373f954d608120"
+  }
+}

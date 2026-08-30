@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r37",
+  "nomination": "tests-edge-cases",
+  "run_id": "phase2-v2-r37:79-or-laguna-xs-2-1-free:tests-edge-cases",
+  "attempt": 1,
+  "candidate": {
+    "id": "79-or-laguna-xs-2-1-free",
+    "label": "Laguna XS 2.1 Free (OpenRouter)",
+    "agent": "opencode",
+    "model": "openrouter/poolside/laguna-xs-2.1:free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T09:07:23.234Z",
+  "completed_at": "2026-08-30T09:22:29.272Z",
+  "duration_ms": 906038,
+  "benchmark_metrics": {
+    "duration_ms": 906038,
+    "model_duration_ms": 905085,
+    "public_tests_duration_ms": 593,
+    "cost_usd": 0,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": null,
+    "signal": "SIGTERM",
+    "timed_out": true,
+    "output_limited": false,
+    "started_at": "2026-08-30T09:07:23.234Z",
+    "completed_at": "2026-08-30T09:22:28.319Z",
+    "duration_ms": 905085,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0,
+      "steps": 29,
+      "tokens": {
+        "input": 93753,
+        "output": 5409,
+        "reasoning": 4610,
+        "cache_read": 384336,
+        "cache_write": 0,
+        "total": 488108
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T09:22:28.679Z",
+    "completed_at": "2026-08-30T09:22:29.272Z",
+    "duration_ms": 593
+  },
+  "outcome": "agent_failure",
+  "changed_files": [
+    "fixtures/phase2-v2/tests-edge-cases/src/range.js",
+    "fixtures/phase2-v2/tests-edge-cases/test/range.test.mjs"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r37/79-or-laguna-xs-2-1-free/tests-edge-cases/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "5e8ba7305b4f41ade17ed32a473af546bc57b85b68d2993e8c748f108e0fd809"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "e0271a933bdbc9ebdabc915763650b96c2edba1de08adbc460f0591882982e2c"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "6c1c00b0546d4addb0b04b311fd16b03ad1981f80a0a804568ee68597e0a913e"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "883624f22b54fd770bc99312659f65982844bd7c8f1975f26cfe03cdc898fe16"
+  }
+}

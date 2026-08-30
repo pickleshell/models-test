@@ -1,0 +1,50 @@
+diff --git a/fixtures/phase2-v2/bug-fix-ledger/reproduce.js b/fixtures/phase2-v2/bug-fix-ledger/reproduce.js
+new file mode 100644
+index 0000000..377a1af
+--- /dev/null
++++ b/fixtures/phase2-v2/bug-fix-ledger/reproduce.js
+@@ -0,0 +1,11 @@
++const { reconcileLedger, parseAmountToCents } = require('./src/reconcile.js');
++
++const r = reconcileLedger([
++  { id: 's1', type: 'sale', accountId: 'a', currency: 'USD', amount: '10.00', createdAt: '2026-02-03T10:00:00Z' },
++  { id: 's1', type: 'sale', accountId: 'a', currency: 'USD', amount: '99.00', createdAt: '2026-02-03T10:05:00Z' }
++]);
++
++console.log('totals:', r.totals);
++console.log('metrics:', r.metrics);
++console.log('expected duplicateCount: 1, got:', r.metrics.duplicateCount);
++console.log('expected processed: 1, got:', r.metrics.processed);
+diff --git a/fixtures/phase2-v2/bug-fix-ledger/reproduce.mjs b/fixtures/phase2-v2/bug-fix-ledger/reproduce.mjs
+new file mode 100644
+index 0000000..63e98f6
+--- /dev/null
++++ b/fixtures/phase2-v2/bug-fix-ledger/reproduce.mjs
+@@ -0,0 +1,11 @@
++import { reconcileLedger, parseAmountToCents } from './src/reconcile.js';
++
++const r = reconcileLedger([
++  { id: 's1', type: 'sale', accountId: 'a', currency: 'USD', amount: '10.00', createdAt: '2026-02-03T10:00:00Z' },
++  { id: 's1', type: 'sale', accountId: 'a', currency: 'USD', amount: '99.00', createdAt: '2026-02-03T10:05:00Z' }
++]);
++
++console.log('totals:', r.totals);
++console.log('metrics:', r.metrics);
++console.log('expected duplicateCount: 1, got:', r.metrics.duplicateCount);
++console.log('expected processed: 1, got:', r.metrics.processed);
+diff --git a/fixtures/phase2-v2/bug-fix-ledger/src/reconcile.js b/fixtures/phase2-v2/bug-fix-ledger/src/reconcile.js
+index bbeacb2..812a69b 100644
+--- a/fixtures/phase2-v2/bug-fix-ledger/src/reconcile.js
++++ b/fixtures/phase2-v2/bug-fix-ledger/src/reconcile.js
+@@ -26,7 +26,10 @@ export function reconcileLedger(entries) {
+   for (const entry of entries) {
+     try {
+       if (!entry || typeof entry !== 'object' || !entry.id || !entry.accountId || !entry.currency) throw new Error('invalid entry');
+-      if (seenIds.has(entry.id)) metrics.duplicateCount += 1;
++      if (seenIds.has(entry.id)) {
++        metrics.duplicateCount += 1;
++        continue;
++      }
+       seenIds.add(entry.id);
+       const cents = parseAmountToCents(entry.amount), day = dayKey(entry.createdAt);
+       if (entry.type === 'sale') {

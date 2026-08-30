@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "or-gemma-4-26b-free",
+    "label": "Gemma 4 26B A4B IT Free",
+    "agent": "opencode",
+    "model": "openrouter/google/gemma-4-26b-a4b-it:free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "unavailable",
+  "reason": "timeout",
+  "started_at": "2026-08-29T23:18:50.552Z",
+  "completed_at": "2026-08-29T23:19:55.677Z",
+  "duration_ms": 65125,
+  "process_status": null,
+  "timed_out": true,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": null,
+    "steps": 0,
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "cache_read": 0,
+      "cache_write": 0,
+      "total": 0
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "5411a8bada1a29dff3e3e25f9652a9fb03f6f3774fd452f177cfff70a78a7e85"
+  }
+}

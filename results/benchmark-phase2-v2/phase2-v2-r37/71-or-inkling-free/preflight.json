@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "71-or-inkling-free",
+    "label": "Inkling Free (OpenRouter)",
+    "agent": "opencode",
+    "model": "openrouter/thinkingmachines/inkling:free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-29T23:25:29.656Z",
+  "completed_at": "2026-08-29T23:25:33.040Z",
+  "duration_ms": 3384,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0,
+    "steps": 1,
+    "tokens": {
+      "input": 6749,
+      "output": 7,
+      "reasoning": 17,
+      "cache_read": 0,
+      "cache_write": 0,
+      "total": 6773
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "ab3919a393ade9205e2c1da52acc5d15de7b72ff27655d713cfbe1d04763d109"
+  }
+}

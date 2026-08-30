@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "release": "phase2-v2-r37",
+  "nomination": "repository-navigation",
+  "run_id": "phase2-v2-r37:79-or-laguna-xs-2-1-free:repository-navigation",
+  "attempt": 1,
+  "candidate": {
+    "id": "79-or-laguna-xs-2-1-free",
+    "label": "Laguna XS 2.1 Free (OpenRouter)",
+    "agent": "opencode",
+    "model": "openrouter/poolside/laguna-xs-2.1:free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T08:37:38.360Z",
+  "completed_at": "2026-08-30T08:40:47.243Z",
+  "duration_ms": 188883,
+  "benchmark_metrics": {
+    "duration_ms": 188883,
+    "model_duration_ms": 187943,
+    "public_tests_duration_ms": 574,
+    "cost_usd": 0,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T08:37:38.360Z",
+    "completed_at": "2026-08-30T08:40:46.303Z",
+    "duration_ms": 187943,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0,
+      "steps": 25,
+      "tokens": {
+        "input": 58931,
+        "output": 1201,
+        "reasoning": 1908,
+        "cache_read": 186880,
+        "cache_write": 0,
+        "total": 248920
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T08:40:46.669Z",
+    "completed_at": "2026-08-30T08:40:47.243Z",
+    "duration_ms": 574
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/repository-navigation/src/labels/statusLabel.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-v2-r37/79-or-laguna-xs-2-1-free/repository-navigation/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "8e0c07b97f617d34854efed97b27328f50612df147b179defa4c397989f10d27"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "a1c9543a522697aac15e086935ffbcf9ea0e0b9fcb1b4aaf328570522fc82a81"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "ef7e7506e9d4c845e78266cfd195180589a9a13429dc14de54f5bf828b5cf73e"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "5d67b845f01aad7eb3e3ad510069ee698e13f04e4d1dc6296cddf7bb7540ad3e"
+  }
+}
