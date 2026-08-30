@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "release": "patch-current-unavailable-retry-r1",
+  "nomination": "patch",
+  "run_id": "patch-current-unavailable-retry-r1:22-deepseek-v4-flash-free-retry:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "22-deepseek-v4-flash-free-retry",
+    "label": "DeepSeek V4 Flash Free",
+    "agent": "opencode",
+    "model": "opencode/deepseek-v4-flash-free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T20:20:25.449Z",
+  "completed_at": "2026-08-30T20:20:25.449Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-30T20:20:23.831Z",
+    "completed_at": "2026-08-30T20:20:25.448Z",
+    "duration_ms": 1617
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/patch-current-unavailable-retry-r1/22-deepseek-v4-flash-free-retry/patch/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "a8329c23a3bc19cbeb173d54d3de8d183e38467e803614002d9684ca46b2041f"
+  }
+}

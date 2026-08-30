@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "22-deepseek-v4-flash-free-retry",
+    "label": "DeepSeek V4 Flash Free",
+    "agent": "opencode",
+    "model": "opencode/deepseek-v4-flash-free",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "unavailable",
+  "reason": "process_failure",
+  "started_at": "2026-08-30T20:20:23.831Z",
+  "completed_at": "2026-08-30T20:20:25.448Z",
+  "duration_ms": 1617,
+  "process_status": 1,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": null,
+    "steps": 0,
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "cache_read": 0,
+      "cache_write": 0,
+      "total": 0
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "d3206afda01b28ac355a2dc425d2fc8c23f32ac3ec84d08a62c0920d306b9c9a"
+  }
+}

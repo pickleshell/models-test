@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "kind": "manual_code_review",
+  "release": "phase2-v2-r37",
+  "candidate": "82-or-nemotron-3-5-lightning-free",
+  "nomination": "patch",
+  "attempt": 1,
+  "reviewer": { "id": "codex", "type": "assistant_manual_review" },
+  "identity_blind": false,
+  "scores": { "functional_correctness": 8, "reliability_edge_cases": 6, "maintainability_clarity": 9, "scope_discipline": 10 },
+  "average": 8.25,
+  "summary": "The patch fixes the backoff exponent, validates delta seconds, and clamps past retry dates. It still accepts some malformed numeric-looking values through Date.parse, so the hidden edge-case evaluator fails.",
+  "evidence": { "public_tests_passed": true, "objective_evaluator_passed": false, "forbidden_changes": 0 }
+}
