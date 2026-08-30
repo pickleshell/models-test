@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "kind": "manual_code_review",
+  "release": "phase1-ledger-openrouter-retry-r1",
+  "candidate": "or-qwen3-6-plus",
+  "nomination": "patch",
+  "attempt": 1,
+  "reviewer": {
+    "id": "codex",
+    "type": "assistant_manual_review"
+  },
+  "identity_blind": false,
+  "scores": {
+    "simplicity": 8,
+    "readability": 6,
+    "no_extra_code": 9,
+    "reliability": 10
+  },
+  "average": 6.6,
+  "summary": "The patch implements the main ledger repairs, but normalizes malformed comma placement before validation, so hidden money-format cases fail.",
+  "evidence": {
+    "public_tests_passed": true,
+    "objective_evaluator_passed": false,
+    "forbidden_changes": 0
+  }
+}

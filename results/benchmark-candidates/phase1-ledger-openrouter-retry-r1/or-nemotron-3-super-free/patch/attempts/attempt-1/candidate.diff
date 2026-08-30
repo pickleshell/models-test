@@ -1,0 +1,82 @@
+diff --git a/fixtures/phase1-ledger/src/reconcile.js b/fixtures/phase1-ledger/src/reconcile.js
+index 496d11c..4f45774 100644
+--- a/fixtures/phase1-ledger/src/reconcile.js
++++ b/fixtures/phase1-ledger/src/reconcile.js
+@@ -3,13 +3,57 @@ export function parseAmountToCents(amount) {
+     throw new Error('amount must be a decimal string or number');
+   }
+ 
+-  const normalized = String(amount).trim().replace(/[$,]/g, '');
+-  const value = Number(normalized);
+-  if (!Number.isFinite(value)) {
++  let normalized = String(amount).trim().replace(/[$,]/g, '');
++
++  // Check for empty string
++  if (normalized === '') {
++    throw new Error(`invalid amount: ${amount}`);
++  }
++
++  // Check for negative sign
++  if (normalized.startsWith('-')) {
++    throw new Error(`negative amount: ${amount}`);
++  }
++
++  // Split by decimal point
++  const parts = normalized.split('.');
++  if (parts.length > 2) {
+     throw new Error(`invalid amount: ${amount}`);
+   }
+ 
+-  return Math.round(value * 100);
++  let integerPart = parts[0];
++  let decimalPart = parts[1] || '';
++
++  // Check decimal part length
++  if (decimalPart.length > 2) {
++    throw new Error(`amount has more than two decimal places: ${amount}`);
++  }
++
++  // Validate integer part: if not empty, must be digits only
++  if (integerPart !== '' && !/^\d+$/.test(integerPart)) {
++    throw new Error(`invalid amount: ${amount}`);
++  }
++  // Validate decimal part: if not empty, must be digits only
++  if (decimalPart !== '' && !/^\d+$/.test(decimalPart)) {
++    throw new Error(`invalid amount: ${amount}`);
++  }
++
++  // Handle empty integer part (e.g., ".50")
++  if (integerPart === '') {
++    integerPart = '0';
++  }
++
++  // Ensure decimal part has exactly two digits by padding with zeros
++  if (decimalPart.length === 0) {
++    decimalPart = '00';
++  } else if (decimalPart.length === 1) {
++    decimalPart = decimalPart + '0';
++  }
++  // If length is 2, leave as is
++
++  // Now, convert to cents
++  const cents = parseInt(integerPart, 10) * 100 + parseInt(decimalPart, 10);
++  return cents;
+ }
+ 
+ function dayKey(createdAt) {
+@@ -50,10 +94,11 @@ export function reconcileLedger(entries) {
+       if (!entry.accountId) throw new Error('missing accountId');
+       if (!entry.currency) throw new Error('missing currency');
+ 
+-      if (seenIds.has(entry.id)) {
+-        metrics.duplicateCount += 1;
+-      }
+-      seenIds.add(entry.id);
++if (seenIds.has(entry.id)) {
++         metrics.duplicateCount += 1;
++         continue;
++       }
++       seenIds.add(entry.id);
+ 
+       const cents = parseAmountToCents(entry.amount);
+       const day = dayKey(entry.createdAt);

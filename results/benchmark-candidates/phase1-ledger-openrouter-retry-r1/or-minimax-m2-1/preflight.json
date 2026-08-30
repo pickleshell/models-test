@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "or-minimax-m2-1",
+    "label": "MiniMax M2.1",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "provider": "openrouter",
+    "model": "openrouter/minimax/minimax-m2.1",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-30T21:38:11.095Z",
+  "completed_at": "2026-08-30T21:38:15.934Z",
+  "duration_ms": 4839,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0.0021093,
+    "steps": 1,
+    "tokens": {
+      "input": 6895,
+      "output": 3,
+      "reasoning": 31,
+      "cache_read": 0,
+      "cache_write": 0,
+      "total": 6929
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "52167fac0e0021f8fdfb09d8a89bfbf1a0b458df22c890e9e877f37d2adea925"
+  }
+}

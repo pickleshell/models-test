@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "release": "phase1-ledger-openrouter-retry-r1",
+  "nomination": "patch",
+  "run_id": "phase1-ledger-openrouter-retry-r1:or-nemotron-3-super-free:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "or-nemotron-3-super-free",
+    "label": "Nemotron 3 Super Free",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "provider": "openrouter",
+    "model": "openrouter/nvidia/nemotron-3-super-120b-a12b:free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T21:34:11.865Z",
+  "completed_at": "2026-08-30T21:36:09.001Z",
+  "duration_ms": 117136,
+  "benchmark_metrics": {
+    "duration_ms": 117136,
+    "model_duration_ms": 116183,
+    "public_tests_duration_ms": 592,
+    "cost_usd": 0,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T21:34:11.865Z",
+    "completed_at": "2026-08-30T21:36:08.048Z",
+    "duration_ms": 116183,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0,
+      "steps": 22,
+      "tokens": {
+        "input": 188773,
+        "output": 3802,
+        "reasoning": 6035,
+        "cache_read": 164736,
+        "cache_write": 0,
+        "total": 363346
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T21:36:08.409Z",
+    "completed_at": "2026-08-30T21:36:09.001Z",
+    "duration_ms": 592
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase1-ledger/src/reconcile.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-candidates/phase1-ledger-openrouter-retry-r1/or-nemotron-3-super-free/patch/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "4433ee867ee443364a24a084fe07562753cada5686151c544c9fd4aeab2b3e1b"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "118dc58249284132166a6fd283da10a0e7d4241acadc0b95464c7e1549daf3c9"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "46bfa3e910a467f7793223bc9a749ca61484ca0f52ebc6d7aa84d367162c827a"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "54ace7919ca99c2703f65079b1a9524c2b91f241b813a0aacda288e9011f77a1"
+  }
+}

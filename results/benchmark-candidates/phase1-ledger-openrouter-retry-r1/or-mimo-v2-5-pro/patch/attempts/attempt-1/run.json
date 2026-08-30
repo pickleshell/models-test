@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "release": "phase1-ledger-openrouter-retry-r1",
+  "nomination": "patch",
+  "run_id": "phase1-ledger-openrouter-retry-r1:or-mimo-v2-5-pro:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "or-mimo-v2-5-pro",
+    "label": "MiMo V2.5 Pro",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "provider": "openrouter",
+    "model": "openrouter/xiaomi/mimo-v2.5-pro",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T21:12:36.924Z",
+  "completed_at": "2026-08-30T21:14:27.006Z",
+  "duration_ms": 110082,
+  "benchmark_metrics": {
+    "duration_ms": 110082,
+    "model_duration_ms": 109141,
+    "public_tests_duration_ms": 586,
+    "cost_usd": 0.0135248448,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T21:12:36.924Z",
+    "completed_at": "2026-08-30T21:14:26.065Z",
+    "duration_ms": 109141,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0.0135248448,
+      "steps": 14,
+      "tokens": {
+        "input": 19028,
+        "output": 5254,
+        "reasoning": 0,
+        "cache_read": 187968,
+        "cache_write": 0,
+        "total": 212250
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T21:14:26.420Z",
+    "completed_at": "2026-08-30T21:14:27.006Z",
+    "duration_ms": 586
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase1-ledger/src/reconcile.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-candidates/phase1-ledger-openrouter-retry-r1/or-mimo-v2-5-pro/patch/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "320ebb195da422097998b00767ac3afa39b872015779bbf99fc78418fc1c0bba"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "5707e5b69aacedc2a74b36ab611475a1ef5cc25324386fedd4b101ec796ccdd6"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "46048c8ea40cb8ac198f3257f0bdfc8766a130ad8a2cb2aa5b5bc6fa8237f89f"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "a5afd82af50dd282ff122b10bb96068de948e1ccc1d845365d8dc114297270b9"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "kind": "manual_code_review",
+  "release": "phase1-ledger-openrouter-retry-r1",
+  "candidate": "or-longcat-2-0",
+  "nomination": "patch",
+  "attempt": 1,
+  "reviewer": {
+    "id": "codex",
+    "type": "assistant_manual_review"
+  },
+  "identity_blind": false,
+  "scores": {
+    "simplicity": 7,
+    "readability": 5,
+    "no_extra_code": 9,
+    "reliability": 10
+  },
+  "average": 6.2,
+  "summary": "The agent ended abnormally after a partial patch. The preserved change addresses major behavior but retains permissive money parsing.",
+  "evidence": {
+    "public_tests_passed": true,
+    "objective_evaluator_passed": false,
+    "forbidden_changes": 0
+  }
+}

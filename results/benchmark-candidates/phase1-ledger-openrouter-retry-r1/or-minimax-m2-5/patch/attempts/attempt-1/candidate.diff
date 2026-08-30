@@ -1,0 +1,45 @@
+diff --git a/fixtures/phase1-ledger/src/reconcile.js b/fixtures/phase1-ledger/src/reconcile.js
+index 496d11c..1531501 100644
+--- a/fixtures/phase1-ledger/src/reconcile.js
++++ b/fixtures/phase1-ledger/src/reconcile.js
+@@ -8,6 +8,14 @@ export function parseAmountToCents(amount) {
+   if (!Number.isFinite(value)) {
+     throw new Error(`invalid amount: ${amount}`);
+   }
++  if (value < 0) {
++    throw new Error(`invalid amount: ${amount}`);
++  }
++
++  const parts = normalized.split('.');
++  if (parts.length === 2 && parts[1].length > 2) {
++    throw new Error(`invalid amount: ${amount}`);
++  }
+ 
+   return Math.round(value * 100);
+ }
+@@ -17,7 +25,7 @@ function dayKey(createdAt) {
+   if (Number.isNaN(date.getTime())) {
+     throw new Error(`invalid createdAt: ${createdAt}`);
+   }
+-  return date.toLocaleDateString('en-CA');
++  return date.toISOString().slice(0, 10);
+ }
+ 
+ function addTotal(totals, accountId, currency, day, cents) {
+@@ -52,6 +60,7 @@ export function reconcileLedger(entries) {
+ 
+       if (seenIds.has(entry.id)) {
+         metrics.duplicateCount += 1;
++        continue;
+       }
+       seenIds.add(entry.id);
+ 
+@@ -68,7 +77,7 @@ export function reconcileLedger(entries) {
+           metrics.orphanRefundCount += 1;
+           continue;
+         }
+-        addTotal(totals, entry.accountId, entry.currency, day, -cents);
++        addTotal(totals, original.accountId, original.currency, day, -cents);
+         metrics.processed += 1;
+       } else {
+         throw new Error(`unsupported type: ${entry.type}`);

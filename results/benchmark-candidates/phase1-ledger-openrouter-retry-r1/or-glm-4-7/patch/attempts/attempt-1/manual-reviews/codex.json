@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "kind": "manual_code_review",
+  "release": "phase1-ledger-openrouter-retry-r1",
+  "candidate": "or-glm-4-7",
+  "nomination": "patch",
+  "attempt": 1,
+  "reviewer": {
+    "id": "codex",
+    "type": "assistant_manual_review"
+  },
+  "identity_blind": false,
+  "scores": {
+    "simplicity": 3,
+    "readability": 2,
+    "no_extra_code": 10,
+    "reliability": 10
+  },
+  "average": 5,
+  "summary": "The patch only makes duplicate IDs idempotent. Money validation, UTC grouping, and refund attribution remain unfixed.",
+  "evidence": {
+    "public_tests_passed": true,
+    "objective_evaluator_passed": false,
+    "forbidden_changes": 0
+  }
+}

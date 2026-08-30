@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "or-ling-3-0-flash",
+    "label": "Ling 3.0 Flash",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "provider": "openrouter",
+    "model": "openrouter/inclusionai/ling-3.0-flash",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-30T21:36:09.299Z",
+  "completed_at": "2026-08-30T21:36:12.748Z",
+  "duration_ms": 3449,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0.000160104,
+    "steps": 1,
+    "tokens": {
+      "input": 7564,
+      "output": 2,
+      "reasoning": 18,
+      "cache_read": 0,
+      "cache_write": 0,
+      "total": 7584
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "be726979f94b0088c465d978325513b97ecbb43333bbb5c646cb64fd8942654c"
+  }
+}

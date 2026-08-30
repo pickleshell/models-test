@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "evaluator": {
+    "id": "phase2-bug-fix-v1",
+    "sha256": "f3bf35b4af253b4b83bfa8351f078c9e198d89cc63fba4e3d086b1fe56739b99"
+  },
+  "status": "completed",
+  "passed": false,
+  "started_at": "2026-08-30T21:09:44.590Z",
+  "completed_at": "2026-08-30T21:09:44.761Z",
+  "duration_ms": 171,
+  "execution": {
+    "status": 1,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T21:09:44.590Z",
+    "completed_at": "2026-08-30T21:09:44.761Z",
+    "duration_ms": 171
+  },
+  "artifact_hash": {
+    "path": "objective-evaluator.json",
+    "sha256": "7c91bf152638c2e28f5c2f5cb28a93149cdeeaeaf1c85bdf62f928213d583b3b"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "kind": "manual_code_review",
+  "release": "phase1-ledger-openrouter-retry-r1",
+  "candidate": "or-nemotron-3-super-free",
+  "nomination": "patch",
+  "attempt": 1,
+  "reviewer": {
+    "id": "codex",
+    "type": "assistant_manual_review"
+  },
+  "identity_blind": false,
+  "scores": {
+    "simplicity": 5,
+    "readability": 4,
+    "no_extra_code": 6,
+    "reliability": 10
+  },
+  "average": 5,
+  "summary": "The patch improves money validation and duplicate handling but does not repair UTC day grouping or refund attribution.",
+  "evidence": {
+    "public_tests_passed": true,
+    "objective_evaluator_passed": false,
+    "forbidden_changes": 0
+  }
+}

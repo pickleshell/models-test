@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "release": "phase1-ledger-openrouter-retry-r1",
+  "nomination": "patch",
+  "run_id": "phase1-ledger-openrouter-retry-r1:or-north-mini-code-free:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "or-north-mini-code-free",
+    "label": "North Mini Code Free",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "provider": "openrouter",
+    "model": "openrouter/cohere/north-mini-code:free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T21:17:07.935Z",
+  "completed_at": "2026-08-30T21:18:47.812Z",
+  "duration_ms": 99877,
+  "benchmark_metrics": {
+    "duration_ms": 99877,
+    "model_duration_ms": 98925,
+    "public_tests_duration_ms": 597,
+    "cost_usd": 0,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T21:17:07.935Z",
+    "completed_at": "2026-08-30T21:18:46.860Z",
+    "duration_ms": 98925,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0,
+      "steps": 21,
+      "tokens": {
+        "input": 209147,
+        "output": 920,
+        "reasoning": 11549,
+        "cache_read": 0,
+        "cache_write": 0,
+        "total": 219218
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T21:18:47.215Z",
+    "completed_at": "2026-08-30T21:18:47.812Z",
+    "duration_ms": 597
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase1-ledger/src/reconcile.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-candidates/phase1-ledger-openrouter-retry-r1/or-north-mini-code-free/patch/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "e5b01664713d7d166a3baa2fdb78e29ea1ef18d2724d4584e7ef6af56b4b7ecd"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "81132c0fde002bb9fb7dd833872502f96146cce09ea4c1cab2c013a03219b1e7"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "c06b522b10786e54ae396029391d771d05133b3df74d8e0dee80d687565819aa"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "d171306ff1a956ffe3fe13a80987090a97a2942f77516f303d9a00b0978f696c"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "or-mimo-v2-5-pro",
+    "label": "MiMo V2.5 Pro",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "provider": "openrouter",
+    "model": "openrouter/xiaomi/mimo-v2.5-pro",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-30T21:12:32.199Z",
+  "completed_at": "2026-08-30T21:12:36.626Z",
+  "duration_ms": 4427,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0.0024486564,
+    "steps": 1,
+    "tokens": {
+      "input": 5572,
+      "output": 21,
+      "reasoning": 0,
+      "cache_read": 1824,
+      "cache_write": 0,
+      "total": 7417
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "a6e8948ad7c6c1dbc5d20ecd5e8a27cb1a939b780b4c626090774f80889debe5"
+  }
+}

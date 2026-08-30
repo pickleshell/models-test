@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "release": "phase1-ledger-openrouter-retry-r1",
+  "nomination": "patch",
+  "run_id": "phase1-ledger-openrouter-retry-r1:or-ling-3-0-flash:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "or-ling-3-0-flash",
+    "label": "Ling 3.0 Flash",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "provider": "openrouter",
+    "model": "openrouter/inclusionai/ling-3.0-flash",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T21:36:13.019Z",
+  "completed_at": "2026-08-30T21:37:13.350Z",
+  "duration_ms": 60331,
+  "benchmark_metrics": {
+    "duration_ms": 60331,
+    "model_duration_ms": 59390,
+    "public_tests_duration_ms": 587,
+    "cost_usd": 0.002874984,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T21:36:13.019Z",
+    "completed_at": "2026-08-30T21:37:12.409Z",
+    "duration_ms": 59390,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0.002874984,
+      "steps": 25,
+      "tokens": {
+        "input": 54336,
+        "output": 3263,
+        "reasoning": 2783,
+        "cache_read": 322150,
+        "cache_write": 0,
+        "total": 382532
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T21:37:12.763Z",
+    "completed_at": "2026-08-30T21:37:13.350Z",
+    "duration_ms": 587
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase1-ledger/src/reconcile.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-candidates/phase1-ledger-openrouter-retry-r1/or-ling-3-0-flash/patch/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "229605d252c22c87c60458daa7eacac39a8a9813645128cfd438487358cf40dd"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "7d4c342a1df59788830cb22a359c913eec91b482c0b834141d5e461407a9264d"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "925fe2b6f0c8a6d2fdc81882511ffb6baddb69864c8f5cb6a0859a86c8610df8"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "8bc60b79174d09db43a6a695d725595b4ddf1f5d66b826ecf67f6cfcf1513032"
+  }
+}

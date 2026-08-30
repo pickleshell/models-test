@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "or-glm-4-7",
+    "label": "GLM-4.7",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "provider": "openrouter",
+    "model": "openrouter/z-ai/glm-4.7",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-30T21:39:36.329Z",
+  "completed_at": "2026-08-30T21:39:43.105Z",
+  "duration_ms": 6776,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0.0030042,
+    "steps": 1,
+    "tokens": {
+      "input": 7143,
+      "output": 4,
+      "reasoning": 80,
+      "cache_read": 0,
+      "cache_write": 0,
+      "total": 7227
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "682785294d745332ac9062e816f5d666e07ed68f30cfce427715789ff8751cd1"
+  }
+}

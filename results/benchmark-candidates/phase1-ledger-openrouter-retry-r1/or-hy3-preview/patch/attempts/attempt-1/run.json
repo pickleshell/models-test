@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "release": "phase1-ledger-openrouter-retry-r1",
+  "nomination": "patch",
+  "run_id": "phase1-ledger-openrouter-retry-r1:or-hy3-preview:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "or-hy3-preview",
+    "label": "Hy3 Preview",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "provider": "openrouter",
+    "model": "openrouter/tencent/hy3-preview",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T21:11:23.407Z",
+  "completed_at": "2026-08-30T21:12:31.904Z",
+  "duration_ms": 68497,
+  "benchmark_metrics": {
+    "duration_ms": 68497,
+    "model_duration_ms": 67557,
+    "public_tests_duration_ms": 589,
+    "cost_usd": 0.01536234,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T21:11:23.407Z",
+    "completed_at": "2026-08-30T21:12:30.964Z",
+    "duration_ms": 67557,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0.01536234,
+      "steps": 11,
+      "tokens": {
+        "input": 40549,
+        "output": 1934,
+        "reasoning": 1982,
+        "cache_read": 95232,
+        "cache_write": 0,
+        "total": 139697
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T21:12:31.315Z",
+    "completed_at": "2026-08-30T21:12:31.904Z",
+    "duration_ms": 589
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase1-ledger/src/reconcile.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-candidates/phase1-ledger-openrouter-retry-r1/or-hy3-preview/patch/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "e406e6bb2d6319a18074b5fa5d590222afa8b7a5da4e7ad5c7da0ac2a9ff988a"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "34a060b41c3a556432f53d39e4365d9c0a979b003bcc8b96e47ddff5e8278305"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "fcb5bb957968147c6afe339fed6fe43196f03292379012978f13e8b3d6a313a6"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "9be94523686969a965c32082679bc4ce3898a6e3386dacc694d738be1c533913"
+  }
+}

@@ -1,0 +1,59 @@
+diff --git a/fixtures/phase1-ledger/src/reconcile.js b/fixtures/phase1-ledger/src/reconcile.js
+index 496d11c..7c85c52 100644
+--- a/fixtures/phase1-ledger/src/reconcile.js
++++ b/fixtures/phase1-ledger/src/reconcile.js
+@@ -4,12 +4,25 @@ export function parseAmountToCents(amount) {
+   }
+ 
+   const normalized = String(amount).trim().replace(/[$,]/g, '');
++
++  // Reject malformed values: must match optional digits, optional decimal with exactly 1-2 digits
++  if (!/^\d+\.?\d{0,2}$/.test(normalized)) {
++    throw new Error(`invalid amount: ${amount}`);
++  }
++
+   const value = Number(normalized);
+   if (!Number.isFinite(value)) {
+     throw new Error(`invalid amount: ${amount}`);
+   }
+ 
+-  return Math.round(value * 100);
++  // Reject negative values
++  if (value < 0) {
++    throw new Error(`invalid amount: ${amount}`);
++  }
++
++  // Reject values with more than two decimal places (already validated by regex, but ensure no rounding)
++  const cents = Math.floor(value * 100 + 0.5); // Avoid floating point issues
++  return cents;
+ }
+ 
+ function dayKey(createdAt) {
+@@ -17,7 +30,8 @@ function dayKey(createdAt) {
+   if (Number.isNaN(date.getTime())) {
+     throw new Error(`invalid createdAt: ${createdAt}`);
+   }
+-  return date.toLocaleDateString('en-CA');
++  // Return UTC date in YYYY-MM-DD format
++  return date.toISOString().slice(0, 10);
+ }
+ 
+ function addTotal(totals, accountId, currency, day, cents) {
+@@ -52,6 +66,7 @@ export function reconcileLedger(entries) {
+ 
+       if (seenIds.has(entry.id)) {
+         metrics.duplicateCount += 1;
++        continue; // Skip processing duplicates
+       }
+       seenIds.add(entry.id);
+ 
+@@ -68,7 +83,8 @@ export function reconcileLedger(entries) {
+           metrics.orphanRefundCount += 1;
+           continue;
+         }
+-        addTotal(totals, entry.accountId, entry.currency, day, -cents);
++        // Refund affects the original sale's accountId and currency, using refund's createdAt day
++        addTotal(totals, original.accountId, original.currency, day, -cents);
+         metrics.processed += 1;
+       } else {
+         throw new Error(`unsupported type: ${entry.type}`);

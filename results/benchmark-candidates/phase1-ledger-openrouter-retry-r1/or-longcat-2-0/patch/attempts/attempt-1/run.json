@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "release": "phase1-ledger-openrouter-retry-r1",
+  "nomination": "patch",
+  "run_id": "phase1-ledger-openrouter-retry-r1:or-longcat-2-0:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "or-longcat-2-0",
+    "label": "LongCat 2.0",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "provider": "openrouter",
+    "model": "openrouter/meituan/longcat-2.0",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T21:18:53.758Z",
+  "completed_at": "2026-08-30T21:33:59.781Z",
+  "duration_ms": 906023,
+  "benchmark_metrics": {
+    "duration_ms": 906023,
+    "model_duration_ms": 905074,
+    "public_tests_duration_ms": 588,
+    "cost_usd": 0.078751524,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": null,
+    "signal": "SIGTERM",
+    "timed_out": true,
+    "output_limited": false,
+    "started_at": "2026-08-30T21:18:53.758Z",
+    "completed_at": "2026-08-30T21:33:58.832Z",
+    "duration_ms": 905074,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0.078751524,
+      "steps": 122,
+      "tokens": {
+        "input": 59415,
+        "output": 14123,
+        "reasoning": 11870,
+        "cache_read": 4955904,
+        "cache_write": 0,
+        "total": 5041312
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T21:33:59.193Z",
+    "completed_at": "2026-08-30T21:33:59.781Z",
+    "duration_ms": 588
+  },
+  "outcome": "agent_failure",
+  "changed_files": [
+    "fixtures/phase1-ledger/src/reconcile.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-candidates/phase1-ledger-openrouter-retry-r1/or-longcat-2-0/patch/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "b9cccb3f2fd5f7659c86423676d719c600de51a84ca93717bc084028c8a94006"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "ccb582835015b141c774daed3a5e4929e0a902b6e2753006ec764e2be1595732"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "5793b4faf7a262494bbb2956ee6991fedfef9fce650668812aff6f2415692833"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "ead1f980fc6b518230d5a167e3a480c2142b004d0d568a7e9e2a32589e1de814"
+  }
+}

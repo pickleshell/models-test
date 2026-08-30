@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "or-kimi-k2-5",
+    "label": "Kimi K2.5",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "provider": "openrouter",
+    "model": "openrouter/moonshotai/kimi-k2.5",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-30T21:07:39.489Z",
+  "completed_at": "2026-08-30T21:07:43.371Z",
+  "duration_ms": 3882,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0.0019632,
+    "steps": 1,
+    "tokens": {
+      "input": 2477,
+      "output": 3,
+      "reasoning": 28,
+      "cache_read": 3840,
+      "cache_write": 0,
+      "total": 6348
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "c22bdb04c122ca714775865d1da32f56ccda315feea64ffedd0a1712cb038391"
+  }
+}

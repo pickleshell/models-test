@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "kind": "manual_code_review",
+  "release": "phase1-ledger-openrouter-retry-r1",
+  "candidate": "or-north-mini-code-free",
+  "nomination": "patch",
+  "attempt": 1,
+  "reviewer": {
+    "id": "codex",
+    "type": "assistant_manual_review"
+  },
+  "identity_blind": false,
+  "scores": {
+    "simplicity": 3,
+    "readability": 3,
+    "no_extra_code": 8,
+    "reliability": 10
+  },
+  "average": 4.8,
+  "summary": "The patch only changes duplicate handling and invalid-entry bookkeeping; the central money, UTC-day, and refund-attribution defects remain.",
+  "evidence": {
+    "public_tests_passed": true,
+    "objective_evaluator_passed": false,
+    "forbidden_changes": 0
+  }
+}

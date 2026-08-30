@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "kind": "manual_code_review",
+  "release": "phase1-ledger-openrouter-retry-r1",
+  "candidate": "or-mimo-v2-5-pro",
+  "nomination": "patch",
+  "attempt": 1,
+  "reviewer": {
+    "id": "codex",
+    "type": "assistant_manual_review"
+  },
+  "identity_blind": false,
+  "scores": {
+    "simplicity": 7,
+    "readability": 5,
+    "no_extra_code": 8,
+    "reliability": 10
+  },
+  "average": 6,
+  "summary": "The patch fixes the major behaviors, but uses permissive normalization and parseInt-based amount conversion that mishandles some numeric formats.",
+  "evidence": {
+    "public_tests_passed": true,
+    "objective_evaluator_passed": false,
+    "forbidden_changes": 0
+  }
+}

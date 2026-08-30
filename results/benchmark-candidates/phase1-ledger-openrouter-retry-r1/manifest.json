@@ -1,0 +1,169 @@
+{
+  "schema_version": 3,
+  "release": "phase1-ledger-openrouter-retry-r1",
+  "nominations": [
+    {
+      "id": "patch",
+      "fixture": "fixtures/phase1-ledger",
+      "prompt": "fixtures/phase1-ledger/PROMPT.md",
+      "test_command": [
+        "npm",
+        "test",
+        "--prefix",
+        "fixtures/phase1-ledger"
+      ],
+      "allowed_changes": [
+        "fixtures/phase1-ledger/src/reconcile.js"
+      ],
+      "frozen_inputs": {
+        "fixture_tree": {
+          "algorithm": "sha256-tree-v1",
+          "sha256": "06ad193feec22c6a5d93747726cd2237b764d2a1f05d17182bef9f5683bb55d4",
+          "files": 5
+        },
+        "prompt_sha256": "e99d613647b1d741d3f746ccfbbd0b723d106e46c42ab1fd6df398ad2d5e9d58"
+      },
+      "objective_evaluator": {
+        "id": "phase2-bug-fix-v1",
+        "sha256": "f3bf35b4af253b4b83bfa8351f078c9e198d89cc63fba4e3d086b1fe56739b99",
+        "source_sha256": "52e1fef85a80bdc158f0ab9bd03107ebb8782754a0341da3844b03a374f54782"
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "id": "or-qwen3-6-plus",
+      "label": "Qwen 3.6 Plus",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "openrouter",
+      "model": "openrouter/qwen/qwen3.6-plus",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "or-kimi-k2-5",
+      "label": "Kimi K2.5",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "openrouter",
+      "model": "openrouter/moonshotai/kimi-k2.5",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "or-glm-5",
+      "label": "GLM-5",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "openrouter",
+      "model": "openrouter/z-ai/glm-5",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "or-hy3-preview",
+      "label": "Hy3 Preview",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "openrouter",
+      "model": "openrouter/tencent/hy3-preview",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "or-mimo-v2-5-pro",
+      "label": "MiMo V2.5 Pro",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "openrouter",
+      "model": "openrouter/xiaomi/mimo-v2.5-pro",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "or-minimax-m3-free",
+      "label": "MiniMax M3 Free",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "openrouter",
+      "model": "openrouter/minimax/minimax-m3:free",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "or-north-mini-code-free",
+      "label": "North Mini Code Free",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "openrouter",
+      "model": "openrouter/cohere/north-mini-code:free",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "or-longcat-2-0",
+      "label": "LongCat 2.0",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "openrouter",
+      "model": "openrouter/meituan/longcat-2.0",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "or-nemotron-3-super-free",
+      "label": "Nemotron 3 Super Free",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "openrouter",
+      "model": "openrouter/nvidia/nemotron-3-super-120b-a12b:free",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "or-ling-3-0-flash",
+      "label": "Ling 3.0 Flash",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "openrouter",
+      "model": "openrouter/inclusionai/ling-3.0-flash",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "or-minimax-m2-5",
+      "label": "MiniMax M2.5",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "openrouter",
+      "model": "openrouter/minimax/minimax-m2.5",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "or-minimax-m2-1",
+      "label": "MiniMax M2.1",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "openrouter",
+      "model": "openrouter/minimax/minimax-m2.1",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "or-glm-4-7",
+      "label": "GLM-4.7",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "openrouter",
+      "model": "openrouter/z-ai/glm-4.7",
+      "reasoning_variant": "provider_default"
+    }
+  ],
+  "judges": [],
+  "criteria": [
+    "functional_correctness",
+    "reliability_edge_cases",
+    "maintainability_clarity",
+    "scope_discipline"
+  ],
+  "retry_policy": {
+    "canonical_attempt": 1,
+    "allow_retries": false
+  },
+  "judge_prompt": {
+    "version": 3,
+    "template_hash": "3b0265ce6a626409d7d01a8c28f1d2a8541056ed8634241a7dc13ac2acf97ce2"
+  },
+  "config_sha256": "ce3bffd918b5c23969e0cc392daebd1933f334bc2ee0e415084b182829e52673",
+  "spec_hash": "39450d1bf24905d1e5fbc91964d7506ebe287ed4b9122a29d15dd54e90fbcd2c"
+}
