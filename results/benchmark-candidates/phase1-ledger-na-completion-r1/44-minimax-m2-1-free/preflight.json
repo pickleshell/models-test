@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "44-minimax-m2-1-free",
+    "label": "MiniMax M2.1 Free",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "provider": "opencode",
+    "model": "opencode/minimax-m2.1-free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "unavailable",
+  "reason": "process_failure",
+  "started_at": "2026-08-30T13:27:50.725Z",
+  "completed_at": "2026-08-30T13:27:52.325Z",
+  "duration_ms": 1600,
+  "process_status": 1,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": null,
+    "steps": 0,
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "cache_read": 0,
+      "cache_write": 0,
+      "total": 0
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "3b790c6da722cbbe27c9aa4adeecd76453f82160b4156bd7e1b1dcf0571d56e9"
+  }
+}

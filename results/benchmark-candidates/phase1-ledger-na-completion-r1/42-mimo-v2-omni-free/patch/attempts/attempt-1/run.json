@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "release": "phase1-ledger-na-completion-r1",
+  "nomination": "patch",
+  "run_id": "phase1-ledger-na-completion-r1:42-mimo-v2-omni-free:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "42-mimo-v2-omni-free",
+    "label": "MiMo V2 Omni Free",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "provider": "opencode",
+    "model": "opencode/mimo-v2-omni-free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T13:58:16.093Z",
+  "completed_at": "2026-08-30T13:58:16.093Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-30T13:27:47.113Z",
+    "completed_at": "2026-08-30T13:27:48.706Z",
+    "duration_ms": 1593
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-candidates/phase1-ledger-na-completion-r1/42-mimo-v2-omni-free/patch/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "04cd1caa3795466627f68dbd0ea43db9c0020d3640c50eaf1b5284db7929f840"
+  }
+}

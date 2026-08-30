@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "benchmark": "phase1-ledger-na-completion-r1",
+  "evaluator": "scripts/evaluate-phase1.mjs",
+  "evaluations": [
+    { "candidate": "08-qwen3-7-max", "public_status": 0, "hidden_passed": 4, "hidden_failed": 0, "forbidden_changes": 0, "passed": true },
+    { "candidate": "12-qwen3-6-plus", "public_status": 1, "hidden_passed": null, "hidden_failed": null, "forbidden_changes": 0, "passed": false }
+  ],
+  "unavailable_candidates": 21
+}

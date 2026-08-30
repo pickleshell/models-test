@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "release": "phase1-ledger-na-completion-r1",
+  "nomination": "patch",
+  "run_id": "phase1-ledger-na-completion-r1:24-kimi-k2-5-free:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "24-kimi-k2-5-free",
+    "label": "Kimi K2.5 Free",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "provider": "opencode",
+    "model": "opencode/kimi-k2.5-free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T13:58:16.086Z",
+  "completed_at": "2026-08-30T13:58:16.086Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-30T13:27:21.628Z",
+    "completed_at": "2026-08-30T13:27:23.179Z",
+    "duration_ms": 1551
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-candidates/phase1-ledger-na-completion-r1/24-kimi-k2-5-free/patch/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "e69f4e1a6e4690a57b2797838b52723399d3d656857b046080b969a60e36416d"
+  }
+}

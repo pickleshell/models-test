@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "release": "phase1-ledger-na-completion-r1",
+  "nomination": "patch",
+  "run_id": "phase1-ledger-na-completion-r1:21-grok-code:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "21-grok-code",
+    "label": "Grok Code",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "provider": "opencode",
+    "model": "opencode/grok-code",
+    "subscription": "paid",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T13:58:16.085Z",
+  "completed_at": "2026-08-30T13:58:16.085Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-30T13:27:18.047Z",
+    "completed_at": "2026-08-30T13:27:19.605Z",
+    "duration_ms": 1558
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-candidates/phase1-ledger-na-completion-r1/21-grok-code/patch/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "49c1baab39bfebb30cd6a56ccbe06a84eb4af0d1f30d3fa0b24eedbf85e90467"
+  }
+}

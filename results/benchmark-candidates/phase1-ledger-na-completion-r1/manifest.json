@@ -1,0 +1,282 @@
+{
+  "schema_version": 3,
+  "release": "phase1-ledger-na-completion-r1",
+  "nominations": [
+    {
+      "id": "patch",
+      "fixture": "fixtures/phase1-ledger",
+      "prompt": "fixtures/phase1-ledger/PROMPT.md",
+      "test_command": [
+        "npm",
+        "test",
+        "--prefix",
+        "fixtures/phase1-ledger"
+      ],
+      "allowed_changes": [
+        "fixtures/phase1-ledger/src/reconcile.js"
+      ],
+      "frozen_inputs": {
+        "fixture_tree": {
+          "algorithm": "sha256-tree-v1",
+          "sha256": "06ad193feec22c6a5d93747726cd2237b764d2a1f05d17182bef9f5683bb55d4",
+          "files": 5
+        },
+        "prompt_sha256": "e99d613647b1d741d3f746ccfbbd0b723d106e46c42ab1fd6df398ad2d5e9d58"
+      },
+      "objective_evaluator": {
+        "id": "phase2-bug-fix-v1",
+        "sha256": "f3bf35b4af253b4b83bfa8351f078c9e198d89cc63fba4e3d086b1fe56739b99",
+        "source_sha256": "52e1fef85a80bdc158f0ab9bd03107ebb8782754a0341da3844b03a374f54782"
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "id": "08-qwen3-7-max",
+      "label": "Qwen3.7 Max",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "opencode-go",
+      "model": "opencode-go/qwen3.7-max",
+      "subscription": "paid",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "12-qwen3-6-plus",
+      "label": "Qwen3.6 Plus",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "opencode-go",
+      "model": "opencode-go/qwen3.6-plus",
+      "subscription": "paid",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "21-grok-code",
+      "label": "Grok Code",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "opencode",
+      "model": "opencode/grok-code",
+      "subscription": "paid",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "23-qwen3-6-plus-free",
+      "label": "Qwen3.6 Plus Free",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "opencode",
+      "model": "opencode/qwen3.6-plus-free",
+      "subscription": "free",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "24-kimi-k2-5-free",
+      "label": "Kimi K2.5 Free",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "opencode",
+      "model": "opencode/kimi-k2.5-free",
+      "subscription": "free",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "25-glm-5-free",
+      "label": "GLM 5 Free",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "opencode",
+      "model": "opencode/glm-5-free",
+      "subscription": "free",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "26-hy3-preview-free",
+      "label": "HY3 Preview Free",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "opencode",
+      "model": "opencode/hy3-preview-free",
+      "subscription": "free",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "29-mimo-v2-pro-free",
+      "label": "MiMo V2 Pro Free",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "opencode",
+      "model": "opencode/mimo-v2-pro-free",
+      "subscription": "free",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "30-minimax-m3-free",
+      "label": "MiniMax M3 Free",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "opencode",
+      "model": "opencode/minimax-m3-free",
+      "subscription": "free",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "31-north-mini-code-free",
+      "label": "North Mini Code Free",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "opencode",
+      "model": "opencode/north-mini-code-free",
+      "subscription": "free",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "32-longcat-2-0-free",
+      "label": "LongCat 2.0 Free",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "opencode",
+      "model": "opencode/longcat-2.0-free",
+      "subscription": "free",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "34-nemotron-3-super-free",
+      "label": "Nemotron 3 Super Free",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "opencode",
+      "model": "opencode/nemotron-3-super-free",
+      "subscription": "free",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "36-trinity-large-preview-free",
+      "label": "Trinity Large Preview Free",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "opencode",
+      "model": "opencode/trinity-large-preview-free",
+      "subscription": "free",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "37-ring-2-6-1t-free",
+      "label": "Ring 2.6 1T Free",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "opencode",
+      "model": "opencode/ring-2.6-1t-free",
+      "subscription": "free",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "38-ling-3-0-flash-free",
+      "label": "Ling 3.0 Flash Free",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "opencode",
+      "model": "opencode/ling-3.0-flash-free",
+      "subscription": "free",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "39-ling-3-0-tiny-free",
+      "label": "Ling 3.0 Tiny Free",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "opencode",
+      "model": "opencode/ling-3.0-tiny-free",
+      "subscription": "free",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "40-ling-2-6-flash-free",
+      "label": "Ling 2.6 Flash Free",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "opencode",
+      "model": "opencode/ling-2.6-flash-free",
+      "subscription": "free",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "41-mimo-v2-flash-free",
+      "label": "MiMo V2 Flash Free",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "opencode",
+      "model": "opencode/mimo-v2-flash-free",
+      "subscription": "free",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "42-mimo-v2-omni-free",
+      "label": "MiMo V2 Omni Free",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "opencode",
+      "model": "opencode/mimo-v2-omni-free",
+      "subscription": "free",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "43-minimax-m2-5-free",
+      "label": "MiniMax M2.5 Free",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "opencode",
+      "model": "opencode/minimax-m2.5-free",
+      "subscription": "free",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "44-minimax-m2-1-free",
+      "label": "MiniMax M2.1 Free",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "opencode",
+      "model": "opencode/minimax-m2.1-free",
+      "subscription": "free",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "45-glm-4-7-free",
+      "label": "GLM 4.7 Free",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "opencode",
+      "model": "opencode/glm-4.7-free",
+      "subscription": "free",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "nemotron-3-nano-omni-openrouter-free",
+      "label": "Nemotron 3 Nano Omni Reasoning Free",
+      "agent": "opencode",
+      "runtime": "opencode",
+      "provider": "openrouter",
+      "model": "openrouter/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+      "subscription": "free",
+      "reasoning_variant": "provider_default"
+    }
+  ],
+  "judges": [],
+  "criteria": [
+    "functional_correctness",
+    "reliability_edge_cases",
+    "maintainability_clarity",
+    "scope_discipline"
+  ],
+  "retry_policy": {
+    "canonical_attempt": 1,
+    "allow_retries": false
+  },
+  "judge_prompt": {
+    "version": 3,
+    "template_hash": "3b0265ce6a626409d7d01a8c28f1d2a8541056ed8634241a7dc13ac2acf97ce2"
+  },
+  "config_sha256": "108e47f5a4b5dbbdd65530f7714f5d10b4a858c37f1c26b2860b647af03d6960",
+  "spec_hash": "6ddc91f4bb88bfcfa3c2ee718344be70954175b4cb159cfd821abe325b422697"
+}

@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "release": "phase1-ledger-na-completion-r1",
+  "nomination": "patch",
+  "run_id": "phase1-ledger-na-completion-r1:08-qwen3-7-max:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "08-qwen3-7-max",
+    "label": "Qwen3.7 Max",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "provider": "opencode-go",
+    "model": "opencode-go/qwen3.7-max",
+    "subscription": "paid",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T13:28:03.637Z",
+  "completed_at": "2026-08-30T13:43:09.673Z",
+  "duration_ms": 906036,
+  "benchmark_metrics": {
+    "duration_ms": 906036,
+    "model_duration_ms": 905095,
+    "public_tests_duration_ms": 581,
+    "cost_usd": 0.227428,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": null,
+    "signal": "SIGTERM",
+    "timed_out": true,
+    "output_limited": false,
+    "started_at": "2026-08-30T13:28:03.637Z",
+    "completed_at": "2026-08-30T13:43:08.732Z",
+    "duration_ms": 905095,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0.227428,
+      "steps": 16,
+      "tokens": {
+        "input": 46324,
+        "output": 1911,
+        "reasoning": 1989,
+        "cache_read": 164736,
+        "cache_write": 0,
+        "total": 214960
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T13:43:09.092Z",
+    "completed_at": "2026-08-30T13:43:09.673Z",
+    "duration_ms": 581
+  },
+  "outcome": "agent_failure",
+  "changed_files": [
+    "fixtures/phase1-ledger/src/reconcile.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-candidates/phase1-ledger-na-completion-r1/08-qwen3-7-max/patch/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "36ad657c17dc3f9b9bd0b3adcd68fe8fc65d8d46647e633aea15255ae4ae44a3"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "b13916330d1da452454c0dd88bffc8e021c4b7e0b277d8ef91ee012eb704c00c"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "65f0d45265efb37a010ff9f3d30331a50f45317891ae85c4e4ed5e26d95b7885"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "5287093f106b0400baa32dd057a5ebfcceefc3ec9623a29034ef230c77e55a40"
+  }
+}

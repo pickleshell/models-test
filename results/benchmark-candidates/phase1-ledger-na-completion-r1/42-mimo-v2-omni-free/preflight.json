@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "42-mimo-v2-omni-free",
+    "label": "MiMo V2 Omni Free",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "provider": "opencode",
+    "model": "opencode/mimo-v2-omni-free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "unavailable",
+  "reason": "process_failure",
+  "started_at": "2026-08-30T13:27:47.113Z",
+  "completed_at": "2026-08-30T13:27:48.706Z",
+  "duration_ms": 1593,
+  "process_status": 1,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": null,
+    "steps": 0,
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "cache_read": 0,
+      "cache_write": 0,
+      "total": 0
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "9d320da1095c5cec6f9a27ada1f9e35f4c5735d2669b26348fb5bd7f70c8ff13"
+  }
+}

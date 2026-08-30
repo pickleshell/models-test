@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "26-hy3-preview-free",
+    "label": "HY3 Preview Free",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "provider": "opencode",
+    "model": "opencode/hy3-preview-free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "unavailable",
+  "reason": "process_failure",
+  "started_at": "2026-08-30T13:27:25.209Z",
+  "completed_at": "2026-08-30T13:27:26.783Z",
+  "duration_ms": 1574,
+  "process_status": 1,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": null,
+    "steps": 0,
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "cache_read": 0,
+      "cache_write": 0,
+      "total": 0
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "7738c7aee5d3ae9e45d22c46bf56bf74ed664cf0c0ce0af69fef1091997bece9"
+  }
+}
