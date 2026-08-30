@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "release": "phase1-ledger-na-retry-r2",
+  "nomination": "patch",
+  "run_id": "phase1-ledger-na-retry-r2:26-hy3-preview-free:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "26-hy3-preview-free",
+    "label": "HY3 Preview Free",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "provider": "opencode",
+    "model": "opencode/hy3-preview-free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T20:40:23.854Z",
+  "completed_at": "2026-08-30T20:40:23.854Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-30T20:40:22.272Z",
+    "completed_at": "2026-08-30T20:40:23.853Z",
+    "duration_ms": 1581
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-candidates/phase1-ledger-na-retry-r2/26-hy3-preview-free/patch/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "dbc014ae58e0bfd3666eedc3e54494a4593a75aac6a67a2ae5556eb97736ca6b"
+  }
+}

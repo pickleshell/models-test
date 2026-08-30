@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "release": "phase1-ledger-na-retry-r2",
+  "nomination": "patch",
+  "run_id": "phase1-ledger-na-retry-r2:45-glm-4-7-free:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "45-glm-4-7-free",
+    "label": "GLM 4.7 Free",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "provider": "opencode",
+    "model": "opencode/glm-4.7-free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T20:40:50.890Z",
+  "completed_at": "2026-08-30T20:40:50.890Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-30T20:40:49.325Z",
+    "completed_at": "2026-08-30T20:40:50.889Z",
+    "duration_ms": 1564
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-candidates/phase1-ledger-na-retry-r2/45-glm-4-7-free/patch/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "376345d677af1616dff05f3c19a159a14df8631d7c46d5f001663a8cbfe10dca"
+  }
+}

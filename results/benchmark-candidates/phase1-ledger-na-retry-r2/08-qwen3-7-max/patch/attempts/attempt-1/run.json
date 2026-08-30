@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "release": "phase1-ledger-na-retry-r2",
+  "nomination": "patch",
+  "run_id": "phase1-ledger-na-retry-r2:08-qwen3-7-max:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "08-qwen3-7-max",
+    "label": "Qwen3.7 Max",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "provider": "opencode-go",
+    "model": "opencode-go/qwen3.7-max",
+    "subscription": "paid",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T20:37:42.488Z",
+  "completed_at": "2026-08-30T20:39:00.449Z",
+  "duration_ms": 77961,
+  "benchmark_metrics": {
+    "duration_ms": 77961,
+    "model_duration_ms": 77020,
+    "public_tests_duration_ms": 589,
+    "cost_usd": 0.2652495,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T20:37:42.488Z",
+    "completed_at": "2026-08-30T20:38:59.508Z",
+    "duration_ms": 77020,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0.2652495,
+      "steps": 19,
+      "tokens": {
+        "input": 49644,
+        "output": 2370,
+        "reasoning": 2087,
+        "cache_read": 215424,
+        "cache_write": 0,
+        "total": 269525
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T20:38:59.860Z",
+    "completed_at": "2026-08-30T20:39:00.449Z",
+    "duration_ms": 589
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase1-ledger/src/reconcile.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-candidates/phase1-ledger-na-retry-r2/08-qwen3-7-max/patch/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "25b8980bf580f0fc1dbbd5ce893f13f1e4ba26ddaa2225ee4ee947099f735ac7"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "8f2b3956c7974ba95589a4d8173c08c2b63121ef29010f77d66cc9ed6e0ec4ec"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "2bc67ae28996447d6e594016d0482cabf41a6b29a0e0f6dee7a5a63f5dd8778e"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "3f8c1f14035a45ba28aa0e44e816b5546be42feec1eccf3971f8c6a25fd90ac8"
+  }
+}

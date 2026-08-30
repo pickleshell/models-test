@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "release": "phase1-ledger-na-retry-r2",
+  "nomination": "patch",
+  "run_id": "phase1-ledger-na-retry-r2:37-ring-2-6-1t-free:patch",
+  "attempt": 1,
+  "candidate": {
+    "id": "37-ring-2-6-1t-free",
+    "label": "Ring 2.6 1T Free",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "provider": "opencode",
+    "model": "opencode/ring-2.6-1t-free",
+    "subscription": "free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T20:40:36.408Z",
+  "completed_at": "2026-08-30T20:40:36.408Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-30T20:40:34.825Z",
+    "completed_at": "2026-08-30T20:40:36.407Z",
+    "duration_ms": 1582
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-candidates/phase1-ledger-na-retry-r2/37-ring-2-6-1t-free/patch/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "60e879c1eae48eb2317740f8aef2c3059df141a662ccc21098414e5ff76fdad2"
+  }
+}

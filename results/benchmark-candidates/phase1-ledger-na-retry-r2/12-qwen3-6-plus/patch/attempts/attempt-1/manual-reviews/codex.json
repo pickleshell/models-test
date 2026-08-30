@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "kind": "manual_code_review",
+  "release": "phase1-ledger-na-retry-r2",
+  "candidate": "12-qwen3-6-plus",
+  "nomination": "patch",
+  "attempt": 1,
+  "reviewer": { "id": "codex", "type": "assistant_manual_review" },
+  "identity_blind": false,
+  "scores": { "simplicity": 9, "readability": 9, "no_extra_code": 9, "reliability": 7, "edge_cases": 5 },
+  "average": 7.8,
+  "summary": "The patch correctly handles duplicate IDs, UTC days, refund attribution, negative amounts, and excessive decimals. Its broad comma removal accepts malformed monetary strings such as 1,20 and 12,34.00, which the objective evaluator rejects.",
+  "evidence": { "public_tests_passed": true, "objective_evaluator_passed": false, "forbidden_changes": 0 }
+}

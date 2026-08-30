@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "kind": "manual_code_review",
+  "release": "phase1-ledger-na-retry-r2",
+  "candidate": "nemotron-3-nano-omni-openrouter-free",
+  "nomination": "patch",
+  "attempt": 1,
+  "reviewer": { "id": "codex", "type": "assistant_manual_review" },
+  "identity_blind": false,
+  "scores": { "simplicity": 8, "readability": 6, "no_extra_code": 9, "reliability": 7, "edge_cases": 5 },
+  "average": 7,
+  "summary": "The patch handles the main ledger behavior and adds a strict decimal regex, but it removes commas before validating grouping and therefore accepts malformed monetary strings. The implementation is also less consistently formatted than the other two patches.",
+  "evidence": { "public_tests_passed": true, "objective_evaluator_passed": false, "forbidden_changes": 0 }
+}

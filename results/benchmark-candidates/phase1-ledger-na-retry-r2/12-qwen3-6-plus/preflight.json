@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "12-qwen3-6-plus",
+    "label": "Qwen3.6 Plus",
+    "agent": "opencode",
+    "runtime": "opencode",
+    "provider": "opencode-go",
+    "model": "opencode-go/qwen3.6-plus",
+    "subscription": "paid",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-30T20:39:00.753Z",
+  "completed_at": "2026-08-30T20:39:04.626Z",
+  "duration_ms": 3873,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0.0037745,
+    "steps": 1,
+    "tokens": {
+      "input": 7411,
+      "output": 6,
+      "reasoning": 17,
+      "cache_read": 0,
+      "cache_write": 0,
+      "total": 7434
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "4ac62974812ebcac482203caa8a80a3e50c851b37eb7b76766de1dc8bbe5c443"
+  }
+}
