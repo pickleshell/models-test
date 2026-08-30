@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "kind": "manual_code_review",
+  "release": "bug-fix-new-api-available-r1",
+  "candidate": "182-qwen3-6-plus-go",
+  "nomination": "bug-fix-ledger",
+  "attempt": 1,
+  "reviewer": {
+    "id": "codex",
+    "type": "assistant_manual_review"
+  },
+  "identity_blind": false,
+  "scores": {
+    "functional_correctness": 6,
+    "reliability_edge_cases": 4,
+    "maintainability_clarity": 9,
+    "scope_discipline": 10
+  },
+  "average": 7.25,
+  "summary": "The patch fixes duplicate handling and refund attribution but leaves strict money parsing and UTC grouping incomplete, so the objective evaluator fails.",
+  "evidence": {
+    "public_tests_passed": true,
+    "objective_evaluator_passed": false,
+    "forbidden_changes": 0
+  }
+}

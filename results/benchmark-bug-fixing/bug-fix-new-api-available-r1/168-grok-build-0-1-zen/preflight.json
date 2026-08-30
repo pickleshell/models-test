@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "168-grok-build-0-1-zen",
+    "agent": "opencode",
+    "model": "opencode/grok-build-0.1",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-30T18:11:13.987Z",
+  "completed_at": "2026-08-30T18:11:18.174Z",
+  "duration_ms": 4187,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0.0074976,
+    "steps": 1,
+    "tokens": {
+      "input": 7138,
+      "output": 1,
+      "reasoning": 166,
+      "cache_read": 128,
+      "cache_write": 0,
+      "total": 7433
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "58a3865569a633d94fe13168a56797c62598c66f9a8f39bf8e8d6b9bcee2e619"
+  }
+}

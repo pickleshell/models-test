@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "154-claude-sonnet-4-5-zen",
+    "agent": "opencode",
+    "model": "opencode/claude-sonnet-4-5",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-30T17:35:41.157Z",
+  "completed_at": "2026-08-30T17:35:45.138Z",
+  "duration_ms": 3981,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0.03170775,
+    "steps": 1,
+    "tokens": {
+      "input": 3,
+      "output": 4,
+      "reasoning": 0,
+      "cache_read": 0,
+      "cache_write": 8437,
+      "total": 8444
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "e82ae88ba37121b515e749fc546041087eea4e22cf902806b953f5c97e1d7c1e"
+  }
+}

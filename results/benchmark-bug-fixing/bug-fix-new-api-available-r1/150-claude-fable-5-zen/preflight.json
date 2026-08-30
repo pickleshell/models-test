@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "150-claude-fable-5-zen",
+    "agent": "opencode",
+    "model": "opencode/claude-fable-5",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-30T17:30:29.726Z",
+  "completed_at": "2026-08-30T17:30:34.721Z",
+  "duration_ms": 4995,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0.1399825,
+    "steps": 1,
+    "tokens": {
+      "input": 2,
+      "output": 4,
+      "reasoning": 0,
+      "cache_read": 0,
+      "cache_write": 11181,
+      "total": 11187
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "046bf8fe1af455922fefd539366baa3f780e95af97ab9a0ff1a5f913f029fc88"
+  }
+}

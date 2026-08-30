@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "201-nvidia-nemotron-3-ultra-550b-a55b-free",
+    "agent": "opencode",
+    "model": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-30T19:07:58.074Z",
+  "completed_at": "2026-08-30T19:08:01.296Z",
+  "duration_ms": 3222,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0,
+    "steps": 1,
+    "tokens": {
+      "input": 7625,
+      "output": 0,
+      "reasoning": 32,
+      "cache_read": 0,
+      "cache_write": 0,
+      "total": 7657
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "c43289e93f9d3fb30cf61ae26fdb2ba2ba5f0cf87b19246a742c6f4b96a68162"
+  }
+}

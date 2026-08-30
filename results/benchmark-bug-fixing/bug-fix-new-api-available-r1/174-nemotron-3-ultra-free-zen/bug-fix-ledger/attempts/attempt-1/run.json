@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "release": "bug-fix-new-api-available-r1",
+  "nomination": "bug-fix-ledger",
+  "run_id": "bug-fix-new-api-available-r1:174-nemotron-3-ultra-free-zen:bug-fix-ledger",
+  "attempt": 1,
+  "candidate": {
+    "id": "174-nemotron-3-ultra-free-zen",
+    "agent": "opencode",
+    "model": "opencode/nemotron-3-ultra-free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T18:16:01.241Z",
+  "completed_at": "2026-08-30T18:16:01.241Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-30T18:15:58.576Z",
+    "completed_at": "2026-08-30T18:16:01.240Z",
+    "duration_ms": 2664
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-bug-fixing/bug-fix-new-api-available-r1/174-nemotron-3-ultra-free-zen/bug-fix-ledger/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "4b604fe7f4aa97e99db787e62986408bcc134ea9921f57a13ff1bdfa27bac771"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "release": "bug-fix-openrouter-fallback-r1",
+  "nomination": "bug-fix-ledger",
+  "run_id": "bug-fix-openrouter-fallback-r1:202-qwen-qwen3-5-plus-02-15:bug-fix-ledger",
+  "attempt": 1,
+  "candidate": {
+    "id": "202-qwen-qwen3-5-plus-02-15",
+    "agent": "opencode",
+    "model": "openrouter/qwen/qwen3.5-plus-02-15",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T19:09:16.783Z",
+  "completed_at": "2026-08-30T19:09:59.210Z",
+  "duration_ms": 42427,
+  "benchmark_metrics": {
+    "duration_ms": 42427,
+    "model_duration_ms": 41450,
+    "public_tests_duration_ms": 615,
+    "cost_usd": 0.0179335,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T19:09:16.783Z",
+    "completed_at": "2026-08-30T19:09:58.233Z",
+    "duration_ms": 41450,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0.0179335,
+      "steps": 6,
+      "tokens": {
+        "input": 58157,
+        "output": 1289,
+        "reasoning": 514,
+        "cache_read": 0,
+        "cache_write": 0,
+        "total": 59960
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T19:09:58.595Z",
+    "completed_at": "2026-08-30T19:09:59.210Z",
+    "duration_ms": 615
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/bug-fix-ledger/src/reconcile.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-bug-fixing/bug-fix-openrouter-fallback-r1/202-qwen-qwen3-5-plus-02-15/bug-fix-ledger/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "122cca7fe35fc6aca9d92899e5340a3215b9fda35e292c70bdaa258f21beacc2"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "d408f16d503d47ca226bd63999e7a775e17478704770987d8bf846b126ac78e3"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "af4b6bdb08519e22fbd3229a29a708cabd6075f73199818b92cec686af297089"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "cff1eb8b3a7ba46cedcd16e91bc4e60193d1c1da306ca6d63f1c9f2ea587ae1e"
+  }
+}

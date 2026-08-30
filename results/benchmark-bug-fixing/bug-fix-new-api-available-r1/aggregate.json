@@ -1,0 +1,6027 @@
+{
+  "schema_version": 2,
+  "release": "bug-fix-new-api-available-r1",
+  "criteria": [
+    "functional_correctness",
+    "reliability_edge_cases",
+    "maintainability_clarity",
+    "scope_discipline"
+  ],
+  "candidates": [
+    {
+      "candidate": {
+        "id": "152-claude-opus-4-7-zen",
+        "agent": "opencode",
+        "model": "opencode/claude-opus-4-7",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:33:04.325Z",
+            "completed_at": "2026-08-30T17:34:05.683Z",
+            "duration_ms": 61358,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.238527,
+              "steps": 11,
+              "tokens": {
+                "input": 16,
+                "output": 4169,
+                "reasoning": 0,
+                "cache_read": 157419,
+                "cache_write": 8882,
+                "total": 170486
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:34:06.046Z",
+            "completed_at": "2026-08-30T17:34:06.627Z",
+            "duration_ms": 581
+          },
+          "agent_duration_ms": 61358,
+          "test_duration_ms": 581,
+          "duration_ms": 62302,
+          "cost_usd": 0.238527,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:33:04.325Z",
+            "completed_at": "2026-08-30T17:34:05.683Z",
+            "duration_ms": 61358,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.238527,
+              "steps": 11,
+              "tokens": {
+                "input": 16,
+                "output": 4169,
+                "reasoning": 0,
+                "cache_read": 157419,
+                "cache_write": 8882,
+                "total": 170486
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:34:06.046Z",
+            "completed_at": "2026-08-30T17:34:06.627Z",
+            "duration_ms": 581
+          },
+          "agent_duration_ms": 61358,
+          "test_duration_ms": 581,
+          "duration_ms": 62302,
+          "cost_usd": 0.238527,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 61358,
+      "test_duration_ms": 581,
+      "duration_ms": 62302,
+      "cost_usd": 0.238527,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 1,
+      "objective_total": 1,
+      "objective_pass_rate": 1,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "153-claude-opus-4-8-zen",
+        "agent": "opencode",
+        "model": "opencode/claude-opus-4-8",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:34:11.082Z",
+            "completed_at": "2026-08-30T17:35:39.907Z",
+            "duration_ms": 88825,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.36584325,
+              "steps": 15,
+              "tokens": {
+                "input": 30,
+                "output": 6316,
+                "reasoning": 0,
+                "cache_read": 254249,
+                "cache_write": 12907,
+                "total": 273502
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:35:40.277Z",
+            "completed_at": "2026-08-30T17:35:40.858Z",
+            "duration_ms": 581
+          },
+          "agent_duration_ms": 88825,
+          "test_duration_ms": 581,
+          "duration_ms": 89776,
+          "cost_usd": 0.36584325,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:34:11.082Z",
+            "completed_at": "2026-08-30T17:35:39.907Z",
+            "duration_ms": 88825,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.36584325,
+              "steps": 15,
+              "tokens": {
+                "input": 30,
+                "output": 6316,
+                "reasoning": 0,
+                "cache_read": 254249,
+                "cache_write": 12907,
+                "total": 273502
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:35:40.277Z",
+            "completed_at": "2026-08-30T17:35:40.858Z",
+            "duration_ms": 581
+          },
+          "agent_duration_ms": 88825,
+          "test_duration_ms": 581,
+          "duration_ms": 89776,
+          "cost_usd": 0.36584325,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 88825,
+      "test_duration_ms": 581,
+      "duration_ms": 89776,
+      "cost_usd": 0.36584325,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 1,
+      "objective_total": 1,
+      "objective_pass_rate": 1,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "155-claude-sonnet-4-6-zen",
+        "agent": "opencode",
+        "model": "opencode/claude-sonnet-4-6",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:37:06.983Z",
+            "completed_at": "2026-08-30T17:38:15.130Z",
+            "duration_ms": 68147,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.11628645,
+              "steps": 13,
+              "tokens": {
+                "input": 15,
+                "output": 3174,
+                "reasoning": 0,
+                "cache_read": 139584,
+                "cache_write": 7135,
+                "total": 149908
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:38:15.488Z",
+            "completed_at": "2026-08-30T17:38:16.079Z",
+            "duration_ms": 591
+          },
+          "agent_duration_ms": 68147,
+          "test_duration_ms": 591,
+          "duration_ms": 69096,
+          "cost_usd": 0.11628645,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:37:06.983Z",
+            "completed_at": "2026-08-30T17:38:15.130Z",
+            "duration_ms": 68147,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.11628645,
+              "steps": 13,
+              "tokens": {
+                "input": 15,
+                "output": 3174,
+                "reasoning": 0,
+                "cache_read": 139584,
+                "cache_write": 7135,
+                "total": 149908
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:38:15.488Z",
+            "completed_at": "2026-08-30T17:38:16.079Z",
+            "duration_ms": 591
+          },
+          "agent_duration_ms": 68147,
+          "test_duration_ms": 591,
+          "duration_ms": 69096,
+          "cost_usd": 0.11628645,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 68147,
+      "test_duration_ms": 591,
+      "duration_ms": 69096,
+      "cost_usd": 0.11628645,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 1,
+      "objective_total": 1,
+      "objective_pass_rate": 1,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "157-gemini-3-7-flash-zen",
+        "agent": "opencode",
+        "model": "opencode/gemini-3.7-flash",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:39:35.471Z",
+            "completed_at": "2026-08-30T17:43:04.458Z",
+            "duration_ms": 208987,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.44689395,
+              "steps": 16,
+              "tokens": {
+                "input": 87754,
+                "output": 7460,
+                "reasoning": 26198,
+                "cache_read": 418853,
+                "cache_write": 0,
+                "total": 540265
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:43:04.815Z",
+            "completed_at": "2026-08-30T17:43:05.388Z",
+            "duration_ms": 573
+          },
+          "agent_duration_ms": 208987,
+          "test_duration_ms": 573,
+          "duration_ms": 209917,
+          "cost_usd": 0.44689395,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:39:35.471Z",
+            "completed_at": "2026-08-30T17:43:04.458Z",
+            "duration_ms": 208987,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.44689395,
+              "steps": 16,
+              "tokens": {
+                "input": 87754,
+                "output": 7460,
+                "reasoning": 26198,
+                "cache_read": 418853,
+                "cache_write": 0,
+                "total": 540265
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:43:04.815Z",
+            "completed_at": "2026-08-30T17:43:05.388Z",
+            "duration_ms": 573
+          },
+          "agent_duration_ms": 208987,
+          "test_duration_ms": 573,
+          "duration_ms": 209917,
+          "cost_usd": 0.44689395,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 208987,
+      "test_duration_ms": 573,
+      "duration_ms": 209917,
+      "cost_usd": 0.44689395,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 1,
+      "objective_total": 1,
+      "objective_pass_rate": 1,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "158-glm-5-zen",
+        "agent": "opencode",
+        "model": "opencode/glm-5",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:43:09.583Z",
+            "completed_at": "2026-08-30T17:48:44.752Z",
+            "duration_ms": 335169,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.176435,
+              "steps": 12,
+              "tokens": {
+                "input": 34869,
+                "output": 26742,
+                "reasoning": 0,
+                "cache_read": 279958,
+                "cache_write": 0,
+                "total": 341569
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:48:45.113Z",
+            "completed_at": "2026-08-30T17:48:45.700Z",
+            "duration_ms": 587
+          },
+          "agent_duration_ms": 335169,
+          "test_duration_ms": 587,
+          "duration_ms": 336117,
+          "cost_usd": 0.176435,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:43:09.583Z",
+            "completed_at": "2026-08-30T17:48:44.752Z",
+            "duration_ms": 335169,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.176435,
+              "steps": 12,
+              "tokens": {
+                "input": 34869,
+                "output": 26742,
+                "reasoning": 0,
+                "cache_read": 279958,
+                "cache_write": 0,
+                "total": 341569
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:48:45.113Z",
+            "completed_at": "2026-08-30T17:48:45.700Z",
+            "duration_ms": 587
+          },
+          "agent_duration_ms": 335169,
+          "test_duration_ms": 587,
+          "duration_ms": 336117,
+          "cost_usd": 0.176435,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 335169,
+      "test_duration_ms": 587,
+      "duration_ms": 336117,
+      "cost_usd": 0.176435,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 1,
+      "objective_total": 1,
+      "objective_pass_rate": 1,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "159-glm-5-1-zen",
+        "agent": "opencode",
+        "model": "opencode/glm-5.1",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:48:50.401Z",
+            "completed_at": "2026-08-30T17:53:47.330Z",
+            "duration_ms": 296929,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.220124,
+              "steps": 12,
+              "tokens": {
+                "input": 33923,
+                "output": 23953,
+                "reasoning": 0,
+                "cache_read": 258610,
+                "cache_write": 0,
+                "total": 316486
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:53:47.683Z",
+            "completed_at": "2026-08-30T17:53:48.264Z",
+            "duration_ms": 581
+          },
+          "agent_duration_ms": 296929,
+          "test_duration_ms": 581,
+          "duration_ms": 297863,
+          "cost_usd": 0.220124,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:48:50.401Z",
+            "completed_at": "2026-08-30T17:53:47.330Z",
+            "duration_ms": 296929,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.220124,
+              "steps": 12,
+              "tokens": {
+                "input": 33923,
+                "output": 23953,
+                "reasoning": 0,
+                "cache_read": 258610,
+                "cache_write": 0,
+                "total": 316486
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:53:47.683Z",
+            "completed_at": "2026-08-30T17:53:48.264Z",
+            "duration_ms": 581
+          },
+          "agent_duration_ms": 296929,
+          "test_duration_ms": 581,
+          "duration_ms": 297863,
+          "cost_usd": 0.220124,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 296929,
+      "test_duration_ms": 581,
+      "duration_ms": 297863,
+      "cost_usd": 0.220124,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 1,
+      "objective_total": 1,
+      "objective_pass_rate": 1,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "160-glm-5-2-zen",
+        "agent": "opencode",
+        "model": "opencode/glm-5.2",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:53:52.578Z",
+            "completed_at": "2026-08-30T17:58:05.156Z",
+            "duration_ms": 252578,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.16896902,
+              "steps": 9,
+              "tokens": {
+                "input": 27619,
+                "output": 20707,
+                "reasoning": 0,
+                "cache_read": 150737,
+                "cache_write": 0,
+                "total": 199063
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:58:05.505Z",
+            "completed_at": "2026-08-30T17:58:06.090Z",
+            "duration_ms": 585
+          },
+          "agent_duration_ms": 252578,
+          "test_duration_ms": 585,
+          "duration_ms": 253512,
+          "cost_usd": 0.16896902,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:53:52.578Z",
+            "completed_at": "2026-08-30T17:58:05.156Z",
+            "duration_ms": 252578,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.16896902,
+              "steps": 9,
+              "tokens": {
+                "input": 27619,
+                "output": 20707,
+                "reasoning": 0,
+                "cache_read": 150737,
+                "cache_write": 0,
+                "total": 199063
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:58:05.505Z",
+            "completed_at": "2026-08-30T17:58:06.090Z",
+            "duration_ms": 585
+          },
+          "agent_duration_ms": 252578,
+          "test_duration_ms": 585,
+          "duration_ms": 253512,
+          "cost_usd": 0.16896902,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 252578,
+      "test_duration_ms": 585,
+      "duration_ms": 253512,
+      "cost_usd": 0.16896902,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 1,
+      "objective_total": 1,
+      "objective_pass_rate": 1,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "161-gpt-5-1-codex-zen",
+        "agent": "opencode",
+        "model": "opencode/gpt-5.1-codex",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:58:11.204Z",
+            "completed_at": "2026-08-30T18:01:42.887Z",
+            "duration_ms": 211683,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.184883648,
+              "steps": 19,
+              "tokens": {
+                "input": 6590,
+                "output": 3235,
+                "reasoning": 15168,
+                "cache_read": 200064,
+                "cache_write": 0,
+                "total": 225057
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:01:43.245Z",
+            "completed_at": "2026-08-30T18:01:43.824Z",
+            "duration_ms": 579
+          },
+          "agent_duration_ms": 211683,
+          "test_duration_ms": 579,
+          "duration_ms": 212620,
+          "cost_usd": 0.184883648,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:58:11.204Z",
+            "completed_at": "2026-08-30T18:01:42.887Z",
+            "duration_ms": 211683,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.184883648,
+              "steps": 19,
+              "tokens": {
+                "input": 6590,
+                "output": 3235,
+                "reasoning": 15168,
+                "cache_read": 200064,
+                "cache_write": 0,
+                "total": 225057
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:01:43.245Z",
+            "completed_at": "2026-08-30T18:01:43.824Z",
+            "duration_ms": 579
+          },
+          "agent_duration_ms": 211683,
+          "test_duration_ms": 579,
+          "duration_ms": 212620,
+          "cost_usd": 0.184883648,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 211683,
+      "test_duration_ms": 579,
+      "duration_ms": 212620,
+      "cost_usd": 0.184883648,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 1,
+      "objective_total": 1,
+      "objective_pass_rate": 1,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "162-gpt-5-1-codex-mini-zen",
+        "agent": "opencode",
+        "model": "opencode/gpt-5.1-codex-mini",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:01:50.909Z",
+            "completed_at": "2026-08-30T18:04:06.597Z",
+            "duration_ms": 135688,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.04300835,
+              "steps": 9,
+              "tokens": {
+                "input": 10627,
+                "output": 2379,
+                "reasoning": 16512,
+                "cache_read": 102784,
+                "cache_write": 0,
+                "total": 132302
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:04:06.964Z",
+            "completed_at": "2026-08-30T18:04:07.549Z",
+            "duration_ms": 585
+          },
+          "agent_duration_ms": 135688,
+          "test_duration_ms": 585,
+          "duration_ms": 136640,
+          "cost_usd": 0.04300835,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:01:50.909Z",
+            "completed_at": "2026-08-30T18:04:06.597Z",
+            "duration_ms": 135688,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.04300835,
+              "steps": 9,
+              "tokens": {
+                "input": 10627,
+                "output": 2379,
+                "reasoning": 16512,
+                "cache_read": 102784,
+                "cache_write": 0,
+                "total": 132302
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:04:06.964Z",
+            "completed_at": "2026-08-30T18:04:07.549Z",
+            "duration_ms": 585
+          },
+          "agent_duration_ms": 135688,
+          "test_duration_ms": 585,
+          "duration_ms": 136640,
+          "cost_usd": 0.04300835,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 135688,
+      "test_duration_ms": 585,
+      "duration_ms": 136640,
+      "cost_usd": 0.04300835,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 1,
+      "objective_total": 1,
+      "objective_pass_rate": 1,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "163-gpt-5-2-codex-zen",
+        "agent": "opencode",
+        "model": "opencode/gpt-5.2-codex",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:04:12.344Z",
+            "completed_at": "2026-08-30T18:05:19.200Z",
+            "duration_ms": 66856,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.07503405,
+              "steps": 8,
+              "tokens": {
+                "input": 10131,
+                "output": 1866,
+                "reasoning": 1536,
+                "cache_read": 55296,
+                "cache_write": 0,
+                "total": 68829
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:05:19.555Z",
+            "completed_at": "2026-08-30T18:05:20.135Z",
+            "duration_ms": 580
+          },
+          "agent_duration_ms": 66856,
+          "test_duration_ms": 580,
+          "duration_ms": 67791,
+          "cost_usd": 0.07503405,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:04:12.344Z",
+            "completed_at": "2026-08-30T18:05:19.200Z",
+            "duration_ms": 66856,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.07503405,
+              "steps": 8,
+              "tokens": {
+                "input": 10131,
+                "output": 1866,
+                "reasoning": 1536,
+                "cache_read": 55296,
+                "cache_write": 0,
+                "total": 68829
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:05:19.555Z",
+            "completed_at": "2026-08-30T18:05:20.135Z",
+            "duration_ms": 580
+          },
+          "agent_duration_ms": 66856,
+          "test_duration_ms": 580,
+          "duration_ms": 67791,
+          "cost_usd": 0.07503405,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 66856,
+      "test_duration_ms": 580,
+      "duration_ms": 67791,
+      "cost_usd": 0.07503405,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 1,
+      "objective_total": 1,
+      "objective_pass_rate": 1,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "164-gpt-5-4-zen",
+        "agent": "opencode",
+        "model": "opencode/gpt-5.4",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:05:25.063Z",
+            "completed_at": "2026-08-30T18:06:09.269Z",
+            "duration_ms": 44206,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.1208385,
+              "steps": 10,
+              "tokens": {
+                "input": 19205,
+                "output": 2181,
+                "reasoning": 1249,
+                "cache_read": 85504,
+                "cache_write": 0,
+                "total": 108139
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:06:09.627Z",
+            "completed_at": "2026-08-30T18:06:10.213Z",
+            "duration_ms": 586
+          },
+          "agent_duration_ms": 44206,
+          "test_duration_ms": 586,
+          "duration_ms": 45150,
+          "cost_usd": 0.1208385,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:05:25.063Z",
+            "completed_at": "2026-08-30T18:06:09.269Z",
+            "duration_ms": 44206,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.1208385,
+              "steps": 10,
+              "tokens": {
+                "input": 19205,
+                "output": 2181,
+                "reasoning": 1249,
+                "cache_read": 85504,
+                "cache_write": 0,
+                "total": 108139
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:06:09.627Z",
+            "completed_at": "2026-08-30T18:06:10.213Z",
+            "duration_ms": 586
+          },
+          "agent_duration_ms": 44206,
+          "test_duration_ms": 586,
+          "duration_ms": 45150,
+          "cost_usd": 0.1208385,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 44206,
+      "test_duration_ms": 586,
+      "duration_ms": 45150,
+      "cost_usd": 0.1208385,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 1,
+      "objective_total": 1,
+      "objective_pass_rate": 1,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "165-gpt-5-4-mini-zen",
+        "agent": "opencode",
+        "model": "opencode/gpt-5.4-mini",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:06:14.200Z",
+            "completed_at": "2026-08-30T18:07:04.258Z",
+            "duration_ms": 50058,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.04218435,
+              "steps": 6,
+              "tokens": {
+                "input": 9589,
+                "output": 1718,
+                "reasoning": 5128,
+                "cache_read": 55808,
+                "cache_write": 0,
+                "total": 72243
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:07:04.623Z",
+            "completed_at": "2026-08-30T18:07:05.197Z",
+            "duration_ms": 574
+          },
+          "agent_duration_ms": 50058,
+          "test_duration_ms": 574,
+          "duration_ms": 50997,
+          "cost_usd": 0.04218435,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:06:14.200Z",
+            "completed_at": "2026-08-30T18:07:04.258Z",
+            "duration_ms": 50058,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.04218435,
+              "steps": 6,
+              "tokens": {
+                "input": 9589,
+                "output": 1718,
+                "reasoning": 5128,
+                "cache_read": 55808,
+                "cache_write": 0,
+                "total": 72243
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:07:04.623Z",
+            "completed_at": "2026-08-30T18:07:05.197Z",
+            "duration_ms": 574
+          },
+          "agent_duration_ms": 50058,
+          "test_duration_ms": 574,
+          "duration_ms": 50997,
+          "cost_usd": 0.04218435,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 50058,
+      "test_duration_ms": 574,
+      "duration_ms": 50997,
+      "cost_usd": 0.04218435,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 1,
+      "objective_total": 1,
+      "objective_pass_rate": 1,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "166-gpt-5-6-luna-zen",
+        "agent": "opencode",
+        "model": "opencode/gpt-5.6-luna",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:07:09.497Z",
+            "completed_at": "2026-08-30T18:08:05.053Z",
+            "duration_ms": 55556,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.01035072,
+              "steps": 13,
+              "tokens": {
+                "input": 39,
+                "output": 2592,
+                "reasoning": 1123,
+                "cache_read": 120221,
+                "cache_write": 13922,
+                "total": 137897
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:08:05.415Z",
+            "completed_at": "2026-08-30T18:08:06.004Z",
+            "duration_ms": 589
+          },
+          "agent_duration_ms": 55556,
+          "test_duration_ms": 589,
+          "duration_ms": 56507,
+          "cost_usd": 0.01035072,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:07:09.497Z",
+            "completed_at": "2026-08-30T18:08:05.053Z",
+            "duration_ms": 55556,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.01035072,
+              "steps": 13,
+              "tokens": {
+                "input": 39,
+                "output": 2592,
+                "reasoning": 1123,
+                "cache_read": 120221,
+                "cache_write": 13922,
+                "total": 137897
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:08:05.415Z",
+            "completed_at": "2026-08-30T18:08:06.004Z",
+            "duration_ms": 589
+          },
+          "agent_duration_ms": 55556,
+          "test_duration_ms": 589,
+          "duration_ms": 56507,
+          "cost_usd": 0.01035072,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 55556,
+      "test_duration_ms": 589,
+      "duration_ms": 56507,
+      "cost_usd": 0.01035072,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 1,
+      "objective_total": 1,
+      "objective_pass_rate": 1,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "167-grok-4-6-zen",
+        "agent": "opencode",
+        "model": "opencode/grok-4.6",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:08:10.525Z",
+            "completed_at": "2026-08-30T18:11:12.745Z",
+            "duration_ms": 182220,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.138644,
+              "steps": 6,
+              "tokens": {
+                "input": 20293,
+                "output": 1142,
+                "reasoning": 9857,
+                "cache_read": 64128,
+                "cache_write": 0,
+                "total": 95420
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:11:13.104Z",
+            "completed_at": "2026-08-30T18:11:13.686Z",
+            "duration_ms": 582
+          },
+          "agent_duration_ms": 182220,
+          "test_duration_ms": 582,
+          "duration_ms": 183161,
+          "cost_usd": 0.138644,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:08:10.525Z",
+            "completed_at": "2026-08-30T18:11:12.745Z",
+            "duration_ms": 182220,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.138644,
+              "steps": 6,
+              "tokens": {
+                "input": 20293,
+                "output": 1142,
+                "reasoning": 9857,
+                "cache_read": 64128,
+                "cache_write": 0,
+                "total": 95420
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:11:13.104Z",
+            "completed_at": "2026-08-30T18:11:13.686Z",
+            "duration_ms": 582
+          },
+          "agent_duration_ms": 182220,
+          "test_duration_ms": 582,
+          "duration_ms": 183161,
+          "cost_usd": 0.138644,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 182220,
+      "test_duration_ms": 582,
+      "duration_ms": 183161,
+      "cost_usd": 0.138644,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 1,
+      "objective_total": 1,
+      "objective_pass_rate": 1,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "177-deepseek-v4-flash-vision-exp-go",
+        "agent": "opencode",
+        "model": "opencode-go/deepseek-v4-flash-vision-exp",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:16:10.673Z",
+            "completed_at": "2026-08-30T18:17:55.048Z",
+            "duration_ms": 104375,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.009718984,
+              "steps": 10,
+              "tokens": {
+                "input": 11011,
+                "output": 2018,
+                "reasoning": 8007,
+                "cache_read": 97152,
+                "cache_write": 0,
+                "total": 118188
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:17:55.409Z",
+            "completed_at": "2026-08-30T18:17:55.996Z",
+            "duration_ms": 587
+          },
+          "agent_duration_ms": 104375,
+          "test_duration_ms": 587,
+          "duration_ms": 105323,
+          "cost_usd": 0.009718984,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:16:10.673Z",
+            "completed_at": "2026-08-30T18:17:55.048Z",
+            "duration_ms": 104375,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.009718984,
+              "steps": 10,
+              "tokens": {
+                "input": 11011,
+                "output": 2018,
+                "reasoning": 8007,
+                "cache_read": 97152,
+                "cache_write": 0,
+                "total": 118188
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:17:55.409Z",
+            "completed_at": "2026-08-30T18:17:55.996Z",
+            "duration_ms": 587
+          },
+          "agent_duration_ms": 104375,
+          "test_duration_ms": 587,
+          "duration_ms": 105323,
+          "cost_usd": 0.009718984,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 104375,
+      "test_duration_ms": 587,
+      "duration_ms": 105323,
+      "cost_usd": 0.009718984,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 1,
+      "objective_total": 1,
+      "objective_pass_rate": 1,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "178-glm-5-3-flash-go",
+        "agent": "opencode",
+        "model": "opencode-go/glm-5.3-flash",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:18:01.421Z",
+            "completed_at": "2026-08-30T18:24:17.385Z",
+            "duration_ms": 375964,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.008131485,
+              "steps": 14,
+              "tokens": {
+                "input": 25313,
+                "output": 3376,
+                "reasoning": 9821,
+                "cache_read": 195584,
+                "cache_write": 0,
+                "total": 234094
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:24:17.746Z",
+            "completed_at": "2026-08-30T18:24:18.328Z",
+            "duration_ms": 582
+          },
+          "agent_duration_ms": 375964,
+          "test_duration_ms": 582,
+          "duration_ms": 376907,
+          "cost_usd": 0.008131485,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:18:01.421Z",
+            "completed_at": "2026-08-30T18:24:17.385Z",
+            "duration_ms": 375964,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.008131485,
+              "steps": 14,
+              "tokens": {
+                "input": 25313,
+                "output": 3376,
+                "reasoning": 9821,
+                "cache_read": 195584,
+                "cache_write": 0,
+                "total": 234094
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:24:17.746Z",
+            "completed_at": "2026-08-30T18:24:18.328Z",
+            "duration_ms": 582
+          },
+          "agent_duration_ms": 375964,
+          "test_duration_ms": 582,
+          "duration_ms": 376907,
+          "cost_usd": 0.008131485,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 375964,
+      "test_duration_ms": 582,
+      "duration_ms": 376907,
+      "cost_usd": 0.008131485,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 1,
+      "objective_total": 1,
+      "objective_pass_rate": 1,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "179-hy4-preview-go",
+        "agent": "opencode",
+        "model": "opencode-go/hy4-preview",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:24:23.890Z",
+            "completed_at": "2026-08-30T18:27:37.140Z",
+            "duration_ms": 193250,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.051316601,
+              "steps": 14,
+              "tokens": {
+                "input": 21606,
+                "output": 4567,
+                "reasoning": 5490,
+                "cache_read": 193920,
+                "cache_write": 0,
+                "total": 225583
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:27:37.501Z",
+            "completed_at": "2026-08-30T18:27:38.084Z",
+            "duration_ms": 583
+          },
+          "agent_duration_ms": 193250,
+          "test_duration_ms": 583,
+          "duration_ms": 194194,
+          "cost_usd": 0.051316601,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:24:23.890Z",
+            "completed_at": "2026-08-30T18:27:37.140Z",
+            "duration_ms": 193250,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.051316601,
+              "steps": 14,
+              "tokens": {
+                "input": 21606,
+                "output": 4567,
+                "reasoning": 5490,
+                "cache_read": 193920,
+                "cache_write": 0,
+                "total": 225583
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:27:37.501Z",
+            "completed_at": "2026-08-30T18:27:38.084Z",
+            "duration_ms": 583
+          },
+          "agent_duration_ms": 193250,
+          "test_duration_ms": 583,
+          "duration_ms": 194194,
+          "cost_usd": 0.051316601,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 193250,
+      "test_duration_ms": 583,
+      "duration_ms": 194194,
+      "cost_usd": 0.051316601,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 1,
+      "objective_total": 1,
+      "objective_pass_rate": 1,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "183-qwen3-7-max-go",
+        "agent": "opencode",
+        "model": "opencode-go/qwen3.7-max",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:31:00.529Z",
+            "completed_at": "2026-08-30T18:34:10.886Z",
+            "duration_ms": 190357,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.3140175,
+              "steps": 12,
+              "tokens": {
+                "input": 55470,
+                "output": 2305,
+                "reasoning": 12626,
+                "cache_read": 126720,
+                "cache_write": 0,
+                "total": 197121
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:34:11.244Z",
+            "completed_at": "2026-08-30T18:34:11.836Z",
+            "duration_ms": 592
+          },
+          "agent_duration_ms": 190357,
+          "test_duration_ms": 592,
+          "duration_ms": 191307,
+          "cost_usd": 0.3140175,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:31:00.529Z",
+            "completed_at": "2026-08-30T18:34:10.886Z",
+            "duration_ms": 190357,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.3140175,
+              "steps": 12,
+              "tokens": {
+                "input": 55470,
+                "output": 2305,
+                "reasoning": 12626,
+                "cache_read": 126720,
+                "cache_write": 0,
+                "total": 197121
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:34:11.244Z",
+            "completed_at": "2026-08-30T18:34:11.836Z",
+            "duration_ms": 592
+          },
+          "agent_duration_ms": 190357,
+          "test_duration_ms": 592,
+          "duration_ms": 191307,
+          "cost_usd": 0.3140175,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 190357,
+      "test_duration_ms": 592,
+      "duration_ms": 191307,
+      "cost_usd": 0.3140175,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 1,
+      "objective_total": 1,
+      "objective_pass_rate": 1,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "184-qwen3-8-flash-go",
+        "agent": "opencode",
+        "model": "opencode-go/qwen3.8-flash",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:34:17.345Z",
+            "completed_at": "2026-08-30T18:35:50.650Z",
+            "duration_ms": 93305,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.007535904,
+              "steps": 9,
+              "tokens": {
+                "input": 54,
+                "output": 8054,
+                "reasoning": 0,
+                "cache_read": 98714,
+                "cache_write": 10815,
+                "total": 117637
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:35:51.012Z",
+            "completed_at": "2026-08-30T18:35:51.596Z",
+            "duration_ms": 584
+          },
+          "agent_duration_ms": 93305,
+          "test_duration_ms": 584,
+          "duration_ms": 94251,
+          "cost_usd": 0.007535904,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:34:17.345Z",
+            "completed_at": "2026-08-30T18:35:50.650Z",
+            "duration_ms": 93305,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.007535904,
+              "steps": 9,
+              "tokens": {
+                "input": 54,
+                "output": 8054,
+                "reasoning": 0,
+                "cache_read": 98714,
+                "cache_write": 10815,
+                "total": 117637
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:35:51.012Z",
+            "completed_at": "2026-08-30T18:35:51.596Z",
+            "duration_ms": 584
+          },
+          "agent_duration_ms": 93305,
+          "test_duration_ms": 584,
+          "duration_ms": 94251,
+          "cost_usd": 0.007535904,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 93305,
+      "test_duration_ms": 584,
+      "duration_ms": 94251,
+      "cost_usd": 0.007535904,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 1,
+      "objective_total": 1,
+      "objective_pass_rate": 1,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "185-gpt-5-4-openai",
+        "agent": "opencode",
+        "model": "openai/gpt-5.4",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:35:56.002Z",
+            "completed_at": "2026-08-30T18:36:59.287Z",
+            "duration_ms": 63285,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 10,
+              "tokens": {
+                "input": 10132,
+                "output": 2190,
+                "reasoning": 385,
+                "cache_read": 78848,
+                "cache_write": 0,
+                "total": 91555
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:36:59.646Z",
+            "completed_at": "2026-08-30T18:37:00.233Z",
+            "duration_ms": 587
+          },
+          "agent_duration_ms": 63285,
+          "test_duration_ms": 587,
+          "duration_ms": 64231,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:35:56.002Z",
+            "completed_at": "2026-08-30T18:36:59.287Z",
+            "duration_ms": 63285,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 10,
+              "tokens": {
+                "input": 10132,
+                "output": 2190,
+                "reasoning": 385,
+                "cache_read": 78848,
+                "cache_write": 0,
+                "total": 91555
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:36:59.646Z",
+            "completed_at": "2026-08-30T18:37:00.233Z",
+            "duration_ms": 587
+          },
+          "agent_duration_ms": 63285,
+          "test_duration_ms": 587,
+          "duration_ms": 64231,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 63285,
+      "test_duration_ms": 587,
+      "duration_ms": 64231,
+      "cost_usd": 0,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 1,
+      "objective_total": 1,
+      "objective_pass_rate": 1,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "186-gpt-5-4-fast-openai",
+        "agent": "opencode",
+        "model": "openai/gpt-5.4-fast",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:37:04.664Z",
+            "completed_at": "2026-08-30T18:38:00.179Z",
+            "duration_ms": 55515,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 9,
+              "tokens": {
+                "input": 7641,
+                "output": 2044,
+                "reasoning": 155,
+                "cache_read": 68608,
+                "cache_write": 0,
+                "total": 78448
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:38:00.535Z",
+            "completed_at": "2026-08-30T18:38:01.124Z",
+            "duration_ms": 589
+          },
+          "agent_duration_ms": 55515,
+          "test_duration_ms": 589,
+          "duration_ms": 56460,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:37:04.664Z",
+            "completed_at": "2026-08-30T18:38:00.179Z",
+            "duration_ms": 55515,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 9,
+              "tokens": {
+                "input": 7641,
+                "output": 2044,
+                "reasoning": 155,
+                "cache_read": 68608,
+                "cache_write": 0,
+                "total": 78448
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:38:00.535Z",
+            "completed_at": "2026-08-30T18:38:01.124Z",
+            "duration_ms": 589
+          },
+          "agent_duration_ms": 55515,
+          "test_duration_ms": 589,
+          "duration_ms": 56460,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 55515,
+      "test_duration_ms": 589,
+      "duration_ms": 56460,
+      "cost_usd": 0,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 1,
+      "objective_total": 1,
+      "objective_pass_rate": 1,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "189-gpt-5-6-luna-openai",
+        "agent": "opencode",
+        "model": "openai/gpt-5.6-luna",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:41:08.387Z",
+            "completed_at": "2026-08-30T18:42:43.120Z",
+            "duration_ms": 94733,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 13,
+              "tokens": {
+                "input": 17205,
+                "output": 2200,
+                "reasoning": 1606,
+                "cache_read": 113152,
+                "cache_write": 0,
+                "total": 134163
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:42:43.480Z",
+            "completed_at": "2026-08-30T18:42:44.063Z",
+            "duration_ms": 583
+          },
+          "agent_duration_ms": 94733,
+          "test_duration_ms": 583,
+          "duration_ms": 95676,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:41:08.387Z",
+            "completed_at": "2026-08-30T18:42:43.120Z",
+            "duration_ms": 94733,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 13,
+              "tokens": {
+                "input": 17205,
+                "output": 2200,
+                "reasoning": 1606,
+                "cache_read": 113152,
+                "cache_write": 0,
+                "total": 134163
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:42:43.480Z",
+            "completed_at": "2026-08-30T18:42:44.063Z",
+            "duration_ms": 583
+          },
+          "agent_duration_ms": 94733,
+          "test_duration_ms": 583,
+          "duration_ms": 95676,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 94733,
+      "test_duration_ms": 583,
+      "duration_ms": 95676,
+      "cost_usd": 0,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 1,
+      "objective_total": 1,
+      "objective_pass_rate": 1,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "190-gpt-5-6-luna-fast-openai",
+        "agent": "opencode",
+        "model": "openai/gpt-5.6-luna-fast",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:42:48.116Z",
+            "completed_at": "2026-08-30T18:45:08.842Z",
+            "duration_ms": 140726,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 15,
+              "tokens": {
+                "input": 21009,
+                "output": 3660,
+                "reasoning": 1650,
+                "cache_read": 145920,
+                "cache_write": 0,
+                "total": 172239
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:45:09.194Z",
+            "completed_at": "2026-08-30T18:45:09.777Z",
+            "duration_ms": 583
+          },
+          "agent_duration_ms": 140726,
+          "test_duration_ms": 583,
+          "duration_ms": 141661,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:42:48.116Z",
+            "completed_at": "2026-08-30T18:45:08.842Z",
+            "duration_ms": 140726,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 15,
+              "tokens": {
+                "input": 21009,
+                "output": 3660,
+                "reasoning": 1650,
+                "cache_read": 145920,
+                "cache_write": 0,
+                "total": 172239
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:45:09.194Z",
+            "completed_at": "2026-08-30T18:45:09.777Z",
+            "duration_ms": 583
+          },
+          "agent_duration_ms": 140726,
+          "test_duration_ms": 583,
+          "duration_ms": 141661,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 140726,
+      "test_duration_ms": 583,
+      "duration_ms": 141661,
+      "cost_usd": 0,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 1,
+      "objective_total": 1,
+      "objective_pass_rate": 1,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "191-gpt-5-6-sol-openai",
+        "agent": "opencode",
+        "model": "openai/gpt-5.6-sol",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:45:14.216Z",
+            "completed_at": "2026-08-30T18:47:01.016Z",
+            "duration_ms": 106800,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 12,
+              "tokens": {
+                "input": 15927,
+                "output": 2898,
+                "reasoning": 1619,
+                "cache_read": 106496,
+                "cache_write": 0,
+                "total": 126940
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:47:01.373Z",
+            "completed_at": "2026-08-30T18:47:01.959Z",
+            "duration_ms": 586
+          },
+          "agent_duration_ms": 106800,
+          "test_duration_ms": 586,
+          "duration_ms": 107743,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:45:14.216Z",
+            "completed_at": "2026-08-30T18:47:01.016Z",
+            "duration_ms": 106800,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 12,
+              "tokens": {
+                "input": 15927,
+                "output": 2898,
+                "reasoning": 1619,
+                "cache_read": 106496,
+                "cache_write": 0,
+                "total": 126940
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:47:01.373Z",
+            "completed_at": "2026-08-30T18:47:01.959Z",
+            "duration_ms": 586
+          },
+          "agent_duration_ms": 106800,
+          "test_duration_ms": 586,
+          "duration_ms": 107743,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 106800,
+      "test_duration_ms": 586,
+      "duration_ms": 107743,
+      "cost_usd": 0,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 1,
+      "objective_total": 1,
+      "objective_pass_rate": 1,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "192-gpt-5-6-sol-fast-openai",
+        "agent": "opencode",
+        "model": "openai/gpt-5.6-sol-fast",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:47:09.409Z",
+            "completed_at": "2026-08-30T18:49:18.716Z",
+            "duration_ms": 129307,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 12,
+              "tokens": {
+                "input": 27095,
+                "output": 3104,
+                "reasoning": 2098,
+                "cache_read": 105472,
+                "cache_write": 0,
+                "total": 137769
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:49:19.076Z",
+            "completed_at": "2026-08-30T18:49:19.659Z",
+            "duration_ms": 583
+          },
+          "agent_duration_ms": 129307,
+          "test_duration_ms": 583,
+          "duration_ms": 130250,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:47:09.409Z",
+            "completed_at": "2026-08-30T18:49:18.716Z",
+            "duration_ms": 129307,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 12,
+              "tokens": {
+                "input": 27095,
+                "output": 3104,
+                "reasoning": 2098,
+                "cache_read": 105472,
+                "cache_write": 0,
+                "total": 137769
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:49:19.076Z",
+            "completed_at": "2026-08-30T18:49:19.659Z",
+            "duration_ms": 583
+          },
+          "agent_duration_ms": 129307,
+          "test_duration_ms": 583,
+          "duration_ms": 130250,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 129307,
+      "test_duration_ms": 583,
+      "duration_ms": 130250,
+      "cost_usd": 0,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 1,
+      "objective_total": 1,
+      "objective_pass_rate": 1,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "193-gpt-5-6-terra-openai",
+        "agent": "opencode",
+        "model": "openai/gpt-5.6-terra",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:49:24.028Z",
+            "completed_at": "2026-08-30T18:50:44.569Z",
+            "duration_ms": 80541,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 10,
+              "tokens": {
+                "input": 19876,
+                "output": 1661,
+                "reasoning": 1295,
+                "cache_read": 72704,
+                "cache_write": 0,
+                "total": 95536
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:50:44.933Z",
+            "completed_at": "2026-08-30T18:50:45.522Z",
+            "duration_ms": 589
+          },
+          "agent_duration_ms": 80541,
+          "test_duration_ms": 589,
+          "duration_ms": 81494,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:49:24.028Z",
+            "completed_at": "2026-08-30T18:50:44.569Z",
+            "duration_ms": 80541,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 10,
+              "tokens": {
+                "input": 19876,
+                "output": 1661,
+                "reasoning": 1295,
+                "cache_read": 72704,
+                "cache_write": 0,
+                "total": 95536
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:50:44.933Z",
+            "completed_at": "2026-08-30T18:50:45.522Z",
+            "duration_ms": 589
+          },
+          "agent_duration_ms": 80541,
+          "test_duration_ms": 589,
+          "duration_ms": 81494,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 80541,
+      "test_duration_ms": 589,
+      "duration_ms": 81494,
+      "cost_usd": 0,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 1,
+      "objective_total": 1,
+      "objective_pass_rate": 1,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "194-gpt-5-6-terra-fast-openai",
+        "agent": "opencode",
+        "model": "openai/gpt-5.6-terra-fast",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:50:49.792Z",
+            "completed_at": "2026-08-30T18:52:08.740Z",
+            "duration_ms": 78948,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 10,
+              "tokens": {
+                "input": 14487,
+                "output": 1954,
+                "reasoning": 1402,
+                "cache_read": 75776,
+                "cache_write": 0,
+                "total": 93619
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:52:09.105Z",
+            "completed_at": "2026-08-30T18:52:09.687Z",
+            "duration_ms": 582
+          },
+          "agent_duration_ms": 78948,
+          "test_duration_ms": 582,
+          "duration_ms": 79895,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:50:49.792Z",
+            "completed_at": "2026-08-30T18:52:08.740Z",
+            "duration_ms": 78948,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 10,
+              "tokens": {
+                "input": 14487,
+                "output": 1954,
+                "reasoning": 1402,
+                "cache_read": 75776,
+                "cache_write": 0,
+                "total": 93619
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:52:09.105Z",
+            "completed_at": "2026-08-30T18:52:09.687Z",
+            "duration_ms": 582
+          },
+          "agent_duration_ms": 78948,
+          "test_duration_ms": 582,
+          "duration_ms": 79895,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": true
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 78948,
+      "test_duration_ms": 582,
+      "duration_ms": 79895,
+      "cost_usd": 0,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 1,
+      "objective_total": 1,
+      "objective_pass_rate": 1,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "150-claude-fable-5-zen",
+        "agent": "opencode",
+        "model": "opencode/claude-fable-5",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:30:35.060Z",
+            "completed_at": "2026-08-30T17:31:39.269Z",
+            "duration_ms": 64209,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.4128295,
+              "steps": 5,
+              "tokens": {
+                "input": 10,
+                "output": 4951,
+                "reasoning": 0,
+                "cache_read": 67042,
+                "cache_write": 7851,
+                "total": 79854
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:31:39.626Z",
+            "completed_at": "2026-08-30T17:31:40.210Z",
+            "duration_ms": 584
+          },
+          "agent_duration_ms": 64209,
+          "test_duration_ms": 584,
+          "duration_ms": 65150,
+          "cost_usd": 0.4128295,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:30:35.060Z",
+            "completed_at": "2026-08-30T17:31:39.269Z",
+            "duration_ms": 64209,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.4128295,
+              "steps": 5,
+              "tokens": {
+                "input": 10,
+                "output": 4951,
+                "reasoning": 0,
+                "cache_read": 67042,
+                "cache_write": 7851,
+                "total": 79854
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:31:39.626Z",
+            "completed_at": "2026-08-30T17:31:40.210Z",
+            "duration_ms": 584
+          },
+          "agent_duration_ms": 64209,
+          "test_duration_ms": 584,
+          "duration_ms": 65150,
+          "cost_usd": 0.4128295,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 64209,
+      "test_duration_ms": 584,
+      "duration_ms": 65150,
+      "cost_usd": 0.4128295,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 0,
+      "objective_total": 1,
+      "objective_pass_rate": 0,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "151-claude-opus-4-5-zen",
+        "agent": "opencode",
+        "model": "opencode/claude-opus-4-5",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:31:44.400Z",
+            "completed_at": "2026-08-30T17:32:59.113Z",
+            "duration_ms": 74713,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.177978,
+              "steps": 9,
+              "tokens": {
+                "input": 11,
+                "output": 3356,
+                "reasoning": 0,
+                "cache_read": 104496,
+                "cache_write": 6684,
+                "total": 114547
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:32:59.468Z",
+            "completed_at": "2026-08-30T17:33:00.053Z",
+            "duration_ms": 585
+          },
+          "agent_duration_ms": 74713,
+          "test_duration_ms": 585,
+          "duration_ms": 75653,
+          "cost_usd": 0.177978,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:31:44.400Z",
+            "completed_at": "2026-08-30T17:32:59.113Z",
+            "duration_ms": 74713,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.177978,
+              "steps": 9,
+              "tokens": {
+                "input": 11,
+                "output": 3356,
+                "reasoning": 0,
+                "cache_read": 104496,
+                "cache_write": 6684,
+                "total": 114547
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:32:59.468Z",
+            "completed_at": "2026-08-30T17:33:00.053Z",
+            "duration_ms": 585
+          },
+          "agent_duration_ms": 74713,
+          "test_duration_ms": 585,
+          "duration_ms": 75653,
+          "cost_usd": 0.177978,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 74713,
+      "test_duration_ms": 585,
+      "duration_ms": 75653,
+      "cost_usd": 0.177978,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 0,
+      "objective_total": 1,
+      "objective_pass_rate": 0,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "154-claude-sonnet-4-5-zen",
+        "agent": "opencode",
+        "model": "opencode/claude-sonnet-4-5",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:35:45.409Z",
+            "completed_at": "2026-08-30T17:37:01.511Z",
+            "duration_ms": 76102,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.12287325,
+              "steps": 10,
+              "tokens": {
+                "input": 57,
+                "output": 3685,
+                "reasoning": 0,
+                "cache_read": 116045,
+                "cache_write": 8697,
+                "total": 128484
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:37:01.866Z",
+            "completed_at": "2026-08-30T17:37:02.441Z",
+            "duration_ms": 575
+          },
+          "agent_duration_ms": 76102,
+          "test_duration_ms": 575,
+          "duration_ms": 77032,
+          "cost_usd": 0.12287325,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:35:45.409Z",
+            "completed_at": "2026-08-30T17:37:01.511Z",
+            "duration_ms": 76102,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.12287325,
+              "steps": 10,
+              "tokens": {
+                "input": 57,
+                "output": 3685,
+                "reasoning": 0,
+                "cache_read": 116045,
+                "cache_write": 8697,
+                "total": 128484
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:37:01.866Z",
+            "completed_at": "2026-08-30T17:37:02.441Z",
+            "duration_ms": 575
+          },
+          "agent_duration_ms": 76102,
+          "test_duration_ms": 575,
+          "duration_ms": 77032,
+          "cost_usd": 0.12287325,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 76102,
+      "test_duration_ms": 575,
+      "duration_ms": 77032,
+      "cost_usd": 0.12287325,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 0,
+      "objective_total": 1,
+      "objective_pass_rate": 0,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "156-gemini-3-5-flash-lite-zen",
+        "agent": "opencode",
+        "model": "opencode/gemini-3.5-flash-lite",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:38:20.534Z",
+            "completed_at": "2026-08-30T17:39:28.622Z",
+            "duration_ms": 68088,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.06522587,
+              "steps": 12,
+              "tokens": {
+                "input": 42109,
+                "output": 1803,
+                "reasoning": 16967,
+                "cache_read": 188939,
+                "cache_write": 0,
+                "total": 249818
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:39:28.988Z",
+            "completed_at": "2026-08-30T17:39:29.581Z",
+            "duration_ms": 593
+          },
+          "agent_duration_ms": 68088,
+          "test_duration_ms": 593,
+          "duration_ms": 69047,
+          "cost_usd": 0.06522587,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:38:20.534Z",
+            "completed_at": "2026-08-30T17:39:28.622Z",
+            "duration_ms": 68088,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.06522587,
+              "steps": 12,
+              "tokens": {
+                "input": 42109,
+                "output": 1803,
+                "reasoning": 16967,
+                "cache_read": 188939,
+                "cache_write": 0,
+                "total": 249818
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T17:39:28.988Z",
+            "completed_at": "2026-08-30T17:39:29.581Z",
+            "duration_ms": 593
+          },
+          "agent_duration_ms": 68088,
+          "test_duration_ms": 593,
+          "duration_ms": 69047,
+          "cost_usd": 0.06522587,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 68088,
+      "test_duration_ms": 593,
+      "duration_ms": 69047,
+      "cost_usd": 0.06522587,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 0,
+      "objective_total": 1,
+      "objective_pass_rate": 0,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "168-grok-build-0-1-zen",
+        "agent": "opencode",
+        "model": "opencode/grok-build-0.1",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "agent_failure",
+          "agent": {
+            "status": 1,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:11:18.443Z",
+            "completed_at": "2026-08-30T18:13:57.649Z",
+            "duration_ms": 159206,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.1487062,
+              "steps": 32,
+              "tokens": {
+                "input": 15825,
+                "output": 3203,
+                "reasoning": 13324,
+                "cache_read": 499136,
+                "cache_write": 0,
+                "total": 531488
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:13:58.006Z",
+            "completed_at": "2026-08-30T18:13:58.588Z",
+            "duration_ms": 582
+          },
+          "agent_duration_ms": 159206,
+          "test_duration_ms": 582,
+          "duration_ms": 160145,
+          "cost_usd": 0.1487062,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "agent_failure",
+          "agent": {
+            "status": 1,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:11:18.443Z",
+            "completed_at": "2026-08-30T18:13:57.649Z",
+            "duration_ms": 159206,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.1487062,
+              "steps": 32,
+              "tokens": {
+                "input": 15825,
+                "output": 3203,
+                "reasoning": 13324,
+                "cache_read": 499136,
+                "cache_write": 0,
+                "total": 531488
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:13:58.006Z",
+            "completed_at": "2026-08-30T18:13:58.588Z",
+            "duration_ms": 582
+          },
+          "agent_duration_ms": 159206,
+          "test_duration_ms": 582,
+          "duration_ms": 160145,
+          "cost_usd": 0.1487062,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "outcome": "agent_failure",
+      "agent_duration_ms": 159206,
+      "test_duration_ms": 582,
+      "duration_ms": 160145,
+      "cost_usd": 0.1487062,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 0,
+      "objective_total": 1,
+      "objective_pass_rate": 0,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "169-mimo-v2-5-free-zen",
+        "agent": "opencode",
+        "model": "opencode/mimo-v2.5-free",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:14:03.516Z",
+            "completed_at": "2026-08-30T18:15:46.443Z",
+            "duration_ms": 102927,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 12,
+              "tokens": {
+                "input": 8644,
+                "output": 4571,
+                "reasoning": 0,
+                "cache_read": 144320,
+                "cache_write": 0,
+                "total": 157535
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:15:46.799Z",
+            "completed_at": "2026-08-30T18:15:47.384Z",
+            "duration_ms": 585
+          },
+          "agent_duration_ms": 102927,
+          "test_duration_ms": 585,
+          "duration_ms": 103868,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:14:03.516Z",
+            "completed_at": "2026-08-30T18:15:46.443Z",
+            "duration_ms": 102927,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 12,
+              "tokens": {
+                "input": 8644,
+                "output": 4571,
+                "reasoning": 0,
+                "cache_read": 144320,
+                "cache_write": 0,
+                "total": 157535
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:15:46.799Z",
+            "completed_at": "2026-08-30T18:15:47.384Z",
+            "duration_ms": 585
+          },
+          "agent_duration_ms": 102927,
+          "test_duration_ms": 585,
+          "duration_ms": 103868,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 102927,
+      "test_duration_ms": 585,
+      "duration_ms": 103868,
+      "cost_usd": 0,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 0,
+      "objective_total": 1,
+      "objective_pass_rate": 0,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "180-mimo-v2-5-go",
+        "agent": "opencode",
+        "model": "opencode-go/mimo-v2.5",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:27:42.547Z",
+            "completed_at": "2026-08-30T18:28:45.353Z",
+            "duration_ms": 62806,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.0019355392,
+              "steps": 15,
+              "tokens": {
+                "input": 6248,
+                "output": 2364,
+                "reasoning": 0,
+                "cache_read": 142464,
+                "cache_write": 0,
+                "total": 151076
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:28:45.704Z",
+            "completed_at": "2026-08-30T18:28:46.310Z",
+            "duration_ms": 606
+          },
+          "agent_duration_ms": 62806,
+          "test_duration_ms": 606,
+          "duration_ms": 63763,
+          "cost_usd": 0.0019355392,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:27:42.547Z",
+            "completed_at": "2026-08-30T18:28:45.353Z",
+            "duration_ms": 62806,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.0019355392,
+              "steps": 15,
+              "tokens": {
+                "input": 6248,
+                "output": 2364,
+                "reasoning": 0,
+                "cache_read": 142464,
+                "cache_write": 0,
+                "total": 151076
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:28:45.704Z",
+            "completed_at": "2026-08-30T18:28:46.310Z",
+            "duration_ms": 606
+          },
+          "agent_duration_ms": 62806,
+          "test_duration_ms": 606,
+          "duration_ms": 63763,
+          "cost_usd": 0.0019355392,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 62806,
+      "test_duration_ms": 606,
+      "duration_ms": 63763,
+      "cost_usd": 0.0019355392,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 0,
+      "objective_total": 1,
+      "objective_pass_rate": 0,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "181-minimax-m2-7-go",
+        "agent": "opencode",
+        "model": "opencode-go/minimax-m2.7",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:28:50.743Z",
+            "completed_at": "2026-08-30T18:29:44.154Z",
+            "duration_ms": 53411,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.01071672,
+              "steps": 10,
+              "tokens": {
+                "input": 1821,
+                "output": 3831,
+                "reasoning": 0,
+                "cache_read": 92887,
+                "cache_write": 10265,
+                "total": 108804
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:29:44.522Z",
+            "completed_at": "2026-08-30T18:29:45.118Z",
+            "duration_ms": 596
+          },
+          "agent_duration_ms": 53411,
+          "test_duration_ms": 596,
+          "duration_ms": 54375,
+          "cost_usd": 0.01071672,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:28:50.743Z",
+            "completed_at": "2026-08-30T18:29:44.154Z",
+            "duration_ms": 53411,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.01071672,
+              "steps": 10,
+              "tokens": {
+                "input": 1821,
+                "output": 3831,
+                "reasoning": 0,
+                "cache_read": 92887,
+                "cache_write": 10265,
+                "total": 108804
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:29:44.522Z",
+            "completed_at": "2026-08-30T18:29:45.118Z",
+            "duration_ms": 596
+          },
+          "agent_duration_ms": 53411,
+          "test_duration_ms": 596,
+          "duration_ms": 54375,
+          "cost_usd": 0.01071672,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 53411,
+      "test_duration_ms": 596,
+      "duration_ms": 54375,
+      "cost_usd": 0.01071672,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 0,
+      "objective_total": 1,
+      "objective_pass_rate": 0,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "182-qwen3-6-plus-go",
+        "agent": "opencode",
+        "model": "opencode-go/qwen3.6-plus",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:29:49.731Z",
+            "completed_at": "2026-08-30T18:30:55.133Z",
+            "duration_ms": 65402,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.062808,
+              "steps": 11,
+              "tokens": {
+                "input": 109458,
+                "output": 1087,
+                "reasoning": 1606,
+                "cache_read": 0,
+                "cache_write": 0,
+                "total": 112151
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:30:55.494Z",
+            "completed_at": "2026-08-30T18:30:56.089Z",
+            "duration_ms": 595
+          },
+          "agent_duration_ms": 65402,
+          "test_duration_ms": 595,
+          "duration_ms": 66358,
+          "cost_usd": 0.062808,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:29:49.731Z",
+            "completed_at": "2026-08-30T18:30:55.133Z",
+            "duration_ms": 65402,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0.062808,
+              "steps": 11,
+              "tokens": {
+                "input": 109458,
+                "output": 1087,
+                "reasoning": 1606,
+                "cache_read": 0,
+                "cache_write": 0,
+                "total": 112151
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:30:55.494Z",
+            "completed_at": "2026-08-30T18:30:56.089Z",
+            "duration_ms": 595
+          },
+          "agent_duration_ms": 65402,
+          "test_duration_ms": 595,
+          "duration_ms": 66358,
+          "cost_usd": 0.062808,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 65402,
+      "test_duration_ms": 595,
+      "duration_ms": 66358,
+      "cost_usd": 0.062808,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 0,
+      "objective_total": 1,
+      "objective_pass_rate": 0,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "187-gpt-5-5-openai",
+        "agent": "opencode",
+        "model": "openai/gpt-5.5",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:38:05.743Z",
+            "completed_at": "2026-08-30T18:39:30.811Z",
+            "duration_ms": 85068,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 11,
+              "tokens": {
+                "input": 14147,
+                "output": 2383,
+                "reasoning": 1093,
+                "cache_read": 92672,
+                "cache_write": 0,
+                "total": 110295
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:39:31.167Z",
+            "completed_at": "2026-08-30T18:39:31.743Z",
+            "duration_ms": 576
+          },
+          "agent_duration_ms": 85068,
+          "test_duration_ms": 576,
+          "duration_ms": 86000,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:38:05.743Z",
+            "completed_at": "2026-08-30T18:39:30.811Z",
+            "duration_ms": 85068,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 11,
+              "tokens": {
+                "input": 14147,
+                "output": 2383,
+                "reasoning": 1093,
+                "cache_read": 92672,
+                "cache_write": 0,
+                "total": 110295
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:39:31.167Z",
+            "completed_at": "2026-08-30T18:39:31.743Z",
+            "duration_ms": 576
+          },
+          "agent_duration_ms": 85068,
+          "test_duration_ms": 576,
+          "duration_ms": 86000,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 85068,
+      "test_duration_ms": 576,
+      "duration_ms": 86000,
+      "cost_usd": 0,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 0,
+      "objective_total": 1,
+      "objective_pass_rate": 0,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "188-gpt-5-5-fast-openai",
+        "agent": "opencode",
+        "model": "openai/gpt-5.5-fast",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:39:36.182Z",
+            "completed_at": "2026-08-30T18:41:01.951Z",
+            "duration_ms": 85769,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 12,
+              "tokens": {
+                "input": 13179,
+                "output": 2104,
+                "reasoning": 1266,
+                "cache_read": 99328,
+                "cache_write": 0,
+                "total": 115877
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:41:02.302Z",
+            "completed_at": "2026-08-30T18:41:02.881Z",
+            "duration_ms": 579
+          },
+          "agent_duration_ms": 85769,
+          "test_duration_ms": 579,
+          "duration_ms": 86699,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "completed",
+          "agent": {
+            "status": 0,
+            "signal": null,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:39:36.182Z",
+            "completed_at": "2026-08-30T18:41:01.951Z",
+            "duration_ms": 85769,
+            "usage": {
+              "source": "opencode_step_finish",
+              "reported_cost_usd": 0,
+              "steps": 12,
+              "tokens": {
+                "input": 13179,
+                "output": 2104,
+                "reasoning": 1266,
+                "cache_read": 99328,
+                "cache_write": 0,
+                "total": 115877
+              }
+            }
+          },
+          "tests": {
+            "status": 0,
+            "timed_out": false,
+            "output_limited": false,
+            "started_at": "2026-08-30T18:41:02.302Z",
+            "completed_at": "2026-08-30T18:41:02.881Z",
+            "duration_ms": 579
+          },
+          "agent_duration_ms": 85769,
+          "test_duration_ms": 579,
+          "duration_ms": 86699,
+          "cost_usd": 0,
+          "cost_source": "opencode_step_finish",
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": {
+            "id": "phase2-v2-bug-fix-ledger-v1",
+            "status": "completed",
+            "passed": false
+          }
+        }
+      ],
+      "outcome": "completed",
+      "agent_duration_ms": 85769,
+      "test_duration_ms": 579,
+      "duration_ms": 86699,
+      "cost_usd": 0,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": 0,
+      "objective_total": 1,
+      "objective_pass_rate": 0,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "170-minimax-m2-5-zen",
+        "agent": "opencode",
+        "model": "opencode/minimax-m2.5",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "cost_usd": null,
+          "cost_source": null,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": null
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "cost_usd": null,
+          "cost_source": null,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": null
+        }
+      ],
+      "outcome": "unavailable",
+      "agent_duration_ms": null,
+      "test_duration_ms": null,
+      "duration_ms": 0,
+      "cost_usd": null,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": null,
+      "objective_total": null,
+      "objective_pass_rate": null,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "171-minimax-m2-7-zen",
+        "agent": "opencode",
+        "model": "opencode/minimax-m2.7",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "cost_usd": null,
+          "cost_source": null,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": null
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "cost_usd": null,
+          "cost_source": null,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": null
+        }
+      ],
+      "outcome": "unavailable",
+      "agent_duration_ms": null,
+      "test_duration_ms": null,
+      "duration_ms": 0,
+      "cost_usd": null,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": null,
+      "objective_total": null,
+      "objective_pass_rate": null,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "172-minimax-m3-zen",
+        "agent": "opencode",
+        "model": "opencode/minimax-m3",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "cost_usd": null,
+          "cost_source": null,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": null
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "cost_usd": null,
+          "cost_source": null,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": null
+        }
+      ],
+      "outcome": "unavailable",
+      "agent_duration_ms": null,
+      "test_duration_ms": null,
+      "duration_ms": 0,
+      "cost_usd": null,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": null,
+      "objective_total": null,
+      "objective_pass_rate": null,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "173-muse-spark-1-2-zen",
+        "agent": "opencode",
+        "model": "opencode/muse-spark-1.2",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "cost_usd": null,
+          "cost_source": null,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": null
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "cost_usd": null,
+          "cost_source": null,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": null
+        }
+      ],
+      "outcome": "unavailable",
+      "agent_duration_ms": null,
+      "test_duration_ms": null,
+      "duration_ms": 0,
+      "cost_usd": null,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": null,
+      "objective_total": null,
+      "objective_pass_rate": null,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "174-nemotron-3-ultra-free-zen",
+        "agent": "opencode",
+        "model": "opencode/nemotron-3-ultra-free",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "cost_usd": null,
+          "cost_source": null,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": null
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "cost_usd": null,
+          "cost_source": null,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": null
+        }
+      ],
+      "outcome": "unavailable",
+      "agent_duration_ms": null,
+      "test_duration_ms": null,
+      "duration_ms": 0,
+      "cost_usd": null,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": null,
+      "objective_total": null,
+      "objective_pass_rate": null,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "175-qwen3-5-plus-zen",
+        "agent": "opencode",
+        "model": "opencode/qwen3.5-plus",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "cost_usd": null,
+          "cost_source": null,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": null
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "cost_usd": null,
+          "cost_source": null,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": null
+        }
+      ],
+      "outcome": "unavailable",
+      "agent_duration_ms": null,
+      "test_duration_ms": null,
+      "duration_ms": 0,
+      "cost_usd": null,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": null,
+      "objective_total": null,
+      "objective_pass_rate": null,
+      "overall_average": null
+    },
+    {
+      "candidate": {
+        "id": "176-qwen3-6-plus-zen",
+        "agent": "opencode",
+        "model": "opencode/qwen3.6-plus",
+        "reasoning_variant": "provider_default"
+      },
+      "task_count": 1,
+      "nominations": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "cost_usd": null,
+          "cost_source": null,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": null
+        }
+      ],
+      "tasks": [
+        {
+          "nomination": "bug-fix-ledger",
+          "attempt": 1,
+          "outcome": "unavailable",
+          "agent": null,
+          "tests": null,
+          "agent_duration_ms": null,
+          "test_duration_ms": null,
+          "duration_ms": 0,
+          "cost_usd": null,
+          "cost_source": null,
+          "judge_count": 0,
+          "judge_scores": {},
+          "judge_invocation_count": 0,
+          "judge_durations": [],
+          "judge_duration_ms": 0,
+          "objective_evaluator": null
+        }
+      ],
+      "outcome": "unavailable",
+      "agent_duration_ms": null,
+      "test_duration_ms": null,
+      "duration_ms": 0,
+      "cost_usd": null,
+      "judge_count": 0,
+      "judge_average_by_id": {},
+      "judge_duration_by_id": {},
+      "judge_duration_ms": 0,
+      "judge_average": {},
+      "objective_pass_count": null,
+      "objective_total": null,
+      "objective_pass_rate": null,
+      "overall_average": null
+    }
+  ],
+  "generated_at": "2026-08-30T19:25:00.263Z",
+  "reproducibility": {
+    "runner_version": "unknown",
+    "repository_commit": "a7fa2eb4eb38b906bec6050a64c9b6a6db5d116d",
+    "config_hash": "b3663d940ca787e28e1b56d957357da4e2edb1a19c7c889d2db9b7f3fc31db31",
+    "schema_registry": {
+      "schema_registry_version": 1,
+      "artifact_schemas": {
+        "run": 1,
+        "judge": 1,
+        "preflight": 1,
+        "aggregate": 2,
+        "test_result": 1,
+        "candidate_diff": 1,
+        "objective_evaluator": 1
+      }
+    },
+    "effective_limits": {
+      "timeout_ms": 900000,
+      "max_output_bytes": 2097152
+    },
+    "judge_prompt": {
+      "version": 3,
+      "template_hash": "3b0265ce6a626409d7d01a8c28f1d2a8541056ed8634241a7dc13ac2acf97ce2"
+    },
+    "outcomes": {
+      "152-claude-opus-4-7-zen": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "153-claude-opus-4-8-zen": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "155-claude-sonnet-4-6-zen": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "157-gemini-3-7-flash-zen": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "158-glm-5-zen": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "159-glm-5-1-zen": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "160-glm-5-2-zen": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "161-gpt-5-1-codex-zen": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "162-gpt-5-1-codex-mini-zen": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "163-gpt-5-2-codex-zen": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "164-gpt-5-4-zen": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "165-gpt-5-4-mini-zen": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "166-gpt-5-6-luna-zen": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "167-grok-4-6-zen": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "177-deepseek-v4-flash-vision-exp-go": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "178-glm-5-3-flash-go": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "179-hy4-preview-go": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "183-qwen3-7-max-go": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "184-qwen3-8-flash-go": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "185-gpt-5-4-openai": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "186-gpt-5-4-fast-openai": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "189-gpt-5-6-luna-openai": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "190-gpt-5-6-luna-fast-openai": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "191-gpt-5-6-sol-openai": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "192-gpt-5-6-sol-fast-openai": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "193-gpt-5-6-terra-openai": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "194-gpt-5-6-terra-fast-openai": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "150-claude-fable-5-zen": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "151-claude-opus-4-5-zen": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "154-claude-sonnet-4-5-zen": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "156-gemini-3-5-flash-lite-zen": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "168-grok-build-0-1-zen": {
+        "overall": "agent_failure",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "agent_failure"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "agent_failure"
+          }
+        ]
+      },
+      "169-mimo-v2-5-free-zen": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "180-mimo-v2-5-go": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "181-minimax-m2-7-go": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "182-qwen3-6-plus-go": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "187-gpt-5-5-openai": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "188-gpt-5-5-fast-openai": {
+        "overall": "completed",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "completed"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "completed"
+          }
+        ]
+      },
+      "170-minimax-m2-5-zen": {
+        "overall": "unavailable",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "unavailable"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "unavailable"
+          }
+        ]
+      },
+      "171-minimax-m2-7-zen": {
+        "overall": "unavailable",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "unavailable"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "unavailable"
+          }
+        ]
+      },
+      "172-minimax-m3-zen": {
+        "overall": "unavailable",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "unavailable"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "unavailable"
+          }
+        ]
+      },
+      "173-muse-spark-1-2-zen": {
+        "overall": "unavailable",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "unavailable"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "unavailable"
+          }
+        ]
+      },
+      "174-nemotron-3-ultra-free-zen": {
+        "overall": "unavailable",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "unavailable"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "unavailable"
+          }
+        ]
+      },
+      "175-qwen3-5-plus-zen": {
+        "overall": "unavailable",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "unavailable"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "unavailable"
+          }
+        ]
+      },
+      "176-qwen3-6-plus-zen": {
+        "overall": "unavailable",
+        "nominations": [
+          {
+            "nomination": "bug-fix-ledger",
+            "attempt": 1,
+            "outcome": "unavailable"
+          }
+        ],
+        "tasks": [
+          {
+            "task": "bug-fix-ledger",
+            "outcome": "unavailable"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "kind": "manual_code_review",
+  "release": "bug-fix-new-api-available-r1",
+  "candidate": "156-gemini-3-5-flash-lite-zen",
+  "nomination": "bug-fix-ledger",
+  "attempt": 1,
+  "reviewer": {
+    "id": "codex",
+    "type": "assistant_manual_review"
+  },
+  "identity_blind": false,
+  "scores": {
+    "functional_correctness": 8,
+    "reliability_edge_cases": 7,
+    "maintainability_clarity": 6,
+    "scope_discipline": 10
+  },
+  "average": 7.75,
+  "summary": "The patch addresses the main requirements but is substantially more complex than needed and misses objective edge cases, so correctness and maintainability are reduced.",
+  "evidence": {
+    "public_tests_passed": true,
+    "objective_evaluator_passed": false,
+    "forbidden_changes": 0
+  }
+}

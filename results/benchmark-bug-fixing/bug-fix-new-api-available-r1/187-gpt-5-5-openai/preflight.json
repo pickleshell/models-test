@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "187-gpt-5-5-openai",
+    "agent": "opencode",
+    "model": "openai/gpt-5.5",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-30T18:38:01.421Z",
+  "completed_at": "2026-08-30T18:38:05.469Z",
+  "duration_ms": 4048,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0,
+    "steps": 1,
+    "tokens": {
+      "input": 286,
+      "output": 7,
+      "reasoning": 26,
+      "cache_read": 5632,
+      "cache_write": 0,
+      "total": 5951
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "fe6b7d979a02835105c9b55a4d524cacc911cb45ecbcafba64cc3545ed40c684"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "release": "bug-fix-new-api-available-r1",
+  "nomination": "bug-fix-ledger",
+  "run_id": "bug-fix-new-api-available-r1:171-minimax-m2-7-zen:bug-fix-ledger",
+  "attempt": 1,
+  "candidate": {
+    "id": "171-minimax-m2-7-zen",
+    "agent": "opencode",
+    "model": "opencode/minimax-m2.7",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T18:15:53.008Z",
+  "completed_at": "2026-08-30T18:15:53.008Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-30T18:15:50.501Z",
+    "completed_at": "2026-08-30T18:15:53.007Z",
+    "duration_ms": 2506
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-bug-fixing/bug-fix-new-api-available-r1/171-minimax-m2-7-zen/bug-fix-ledger/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "7bcc207a4affd17cfe24bfedba586050e691f1105a806887eebdc42f10681207"
+  }
+}

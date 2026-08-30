@@ -1,0 +1,140 @@
+diff --git a/fixtures/phase2-v2/bug-fix-ledger/src/reconcile.js b/fixtures/phase2-v2/bug-fix-ledger/src/reconcile.js
+index bbeacb2..78d9450 100644
+--- a/fixtures/phase2-v2/bug-fix-ledger/src/reconcile.js
++++ b/fixtures/phase2-v2/bug-fix-ledger/src/reconcile.js
+@@ -1,14 +1,55 @@
+ export function parseAmountToCents(amount) {
+-  if (typeof amount !== 'string' && typeof amount !== 'number') throw new Error('amount must be money');
+-  const value = Number(String(amount).trim().replace(/[$,]/g, ''));
+-  if (!Number.isFinite(value)) throw new Error(`invalid amount: ${amount}`);
+-  return Math.round(value * 100);
++  if (typeof amount !== 'string' && typeof amount !== 'number') {
++    throw new Error('amount must be money');
++  }
++  const s = String(amount).trim();
++  if (!s || s.includes('-')) {
++    throw new Error(`invalid amount: ${amount}`);
++  }
++  const clean = s.startsWith('$') ? s.slice(1) : s;
++  const parts = clean.split('.');
++  if (parts.length > 2) {
++    throw new Error(`invalid amount: ${amount}`);
++  }
++  const [intPart, fracPart = ''] = parts;
++  if (fracPart.length > 2) {
++    throw new Error(`invalid amount: ${amount}`);
++  }
++  if (fracPart && !/^[0-9]+$/.test(fracPart)) {
++    throw new Error(`invalid amount: ${amount}`);
++  }
++
++  let rawInt = intPart;
++  if (rawInt.includes(',')) {
++    if (!/^[1-9][0-9]{0,2}(?:,[0-9]{3})*$/.test(rawInt)) {
++      throw new Error(`invalid amount: ${amount}`);
++    }
++    rawInt = rawInt.replace(/,/g, '');
++  } else {
++    if (!/^(?:0|[1-9][0-9]*)$/.test(rawInt)) {
++      throw new Error(`invalid amount: ${amount}`);
++    }
++  }
++
++  const intCents = parseInt(rawInt, 10) * 100;
++  let fracCents = 0;
++  if (fracPart.length === 1) {
++    fracCents = parseInt(fracPart, 10) * 10;
++  } else if (fracPart.length === 2) {
++    fracCents = parseInt(fracPart, 10);
++  }
++  return intCents + fracCents;
+ }
+ 
+ function dayKey(createdAt) {
+   const date = new Date(createdAt);
+-  if (Number.isNaN(date.getTime())) throw new Error(`invalid createdAt: ${createdAt}`);
+-  return date.toLocaleDateString('en-CA');
++  if (Number.isNaN(date.getTime()) || (typeof createdAt !== 'string' && typeof createdAt !== 'number' && !(createdAt instanceof Date))) {
++    throw new Error(`invalid createdAt: ${createdAt}`);
++  }
++  const year = date.getUTCFullYear();
++  const month = String(date.getUTCMonth() + 1).padStart(2, '0');
++  const day = String(date.getUTCDate()).padStart(2, '0');
++  return `${year}-${month}-${day}`;
+ }
+ 
+ function addTotal(totals, accountId, currency, day, cents) {
+@@ -23,20 +64,62 @@ export function reconcileLedger(entries) {
+   if (!Array.isArray(entries)) throw new Error('entries must be an array');
+   const totals = new Map(), seenIds = new Set(), originals = new Map();
+   const metrics = { processed: 0, duplicateCount: 0, invalidCount: 0, orphanRefundCount: 0 };
++
+   for (const entry of entries) {
+     try {
+-      if (!entry || typeof entry !== 'object' || !entry.id || !entry.accountId || !entry.currency) throw new Error('invalid entry');
+-      if (seenIds.has(entry.id)) metrics.duplicateCount += 1;
+-      seenIds.add(entry.id);
+-      const cents = parseAmountToCents(entry.amount), day = dayKey(entry.createdAt);
++      if (!entry || typeof entry !== 'object') throw new Error('invalid entry');
++      if (entry.id == null || String(entry.id).trim() === '') throw new Error('invalid id');
++      
++      const idStr = String(entry.id);
++      if (seenIds.has(idStr)) {
++        metrics.duplicateCount += 1;
++        continue;
++      }
++      seenIds.add(idStr);
++
++      if (!entry.accountId || (typeof entry.accountId !== 'string' && typeof entry.accountId !== 'number') || String(entry.accountId).trim() === '') {
++        throw new Error('invalid accountId');
++      }
++      if (!entry.currency || (typeof entry.currency !== 'string' && typeof entry.currency !== 'number') || String(entry.currency).trim() === '') {
++        throw new Error('invalid currency');
++      }
++      if (entry.type !== 'sale' && entry.type !== 'refund') {
++        throw new Error('unsupported type');
++      }
++
++      const cents = parseAmountToCents(entry.amount);
++      const day = dayKey(entry.createdAt);
++
+       if (entry.type === 'sale') {
+-        originals.set(entry.id, entry); addTotal(totals, entry.accountId, entry.currency, day, cents); metrics.processed += 1;
++        originals.set(idStr, {
++          accountId: String(entry.accountId),
++          currency: String(entry.currency)
++        });
++        addTotal(totals, String(entry.accountId), String(entry.currency), day, cents);
++        metrics.processed += 1;
+       } else if (entry.type === 'refund') {
+-        const original = originals.get(entry.originalId);
+-        if (!original) { metrics.orphanRefundCount += 1; continue; }
+-        addTotal(totals, entry.accountId, entry.currency, day, -cents); metrics.processed += 1;
+-      } else throw new Error('unsupported type');
+-    } catch { metrics.invalidCount += 1; }
++        if (!entry.originalId) {
++          metrics.orphanRefundCount += 1;
++          continue;
++        }
++        const original = originals.get(String(entry.originalId));
++        if (!original) {
++          metrics.orphanRefundCount += 1;
++          continue;
++        }
++        addTotal(totals, original.accountId, original.currency, day, -cents);
++        metrics.processed += 1;
++      }
++    } catch {
++      metrics.invalidCount += 1;
++    }
+   }
+-  return { totals: [...totals.values()].sort((a, b) => a.accountId.localeCompare(b.accountId) || a.currency.localeCompare(b.currency) || a.day.localeCompare(b.day)), metrics };
++
++  const sortedTotals = [...totals.values()].sort((a, b) =>
++    a.accountId.localeCompare(b.accountId) ||
++    a.currency.localeCompare(b.currency) ||
++    a.day.localeCompare(b.day)
++  );
++
++  return { totals: sortedTotals, metrics };
+ }

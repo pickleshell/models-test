@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "release": "bug-fix-new-api-available-r1",
+  "nomination": "bug-fix-ledger",
+  "run_id": "bug-fix-new-api-available-r1:161-gpt-5-1-codex-zen:bug-fix-ledger",
+  "attempt": 1,
+  "candidate": {
+    "id": "161-gpt-5-1-codex-zen",
+    "agent": "opencode",
+    "model": "opencode/gpt-5.1-codex",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T17:58:11.204Z",
+  "completed_at": "2026-08-30T18:01:43.824Z",
+  "duration_ms": 212620,
+  "benchmark_metrics": {
+    "duration_ms": 212620,
+    "model_duration_ms": 211683,
+    "public_tests_duration_ms": 579,
+    "cost_usd": 0.184883648,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T17:58:11.204Z",
+    "completed_at": "2026-08-30T18:01:42.887Z",
+    "duration_ms": 211683,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0.184883648,
+      "steps": 19,
+      "tokens": {
+        "input": 6590,
+        "output": 3235,
+        "reasoning": 15168,
+        "cache_read": 200064,
+        "cache_write": 0,
+        "total": 225057
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T18:01:43.245Z",
+    "completed_at": "2026-08-30T18:01:43.824Z",
+    "duration_ms": 579
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/bug-fix-ledger/src/reconcile.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-bug-fixing/bug-fix-new-api-available-r1/161-gpt-5-1-codex-zen/bug-fix-ledger/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "ac6674ceb8031cfdda8dd1e36cda332311f8902c8be86aef4b0748bd2913a064"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "b7cbdbf671017c5f5baffd28eee476cbbd42806a74dc37a5e84538d81a8b4666"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "aada731480c20427b648b6c0debc4466806ca54df0746885dc83eb8a71d2c9ca"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "0553b93b7c5a1a4a0be2150f3a77aecc92b355155c4e84b932f1f2eda442f028"
+  }
+}

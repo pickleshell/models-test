@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "163-gpt-5-2-codex-zen",
+    "agent": "opencode",
+    "model": "opencode/gpt-5.2-codex",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-30T18:04:07.854Z",
+  "completed_at": "2026-08-30T18:04:12.047Z",
+  "duration_ms": 4193,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0.0107765,
+    "steps": 1,
+    "tokens": {
+      "input": 5982,
+      "output": 22,
+      "reasoning": 0,
+      "cache_read": 0,
+      "cache_write": 0,
+      "total": 6004
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "8056b0339d166eacdd2d94a4aebdcc650953e8b670af5d50ca6818c123fb121a"
+  }
+}

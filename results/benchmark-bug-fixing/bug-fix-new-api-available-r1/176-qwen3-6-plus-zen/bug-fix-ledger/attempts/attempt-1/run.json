@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "release": "bug-fix-new-api-available-r1",
+  "nomination": "bug-fix-ledger",
+  "run_id": "bug-fix-new-api-available-r1:176-qwen3-6-plus-zen:bug-fix-ledger",
+  "attempt": 1,
+  "candidate": {
+    "id": "176-qwen3-6-plus-zen",
+    "agent": "opencode",
+    "model": "opencode/qwen3.6-plus",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T18:16:06.498Z",
+  "completed_at": "2026-08-30T18:16:06.498Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-30T18:16:04.179Z",
+    "completed_at": "2026-08-30T18:16:06.497Z",
+    "duration_ms": 2318
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-bug-fixing/bug-fix-new-api-available-r1/176-qwen3-6-plus-zen/bug-fix-ledger/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "ee4c5c00df71fc8f00caabe992c086d0b52d95545bcf072609cab19ce4915ef7"
+  }
+}

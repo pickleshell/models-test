@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "172-minimax-m3-zen",
+    "agent": "opencode",
+    "model": "opencode/minimax-m3",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "unavailable",
+  "reason": "process_failure",
+  "started_at": "2026-08-30T18:15:53.236Z",
+  "completed_at": "2026-08-30T18:15:55.762Z",
+  "duration_ms": 2526,
+  "process_status": 1,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": null,
+    "steps": 0,
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "cache_read": 0,
+      "cache_write": 0,
+      "total": 0
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "7794278592cbdf09750f9445b0f4f54f792f2330d5e5d0a9d6678f3836aabf45"
+  }
+}

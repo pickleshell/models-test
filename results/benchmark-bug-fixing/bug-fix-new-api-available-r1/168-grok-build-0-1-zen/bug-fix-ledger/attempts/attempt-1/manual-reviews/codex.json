@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "kind": "manual_code_review",
+  "release": "bug-fix-new-api-available-r1",
+  "candidate": "168-grok-build-0-1-zen",
+  "nomination": "bug-fix-ledger",
+  "attempt": 1,
+  "reviewer": {
+    "id": "codex",
+    "type": "assistant_manual_review"
+  },
+  "identity_blind": false,
+  "scores": {
+    "functional_correctness": 7,
+    "reliability_edge_cases": 6,
+    "maintainability_clarity": 8,
+    "scope_discipline": 10
+  },
+  "average": 7.75,
+  "summary": "The agent exited unsuccessfully after leaving a tested partial patch. The patch improves parsing, UTC grouping, and duplicate handling, but leaves refund attribution incorrect; the objective evaluator fails.",
+  "evidence": {
+    "public_tests_passed": true,
+    "objective_evaluator_passed": false,
+    "forbidden_changes": 0
+  }
+}

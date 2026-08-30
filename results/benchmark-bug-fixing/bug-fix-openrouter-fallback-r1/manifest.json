@@ -1,0 +1,112 @@
+{
+  "schema_version": 3,
+  "release": "bug-fix-openrouter-fallback-r1",
+  "nominations": [
+    {
+      "id": "bug-fix-ledger",
+      "fixture": "fixtures/phase2-v2/bug-fix-ledger",
+      "prompt": "benchmarks/phase2-v2/prompts/bug-fix-ledger.md",
+      "test_command": [
+        "npm",
+        "test",
+        "--prefix",
+        "fixtures/phase2-v2/bug-fix-ledger"
+      ],
+      "allowed_changes": [
+        "fixtures/phase2-v2/bug-fix-ledger/src/reconcile.js"
+      ],
+      "frozen_inputs": {
+        "fixture_tree": {
+          "algorithm": "sha256-tree-v1",
+          "sha256": "eaa5ce8e68a1d6243f48ded5f7495a8c26e2fee98d6d3536ff7f585ac0fc19f8",
+          "files": 4
+        },
+        "prompt_sha256": "9c69e7ecacc9520663b9cc693748b7516c76a98a195192acefb333eb48e8612b"
+      },
+      "objective_evaluator": {
+        "id": "phase2-v2-bug-fix-ledger-v1",
+        "sha256": "f3bf35b4af253b4b83bfa8351f078c9e198d89cc63fba4e3d086b1fe56739b99",
+        "source_sha256": "b0f6f42ae361f634678b596b6bb630df9dbdad33693bf96089d862291d5ee4ba"
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "id": "195-meta-muse-spark-1-2",
+      "agent": "opencode",
+      "model": "openrouter/meta/muse-spark-1.2",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "196-minimax-minimax-m2-5",
+      "agent": "opencode",
+      "model": "openrouter/minimax/minimax-m2.5",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "197-minimax-minimax-m2-7",
+      "agent": "opencode",
+      "model": "openrouter/minimax/minimax-m2.7",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "198-minimax-minimax-m2-7-free",
+      "agent": "opencode",
+      "model": "openrouter/minimax/minimax-m2.7:free",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "199-minimax-minimax-m3-free",
+      "agent": "opencode",
+      "model": "openrouter/minimax/minimax-m3:free",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "200-nvidia-nemotron-3-ultra-550b-a55b",
+      "agent": "opencode",
+      "model": "openrouter/nvidia/nemotron-3-ultra-550b-a55b",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "201-nvidia-nemotron-3-ultra-550b-a55b-free",
+      "agent": "opencode",
+      "model": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "202-qwen-qwen3-5-plus-02-15",
+      "agent": "opencode",
+      "model": "openrouter/qwen/qwen3.5-plus-02-15",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "203-qwen-qwen3-5-plus-20260420",
+      "agent": "opencode",
+      "model": "openrouter/qwen/qwen3.5-plus-20260420",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "204-qwen-qwen3-6-plus",
+      "agent": "opencode",
+      "model": "openrouter/qwen/qwen3.6-plus",
+      "reasoning_variant": "provider_default"
+    }
+  ],
+  "judges": [],
+  "criteria": [
+    "functional_correctness",
+    "reliability_edge_cases",
+    "maintainability_clarity",
+    "scope_discipline"
+  ],
+  "retry_policy": {
+    "canonical_attempt": 1,
+    "allow_retries": false
+  },
+  "judge_prompt": {
+    "version": 3,
+    "template_hash": "3b0265ce6a626409d7d01a8c28f1d2a8541056ed8634241a7dc13ac2acf97ce2"
+  },
+  "config_sha256": "0de7fb07ae3e1f9541e94e9d6a175d9acd83d18394639fb7cbd49ddb40a176aa",
+  "spec_hash": "051ec50abbcff172caeda2eb46b544db0739d5313e51b26235f62659d34aed81"
+}

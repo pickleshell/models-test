@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "release": "bug-fix-new-api-available-r1",
+  "nomination": "bug-fix-ledger",
+  "run_id": "bug-fix-new-api-available-r1:173-muse-spark-1-2-zen:bug-fix-ledger",
+  "attempt": 1,
+  "candidate": {
+    "id": "173-muse-spark-1-2-zen",
+    "agent": "opencode",
+    "model": "opencode/muse-spark-1.2",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T18:15:58.346Z",
+  "completed_at": "2026-08-30T18:15:58.346Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-30T18:15:55.994Z",
+    "completed_at": "2026-08-30T18:15:58.345Z",
+    "duration_ms": 2351
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-bug-fixing/bug-fix-new-api-available-r1/173-muse-spark-1-2-zen/bug-fix-ledger/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "d700165195903f9203e8e120358dc7cd70537073a5f9c18528762f9f27c7c5d5"
+  }
+}

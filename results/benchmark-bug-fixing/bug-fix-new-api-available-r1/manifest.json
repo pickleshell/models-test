@@ -1,0 +1,322 @@
+{
+  "schema_version": 3,
+  "release": "bug-fix-new-api-available-r1",
+  "nominations": [
+    {
+      "id": "bug-fix-ledger",
+      "fixture": "fixtures/phase2-v2/bug-fix-ledger",
+      "prompt": "benchmarks/phase2-v2/prompts/bug-fix-ledger.md",
+      "test_command": [
+        "npm",
+        "test",
+        "--prefix",
+        "fixtures/phase2-v2/bug-fix-ledger"
+      ],
+      "allowed_changes": [
+        "fixtures/phase2-v2/bug-fix-ledger/src/reconcile.js"
+      ],
+      "frozen_inputs": {
+        "fixture_tree": {
+          "algorithm": "sha256-tree-v1",
+          "sha256": "eaa5ce8e68a1d6243f48ded5f7495a8c26e2fee98d6d3536ff7f585ac0fc19f8",
+          "files": 4
+        },
+        "prompt_sha256": "9c69e7ecacc9520663b9cc693748b7516c76a98a195192acefb333eb48e8612b"
+      },
+      "objective_evaluator": {
+        "id": "phase2-v2-bug-fix-ledger-v1",
+        "sha256": "f3bf35b4af253b4b83bfa8351f078c9e198d89cc63fba4e3d086b1fe56739b99",
+        "source_sha256": "b0f6f42ae361f634678b596b6bb630df9dbdad33693bf96089d862291d5ee4ba"
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "id": "150-claude-fable-5-zen",
+      "agent": "opencode",
+      "model": "opencode/claude-fable-5",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "151-claude-opus-4-5-zen",
+      "agent": "opencode",
+      "model": "opencode/claude-opus-4-5",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "152-claude-opus-4-7-zen",
+      "agent": "opencode",
+      "model": "opencode/claude-opus-4-7",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "153-claude-opus-4-8-zen",
+      "agent": "opencode",
+      "model": "opencode/claude-opus-4-8",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "154-claude-sonnet-4-5-zen",
+      "agent": "opencode",
+      "model": "opencode/claude-sonnet-4-5",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "155-claude-sonnet-4-6-zen",
+      "agent": "opencode",
+      "model": "opencode/claude-sonnet-4-6",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "156-gemini-3-5-flash-lite-zen",
+      "agent": "opencode",
+      "model": "opencode/gemini-3.5-flash-lite",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "157-gemini-3-7-flash-zen",
+      "agent": "opencode",
+      "model": "opencode/gemini-3.7-flash",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "158-glm-5-zen",
+      "agent": "opencode",
+      "model": "opencode/glm-5",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "159-glm-5-1-zen",
+      "agent": "opencode",
+      "model": "opencode/glm-5.1",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "160-glm-5-2-zen",
+      "agent": "opencode",
+      "model": "opencode/glm-5.2",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "161-gpt-5-1-codex-zen",
+      "agent": "opencode",
+      "model": "opencode/gpt-5.1-codex",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "162-gpt-5-1-codex-mini-zen",
+      "agent": "opencode",
+      "model": "opencode/gpt-5.1-codex-mini",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "163-gpt-5-2-codex-zen",
+      "agent": "opencode",
+      "model": "opencode/gpt-5.2-codex",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "164-gpt-5-4-zen",
+      "agent": "opencode",
+      "model": "opencode/gpt-5.4",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "165-gpt-5-4-mini-zen",
+      "agent": "opencode",
+      "model": "opencode/gpt-5.4-mini",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "166-gpt-5-6-luna-zen",
+      "agent": "opencode",
+      "model": "opencode/gpt-5.6-luna",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "167-grok-4-6-zen",
+      "agent": "opencode",
+      "model": "opencode/grok-4.6",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "168-grok-build-0-1-zen",
+      "agent": "opencode",
+      "model": "opencode/grok-build-0.1",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "169-mimo-v2-5-free-zen",
+      "agent": "opencode",
+      "model": "opencode/mimo-v2.5-free",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "170-minimax-m2-5-zen",
+      "agent": "opencode",
+      "model": "opencode/minimax-m2.5",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "171-minimax-m2-7-zen",
+      "agent": "opencode",
+      "model": "opencode/minimax-m2.7",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "172-minimax-m3-zen",
+      "agent": "opencode",
+      "model": "opencode/minimax-m3",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "173-muse-spark-1-2-zen",
+      "agent": "opencode",
+      "model": "opencode/muse-spark-1.2",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "174-nemotron-3-ultra-free-zen",
+      "agent": "opencode",
+      "model": "opencode/nemotron-3-ultra-free",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "175-qwen3-5-plus-zen",
+      "agent": "opencode",
+      "model": "opencode/qwen3.5-plus",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "176-qwen3-6-plus-zen",
+      "agent": "opencode",
+      "model": "opencode/qwen3.6-plus",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "177-deepseek-v4-flash-vision-exp-go",
+      "agent": "opencode",
+      "model": "opencode-go/deepseek-v4-flash-vision-exp",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "178-glm-5-3-flash-go",
+      "agent": "opencode",
+      "model": "opencode-go/glm-5.3-flash",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "179-hy4-preview-go",
+      "agent": "opencode",
+      "model": "opencode-go/hy4-preview",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "180-mimo-v2-5-go",
+      "agent": "opencode",
+      "model": "opencode-go/mimo-v2.5",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "181-minimax-m2-7-go",
+      "agent": "opencode",
+      "model": "opencode-go/minimax-m2.7",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "182-qwen3-6-plus-go",
+      "agent": "opencode",
+      "model": "opencode-go/qwen3.6-plus",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "183-qwen3-7-max-go",
+      "agent": "opencode",
+      "model": "opencode-go/qwen3.7-max",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "184-qwen3-8-flash-go",
+      "agent": "opencode",
+      "model": "opencode-go/qwen3.8-flash",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "185-gpt-5-4-openai",
+      "agent": "opencode",
+      "model": "openai/gpt-5.4",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "186-gpt-5-4-fast-openai",
+      "agent": "opencode",
+      "model": "openai/gpt-5.4-fast",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "187-gpt-5-5-openai",
+      "agent": "opencode",
+      "model": "openai/gpt-5.5",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "188-gpt-5-5-fast-openai",
+      "agent": "opencode",
+      "model": "openai/gpt-5.5-fast",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "189-gpt-5-6-luna-openai",
+      "agent": "opencode",
+      "model": "openai/gpt-5.6-luna",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "190-gpt-5-6-luna-fast-openai",
+      "agent": "opencode",
+      "model": "openai/gpt-5.6-luna-fast",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "191-gpt-5-6-sol-openai",
+      "agent": "opencode",
+      "model": "openai/gpt-5.6-sol",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "192-gpt-5-6-sol-fast-openai",
+      "agent": "opencode",
+      "model": "openai/gpt-5.6-sol-fast",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "193-gpt-5-6-terra-openai",
+      "agent": "opencode",
+      "model": "openai/gpt-5.6-terra",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "194-gpt-5-6-terra-fast-openai",
+      "agent": "opencode",
+      "model": "openai/gpt-5.6-terra-fast",
+      "reasoning_variant": "provider_default"
+    }
+  ],
+  "judges": [],
+  "criteria": [
+    "functional_correctness",
+    "reliability_edge_cases",
+    "maintainability_clarity",
+    "scope_discipline"
+  ],
+  "retry_policy": {
+    "canonical_attempt": 1,
+    "allow_retries": false
+  },
+  "judge_prompt": {
+    "version": 3,
+    "template_hash": "3b0265ce6a626409d7d01a8c28f1d2a8541056ed8634241a7dc13ac2acf97ce2"
+  },
+  "config_sha256": "b3663d940ca787e28e1b56d957357da4e2edb1a19c7c889d2db9b7f3fc31db31",
+  "spec_hash": "61fa43e193077ed31d9d74434fa84015cc604a2d6aa06ee67972bfd76176d168"
+}

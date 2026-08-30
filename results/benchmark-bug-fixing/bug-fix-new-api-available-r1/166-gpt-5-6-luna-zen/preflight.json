@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "166-gpt-5-6-luna-zen",
+    "agent": "opencode",
+    "model": "opencode/gpt-5.6-luna",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-30T18:07:05.501Z",
+  "completed_at": "2026-08-30T18:07:09.226Z",
+  "duration_ms": 3725,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0.00157485,
+    "steps": 1,
+    "tokens": {
+      "input": 3,
+      "output": 5,
+      "reasoning": 0,
+      "cache_read": 0,
+      "cache_write": 6273,
+      "total": 6281
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "3dd9e0e619876d0a760a7157489678e360997ce2860688a9542971e91a80850b"
+  }
+}

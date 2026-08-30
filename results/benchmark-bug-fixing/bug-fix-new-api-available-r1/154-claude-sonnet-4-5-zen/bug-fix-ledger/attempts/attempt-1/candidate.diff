@@ -1,0 +1,71 @@
+diff --git a/fixtures/phase2-v2/bug-fix-ledger/src/reconcile.js b/fixtures/phase2-v2/bug-fix-ledger/src/reconcile.js
+index bbeacb2..0b0b4b9 100644
+--- a/fixtures/phase2-v2/bug-fix-ledger/src/reconcile.js
++++ b/fixtures/phase2-v2/bug-fix-ledger/src/reconcile.js
+@@ -1,14 +1,39 @@
+ export function parseAmountToCents(amount) {
+   if (typeof amount !== 'string' && typeof amount !== 'number') throw new Error('amount must be money');
+-  const value = Number(String(amount).trim().replace(/[$,]/g, ''));
+-  if (!Number.isFinite(value)) throw new Error(`invalid amount: ${amount}`);
+-  return Math.round(value * 100);
++  const str = String(amount).trim();
++  
++  // Remove optional leading $ and validate format
++  const cleaned = str.replace(/^\$/, '');
++  
++  // Check for negative values
++  if (cleaned.startsWith('-')) throw new Error(`invalid amount: ${amount}`);
++  
++  // Validate format: digits with optional comma grouping and optional decimal
++  // Valid patterns: "123", "1,234", "1,234.5", "1,234.56", "123.45"
++  const match = cleaned.match(/^(\d{1,3}(,\d{3})*|\d+)(\.\d{0,2})?$/);
++  if (!match) throw new Error(`invalid amount: ${amount}`);
++  
++  // Remove commas and convert to number
++  const withoutCommas = cleaned.replace(/,/g, '');
++  const value = Number(withoutCommas);
++  
++  if (!Number.isFinite(value) || value < 0) throw new Error(`invalid amount: ${amount}`);
++  
++  // Check that conversion to cents is exact (no rounding needed)
++  const cents = value * 100;
++  if (cents !== Math.floor(cents)) throw new Error(`invalid amount: ${amount}`);
++  
++  return cents;
+ }
+ 
+ function dayKey(createdAt) {
+   const date = new Date(createdAt);
+   if (Number.isNaN(date.getTime())) throw new Error(`invalid createdAt: ${createdAt}`);
+-  return date.toLocaleDateString('en-CA');
++  // Return UTC calendar day in YYYY-MM-DD format
++  const year = date.getUTCFullYear();
++  const month = String(date.getUTCMonth() + 1).padStart(2, '0');
++  const day = String(date.getUTCDate()).padStart(2, '0');
++  return `${year}-${month}-${day}`;
+ }
+ 
+ function addTotal(totals, accountId, currency, day, cents) {
+@@ -26,7 +51,11 @@ export function reconcileLedger(entries) {
+   for (const entry of entries) {
+     try {
+       if (!entry || typeof entry !== 'object' || !entry.id || !entry.accountId || !entry.currency) throw new Error('invalid entry');
+-      if (seenIds.has(entry.id)) metrics.duplicateCount += 1;
++      // Check for duplicates and ignore entirely if found
++      if (seenIds.has(entry.id)) {
++        metrics.duplicateCount += 1;
++        continue;
++      }
+       seenIds.add(entry.id);
+       const cents = parseAmountToCents(entry.amount), day = dayKey(entry.createdAt);
+       if (entry.type === 'sale') {
+@@ -34,7 +63,8 @@ export function reconcileLedger(entries) {
+       } else if (entry.type === 'refund') {
+         const original = originals.get(entry.originalId);
+         if (!original) { metrics.orphanRefundCount += 1; continue; }
+-        addTotal(totals, entry.accountId, entry.currency, day, -cents); metrics.processed += 1;
++        // Use original sale's account and currency, but refund's day
++        addTotal(totals, original.accountId, original.currency, day, -cents); metrics.processed += 1;
+       } else throw new Error('unsupported type');
+     } catch { metrics.invalidCount += 1; }
+   }

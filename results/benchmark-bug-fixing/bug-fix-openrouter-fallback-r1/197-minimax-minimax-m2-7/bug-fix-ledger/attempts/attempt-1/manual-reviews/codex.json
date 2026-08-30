@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "kind": "manual_code_review",
+  "release": "bug-fix-openrouter-fallback-r1",
+  "candidate": "197-minimax-minimax-m2-7",
+  "nomination": "bug-fix-ledger",
+  "attempt": 1,
+  "reviewer": {
+    "id": "codex",
+    "type": "assistant_manual_review"
+  },
+  "identity_blind": false,
+  "scores": {
+    "functional_correctness": 7,
+    "reliability_edge_cases": 6,
+    "maintainability_clarity": 9,
+    "scope_discipline": 10
+  },
+  "average": 8,
+  "summary": "The patch passes the public test command but fails the independent objective evaluator, so the score reflects the remaining contract or edge-case gap.",
+  "evidence": {
+    "public_tests_passed": true,
+    "objective_evaluator_passed": false,
+    "forbidden_changes": 0
+  }
+}

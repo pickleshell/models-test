@@ -1,0 +1,76 @@
+{
+  "schema_version": 3,
+  "release": "bug-fix-zen-non-gpt-completion-r1",
+  "nominations": [
+    {
+      "id": "bug-fix-ledger",
+      "fixture": "fixtures/phase2-v2/bug-fix-ledger",
+      "prompt": "benchmarks/phase2-v2/prompts/bug-fix-ledger.md",
+      "test_command": [
+        "npm",
+        "test",
+        "--prefix",
+        "fixtures/phase2-v2/bug-fix-ledger"
+      ],
+      "allowed_changes": [
+        "fixtures/phase2-v2/bug-fix-ledger/src/reconcile.js"
+      ],
+      "frozen_inputs": {
+        "fixture_tree": {
+          "algorithm": "sha256-tree-v1",
+          "sha256": "eaa5ce8e68a1d6243f48ded5f7495a8c26e2fee98d6d3536ff7f585ac0fc19f8",
+          "files": 4
+        },
+        "prompt_sha256": "9c69e7ecacc9520663b9cc693748b7516c76a98a195192acefb333eb48e8612b"
+      },
+      "objective_evaluator": {
+        "id": "phase2-v2-bug-fix-ledger-v1",
+        "sha256": "f3bf35b4af253b4b83bfa8351f078c9e198d89cc63fba4e3d086b1fe56739b99",
+        "source_sha256": "b0f6f42ae361f634678b596b6bb630df9dbdad33693bf96089d862291d5ee4ba"
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "id": "205-claude-haiku-4-5",
+      "agent": "opencode",
+      "model": "opencode/claude-haiku-4-5",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "206-claude-sonnet-5",
+      "agent": "opencode",
+      "model": "opencode/claude-sonnet-5",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "207-claude-opus-5",
+      "agent": "opencode",
+      "model": "opencode/claude-opus-5",
+      "reasoning_variant": "provider_default"
+    },
+    {
+      "id": "208-kimi-k3",
+      "agent": "opencode",
+      "model": "opencode/kimi-k3",
+      "reasoning_variant": "provider_default"
+    }
+  ],
+  "judges": [],
+  "criteria": [
+    "functional_correctness",
+    "reliability_edge_cases",
+    "maintainability_clarity",
+    "scope_discipline"
+  ],
+  "retry_policy": {
+    "canonical_attempt": 1,
+    "allow_retries": false
+  },
+  "judge_prompt": {
+    "version": 3,
+    "template_hash": "3b0265ce6a626409d7d01a8c28f1d2a8541056ed8634241a7dc13ac2acf97ce2"
+  },
+  "config_sha256": "fd6791595b332ac41e7b28d474dcd28dc40fcd25afaff1df7094fa97907afc2b",
+  "spec_hash": "20066db5ef0aa7591438ce2deaa88a76ff4f51397e34a455f9ae41cbc5bf4b47"
+}

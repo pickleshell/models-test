@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "release": "bug-fix-openrouter-fallback-r1",
+  "nomination": "bug-fix-ledger",
+  "run_id": "bug-fix-openrouter-fallback-r1:201-nvidia-nemotron-3-ultra-550b-a55b-free:bug-fix-ledger",
+  "attempt": 1,
+  "candidate": {
+    "id": "201-nvidia-nemotron-3-ultra-550b-a55b-free",
+    "agent": "opencode",
+    "model": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T19:08:01.567Z",
+  "completed_at": "2026-08-30T19:09:12.413Z",
+  "duration_ms": 70846,
+  "benchmark_metrics": {
+    "duration_ms": 70846,
+    "model_duration_ms": 69883,
+    "public_tests_duration_ms": 594,
+    "cost_usd": 0,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T19:08:01.567Z",
+    "completed_at": "2026-08-30T19:09:11.450Z",
+    "duration_ms": 69883,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0,
+      "steps": 6,
+      "tokens": {
+        "input": 54803,
+        "output": 1129,
+        "reasoning": 694,
+        "cache_read": 4320,
+        "cache_write": 0,
+        "total": 60945
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T19:09:11.819Z",
+    "completed_at": "2026-08-30T19:09:12.413Z",
+    "duration_ms": 594
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/bug-fix-ledger/src/reconcile.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-bug-fixing/bug-fix-openrouter-fallback-r1/201-nvidia-nemotron-3-ultra-550b-a55b-free/bug-fix-ledger/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "d073dbc3af77e446249f948dd4780ef177bebfa62d107b6b3cf07c7919b19edd"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "44cb229e1e5006d877e60e8907910c45e9667c845532aea5e64e953df9737f3b"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "8937b008af297e3ca30592295dc8afe7e908b6e6fbfc56fdc1047ffdbec0426a"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "2c56e37dd560e216e057679730ca2fa9192d6fa539c254abe33c7b921819d498"
+  }
+}

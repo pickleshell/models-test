@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "181-minimax-m2-7-go",
+    "agent": "opencode",
+    "model": "opencode-go/minimax-m2.7",
+    "reasoning_variant": "provider_default"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-30T18:28:46.612Z",
+  "completed_at": "2026-08-30T18:28:50.472Z",
+  "duration_ms": 3860,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0.00018858,
+    "steps": 1,
+    "tokens": {
+      "input": 0,
+      "output": 37,
+      "reasoning": 0,
+      "cache_read": 2403,
+      "cache_write": 4684,
+      "total": 7124
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "b08be7fb7da751375fc1e576b7a888672a39771e7340579f7303a87b40d811ca"
+  }
+}

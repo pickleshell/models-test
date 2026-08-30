@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "release": "bug-fix-new-api-available-r1",
+  "nomination": "bug-fix-ledger",
+  "run_id": "bug-fix-new-api-available-r1:180-mimo-v2-5-go:bug-fix-ledger",
+  "attempt": 1,
+  "candidate": {
+    "id": "180-mimo-v2-5-go",
+    "agent": "opencode",
+    "model": "opencode-go/mimo-v2.5",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T18:27:42.547Z",
+  "completed_at": "2026-08-30T18:28:46.310Z",
+  "duration_ms": 63763,
+  "benchmark_metrics": {
+    "duration_ms": 63763,
+    "model_duration_ms": 62806,
+    "public_tests_duration_ms": 606,
+    "cost_usd": 0.0019355392,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T18:27:42.547Z",
+    "completed_at": "2026-08-30T18:28:45.353Z",
+    "duration_ms": 62806,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0.0019355392,
+      "steps": 15,
+      "tokens": {
+        "input": 6248,
+        "output": 2364,
+        "reasoning": 0,
+        "cache_read": 142464,
+        "cache_write": 0,
+        "total": 151076
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T18:28:45.704Z",
+    "completed_at": "2026-08-30T18:28:46.310Z",
+    "duration_ms": 606
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/bug-fix-ledger/src/reconcile.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-bug-fixing/bug-fix-new-api-available-r1/180-mimo-v2-5-go/bug-fix-ledger/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "43c2c11a75d2b6ef2b4f04a043755d54f66233386ed0990b1e3f6f8949e628d2"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "991c99bcf824527bc2ce85ac0865db1a346a7cc1f0d5cafb6a787795c186ccde"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "b83d556740624db8d2156bfc45445e5de74aed4fa08480a5e76157792248a599"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "ce1f5530b8664b0d89f9c29b59aee59ba9a328f77884f373d7e184a03611600c"
+  }
+}

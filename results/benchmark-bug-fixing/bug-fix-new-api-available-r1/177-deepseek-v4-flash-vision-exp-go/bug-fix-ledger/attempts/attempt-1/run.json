@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "release": "bug-fix-new-api-available-r1",
+  "nomination": "bug-fix-ledger",
+  "run_id": "bug-fix-new-api-available-r1:177-deepseek-v4-flash-vision-exp-go:bug-fix-ledger",
+  "attempt": 1,
+  "candidate": {
+    "id": "177-deepseek-v4-flash-vision-exp-go",
+    "agent": "opencode",
+    "model": "opencode-go/deepseek-v4-flash-vision-exp",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T18:16:10.673Z",
+  "completed_at": "2026-08-30T18:17:55.996Z",
+  "duration_ms": 105323,
+  "benchmark_metrics": {
+    "duration_ms": 105323,
+    "model_duration_ms": 104375,
+    "public_tests_duration_ms": 587,
+    "cost_usd": 0.009718984,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T18:16:10.673Z",
+    "completed_at": "2026-08-30T18:17:55.048Z",
+    "duration_ms": 104375,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0.009718984,
+      "steps": 10,
+      "tokens": {
+        "input": 11011,
+        "output": 2018,
+        "reasoning": 8007,
+        "cache_read": 97152,
+        "cache_write": 0,
+        "total": 118188
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T18:17:55.409Z",
+    "completed_at": "2026-08-30T18:17:55.996Z",
+    "duration_ms": 587
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/bug-fix-ledger/src/reconcile.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-bug-fixing/bug-fix-new-api-available-r1/177-deepseek-v4-flash-vision-exp-go/bug-fix-ledger/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "c6a0ab1968127932103cdb575338e3597ce81676201329e4d0efe42c4175ed19"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "1f1e8c24adc415aa8af80b985b459fe0b399d2f03e19f612e049b5e1839081b6"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "39d5e3d7c1a3992fb442a608b876bf1d8720fb2f10bc8185a3f8ec4921bf4784"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "a1ce843a4140f82de20e87065d32ddee8d86322b68d79d602aee37bec659d1aa"
+  }
+}

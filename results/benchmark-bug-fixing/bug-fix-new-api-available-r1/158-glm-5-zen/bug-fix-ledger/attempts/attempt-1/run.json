@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "release": "bug-fix-new-api-available-r1",
+  "nomination": "bug-fix-ledger",
+  "run_id": "bug-fix-new-api-available-r1:158-glm-5-zen:bug-fix-ledger",
+  "attempt": 1,
+  "candidate": {
+    "id": "158-glm-5-zen",
+    "agent": "opencode",
+    "model": "opencode/glm-5",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T17:43:09.583Z",
+  "completed_at": "2026-08-30T17:48:45.700Z",
+  "duration_ms": 336117,
+  "benchmark_metrics": {
+    "duration_ms": 336117,
+    "model_duration_ms": 335169,
+    "public_tests_duration_ms": 587,
+    "cost_usd": 0.176435,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T17:43:09.583Z",
+    "completed_at": "2026-08-30T17:48:44.752Z",
+    "duration_ms": 335169,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0.176435,
+      "steps": 12,
+      "tokens": {
+        "input": 34869,
+        "output": 26742,
+        "reasoning": 0,
+        "cache_read": 279958,
+        "cache_write": 0,
+        "total": 341569
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-30T17:48:45.113Z",
+    "completed_at": "2026-08-30T17:48:45.700Z",
+    "duration_ms": 587
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/bug-fix-ledger/src/reconcile.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-bug-fixing/bug-fix-new-api-available-r1/158-glm-5-zen/bug-fix-ledger/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "65e06823b8afc6036c84c7c61f446c1df03c87cb732a5b2841b7b80311eff169"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "8e2e0d227225bed9ccb40c6facb98fa9d24ba6a632a9ae00ecd810cd9d76c1a7"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "36cafd21f841dc93f2a99ce8b7551dba67a5c9537813c77ad528f4480540b476"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "6a97078b6fa0047ea4e3eeada228f58a87097481ee50cfb12156ed7d08425f95"
+  }
+}

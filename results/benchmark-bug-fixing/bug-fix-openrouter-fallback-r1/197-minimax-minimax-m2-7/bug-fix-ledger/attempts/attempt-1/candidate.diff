@@ -1,0 +1,14 @@
+diff --git a/fixtures/phase2-v2/bug-fix-ledger/src/reconcile.js b/fixtures/phase2-v2/bug-fix-ledger/src/reconcile.js
+index bbeacb2..c0dbd5a 100644
+--- a/fixtures/phase2-v2/bug-fix-ledger/src/reconcile.js
++++ b/fixtures/phase2-v2/bug-fix-ledger/src/reconcile.js
+@@ -25,8 +25,8 @@ export function reconcileLedger(entries) {
+   const metrics = { processed: 0, duplicateCount: 0, invalidCount: 0, orphanRefundCount: 0 };
+   for (const entry of entries) {
+     try {
++      if (seenIds.has(entry.id)) { metrics.duplicateCount += 1; continue; }
+       if (!entry || typeof entry !== 'object' || !entry.id || !entry.accountId || !entry.currency) throw new Error('invalid entry');
+-      if (seenIds.has(entry.id)) metrics.duplicateCount += 1;
+       seenIds.add(entry.id);
+       const cents = parseAmountToCents(entry.amount), day = dayKey(entry.createdAt);
+       if (entry.type === 'sale') {
