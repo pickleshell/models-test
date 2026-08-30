@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "kind": "manual_code_review",
+  "release": "crosscheck-codex-spark-r2",
+  "candidate": "gpt-5-3-codex-spark",
+  "nomination": "retry-policy",
+  "attempt": 1,
+  "reviewer": { "id": "codex", "type": "assistant_manual_review" },
+  "identity_blind": false,
+  "scores": { "functional_correctness": 8, "reliability_edge_cases": 6, "maintainability_clarity": 9, "scope_discipline": 10 },
+  "average": 8.25,
+  "summary": "The patch fixes the backoff exponent, validates delta seconds, and clamps past dates. It still lets some malformed numeric-looking strings fall through to Date.parse, so hidden edge cases fail.",
+  "evidence": { "public_tests_passed": true, "objective_evaluator_passed": false, "forbidden_changes": 0 }
+}
