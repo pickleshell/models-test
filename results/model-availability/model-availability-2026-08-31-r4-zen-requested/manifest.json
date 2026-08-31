@@ -1,0 +1,207 @@
+{
+  "schema_version": 3,
+  "release": "model-availability-2026-08-31-r4-zen-requested",
+  "nominations": [
+    {
+      "id": "repository-navigation",
+      "fixture": "fixtures/phase2-v2/repository-navigation",
+      "prompt": "benchmarks/phase2-v2/prompts/repository-navigation.md",
+      "test_command": [
+        "npm",
+        "test",
+        "--prefix",
+        "fixtures/phase2-v2/repository-navigation"
+      ],
+      "allowed_changes": [
+        "fixtures/phase2-v2/repository-navigation/src/labels/statusLabel.js"
+      ],
+      "frozen_inputs": {
+        "fixture_tree": {
+          "algorithm": "sha256-tree-v1",
+          "sha256": "70a20fc7e53a6340bb8ffe382dcf3e285b99ccb6553403d60b43cd7d5a5a6287",
+          "files": 12
+        },
+        "prompt_sha256": "f8e3b422cf991aed799c77cb65122ab93e069841a99adb8fca46f2d7c3a17ab6"
+      },
+      "objective_evaluator": {
+        "id": "phase2-v2-repository-navigation-v1",
+        "sha256": "ed8a981830788ab242a60e32a3d581aeab6e9d25bd409bf658b61cc85b7af2dd",
+        "source_sha256": "6814645c4bc03b83badf1a5b0638bd280431dc54c23313ceb1b2412072844ed9"
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "id": "zen-01-gemini-3-flash",
+      "agent": "opencode",
+      "model": "opencode/gemini-3-flash"
+    },
+    {
+      "id": "zen-02-gemini-3-1-pro",
+      "agent": "opencode",
+      "model": "opencode/gemini-3.1-pro"
+    },
+    {
+      "id": "zen-03-gemini-3-5-flash",
+      "agent": "opencode",
+      "model": "opencode/gemini-3.5-flash"
+    },
+    {
+      "id": "zen-04-gemini-3-5-flash-lite",
+      "agent": "opencode",
+      "model": "opencode/gemini-3.5-flash-lite"
+    },
+    {
+      "id": "zen-05-gemini-3-6-flash",
+      "agent": "opencode",
+      "model": "opencode/gemini-3.6-flash"
+    },
+    {
+      "id": "zen-06-gemini-3-7-flash",
+      "agent": "opencode",
+      "model": "opencode/gemini-3.7-flash"
+    },
+    {
+      "id": "zen-07-deepseek-v4-flash",
+      "agent": "opencode",
+      "model": "opencode/deepseek-v4-flash"
+    },
+    {
+      "id": "zen-08-deepseek-v4-flash-free",
+      "agent": "opencode",
+      "model": "opencode/deepseek-v4-flash-free"
+    },
+    {
+      "id": "zen-09-deepseek-v4-pro",
+      "agent": "opencode",
+      "model": "opencode/deepseek-v4-pro"
+    },
+    {
+      "id": "zen-10-glm-5",
+      "agent": "opencode",
+      "model": "opencode/glm-5"
+    },
+    {
+      "id": "zen-11-glm-5-1",
+      "agent": "opencode",
+      "model": "opencode/glm-5.1"
+    },
+    {
+      "id": "zen-12-glm-5-2",
+      "agent": "opencode",
+      "model": "opencode/glm-5.2"
+    },
+    {
+      "id": "zen-13-kimi-k2-5",
+      "agent": "opencode",
+      "model": "opencode/kimi-k2.5"
+    },
+    {
+      "id": "zen-14-kimi-k2-6",
+      "agent": "opencode",
+      "model": "opencode/kimi-k2.6"
+    },
+    {
+      "id": "zen-15-kimi-k2-7-code",
+      "agent": "opencode",
+      "model": "opencode/kimi-k2.7-code"
+    },
+    {
+      "id": "zen-16-kimi-k3",
+      "agent": "opencode",
+      "model": "opencode/kimi-k3"
+    },
+    {
+      "id": "zen-17-qwen3-5-plus",
+      "agent": "opencode",
+      "model": "opencode/qwen3.5-plus"
+    },
+    {
+      "id": "zen-18-qwen3-6-plus",
+      "agent": "opencode",
+      "model": "opencode/qwen3.6-plus"
+    },
+    {
+      "id": "zen-19-grok-4-5",
+      "agent": "opencode",
+      "model": "opencode/grok-4.5"
+    },
+    {
+      "id": "zen-20-grok-4-6",
+      "agent": "opencode",
+      "model": "opencode/grok-4.6"
+    },
+    {
+      "id": "zen-21-grok-build-0-1",
+      "agent": "opencode",
+      "model": "opencode/grok-build-0.1"
+    },
+    {
+      "id": "zen-22-minimax-m2-5",
+      "agent": "opencode",
+      "model": "opencode/minimax-m2.5"
+    },
+    {
+      "id": "zen-23-minimax-m2-7",
+      "agent": "opencode",
+      "model": "opencode/minimax-m2.7"
+    },
+    {
+      "id": "zen-24-minimax-m3",
+      "agent": "opencode",
+      "model": "opencode/minimax-m3"
+    },
+    {
+      "id": "zen-25-mimo-v2-5-free",
+      "agent": "opencode",
+      "model": "opencode/mimo-v2.5-free"
+    },
+    {
+      "id": "zen-26-laguna-s-2-1-free",
+      "agent": "opencode",
+      "model": "opencode/laguna-s-2.1-free"
+    },
+    {
+      "id": "zen-27-ling-3-0-flash-fin-free",
+      "agent": "opencode",
+      "model": "opencode/ling-3.0-flash-fin-free"
+    },
+    {
+      "id": "zen-28-muse-spark-1-2",
+      "agent": "opencode",
+      "model": "opencode/muse-spark-1.2"
+    },
+    {
+      "id": "zen-29-muse-spark-1-2-contributor-free",
+      "agent": "opencode",
+      "model": "opencode/muse-spark-1.2-contributor-free"
+    },
+    {
+      "id": "zen-30-nemotron-3-ultra-free",
+      "agent": "opencode",
+      "model": "opencode/nemotron-3-ultra-free"
+    },
+    {
+      "id": "zen-31-nemotron-3-5-lightning-free",
+      "agent": "opencode",
+      "model": "opencode/nemotron-3.5-lightning-free"
+    }
+  ],
+  "judges": [],
+  "criteria": [
+    "functional_correctness",
+    "reliability_edge_cases",
+    "maintainability_clarity",
+    "scope_discipline"
+  ],
+  "retry_policy": {
+    "canonical_attempt": 1,
+    "allow_retries": false
+  },
+  "judge_prompt": {
+    "version": 3,
+    "template_hash": "3b0265ce6a626409d7d01a8c28f1d2a8541056ed8634241a7dc13ac2acf97ce2"
+  },
+  "config_sha256": "e4e226e5710ae162dfd57950883e03cf1233df924dab4576986971dc1f4f2fa1",
+  "spec_hash": "dc4e990714093b79a04c4ceaabea4d208bfd5576fb43cf0035ec8893b87051d8"
+}

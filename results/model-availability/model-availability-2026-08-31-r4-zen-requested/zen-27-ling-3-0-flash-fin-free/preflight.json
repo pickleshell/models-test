@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "zen-27-ling-3-0-flash-fin-free",
+    "agent": "opencode",
+    "model": "opencode/ling-3.0-flash-fin-free"
+  },
+  "status": "unavailable",
+  "reason": "process_failure",
+  "started_at": "2026-08-31T13:20:14.755Z",
+  "completed_at": "2026-08-31T13:20:17.064Z",
+  "duration_ms": 2309,
+  "process_status": 1,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": null,
+    "steps": 0,
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "cache_read": 0,
+      "cache_write": 0,
+      "total": 0
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "ef8c53ef509f38f24df25a02cbb507ac7384f66924fc9b5a14038d178a7e8306"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "zen-31-nemotron-3-5-lightning-free",
+    "agent": "opencode",
+    "model": "opencode/nemotron-3.5-lightning-free"
+  },
+  "status": "unavailable",
+  "reason": "process_failure",
+  "started_at": "2026-08-31T13:20:25.422Z",
+  "completed_at": "2026-08-31T13:20:27.743Z",
+  "duration_ms": 2321,
+  "process_status": 1,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": null,
+    "steps": 0,
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "cache_read": 0,
+      "cache_write": 0,
+      "total": 0
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "02ed403ae4472f82430c12f6f77e307754565d9da87aa8aaff49bd842f610c44"
+  }
+}
