@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "04-deepseek-v4-pro",
+    "agent": "opencode",
+    "model": "openrouter/deepseek/deepseek-v4-pro"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-31T16:13:48.533Z",
+  "completed_at": "2026-08-31T16:13:55.991Z",
+  "duration_ms": 7458,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0.001819208976,
+    "steps": 1,
+    "tokens": {
+      "input": 1201,
+      "output": 3,
+      "reasoning": 17,
+      "cache_read": 6180,
+      "cache_write": 0,
+      "total": 7401
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "b6ad269b7874c4bbd6f00433c535b5cea9d6ae5594e75bc4a99b20482039e039"
+  }
+}

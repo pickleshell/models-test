@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "release": "phase2-repository-roster-r2",
+  "nomination": "repository-navigation",
+  "run_id": "phase2-repository-roster-r2:155-claude-sonnet-4-6:repository-navigation",
+  "attempt": 1,
+  "candidate": {
+    "id": "155-claude-sonnet-4-6",
+    "agent": "opencode",
+    "model": "openrouter/anthropic/claude-sonnet-4.6"
+  },
+  "started_at": "2026-08-31T15:23:12.410Z",
+  "completed_at": "2026-08-31T15:24:18.074Z",
+  "duration_ms": 65664,
+  "benchmark_metrics": {
+    "duration_ms": 65664,
+    "model_duration_ms": 64726,
+    "public_tests_duration_ms": 580,
+    "cost_usd": 0.0416193,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-31T15:23:12.410Z",
+    "completed_at": "2026-08-31T15:24:17.136Z",
+    "duration_ms": 64726,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0.0416193,
+      "steps": 5,
+      "tokens": {
+        "input": 7,
+        "output": 964,
+        "reasoning": 0,
+        "cache_read": 47161,
+        "cache_write": 3464,
+        "total": 51596
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-31T15:24:17.494Z",
+    "completed_at": "2026-08-31T15:24:18.074Z",
+    "duration_ms": 580
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/repository-navigation/src/labels/statusLabel.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-repository-roster-r2/155-claude-sonnet-4-6/repository-navigation/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "869682e8aac0bcd46b2daaf04e3beb9a890314a716bb2fb2785b85100fba0daf"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "7108a8771b3a409e94158c515441441ddd098a866ddda758e8d3204f6bfb58cd"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "5c850a8cfaa48c4c3dbb60ac2a1c26232dcf81cc91013f7b36b7a2c6212aa142"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "b0c70705228cc1797d96cefdeb53017e614f904ab1a20bea455e4ca4ddbb72d6"
+  }
+}

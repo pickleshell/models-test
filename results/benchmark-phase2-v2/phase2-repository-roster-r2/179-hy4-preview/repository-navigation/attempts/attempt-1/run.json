@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "release": "phase2-repository-roster-r2",
+  "nomination": "repository-navigation",
+  "run_id": "phase2-repository-roster-r2:179-hy4-preview:repository-navigation",
+  "attempt": 1,
+  "candidate": {
+    "id": "179-hy4-preview",
+    "agent": "opencode",
+    "model": "openrouter/tencent/hy4-preview"
+  },
+  "started_at": "2026-08-31T15:34:54.475Z",
+  "completed_at": "2026-08-31T15:36:01.000Z",
+  "duration_ms": 66525,
+  "benchmark_metrics": {
+    "duration_ms": 66525,
+    "model_duration_ms": 65579,
+    "public_tests_duration_ms": 583,
+    "cost_usd": 0.018097197,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-31T15:34:54.475Z",
+    "completed_at": "2026-08-31T15:36:00.054Z",
+    "duration_ms": 65579,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0.018097197,
+      "steps": 11,
+      "tokens": {
+        "input": 10688,
+        "output": 1244,
+        "reasoning": 877,
+        "cache_read": 92352,
+        "cache_write": 0,
+        "total": 105161
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-31T15:36:00.417Z",
+    "completed_at": "2026-08-31T15:36:01.000Z",
+    "duration_ms": 583
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/repository-navigation/src/labels/statusLabel.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-repository-roster-r2/179-hy4-preview/repository-navigation/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "40357ac75bf12db1bfca23621c56f757e24838c241d60e6bd0f4e52e6c597b00"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "045ef4621cff4d93a90e6f762d8f3efe1042abaacbb8e387ec5f631413bf58a5"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "69396482d30eed2865eb692ce9a3e8e2bb26af3f6c7cb5371971375962a6dc9a"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "0b0a6026d7b46fe54714aed19cd2ef5a030d20c81d9cbb7f73bee2fe8022f785"
+  }
+}

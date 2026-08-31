@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "27-hy3-free",
+    "agent": "opencode",
+    "model": "openrouter/tencent/hy3"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-31T15:12:45.811Z",
+  "completed_at": "2026-08-31T15:12:50.332Z",
+  "duration_ms": 4521,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0.000821832,
+    "steps": 1,
+    "tokens": {
+      "input": 5738,
+      "output": 4,
+      "reasoning": 22,
+      "cache_read": 1536,
+      "cache_write": 0,
+      "total": 7300
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "1c9e8e691c6cf0f2f7f6b605f5f5c363f935de17d5fe293c8f4a35c7745532fa"
+  }
+}

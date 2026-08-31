@@ -1,0 +1,15 @@
+diff --git a/fixtures/phase2-v2/repository-navigation/src/labels/statusLabel.js b/fixtures/phase2-v2/repository-navigation/src/labels/statusLabel.js
+index 1e0b155..4b54098 100644
+--- a/fixtures/phase2-v2/repository-navigation/src/labels/statusLabel.js
++++ b/fixtures/phase2-v2/repository-navigation/src/labels/statusLabel.js
+@@ -1,4 +1,9 @@
+ export function statusLabel(value) {
+   if (typeof value !== 'string') return '';
+-  return value.trim().replace(/\s+/g, ' ');
++  const words = value.trim().split(/[_\s-]+/).filter(Boolean);
++  if (words.length === 0) return '';
++  return words.map(w => {
++    if (/^\d+$/.test(w)) return w;
++    return w[0].toUpperCase() + w.slice(1).toLowerCase();
++  }).join(' ');
+ }

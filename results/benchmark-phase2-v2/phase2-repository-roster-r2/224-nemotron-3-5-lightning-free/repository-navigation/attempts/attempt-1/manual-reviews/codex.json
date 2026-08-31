@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "kind": "manual_code_review",
+  "release": "phase2-repository-roster-r2",
+  "candidate": "224-nemotron-3-5-lightning-free",
+  "nomination": "repository-navigation",
+  "attempt": 1,
+  "reviewer": {
+    "id": "codex",
+    "type": "assistant_manual_review"
+  },
+  "identity_blind": false,
+  "scores": {
+    "functional_correctness": 6,
+    "reliability_edge_cases": 4,
+    "maintainability_clarity": 8,
+    "scope_discipline": 10
+  },
+  "average": 7,
+  "summary": "The patch uses loose numeric detection and does not lowercase word tails; separator-only and mixed-case requirements remain incorrect.",
+  "evidence": {
+    "public_tests_passed": true,
+    "objective_evaluator_passed": false,
+    "forbidden_changes": 0
+  }
+}

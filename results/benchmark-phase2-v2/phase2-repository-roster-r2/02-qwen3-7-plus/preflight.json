@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "02-qwen3-7-plus",
+    "agent": "opencode",
+    "model": "openrouter/qwen/qwen3.7-plus"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-31T16:12:52.382Z",
+  "completed_at": "2026-08-31T16:12:56.619Z",
+  "duration_ms": 4237,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0.0024352,
+    "steps": 1,
+    "tokens": {
+      "input": 7414,
+      "output": 5,
+      "reasoning": 44,
+      "cache_read": 0,
+      "cache_write": 0,
+      "total": 7463
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "86b7e0d5ccc5981e93c9ceceb1ed84c332c84b851e57ff888d7152cc01373523"
+  }
+}

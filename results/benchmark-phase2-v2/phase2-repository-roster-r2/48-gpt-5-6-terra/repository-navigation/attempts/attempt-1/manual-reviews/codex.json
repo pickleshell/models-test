@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "kind": "manual_code_review",
+  "release": "phase2-repository-roster-r2",
+  "candidate": "48-gpt-5-6-terra",
+  "nomination": "repository-navigation",
+  "attempt": 1,
+  "reviewer": {
+    "id": "codex",
+    "type": "assistant_manual_review"
+  },
+  "identity_blind": false,
+  "scores": {
+    "functional_correctness": 10,
+    "reliability_edge_cases": 10,
+    "maintainability_clarity": 9,
+    "scope_discipline": 10
+  },
+  "average": 9.75,
+  "summary": "The first-run patch is scoped to the requested file and passes both the public and independent objective evaluators.",
+  "evidence": {
+    "public_tests_passed": true,
+    "objective_evaluator_passed": true,
+    "forbidden_changes": 0
+  }
+}

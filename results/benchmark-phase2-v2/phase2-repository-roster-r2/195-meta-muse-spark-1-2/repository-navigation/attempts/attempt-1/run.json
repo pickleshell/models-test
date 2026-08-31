@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "release": "phase2-repository-roster-r2",
+  "nomination": "repository-navigation",
+  "run_id": "phase2-repository-roster-r2:195-meta-muse-spark-1-2:repository-navigation",
+  "attempt": 1,
+  "candidate": {
+    "id": "195-meta-muse-spark-1-2",
+    "agent": "opencode",
+    "model": "openrouter/meta/muse-spark-1.2"
+  },
+  "started_at": "2026-08-31T15:50:36.174Z",
+  "completed_at": "2026-08-31T15:54:38.246Z",
+  "duration_ms": 242072,
+  "benchmark_metrics": {
+    "duration_ms": 242072,
+    "model_duration_ms": 241134,
+    "public_tests_duration_ms": 579,
+    "cost_usd": 0.0853809,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-31T15:50:36.174Z",
+    "completed_at": "2026-08-31T15:54:37.308Z",
+    "duration_ms": 241134,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0.0853809,
+      "steps": 19,
+      "tokens": {
+        "input": 14998,
+        "output": 3681,
+        "reasoning": 5357,
+        "cache_read": 188146,
+        "cache_write": 0,
+        "total": 212182
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-31T15:54:37.667Z",
+    "completed_at": "2026-08-31T15:54:38.246Z",
+    "duration_ms": 579
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/repository-navigation/src/labels/statusLabel.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-repository-roster-r2/195-meta-muse-spark-1-2/repository-navigation/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "e022d9da558d87a2c04caf343af32fc7680b984d55d2d6a8cd617d8cdb9b5eef"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "f7469cd2403d4a4f356a9dc9e84fdee1185bf051cad266f34b926ef3a24b2751"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "f140347751597145e4f62772e64f5f0cf5a943f637aad01e8c1b454816a44c26"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "b55afa66dec356f5c9ee37a032137a4fb466a6d4789196e9db15540c82534e65"
+  }
+}

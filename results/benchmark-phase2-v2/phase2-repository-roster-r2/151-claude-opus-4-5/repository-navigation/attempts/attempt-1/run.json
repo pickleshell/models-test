@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "release": "phase2-repository-roster-r2",
+  "nomination": "repository-navigation",
+  "run_id": "phase2-repository-roster-r2:151-claude-opus-4-5:repository-navigation",
+  "attempt": 1,
+  "candidate": {
+    "id": "151-claude-opus-4-5",
+    "agent": "opencode",
+    "model": "openrouter/anthropic/claude-opus-4.5"
+  },
+  "started_at": "2026-08-31T15:19:59.023Z",
+  "completed_at": "2026-08-31T15:21:18.068Z",
+  "duration_ms": 79045,
+  "benchmark_metrics": {
+    "duration_ms": 79045,
+    "model_duration_ms": 78107,
+    "public_tests_duration_ms": 581,
+    "cost_usd": 0.12318825,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-31T15:19:59.023Z",
+    "completed_at": "2026-08-31T15:21:17.130Z",
+    "duration_ms": 78107,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0.12318825,
+      "steps": 10,
+      "tokens": {
+        "input": 12,
+        "output": 1668,
+        "reasoning": 0,
+        "cache_read": 103694,
+        "cache_write": 4733,
+        "total": 110107
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-31T15:21:17.487Z",
+    "completed_at": "2026-08-31T15:21:18.068Z",
+    "duration_ms": 581
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/repository-navigation/src/labels/statusLabel.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-repository-roster-r2/151-claude-opus-4-5/repository-navigation/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "9896e50d1efa9c623314effb4a4b11bcb4cf3c5155362a35649728522fccfa90"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "943c7a562eb66d1fda3f23d75c461e77e90b6459d967799df4e6b64ba5fe2888"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "1dce34abb26707e60c90e2e14cf42d299453e8a246b6ae3eb6761b55085d663a"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "6d80609ca9a95709dae502d62cc53fc18f8c0f7a8d16f860aabf1e58272119d1"
+  }
+}

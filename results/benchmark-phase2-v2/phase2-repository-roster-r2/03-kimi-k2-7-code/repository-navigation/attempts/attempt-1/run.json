@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "release": "phase2-repository-roster-r2",
+  "nomination": "repository-navigation",
+  "run_id": "phase2-repository-roster-r2:03-kimi-k2-7-code:repository-navigation",
+  "attempt": 1,
+  "candidate": {
+    "id": "03-kimi-k2-7-code",
+    "agent": "opencode",
+    "model": "openrouter/moonshotai/kimi-k2.7-code",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-31T16:06:41.647Z",
+  "completed_at": "2026-08-31T16:06:41.647Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "no_model_response",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-31T16:06:39.020Z",
+    "completed_at": "2026-08-31T16:06:41.646Z",
+    "duration_ms": 2626
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-repository-roster-r2/03-kimi-k2-7-code/repository-navigation/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "312404a14a8219cd1aa3b190c7172b86eba6875ecdbbfdd28675d16840f45758"
+  }
+}

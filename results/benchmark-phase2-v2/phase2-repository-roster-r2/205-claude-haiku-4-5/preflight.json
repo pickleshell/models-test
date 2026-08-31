@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "205-claude-haiku-4-5",
+    "agent": "opencode",
+    "model": "openrouter/anthropic/claude-haiku-4.5"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-31T15:59:01.597Z",
+  "completed_at": "2026-08-31T15:59:11.460Z",
+  "duration_ms": 9863,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0.00993175,
+    "steps": 1,
+    "tokens": {
+      "input": 3,
+      "output": 4,
+      "reasoning": 0,
+      "cache_read": 0,
+      "cache_write": 7927,
+      "total": 7934
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "76ae3625734b1d87001210804b1a2c1dc0f9d5a6b22045dda2862e522f4a1e01"
+  }
+}

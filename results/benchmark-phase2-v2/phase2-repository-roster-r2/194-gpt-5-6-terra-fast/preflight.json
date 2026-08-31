@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "194-gpt-5-6-terra-fast",
+    "agent": "opencode",
+    "model": "openai/gpt-5.6-terra-fast"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-31T15:49:39.117Z",
+  "completed_at": "2026-08-31T15:49:42.716Z",
+  "duration_ms": 3599,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0,
+    "steps": 1,
+    "tokens": {
+      "input": 290,
+      "output": 5,
+      "reasoning": 0,
+      "cache_read": 5632,
+      "cache_write": 0,
+      "total": 5927
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "57b47f96b79f565511832dce8f88ecd1019c4c296603694771df58b09a6195ab"
+  }
+}

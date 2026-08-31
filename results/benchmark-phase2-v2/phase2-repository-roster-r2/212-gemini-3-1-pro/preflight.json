@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "212-gemini-3-1-pro",
+    "agent": "opencode",
+    "model": "openrouter/google/gemini-3.1-pro-preview"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-31T16:23:20.684Z",
+  "completed_at": "2026-08-31T16:23:25.588Z",
+  "duration_ms": 4904,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0.017472,
+    "steps": 1,
+    "tokens": {
+      "input": 8028,
+      "output": 1,
+      "reasoning": 117,
+      "cache_read": 0,
+      "cache_write": 0,
+      "total": 8146
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "966daae4df60e9d2dd3ea7de0c04ed7321a0e839b2131063f64840abc31b05c1"
+  }
+}

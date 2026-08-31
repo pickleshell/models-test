@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "release": "phase2-repository-roster-r2",
+  "nomination": "repository-navigation",
+  "run_id": "phase2-repository-roster-r2:211-gemini-3-flash:repository-navigation",
+  "attempt": 1,
+  "candidate": {
+    "id": "211-gemini-3-flash",
+    "agent": "opencode",
+    "model": "openrouter/google/gemini-3-flash-preview"
+  },
+  "started_at": "2026-08-31T16:21:42.004Z",
+  "completed_at": "2026-08-31T16:23:20.354Z",
+  "duration_ms": 98350,
+  "benchmark_metrics": {
+    "duration_ms": 98350,
+    "model_duration_ms": 97398,
+    "public_tests_duration_ms": 587,
+    "cost_usd": 0.0665426,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-31T16:21:42.004Z",
+    "completed_at": "2026-08-31T16:23:19.402Z",
+    "duration_ms": 97398,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0.0665426,
+      "steps": 27,
+      "tokens": {
+        "input": 61920,
+        "output": 1422,
+        "reasoning": 6300,
+        "cache_read": 248332,
+        "cache_write": 0,
+        "total": 317974
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-31T16:23:19.767Z",
+    "completed_at": "2026-08-31T16:23:20.354Z",
+    "duration_ms": 587
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/repository-navigation/src/labels/statusLabel.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-repository-roster-r2/211-gemini-3-flash/repository-navigation/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "dfb1e04d218b7bd1092306a8be07abb4a8e2d5e0166f11c793e09f9c0c278efd"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "95dc0412b5f39bb834b91cc0e537732508da32ee476ebc2e851cdc6883e7c3ef"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "9308b69da3322f8f1573cfa9ab1c25db16104233c67696e21d1b7c9cee6694d9"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "6ba44b78b1c81ccfe1b82250aa9c326218bcf1c7845e2a9ca3f70ceb35ac239c"
+  }
+}

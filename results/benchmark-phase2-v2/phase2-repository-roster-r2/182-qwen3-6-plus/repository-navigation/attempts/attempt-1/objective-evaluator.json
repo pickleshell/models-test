@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "evaluator": {
+    "id": "phase2-v2-repository-navigation-v1",
+    "sha256": "ed8a981830788ab242a60e32a3d581aeab6e9d25bd409bf658b61cc85b7af2dd"
+  },
+  "status": "completed",
+  "passed": true,
+  "started_at": "2026-08-31T15:39:15.117Z",
+  "completed_at": "2026-08-31T15:39:15.295Z",
+  "duration_ms": 178,
+  "execution": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-31T15:39:15.117Z",
+    "completed_at": "2026-08-31T15:39:15.295Z",
+    "duration_ms": 178
+  },
+  "artifact_hash": {
+    "path": "objective-evaluator.json",
+    "sha256": "b3a6658fd5c368111809908bb012064fe70ce763bff0f7c70284186a67de0aa3"
+  }
+}

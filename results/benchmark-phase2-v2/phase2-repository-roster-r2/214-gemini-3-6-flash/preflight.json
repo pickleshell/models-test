@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "214-gemini-3-6-flash",
+    "agent": "opencode",
+    "model": "openrouter/google/gemini-3.6-flash"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-31T16:26:54.341Z",
+  "completed_at": "2026-08-31T16:26:58.297Z",
+  "duration_ms": 3956,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0.00693525,
+    "steps": 1,
+    "tokens": {
+      "input": 8507,
+      "output": 1,
+      "reasoning": 147,
+      "cache_read": 0,
+      "cache_write": 0,
+      "total": 8655
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "c9bf6ea978bc23ec60001ad6ac2f4cd0b220555033e1db901697d76112b7455b"
+  }
+}

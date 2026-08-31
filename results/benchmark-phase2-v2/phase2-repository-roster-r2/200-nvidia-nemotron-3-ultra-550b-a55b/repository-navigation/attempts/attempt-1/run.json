@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "release": "phase2-repository-roster-r2",
+  "nomination": "repository-navigation",
+  "run_id": "phase2-repository-roster-r2:200-nvidia-nemotron-3-ultra-550b-a55b:repository-navigation",
+  "attempt": 1,
+  "candidate": {
+    "id": "200-nvidia-nemotron-3-ultra-550b-a55b",
+    "agent": "opencode",
+    "model": "openrouter/nvidia/nemotron-3-ultra-550b-a55b"
+  },
+  "started_at": "2026-08-31T15:55:21.312Z",
+  "completed_at": "2026-08-31T15:57:20.732Z",
+  "duration_ms": 119420,
+  "benchmark_metrics": {
+    "duration_ms": 119420,
+    "model_duration_ms": 118475,
+    "public_tests_duration_ms": 586,
+    "cost_usd": 0.027948,
+    "cost_source": "opencode_step_finish",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-31T15:55:21.312Z",
+    "completed_at": "2026-08-31T15:57:19.787Z",
+    "duration_ms": 118475,
+    "usage": {
+      "source": "opencode_step_finish",
+      "reported_cost_usd": 0.027948,
+      "steps": 10,
+      "tokens": {
+        "input": 36560,
+        "output": 1071,
+        "reasoning": 717,
+        "cache_read": 57344,
+        "cache_write": 0,
+        "total": 95692
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-31T15:57:20.147Z",
+    "completed_at": "2026-08-31T15:57:20.732Z",
+    "duration_ms": 586
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/repository-navigation/src/labels/statusLabel.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-repository-roster-r2/200-nvidia-nemotron-3-ultra-550b-a55b/repository-navigation/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "c259195aa263416eb8cd8d8c98a215d7db90e422380a28fced0d53591fa52a35"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "4862b199faa9e7ac0d19af6db0b3dfee4f1bd391a2299e1fbfc33e523e3b2254"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "78a92d0faa3b314518c6c2f60e710394c0a3a02ecec7fcc28c419bbbce2dfb5c"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "d194369c30519ba0ef87e0f5b21b49200309694e771cd7ebf5dcba063f49f17b"
+  }
+}

@@ -1,0 +1,382 @@
+{
+  "schema_version": 3,
+  "release": "phase2-repository-roster-r2",
+  "nominations": [
+    {
+      "id": "repository-navigation",
+      "fixture": "fixtures/phase2-v2/repository-navigation",
+      "prompt": "benchmarks/phase2-v2/prompts/repository-navigation.md",
+      "test_command": [
+        "npm",
+        "test",
+        "--prefix",
+        "fixtures/phase2-v2/repository-navigation"
+      ],
+      "allowed_changes": [
+        "fixtures/phase2-v2/repository-navigation/src/labels/statusLabel.js"
+      ],
+      "frozen_inputs": {
+        "fixture_tree": {
+          "algorithm": "sha256-tree-v1",
+          "sha256": "70a20fc7e53a6340bb8ffe382dcf3e285b99ccb6553403d60b43cd7d5a5a6287",
+          "files": 12
+        },
+        "prompt_sha256": "f8e3b422cf991aed799c77cb65122ab93e069841a99adb8fca46f2d7c3a17ab6"
+      },
+      "objective_evaluator": {
+        "id": "phase2-v2-repository-navigation-v1",
+        "sha256": "ed8a981830788ab242a60e32a3d581aeab6e9d25bd409bf658b61cc85b7af2dd",
+        "source_sha256": "6814645c4bc03b83badf1a5b0638bd280431dc54c23313ceb1b2412072844ed9"
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "id": "54-inkling-openrouter",
+      "agent": "opencode",
+      "model": "openrouter/thinkingmachines/inkling"
+    },
+    {
+      "id": "27-hy3-free",
+      "agent": "opencode",
+      "model": "openrouter/tencent/hy3"
+    },
+    {
+      "id": "18-gpt-5-3-codex-spark",
+      "agent": "codex",
+      "model": "gpt-5.3-codex-spark"
+    },
+    {
+      "id": "49-gpt-5-4",
+      "agent": "codex",
+      "model": "gpt-5.4"
+    },
+    {
+      "id": "50-gpt-5-4-mini",
+      "agent": "codex",
+      "model": "gpt-5.4-mini"
+    },
+    {
+      "id": "46-gpt-5-6-luna",
+      "agent": "codex",
+      "model": "gpt-5.6-luna"
+    },
+    {
+      "id": "47-gpt-5-6-sol",
+      "agent": "codex",
+      "model": "gpt-5.6-sol"
+    },
+    {
+      "id": "48-gpt-5-6-terra",
+      "agent": "codex",
+      "model": "gpt-5.6-terra"
+    },
+    {
+      "id": "55-glm-5-3-go",
+      "agent": "opencode",
+      "model": "openrouter/z-ai/glm-5.3"
+    },
+    {
+      "id": "150-claude-fable-5",
+      "agent": "opencode",
+      "model": "openrouter/anthropic/claude-fable-5"
+    },
+    {
+      "id": "151-claude-opus-4-5",
+      "agent": "opencode",
+      "model": "openrouter/anthropic/claude-opus-4.5"
+    },
+    {
+      "id": "152-claude-opus-4-7",
+      "agent": "opencode",
+      "model": "openrouter/anthropic/claude-opus-4.7"
+    },
+    {
+      "id": "153-claude-opus-4-8",
+      "agent": "opencode",
+      "model": "openrouter/anthropic/claude-opus-4.8"
+    },
+    {
+      "id": "154-claude-sonnet-4-5",
+      "agent": "opencode",
+      "model": "openrouter/anthropic/claude-sonnet-4.5"
+    },
+    {
+      "id": "155-claude-sonnet-4-6",
+      "agent": "opencode",
+      "model": "openrouter/anthropic/claude-sonnet-4.6"
+    },
+    {
+      "id": "156-gemini-3-5-flash-lite",
+      "agent": "opencode",
+      "model": "openrouter/google/gemini-3.5-flash-lite"
+    },
+    {
+      "id": "157-gemini-3-7-flash",
+      "agent": "opencode",
+      "model": "openrouter/google/gemini-3.7-flash"
+    },
+    {
+      "id": "158-glm-5",
+      "agent": "opencode",
+      "model": "openrouter/z-ai/glm-5"
+    },
+    {
+      "id": "159-glm-5-1",
+      "agent": "opencode",
+      "model": "openrouter/z-ai/glm-5.1"
+    },
+    {
+      "id": "160-glm-5-2",
+      "agent": "opencode",
+      "model": "openrouter/z-ai/glm-5.2"
+    },
+    {
+      "id": "167-grok-4-6",
+      "agent": "opencode",
+      "model": "openrouter/x-ai/grok-4.6"
+    },
+    {
+      "id": "169-mimo-v2-5-free",
+      "agent": "opencode",
+      "model": "openrouter/xiaomi/mimo-v2.5"
+    },
+    {
+      "id": "177-deepseek-v4-flash-vision-exp",
+      "agent": "opencode",
+      "model": "openrouter/deepseek/deepseek-v4-flash-vision-exp"
+    },
+    {
+      "id": "178-glm-5-3-flash",
+      "agent": "opencode",
+      "model": "openrouter/z-ai/glm-5.3-flash"
+    },
+    {
+      "id": "179-hy4-preview",
+      "agent": "opencode",
+      "model": "openrouter/tencent/hy4-preview"
+    },
+    {
+      "id": "181-minimax-m2-7",
+      "agent": "opencode",
+      "model": "openrouter/minimax/minimax-m2.7"
+    },
+    {
+      "id": "182-qwen3-6-plus",
+      "agent": "opencode",
+      "model": "openrouter/qwen/qwen3.6-plus"
+    },
+    {
+      "id": "183-qwen3-7-max",
+      "agent": "opencode",
+      "model": "openrouter/qwen/qwen3.7-max"
+    },
+    {
+      "id": "185-gpt-5-4",
+      "agent": "opencode",
+      "model": "openai/gpt-5.4"
+    },
+    {
+      "id": "186-gpt-5-4-fast",
+      "agent": "opencode",
+      "model": "openai/gpt-5.4-fast"
+    },
+    {
+      "id": "187-gpt-5-5",
+      "agent": "opencode",
+      "model": "openai/gpt-5.5"
+    },
+    {
+      "id": "188-gpt-5-5-fast",
+      "agent": "opencode",
+      "model": "openai/gpt-5.5-fast"
+    },
+    {
+      "id": "189-gpt-5-6-luna",
+      "agent": "opencode",
+      "model": "openai/gpt-5.6-luna"
+    },
+    {
+      "id": "190-gpt-5-6-luna-fast",
+      "agent": "opencode",
+      "model": "openai/gpt-5.6-luna-fast"
+    },
+    {
+      "id": "191-gpt-5-6-sol",
+      "agent": "opencode",
+      "model": "openai/gpt-5.6-sol"
+    },
+    {
+      "id": "192-gpt-5-6-sol-fast",
+      "agent": "opencode",
+      "model": "openai/gpt-5.6-sol-fast"
+    },
+    {
+      "id": "193-gpt-5-6-terra",
+      "agent": "opencode",
+      "model": "openai/gpt-5.6-terra"
+    },
+    {
+      "id": "194-gpt-5-6-terra-fast",
+      "agent": "opencode",
+      "model": "openai/gpt-5.6-terra-fast"
+    },
+    {
+      "id": "195-meta-muse-spark-1-2",
+      "agent": "opencode",
+      "model": "openrouter/meta/muse-spark-1.2"
+    },
+    {
+      "id": "196-minimax-minimax-m2-5",
+      "agent": "opencode",
+      "model": "openrouter/minimax/minimax-m2.5"
+    },
+    {
+      "id": "200-nvidia-nemotron-3-ultra-550b-a55b",
+      "agent": "opencode",
+      "model": "openrouter/nvidia/nemotron-3-ultra-550b-a55b"
+    },
+    {
+      "id": "202-qwen-qwen3-5-plus-02-15",
+      "agent": "opencode",
+      "model": "openrouter/qwen/qwen3.5-plus-02-15"
+    },
+    {
+      "id": "203-qwen-qwen3-5-plus-20260420",
+      "agent": "opencode",
+      "model": "openrouter/qwen/qwen3.5-plus-20260420"
+    },
+    {
+      "id": "205-claude-haiku-4-5",
+      "agent": "opencode",
+      "model": "openrouter/anthropic/claude-haiku-4.5"
+    },
+    {
+      "id": "206-claude-sonnet-5",
+      "agent": "opencode",
+      "model": "openrouter/anthropic/claude-sonnet-5"
+    },
+    {
+      "id": "207-claude-opus-5",
+      "agent": "opencode",
+      "model": "openrouter/anthropic/claude-opus-5"
+    },
+    {
+      "id": "208-kimi-k3",
+      "agent": "opencode",
+      "model": "openrouter/moonshotai/kimi-k3"
+    },
+    {
+      "id": "03-kimi-k2-7-code",
+      "agent": "opencode",
+      "model": "openrouter/moonshotai/kimi-k2.7-code"
+    },
+    {
+      "id": "06-minimax-m3",
+      "agent": "opencode",
+      "model": "openrouter/minimax/minimax-m3"
+    },
+    {
+      "id": "07-mimo-v2-5-pro",
+      "agent": "opencode",
+      "model": "openrouter/xiaomi/mimo-v2.5-pro"
+    },
+    {
+      "id": "11-deepseek-v4-flash",
+      "agent": "opencode",
+      "model": "openrouter/deepseek/deepseek-v4-flash"
+    },
+    {
+      "id": "58-grok-4-5-openrouter",
+      "agent": "opencode",
+      "model": "openrouter/x-ai/grok-4.5"
+    },
+    {
+      "id": "16-kimi-k2-6",
+      "agent": "opencode",
+      "model": "openrouter/moonshotai/kimi-k2.6"
+    },
+    {
+      "id": "67-qwen3-8-max-go",
+      "agent": "opencode",
+      "model": "openrouter/qwen/qwen3.8-max"
+    },
+    {
+      "id": "02-qwen3-7-plus",
+      "agent": "opencode",
+      "model": "openrouter/qwen/qwen3.7-plus"
+    },
+    {
+      "id": "04-deepseek-v4-pro",
+      "agent": "opencode",
+      "model": "openrouter/deepseek/deepseek-v4-pro"
+    },
+    {
+      "id": "57-qwen3-8-27b-openrouter",
+      "agent": "opencode",
+      "model": "openrouter/qwen/qwen3.8-27b"
+    },
+    {
+      "id": "209-claude-opus-4-6",
+      "agent": "opencode",
+      "model": "openrouter/anthropic/claude-opus-4.6"
+    },
+    {
+      "id": "210-claude-sonnet-4",
+      "agent": "opencode",
+      "model": "openrouter/anthropic/claude-sonnet-4"
+    },
+    {
+      "id": "211-gemini-3-flash",
+      "agent": "opencode",
+      "model": "openrouter/google/gemini-3-flash-preview"
+    },
+    {
+      "id": "212-gemini-3-1-pro",
+      "agent": "opencode",
+      "model": "openrouter/google/gemini-3.1-pro-preview"
+    },
+    {
+      "id": "213-gemini-3-5-flash",
+      "agent": "opencode",
+      "model": "openrouter/google/gemini-3.5-flash"
+    },
+    {
+      "id": "214-gemini-3-6-flash",
+      "agent": "opencode",
+      "model": "openrouter/google/gemini-3.6-flash"
+    },
+    {
+      "id": "218-kimi-k2-5",
+      "agent": "opencode",
+      "model": "openrouter/moonshotai/kimi-k2.5"
+    },
+    {
+      "id": "220-grok-build-0-1",
+      "agent": "opencode",
+      "model": "openrouter/x-ai/grok-build-0.1"
+    },
+    {
+      "id": "224-nemotron-3-5-lightning-free",
+      "agent": "opencode",
+      "model": "openrouter/nvidia/nemotron-3.5-lightning:free"
+    }
+  ],
+  "judges": [],
+  "criteria": [
+    "functional_correctness",
+    "reliability_edge_cases",
+    "maintainability_clarity",
+    "scope_discipline"
+  ],
+  "retry_policy": {
+    "canonical_attempt": 1,
+    "allow_retries": false
+  },
+  "judge_prompt": {
+    "version": 3,
+    "template_hash": "3b0265ce6a626409d7d01a8c28f1d2a8541056ed8634241a7dc13ac2acf97ce2"
+  },
+  "config_sha256": "b586495bff6488288791d449da5c8b045b5ca5d0a7e2b38c9fddaa68d1663d30",
+  "spec_hash": "cdbca3dd1d887cea98c03d605a6a8d09afc5d761a19247c0ff1c242fb613f22a"
+}

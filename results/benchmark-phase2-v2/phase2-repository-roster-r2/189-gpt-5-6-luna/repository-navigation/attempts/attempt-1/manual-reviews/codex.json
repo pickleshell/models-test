@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "kind": "manual_code_review",
+  "release": "phase2-repository-roster-r2",
+  "candidate": "189-gpt-5-6-luna",
+  "nomination": "repository-navigation",
+  "attempt": 1,
+  "reviewer": {
+    "id": "codex",
+    "type": "assistant_manual_review"
+  },
+  "identity_blind": false,
+  "scores": {
+    "functional_correctness": 7,
+    "reliability_edge_cases": 5,
+    "maintainability_clarity": 9,
+    "scope_discipline": 10
+  },
+  "average": 7.75,
+  "summary": "The patch does not filter empty tokens produced by separator-only input, so the required empty result is not reliably returned.",
+  "evidence": {
+    "public_tests_passed": true,
+    "objective_evaluator_passed": false,
+    "forbidden_changes": 0
+  }
+}
