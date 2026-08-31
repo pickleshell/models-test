@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "alt-224-nemotron-3-5-lightning-free",
+    "agent": "opencode",
+    "model": "openrouter/nvidia/nemotron-3.5-lightning:free"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-31T13:02:56.809Z",
+  "completed_at": "2026-08-31T13:03:17.569Z",
+  "duration_ms": 20760,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0,
+    "steps": 1,
+    "tokens": {
+      "input": 7609,
+      "output": 0,
+      "reasoning": 44,
+      "cache_read": 0,
+      "cache_write": 0,
+      "total": 7652
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "ff9488caa20c9e1d50eb199c1d8ad754e0672dd256a5f822eab77926b1bb750c"
+  }
+}

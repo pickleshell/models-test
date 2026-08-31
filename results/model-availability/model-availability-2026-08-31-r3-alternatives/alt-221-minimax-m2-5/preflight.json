@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "alt-221-minimax-m2-5",
+    "agent": "opencode",
+    "model": "openrouter/minimax/minimax-m2.5"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-31T13:01:47.423Z",
+  "completed_at": "2026-08-31T13:01:51.158Z",
+  "duration_ms": 3735,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0.00197505,
+    "steps": 1,
+    "tokens": {
+      "input": 7127,
+      "output": 4,
+      "reasoning": 43,
+      "cache_read": 0,
+      "cache_write": 0,
+      "total": 7174
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "06c7433ee713e13037510301162522ed2086b353cdddf0d1559f1594b8fe2809"
+  }
+}

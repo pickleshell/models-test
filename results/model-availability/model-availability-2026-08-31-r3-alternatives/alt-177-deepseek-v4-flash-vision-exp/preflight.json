@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "alt-177-deepseek-v4-flash-vision-exp",
+    "agent": "opencode",
+    "model": "openrouter/deepseek/deepseek-v4-flash-vision-exp"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-31T12:57:14.352Z",
+  "completed_at": "2026-08-31T12:57:17.479Z",
+  "duration_ms": 3127,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0.00122652,
+    "steps": 1,
+    "tokens": {
+      "input": 5508,
+      "output": 2,
+      "reasoning": 0,
+      "cache_read": 1920,
+      "cache_write": 0,
+      "total": 7430
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "2dc5e063d765331b8b202d80895a3955734469eaa33c1a91d50d68538229535c"
+  }
+}

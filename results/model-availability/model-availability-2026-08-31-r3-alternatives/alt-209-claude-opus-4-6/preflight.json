@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "alt-209-claude-opus-4-6",
+    "agent": "opencode",
+    "model": "openrouter/anthropic/claude-opus-4.6"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-31T13:00:49.744Z",
+  "completed_at": "2026-08-31T13:00:53.414Z",
+  "duration_ms": 3670,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0.0496775,
+    "steps": 1,
+    "tokens": {
+      "input": 3,
+      "output": 5,
+      "reasoning": 0,
+      "cache_read": 0,
+      "cache_write": 7926,
+      "total": 7934
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "597c088e7772545de5a22966296daecb2c9c3fb5aae10721bcb5e69e52e357bc"
+  }
+}

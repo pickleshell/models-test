@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "alt-222-laguna-s-2-1-free",
+    "agent": "opencode",
+    "model": "openrouter/poolside/laguna-s-2.1:free"
+  },
+  "status": "unavailable",
+  "reason": "timeout",
+  "started_at": "2026-08-31T13:01:51.399Z",
+  "completed_at": "2026-08-31T13:02:56.503Z",
+  "duration_ms": 65104,
+  "process_status": null,
+  "timed_out": true,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": null,
+    "steps": 0,
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "cache_read": 0,
+      "cache_write": 0,
+      "total": 0
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "c00fa33b08bb47958b77af922999d12e1994f07d31de3ddd70dcc3b78d7a0e40"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "alt-150-claude-fable-5",
+    "agent": "opencode",
+    "model": "openrouter/anthropic/claude-fable-5"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-31T12:56:09.253Z",
+  "completed_at": "2026-08-31T12:56:15.050Z",
+  "duration_ms": 5797,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0.1315575,
+    "steps": 1,
+    "tokens": {
+      "input": 2,
+      "output": 4,
+      "reasoning": 0,
+      "cache_read": 0,
+      "cache_write": 10507,
+      "total": 10513
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "7c607d882c37572de2baf26b0d1fdfb2648b84ab9287fd3b94bb5bf555f33263"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "alt-05-glm-5-2",
+    "agent": "opencode",
+    "model": "openrouter/z-ai/glm-5.2"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-31T12:59:49.185Z",
+  "completed_at": "2026-08-31T12:59:54.125Z",
+  "duration_ms": 4940,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0.00623016,
+    "steps": 1,
+    "tokens": {
+      "input": 4810,
+      "output": 3,
+      "reasoning": 0,
+      "cache_read": 2240,
+      "cache_write": 0,
+      "total": 7053
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "213fd34e32a78a7399ab7fd7f45d447e1765eecbfa23157493704aa8b45060f7"
+  }
+}

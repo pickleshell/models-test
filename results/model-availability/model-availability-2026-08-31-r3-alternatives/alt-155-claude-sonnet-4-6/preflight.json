@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "alt-155-claude-sonnet-4-6",
+    "agent": "opencode",
+    "model": "openrouter/anthropic/claude-sonnet-4.6"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-31T12:56:30.914Z",
+  "completed_at": "2026-08-31T12:56:34.342Z",
+  "duration_ms": 3428,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0.029799,
+    "steps": 1,
+    "tokens": {
+      "input": 3,
+      "output": 4,
+      "reasoning": 0,
+      "cache_read": 0,
+      "cache_write": 7928,
+      "total": 7935
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "61e8c102779c217ec8842a2c533607c5caefd49e7bc7be2b02aae903062304b1"
+  }
+}

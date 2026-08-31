@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "alt-179-hy4-preview",
+    "agent": "opencode",
+    "model": "openrouter/tencent/hy4-preview"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-31T12:57:22.158Z",
+  "completed_at": "2026-08-31T12:57:27.373Z",
+  "duration_ms": 5215,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0.004302403,
+    "steps": 1,
+    "tokens": {
+      "input": 4923,
+      "output": 3,
+      "reasoning": 38,
+      "cache_read": 2240,
+      "cache_write": 0,
+      "total": 7204
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "d5a7d54e3b73c6f620555bbc6afc7065706d648e33ded42740ac9942ca3b43b6"
+  }
+}

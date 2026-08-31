@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "alt-06-minimax-m3",
+    "agent": "opencode",
+    "model": "openrouter/minimax/minimax-m3"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-31T12:59:19.355Z",
+  "completed_at": "2026-08-31T12:59:23.174Z",
+  "duration_ms": 3819,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0.0017661,
+    "steps": 1,
+    "tokens": {
+      "input": 5395,
+      "output": 2,
+      "reasoning": 25,
+      "cache_read": 1920,
+      "cache_write": 0,
+      "total": 7342
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "b0f7d5d0309276f2c056386630ef592f5dab1792e1236deaa49c5ed8fcedb05b"
+  }
+}

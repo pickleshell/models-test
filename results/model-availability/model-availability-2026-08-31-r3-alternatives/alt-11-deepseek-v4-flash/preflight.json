@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "alt-11-deepseek-v4-flash",
+    "agent": "opencode",
+    "model": "openrouter/deepseek/deepseek-v4-flash"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-31T12:59:29.089Z",
+  "completed_at": "2026-08-31T12:59:32.612Z",
+  "duration_ms": 3523,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0.000656659066,
+    "steps": 1,
+    "tokens": {
+      "input": 7383,
+      "output": 3,
+      "reasoning": 11,
+      "cache_read": 0,
+      "cache_write": 0,
+      "total": 7397
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "5ecf4ff14c1d2b06f28efbad4a940e0d0f05fc29eba25ec1e11064f617545710"
+  }
+}
