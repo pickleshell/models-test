@@ -1,0 +1,220 @@
+{
+  "schema_version": 1,
+  "release": "model-availability-2026-08-31-r5-go-catalog",
+  "generated_at": "2026-08-31T14:10:59.643Z",
+  "execution": {
+    "mode": "isolated_temporary_opencode_profile",
+    "reason": "The clean-room test account had an active interactive session, so its processes and database were not touched.",
+    "credential_source": "/home/gpt/.local/share/opencode/auth.json",
+    "prompt": "Reply with exactly: hi. Do not modify files.",
+    "timeout_ms": 65000
+  },
+  "summary": {
+    "total": 25,
+    "available": 0,
+    "unavailable": 25,
+    "account_blocked": 25
+  },
+  "models": [
+    {
+      "model": "opencode-go/deepseek-v4-flash",
+      "available": false,
+      "reason": "account_blocked",
+      "duration_ms": 2072,
+      "id": "go-01-deepseek-v4-flash",
+      "detail": "OpenCode Go returned an account-blocked refusal before the model could answer."
+    },
+    {
+      "model": "opencode-go/deepseek-v4-flash-vision-exp",
+      "available": false,
+      "reason": "account_blocked",
+      "duration_ms": 2121,
+      "id": "go-02-deepseek-v4-flash-vision-exp",
+      "detail": "OpenCode Go returned an account-blocked refusal before the model could answer."
+    },
+    {
+      "model": "opencode-go/deepseek-v4-pro",
+      "available": false,
+      "reason": "account_blocked",
+      "duration_ms": 2096,
+      "id": "go-03-deepseek-v4-pro",
+      "detail": "OpenCode Go returned an account-blocked refusal before the model could answer."
+    },
+    {
+      "model": "opencode-go/glm-5.1",
+      "available": false,
+      "reason": "account_blocked",
+      "duration_ms": 2070,
+      "id": "go-04-glm-5-1",
+      "detail": "OpenCode Go returned an account-blocked refusal before the model could answer."
+    },
+    {
+      "model": "opencode-go/glm-5.2",
+      "available": false,
+      "reason": "account_blocked",
+      "duration_ms": 2115,
+      "id": "go-05-glm-5-2",
+      "detail": "OpenCode Go returned an account-blocked refusal before the model could answer."
+    },
+    {
+      "model": "opencode-go/glm-5.3",
+      "available": false,
+      "reason": "account_blocked",
+      "duration_ms": 2122,
+      "id": "go-06-glm-5-3",
+      "detail": "OpenCode Go returned an account-blocked refusal before the model could answer."
+    },
+    {
+      "model": "opencode-go/glm-5.3-flash",
+      "available": false,
+      "reason": "account_blocked",
+      "duration_ms": 2086,
+      "id": "go-07-glm-5-3-flash",
+      "detail": "OpenCode Go returned an account-blocked refusal before the model could answer."
+    },
+    {
+      "model": "opencode-go/gpt-5.6-luna",
+      "available": false,
+      "reason": "account_blocked",
+      "duration_ms": 2079,
+      "id": "go-08-gpt-5-6-luna",
+      "detail": "OpenCode Go returned an account-blocked refusal before the model could answer."
+    },
+    {
+      "model": "opencode-go/grok-4.6",
+      "available": false,
+      "reason": "account_blocked",
+      "duration_ms": 2089,
+      "id": "go-09-grok-4-6",
+      "detail": "OpenCode Go returned an account-blocked refusal before the model could answer."
+    },
+    {
+      "model": "opencode-go/hy3",
+      "available": false,
+      "reason": "account_blocked",
+      "duration_ms": 2122,
+      "id": "go-10-hy3",
+      "detail": "OpenCode Go returned an account-blocked refusal before the model could answer."
+    },
+    {
+      "model": "opencode-go/hy4-preview",
+      "available": false,
+      "reason": "account_blocked",
+      "duration_ms": 2136,
+      "id": "go-11-hy4-preview",
+      "detail": "OpenCode Go returned an account-blocked refusal before the model could answer."
+    },
+    {
+      "model": "opencode-go/kimi-k2.6",
+      "available": false,
+      "reason": "account_blocked",
+      "duration_ms": 2092,
+      "id": "go-12-kimi-k2-6",
+      "detail": "OpenCode Go returned an account-blocked refusal before the model could answer."
+    },
+    {
+      "model": "opencode-go/kimi-k2.7-code",
+      "available": false,
+      "reason": "account_blocked",
+      "duration_ms": 2239,
+      "id": "go-13-kimi-k2-7-code",
+      "detail": "OpenCode Go returned an account-blocked refusal before the model could answer."
+    },
+    {
+      "model": "opencode-go/kimi-k3",
+      "available": false,
+      "reason": "account_blocked",
+      "duration_ms": 2120,
+      "id": "go-14-kimi-k3",
+      "detail": "OpenCode Go returned an account-blocked refusal before the model could answer."
+    },
+    {
+      "model": "opencode-go/longcat-2.0",
+      "available": false,
+      "reason": "account_blocked",
+      "duration_ms": 2073,
+      "id": "go-15-longcat-2-0",
+      "detail": "OpenCode Go returned an account-blocked refusal before the model could answer."
+    },
+    {
+      "model": "opencode-go/mimo-v2.5",
+      "available": false,
+      "reason": "account_blocked",
+      "duration_ms": 2068,
+      "id": "go-16-mimo-v2-5",
+      "detail": "OpenCode Go returned an account-blocked refusal before the model could answer."
+    },
+    {
+      "model": "opencode-go/mimo-v2.5-pro",
+      "available": false,
+      "reason": "account_blocked",
+      "duration_ms": 2118,
+      "id": "go-17-mimo-v2-5-pro",
+      "detail": "OpenCode Go returned an account-blocked refusal before the model could answer."
+    },
+    {
+      "model": "opencode-go/minimax-m2.7",
+      "available": false,
+      "reason": "account_blocked",
+      "duration_ms": 2103,
+      "id": "go-18-minimax-m2-7",
+      "detail": "OpenCode Go returned an account-blocked refusal before the model could answer."
+    },
+    {
+      "model": "opencode-go/minimax-m3",
+      "available": false,
+      "reason": "account_blocked",
+      "duration_ms": 2136,
+      "id": "go-19-minimax-m3",
+      "detail": "OpenCode Go returned an account-blocked refusal before the model could answer."
+    },
+    {
+      "model": "opencode-go/muse-spark-1.2-contributor",
+      "available": false,
+      "reason": "account_blocked",
+      "duration_ms": 2130,
+      "id": "go-20-muse-spark-1-2-contributor",
+      "detail": "OpenCode Go returned an account-blocked refusal before the model could answer."
+    },
+    {
+      "model": "opencode-go/qwen3.6-plus",
+      "available": false,
+      "reason": "account_blocked",
+      "duration_ms": 2093,
+      "id": "go-21-qwen3-6-plus",
+      "detail": "OpenCode Go returned an account-blocked refusal before the model could answer."
+    },
+    {
+      "model": "opencode-go/qwen3.7-max",
+      "available": false,
+      "reason": "account_blocked",
+      "duration_ms": 2489,
+      "id": "go-22-qwen3-7-max",
+      "detail": "OpenCode Go returned an account-blocked refusal before the model could answer."
+    },
+    {
+      "model": "opencode-go/qwen3.7-plus",
+      "available": false,
+      "reason": "account_blocked",
+      "duration_ms": 2065,
+      "id": "go-23-qwen3-7-plus",
+      "detail": "OpenCode Go returned an account-blocked refusal before the model could answer."
+    },
+    {
+      "model": "opencode-go/qwen3.8-flash",
+      "available": false,
+      "reason": "account_blocked",
+      "duration_ms": 2184,
+      "id": "go-24-qwen3-8-flash",
+      "detail": "OpenCode Go returned an account-blocked refusal before the model could answer."
+    },
+    {
+      "model": "opencode-go/qwen3.8-max",
+      "available": false,
+      "reason": "account_blocked",
+      "duration_ms": 2076,
+      "id": "go-25-qwen3-8-max",
+      "detail": "OpenCode Go returned an account-blocked refusal before the model could answer."
+    }
+  ]
+}
