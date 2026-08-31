@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "06-minimax-m3",
+    "agent": "opencode",
+    "model": "opencode-go/minimax-m3"
+  },
+  "status": "unavailable",
+  "reason": "process_failure",
+  "started_at": "2026-08-31T01:42:23.070Z",
+  "completed_at": "2026-08-31T01:42:25.423Z",
+  "duration_ms": 2353,
+  "process_status": 1,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": null,
+    "steps": 0,
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "cache_read": 0,
+      "cache_write": 0,
+      "total": 0
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "60b95081ae5ef62fcf57de7e4613cb3ef3fe98b0bc3c045c037e54e757354a43"
+  }
+}

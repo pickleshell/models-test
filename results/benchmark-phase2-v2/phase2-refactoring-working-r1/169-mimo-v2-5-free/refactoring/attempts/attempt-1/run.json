@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "release": "phase2-refactoring-working-r1",
+  "nomination": "refactoring",
+  "run_id": "phase2-refactoring-working-r1:169-mimo-v2-5-free:refactoring",
+  "attempt": 1,
+  "candidate": {
+    "id": "169-mimo-v2-5-free",
+    "agent": "opencode",
+    "model": "opencode/mimo-v2.5-free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-31T01:30:56.926Z",
+  "completed_at": "2026-08-31T01:30:56.926Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-31T01:30:54.396Z",
+    "completed_at": "2026-08-31T01:30:56.925Z",
+    "duration_ms": 2529
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-refactoring-working-r1/169-mimo-v2-5-free/refactoring/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "b5c566363b5acb3dbd7aae741c2358d7f85dad810ad45e0c521dd575bb172b94"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "release": "phase2-refactoring-working-r1",
+  "nomination": "refactoring",
+  "run_id": "phase2-refactoring-working-r1:159-glm-5-1:refactoring",
+  "attempt": 1,
+  "candidate": {
+    "id": "159-glm-5-1",
+    "agent": "opencode",
+    "model": "opencode/glm-5.1",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-31T01:30:48.972Z",
+  "completed_at": "2026-08-31T01:30:48.972Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-31T01:30:46.479Z",
+    "completed_at": "2026-08-31T01:30:48.971Z",
+    "duration_ms": 2492
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-refactoring-working-r1/159-glm-5-1/refactoring/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "7bead3b36943cc1dfb620f3356cd2d62b6a135c02490c932320f77add1c92185"
+  }
+}

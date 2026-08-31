@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "release": "phase2-refactoring-working-r1",
+  "nomination": "refactoring",
+  "run_id": "phase2-refactoring-working-r1:207-claude-opus-5:refactoring",
+  "attempt": 1,
+  "candidate": {
+    "id": "207-claude-opus-5",
+    "agent": "opencode",
+    "model": "opencode/claude-opus-5",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-31T01:42:17.500Z",
+  "completed_at": "2026-08-31T01:42:17.500Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-31T01:42:15.175Z",
+    "completed_at": "2026-08-31T01:42:17.499Z",
+    "duration_ms": 2324
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-refactoring-working-r1/207-claude-opus-5/refactoring/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "a326e258b28253dad237ce1a310eb3c17e29e6cd12e977c0657785b8b03ba50c"
+  }
+}

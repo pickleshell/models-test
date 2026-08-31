@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "release": "phase2-refactoring-working-r1",
+  "nomination": "refactoring",
+  "run_id": "phase2-refactoring-working-r1:155-claude-sonnet-4-6:refactoring",
+  "attempt": 1,
+  "candidate": {
+    "id": "155-claude-sonnet-4-6",
+    "agent": "opencode",
+    "model": "opencode/claude-sonnet-4-6",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-31T01:30:38.164Z",
+  "completed_at": "2026-08-31T01:30:38.164Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-31T01:30:35.578Z",
+    "completed_at": "2026-08-31T01:30:38.163Z",
+    "duration_ms": 2585
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-refactoring-working-r1/155-claude-sonnet-4-6/refactoring/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "18d996b05ce655c2cd006c0c99237364b3de0230aeaa87f21d49bc0ba12ee74d"
+  }
+}

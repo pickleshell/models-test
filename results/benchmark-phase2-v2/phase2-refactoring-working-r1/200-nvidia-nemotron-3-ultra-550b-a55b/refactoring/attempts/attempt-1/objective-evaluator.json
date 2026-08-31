@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "evaluator": {
+    "id": "phase2-v2-refactoring-v1",
+    "sha256": "1eecdcef4e801661b94ed7edf9767c07202fc72b5873cbafb36005194fcca6ea"
+  },
+  "status": "completed",
+  "passed": true,
+  "started_at": "2026-08-31T01:40:37.373Z",
+  "completed_at": "2026-08-31T01:40:37.555Z",
+  "duration_ms": 182,
+  "execution": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-31T01:40:37.373Z",
+    "completed_at": "2026-08-31T01:40:37.555Z",
+    "duration_ms": 182
+  },
+  "artifact_hash": {
+    "path": "objective-evaluator.json",
+    "sha256": "29df9e34fa5734c7b2dc27618a76a3213bc81021a2354e5e30fa9d378e9c38f3"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "release": "phase2-refactoring-working-r1",
+  "nomination": "refactoring",
+  "run_id": "phase2-refactoring-working-r1:11-deepseek-v4-flash:refactoring",
+  "attempt": 1,
+  "candidate": {
+    "id": "11-deepseek-v4-flash",
+    "agent": "opencode",
+    "model": "opencode-go/deepseek-v4-flash",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-31T01:42:30.797Z",
+  "completed_at": "2026-08-31T01:42:30.797Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-31T01:42:28.268Z",
+    "completed_at": "2026-08-31T01:42:30.796Z",
+    "duration_ms": 2528
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-refactoring-working-r1/11-deepseek-v4-flash/refactoring/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "5fd4acfd3b51bcd7f30294e1bf0c0702a917505b6f9d2a570eaa6523de64027c"
+  }
+}

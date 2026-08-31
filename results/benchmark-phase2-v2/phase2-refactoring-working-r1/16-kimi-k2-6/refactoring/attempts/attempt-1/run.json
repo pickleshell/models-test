@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "release": "phase2-refactoring-working-r1",
+  "nomination": "refactoring",
+  "run_id": "phase2-refactoring-working-r1:16-kimi-k2-6:refactoring",
+  "attempt": 1,
+  "candidate": {
+    "id": "16-kimi-k2-6",
+    "agent": "opencode",
+    "model": "opencode-go/kimi-k2.6",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-31T01:43:05.768Z",
+  "completed_at": "2026-08-31T01:43:05.768Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-31T01:43:03.228Z",
+    "completed_at": "2026-08-31T01:43:05.767Z",
+    "duration_ms": 2539
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-refactoring-working-r1/16-kimi-k2-6/refactoring/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "84f580eb872d2c404448807ebe86d21df53cbcf955f82759a6b86ed9f8ba640a"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "152-claude-opus-4-7",
+    "agent": "opencode",
+    "model": "opencode/claude-opus-4-7"
+  },
+  "status": "unavailable",
+  "reason": "process_failure",
+  "started_at": "2026-08-31T01:30:27.514Z",
+  "completed_at": "2026-08-31T01:30:29.975Z",
+  "duration_ms": 2461,
+  "process_status": 1,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": null,
+    "steps": 0,
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "cache_read": 0,
+      "cache_write": 0,
+      "total": 0
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "4a3550fcdd24f31abebf326e747a869cb9fc67fc0ab532556c6b9b5830169c73"
+  }
+}

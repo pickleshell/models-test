@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "179-hy4-preview",
+    "agent": "opencode",
+    "model": "opencode-go/hy4-preview"
+  },
+  "status": "unavailable",
+  "reason": "process_failure",
+  "started_at": "2026-08-31T01:31:02.545Z",
+  "completed_at": "2026-08-31T01:31:04.848Z",
+  "duration_ms": 2303,
+  "process_status": 1,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": null,
+    "steps": 0,
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "cache_read": 0,
+      "cache_write": 0,
+      "total": 0
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "71c2590f0e57e1b6b18c6f51873e1f70fd83cbc8bdff37f99a13960e2f0f7f8c"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "release": "phase2-refactoring-working-r1",
+  "nomination": "refactoring",
+  "run_id": "phase2-refactoring-working-r1:167-grok-4-6:refactoring",
+  "attempt": 1,
+  "candidate": {
+    "id": "167-grok-4-6",
+    "agent": "opencode",
+    "model": "opencode/grok-4.6",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-31T01:30:54.145Z",
+  "completed_at": "2026-08-31T01:30:54.145Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-31T01:30:51.833Z",
+    "completed_at": "2026-08-31T01:30:54.145Z",
+    "duration_ms": 2312
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-refactoring-working-r1/167-grok-4-6/refactoring/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "53cd55c88ae42209dfec77c2fd6b6a1cbaaa095cd6fdf259d23cd9768214b641"
+  }
+}

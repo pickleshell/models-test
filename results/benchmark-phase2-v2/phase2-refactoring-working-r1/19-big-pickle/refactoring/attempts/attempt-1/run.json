@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "release": "phase2-refactoring-working-r1",
+  "nomination": "refactoring",
+  "run_id": "phase2-refactoring-working-r1:19-big-pickle:refactoring",
+  "attempt": 1,
+  "candidate": {
+    "id": "19-big-pickle",
+    "agent": "opencode",
+    "model": "opencode/big-pickle",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-31T01:43:02.978Z",
+  "completed_at": "2026-08-31T01:43:02.978Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-31T01:43:00.631Z",
+    "completed_at": "2026-08-31T01:43:02.977Z",
+    "duration_ms": 2346
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-refactoring-working-r1/19-big-pickle/refactoring/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "64981b8fe27957e66f72ea376c578c6ccaa91733ba7eb8ae67223828906ee115"
+  }
+}

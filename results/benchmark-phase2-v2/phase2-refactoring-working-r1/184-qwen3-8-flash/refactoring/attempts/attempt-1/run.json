@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "release": "phase2-refactoring-working-r1",
+  "nomination": "refactoring",
+  "run_id": "phase2-refactoring-working-r1:184-qwen3-8-flash:refactoring",
+  "attempt": 1,
+  "candidate": {
+    "id": "184-qwen3-8-flash",
+    "agent": "opencode",
+    "model": "opencode-go/qwen3.8-flash",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-31T01:31:17.995Z",
+  "completed_at": "2026-08-31T01:31:17.995Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-31T01:31:15.551Z",
+    "completed_at": "2026-08-31T01:31:17.994Z",
+    "duration_ms": 2443
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-refactoring-working-r1/184-qwen3-8-flash/refactoring/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "f5efb73e0b1aa8d5bfaf02c7318751f65b35f15e87a3fef5a652a05b56e7b2d4"
+  }
+}

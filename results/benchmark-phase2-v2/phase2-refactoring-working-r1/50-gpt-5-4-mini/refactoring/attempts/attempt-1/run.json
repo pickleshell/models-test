@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "release": "phase2-refactoring-working-r1",
+  "nomination": "refactoring",
+  "run_id": "phase2-refactoring-working-r1:50-gpt-5-4-mini:refactoring",
+  "attempt": 1,
+  "candidate": {
+    "id": "50-gpt-5-4-mini",
+    "agent": "codex",
+    "model": "gpt-5.4-mini"
+  },
+  "started_at": "2026-08-31T01:27:41.381Z",
+  "completed_at": "2026-08-31T01:28:10.263Z",
+  "duration_ms": 28882,
+  "benchmark_metrics": {
+    "duration_ms": 28882,
+    "model_duration_ms": 27942,
+    "public_tests_duration_ms": 587,
+    "cost_usd": null,
+    "cost_source": "provider_not_reported",
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": {
+    "status": 0,
+    "signal": null,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-31T01:27:41.381Z",
+    "completed_at": "2026-08-31T01:28:09.323Z",
+    "duration_ms": 27942,
+    "usage": {
+      "source": "provider_not_reported",
+      "reported_cost_usd": null,
+      "steps": null,
+      "tokens": {
+        "input": null,
+        "output": null,
+        "reasoning": null,
+        "cache_read": null,
+        "cache_write": null,
+        "total": null
+      }
+    }
+  },
+  "tests": {
+    "status": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "started_at": "2026-08-31T01:28:09.676Z",
+    "completed_at": "2026-08-31T01:28:10.263Z",
+    "duration_ms": 587
+  },
+  "outcome": "completed",
+  "changed_files": [
+    "fixtures/phase2-v2/refactoring/src/events.js"
+  ],
+  "forbidden_changes": [],
+  "notes": [
+    "Reasoning variant: provider_default.",
+    "Model cost is provider-reported from OpenCode step_finish events when available; it is not estimated."
+  ],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-refactoring-working-r1/50-gpt-5-4-mini/refactoring/attempts/attempt-1",
+    "candidate_diff": {
+      "path": "candidate.diff",
+      "sha256": "568a15c2d1af801879aa2ba8e3bd1fcf3df621259fe42c92a34cbe9287f39fd4"
+    },
+    "test_result": {
+      "path": "test-result.json",
+      "sha256": "6e6be1b4dcb3d0aee92f6729d60ee94575026dfcb8b2e09d69b8e159adce02d2"
+    },
+    "objective_evaluator": {
+      "path": "objective-evaluator.json",
+      "sha256": "a3d709e3943ad7841aa944a604ac50a14b0136de5c4ee9469290769b4fdf07f0"
+    }
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "4d7afdb3cadc71dc8f2efe27b84fc5143447e175473457d02ff135a521212888"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "release": "phase2-refactoring-working-r1",
+  "nomination": "refactoring",
+  "run_id": "phase2-refactoring-working-r1:156-gemini-3-5-flash-lite:refactoring",
+  "attempt": 1,
+  "candidate": {
+    "id": "156-gemini-3-5-flash-lite",
+    "agent": "opencode",
+    "model": "opencode/gemini-3.5-flash-lite",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-31T01:30:40.739Z",
+  "completed_at": "2026-08-31T01:30:40.739Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-31T01:30:38.418Z",
+    "completed_at": "2026-08-31T01:30:40.738Z",
+    "duration_ms": 2320
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-refactoring-working-r1/156-gemini-3-5-flash-lite/refactoring/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "1429c68e69dabd2e3fe0120607511b5acf3983bfecddbdc26d91625d442d4b86"
+  }
+}

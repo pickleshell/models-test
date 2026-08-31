@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "18-gpt-5-3-codex-spark",
+    "agent": "codex",
+    "model": "gpt-5.3-codex-spark"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-31T01:26:42.358Z",
+  "completed_at": "2026-08-31T01:26:46.683Z",
+  "duration_ms": 4325,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "provider_not_reported",
+    "reported_cost_usd": null,
+    "steps": null,
+    "tokens": {
+      "input": null,
+      "output": null,
+      "reasoning": null,
+      "cache_read": null,
+      "cache_write": null,
+      "total": null
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "a6ffdebbe68d840ecd9087d0de87a54d4bdd7e846209b27ec25a323e59e4963e"
+  }
+}
