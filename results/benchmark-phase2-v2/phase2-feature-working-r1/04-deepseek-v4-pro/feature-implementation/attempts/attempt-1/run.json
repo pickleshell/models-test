@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "release": "phase2-feature-working-r1",
+  "nomination": "feature-implementation",
+  "run_id": "phase2-feature-working-r1:04-deepseek-v4-pro:feature-implementation",
+  "attempt": 1,
+  "candidate": {
+    "id": "04-deepseek-v4-pro",
+    "agent": "opencode",
+    "model": "opencode-go/deepseek-v4-pro",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-31T00:31:14.122Z",
+  "completed_at": "2026-08-31T00:31:14.122Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-31T00:31:11.622Z",
+    "completed_at": "2026-08-31T00:31:14.121Z",
+    "duration_ms": 2499
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-feature-working-r1/04-deepseek-v4-pro/feature-implementation/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "f71525f3875359fdaf1c760bbcc27b173ff4c6e21559dcbefc5a23099a27136b"
+  }
+}

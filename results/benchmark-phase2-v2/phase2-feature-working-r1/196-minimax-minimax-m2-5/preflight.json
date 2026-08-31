@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "196-minimax-minimax-m2-5",
+    "agent": "opencode",
+    "model": "openrouter/minimax/minimax-m2.5"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-31T00:24:16.198Z",
+  "completed_at": "2026-08-31T00:24:19.395Z",
+  "duration_ms": 3197,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0.00195993,
+    "steps": 1,
+    "tokens": {
+      "input": 7127,
+      "output": 4,
+      "reasoning": 29,
+      "cache_read": 0,
+      "cache_write": 0,
+      "total": 7160
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "46040f40cd9a71624de6f50f02126f98e4bbc5adb067f9d326a2982409f64ff5"
+  }
+}

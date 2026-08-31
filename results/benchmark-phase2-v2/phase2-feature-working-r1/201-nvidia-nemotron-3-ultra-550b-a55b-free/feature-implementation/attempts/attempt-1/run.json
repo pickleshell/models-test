@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "release": "phase2-feature-working-r1",
+  "nomination": "feature-implementation",
+  "run_id": "phase2-feature-working-r1:201-nvidia-nemotron-3-ultra-550b-a55b-free:feature-implementation",
+  "attempt": 1,
+  "candidate": {
+    "id": "201-nvidia-nemotron-3-ultra-550b-a55b-free",
+    "agent": "opencode",
+    "model": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-31T00:27:41.881Z",
+  "completed_at": "2026-08-31T00:27:41.881Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "timeout",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-31T00:26:36.796Z",
+    "completed_at": "2026-08-31T00:27:41.880Z",
+    "duration_ms": 65084
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-feature-working-r1/201-nvidia-nemotron-3-ultra-550b-a55b-free/feature-implementation/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "c0b7fa94ac9a209101c06dd456d88bd6de09904a00822823f1d7fac463d6f387"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "release": "phase2-feature-working-r1",
+  "nomination": "feature-implementation",
+  "run_id": "phase2-feature-working-r1:27-hy3-free:feature-implementation",
+  "attempt": 1,
+  "candidate": {
+    "id": "27-hy3-free",
+    "agent": "opencode",
+    "model": "opencode/hy3-free",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-30T23:42:50.845Z",
+  "completed_at": "2026-08-30T23:42:50.845Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-30T23:42:49.270Z",
+    "completed_at": "2026-08-30T23:42:50.844Z",
+    "duration_ms": 1574
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-feature-working-r1/27-hy3-free/feature-implementation/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "e378dd7a7ed0b1af6ab7560b76561f966b2a698627c529cfbe7ea000f9f8d160"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "release": "phase2-feature-working-r1",
+  "nomination": "feature-implementation",
+  "run_id": "phase2-feature-working-r1:178-glm-5-3-flash:feature-implementation",
+  "attempt": 1,
+  "candidate": {
+    "id": "178-glm-5-3-flash",
+    "agent": "opencode",
+    "model": "opencode-go/glm-5.3-flash",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-31T00:07:32.201Z",
+  "completed_at": "2026-08-31T00:07:32.201Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "no_model_response",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-31T00:07:25.699Z",
+    "completed_at": "2026-08-31T00:07:32.200Z",
+    "duration_ms": 6501
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-feature-working-r1/178-glm-5-3-flash/feature-implementation/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "e57d629e6f2989a171da51e492ed8fadcdf12b3abea9b135744c0731860b7383"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "184-qwen3-8-flash",
+    "agent": "opencode",
+    "model": "opencode-go/qwen3.8-flash"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-31T00:12:44.869Z",
+  "completed_at": "2026-08-31T00:12:49.085Z",
+  "duration_ms": 4216,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0.0014971,
+    "steps": 1,
+    "tokens": {
+      "input": 6,
+      "output": 20,
+      "reasoning": 0,
+      "cache_read": 0,
+      "cache_write": 7434,
+      "total": 7460
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "7443870ba44febec0c63132ec6158009937c8926ed755d6c313c973d2131f28f"
+  }
+}

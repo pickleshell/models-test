@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "release": "phase2-feature-working-r1",
+  "nomination": "feature-implementation",
+  "run_id": "phase2-feature-working-r1:07-mimo-v2-5-pro:feature-implementation",
+  "attempt": 1,
+  "candidate": {
+    "id": "07-mimo-v2-5-pro",
+    "agent": "opencode",
+    "model": "opencode-go/mimo-v2.5-pro",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-31T00:30:15.645Z",
+  "completed_at": "2026-08-31T00:30:15.645Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-31T00:30:13.100Z",
+    "completed_at": "2026-08-31T00:30:15.644Z",
+    "duration_ms": 2544
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-feature-working-r1/07-mimo-v2-5-pro/feature-implementation/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "c46d4e68b06918634d8b4a983c11cab9bf69277eb44ce8deda248d1ddd80ed43"
+  }
+}

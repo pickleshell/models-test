@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "kind": "manual_code_review",
+  "release": "phase2-feature-working-r1",
+  "candidate": "49-gpt-5-4",
+  "nomination": "feature-implementation",
+  "attempt": 1,
+  "reviewer": {
+    "id": "codex",
+    "type": "assistant_manual_review"
+  },
+  "identity_blind": false,
+  "scores": {
+    "functional_correctness": 10,
+    "reliability_edge_cases": 10,
+    "maintainability_clarity": 9,
+    "scope_discipline": 10
+  },
+  "average": 9.75,
+  "summary": "The patch satisfies override precedence, strict rollout validation, deterministic bucketing, boundary behavior, and input immutability while staying within the allowed source file.",
+  "evidence": {
+    "public_tests_passed": true,
+    "objective_evaluator_passed": true,
+    "forbidden_changes": 0
+  }
+}

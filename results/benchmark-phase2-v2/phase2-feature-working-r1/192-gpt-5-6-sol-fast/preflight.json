@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "192-gpt-5-6-sol-fast",
+    "agent": "opencode",
+    "model": "openai/gpt-5.6-sol-fast"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-31T00:19:58.879Z",
+  "completed_at": "2026-08-31T00:20:03.369Z",
+  "duration_ms": 4490,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0,
+    "steps": 1,
+    "tokens": {
+      "input": 288,
+      "output": 6,
+      "reasoning": 0,
+      "cache_read": 5632,
+      "cache_write": 0,
+      "total": 5926
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "eeaed33f0283fba5eccd232ea0e3fcee426e730a7aed16e9ebfb0e9ef8544572"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "release": "phase2-feature-working-r1",
+  "nomination": "feature-implementation",
+  "run_id": "phase2-feature-working-r1:67-qwen3-8-max-go:feature-implementation",
+  "attempt": 1,
+  "candidate": {
+    "id": "67-qwen3-8-max-go",
+    "agent": "opencode",
+    "model": "opencode-go/qwen3.8-max",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-31T00:31:06.127Z",
+  "completed_at": "2026-08-31T00:31:06.127Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-31T00:31:02.667Z",
+    "completed_at": "2026-08-31T00:31:06.126Z",
+    "duration_ms": 3459
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-feature-working-r1/67-qwen3-8-max-go/feature-implementation/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "dd0376a39de728ab219ebb939d1b57cb84e7208bf6ebfd9e024f7f1be6d38f7c"
+  }
+}

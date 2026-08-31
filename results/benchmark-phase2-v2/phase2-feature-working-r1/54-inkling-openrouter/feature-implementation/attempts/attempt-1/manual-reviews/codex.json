@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "kind": "manual_code_review",
+  "release": "phase2-feature-working-r1",
+  "candidate": "54-inkling-openrouter",
+  "nomination": "feature-implementation",
+  "attempt": 1,
+  "reviewer": {
+    "id": "codex",
+    "type": "assistant_manual_review"
+  },
+  "identity_blind": false,
+  "scores": {
+    "functional_correctness": 8,
+    "reliability_edge_cases": 6,
+    "maintainability_clarity": 7,
+    "scope_discipline": 10
+  },
+  "average": 7.75,
+  "summary": "The implementation covers overrides, deterministic rollout, boundaries, and immutability, but treats a null rollout as if rollout were absent. The independent evaluator requires null to be rejected.",
+  "evidence": {
+    "public_tests_passed": true,
+    "objective_evaluator_passed": false,
+    "forbidden_changes": 0
+  }
+}

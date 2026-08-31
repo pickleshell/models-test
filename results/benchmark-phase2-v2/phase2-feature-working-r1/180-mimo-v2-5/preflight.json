@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "180-mimo-v2-5",
+    "agent": "opencode",
+    "model": "opencode-go/mimo-v2.5"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-31T00:08:55.497Z",
+  "completed_at": "2026-08-31T00:08:59.645Z",
+  "duration_ms": 4148,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0.0009163672,
+    "steps": 1,
+    "tokens": {
+      "input": 6435,
+      "output": 45,
+      "reasoning": 0,
+      "cache_read": 1024,
+      "cache_write": 0,
+      "total": 7504
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "5e199a01547201d48de228f24f9b994b2f974eb8a61788cb403bb27b0c4c527c"
+  }
+}

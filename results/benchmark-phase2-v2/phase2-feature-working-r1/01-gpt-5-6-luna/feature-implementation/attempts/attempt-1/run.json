@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "release": "phase2-feature-working-r1",
+  "nomination": "feature-implementation",
+  "run_id": "phase2-feature-working-r1:01-gpt-5-6-luna:feature-implementation",
+  "attempt": 1,
+  "candidate": {
+    "id": "01-gpt-5-6-luna",
+    "agent": "opencode",
+    "model": "opencode-go/gpt-5.6-luna",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-31T00:30:56.782Z",
+  "completed_at": "2026-08-31T00:30:56.782Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-31T00:30:54.424Z",
+    "completed_at": "2026-08-31T00:30:56.781Z",
+    "duration_ms": 2357
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-feature-working-r1/01-gpt-5-6-luna/feature-implementation/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "086fcb66d6fff69f3dfb8353821d6c3bd631ab793b478903e9f3bb00c50e38df"
+  }
+}

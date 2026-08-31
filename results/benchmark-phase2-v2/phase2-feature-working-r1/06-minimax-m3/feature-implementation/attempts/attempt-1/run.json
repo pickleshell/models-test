@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "release": "phase2-feature-working-r1",
+  "nomination": "feature-implementation",
+  "run_id": "phase2-feature-working-r1:06-minimax-m3:feature-implementation",
+  "attempt": 1,
+  "candidate": {
+    "id": "06-minimax-m3",
+    "agent": "opencode",
+    "model": "opencode-go/minimax-m3",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-31T00:30:12.845Z",
+  "completed_at": "2026-08-31T00:30:12.845Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-31T00:30:10.292Z",
+    "completed_at": "2026-08-31T00:30:12.844Z",
+    "duration_ms": 2552
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-feature-working-r1/06-minimax-m3/feature-implementation/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "862896968360660b8b89b4c25bfcf4fc76ca5893e83c48b52fd25c6d02909d51"
+  }
+}

@@ -1,0 +1,54 @@
+diff --git a/fixtures/phase2-v2/feature-implementation/src/featureFlags.js b/fixtures/phase2-v2/feature-implementation/src/featureFlags.js
+index 489ea67..a49d658 100644
+--- a/fixtures/phase2-v2/feature-implementation/src/featureFlags.js
++++ b/fixtures/phase2-v2/feature-implementation/src/featureFlags.js
+@@ -1,5 +1,46 @@
+ export function resolveFeature(config, context) {
+-  if (!config || !context || typeof context !== 'object') return false;
+-  const flag = config[context.feature];
+-  return typeof flag === 'boolean' ? flag : Boolean(flag && flag.enabled);
++  if (!isPlainObject(config) || !isPlainObject(context)) return false;
++
++  const feature = context.feature;
++  if (typeof feature !== 'string' || feature.length === 0) return false;
++
++  // Exact boolean override wins.
++  const overrides = context.overrides;
++  if (isPlainObject(overrides)) {
++    const override = overrides[feature];
++    if (typeof override === 'boolean') return override;
++  }
++
++  const flag = config[feature];
++
++  // Boolean flag wins.
++  if (typeof flag === 'boolean') return flag;
++
++  // Otherwise must be an enabled object.
++  if (!isPlainObject(flag) || flag.enabled !== true) return false;
++
++  const rollout = flag.rollout;
++
++  // Omitted rollout means enabled.
++  if (rollout === undefined) return true;
++
++  // Present rollout must be an integer 0..100.
++  if (!Number.isInteger(rollout) || rollout < 0 || rollout > 100) return false;
++
++  if (rollout === 0) return false;
++  if (rollout === 100) return true;
++
++  const userId = context.userId;
++  if (typeof userId !== 'string' || userId.length === 0) return false;
++
++  let hash = 0;
++  for (const ch of userId) {
++    hash = (hash * 31 + ch.codePointAt(0)) >>> 0;
++  }
++  const bucket = hash % 100;
++  return bucket < rollout;
++}
++
++function isPlainObject(value) {
++  return value !== null && typeof value === 'object' && !Array.isArray(value);
+ }

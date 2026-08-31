@@ -1,0 +1,79 @@
+diff --git a/fixtures/phase2-v2/feature-implementation/src/featureFlags.js b/fixtures/phase2-v2/feature-implementation/src/featureFlags.js
+index 489ea67..76180eb 100644
+--- a/fixtures/phase2-v2/feature-implementation/src/featureFlags.js
++++ b/fixtures/phase2-v2/feature-implementation/src/featureFlags.js
+@@ -1,5 +1,72 @@
+ export function resolveFeature(config, context) {
+-  if (!config || !context || typeof context !== 'object') return false;
++  // Validate inputs: config and context must be non-null objects
++  if (!config || typeof config !== 'object' || !context || typeof context !== 'object') {
++    return false;
++  }
++  
++  // context.feature must be a non-empty string
++  if (typeof context.feature !== 'string' || context.feature === '') {
++    return false;
++  }
++  
++  // Check for exact boolean override first
++  if (context.overrides && typeof context.overrides === 'object') {
++    const override = context.overrides[context.feature];
++    if (typeof override === 'boolean') {
++      return override;
++    }
++  }
++  
++  // Get the flag from config
+   const flag = config[context.feature];
+-  return typeof flag === 'boolean' ? flag : Boolean(flag && flag.enabled);
++  
++  // If flag is a boolean, return it directly
++  if (typeof flag === 'boolean') {
++    return flag;
++  }
++  
++  // Flag must be an object with enabled === true
++  if (!flag || typeof flag !== 'object' || flag.enabled !== true) {
++    return false;
++  }
++  
++  // If no rollout is specified, feature is enabled
++  if (!('rollout' in flag)) {
++    return true;
++  }
++  
++  const rollout = flag.rollout;
++  
++  // Rollout must be an integer from 0 to 100
++  if (!Number.isInteger(rollout) || rollout < 0 || rollout > 100) {
++    return false;
++  }
++  
++  // 0 disables, 100 enables
++  if (rollout === 0) {
++    return false;
++  }
++  if (rollout === 100) {
++    return true;
++  }
++  
++  // For percentage rollout, userId must be a non-empty string
++  if (typeof context.userId !== 'string' || context.userId === '') {
++    return false;
++  }
++  
++  // Calculate hash using the specified algorithm
++  let hash = 0;
++  for (let i = 0; i < context.userId.length; i++) {
++    const codePoint = context.userId.codePointAt(i);
++    hash = (hash * 31 + codePoint) >>> 0;
++    
++    // Handle surrogate pairs - skip low surrogate
++    if (codePoint > 0xFFFF) {
++      i++;
++    }
++  }
++  
++  const bucket = hash % 100;
++  return bucket < rollout;
+ }

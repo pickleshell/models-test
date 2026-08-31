@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "release": "phase2-feature-working-r1",
+  "nomination": "feature-implementation",
+  "run_id": "phase2-feature-working-r1:207-claude-opus-5:feature-implementation",
+  "attempt": 1,
+  "candidate": {
+    "id": "207-claude-opus-5",
+    "agent": "opencode",
+    "model": "opencode/claude-opus-5",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-31T00:30:04.608Z",
+  "completed_at": "2026-08-31T00:30:04.608Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-31T00:30:02.105Z",
+    "completed_at": "2026-08-31T00:30:04.607Z",
+    "duration_ms": 2502
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-feature-working-r1/207-claude-opus-5/feature-implementation/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "b8f70b2fab828cc8ac0dbbdb3639e571c8d92598b15e6a53fc283264c3a181d9"
+  }
+}

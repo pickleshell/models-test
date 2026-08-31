@@ -1,0 +1,74 @@
+diff --git a/fixtures/phase2-v2/feature-implementation/src/featureFlags.js b/fixtures/phase2-v2/feature-implementation/src/featureFlags.js
+index 489ea67..21ae156 100644
+--- a/fixtures/phase2-v2/feature-implementation/src/featureFlags.js
++++ b/fixtures/phase2-v2/feature-implementation/src/featureFlags.js
+@@ -1,5 +1,66 @@
+ export function resolveFeature(config, context) {
+-  if (!config || !context || typeof context !== 'object') return false;
+-  const flag = config[context.feature];
+-  return typeof flag === 'boolean' ? flag : Boolean(flag && flag.enabled);
++  if (
++    config === null ||
++    typeof config !== 'object' ||
++    context === null ||
++    typeof context !== 'object' ||
++    typeof context.feature !== 'string' ||
++    context.feature === ''
++  ) {
++    return false;
++  }
++
++  const feature = context.feature;
++
++  if (
++    context.overrides !== null &&
++    typeof context.overrides === 'object' &&
++    Object.prototype.hasOwnProperty.call(context.overrides, feature) &&
++    typeof context.overrides[feature] === 'boolean'
++  ) {
++    return context.overrides[feature];
++  }
++
++  if (!Object.prototype.hasOwnProperty.call(config, feature)) {
++    return false;
++  }
++
++  const flag = config[feature];
++
++  if (typeof flag === 'boolean') {
++    return flag;
++  }
++
++  if (flag === null || typeof flag !== 'object' || flag.enabled !== true) {
++    return false;
++  }
++
++  if (!Object.prototype.hasOwnProperty.call(flag, 'rollout')) {
++    return true;
++  }
++
++  const rollout = flag.rollout;
++  if (
++    typeof rollout !== 'number' ||
++    !Number.isInteger(rollout) ||
++    rollout < 0 ||
++    rollout > 100
++  ) {
++    return false;
++  }
++
++  if (rollout === 0) return false;
++  if (rollout === 100) return true;
++
++  const userId = context.userId;
++  if (typeof userId !== 'string' || userId === '') {
++    return false;
++  }
++
++  let hash = 0;
++  for (const ch of userId) {
++    hash = (hash * 31 + ch.codePointAt(0)) >>> 0;
++  }
++  const bucket = hash % 100;
++  return bucket < rollout;
+ }

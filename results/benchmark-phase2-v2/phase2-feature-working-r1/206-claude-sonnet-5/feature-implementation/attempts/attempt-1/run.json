@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "release": "phase2-feature-working-r1",
+  "nomination": "feature-implementation",
+  "run_id": "phase2-feature-working-r1:206-claude-sonnet-5:feature-implementation",
+  "attempt": 1,
+  "candidate": {
+    "id": "206-claude-sonnet-5",
+    "agent": "opencode",
+    "model": "opencode/claude-sonnet-5",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-31T00:30:01.851Z",
+  "completed_at": "2026-08-31T00:30:01.851Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-31T00:29:59.272Z",
+    "completed_at": "2026-08-31T00:30:01.850Z",
+    "duration_ms": 2578
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-feature-working-r1/206-claude-sonnet-5/feature-implementation/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "2b33c076ce19b152b9d1d15dc22bfbf96749074f5bd635436972409dd0e5ee9f"
+  }
+}

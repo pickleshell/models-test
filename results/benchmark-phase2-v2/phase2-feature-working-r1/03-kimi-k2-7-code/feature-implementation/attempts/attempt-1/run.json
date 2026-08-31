@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "release": "phase2-feature-working-r1",
+  "nomination": "feature-implementation",
+  "run_id": "phase2-feature-working-r1:03-kimi-k2-7-code:feature-implementation",
+  "attempt": 1,
+  "candidate": {
+    "id": "03-kimi-k2-7-code",
+    "agent": "opencode",
+    "model": "opencode-go/kimi-k2.7-code",
+    "reasoning_variant": "provider_default"
+  },
+  "started_at": "2026-08-31T00:30:10.041Z",
+  "completed_at": "2026-08-31T00:30:10.041Z",
+  "duration_ms": 0,
+  "benchmark_metrics": {
+    "duration_ms": 0,
+    "model_duration_ms": null,
+    "public_tests_duration_ms": null,
+    "cost_usd": null,
+    "cost_source": null,
+    "includes_preflight": false,
+    "includes_judging": false
+  },
+  "agent": null,
+  "tests": null,
+  "outcome": "unavailable",
+  "availability": {
+    "reason": "process_failure",
+    "preflight": "model_preflight",
+    "started_at": "2026-08-31T00:30:07.492Z",
+    "completed_at": "2026-08-31T00:30:10.040Z",
+    "duration_ms": 2548
+  },
+  "changed_files": [],
+  "forbidden_changes": [],
+  "artifacts": {
+    "public_dir": "results/benchmark-phase2-v2/phase2-feature-working-r1/03-kimi-k2-7-code/feature-implementation/attempts/attempt-1"
+  },
+  "artifact_hash": {
+    "path": "run.json",
+    "sha256": "c2285e3a8bf0b83d619fd13e3a67786ed487ca522302eb675cd913584264eeef"
+  }
+}

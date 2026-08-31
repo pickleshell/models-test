@@ -1,0 +1,50 @@
+diff --git a/fixtures/phase2-v2/feature-implementation/src/featureFlags.js b/fixtures/phase2-v2/feature-implementation/src/featureFlags.js
+index 489ea67..b917504 100644
+--- a/fixtures/phase2-v2/feature-implementation/src/featureFlags.js
++++ b/fixtures/phase2-v2/feature-implementation/src/featureFlags.js
+@@ -1,5 +1,42 @@
++function isNonNullObject(value) {
++  return typeof value === 'object' && value !== null;
++}
++
++function isNonEmptyString(value) {
++  return typeof value === 'string' && value.length > 0;
++}
++
++function bucketFor(userId) {
++  let hash = 0;
++  for (const char of userId) {
++    hash = (hash * 31 + char.codePointAt(0)) >>> 0;
++  }
++  return hash % 100;
++}
++
+ export function resolveFeature(config, context) {
+-  if (!config || !context || typeof context !== 'object') return false;
+-  const flag = config[context.feature];
+-  return typeof flag === 'boolean' ? flag : Boolean(flag && flag.enabled);
++  if (!isNonNullObject(config) || !isNonNullObject(context)) return false;
++
++  const feature = context.feature;
++  if (!isNonEmptyString(feature)) return false;
++
++  const overrides = context.overrides;
++  if (isNonNullObject(overrides)) {
++    const override = overrides[feature];
++    if (typeof override === 'boolean') return override;
++  }
++
++  const flag = config[feature];
++  if (typeof flag === 'boolean') return flag;
++  if (!isNonNullObject(flag) || flag.enabled !== true) return false;
++
++  if (!Object.prototype.hasOwnProperty.call(flag, 'rollout')) return true;
++
++  const rollout = flag.rollout;
++  if (!Number.isInteger(rollout) || rollout < 0 || rollout > 100) return false;
++  if (rollout === 0) return false;
++  if (rollout === 100) return true;
++
++  if (!isNonEmptyString(context.userId)) return false;
++  return bucketFor(context.userId) < rollout;
+ }
