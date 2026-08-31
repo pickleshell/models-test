@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "48-gpt-5-6-terra",
+    "agent": "codex",
+    "model": "gpt-5.6-terra"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-31T12:42:09.188Z",
+  "completed_at": "2026-08-31T12:42:15.188Z",
+  "duration_ms": 6000,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "provider_not_reported",
+    "reported_cost_usd": null,
+    "steps": null,
+    "tokens": {
+      "input": null,
+      "output": null,
+      "reasoning": null,
+      "cache_read": null,
+      "cache_write": null,
+      "total": null
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "1942c895dbd37aa98cbdd2a851fd0470ce1c5023f9096556da59af6653d850fd"
+  }
+}

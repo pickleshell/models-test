@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "190-gpt-5-6-luna-fast",
+    "agent": "opencode",
+    "model": "openai/gpt-5.6-luna-fast"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-31T12:43:39.828Z",
+  "completed_at": "2026-08-31T12:43:44.073Z",
+  "duration_ms": 4245,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0,
+    "steps": 1,
+    "tokens": {
+      "input": 2338,
+      "output": 5,
+      "reasoning": 0,
+      "cache_read": 3584,
+      "cache_write": 0,
+      "total": 5927
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "0a59a05647b771dd762911eee0a0074f64d2432c31fa09708dda44b405f28198"
+  }
+}

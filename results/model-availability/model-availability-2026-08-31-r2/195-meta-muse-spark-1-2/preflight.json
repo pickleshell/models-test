@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "195-meta-muse-spark-1-2",
+    "agent": "opencode",
+    "model": "openrouter/meta/muse-spark-1.2"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-31T12:44:05.141Z",
+  "completed_at": "2026-08-31T12:44:08.867Z",
+  "duration_ms": 3726,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0.009807,
+    "steps": 1,
+    "tokens": {
+      "input": 7560,
+      "output": 11,
+      "reasoning": 73,
+      "cache_read": 0,
+      "cache_write": 0,
+      "total": 7644
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "b83436d45a30fbe528ada6db7468015783b58e7cd533fabd6d88cea943b37345"
+  }
+}

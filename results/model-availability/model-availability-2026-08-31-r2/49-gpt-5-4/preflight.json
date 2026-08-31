@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "49-gpt-5-4",
+    "agent": "codex",
+    "model": "gpt-5.4"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-31T12:41:41.905Z",
+  "completed_at": "2026-08-31T12:41:49.335Z",
+  "duration_ms": 7430,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "provider_not_reported",
+    "reported_cost_usd": null,
+    "steps": null,
+    "tokens": {
+      "input": null,
+      "output": null,
+      "reasoning": null,
+      "cache_read": null,
+      "cache_write": null,
+      "total": null
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "db18c43c290ac855acaf6ffe0f5416220b6dd8c8c3f38a834b51ffe6e92bd4c8"
+  }
+}

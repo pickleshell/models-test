@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "156-gemini-3-5-flash-lite",
+    "agent": "opencode",
+    "model": "opencode/gemini-3.5-flash-lite"
+  },
+  "status": "unavailable",
+  "reason": "process_failure",
+  "started_at": "2026-08-31T12:42:33.755Z",
+  "completed_at": "2026-08-31T12:42:36.070Z",
+  "duration_ms": 2315,
+  "process_status": 1,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": null,
+    "steps": 0,
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "cache_read": 0,
+      "cache_write": 0,
+      "total": 0
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "19d7838a81deb8708be498e866425e9c5c3c217ff9fce7e6a7dc01cd8d7aa223"
+  }
+}

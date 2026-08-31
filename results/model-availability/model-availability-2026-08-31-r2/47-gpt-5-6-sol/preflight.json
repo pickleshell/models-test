@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "47-gpt-5-6-sol",
+    "agent": "codex",
+    "model": "gpt-5.6-sol"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-31T12:42:01.718Z",
+  "completed_at": "2026-08-31T12:42:08.928Z",
+  "duration_ms": 7211,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "provider_not_reported",
+    "reported_cost_usd": null,
+    "steps": null,
+    "tokens": {
+      "input": null,
+      "output": null,
+      "reasoning": null,
+      "cache_read": null,
+      "cache_write": null,
+      "total": null
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "88d4bdc3b87797ad073bf00fcc7050e6bab1fee918be676aaa5f00226b5f1127"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "46-gpt-5-6-luna",
+    "agent": "codex",
+    "model": "gpt-5.6-luna"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-31T12:41:55.994Z",
+  "completed_at": "2026-08-31T12:42:01.456Z",
+  "duration_ms": 5462,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "provider_not_reported",
+    "reported_cost_usd": null,
+    "steps": null,
+    "tokens": {
+      "input": null,
+      "output": null,
+      "reasoning": null,
+      "cache_read": null,
+      "cache_write": null,
+      "total": null
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "f82e56f0419f3af3eb9cdba010c700c17cdd4d5c0e1e3e9c2fbae2c87d193897"
+  }
+}

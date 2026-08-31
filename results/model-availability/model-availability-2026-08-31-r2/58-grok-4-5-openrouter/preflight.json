@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "58-grok-4-5-openrouter",
+    "agent": "opencode",
+    "model": "openrouter/x-ai/grok-4.5"
+  },
+  "status": "available",
+  "reason": null,
+  "started_at": "2026-08-31T12:45:45.522Z",
+  "completed_at": "2026-08-31T12:45:49.278Z",
+  "duration_ms": 3756,
+  "process_status": 0,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": 0.0147064,
+    "steps": 1,
+    "tokens": {
+      "input": 7283,
+      "output": 1,
+      "reasoning": 16,
+      "cache_read": 128,
+      "cache_write": 0,
+      "total": 7428
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "b35cbbc71eb276cec2431794d6a7e8567e26c36f0cd492fd7f8ead03fac79744"
+  }
+}

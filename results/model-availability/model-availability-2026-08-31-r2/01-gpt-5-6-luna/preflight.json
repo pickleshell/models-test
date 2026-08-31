@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "01-gpt-5-6-luna",
+    "agent": "opencode",
+    "model": "opencode-go/gpt-5.6-luna"
+  },
+  "status": "unavailable",
+  "reason": "process_failure",
+  "started_at": "2026-08-31T12:46:00.057Z",
+  "completed_at": "2026-08-31T12:46:02.357Z",
+  "duration_ms": 2300,
+  "process_status": 1,
+  "timed_out": false,
+  "output_limited": false,
+  "usage": {
+    "source": "opencode_step_finish",
+    "reported_cost_usd": null,
+    "steps": 0,
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "cache_read": 0,
+      "cache_write": 0,
+      "total": 0
+    }
+  },
+  "notes": [
+    "Availability preflight uses an exact hi request; provider/model default reasoning is preserved unless reasoning_variant is explicit."
+  ],
+  "artifact_hash": {
+    "path": "preflight.json",
+    "sha256": "0eaf6e86c346f86a82b2dcd7ac83e2a5456217ffb5b299dcc3e4638c0c1462c7"
+  }
+}
